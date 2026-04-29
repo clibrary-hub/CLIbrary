@@ -1,0 +1,50 @@
+{"intent": "看一下 Docker image 裡的漏洞", "expected_cli": "img-scan", "expected_params_keys": ["compose_file", "image", "output_report", "scanner", "severity"], "tag": "cross-domain"}
+{"intent": "分析CSV 的品質", "expected_cli": "dq-score", "expected_params_keys": ["action", "input_file"], "tag": "cross-domain"}
+{"intent": "找我之前選資料庫的方式", "expected_cli": "decision-search", "expected_params_keys": ["action"], "tag": "cross-domain"}
+{"intent": "把API 縮短", "expected_cli": "api-slim", "expected_params_keys": ["action", "input_file"], "tag": "cross-domain"}
+{"intent": "批次把路徑下所有圖片加浮水印", "expected_cli": "watermark", "expected_params_keys": ["input_dir", "input_file", "opacity", "position", "style", "text", "watermark_image"], "tag": "cross-domain"}
+{"intent": "分析程式碼", "expected_cli": "repo-map", "expected_params_keys": ["target_path"], "tag": "cross-domain"}
+{"intent": "對話紀錄備份一下", "expected_cli": "chat-export", "expected_params_keys": ["action"], "tag": "cross-domain"}
+{"intent": "壓縮這段文字到 100 字以內", "expected_cli": "response-slim", "expected_params_keys": ["action", "input_text"], "tag": "cross-domain"}
+{"intent": "根據任務種類自動把請求派給對的 Agent", "expected_cli": "agent-router", "expected_params_keys": ["action", "strategy"], "tag": "cross-domain"}
+{"intent": "比較我這兩周在各項活動或工作中的時間分配", "expected_cli": "time-track", "expected_params_keys": ["action"], "tag": "cross-domain"}
+{"intent": "幫我找沒有被使用的def", "expected_cli": "dead-code", "expected_params_keys": ["action"], "tag": "cross-domain"}
+{"intent": "把所有 TODO 整理成一個清單", "expected_cli": "todo-board", "expected_params_keys": ["action", "target_path"], "tag": "cross-domain"}
+{"intent": "記錄我剛才決定採用 Redis 當快取的原因", "expected_cli": "decision-log", "expected_params_keys": ["action"], "tag": "cross-domain"}
+{"intent": "把 Anthropic tool_use 格式轉成 OpenAI function call 格式", "expected_cli": "tool-call-norm", "expected_params_keys": ["action"], "tag": "cross-domain"}
+{"intent": "把三個 Agent 的輸出合併成起來", "expected_cli": "agent-reducer", "expected_params_keys": ["action"], "tag": "cross-domain"}
+{"intent": "分析 sales.csv 並畫出趨勢圖", "expected_cli": "term-plot", "expected_params_keys": ["action", "chart_type"], "tag": "cross-domain"}
+{"intent": "把這個 PDF 轉成 Agent 能讀懂的格式", "expected_cli": "doc-to-md", "expected_params_keys": ["action"], "tag": "cross-domain"}
+{"intent": "監控這個 API endpoint 每小時回應是否正常", "expected_cli": "api-monitor", "expected_params_keys": ["action"], "tag": "cross-domain"}
+{"intent": "把重複的程式碼抽成共用函數", "expected_cli": "func-split", "expected_params_keys": ["action"], "tag": "cross-domain"}
+{"intent": "每天早上 9 點自動幫我整理 inbox", "expected_cli": "agent-cron", "expected_params_keys": ["action"], "tag": "cross-domain"}
+{"intent": "把這篇論文的重點整理成筆記卡片", "expected_cli": "card-make", "expected_params_keys": ["card_format", "count", "input_dir", "input_file", "output_format"], "tag": "cross-domain"}
+{"intent": "檢查密碼是否安全", "expected_cli": "pwn-check", "expected_params_keys": ["email", "input_file", "password"], "tag": "cross-domain"}
+{"intent": "幫我產生一個強度夠高的新密碼", "expected_cli": "pw-gen", "expected_params_keys": ["count", "include_symbols", "length", "output_file"], "tag": "cross-domain"}
+{"intent": "把這個 schema 用一段話解釋給 LLM 看", "expected_cli": "schema-brief", "expected_params_keys": ["action", "db_url"], "tag": "cross-domain"}
+{"intent": "找出這個 repo 最近兩週的所有改動", "expected_cli": "recent-changes", "expected_params_keys": ["target_path"], "tag": "cross-domain"}
+{"intent": "追蹤這個 Python 函數被哪些地方呼叫", "expected_cli": "impact-trace", "expected_params_keys": ["action"], "tag": "cross-domain"}
+{"intent": "分析用戶留言的情緒正負面傾向", "expected_cli": "data-narrate", "expected_params_keys": ["action", "input_file"], "tag": "cross-domain"}
+{"intent": "把多個 Agent 的工具清單合併管理", "expected_cli": "tool-registry", "expected_params_keys": ["action", "mode"], "tag": "cross-domain"}
+{"intent": "把這個網頁的所有連結都檢查一遍看有沒有壞掉", "expected_cli": "link-check", "expected_params_keys": ["action"], "tag": "cross-domain"}
+{"intent": "把 Markdown 筆記轉換並發布到 Wiki", "expected_cli": "wiki-pub", "expected_params_keys": ["action", "docs_dir"], "tag": "cross-domain"}
+{"intent": "偵測模型的 embedding 有沒有隨時間漂移", "expected_cli": "embed-drift", "expected_params_keys": ["action"], "tag": "cross-domain"}
+{"intent": "把我的 Obsidian 筆記遷移到 Notion", "expected_cli": "note-port", "expected_params_keys": ["source_format"], "tag": "cross-domain"}
+{"intent": "掃描程式碼裡有沒有寫死的 API Key", "expected_cli": "secret-scan", "expected_params_keys": ["file_pattern", "scan_history", "target_dir", "target_file"], "tag": "cross-domain"}
+{"intent": "把這段文字翻譯成英文並調整成正式語氣", "expected_cli": "doc-tr", "expected_params_keys": ["target_lang"], "tag": "cross-domain"}
+{"intent": "幫我評估這個 LLM 的回應品質", "expected_cli": "llm-compare", "expected_params_keys": ["action"], "tag": "cross-domain"}
+{"intent": "列出這個 k8s cluster 所有 pod 的即時 log", "expected_cli": "k8s-tail", "expected_params_keys": ["deployment", "grep", "label", "namespace", "output_file", "tail_lines"], "tag": "cross-domain"}
+{"intent": "把這段 code 的型別標注全部補完", "expected_cli": "type-fill", "expected_params_keys": ["action"], "tag": "cross-domain"}
+{"intent": "幫我找出影響睡眠品質的因素", "expected_cli": "sleep-trends", "expected_params_keys": ["action", "input_file"], "tag": "cross-domain"}
+{"intent": "把不同格式的日曆事件合併成一個主日曆", "expected_cli": "cal-merge", "expected_params_keys": ["action"], "tag": "cross-domain"}
+{"intent": "確認這個合約有沒有不利於我的條款", "expected_cli": "contract-risk", "expected_params_keys": ["input_file"], "tag": "cross-domain"}
+{"intent": "監控競爭對手的商品價格變化", "expected_cli": "price-watch", "expected_params_keys": ["action"], "tag": "cross-domain"}
+{"intent": "把這個影片自動加上中文字幕", "expected_cli": "auto-subtitle", "expected_params_keys": ["action", "language"], "tag": "cross-domain"}
+{"intent": "找出過去一個月所有重複扣款的項目", "expected_cli": "dup-charge", "expected_params_keys": ["action"], "tag": "cross-domain"}
+{"intent": "把 Slack 訊息轉成會議記錄格式", "expected_cli": "chat-minutes", "expected_params_keys": ["action"], "tag": "cross-domain"}
+{"intent": "把這段程式碼打包成可以讓 Agent 執行的工具", "expected_cli": "agent-pack", "expected_params_keys": ["action", "source_path"], "tag": "cross-domain"}
+{"intent": "自動回覆固定格式的客服信件", "expected_cli": "auto-reply", "expected_params_keys": ["action"], "tag": "cross-domain"}
+{"intent": "掃描 .env 檔案確認沒有洩漏到 git", "expected_cli": "secret-scan", "expected_params_keys": ["file_pattern", "scan_history", "target_dir", "target_file"], "tag": "cross-domain"}
+{"intent": "比較兩個 JSON schema 版本有哪些欄位差異", "expected_cli": "schema-diff", "expected_params_keys": ["action", "schema_a", "schema_b"], "tag": "cross-domain"}
+{"intent": "把這個 repo 所有的常數定義集中到一個檔案", "expected_cli": "const-extract", "expected_params_keys": ["action"], "tag": "cross-domain"}
+{"intent": "每週一早上自動產生本週的工作計劃", "expected_cli": "morning-boot", "expected_params_keys": ["action"], "tag": "cross-domain"}

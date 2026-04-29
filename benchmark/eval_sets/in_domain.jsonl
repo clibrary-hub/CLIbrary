@@ -1,0 +1,500 @@
+{"intent": "掃描 /home/user/myproject 的專案結構", "expected_cli": "repo-map", "expected_params_keys": ["target_path"], "tag": "in-domain"}
+{"intent": "把 src/ 目錄打包，限制在 4000 tokens 以內", "expected_cli": "ctx-pack", "expected_params_keys": ["source_path"], "tag": "in-domain"}
+{"intent": "為 /workspace/my-app 這個專案產生摘要", "expected_cli": "project-briefer", "expected_params_keys": ["project_path"], "tag": "in-domain"}
+{"intent": "追蹤 /project 目錄在執行任務後的變更", "expected_cli": "output-tracker", "expected_params_keys": ["action", "watch_path"], "tag": "in-domain"}
+{"intent": "比較 output_v1.txt 和 output_v2.txt 的差異", "expected_cli": "diff-review", "expected_params_keys": ["action", "file_a", "file_b", "output_format", "target_path"], "tag": "in-domain"}
+{"intent": "在修改 /project/src 之前先建立快照", "expected_cli": "snap-guard", "expected_params_keys": ["target_path"], "tag": "in-domain"}
+{"intent": "把 large_report.txt 切成每塊 2000 tokens", "expected_cli": "chunk-feeder", "expected_params_keys": ["chunk_size", "input_file"], "tag": "in-domain"}
+{"intent": "列出 /project 過去 48 小時內修改的檔案", "expected_cli": "recent-changes", "expected_params_keys": ["target_path"], "tag": "in-domain"}
+{"intent": "格式化剪貼簿中的 Python 程式碼", "expected_cli": "code-clip", "expected_params_keys": ["action", "language"], "tag": "in-domain"}
+{"intent": "比對 agent_a_output.py 和 agent_b_output.py 的衝突", "expected_cli": "merge-pilot", "expected_params_keys": ["action"], "tag": "in-domain"}
+{"intent": "在 /project 下搜尋跟登入有關的檔案", "expected_cli": "file-recall", "expected_params_keys": ["query", "search_path"], "tag": "in-domain"}
+{"intent": "掃描 /home/user/downloads 找出重複檔案", "expected_cli": "dup-finder", "expected_params_keys": ["action", "scan_path"], "tag": "in-domain"}
+{"intent": "把 C:\\Users\\test\\file.txt 轉換成 Unix 路徑格式", "expected_cli": "path-normalize", "expected_params_keys": ["input_file", "input_path", "output_file", "target_platform"], "tag": "in-domain"}
+{"intent": "清洗 /downloads 目錄下所有檔案的名稱", "expected_cli": "filename-clean", "expected_params_keys": ["target_path"], "tag": "in-domain"}
+{"intent": "把 photos/ 下所有 .jpg 加上 2024_ 前綴", "expected_cli": "bulk-rename", "expected_params_keys": ["target_path"], "tag": "in-domain"}
+{"intent": "整理 /home/user/Downloads 下所有的檔案", "expected_cli": "download-sorter", "expected_params_keys": ["source_path"], "tag": "in-domain"}
+{"intent": "分析 /var/log 目錄的磁碟佔用情況", "expected_cli": "dir-weigh", "expected_params_keys": ["scan_path"], "tag": "in-domain"}
+{"intent": "掃描 /home/user 找出所有超過 500MB 的檔案", "expected_cli": "bigfile-locate", "expected_params_keys": ["scan_path"], "tag": "in-domain"}
+{"intent": "打包 /my-project 並排除 .git 和 node_modules", "expected_cli": "proj-bundle", "expected_params_keys": ["project_path"], "tag": "in-domain"}
+{"intent": "把 output/ 目錄打包成 agent 傳遞格式", "expected_cli": "agent-pack", "expected_params_keys": ["action", "source_path"], "tag": "in-domain"}
+{"intent": "搜尋歷史對話中所有提到「資料庫」的內容", "expected_cli": "chat-grep", "expected_params_keys": ["action", "query"], "tag": "in-domain"}
+{"intent": "記錄決定採用 PostgreSQL 的原因", "expected_cli": "decision-log", "expected_params_keys": ["action"], "tag": "in-domain"}
+{"intent": "儲存這個程式碼審查 prompt 模板", "expected_cli": "prompt-vault", "expected_params_keys": ["action"], "tag": "in-domain"}
+{"intent": "匯出今天的對話記錄為 Markdown 格式", "expected_cli": "chat-export", "expected_params_keys": ["action"], "tag": "in-domain"}
+{"intent": "釘選「所有回覆必須用繁體中文」這條規則", "expected_cli": "pin-msg", "expected_params_keys": ["action"], "tag": "in-domain"}
+{"intent": "把目前的上下文橋接到 agent_b", "expected_cli": "ctx-bridge", "expected_params_keys": ["action"], "tag": "in-domain"}
+{"intent": "把這段回覆壓縮到 100 字以內", "expected_cli": "response-slim", "expected_params_keys": ["action", "input_text"], "tag": "in-domain"}
+{"intent": "計算這段文字的 token 數量", "expected_cli": "token-meter", "expected_params_keys": ["action"], "tag": "in-domain"}
+{"intent": "儲存目前的 system prompt 為版本 v2.1", "expected_cli": "sysprompt-git", "expected_params_keys": ["action"], "tag": "in-domain"}
+{"intent": "從 chat_log.txt 中提取所有 Python 程式碼", "expected_cli": "code-extract", "expected_params_keys": ["action"], "tag": "in-domain"}
+{"intent": "把 openai_chat.json 轉成 Claude 格式", "expected_cli": "chat-transcode", "expected_params_keys": ["action", "target_format"], "tag": "in-domain"}
+{"intent": "把「用戶偏好繁體中文」存到長期記憶", "expected_cli": "mem-store", "expected_params_keys": ["action"], "tag": "in-domain"}
+{"intent": "整合並去除記憶庫中重複的項目", "expected_cli": "mem-reconcile", "expected_params_keys": ["action"], "tag": "in-domain"}
+{"intent": "搜尋跟「身分驗證流程」語意相近的對話", "expected_cli": "chat-semsearch", "expected_params_keys": ["action", "query"], "tag": "in-domain"}
+{"intent": "從目前對話建立分支 branch_v2", "expected_cli": "chat-branch", "expected_params_keys": ["action"], "tag": "in-domain"}
+{"intent": "把這段技術討論轉成 5 張知識卡片", "expected_cli": "chat-to-card", "expected_params_keys": ["action"], "tag": "in-domain"}
+{"intent": "過濾這段用戶輸入，檢查是否含有 prompt 注入", "expected_cli": "prompt-shield", "expected_params_keys": ["action"], "tag": "in-domain"}
+{"intent": "遮罩這段對話中的所有電話號碼和 email", "expected_cli": "pii-redact", "expected_params_keys": ["action"], "tag": "in-domain"}
+{"intent": "把 agents_chat.json 中 3 個 Agent 的對話排版", "expected_cli": "multi-agent-render", "expected_params_keys": ["action", "input_file"], "tag": "in-domain"}
+{"intent": "把本地對話記錄備份到 /backup/chats", "expected_cli": "chat-sync", "expected_params_keys": ["action", "source_path"], "tag": "in-domain"}
+{"intent": "掃描 src/ 目錄的所有 Python 檔案並修復 lint", "expected_cli": "lint-guard", "expected_params_keys": ["action", "target_path"], "tag": "in-domain"}
+{"intent": "分析 src/ 目錄的程式碼風格", "expected_cli": "style-snap", "expected_params_keys": ["action", "target_path"], "tag": "in-domain"}
+{"intent": "分析 src/ 目錄的測試覆蓋率缺口", "expected_cli": "test-gap", "expected_params_keys": ["action", "target_path"], "tag": "in-domain"}
+{"intent": "掃描 requirements.txt 找出未使用的依賴", "expected_cli": "dep-audit", "expected_params_keys": ["action", "target_path"], "tag": "in-domain"}
+{"intent": "掃描 src/ 目錄的所有安全漏洞", "expected_cli": "sec-scan", "expected_params_keys": ["action", "target_path"], "tag": "in-domain"}
+{"intent": "檢查 client.py 和最新 API v2 的相容性", "expected_cli": "api-compat", "expected_params_keys": ["action"], "tag": "in-domain"}
+{"intent": "驗證 original.py 和 refactored.py 行為等價", "expected_cli": "refactor-verify", "expected_params_keys": ["action", "refactored_file"], "tag": "in-domain"}
+{"intent": "為 utils.py 的所有函數補充型別注解", "expected_cli": "type-fill", "expected_params_keys": ["action"], "tag": "in-domain"}
+{"intent": "掃描 src/ 目錄找出重複的程式碼片段", "expected_cli": "code-dedupe", "expected_params_keys": ["action"], "tag": "in-domain"}
+{"intent": "為 api.py 的所有函數自動補上 docstring", "expected_cli": "doc-fill", "expected_params_keys": ["action"], "tag": "in-domain"}
+{"intent": "掃描 src/ 目錄找出所有死碼", "expected_cli": "dead-code", "expected_params_keys": ["action"], "tag": "in-domain"}
+{"intent": "分析 service.py 找出超過 50 行的函數", "expected_cli": "func-split", "expected_params_keys": ["action"], "tag": "in-domain"}
+{"intent": "檢查 src/ 目錄的命名規約一致性", "expected_cli": "name-lint", "expected_params_keys": ["action"], "tag": "in-domain"}
+{"intent": "追蹤修改 db_connect 函數會影響哪些地方", "expected_cli": "impact-trace", "expected_params_keys": ["action"], "tag": "in-domain"}
+{"intent": "格式化並傳送這次 API 修改的 commit 訊息", "expected_cli": "commit-fmt", "expected_params_keys": ["action"], "tag": "in-domain"}
+{"intent": "為目前 git branch 的改動自動產生 PR 摘要", "expected_cli": "pr-brief", "expected_params_keys": ["action"], "tag": "in-domain"}
+{"intent": "找 api/users.py 對應的測試檔案", "expected_cli": "test-locate", "expected_params_keys": ["action"], "tag": "in-domain"}
+{"intent": "從最近 50 個 commit 產生 changelog", "expected_cli": "changelog-bot", "expected_params_keys": ["action"], "tag": "in-domain"}
+{"intent": "掃描 src/ 目錄找出所有重複常數", "expected_cli": "const-extract", "expected_params_keys": ["action"], "tag": "in-domain"}
+{"intent": "掃描 src/ 找出所有 TODO 和 FIXME", "expected_cli": "todo-board", "expected_params_keys": ["action", "target_path"], "tag": "in-domain"}
+{"intent": "錄製一個每日報告生成的 Agent 巨集", "expected_cli": "agent-macro", "expected_params_keys": ["action"], "tag": "in-domain"}
+{"intent": "任務完成後傳送桌面通知", "expected_cli": "agent-notify", "expected_params_keys": ["action"], "tag": "in-domain"}
+{"intent": "每天早上 8 點執行 daily_report 任務", "expected_cli": "agent-cron", "expected_params_keys": ["action"], "tag": "in-domain"}
+{"intent": "掃描目前環境是否滿足執行條件", "expected_cli": "pre-check", "expected_params_keys": ["action"], "tag": "in-domain"}
+{"intent": "在目前任務進度建立一個斷點", "expected_cli": "checkpoint", "expected_params_keys": ["action"], "tag": "in-domain"}
+{"intent": "追蹤 data_pipeline 流程的執行進度", "expected_cli": "flow-tracker", "expected_params_keys": ["action", "flow_name"], "tag": "in-domain"}
+{"intent": "在 CI 流程中加入 AI 程式碼品質審核", "expected_cli": "ai-gate", "expected_params_keys": ["action"], "tag": "in-domain"}
+{"intent": "把 project_a 的 Agent 設定遷移到 project_b", "expected_cli": "agent-config", "expected_params_keys": ["action"], "tag": "in-domain"}
+{"intent": "建立包含 5 個 worker 的 Agent 任務池", "expected_cli": "agent-pool", "expected_params_keys": ["action"], "tag": "in-domain"}
+{"intent": "在沙箱中執行 AI 生成的 cleanup.sh", "expected_cli": "sandbox-run", "expected_params_keys": ["action", "command"], "tag": "in-domain"}
+{"intent": "把 data_processing 任務生成為可重放格式", "expected_cli": "task-replay", "expected_params_keys": ["action"], "tag": "in-domain"}
+{"intent": "在刪除資料庫前設置人工審批關卡", "expected_cli": "human-gate", "expected_params_keys": ["action"], "tag": "in-domain"}
+{"intent": "把新任務加入 main_queue 佇列", "expected_cli": "agent-queue", "expected_params_keys": ["action", "queue_name"], "tag": "in-domain"}
+{"intent": "設定最多重試 3 次，指數退避", "expected_cli": "retry-policy", "expected_params_keys": ["action"], "tag": "in-domain"}
+{"intent": "設定任務執行超過 60 秒自動中止", "expected_cli": "timeout-shield", "expected_params_keys": ["action", "timeout_seconds"], "tag": "in-domain"}
+{"intent": "設定每分鐘最多 30 次 API 呼叫", "expected_cli": "rate-shaper", "expected_params_keys": ["action"], "tag": "in-domain"}
+{"intent": "開始錄製 Agent 的操作，儲存到 session.json", "expected_cli": "agent-record", "expected_params_keys": ["action"], "tag": "in-domain"}
+{"intent": "把 backup.sh 加入腳本中央倉", "expected_cli": "script-hub", "expected_params_keys": ["action"], "tag": "in-domain"}
+{"intent": "dry-run 模式執行 deploy.sh", "expected_cli": "dry-run", "expected_params_keys": ["action", "command", "dry_run"], "tag": "in-domain"}
+{"intent": "顯示所有任務的即時儀表板", "expected_cli": "flow-dash", "expected_params_keys": ["action"], "tag": "in-domain"}
+{"intent": "剖析 sales_data.csv 並產生資料分析報告", "expected_cli": "data-profile", "expected_params_keys": ["action", "input_file"], "tag": "in-domain"}
+{"intent": "清洗 https://example.com/article 的網頁內容", "expected_cli": "web-clean", "expected_params_keys": ["action"], "tag": "in-domain"}
+{"intent": "把 report.pdf 轉換成 Markdown", "expected_cli": "doc-to-md", "expected_params_keys": ["action"], "tag": "in-domain"}
+{"intent": "摘要 PostgreSQL 資料庫的所有 schema", "expected_cli": "schema-brief", "expected_params_keys": ["action", "db_url"], "tag": "in-domain"}
+{"intent": "從 API 回應中只取出 id、name、email 欄位", "expected_cli": "api-slim", "expected_params_keys": ["action", "input_file"], "tag": "in-domain"}
+{"intent": "從 app.log 提取所有 ERROR 等級的訊息", "expected_cli": "log-focus", "expected_params_keys": ["action", "log_file"], "tag": "in-domain"}
+{"intent": "匯出目前環境變數到 .env.backup", "expected_cli": "env-sync", "expected_params_keys": ["action"], "tag": "in-domain"}
+{"intent": "找出 en.yaml 中缺少的翻譯鍵", "expected_cli": "i18n-sync", "expected_params_keys": ["action"], "tag": "in-domain"}
+{"intent": "設定 GitHub token 讓 Agent 可以 clone 私有 repo", "expected_cli": "git-fetch-auth", "expected_params_keys": ["action"], "tag": "in-domain"}
+{"intent": "OCR 辨識 screenshot.png 的文字內容", "expected_cli": "ocr-feed", "expected_params_keys": ["action"], "tag": "in-domain"}
+{"intent": "修復 config.json 的格式錯誤", "expected_cli": "format-fix", "expected_params_keys": ["action", "file_type"], "tag": "in-domain"}
+{"intent": "推斷 sales_data.csv 的欄位型態", "expected_cli": "csv-infer", "expected_params_keys": ["action", "csv_file"], "tag": "in-domain"}
+{"intent": "在 response.json 中查詢 users[*].email 路徑", "expected_cli": "json-path", "expected_params_keys": ["action", "json_file"], "tag": "in-domain"}
+{"intent": "把 sales_data.csv 轉換成 sales_data.json", "expected_cli": "data-transcode", "expected_params_keys": ["action", "output_format"], "tag": "in-domain"}
+{"intent": "比較 schema_v1.json 和 schema_v2.json 的差異", "expected_cli": "schema-diff", "expected_params_keys": ["action", "schema_a", "schema_b"], "tag": "in-domain"}
+{"intent": "串流處理 large_log.txt 並過濾出 ERROR 行", "expected_cli": "stream-pipe", "expected_params_keys": ["action"], "tag": "in-domain"}
+{"intent": "把 users.csv 和 orders.csv 用 user_id 做 inner join", "expected_cli": "data-join", "expected_params_keys": ["action", "join_key", "left_file", "right_file"], "tag": "in-domain"}
+{"intent": "清洗 raw_data.csv 中的空值和格式錯誤", "expected_cli": "data-scrub", "expected_params_keys": ["action", "input_file"], "tag": "in-domain"}
+{"intent": "評估 sales_data.csv 的整體資料品質", "expected_cli": "dq-score", "expected_params_keys": ["action", "input_file"], "tag": "in-domain"}
+{"intent": "從 large_dataset.csv 中隨機抽取 5000 筆樣本", "expected_cli": "smart-sample", "expected_params_keys": ["action", "input_file"], "tag": "in-domain"}
+{"intent": "讓 agent-A 發布訂單事件，agent-B 和 agent-C 接收", "expected_cli": "agent-bus", "expected_params_keys": ["action"], "tag": "in-domain"}
+{"intent": "把 OpenAI Agent 介面適配成公司內部統一格式", "expected_cli": "agent-iface", "expected_params_keys": ["action"], "tag": "in-domain"}
+{"intent": "根據任務類型把 NLP 任務路由到 nlp-agent，圖片任務路由到 vision-agent", "expected_cli": "agent-router", "expected_params_keys": ["action", "strategy"], "tag": "in-domain"}
+{"intent": "把三個搜尋 Agent 的結果去重後合併成一份", "expected_cli": "agent-reducer", "expected_params_keys": ["action"], "tag": "in-domain"}
+{"intent": "設定 agent-scraper 只能讀取，不能寫入資料庫", "expected_cli": "agent-acl", "expected_params_keys": ["action"], "tag": "in-domain"}
+{"intent": "讓 5 個 Agent 對三個方案投票，選出最高票的方案", "expected_cli": "agent-vote", "expected_params_keys": ["action", "method"], "tag": "in-domain"}
+{"intent": "為 data-analyst-agent 建立角色定義，包含職責和能力範圍", "expected_cli": "agent-role", "expected_params_keys": ["action"], "tag": "in-domain"}
+{"intent": "把 web-search、calculator、file-reader 三個工具註冊到工具中心", "expected_cli": "tool-registry", "expected_params_keys": ["action", "mode"], "tag": "in-domain"}
+{"intent": "為 my-research-agent 產生能力名片並輸出 agent-card.json", "expected_cli": "agent-card", "expected_params_keys": ["action"], "tag": "in-domain"}
+{"intent": "追蹤 request-abc123 在 orchestrator、worker、reporter 三個 Agent 的執行路徑", "expected_cli": "agent-trace", "expected_params_keys": ["action"], "tag": "in-domain"}
+{"intent": "掃描 agents/ 目錄下所有 Agent 的依賴關係找出死鎖", "expected_cli": "agent-deadlock", "expected_params_keys": ["action", "mode"], "tag": "in-domain"}
+{"intent": "每 30 秒檢查 agent-worker 的健康狀態，掛掉發 Slack 通知", "expected_cli": "agent-health", "expected_params_keys": ["action"], "tag": "in-domain"}
+{"intent": "把 Anthropic 格式的 tool call 轉換成 OpenAI 格式", "expected_cli": "tool-call-norm", "expected_params_keys": ["action"], "tag": "in-domain"}
+{"intent": "建立 MCP bridge 讓 GPT-4 使用原本為 Claude 寫的 web-search 工具", "expected_cli": "mcp-bridge", "expected_params_keys": ["action"], "tag": "in-domain"}
+{"intent": "啟動 webhook 集中器在 port 8090，接收所有 Agent 的完成事件", "expected_cli": "agent-hook", "expected_params_keys": ["action"], "tag": "in-domain"}
+{"intent": "讓 analyst、critic、presenter 三個 Agent 合作寫出產品分析報告", "expected_cli": "agent-mediator", "expected_params_keys": ["action"], "tag": "in-domain"}
+{"intent": "快取 search-agent 的搜尋結果 30 分鐘供其他 Agent 使用", "expected_cli": "result-cache", "expected_params_keys": ["action"], "tag": "in-domain"}
+{"intent": "用 benchmark_suite.json 測試 claude-agent 和 gpt-agent 並比較得分", "expected_cli": "agent-bench", "expected_params_keys": ["action"], "tag": "in-domain"}
+{"intent": "統計本月 agent-research、agent-writer 的 API 費用並分攤給各部門", "expected_cli": "agent-billing", "expected_params_keys": ["action"], "tag": "in-domain"}
+{"intent": "設定 main-agent 故障時自動切換到 backup-agent-1 或 backup-agent-2", "expected_cli": "agent-failover", "expected_params_keys": ["action"], "tag": "in-domain"}
+{"intent": "合併 notion-todos.json 和 github-issues.json 去重後輸出統一清單", "expected_cli": "todo-merge", "expected_params_keys": ["action"], "tag": "in-domain"}
+{"intent": "開始一個 25 分鐘工作計時，結束後休息 5 分鐘", "expected_cli": "pomo", "expected_params_keys": ["action"], "tag": "in-domain"}
+{"intent": "開始記錄「撰寫報告」的專注時段", "expected_cli": "focus-log", "expected_params_keys": ["action"], "tag": "in-domain"}
+{"intent": "根據今天的 git commits 和 focus-log 產生每日回顧", "expected_cli": "daily-recap", "expected_params_keys": ["action"], "tag": "in-domain"}
+{"intent": "執行早晨工作流：開啟 VS Code、Slack、Chrome 和 Terminal", "expected_cli": "morning-boot", "expected_params_keys": ["action"], "tag": "in-domain"}
+{"intent": "關閉所有工作程式：VS Code、Slack、Chrome，保留 Spotify", "expected_cli": "night-wind", "expected_params_keys": ["action"], "tag": "in-domain"}
+{"intent": "從 git log 自動生成本週工作日誌", "expected_cli": "worklog", "expected_params_keys": ["action"], "tag": "in-domain"}
+{"intent": "準備明天下午 2 點的產品評審會議，整理上週進度報告", "expected_cli": "meeting-prep", "expected_params_keys": ["action"], "tag": "in-domain"}
+{"intent": "為剛才的產品討論會議建立筆記，包含決議和 action items", "expected_cli": "meeting-notes", "expected_params_keys": ["action"], "tag": "in-domain"}
+{"intent": "根據本週的 git commits 和工時日誌自動生成週報", "expected_cli": "weekly-report", "expected_params_keys": ["action"], "tag": "in-domain"}
+{"intent": "比較 Q1 和 Q2 的 OKR 達成率差異", "expected_cli": "okr-track", "expected_params_keys": ["action"], "tag": "in-domain"}
+{"intent": "把「建立用戶認證系統」拆解成 10 個子任務", "expected_cli": "task-breakdown", "expected_params_keys": ["action"], "tag": "in-domain"}
+{"intent": "比較本週和上週在各類任務上的工時分配", "expected_cli": "time-track", "expected_params_keys": ["action"], "tag": "in-domain"}
+{"intent": "清理 reports/ 資料夾，每個文件只保留最新 3 個版本", "expected_cli": "version-cleaner", "expected_params_keys": ["action", "directory"], "tag": "in-domain"}
+{"intent": "把 projects/ 目錄下超過 6 個月沒有修改的專案封存", "expected_cli": "archive-bot", "expected_params_keys": ["action"], "tag": "in-domain"}
+{"intent": "搜尋所有包含「資料庫選型」的決策記錄", "expected_cli": "decision-search", "expected_params_keys": ["action"], "tag": "in-domain"}
+{"intent": "把 meeting-20240315.mp3 轉成中文逐字稿和摘要", "expected_cli": "audio-minutes", "expected_params_keys": ["action"], "tag": "in-domain"}
+{"intent": "分析 inbox 裡的所有郵件，自動分類到 work、newsletter、personal 資料夾", "expected_cli": "inbox-zero", "expected_params_keys": ["action"], "tag": "in-domain"}
+{"intent": "在 Notion 和本地 markdown 檔案中搜尋「微服務架構」", "expected_cli": "omni-search", "expected_params_keys": ["action", "query"], "tag": "in-domain"}
+{"intent": "快速記錄：「可以用 AI 自動生成 changelog」", "expected_cli": "quick-idea", "expected_params_keys": ["action"], "tag": "in-domain"}
+{"intent": "合併 work.ics 和 personal.ics 輸出 merged-calendar.ics", "expected_cli": "cal-merge", "expected_params_keys": ["action"], "tag": "in-domain"}
+{"intent": "掃描 alice.ics、bob.ics、carol.ics，找出週三下午共同空閒的 1 小時時段", "expected_cli": "slot-find", "expected_params_keys": ["action"], "tag": "in-domain"}
+{"intent": "把台北時間 2024-04-15 09:00 換算成紐約和倫敦時間", "expected_cli": "tz-convert", "expected_params_keys": ["action"], "tag": "in-domain"}
+{"intent": "新增會議室 A 明天下午 2 點的預約，供產品評審會議使用", "expected_cli": "book-flow", "expected_params_keys": ["action"], "tag": "in-domain"}
+{"intent": "掃描 calendar.ics 找出本週所有衝突的行程", "expected_cli": "cal-conflict", "expected_params_keys": ["action"], "tag": "in-domain"}
+{"intent": "生成每週一、三、五早上 9 點的重複規則", "expected_cli": "recur-helper", "expected_params_keys": ["action"], "tag": "in-domain"}
+{"intent": "規劃 5 天 4 夜東京旅遊行程，包含迪士尼和淺草", "expected_cli": "trip-plan", "expected_params_keys": ["action"], "tag": "in-domain"}
+{"intent": "把今天的 20 個提醒按重要性和緊急度排序", "expected_cli": "reminder-rank", "expected_params_keys": ["action"], "tag": "in-domain"}
+{"intent": "掃描本週工時記錄，若超過 45 小時發出警告", "expected_cli": "overwork-guard", "expected_params_keys": ["action"], "tag": "in-domain"}
+{"intent": "顯示本週所有截止日看板，依緊急度排列", "expected_cli": "deadline-board", "expected_params_keys": ["action"], "tag": "in-domain"}
+{"intent": "建立婚禮倒數計時器，2024-06-15，提前 7 天提醒", "expected_cli": "countdown", "expected_params_keys": ["action"], "tag": "in-domain"}
+{"intent": "生成本週深度工作計畫，每天上午留 3 小時不開會", "expected_cli": "deep-work-plan", "expected_params_keys": ["action"], "tag": "in-domain"}
+{"intent": "啟動出差模式 2024-04-10 到 2024-04-14，代辦人設為 alice", "expected_cli": "away-mode", "expected_params_keys": ["action"], "tag": "in-domain"}
+{"intent": "把「後天早上十一點和 Bob 討論合約內容，1.5 小時」加入日曆", "expected_cli": "nl-cal", "expected_params_keys": ["action"], "tag": "in-domain"}
+{"intent": "設定週一到週五 14:00 到 16:00 的深工勿擾時段", "expected_cli": "dnd-rules", "expected_params_keys": ["action"], "tag": "in-domain"}
+{"intent": "計算本週 5 場會議的總人力成本，平均薪資 15000 月薪", "expected_cli": "meeting-cost", "expected_params_keys": ["action"], "tag": "in-domain"}
+{"intent": "生成 3 個月的 AWS 認證學習計畫，每週 10 小時", "expected_cli": "study-plan", "expected_params_keys": ["action"], "tag": "in-domain"}
+{"intent": "新增每天早上 8 點喝水提醒，連續 30 天", "expected_cli": "routine-bot", "expected_params_keys": ["action"], "tag": "in-domain"}
+{"intent": "設定每 45 分鐘提醒我完成「寫報告」任務，直到標記完成", "expected_cli": "procrastinate-nudge", "expected_params_keys": ["action"], "tag": "in-domain"}
+{"intent": "生成今天的時間區塊圖，顯示工作、休息、會議各區塊", "expected_cli": "time-blocks", "expected_params_keys": ["action"], "tag": "in-domain"}
+{"intent": "掃描 Gmail 收件匣，用 AI 分類為工作、訂閱、通知三類", "expected_cli": "mail-sort", "expected_params_keys": ["action"], "tag": "in-domain"}
+{"intent": "掃描今天收件匣，用 AI 對每封信評 1-5 分優先度", "expected_cli": "mail-priority", "expected_params_keys": ["action"], "tag": "in-domain"}
+{"intent": "掃描信箱找出所有訂閱信來源並列出清單", "expected_cli": "unsub-bot", "expected_params_keys": ["action"], "tag": "in-domain"}
+{"intent": "幫我起草一封向客戶道歉延誤交貨的正式信件", "expected_cli": "mail-draft", "expected_params_keys": ["action"], "tag": "in-domain"}
+{"intent": "掃描收件匣，找出超過 48 小時未回的信件", "expected_cli": "mail-followup", "expected_params_keys": ["action"], "tag": "in-domain"}
+{"intent": "整合 work@company.com 和 personal@gmail.com 兩個帳戶的收件匣", "expected_cli": "mail-unify", "expected_params_keys": ["action"], "tag": "in-domain"}
+{"intent": "摘要主旨包含「Q2 預算討論」的信件串重點", "expected_cli": "thread-summarize", "expected_params_keys": ["action"], "tag": "in-domain"}
+{"intent": "排程 draft.txt 信件在 2024-03-15 09:00 寄給 boss@company.com", "expected_cli": "mail-schedule", "expected_params_keys": ["action"], "tag": "in-domain"}
+{"intent": "從 employees.csv 批次生成所有員工的標準簽名檔", "expected_cli": "sig-sync", "expected_params_keys": ["action", "template"], "tag": "in-domain"}
+{"intent": "在 Slack 的 #general 頻道搜尋包含「部署計畫」的訊息", "expected_cli": "chat-search", "expected_params_keys": ["action", "query"], "tag": "in-domain"}
+{"intent": "摘要 Slack #dev 頻道今天的所有訊息", "expected_cli": "im-digest", "expected_params_keys": ["action"], "tag": "in-domain"}
+{"intent": "設定當收到主旨含「詢價」的信時，自動回覆 price-reply.txt 的內容", "expected_cli": "auto-reply", "expected_params_keys": ["action"], "tag": "in-domain"}
+{"intent": "把 slack-thread.txt 中的討論轉成有待辦事項的會議紀錄", "expected_cli": "chat-minutes", "expected_params_keys": ["action"], "tag": "in-domain"}
+{"intent": "掃描收件匣找出過去 30 分鐘的 OTP 驗證碼", "expected_cli": "otp-collect", "expected_params_keys": ["action"], "tag": "in-domain"}
+{"intent": "用 template.html.j2 和 contacts.csv 批次發送個人化信件", "expected_cli": "mail-merge", "expected_params_keys": ["action", "data", "template"], "tag": "in-domain"}
+{"intent": "下載所有主旨含「合約」的信件 PDF 附件到 contracts/ 資料夾", "expected_cli": "attach-vault", "expected_params_keys": ["action"], "tag": "in-domain"}
+{"intent": "把 draft.txt 的信件語氣從正式改成友好輕鬆", "expected_cli": "tone-shift", "expected_params_keys": ["action", "to_tone"], "tag": "in-domain"}
+{"intent": "把 english-mail.txt 翻譯成繁體中文", "expected_cli": "mail-translate", "expected_params_keys": ["action", "target_lang"], "tag": "in-domain"}
+{"intent": "校稿 draft.txt 並列出所有語法和拼字問題", "expected_cli": "mail-proof", "expected_params_keys": ["action"], "tag": "in-domain"}
+{"intent": "掃描今天收件匣，用 AI 提取所有行動項目建立任務", "expected_cli": "mail-to-task", "expected_params_keys": ["action"], "tag": "in-domain"}
+{"intent": "合併 esun.csv 和 ctbc.csv 兩個銀行帳單，按日期排序", "expected_cli": "expense-merge", "expected_params_keys": ["action"], "tag": "in-domain"}
+{"intent": "OCR 識別 receipt.jpg 並提取日期、金額和商家名稱", "expected_cli": "receipt-ocr", "expected_params_keys": ["action"], "tag": "in-domain"}
+{"intent": "從 expenses.csv 生成本月出差費用報告 PDF", "expected_cli": "expense-report", "expected_params_keys": ["action", "input"], "tag": "in-domain"}
+{"intent": "新增 Netflix 月費 NT$390 到訂閱清單", "expected_cli": "sub-cost", "expected_params_keys": ["action"], "tag": "in-domain"}
+{"intent": "查詢 USD/TWD 現在的匯率", "expected_cli": "fx-rate", "expected_params_keys": ["action", "from", "to"], "tag": "in-domain"}
+{"intent": "記錄一筆 500 JPY 的餐飲支出，自動換算成 TWD", "expected_cli": "multi-ccy-ledger", "expected_params_keys": ["action"], "tag": "in-domain"}
+{"intent": "查詢我的 BTC 0.5 顆和 ETH 2 顆目前的總市值（TWD）", "expected_cli": "crypto-portfolio", "expected_params_keys": ["action"], "tag": "in-domain"}
+{"intent": "新增資產：儲蓄帳戶 TWD 500,000", "expected_cli": "net-worth", "expected_params_keys": ["action"], "tag": "in-domain"}
+{"intent": "設定本月餐飲預算 NT$8,000，交通預算 NT$3,000", "expected_cli": "budget-guard", "expected_params_keys": ["action"], "tag": "in-domain"}
+{"intent": "收集 2023 年全年薪資、投資和其他收入資料", "expected_cli": "tax-collect", "expected_params_keys": ["action"], "tag": "in-domain"}
+{"intent": "新增一張 2024-03-15 的電腦周邊發票，金額 NT$3,500", "expected_cli": "invoice-vault", "expected_params_keys": ["action"], "tag": "in-domain"}
+{"intent": "為客戶 ABC 公司生成本月服務費發票，金額 NT$50,000", "expected_cli": "invoice-gen", "expected_params_keys": ["action"], "tag": "in-domain"}
+{"intent": "計算本金 50 萬，年報酬 7%，投資 20 年的終值", "expected_cli": "compound-calc", "expected_params_keys": ["action", "rate"], "tag": "in-domain"}
+{"intent": "查詢 AAPL 100 股、TSLA 50 股目前的市值和損益", "expected_cli": "stock-track", "expected_params_keys": ["action"], "tag": "in-domain"}
+{"intent": "比對 bank-statement.csv 和 my-records.csv，找出未配對項目", "expected_cli": "recon-bot", "expected_params_keys": ["action"], "tag": "in-domain"}
+{"intent": "試算房貸 1000 萬，利率 1.8%，貸款期限 30 年的月付金額", "expected_cli": "loan-calc", "expected_params_keys": ["action", "principal"], "tag": "in-domain"}
+{"intent": "計算價值 NT$120,000 的筆電，使用年限 5 年，殘值 NT$10,000 的直線折舊", "expected_cli": "depreciate-calc", "expected_params_keys": ["action", "cost", "life_years"], "tag": "in-domain"}
+{"intent": "記錄 Alice 付了 NT$3,000 餐費，4 人平均分攤", "expected_cli": "split-bill", "expected_params_keys": ["action"], "tag": "in-domain"}
+{"intent": "試算年收入 NT$1,200,000，已預扣稅 NT$60,000，應補繳或退稅金額", "expected_cli": "tax-est", "expected_params_keys": ["action"], "tag": "in-domain"}
+{"intent": "掃描 statement.csv 找出重複扣款（相同金額、相同來源、3天內）", "expected_cli": "dup-charge", "expected_params_keys": ["action"], "tag": "in-domain"}
+{"intent": "把 apple_health.csv 和 fitbit_export.csv 合併，找出兩邊不同的紀錄", "expected_cli": "health-merge", "expected_params_keys": ["action", "source_a", "source_b"], "tag": "in-domain"}
+{"intent": "掃描今天的飲食記錄 food_log.txt 並計算總熱量", "expected_cli": "cal-count", "expected_params_keys": ["action"], "tag": "in-domain"}
+{"intent": "每 60 分鐘提醒我喝 250ml 水", "expected_cli": "water-nudge", "expected_params_keys": ["action", "interval_minutes"], "tag": "in-domain"}
+{"intent": "每 30 分鐘提醒我站起來伸展", "expected_cli": "stand-up", "expected_params_keys": ["action", "interval_minutes"], "tag": "in-domain"}
+{"intent": "分析 sleep_data.csv 過去 30 天的睡眠趨勢", "expected_cli": "sleep-trends", "expected_params_keys": ["action", "input_file"], "tag": "in-domain"}
+{"intent": "幫我生成一份以增肌為目標的 4 天訓練計畫", "expected_cli": "workout-plan", "expected_params_keys": ["action"], "tag": "in-domain"}
+{"intent": "記錄今天臥推 PR：100kg 3 下", "expected_cli": "pr-log", "expected_params_keys": ["action", "exercise"], "tag": "in-domain"}
+{"intent": "掃描 morning_run.gpx 分析配速和心率", "expected_cli": "run-analyze", "expected_params_keys": ["action"], "tag": "in-domain"}
+{"intent": "每 90 分鐘提醒我做頸部和背部拉伸", "expected_cli": "stretch-cron", "expected_params_keys": ["action"], "tag": "in-domain"}
+{"intent": "比對最近兩個月的週期差異", "expected_cli": "cycle-track", "expected_params_keys": ["action"], "tag": "in-domain"}
+{"intent": "設定每天早上 8:00 提醒吃血壓藥", "expected_cli": "med-reminder", "expected_params_keys": ["action"], "tag": "in-domain"}
+{"intent": "分析番茄炒蛋食譜（雞蛋3顆、番茄2顆）的營養", "expected_cli": "recipe-nutri", "expected_params_keys": ["action"], "tag": "in-domain"}
+{"intent": "記錄今天情緒：開心 8 分，附帶備註「完成了大型專案」", "expected_cli": "mood-log", "expected_params_keys": ["action"], "tag": "in-domain"}
+{"intent": "開始 15 分鐘冥想，結束時發出提示音", "expected_cli": "meditate", "expected_params_keys": ["action", "duration_minutes"], "tag": "in-domain"}
+{"intent": "掃描 weight_log.csv 並產生過去 90 天的趨勢圖", "expected_cli": "weight-trend", "expected_params_keys": ["action"], "tag": "in-domain"}
+{"intent": "解讀我的健檢報告 lab_report_2024.pdf 中的所有異常值", "expected_cli": "lab-explain", "expected_params_keys": ["action"], "tag": "in-domain"}
+{"intent": "按照 20-20-20 法則每 20 分鐘提醒我休息眼睛", "expected_cli": "eye-rest", "expected_params_keys": ["action", "interval_minutes"], "tag": "in-domain"}
+{"intent": "啟動步數追蹤，今天目標 10000 步", "expected_cli": "step-goal", "expected_params_keys": ["action"], "tag": "in-domain"}
+{"intent": "查詢 Warfarin 和 Aspirin 的藥物交互作用", "expected_cli": "drug-check", "expected_params_keys": ["action"], "tag": "in-domain"}
+{"intent": "幫我規劃一條以胸部訓練為主的健身房動線", "expected_cli": "gym-route", "expected_params_keys": ["action", "focus"], "tag": "in-domain"}
+{"intent": "把 demo.mp4 的前 10 秒轉成 GIF，解析度 480p", "expected_cli": "video-to-gif", "expected_params_keys": ["action"], "tag": "in-domain"}
+{"intent": "把 interview.mp4 壓縮到 50MB 以內", "expected_cli": "video-compress", "expected_params_keys": ["action"], "tag": "in-domain"}
+{"intent": "把 lecture.mp4 從 10:30 到 25:00 的部分剪出來", "expected_cli": "video-trim", "expected_params_keys": ["action"], "tag": "in-domain"}
+{"intent": "幫 webinar.mp4 自動產生中文字幕", "expected_cli": "auto-subtitle", "expected_params_keys": ["action", "language"], "tag": "in-domain"}
+{"intent": "把 movie_en.srt 翻譯成繁體中文", "expected_cli": "sub-translate", "expected_params_keys": ["action", "target_lang"], "tag": "in-domain"}
+{"intent": "批次壓縮 photos/ 目錄下所有 JPG，目標每張不超過 200KB", "expected_cli": "img-shrink", "expected_params_keys": ["action"], "tag": "in-domain"}
+{"intent": "把 product.jpg 去背並輸出 PNG", "expected_cli": "bg-remove", "expected_params_keys": ["action"], "tag": "in-domain"}
+{"intent": "在 screenshot.png 的座標 (100,200) 加上紅色箭頭和文字「點這裡」", "expected_cli": "shot-annotate", "expected_params_keys": ["action"], "tag": "in-domain"}
+{"intent": "把 receipt.png 中座標 (50,100,200,130) 的區域模糊", "expected_cli": "shot-blur", "expected_params_keys": ["action"], "tag": "in-domain"}
+{"intent": "批次把 images/ 目錄下所有 PNG 轉成 JPEG", "expected_cli": "img-transcode", "expected_params_keys": ["action", "target_format"], "tag": "in-domain"}
+{"intent": "為 product_images/ 所有圖片產生 200x200 縮圖", "expected_cli": "thumb-make", "expected_params_keys": ["action"], "tag": "in-domain"}
+{"intent": "把 movie.hevc 重編碼為 H.264 並輸出 movie_h264.mp4", "expected_cli": "video-recode", "expected_params_keys": ["action"], "tag": "in-domain"}
+{"intent": "對 podcast_raw.wav 進行降噪處理", "expected_cli": "audio-denoise", "expected_params_keys": ["action"], "tag": "in-domain"}
+{"intent": "把 meeting.mp3 轉成中文文字稿", "expected_cli": "audio-stt", "expected_params_keys": ["action"], "tag": "in-domain"}
+{"intent": "把 article.txt 轉成繁體中文語音 MP3", "expected_cli": "text-tts", "expected_params_keys": ["action", "language"], "tag": "in-domain"}
+{"intent": "把 stream.mp4 切成每段 90 秒的短影片並匯出", "expected_cli": "live-clip", "expected_params_keys": ["action", "input_file"], "tag": "in-domain"}
+{"intent": "幫我摘要 lecture.mp4 的主要重點，用中文輸出", "expected_cli": "video-summary", "expected_params_keys": ["action"], "tag": "in-domain"}
+{"intent": "辨識 receipt.jpg 中的所有文字並輸出 TXT", "expected_cli": "img-ocr", "expected_params_keys": ["action"], "tag": "in-domain"}
+{"intent": "清除 photo.jpg 的所有 EXIF 資訊", "expected_cli": "exif-clean", "expected_params_keys": ["action"], "tag": "in-domain"}
+{"intent": "最佳化 animation.gif，目標縮小到 500KB 以內", "expected_cli": "gif-opt", "expected_params_keys": ["action"], "tag": "in-domain"}
+{"intent": "抓取 https://example.com/news 的所有新聞標題", "expected_cli": "web-fetch", "expected_params_keys": ["action"], "tag": "in-domain"}
+{"intent": "用 headless 模式抓取 https://spa.example.com 的資料", "expected_cli": "headless-fetch", "expected_params_keys": ["action", "url"], "tag": "in-domain"}
+{"intent": "掃描 https://gov.example.com/news 監控是否有新公告", "expected_cli": "page-watch", "expected_params_keys": ["action"], "tag": "in-domain"}
+{"intent": "追蹤 https://shop.example.com/item/42 的價格，低於 2000 元通知我", "expected_cli": "price-watch", "expected_params_keys": ["action"], "tag": "in-domain"}
+{"intent": "掃描 https://api.example.com/health 的 API 健康狀態", "expected_cli": "api-monitor", "expected_params_keys": ["action"], "tag": "in-domain"}
+{"intent": "掃描 example.com 的 SSL 憑證剩餘天數", "expected_cli": "cert-watch", "expected_params_keys": ["action"], "tag": "in-domain"}
+{"intent": "聚合 feeds.txt 中所有 RSS 訂閱的今日新文章", "expected_cli": "rss-fold", "expected_params_keys": ["action"], "tag": "in-domain"}
+{"intent": "傳送 ping 給 https://service.example.com 確認可達性", "expected_cli": "uptime-ping", "expected_params_keys": ["action"], "tag": "in-domain"}
+{"intent": "掃描 https://docs.example.com 的所有連結並找出 404", "expected_cli": "link-check", "expected_params_keys": ["action"], "tag": "in-domain"}
+{"intent": "掃描 https://mysite.com 的首頁效能指標", "expected_cli": "perf-audit", "expected_params_keys": ["action"], "tag": "in-domain"}
+{"intent": "掃描 https://mywebsite.com 的首頁 SEO 問題", "expected_cli": "seo-audit", "expected_params_keys": ["action"], "tag": "in-domain"}
+{"intent": "分析 capture.pcap 的網路流量摘要", "expected_cli": "pcap-brief", "expected_params_keys": ["action", "input_file"], "tag": "in-domain"}
+{"intent": "掃描 https://example.com 並產生 sitemap.xml", "expected_cli": "sitemap-gen", "expected_params_keys": ["action", "url"], "tag": "in-domain"}
+{"intent": "從 https://product.example.com/item/1 提取 JSON-LD 資料", "expected_cli": "ld-extract", "expected_params_keys": ["action"], "tag": "in-domain"}
+{"intent": "截取 https://jp.example.com 並翻譯成繁體中文", "expected_cli": "web-snap-tr", "expected_params_keys": ["action", "target_lang"], "tag": "in-domain"}
+{"intent": "把 https://important-article.com/post/123 存成離線 HTML", "expected_cli": "page-archive", "expected_params_keys": ["action"], "tag": "in-domain"}
+{"intent": "比對 old_page.html 和 https://example.com 當前的差異", "expected_cli": "page-diff", "expected_params_keys": ["action"], "tag": "in-domain"}
+{"intent": "用守規範爬蟲抓取 https://data.example.com，遵守 robots.txt", "expected_cli": "polite-crawler", "expected_params_keys": ["action", "url"], "tag": "in-domain"}
+{"intent": "嗅探 https://api.example.com 的可用端點", "expected_cli": "api-sniff", "expected_params_keys": ["action", "base_url"], "tag": "in-domain"}
+{"intent": "掃描並找出與「氣象預測」相關的公開資料集", "expected_cli": "dataset-find", "expected_params_keys": ["action", "keyword"], "tag": "in-domain"}
+{"intent": "分析 sales_data.csv 各欄的統計摘要", "expected_cli": "csv-stat", "expected_params_keys": ["action", "input_file"], "tag": "in-domain"}
+{"intent": "在終端機畫出 sales.csv 的 monthly_revenue 折線圖", "expected_cli": "term-plot", "expected_params_keys": ["action", "chart_type"], "tag": "in-domain"}
+{"intent": "對 orders.csv 執行 SELECT product, SUM(amount) GROUP BY product", "expected_cli": "csv-sql", "expected_params_keys": ["action", "query"], "tag": "in-domain"}
+{"intent": "用 sales.csv 建立按月份和產品分類的銷售額樞紐表", "expected_cli": "pivot-quick", "expected_params_keys": ["action", "columns", "index", "input_file", "values"], "tag": "in-domain"}
+{"intent": "A 組 500 次曝光 45 次轉換，B 組 500 次 60 次，結果顯著嗎", "expected_cli": "ab-test", "expected_params_keys": ["action"], "tag": "in-domain"}
+{"intent": "分解 monthly_sales.csv 的時間序列，找出趨勢和季節性", "expected_cli": "ts-decompose", "expected_params_keys": ["action", "input_file"], "tag": "in-domain"}
+{"intent": "偵測 sensor_data.csv 中的溫度異常值", "expected_cli": "anomaly-detect", "expected_params_keys": ["action", "input_file"], "tag": "in-domain"}
+{"intent": "對 customers.csv 做 K=4 的 K-Means 群集分析", "expected_cli": "cluster-quick", "expected_params_keys": ["action", "input_file"], "tag": "in-domain"}
+{"intent": "對 sales_data.csv 產生完整 EDA 報告", "expected_cli": "eda-report", "expected_params_keys": ["action", "input_file"], "tag": "in-domain"}
+{"intent": "對 housing.csv 做線性迴歸，預測 price 欄位", "expected_cli": "regress-quick", "expected_params_keys": ["action", "input_file", "target"], "tag": "in-domain"}
+{"intent": "對 housing.csv 所有數值欄位畫相關矩陣", "expected_cli": "corr-matrix", "expected_params_keys": ["action", "input_file"], "tag": "in-domain"}
+{"intent": "為月銷售趨勢折線圖自動產生標題", "expected_cli": "chart-title", "expected_params_keys": ["action"], "tag": "in-domain"}
+{"intent": "為 sales_chart.png 產生無障礙 alt 文字描述", "expected_cli": "chart-alt", "expected_params_keys": ["action"], "tag": "in-domain"}
+{"intent": "用 monthly_kpi.csv 建立月度 KPI 報表", "expected_cli": "report-build", "expected_params_keys": ["action", "input_file", "output_file"], "tag": "in-domain"}
+{"intent": "顯示 kpi_data.csv 的本月 KPI 達成狀況", "expected_cli": "kpi-board", "expected_params_keys": ["action"], "tag": "in-domain"}
+{"intent": "計算 monthly_sales.csv 的月環比和年同比", "expected_cli": "period-cmp", "expected_params_keys": ["action", "compare_type", "input_file"], "tag": "in-domain"}
+{"intent": "模擬售價調整 5%、10%、15% 時的利潤變化", "expected_cli": "what-if", "expected_params_keys": ["action", "input_file"], "tag": "in-domain"}
+{"intent": "對 user_orders.csv 做月份 cohort 留存分析", "expected_cli": "cohort-analyze", "expected_params_keys": ["action", "input_file"], "tag": "in-domain"}
+{"intent": "把 quarterly_sales.csv 的資料轉成業績敘述報告", "expected_cli": "data-narrate", "expected_params_keys": ["action", "input_file"], "tag": "in-domain"}
+{"intent": "用 monthly_sales.csv 預測未來 6 個月的銷售", "expected_cli": "forecast-quick", "expected_params_keys": ["action", "input_file", "periods"], "tag": "in-domain"}
+{"intent": "自動路由這批 prompts.txt 到最適合的模型", "expected_cli": "llm-route", "expected_params_keys": ["action"], "tag": "in-domain"}
+{"intent": "把 test_prompts.jsonl 同時送給 claude-3-haiku 和 claude-3-sonnet 比較", "expected_cli": "llm-compare", "expected_params_keys": ["action"], "tag": "in-domain"}
+{"intent": "對 documents.csv 的 content 欄位建立 FAISS 向量索引", "expected_cli": "embed-index", "expected_params_keys": ["action"], "tag": "in-domain"}
+{"intent": "評估 rag_outputs.jsonl 的回答品質", "expected_cli": "rag-eval", "expected_params_keys": ["action", "input_file"], "tag": "in-domain"}
+{"intent": "用 test_cases.jsonl 測試新版 prompt 的通過率", "expected_cli": "prompt-eval", "expected_params_keys": ["action", "test_file"], "tag": "in-domain"}
+{"intent": "用 response_schema.json 驗證 llm_outputs.jsonl 的格式", "expected_cli": "llm-jsonschema", "expected_params_keys": ["action", "input_file", "schema_file"], "tag": "in-domain"}
+{"intent": "檢查 ai_answers.jsonl 的回答是否有幻覺", "expected_cli": "halluc-check", "expected_params_keys": ["action", "input_file"], "tag": "in-domain"}
+{"intent": "把 qa_pairs.csv 轉成 Claude fine-tuning JSONL 格式", "expected_cli": "ft-dataset", "expected_params_keys": ["action", "input_file"], "tag": "in-domain"}
+{"intent": "對 training_data.jsonl 做語意去重", "expected_cli": "data-dedupe-ml", "expected_params_keys": ["action", "input_file", "text_col"], "tag": "in-domain"}
+{"intent": "分析 api_usage.jsonl 的 token 消耗和成本", "expected_cli": "llm-cost-opt", "expected_params_keys": ["action", "input_file"], "tag": "in-domain"}
+{"intent": "把 long_document.txt 截斷到 4096 tokens", "expected_cli": "tok-trim", "expected_params_keys": ["action"], "tag": "in-domain"}
+{"intent": "用 agent_tasks.jsonl 評估我的 agent 任務完成率", "expected_cli": "agent-eval", "expected_params_keys": ["action", "task_file"], "tag": "in-domain"}
+{"intent": "啟動 LLM 快取服務，連接 Redis", "expected_cli": "llm-cache", "expected_params_keys": ["action", "redis_url"], "tag": "in-domain"}
+{"intent": "登記新模型版本 claude-3-5-sonnet-20241022 到 vault", "expected_cli": "model-vault", "expected_params_keys": ["action"], "tag": "in-domain"}
+{"intent": "對 chatbot system prompt 做提示注入測試", "expected_cli": "pi-test", "expected_params_keys": ["action"], "tag": "in-domain"}
+{"intent": "比較 baseline_embeddings.npy 和 current_embeddings.npy 的漂移", "expected_cli": "embed-drift", "expected_params_keys": ["action"], "tag": "in-domain"}
+{"intent": "追蹤 fine_tuning_job_id=ft-xxx 的訓練進度", "expected_cli": "ft-monitor", "expected_params_keys": ["action"], "tag": "in-domain"}
+{"intent": "把 llama3_8b 模型量化成 Q4_K_M GGUF 格式", "expected_cli": "model-quant", "expected_params_keys": ["action"], "tag": "in-domain"}
+{"intent": "對 claude-3-haiku 跑 100 次推論速度測試", "expected_cli": "infer-bench", "expected_params_keys": ["action"], "tag": "in-domain"}
+{"intent": "把 api_logs.jsonl 回放到新模型 claude-3-5-sonnet-20241022", "expected_cli": "llm-replay", "expected_params_keys": ["action", "output_file"], "tag": "in-domain"}
+{"intent": "查詢 john@example.com 這個帳號是否有洩漏紀錄", "expected_cli": "pwn-check", "expected_params_keys": ["email", "input_file", "password"], "tag": "in-domain"}
+{"intent": "產生一組 16 字元包含大小寫英數和符號的密碼", "expected_cli": "pw-gen", "expected_params_keys": ["count", "include_symbols", "length", "output_file"], "tag": "in-domain"}
+{"intent": "用密碼 secret123 加密 report.pdf", "expected_cli": "file-crypt", "expected_params_keys": ["mode"], "tag": "in-domain"}
+{"intent": "產生 RSA-2048 金鑰對並儲存到 keys/ 目錄", "expected_cli": "key-exchange", "expected_params_keys": ["action", "algorithm", "key_file", "key_size", "output", "output_dir", "peer_public_key"], "tag": "in-domain"}
+{"intent": "掃描 ./src 資料夾下所有 Python 檔案的 secrets", "expected_cli": "secret-scan", "expected_params_keys": ["file_pattern", "scan_history", "target_dir", "target_file"], "tag": "in-domain"}
+{"intent": "遮蔽 customer_data.csv 裡所有的電話和 email", "expected_cli": "pii-mask", "expected_params_keys": ["input_dir", "input_file", "output_file", "pii_types"], "tag": "in-domain"}
+{"intent": "掃描 ./myapp 並產生 CycloneDX JSON 格式的 SBOM", "expected_cli": "sbom-gen", "expected_params_keys": ["docker_image", "format", "output_file", "project_dir", "requirements_file"], "tag": "in-domain"}
+{"intent": "查詢 CVE-2021-44228 的詳細資訊和 CVSS 分數", "expected_cli": "cve-check", "expected_params_keys": ["cve_id", "package_name", "requirements_file", "severity", "version"], "tag": "in-domain"}
+{"intent": "稽核 api.example.com 的 TLS 設定", "expected_cli": "tls-audit", "expected_params_keys": ["check_ciphers", "host", "hosts_file", "port"], "tag": "in-domain"}
+{"intent": "分析 auth.log 並告警所有在凌晨 0-5 點的登入事件", "expected_cli": "behavior-alert", "expected_params_keys": ["log_file"], "tag": "in-domain"}
+{"intent": "檢查 http://suspicious-site.com/login 是否為釣魚連結", "expected_cli": "link-safe", "expected_params_keys": ["extract_urls", "input_file", "url"], "tag": "in-domain"}
+{"intent": "摘要 google_privacy_policy.txt 的主要條款", "expected_cli": "policy-brief", "expected_params_keys": ["input_file"], "tag": "in-domain"}
+{"intent": "查詢 example.com 的 A 和 MX 記錄", "expected_cli": "dns-trust", "expected_params_keys": ["domain"], "tag": "in-domain"}
+{"intent": "產生 WireGuard 伺服器端設定檔，IP 為 10.0.0.1/24", "expected_cli": "vpn-config", "expected_params_keys": ["action", "config_file", "ip", "peers_file", "role", "target_config", "type"], "tag": "in-domain"}
+{"intent": "在 photo.jpg 右下角加入半透明的 CONFIDENTIAL 浮水印", "expected_cli": "watermark", "expected_params_keys": ["input_dir", "input_file", "opacity", "position", "style", "text", "watermark_image"], "tag": "in-domain"}
+{"intent": "偵測 leaked_image.png 中是否含有浮水印", "expected_cli": "wm-detect", "expected_params_keys": ["input_dir", "input_file", "method", "output_report"], "tag": "in-domain"}
+{"intent": "驗證 software.tar.gz 的 GPG 簽章 software.tar.gz.sig", "expected_cli": "sig-verify", "expected_params_keys": ["input_file"], "tag": "in-domain"}
+{"intent": "輪轉 .env 裡的 SECRET_KEY 並更新設定", "expected_cli": "key-rotate", "expected_params_keys": ["action", "config_file", "key_name", "keys_dir", "max_age_days"], "tag": "in-domain"}
+{"intent": "對 system_prompt.txt 的 AI 系統跑 100 個 jailbreak 測試", "expected_cli": "redteam-prompt", "expected_params_keys": ["attack_type", "num_tests", "output_file", "system_prompt_file", "target_endpoint"], "tag": "in-domain"}
+{"intent": "掃描 ./src 程式碼是否有未授權的個資收集", "expected_cli": "gdpr-scan", "expected_params_keys": ["check_retention", "input_file", "output_report", "regulation", "target_dir"], "tag": "in-domain"}
+{"intent": "清理所有停止的容器、沒用的 image 和 volume", "expected_cli": "docker-cleanup", "expected_params_keys": ["clean_containers", "clean_images", "clean_volumes", "dry_run", "older_than_days"], "tag": "in-domain"}
+{"intent": "按依賴順序啟動 docker-compose.yml 的所有服務", "expected_cli": "compose-orch", "expected_params_keys": ["action", "compose_file", "compose_files", "then_start", "wait_for"], "tag": "in-domain"}
+{"intent": "同時追蹤 production namespace 下 app=api 標籤的所有 pod 日誌", "expected_cli": "k8s-tail", "expected_params_keys": ["deployment", "grep", "label", "namespace", "output_file", "tail_lines"], "tag": "in-domain"}
+{"intent": "切換到 production-cluster 的 k8s context", "expected_cli": "kctx-flip", "expected_params_keys": ["action", "context_name", "kubeconfig"], "tag": "in-domain"}
+{"intent": "摘要 terraform.plan 的所有資源變更", "expected_cli": "tf-brief", "expected_params_keys": ["plan_file"], "tag": "in-domain"}
+{"intent": "分析 AWS 帳號過去 30 天的費用並找出最貴的服務", "expected_cli": "cloud-cost", "expected_params_keys": ["provider"], "tag": "in-domain"}
+{"intent": "分析 ci_log.txt 的失敗原因並給出修復建議", "expected_cli": "ci-diag", "expected_params_keys": ["categorize", "log_file", "provider", "run_id"], "tag": "in-domain"}
+{"intent": "回滾 k8s my-app deployment 到上一個版本", "expected_cli": "deploy-rollback", "expected_params_keys": ["platform"], "tag": "in-domain"}
+{"intent": "開啟 new_checkout feature flag", "expected_cli": "flag-cli", "expected_params_keys": ["action", "config_file", "flag_name", "rollout_percentage"], "tag": "in-domain"}
+{"intent": "寫一個查詢過去 5 分鐘 HTTP 500 錯誤率的 PromQL", "expected_cli": "promql-helper", "expected_params_keys": ["action", "output_format", "query", "requirement"], "tag": "in-domain"}
+{"intent": "從 http://old-grafana:3000 匯出所有 dashboard", "expected_cli": "grafana-port", "expected_params_keys": ["action", "dashboards_dir", "source_url", "target_url"], "tag": "in-domain"}
+{"intent": "語法驗證 /etc/nginx/nginx.conf", "expected_cli": "nginx-try", "expected_params_keys": ["config_file"], "tag": "in-domain"}
+{"intent": "分析 slow_query.log 找出最慢的 10 條 SQL", "expected_cli": "slow-sql", "expected_params_keys": ["log_file"], "tag": "in-domain"}
+{"intent": "產生新的 Alembic migration 腳本，說明加了 user_profile 表", "expected_cli": "schema-mig", "expected_params_keys": ["action"], "tag": "in-domain"}
+{"intent": "備份 PostgreSQL mydb 資料庫到 backup/mydb_20260427.sql.gz", "expected_cli": "db-snap", "expected_params_keys": ["db_type"], "tag": "in-domain"}
+{"intent": "產生 Filebeat 設定：監控 /var/log/nginx/ 並傳送到 Elasticsearch", "expected_cli": "log-ship", "expected_params_keys": ["action", "agent", "bucket", "config_file", "destination", "destination_url", "source_path"], "tag": "in-domain"}
+{"intent": "用 Trivy 掃描 nginx:latest image 的所有漏洞", "expected_cli": "img-scan", "expected_params_keys": ["compose_file", "image", "output_report", "scanner", "severity"], "tag": "in-domain"}
+{"intent": "完整稽核 example.com 的所有 DNS 記錄", "expected_cli": "dns-audit", "expected_params_keys": ["audit_all", "check_email_security", "domain", "domains_file", "output_report"], "tag": "in-domain"}
+{"intent": "檢查 example.com 的 SSL 憑證到期日", "expected_cli": "ssl-renew-check", "expected_params_keys": ["host", "hosts_file", "output_report", "warn_days"], "tag": "in-domain"}
+{"intent": "產生 Python Flask 專案的 GitHub Actions CI 模板", "expected_cli": "pipeline-tpl", "expected_params_keys": ["platform"], "tag": "in-domain"}
+{"intent": "在 ~/notes 搜尋含有 machine learning 的筆記", "expected_cli": "note-search", "expected_params_keys": ["notes_dir", "query"], "tag": "in-domain"}
+{"intent": "找出 notes/ 裡所有連結到 python.md 的筆記", "expected_cli": "backlinks", "expected_params_keys": ["notes_dir"], "tag": "in-domain"}
+{"intent": "建立新 zettel：標題為「費曼學習法」並連結到「學習技巧」", "expected_cli": "zettel", "expected_params_keys": ["action"], "tag": "in-domain"}
+{"intent": "分析 ~/vault 生成筆記知識圖並輸出 graph.json", "expected_cli": "note-graph", "expected_params_keys": ["notes_dir"], "tag": "in-domain"}
+{"intent": "把 notion_export/ 的 Notion 匯出轉換為 Obsidian 格式", "expected_cli": "note-port", "expected_params_keys": ["source_format"], "tag": "in-domain"}
+{"intent": "按 H2 標題把 big_notes.md 拆分到 output/ 目錄", "expected_cli": "md-split", "expected_params_keys": ["input_file", "split_by"], "tag": "in-domain"}
+{"intent": "初始化 ~/notes 的 git 版控並做第一次提交", "expected_cli": "note-git", "expected_params_keys": ["action", "notes_dir"], "tag": "in-domain"}
+{"intent": "為 machine_learning_notes.md 建議適合的標籤", "expected_cli": "tag-suggest", "expected_params_keys": ["existing_tags_file", "input_file", "max_tags", "notes_dir", "only_untagged"], "tag": "in-domain"}
+{"intent": "收集 reading_notes/ 下所有 Markdown 的高亮文字", "expected_cli": "highlight-collect", "expected_params_keys": ["format", "group_by_source", "input_file", "notes_dir", "output_file"], "tag": "in-domain"}
+{"intent": "把 https://blog.example.com/article 轉成 Markdown 筆記", "expected_cli": "article-note", "expected_params_keys": ["format", "input_dir", "input_file", "output_dir", "output_file", "url"], "tag": "in-domain"}
+{"intent": "掃描 notes/ 找出相似度超過 85% 的重複筆記", "expected_cli": "note-dedupe", "expected_params_keys": ["file1", "file2", "notes_dir", "output_file", "threshold"], "tag": "in-domain"}
+{"intent": "為 notes/ 中出現的所有術語自動建立 wiki 連結", "expected_cli": "para-link", "expected_params_keys": ["add_anchors", "auto_link", "input_file", "link_from_dir", "notes_dir"], "tag": "in-domain"}
+{"intent": "融合 notes/ 裡所有關於 AI 主題的筆記", "expected_cli": "know-fuse", "expected_params_keys": ["deduplicate", "input_dir", "input_files", "notes_dir", "output_file", "topic"], "tag": "in-domain"}
+{"intent": "把 machine_learning.md 轉成知識摘要卡片", "expected_cli": "card-make", "expected_params_keys": ["card_format", "count", "input_dir", "input_file", "output_format"], "tag": "in-domain"}
+{"intent": "從 lecture.md 抽取 7 個最重要的學習要點", "expected_cli": "keypoint-pull", "expected_params_keys": ["focus", "input_dir", "input_file", "num_points", "output_dir"], "tag": "in-domain"}
+{"intent": "把 docs/ 的 Markdown 筆記用 MkDocs 建置成靜態網站", "expected_cli": "wiki-pub", "expected_params_keys": ["action", "docs_dir"], "tag": "in-domain"}
+{"intent": "整理 references.bib 並按作者姓氏排序", "expected_cli": "bib-tidy", "expected_params_keys": ["action", "deduplicate", "input_file", "input_files", "output_file", "sort_by"], "tag": "in-domain"}
+{"intent": "掃描 papers.bib 找出所有重複的文獻條目", "expected_cli": "paper-dedupe", "expected_params_keys": ["file1", "file2", "input_file", "method", "output_file", "papers_dir", "threshold"], "tag": "in-domain"}
+{"intent": "修復 thesis.tex 的 LaTeX 語法錯誤", "expected_cli": "latex-fix", "expected_params_keys": ["action", "fix_math", "input_dir", "input_file"], "tag": "in-domain"}
+{"intent": "把 wiki/ 的筆記部署到 VPS deploy@example.com:/var/www/wiki", "expected_cli": "wiki-deploy", "expected_params_keys": ["source_dir"], "tag": "in-domain"}
+{"intent": "在 arXiv 搜尋 retrieval augmented generation 最近 6 個月的論文", "expected_cli": "paper-find", "expected_params_keys": ["author", "min_citations", "months", "query", "source", "year"], "tag": "in-domain"}
+{"intent": "摘要 attention_is_all_you_need.pdf 的主要貢獻", "expected_cli": "paper-brief", "expected_params_keys": ["input_dir", "input_file", "language", "section", "summary_length"], "tag": "in-domain"}
+{"intent": "建立 references.bib 的引用網絡並輸出 graph.json", "expected_cli": "cite-graph", "expected_params_keys": ["depth", "input_file", "output_file", "paper_id", "papers_dir", "source", "top_cited"], "tag": "in-domain"}
+{"intent": "從 vocabulary.csv 建立新的 SRS 卡片組", "expected_cli": "srs-deck", "expected_params_keys": ["action"], "tag": "in-domain"}
+{"intent": "從 article.txt 抽取進階英文詞彙並製作含例句的卡片", "expected_cli": "vocab-card", "expected_params_keys": ["input_file"], "tag": "in-domain"}
+{"intent": "把 lecture_01.mp3 轉換成結構化 Markdown 學習筆記", "expected_cli": "lecture-notes", "expected_params_keys": ["input_dir", "input_file", "output_dir", "output_file", "use_subtitles"], "tag": "in-domain"}
+{"intent": "比較 book1.md 和 book2.md 對「機器學習」的解釋", "expected_cli": "book-cross", "expected_params_keys": ["books_dir", "files", "find", "topic"], "tag": "in-domain"}
+{"intent": "從 chapter3.md 產生 15 道選擇題含答案解析", "expected_cli": "quiz-gen", "expected_params_keys": ["question_type"], "tag": "in-domain"}
+{"intent": "進行 Python 後端工程師的技術面試模擬，10 道題", "expected_cli": "mock-interview", "expected_params_keys": ["type"], "tag": "in-domain"}
+{"intent": "評測 solution.py 針對 test_cases.json 的所有測試案例", "expected_cli": "exercise-judge", "expected_params_keys": ["solution_file"], "tag": "in-domain"}
+{"intent": "從 ai_notes.md 生成 AI 相關概念的關係地圖", "expected_cli": "concept-map", "expected_params_keys": ["depth", "input_file", "input_files", "output_file", "topic"], "tag": "in-domain"}
+{"intent": "建立論文追蹤：5 章，截止日 2026-12-31", "expected_cli": "thesis-track", "expected_params_keys": ["action"], "tag": "in-domain"}
+{"intent": "匯出 paper.pdf 的所有高亮和批注到 notes.md", "expected_cli": "pdf-marks", "expected_params_keys": ["input_dir", "input_file", "output_dir", "output_file", "pages"], "tag": "in-domain"}
+{"intent": "從 paper.pdf 抽取所有圖表到 figures/ 目錄", "expected_cli": "fig-pull", "expected_params_keys": ["output_dir"], "tag": "in-domain"}
+{"intent": "新增實驗紀錄：model=GPT-4, accuracy=0.92, loss=0.08", "expected_cli": "lab-log", "expected_params_keys": ["action"], "tag": "in-domain"}
+{"intent": "用「自然語言處理」跨語搜尋中英日三語的相關論文", "expected_cli": "multi-paper", "expected_params_keys": ["query"], "tag": "in-domain"}
+{"intent": "把「AI 對教育的影響」拆解成 5 個具體研究問題", "expected_cli": "rq-split", "expected_params_keys": ["input_file", "num_questions", "output_type", "research_topic", "suggest_methods"], "tag": "in-domain"}
+{"intent": "把 paper.md 的引用格式統一成 APA 7", "expected_cli": "paper-style", "expected_params_keys": ["action", "citation_style", "input_dir", "input_file", "style"], "tag": "in-domain"}
+{"intent": "為 results_figure.png 產生學術論文風格的圖說", "expected_cli": "caption-gen", "expected_params_keys": ["context_file", "input_dir", "input_file", "numbering", "style"], "tag": "in-domain"}
+{"intent": "訂閱 arXiv cs.LG 並篩選含有 large language model 的論文", "expected_cli": "arxiv-feed", "expected_params_keys": ["action", "author", "category", "keywords", "limit", "output_file"], "tag": "in-domain"}
+{"intent": "整合 emails/ 裡的訂房和機票確認信，生成行程表", "expected_cli": "trip-pack", "expected_params_keys": ["days", "destination", "input_dir", "input_file", "output_file", "output_format"], "tag": "in-domain"}
+{"intent": "追蹤 TPE-TYO 2026-07-01 出發的機票，低於 8000 元提醒", "expected_cli": "flight-watch", "expected_params_keys": ["destination", "origin"], "tag": "in-domain"}
+{"intent": "比較東京新宿 2026-07-10 入住 3 晚的住宿選項", "expected_cli": "stay-compare", "expected_params_keys": ["location"], "tag": "in-domain"}
+{"intent": "估算台灣人去東京 7 天的旅遊總費用", "expected_cli": "trip-budget", "expected_params_keys": ["action", "amount", "category", "days", "destination", "output_file", "style", "travelers"], "tag": "in-domain"}
+{"intent": "列出台灣護照前往日本需要的入境文件", "expected_cli": "visa-doc", "expected_params_keys": ["destination", "passport_country"], "tag": "in-domain"}
+{"intent": "把行程 itinerary.md 的所有時間轉換為當地時區", "expected_cli": "trip-tz", "expected_params_keys": ["action", "cities", "departure_time", "flight_hours", "from_tz", "input_file", "reference_time", "to_tz"], "tag": "in-domain"}
+{"intent": "生成去日本 5 天旅遊的行李清單，季節是秋天", "expected_cli": "pack-list", "expected_params_keys": ["climate", "days", "destination", "input_file", "season", "trip_type"], "tag": "in-domain"}
+{"intent": "查詢東京 2026-07-10 到 2026-07-15 的天氣預報", "expected_cli": "wx-brief", "expected_params_keys": ["date", "date_from", "date_to", "itinerary_file", "location"], "tag": "in-domain"}
+{"intent": "規劃東京新宿、淺草、上野、秋葉原的一日遊路線", "expected_cli": "route-build", "expected_params_keys": ["city", "from_location", "input_file", "locations", "optimize", "to_location", "transport"], "tag": "in-domain"}
+{"intent": "推薦東京新宿 Google 評分 4.5 以上的拉麵店", "expected_cli": "eats-suggest", "expected_params_keys": ["location"], "tag": "in-domain"}
+{"intent": "翻譯 menu.jpg 的日文菜單成繁體中文", "expected_cli": "menu-tr", "expected_params_keys": ["target_lang"], "tag": "in-domain"}
+{"intent": "建立前往日本的緊急聯絡卡，包含台灣大使館和當地緊急電話", "expected_cli": "emergency-card", "expected_params_keys": ["allergies", "blood_type", "destination", "include_embassy", "input_file", "output_file"], "tag": "in-domain"}
+{"intent": "新增失物：藍色 Sony 耳機，遺失於東京澀谷站", "expected_cli": "lost-list", "expected_params_keys": ["action"], "tag": "in-domain"}
+{"intent": "記錄加油：35 公升，里程 23500km，價格 1575 元", "expected_cli": "mpg-log", "expected_params_keys": ["action"], "tag": "in-domain"}
+{"intent": "查詢東京新宿到秋葉原 2026-07-10 14:00 後的電車", "expected_cli": "transit-time", "expected_params_keys": ["from", "to"], "tag": "in-domain"}
+{"intent": "根據 trip_notes.txt 和 itinerary.md 生成東京旅遊遊記", "expected_cli": "trip-recap", "expected_params_keys": ["destination", "diary_file", "itinerary_file", "max_length", "notes_file", "output_format", "photos_dir"], "tag": "in-domain"}
+{"intent": "建立東京旅遊分帳：Alice、Bob、Carol 三人", "expected_cli": "trip-split", "expected_params_keys": ["action"], "tag": "in-domain"}
+{"intent": "幫我翻譯「最近的地鐵站怎麼走」成日文", "expected_cli": "phrase-pal", "expected_params_keys": ["category", "count", "destination", "phrase", "target_language", "target_languages", "with_pronunciation"], "tag": "in-domain"}
+{"intent": "建議台灣人去日本 10 天的旅遊保險方案", "expected_cli": "travel-ins", "expected_params_keys": ["destination"], "tag": "in-domain"}
+{"intent": "檢查 itinerary.json 的行程是否有時間衝突", "expected_cli": "trip-conflict", "expected_params_keys": ["action", "files", "include_travel_time", "input_file"], "tag": "in-domain"}
+{"intent": "幫我比較 Sony WH-1000XM5 在蝦皮、momo、PChome 的價格", "expected_cli": "price-cmp", "expected_params_keys": ["platforms", "product_name"], "tag": "in-domain"}
+{"intent": "幫我查 Nike Air Max 90 過去 3 個月的價格紀錄", "expected_cli": "price-history", "expected_params_keys": ["days", "product_name"], "tag": "in-domain"}
+{"intent": "把牛奶、雞蛋、麵包加入今天的購物清單", "expected_cli": "shop-list", "expected_params_keys": ["list_name"], "tag": "in-domain"}
+{"intent": "幫我查蝦皮訂單 #SH20240127001 的出貨狀態", "expected_cli": "order-hub", "expected_params_keys": ["days", "order_id", "platform", "platforms", "status"], "tag": "in-domain"}
+{"intent": "追蹤訂單 #RT2024012 的退貨進度", "expected_cli": "return-track", "expected_params_keys": ["order_id", "platform", "remind_days", "return_date", "status"], "tag": "in-domain"}
+{"intent": "新增 momo 折扣碼 SAVE100，2024-02-29 到期，滿 500 折 100", "expected_cli": "coupon-vault", "expected_params_keys": ["code", "discount", "expire_date", "expire_within_days", "min_amount", "platform", "status"], "tag": "in-domain"}
+{"intent": "新增 Netflix 訂閱，每月 390 元，下次到期日 2024-02-15", "expected_cli": "sub-expire", "expected_params_keys": ["expire_date", "expire_within_days", "monthly_cost", "service", "show_all", "show_total"], "tag": "in-domain"}
+{"intent": "找出超過 60 天沒使用的訂閱服務", "expected_cli": "sub-cancel", "expected_params_keys": ["cancel_deadline", "inactive_days", "low_usage", "min_monthly_cost", "service", "status"], "tag": "in-domain"}
+{"intent": "設定衛生紙每 30 天補貨一次，庫存剩 2 包時提醒", "expected_cli": "restock", "expected_params_keys": ["days_supply", "due_within_days", "item", "last_purchase_date", "low_stock_threshold", "quantity", "restock_interval_days"], "tag": "in-domain"}
+{"intent": "幫媽媽的生日禮物加入清單，預算 1500 元，日期 2024-03-15", "expected_cli": "gift-list", "expected_params_keys": ["budget", "date", "gift", "occasion", "recipient", "sender", "sort_by", "status", "type", "value"], "tag": "in-domain"}
+{"intent": "提醒我今晚 8 點去結帳蝦皮購物車", "expected_cli": "cart-nudge", "expected_params_keys": ["deadline", "item_count", "note", "platform", "remind_time", "show_all"], "tag": "in-domain"}
+{"intent": "幫我摘要這款藍芽耳機的 200 則評價，找出最常見的優缺點", "expected_cli": "review-brief", "expected_params_keys": ["format", "language", "product_name", "product_url", "rating", "review_count"], "tag": "in-domain"}
+{"intent": "分析這個商品的 300 則評論，找出可能的假評論模式", "expected_cli": "review-real", "expected_params_keys": ["check_accounts", "days", "product_name", "review_count", "reviews_file", "seller_id", "suspicious_count", "threshold"], "tag": "in-domain"}
+{"intent": "設定本月購物預算上限為 5000 元，超過 80% 時警告", "expected_cli": "shop-guard", "expected_params_keys": ["amount", "item", "month", "monthly_budget", "platform", "show_detail", "warning_threshold"], "tag": "in-domain"}
+{"intent": "USD 299 折台幣，加上信用卡 1.5% 手續費，總共要付多少？", "expected_cli": "pay-est", "expected_params_keys": ["amount", "from_currency", "to_currency"], "tag": "in-domain"}
+{"intent": "設定 2024-01-28 15:00 的蝦皮搶購提醒，商品是 PS5 主機", "expected_cli": "flash-deal", "expected_params_keys": ["date", "event", "flash_time", "platform", "product", "remind_before_minutes"], "tag": "in-domain"}
+{"intent": "購物滿 1000 換購，我有 A(300)、B(450)、C(600)三件商品，怎麼組合最省？", "expected_cli": "combo-opt", "expected_params_keys": ["buy_count", "current_amount", "discount_rate", "free_shipping_threshold", "items", "threshold"], "tag": "in-domain"}
+{"intent": "記錄家裡有衛生紙 3 包，安全庫存是 2 包，低於時提醒", "expected_cli": "pantry-low", "expected_params_keys": ["added_quantity", "current_stock", "item", "min_stock", "show_low_stock_only", "unit"], "tag": "in-domain"}
+{"intent": "記錄二手 iPhone 12 在蝦皮上架，定價 8500 元，2024-01-27 上架", "expected_cli": "resell-pm", "expected_params_keys": ["days_listed", "final_price", "item", "list_date", "platform", "price", "status"], "tag": "in-domain"}
+{"intent": "Netflix 家庭方案每月 330 元，5 人共享，每人應付多少？", "expected_cli": "sub-share", "expected_params_keys": ["amount_per_person", "members", "monthly_cost", "paid_members", "service", "show_all", "show_unpaid", "unpaid_members"], "tag": "in-domain"}
+{"intent": "橋接小米智慧燈泡到 Google Home 生態系", "expected_cli": "iot-bridge", "expected_params_keys": ["broker_host", "device_type", "protocol", "show_connected", "source_platform", "source_protocol", "target_platform", "target_protocol"], "tag": "in-domain"}
+{"intent": "切換到電影模式：客廳燈調暗到 20%，電視開啟", "expected_cli": "scene-flip", "expected_params_keys": ["scene_name"], "tag": "in-domain"}
+{"intent": "設定客廳燈每天 23:00 關燈，07:00 開燈", "expected_cli": "light-schedule", "expected_params_keys": ["device", "devices", "dim_interval_minutes", "dim_step", "off_start", "off_time", "on_time", "repeat", "schedule_type", "start_time"], "tag": "in-domain"}
+{"intent": "設定規則：溫度超過 28°C 時自動將冷氣調到 26°C 冷氣模式", "expected_cli": "hvac-rule", "expected_params_keys": ["mode"], "tag": "in-domain"}
+{"intent": "摘要今天門口攝影機的所有動作偵測事件", "expected_cli": "cam-events", "expected_params_keys": ["camera_id", "date", "end_time", "event_type", "start_time"], "tag": "in-domain"}
+{"intent": "查詢今天大門的完整開關紀錄", "expected_cli": "lock-log", "expected_params_keys": ["access_method", "date", "days", "device", "event_type", "time_range", "user"], "tag": "in-domain"}
+{"intent": "查詢今天各房間的用電量分布", "expected_cli": "power-watch", "expected_params_keys": ["date", "group_by", "month", "notify", "period", "sort_by", "threshold_kwh", "top_n"], "tag": "in-domain"}
+{"intent": "查詢今天太陽能板的累計發電量和效率", "expected_cli": "solar-track", "expected_params_keys": ["compare_weather", "date", "days", "electricity_rate", "month", "panel_id"], "tag": "in-domain"}
+{"intent": "查看 HP LaserJet 的目前列印佇列狀態", "expected_cli": "print-queue", "expected_params_keys": ["action", "job_id", "printer_name", "show_queue"], "tag": "in-domain"}
+{"intent": "設定每天早上 7:00 和下午 6:00 各餵貓咪 50g 飼料", "expected_cli": "pet-feed", "expected_params_keys": ["amount_grams", "check_missed", "date", "extra_feed_time", "feed_times", "pet_name", "repeat"], "tag": "in-domain"}
+{"intent": "查詢客廳目前的 CO2、PM2.5 和溫濕度數值", "expected_cli": "air-watch", "expected_params_keys": ["action", "find_worst", "hours", "metric", "metrics", "notify", "room", "threshold", "unit"], "tag": "in-domain"}
+{"intent": "設定臥室窗簾每天 07:00 全開，22:00 全關", "expected_cli": "blind-schedule", "expected_params_keys": ["device"], "tag": "in-domain"}
+{"intent": "設定廚房漏水感測器觸發時傳送緊急通知", "expected_cli": "leak-alert", "expected_params_keys": ["sensor_type"], "tag": "in-domain"}
+{"intent": "檢查 Synology NAS 的所有硬碟 SMART 狀態", "expected_cli": "nas-health", "expected_params_keys": ["nas_host"], "tag": "in-domain"}
+{"intent": "分析今天各裝置的流量使用排名", "expected_cli": "home-traffic", "expected_params_keys": ["date", "days", "device_ip", "router_ip", "scan_devices", "sort_by", "top_n"], "tag": "in-domain"}
+{"intent": "設定每天凌晨 2 點備份 D:/Documents 到 NAS", "expected_cli": "home-backup", "expected_params_keys": ["dest_path", "execute_now", "last_n", "repeat", "schedule_time", "show_history", "source_path"], "tag": "in-domain"}
+{"intent": "立即將客廳和臥室攝影機切換到隱私模式", "expected_cli": "cam-privacy", "expected_params_keys": ["action", "cameras", "execute_now", "mode", "show_all", "show_status", "trigger", "wifi_ssid"], "tag": "in-domain"}
+{"intent": "檢查 rules.json 中所有自動化規則的時間和條件衝突", "expected_cli": "rule-conflict", "expected_params_keys": ["check_conflict", "check_type", "conflict_type", "new_rule", "rules_file", "show_details"], "tag": "in-domain"}
+{"intent": "監聽 broker 192.168.1.100 的 home/# 所有主題訊息", "expected_cli": "mqtt-tap", "expected_params_keys": ["topic"], "tag": "in-domain"}
+{"intent": "分析本月用電數據，給出前 3 項具體節能建議", "expected_cli": "energy-tip", "expected_params_keys": ["appliances", "electricity_rate", "household_size", "month", "standby_devices", "top_suggestions", "usage_data_file"], "tag": "in-domain"}
+{"intent": "把 contract_en.docx 翻譯成繁體中文，保留原始格式", "expected_cli": "doc-tr", "expected_params_keys": ["target_lang"], "tag": "in-domain"}
+{"intent": "翻譯 movie.srt 英文字幕到繁體中文", "expected_cli": "srt-tr", "expected_params_keys": ["target_lang"], "tag": "in-domain"}
+{"intent": "掃描 /src/locales 找出 en.json 有但 zh-TW.json 沒有的 key", "expected_cli": "i18n-keys", "expected_params_keys": ["compare_lang", "default_value", "key", "locale_file", "locales", "locales_dir", "show_empty", "source_lang"], "tag": "in-domain"}
+{"intent": "搜尋翻譯記憶庫中與「Submit button」相似度 80% 以上的條目", "expected_cli": "tm-store", "expected_params_keys": ["file_format", "import_file", "pairs_file", "query_text", "similarity_threshold", "source_lang", "target_lang"], "tag": "in-domain"}
+{"intent": "新增術語：'API Gateway' 中文為 'API 閘道'，標記為技術類", "expected_cli": "glossary", "expected_params_keys": ["category", "export_format", "output_file", "search_keyword", "source_lang", "source_term", "target_lang", "target_term"], "tag": "in-domain"}
+{"intent": "計算 machine_translation.txt 和 reference.txt 的 BLEU 分數", "expected_cli": "mt-eval", "expected_params_keys": ["reference_file"], "tag": "in-domain"}
+{"intent": "分析這段行銷文案翻成日文後的在地化問題", "expected_cli": "loc-suggest", "expected_params_keys": ["target_locale"], "tag": "in-domain"}
+{"intent": "對齊 readme_en.md 和 readme_zh.md，找出段落對應關係", "expected_cli": "lang-align", "expected_params_keys": ["check_missing", "files", "output_format", "source_file", "source_lang", "target_file", "target_lang"], "tag": "in-domain"}
+{"intent": "估算 en.json 翻成德文後的字串平均擴張率", "expected_cli": "str-expand-est", "expected_params_keys": ["source_file"], "tag": "in-domain"}
+{"intent": "為 homepage.html 生成英文、中文、日文的 hreflang 標籤", "expected_cli": "i18n-seo", "expected_params_keys": ["check_hreflang", "content_file", "generate_meta", "html_file", "locales", "pages_dir"], "tag": "in-domain"}
+{"intent": "掃描 /src 目錄所有 .py 檔，抽取所有中文字串", "expected_cli": "i18n-extract", "expected_params_keys": ["file_pattern", "lang_pattern", "output_file", "output_format", "source_dir", "source_file", "unwrapped_only"], "tag": "in-domain"}
+{"intent": "查詢波蘭文 (pl) 的 CLDR 複數規則分類", "expected_cli": "plural-rules", "expected_params_keys": ["locale"], "tag": "in-domain"}
+{"intent": "掃描 ar.html 找出所有缺少 RTL 方向屬性的文字容器", "expected_cli": "rtl-check", "expected_params_keys": ["check_dir_attr", "check_rtl_styles", "css_file", "generate_report", "html_file", "locale", "templates_dir"], "tag": "in-domain"}
+{"intent": "檢查 NotoSans.ttf 是否涵蓋繁體中文所有常用字", "expected_cli": "font-cover", "expected_params_keys": ["check_coverage", "compare", "font_file", "font_files", "show_missing", "target_locale", "target_text_file"], "tag": "in-domain"}
+{"intent": "掃描 marketing_ja.txt 找出對日本用戶可能冒犯的詞彙", "expected_cli": "culture-lint", "expected_params_keys": ["check_cultural", "content_file", "locales_dir", "report_file", "sensitivity_type", "target_locale", "text_file"], "tag": "in-domain"}
+{"intent": "估算 contract_5000words.docx 從英文翻成繁體中文的費用，人工翻譯每字 0.5 元", "expected_cli": "tr-cost", "expected_params_keys": ["compare", "human_rate", "languages_count", "mt_rate", "pages", "rate_per_page", "rate_per_word", "source_file", "source_lang", "target_lang", "word_count"], "tag": "in-domain"}
+{"intent": "把 article_en.txt 轉成中英並排對照格式，每段對應", "expected_cli": "bi-read", "expected_params_keys": ["input_file", "target_lang"], "tag": "in-domain"}
+{"intent": "辨識並翻譯 screenshot.png 中的日文文字到繁體中文", "expected_cli": "img-tr", "expected_params_keys": ["source_lang", "target_lang"], "tag": "in-domain"}
+{"intent": "將 video.mp4 的英文語音轉成繁體中文字幕並存為 SRT", "expected_cli": "stream-cc", "expected_params_keys": ["display", "input_file", "input_source", "output_format", "source_lang", "target_lang"], "tag": "in-domain"}
+{"intent": "將 2024-01-27 轉成美國 (en-US) 日期格式", "expected_cli": "locale-fmt", "expected_params_keys": ["target_locale"], "tag": "in-domain"}
+{"intent": "幫我生成一篇「Python 初學者入門」的部落格大綱，5個主要章節", "expected_cli": "outline-bot", "expected_params_keys": ["content_type", "topic"], "tag": "in-domain"}
+{"intent": "把 email_draft.txt 的語氣從正式改成輕鬆友善", "expected_cli": "voice-tune", "expected_params_keys": ["target_tone"], "tag": "in-domain"}
+{"intent": "把 article.txt 從 800 字縮短到 300 字以內，保留核心觀點", "expected_cli": "len-flex", "expected_params_keys": ["target_words"], "tag": "in-domain"}
+{"intent": "為「如何提升工作效率」這篇文章生成 3 種不同風格的開頭", "expected_cli": "hook-gen", "expected_params_keys": ["duration_seconds", "hook_count", "hook_type", "input_file", "medium", "styles", "topic"], "tag": "in-domain"}
+{"intent": "為「Python 學習指南」生成 5 個不同風格的標題變體", "expected_cli": "title-variants", "expected_params_keys": ["variants_count"], "tag": "in-domain"}
+{"intent": "為 blog_post.txt 生成 SEO title（60 字以內）和 meta description（160 字以內）", "expected_cli": "meta-gen", "expected_params_keys": ["content_file", "desc_max_chars", "include_og", "include_twitter_card", "overwrite_existing", "pages_dir", "title_max_chars"], "tag": "in-domain"}
+{"intent": "檢查 thesis.docx 的所有引用是否符合 APA 第 7 版格式", "expected_cli": "cite-check", "expected_params_keys": ["input_file"], "tag": "in-domain"}
+{"intent": "掃描 essay.txt 和 /reference_docs 中文件的相似度，門檻設 80%", "expected_cli": "plag-scan", "expected_params_keys": ["detail_report", "file_a", "file_b", "input_file", "output_report", "reference_dir", "similarity_threshold"], "tag": "in-domain"}
+{"intent": "用 newsletter_content.md 內容生成電子報 HTML，使用藍色主題", "expected_cli": "news-layout", "expected_params_keys": ["article_count", "content_file", "format", "output_file", "sections", "target_client", "theme"], "tag": "in-domain"}
+{"intent": "把 article.md 發佈到 WordPress 網站，分類為「技術」，加上標籤", "expected_cli": "blog-pub", "expected_params_keys": ["platform"], "tag": "in-domain"}
+{"intent": "為「3個省錢技巧」生成 60 秒 TikTok 腳本，含開場鉤子", "expected_cli": "short-script", "expected_params_keys": ["duration_seconds", "platform"], "tag": "in-domain"}
+{"intent": "為「數位遊牧生活」主題生成 20 分鐘 Podcast 獨白腳本", "expected_cli": "podcast-script", "expected_params_keys": ["format"], "tag": "in-domain"}
+{"intent": "為新產品上市生成 Instagram 貼文，附 10 個相關 Hashtag", "expected_cli": "social-post", "expected_params_keys": ["platform"], "tag": "in-domain"}
+{"intent": "把 blog_post.txt 分別改寫成 Instagram、Twitter、LinkedIn 版本", "expected_cli": "xpost", "expected_params_keys": ["input_file"], "tag": "in-domain"}
+{"intent": "為 product.jpg 生成 3 個不同風格的 Instagram 配文", "expected_cli": "caption-img", "expected_params_keys": ["image_dir", "image_file", "include_hashtags", "language", "platform", "style", "tone", "variants"], "tag": "in-domain"}
+{"intent": "評估 article.txt 的 Flesch-Kincaid 可讀性分數", "expected_cli": "read-score", "expected_params_keys": ["compare", "file_after", "file_before", "find_difficult", "input_file", "metric", "top_n"], "tag": "in-domain"}
+{"intent": "分析 essay.txt 中重複使用的句型和連接詞", "expected_cli": "syntax-rep", "expected_params_keys": ["check_connectors", "check_sentence_patterns", "check_sentence_starters", "diversity_score", "file_after", "file_before", "input_file", "repeat_threshold"], "tag": "in-domain"}
+{"intent": "從 report_50pages.pdf 第 1-20 頁抽取 5 個關鍵要點", "expected_cli": "gist-pull", "expected_params_keys": ["input_file"], "tag": "in-domain"}
+{"intent": "分析 story.txt 的敘事結構，找出起點、衝突、高潮、結局", "expected_cli": "story-arc", "expected_params_keys": ["structure_model"], "tag": "in-domain"}
+{"intent": "把「失敗是成功之母」這句話故事化，寫成 300 字的激勵短文", "expected_cli": "quote-story", "expected_params_keys": ["context", "language", "quote", "quotes_file", "story_length", "style", "target_words"], "tag": "in-domain"}
+{"intent": "摘要 service_contract.pdf 的主要條款，重點是付款、期限和終止", "expected_cli": "contract-brief", "expected_params_keys": ["input_file"], "tag": "in-domain"}
+{"intent": "掃描 employment_contract.pdf 找出高風險的競業禁止和保密條款", "expected_cli": "contract-risk", "expected_params_keys": ["input_file"], "tag": "in-domain"}
+{"intent": "比對 contract_v1.docx 和 contract_v2.docx 的差異，生成 Redline 報告", "expected_cli": "redline-diff", "expected_params_keys": ["file_new", "file_old"], "tag": "in-domain"}
+{"intent": "生成一份甲乙雙方的雙向 NDA，有效期 2 年，適用台灣法律", "expected_cli": "nda-tpl", "expected_params_keys": ["language", "nda_type"], "tag": "in-domain"}
+{"intent": "掃描 requirements.txt 的所有套件授權，找出與商業使用不相容的授權", "expected_cli": "license-compat", "expected_params_keys": ["check_compatibility", "check_conflicts", "licenses", "output_report", "package_file", "project_type", "requirements_file"], "tag": "in-domain"}
+{"intent": "為公司「ABC 科技」生成 2024 年的網站著作權聲明，繁體中文版", "expected_cli": "copyright-gen", "expected_params_keys": ["owner", "year"], "tag": "in-domain"}
+{"intent": "為電商網站生成符合台灣個資法的隱私政策，繁體中文版", "expected_cli": "privacy-gen", "expected_params_keys": ["business_type", "jurisdiction", "language"], "tag": "in-domain"}
+{"intent": "初查「CloudMind」這個品牌名稱在台灣是否已有商標", "expected_cli": "tm-prelim", "expected_params_keys": ["brand_name", "class"], "tag": "in-domain"}
+{"intent": "新增公司登記証書到保管庫，有效期 2025-12-31", "expected_cli": "corp-vault", "expected_params_keys": ["category", "document_name", "expire_within_days", "expiry_date", "file_path", "group_by", "show_all"], "tag": "in-domain"}
+{"intent": "生成報價單，客戶「大山公司」，3項服務，總金額 180000 元含稅", "expected_cli": "quote-gen", "expected_params_keys": ["client_name", "discount_rate", "items", "language", "output_format", "tax_rate", "validity_days"], "tag": "in-domain"}
+{"intent": "建立採購申請：辦公設備採購 50000 元，申請人小明，請款到 IT 部門", "expected_cli": "po-flow", "expected_params_keys": ["action", "amount", "approver", "department", "item", "month", "po_number", "requester", "sort_by", "status"], "tag": "in-domain"}
+{"intent": "草擬台灣 A 公司和日本 B 公司的技術合作備忘錄，中英雙語版", "expected_cli": "mou-draft", "expected_params_keys": ["language", "purpose"], "tag": "in-domain"}
+{"intent": "為新員工「王小明」建立到職 checklist，職位工程師，2024-02-01 到職", "expected_cli": "hr-onoff", "expected_params_keys": ["type"], "tag": "in-domain"}
+{"intent": "生成小明 2024-01-20 至 01-23 台北到東京出差的費用報帳單", "expected_cli": "travel-claim", "expected_params_keys": ["destination", "employee", "end_date", "expenses", "flag_over_limit", "include_signature", "output_format", "policy_limit", "start_date", "total_amount"], "tag": "in-domain"}
+{"intent": "為新客戶「ABC 公司」建立 onboarding checklist，使用 SaaS 產品", "expected_cli": "cust-onboard", "expected_params_keys": ["customer", "product_type", "show_completed", "show_pending", "sort_by", "start_date", "status"], "tag": "in-domain"}
+{"intent": "分析這封客訴郵件並路由到正確部門", "expected_cli": "ticket-route", "expected_params_keys": ["auto_assign", "auto_classify", "auto_route", "category", "sort_by", "status", "ticket_content", "tickets_file"], "tag": "in-domain"}
+{"intent": "查詢所有距離 SLA 截止時間不到 2 小時的工單", "expected_cli": "sla-watch", "expected_params_keys": ["alert_before_hours", "group_by", "month", "priority", "report_type", "send_alert", "status"], "tag": "in-domain"}
+{"intent": "監測 competitor_list.json 中 5 家競品的官網和新聞動態", "expected_cli": "comp-watch", "expected_params_keys": ["companies", "competitors_file", "days", "focus", "monitor_sources", "report_type", "track_features", "track_pricing"], "tag": "in-domain"}
+{"intent": "分析 bizplan.pdf 並提取所有可量化的 KPI 指標", "expected_cli": "bizplan-kpi", "expected_params_keys": ["actual_file", "business_model", "categorize", "extract_kpis", "input_file", "kpi_categories", "kpi_file", "period", "quarters"], "tag": "in-domain"}
+{"intent": "把 pitch_content.md 的內容排版成 10 頁 PowerPoint 簡報，使用深藍色商務模板", "expected_cli": "pitch-fmt", "expected_params_keys": ["auto_layout", "content_file", "output_file", "output_format", "sections", "slides", "template"], "tag": "in-domain"}
