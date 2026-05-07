@@ -1,8 +1,9 @@
 # CLIbrary
 
-> Production-grade tool routing for AI agents.  
+> Production-grade tool routing for AI agents.
 > 給 AI agent 用的 production 級工具路由系統。
 
+[![PyPI](https://img.shields.io/pypi/v/clibrary-hub.svg)](https://pypi.org/project/clibrary-hub/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 [![Python](https://img.shields.io/badge/python-3.10%2B-blue)](https://python.org)
 
@@ -68,12 +69,23 @@ MaxSim re-rank  (combined = 0.7×mean_sim + 0.3×max_sim)
 
 ## Quick Start
 
+### Install
+
 ```bash
-pip install clibrary
+pip install clibrary-hub
 ```
 
+### Build the FAISS indices from your manifests
+
+```bash
+clibrary-build-index --manifest-dir ./manifests
+# Indices written to ~/.clibrary/indices by default
+```
+
+### Route an intent
+
 ```python
-from clibrary import CLIbrary
+from clibrary_hub import CLIbrary
 
 router = CLIbrary()
 result = router.route("幫我查上週銷售總額")
@@ -161,16 +173,16 @@ Each CLI tool has a `manifest.json` describing its purpose, inputs, and examples
 ## Project Structure
 
 ```
-clibrary/
-├── src/clibrary/
+CLIbrary/
+├── src/clibrary_hub/
+│   ├── __init__.py
 │   ├── router.py          # Core routing logic
-│   ├── manifest.py        # Manifest loader
-│   └── matchers/          # Embedding, keyword, LLM matchers
-├── poc/
-│   ├── router.py          # POC implementation
-│   ├── build_index.py     # FAISS index builder
-│   ├── bench.py           # Benchmark runner
-│   └── eval/              # Evaluation datasets
+│   ├── build_index.py     # FAISS index builder (clibrary-build-index)
+│   ├── manifest.py        # Manifest loader / validator
+│   ├── matchers/
+│   └── utils/
+├── benchmark/
+│   └── eval_sets/         # in_domain / paraphrase / cross_domain (2,050 queries)
 ├── tests/
 └── README.md
 ```
@@ -203,9 +215,9 @@ CLIbrary complements MCP: CLIbrary handles routing, MCP handles protocol.
 
 - ✅ Manifest schema v1.0
 - ✅ 500 CLI manifests (8 categories)
-- ✅ Reference POC implementation
+- ✅ Reference router implementation (FAISS, multilingual-e5-base)
 - ✅ Evaluation dataset (2,050 queries)
-- 🚧 pip package (in progress)
+- ✅ pip package — `pip install clibrary-hub`
 
 ---
 
@@ -217,4 +229,6 @@ MIT License — free to use, including for commercial purposes.
 
 ## Links
 
-- GitHub: https://github.com/clibrary-hub
+- PyPI: https://pypi.org/project/clibrary-hub/
+- GitHub: https://github.com/clibrary-hub/CLIbrary
+- Manifest registry: https://github.com/clibrary-hub/manifests
