@@ -1,18 +1,21 @@
 """
-router.py — Two-stage CLI routing core
+router.py — Two-stage CLI routing core (offline, no external API calls)
 
 Stage 1 : FAISS cli_index (mean-pooled triggers) → top-3 candidates
 Re-rank : MaxSim over trigger_index to reorder top-3
 Stage 2 : Find closest example within the winning CLI's example_index
-Path A  : example similarity >= threshold → fill template (no LLM)
-Path B  : example similarity < threshold → call LLM for param extraction
+Path A  : example similarity >= threshold → fill template
+Path B  : example similarity < threshold → return empty params
+          (the agent / caller decides how to fill them)
 Clarify : top-1 score too low AND gap too small → return top-3 choices
+
+This module makes no network calls. Param extraction for Path B is
+intentionally left to the caller.
 """
 
 from __future__ import annotations
 
 import json
-import os
 import time
 from pathlib import Path
 from typing import Any
@@ -53,9 +56,6 @@ class CLIbrary:
         Minimum score gap between top-1 and top-2 to avoid clarify.
     rerank_alpha : float
         Weight of mean_sim vs max_sim in re-ranking formula.
-    llm_backend : str | None
-        LLM backend for Path B param extraction.
-        Currently supports "kimi" (Moonshot AI). None disables Path B.
     """
 
     def __init__(
@@ -67,7 +67,6 @@ class CLIbrary:
         clarify_min_score: float = _DEFAULT_CLARIFY_MIN_SCORE,
         clarify_min_gap: float = _DEFAULT_CLARIFY_MIN_GAP,
         rerank_alpha: float = _DEFAULT_RERANK_ALPHA,
-        llm_backend: str | None = "kimi",
     ) -> None:
         self._index_dir = Path(index_dir) if index_dir else Path(__file__).parent / "indices"
         self._model_name = model_name
@@ -76,7 +75,6 @@ class CLIbrary:
         self._clarify_min_score = clarify_min_score
         self._clarify_min_gap = clarify_min_gap
         self._rerank_alpha = rerank_alpha
-        self._llm_backend = llm_backend
 
         # Lazy-loaded state
         self._model: SentenceTransformer | None = None
@@ -146,40 +144,6 @@ class CLIbrary:
         for row, gidx in enumerate(indices):
             self._trigger_index.reconstruct(gidx, t_vecs[row])
         return float((t_vecs @ q_vec.T).flatten().max())
-
-    def _call_llm(self, cli_meta: dict, query: str) -> dict[str, Any]:
-        """Path B: call LLM to extract parameters."""
-        if self._llm_backend == "kimi":
-            return self._call_kimi(cli_meta, query)
-        return {"_error": f"Unknown LLM backend: {self._llm_backend}"}
-
-    def _call_kimi(self, cli_meta: dict, query: str) -> dict[str, Any]:
-        try:
-            from openai import OpenAI
-        except ImportError:
-            return {"_error": "openai package not installed. pip install clibrary[llm]"}
-
-        api_key = os.environ.get("KIMI_API_KEY") or os.environ.get("MOONSHOT_API_KEY")
-        if not api_key:
-            return {"_error": "KIMI_API_KEY environment variable not set"}
-
-        client = OpenAI(api_key=api_key, base_url="https://api.moonshot.cn/v1")
-        schema = cli_meta.get("params_schema", {})
-        system = (
-            f"You are a parameter extractor for the {cli_meta['name']} CLI tool. "
-            f"Given the user's intent, output a JSON object matching this schema (JSON only, no explanation):\n"
-            f"{json.dumps(schema, ensure_ascii=False)}"
-        )
-        resp = client.chat.completions.create(
-            model="moonshot-v1-8k",
-            messages=[
-                {"role": "system", "content": system},
-                {"role": "user", "content": query},
-            ],
-            response_format={"type": "json_object"},
-            temperature=0,
-        )
-        return json.loads(resp.choices[0].message.content.strip())
 
     # ── Public API ────────────────────────────────────────────────────────────
 
@@ -268,15 +232,10 @@ class CLIbrary:
             best_ex_score = float(sims[best_row])
             best_params = ex_entries[best_row][1]["params"]
 
-        # Path A / B split
+        # Path A / B split — Path B returns empty params (no API call here).
+        # Caller can fill them with their own logic / LLM if desired.
         source = "A" if best_ex_score >= self._example_threshold else "B"
-        if source == "A":
-            params = best_params
-        else:
-            try:
-                params = self._call_llm(best_cli_meta, query) if self._llm_backend else {}
-            except Exception:
-                params = {}  # degrade gracefully; CLI routing result still valid
+        params = best_params if source == "A" else {}
 
         return {
             "action": "route",

@@ -89,6 +89,25 @@ clibrary-build-index --manifest-dir ./manifests
 from clibrary_hub import router
 
 result = router.route("幫我查上週銷售總額")
+```
+
+When example similarity is high (≥0.85, "Path A"), the router fills the
+template directly. Otherwise it returns `params: {}` and a `source: "B"`
+flag — your code decides how to fill those (you can plug in any LLM you
+want; the package itself makes **no external API calls**).
+
+### Validate a manifest
+
+```python
+from clibrary_hub import validator
+
+r = validator.validate_file("manifests/data/sql-runner.json")
+if not r.ok:
+    for e in r.errors:   print("ERROR:", e)
+    for w in r.warnings: print("WARN: ", w)
+
+# Or validate every manifest in a tree:
+results = validator.validate_dir("manifests/")
 
 # {
 #   "action": "route",

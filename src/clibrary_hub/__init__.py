@@ -3,17 +3,24 @@ clibrary-hub — Production-grade tool routing for AI agents.
 
 Quick usage::
 
+    # Route an intent to a CLI
     from clibrary_hub import router
     result = router.route("查上週銷售總額")
 
-The ``router`` symbol is a lazy-initialized default ``CLIbrary`` instance.
-The first call to any method loads the model and FAISS indices; subsequent
-calls reuse them. For full control, instantiate ``CLIbrary`` yourself.
+    # Validate a manifest you wrote
+    from clibrary_hub import validator
+    r = validator.validate_file("my-tool.json")
+    if not r.ok:
+        for e in r.errors: print("ERROR:", e)
+
+The package makes no external API calls. Path B of the router returns
+empty params; the caller decides how to fill them.
 """
 
 from clibrary_hub.router import CLIbrary
+from clibrary_hub import validator
 
-__version__ = "0.1.5"
+__version__ = "0.2.0"
 
 
 class _DefaultRouter:
@@ -40,4 +47,4 @@ class _DefaultRouter:
 
 router = _DefaultRouter()
 
-__all__ = ["CLIbrary", "router"]
+__all__ = ["CLIbrary", "router", "validator"]

@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "clibrary-hub"
-version = "0.1.5"
+version = "0.2.0"
 description = "Production-grade tool routing for AI agents"
 readme = "README.md"
 license = { file = "LICENSE" }
@@ -30,7 +30,6 @@ dependencies = [
 clibrary-build-index = "clibrary_hub.build_index:main"
 
 [project.optional-dependencies]
-llm = ["openai>=1.0"]
 dev = [
     "pytest>=8.0",
     "pytest-cov",
