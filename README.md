@@ -1,7 +1,6 @@
 # CLIbrary
 
 > Production-grade tool routing for AI agents.
-> 給 AI agent 用的 production 級工具路由系統。
 
 [![PyPI](https://img.shields.io/pypi/v/clibrary-hub.svg)](https://pypi.org/project/clibrary-hub/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
