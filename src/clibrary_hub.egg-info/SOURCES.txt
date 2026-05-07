@@ -1,0 +1,16 @@
+LICENSE
+README.md
+pyproject.toml
+src/clibrary_hub/__init__.py
+src/clibrary_hub/build_index.py
+src/clibrary_hub/manifest.py
+src/clibrary_hub/router.py
+src/clibrary_hub.egg-info/PKG-INFO
+src/clibrary_hub.egg-info/SOURCES.txt
+src/clibrary_hub.egg-info/dependency_links.txt
+src/clibrary_hub.egg-info/entry_points.txt
+src/clibrary_hub.egg-info/requires.txt
+src/clibrary_hub.egg-info/top_level.txt
+src/clibrary_hub/matchers/__init__.py
+src/clibrary_hub/utils/__init__.py
+tests/test_router.py
