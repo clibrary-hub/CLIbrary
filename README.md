@@ -86,9 +86,8 @@ clibrary-build-index --manifest-dir ./manifests
 ### Route an intent
 
 ```python
-from clibrary_hub import CLIbrary
+from clibrary_hub import router
 
-router = CLIbrary()
 result = router.route("幫我查上週銷售總額")
 
 # {
