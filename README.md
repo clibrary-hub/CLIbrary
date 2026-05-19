@@ -250,4 +250,4 @@ MIT License — free to use, including for commercial purposes.
 
 - PyPI: https://pypi.org/project/clibrary-hub/
 - GitHub: https://github.com/clibrary-hub/CLIbrary
-- Manifest registry: https://github.com/clibrary-hub/manifests
+- Tools registry: https://github.com/clibrary-hub/cli-tools
