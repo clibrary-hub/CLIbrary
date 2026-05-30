@@ -1,0 +1,75 @@
+{
+  "name": "pr-brief",
+  "version": "0.1.0",
+  "description": "PR 自動摘要器",
+  "category": "C",
+  "number": 56,
+  "pain_point": "PR 描述太隨便",
+  "commercial": "✅",
+  "language": "Python",
+  "dependencies": [
+    "gitpython",
+    "anthropic",
+    "click"
+  ],
+  "agent_compatible": true,
+  "mcp_ready": true,
+  "intent_triggers": [
+    "幫我自動產生 PR 描述",
+    "為這個 pull request 寫一個好的說明",
+    "AI 幫我生成 PR 摘要",
+    "根據 diff 自動產生 PR description",
+    "把這次改動整理成清晰的 PR 說明",
+    "product manager 要我寫 PR 說明，幫我",
+    "從 commit history 生成 PR 摘要"
+  ],
+  "examples": [
+    {
+      "query": "為目前 git branch 的改動自動產生 PR 摘要",
+      "params": {
+        "branch": "feature/login",
+        "action": "run"
+      }
+    },
+    {
+      "query": "根據最近 10 個 commit 生成 PR description",
+      "params": {
+        "commit_count": 10,
+        "action": "run"
+      }
+    },
+    {
+      "query": "產生 PR 說明並輸出到 pr_description.md",
+      "params": {
+        "branch": "main",
+        "output_file": "pr_description.md",
+        "action": "run"
+      }
+    }
+  ],
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "branch": {
+        "type": "string",
+        "description": "要產生摘要的 git branch 名稱"
+      },
+      "commit_count": {
+        "type": "integer",
+        "description": "納入摘要的最近 commit 數量"
+      },
+      "output_file": {
+        "type": "string",
+        "description": "PR 說明輸出的檔案路徑"
+      },
+      "action": {
+        "type": "string",
+        "description": "操作類型：run（執行）"
+      }
+    },
+    "required": [
+      "action"
+    ]
+  },
+  "license": "MIT"
+}

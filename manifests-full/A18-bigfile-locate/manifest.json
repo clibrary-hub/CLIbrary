@@ -1,0 +1,75 @@
+{
+  "name": "bigfile-locate",
+  "version": "0.1.0",
+  "description": "大檔案定位器",
+  "category": "A",
+  "number": 18,
+  "pain_point": "找不到大檔案在哪",
+  "commercial": "✅",
+  "language": "Python",
+  "dependencies": [
+    "pathlib",
+    "rich",
+    "click"
+  ],
+  "agent_compatible": true,
+  "mcp_ready": true,
+  "intent_triggers": [
+    "幫我找出超過 100MB 的大檔案",
+    "掃描哪些檔案最大",
+    "我的硬碟不夠用了，找找哪裡有大檔",
+    "列出所有超過 1GB 的檔案",
+    "找出 /home 目錄下最大的 20 個檔案",
+    "搜尋專案裡不必要的大型資源檔",
+    "定位大型 log 檔和備份檔的位置"
+  ],
+  "examples": [
+    {
+      "query": "掃描 /home/user 找出所有超過 500MB 的檔案",
+      "params": {
+        "scan_path": "/home/user",
+        "min_size_mb": 500
+      }
+    },
+    {
+      "query": "找出 /var 目錄下最大的 10 個檔案",
+      "params": {
+        "scan_path": "/var",
+        "top_n": 10
+      }
+    },
+    {
+      "query": "在 /project 中找超過 50MB 的 .log 檔案",
+      "params": {
+        "scan_path": "/project",
+        "min_size_mb": 50,
+        "file_filter": "*.log"
+      }
+    }
+  ],
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "scan_path": {
+        "type": "string",
+        "description": "要掃描的目錄路徑"
+      },
+      "min_size_mb": {
+        "type": "number",
+        "description": "最小檔案大小門檻（MB）"
+      },
+      "top_n": {
+        "type": "integer",
+        "description": "顯示最大的前 N 個檔案"
+      },
+      "file_filter": {
+        "type": "string",
+        "description": "限定搜尋的檔案類型 glob 表達式"
+      }
+    },
+    "required": [
+      "scan_path"
+    ]
+  },
+  "license": "MIT"
+}

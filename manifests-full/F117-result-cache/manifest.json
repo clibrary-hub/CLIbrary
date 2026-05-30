@@ -1,0 +1,83 @@
+{
+  "name": "result-cache",
+  "version": "0.1.0",
+  "description": "結果共享快取",
+  "category": "F",
+  "number": 117,
+  "pain_point": "Agent 歷史結果無共享層",
+  "commercial": "✅",
+  "language": "Python",
+  "dependencies": [
+    "redis",
+    "click",
+    "rich"
+  ],
+  "agent_compatible": true,
+  "mcp_ready": true,
+  "intent_triggers": [
+    "怎麼避免多個 Agent 重複計算相同任務？",
+    "想讓 Agent 的計算結果可以被其他 Agent 重用",
+    "Agent 做過的事情要怎麼快取？",
+    "幫我建立一個跨 Agent 的結果共享快取",
+    "不同 Agent 重複呼叫 API 太浪費，怎麼共享結果",
+    "Agent 結果快取 TTL 要怎麼設定？",
+    "我需要一個 Redis 快取層給 Agent 系統用"
+  ],
+  "examples": [
+    {
+      "query": "快取 search-agent 的搜尋結果 30 分鐘供其他 Agent 使用",
+      "params": {
+        "action": "run",
+        "agent_name": "search-agent",
+        "ttl": "1800",
+        "backend": "redis"
+      }
+    },
+    {
+      "query": "查詢 key=analysis_report_20240101 的快取是否存在",
+      "params": {
+        "action": "run",
+        "mode": "get",
+        "key": "analysis_report_20240101"
+      }
+    },
+    {
+      "query": "清除所有已過期的 Agent 快取結果",
+      "params": {
+        "action": "run",
+        "mode": "cleanup",
+        "expired_only": "true"
+      }
+    }
+  ],
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "action": {
+        "type": "string"
+      },
+      "agent_name": {
+        "type": "string"
+      },
+      "backend": {
+        "type": "string"
+      },
+      "expired_only": {
+        "type": "string"
+      },
+      "key": {
+        "type": "string"
+      },
+      "mode": {
+        "type": "string"
+      },
+      "ttl": {
+        "type": "string"
+      }
+    },
+    "required": [
+      "action"
+    ]
+  },
+  "license": "MIT"
+}

@@ -1,0 +1,89 @@
+{
+  "name": "gift-list",
+  "version": "0.1.0",
+  "description": "送禮清單器",
+  "category": "U",
+  "number": 410,
+  "pain_point": "收禮清單",
+  "commercial": "✅",
+  "language": "Python",
+  "dependencies": [
+    "sqlite3",
+    "click",
+    "rich"
+  ],
+  "agent_compatible": true,
+  "mcp_ready": true,
+  "intent_triggers": [
+    "幫我記錄要送朋友什麼禮物",
+    "建立今年聖誕節的送禮清單",
+    "我需要整理所有親友的生日禮物計劃",
+    "查看還有哪些人的禮物沒買",
+    "推薦符合預算的禮物，加入清單",
+    "記錄收到的禮物，以後回禮參考",
+    "幫我管理婚禮送禮清單和預算"
+  ],
+  "examples": [
+    {
+      "query": "幫媽媽的生日禮物加入清單，預算 1500 元，日期 2024-03-15",
+      "params": {
+        "recipient": "媽媽",
+        "occasion": "生日",
+        "budget": 1500,
+        "date": "2024-03-15"
+      }
+    },
+    {
+      "query": "列出還沒買的禮物清單，按日期排序",
+      "params": {
+        "status": "unpurchased",
+        "sort_by": "date"
+      }
+    },
+    {
+      "query": "記錄小明送了我一瓶香水，品牌 Chanel，價值約 3000 元",
+      "params": {
+        "sender": "小明",
+        "gift": "Chanel 香水",
+        "value": 3000,
+        "type": "received"
+      }
+    }
+  ],
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "budget": {
+        "type": "integer"
+      },
+      "date": {
+        "type": "string"
+      },
+      "gift": {
+        "type": "string"
+      },
+      "occasion": {
+        "type": "string"
+      },
+      "recipient": {
+        "type": "string"
+      },
+      "sender": {
+        "type": "string"
+      },
+      "sort_by": {
+        "type": "string"
+      },
+      "status": {
+        "type": "string"
+      },
+      "type": {
+        "type": "string"
+      },
+      "value": {
+        "type": "integer"
+      }
+    }
+  },
+  "license": "MIT"
+}

@@ -1,0 +1,75 @@
+{
+  "name": "page-watch",
+  "version": "0.1.0",
+  "description": "變動監控器",
+  "category": "M",
+  "number": 243,
+  "pain_point": "網頁變動監控",
+  "commercial": "⚠️",
+  "language": "Python",
+  "dependencies": [
+    "requests",
+    "difflib",
+    "click"
+  ],
+  "agent_compatible": true,
+  "mcp_ready": true,
+  "intent_triggers": [
+    "監控這個網頁有沒有內容變動",
+    "網頁變動通知工具，有改動就告訴我",
+    "追蹤特定網址的內容更新",
+    "網站監控，偵測頁面變化",
+    "定時掃描網頁，發現變動就警報",
+    "監測競品網站的更新",
+    "我想知道政府公告網站有沒有新內容"
+  ],
+  "examples": [
+    {
+      "query": "掃描 https://gov.example.com/news 監控是否有新公告",
+      "params": {
+        "action": "scan",
+        "url": "https://gov.example.com/news",
+        "check_interval": 3600
+      }
+    },
+    {
+      "query": "監控 https://shop.example.com/product/123 的價格變動",
+      "params": {
+        "action": "scan",
+        "url": "https://shop.example.com/product/123",
+        "selector": ".price"
+      }
+    },
+    {
+      "query": "批次監控 watch_list.txt 中所有網址",
+      "params": {
+        "action": "scan",
+        "urls_file": "watch_list.txt"
+      }
+    }
+  ],
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "action": {
+        "type": "string"
+      },
+      "check_interval": {
+        "type": "integer"
+      },
+      "selector": {
+        "type": "string"
+      },
+      "url": {
+        "type": "string"
+      },
+      "urls_file": {
+        "type": "string"
+      }
+    },
+    "required": [
+      "action"
+    ]
+  },
+  "license": "MIT"
+}

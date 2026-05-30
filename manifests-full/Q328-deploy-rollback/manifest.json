@@ -1,0 +1,76 @@
+{
+  "name": "deploy-rollback",
+  "version": "0.1.0",
+  "description": "部署回滾器",
+  "category": "Q",
+  "number": 328,
+  "pain_point": "部署回滾",
+  "commercial": "✅",
+  "language": "Python",
+  "dependencies": [
+    "subprocess",
+    "click",
+    "rich"
+  ],
+  "agent_compatible": true,
+  "mcp_ready": true,
+  "intent_triggers": [
+    "剛部署的版本有問題，趕快回滾",
+    "還原到上一個穩定的部署版本",
+    "k8s deployment 回滾到前一個 revision",
+    "生產環境出問題了要緊急回滾",
+    "列出所有可回滾的部署歷史",
+    "回滾到指定的 release tag",
+    "回滾後幫我確認服務是否正常"
+  ],
+  "examples": [
+    {
+      "query": "回滾 k8s my-app deployment 到上一個版本",
+      "params": {
+        "platform": "k8s",
+        "resource": "deployment/my-app",
+        "action": "rollback"
+      }
+    },
+    {
+      "query": "列出 my-api deployment 的所有歷史 revision",
+      "params": {
+        "platform": "k8s",
+        "resource": "deployment/my-api",
+        "action": "history"
+      }
+    },
+    {
+      "query": "回滾 Helm release myapp 到 revision 3",
+      "params": {
+        "platform": "helm",
+        "release": "myapp",
+        "revision": 3
+      }
+    }
+  ],
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "action": {
+        "type": "string"
+      },
+      "platform": {
+        "type": "string"
+      },
+      "release": {
+        "type": "string"
+      },
+      "resource": {
+        "type": "string"
+      },
+      "revision": {
+        "type": "integer"
+      }
+    },
+    "required": [
+      "platform"
+    ]
+  },
+  "license": "MIT"
+}

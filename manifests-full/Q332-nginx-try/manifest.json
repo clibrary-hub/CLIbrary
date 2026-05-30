@@ -1,0 +1,75 @@
+{
+  "name": "nginx-try",
+  "version": "0.1.0",
+  "description": "Nginx 配置試跑器",
+  "category": "Q",
+  "number": 332,
+  "pain_point": "Nginx 設定試跑",
+  "commercial": "✅",
+  "language": "Python",
+  "dependencies": [
+    "subprocess",
+    "click",
+    "rich"
+  ],
+  "agent_compatible": true,
+  "mcp_ready": true,
+  "intent_triggers": [
+    "幫我測試 nginx 設定檔有沒有語法錯誤",
+    "部署前先試跑一下 nginx.conf",
+    "我修改了 nginx 設定，幫我確認沒問題",
+    "模擬 nginx 請求路由，看看會不會有問題",
+    "驗證 nginx upstream 設定是否正確",
+    "測試 SSL 相關的 nginx 設定",
+    "我要確認 nginx rewrite rule 是否生效"
+  ],
+  "examples": [
+    {
+      "query": "語法驗證 /etc/nginx/nginx.conf",
+      "params": {
+        "config_file": "/etc/nginx/nginx.conf",
+        "action": "validate"
+      }
+    },
+    {
+      "query": "試跑測試 nginx.conf 並顯示所有 include 檔案",
+      "params": {
+        "config_file": "nginx.conf",
+        "action": "test",
+        "show_includes": true
+      }
+    },
+    {
+      "query": "測試 sites-available/mysite.conf 的 proxy 設定",
+      "params": {
+        "config_file": "sites-available/mysite.conf",
+        "test_proxy": true
+      }
+    }
+  ],
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "config_file": {
+        "type": "string",
+        "description": "Nginx 設定檔路徑"
+      },
+      "action": {
+        "type": "string",
+        "description": "操作：validate、test、reload"
+      },
+      "show_includes": {
+        "type": "boolean",
+        "description": "是否顯示 include 的設定檔"
+      },
+      "test_proxy": {
+        "type": "boolean",
+        "description": "是否測試 proxy 連線"
+      }
+    },
+    "required": [
+      "config_file"
+    ]
+  },
+  "license": "MIT"
+}

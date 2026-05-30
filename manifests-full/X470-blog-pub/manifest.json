@@ -1,0 +1,89 @@
+{
+  "name": "blog-pub",
+  "version": "0.1.0",
+  "description": "部落格發佈器",
+  "category": "X",
+  "number": 470,
+  "pain_point": "部落格批量發佈",
+  "commercial": "⚠️",
+  "language": "Python",
+  "dependencies": [
+    "requests",
+    "click",
+    "rich"
+  ],
+  "agent_compatible": true,
+  "mcp_ready": true,
+  "intent_triggers": [
+    "幫我把這篇文章發佈到 WordPress",
+    "批次發布多篇預先準備好的部落格文章",
+    "把 Markdown 文章發佈到部落格平台",
+    "安排這篇文章的發佈時間",
+    "同時發佈到 Medium 和 Blogger",
+    "自動化部落格文章發佈流程",
+    "查看待發佈的文章佇列"
+  ],
+  "examples": [
+    {
+      "query": "把 article.md 發佈到 WordPress 網站，分類為「技術」，加上標籤",
+      "params": {
+        "content_file": "article.md",
+        "platform": "wordpress",
+        "category": "技術",
+        "tags": [
+          "Python",
+          "程式設計"
+        ]
+      }
+    },
+    {
+      "query": "排程 post.md 在明天早上 9:00 自動發佈到 Medium",
+      "params": {
+        "content_file": "post.md",
+        "platform": "medium",
+        "publish_time": "2024-01-28 09:00"
+      }
+    },
+    {
+      "query": "批次發佈 /drafts 資料夾內所有 Markdown 文章到 WordPress",
+      "params": {
+        "drafts_dir": "/drafts",
+        "platform": "wordpress",
+        "status": "publish"
+      }
+    }
+  ],
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "category": {
+        "type": "string"
+      },
+      "content_file": {
+        "type": "string"
+      },
+      "drafts_dir": {
+        "type": "string"
+      },
+      "platform": {
+        "type": "string"
+      },
+      "publish_time": {
+        "type": "string"
+      },
+      "status": {
+        "type": "string"
+      },
+      "tags": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    },
+    "required": [
+      "platform"
+    ]
+  },
+  "license": "MIT"
+}

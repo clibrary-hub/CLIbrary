@@ -1,0 +1,74 @@
+{
+  "name": "decision-log",
+  "version": "0.1.0",
+  "description": "決策記錄追蹤器",
+  "category": "B",
+  "number": 22,
+  "pain_point": "Agent 忘記之前的決定",
+  "commercial": "✅",
+  "language": "Python",
+  "dependencies": [
+    "sqlite3",
+    "rich",
+    "click"
+  ],
+  "agent_compatible": true,
+  "mcp_ready": true,
+  "intent_triggers": [
+    "記錄這個決定方便以後查閱",
+    "把這次的架構選擇存起來",
+    "我想追蹤 AI 做了哪些關鍵決定",
+    "列出所有歷史決策記錄",
+    "查一下上次決定用哪個資料庫",
+    "把今天討論的方向記錄下來",
+    "建立決策日誌，避免重複討論"
+  ],
+  "examples": [
+    {
+      "query": "記錄決定採用 PostgreSQL 的原因",
+      "params": {
+        "title": "資料庫選型",
+        "content": "決定採用 PostgreSQL，原因：穩定性高、支援 JSON",
+        "action": "run"
+      }
+    },
+    {
+      "query": "列出所有關於架構的決策記錄",
+      "params": {
+        "category": "架構",
+        "action": "run"
+      }
+    },
+    {
+      "query": "查詢最近 7 天的所有決策日誌",
+      "params": {
+        "days": 7,
+        "action": "run"
+      }
+    }
+  ],
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "action": {
+        "type": "string"
+      },
+      "category": {
+        "type": "string"
+      },
+      "content": {
+        "type": "string"
+      },
+      "days": {
+        "type": "integer"
+      },
+      "title": {
+        "type": "string"
+      }
+    },
+    "required": [
+      "action"
+    ]
+  },
+  "license": "MIT"
+}

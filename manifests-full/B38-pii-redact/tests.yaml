@@ -1,0 +1,23 @@
+tool: pii-redact
+type: transform
+generated: "2026-04-27"
+skip: false
+
+setup:
+  files:
+    - path: testdata/pii.txt
+      content: "Email: test@example.com\nPhone: 555-1234-567\n"
+
+cases:
+  - id: help_works
+    description: --help exits 0
+    cmd: ["--help"]
+    expect:
+      exit_code: 0
+      stdout_contains: "Usage:"
+  - id: process_file
+    description: process input file
+    cmd: ["redact", "testdata/pii.txt"]
+    expect:
+      exit_code: 1
+      stdout_not_contains: "test@example.com"

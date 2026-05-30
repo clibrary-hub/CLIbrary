@@ -1,0 +1,81 @@
+{
+  "name": "pre-check",
+  "version": "0.1.0",
+  "description": "環境前置檢查器",
+  "category": "D",
+  "number": 64,
+  "pain_point": "前置條件檢查繁瑣",
+  "commercial": "✅",
+  "language": "Python",
+  "dependencies": [
+    "click",
+    "rich",
+    "subprocess"
+  ],
+  "agent_compatible": true,
+  "mcp_ready": true,
+  "intent_triggers": [
+    "在執行任務前先確認環境是否就緒",
+    "幫我檢查所有前置條件",
+    "掃描環境設定是否正確",
+    "確認 Python 版本和依賴都安裝好了",
+    "執行前置檢查，確保一切 OK",
+    "驗證環境變數和設定檔都完備",
+    "Agent 執行前先檢查環境依賴"
+  ],
+  "examples": [
+    {
+      "query": "掃描目前環境是否滿足執行條件",
+      "params": {
+        "check_type": "all",
+        "action": "scan"
+      }
+    },
+    {
+      "query": "檢查 Python 3.9+ 和 requirements.txt 的套件",
+      "params": {
+        "python_version": "3.9",
+        "requirements_file": "requirements.txt",
+        "action": "scan"
+      }
+    },
+    {
+      "query": "掃描環境變數是否都已設定",
+      "params": {
+        "check_type": "env_vars",
+        "required_vars": [
+          "API_KEY",
+          "DATABASE_URL"
+        ],
+        "action": "scan"
+      }
+    }
+  ],
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "action": {
+        "type": "string"
+      },
+      "check_type": {
+        "type": "string"
+      },
+      "python_version": {
+        "type": "string"
+      },
+      "required_vars": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      },
+      "requirements_file": {
+        "type": "string"
+      }
+    },
+    "required": [
+      "action"
+    ]
+  },
+  "license": "MIT"
+}

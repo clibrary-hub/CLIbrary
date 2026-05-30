@@ -1,0 +1,84 @@
+{
+  "name": "mail-draft",
+  "version": "0.1.0",
+  "description": "AI 草稿產生器",
+  "category": "I",
+  "number": 164,
+  "pain_point": "信件草稿要手寫",
+  "commercial": "⚠️",
+  "language": "Python",
+  "dependencies": [
+    "anthropic",
+    "click",
+    "rich"
+  ],
+  "agent_compatible": true,
+  "mcp_ready": true,
+  "intent_triggers": [
+    "幫我用 AI 自動起草一封商務信件",
+    "我只有大綱，幫我生成完整的電子郵件草稿",
+    "不知道怎麼寫信，給我一個 AI 草稿",
+    "想讓 AI 根據情境自動寫出合適的回覆草稿",
+    "需要寫道歉信給客戶，幫我生成專業版本",
+    "依照我說的重點幫我起草一封正式信件",
+    "想要 AI 幫我寫跟進信（follow-up email）"
+  ],
+  "examples": [
+    {
+      "query": "幫我起草一封向客戶道歉延誤交貨的正式信件",
+      "params": {
+        "action": "draft",
+        "purpose": "道歉延誤交貨",
+        "tone": "formal",
+        "recipient": "客戶"
+      }
+    },
+    {
+      "query": "根據 brief.txt 中的大綱生成完整英文提案信",
+      "params": {
+        "action": "draft",
+        "input_file": "brief.txt",
+        "language": "en",
+        "tone": "professional"
+      }
+    },
+    {
+      "query": "生成一封詢問合作機會的開發信草稿並存檔",
+      "params": {
+        "action": "draft",
+        "purpose": "商業合作詢問",
+        "output": "outreach-draft.txt"
+      }
+    }
+  ],
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "action": {
+        "type": "string"
+      },
+      "input_file": {
+        "type": "string"
+      },
+      "language": {
+        "type": "string"
+      },
+      "output": {
+        "type": "string"
+      },
+      "purpose": {
+        "type": "string"
+      },
+      "recipient": {
+        "type": "string"
+      },
+      "tone": {
+        "type": "string"
+      }
+    },
+    "required": [
+      "action"
+    ]
+  },
+  "license": "MIT"
+}

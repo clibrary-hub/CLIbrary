@@ -1,0 +1,95 @@
+{
+  "name": "agent-bench",
+  "version": "0.1.0",
+  "description": "Agent 評測器",
+  "category": "F",
+  "number": 118,
+  "pain_point": "不知 Agent 該選哪個",
+  "commercial": "✅",
+  "language": "Python",
+  "dependencies": [
+    "anthropic",
+    "click",
+    "rich"
+  ],
+  "agent_compatible": true,
+  "mcp_ready": true,
+  "intent_triggers": [
+    "我有三個 Agent 版本要怎麼知道哪個最好？",
+    "怎麼自動化測試 Agent 的準確率和速度",
+    "比較不同 LLM 的速度和準確率",
+    "幾個語言模型跑同一 task suite",
+    "幫我做 Agent 的 benchmark 評測",
+    "想量化評估 Agent 的回答品質",
+    "LLM benchmark 對比延遲與正確率",
+    "多個 LLM 跑同一份任務比較延遲",
+    "如何比較不同 Agent 的效能和品質？",
+    "多模型性能橫向比較",
+    "Agent A 和 Agent B 誰在這個任務上表現更好",
+    "我需要一套 Agent 評估標準和分數",
+    "Agent 評測器，輸出格式可自訂",
+    "執行 agent benchmark 並指定報告格式",
+    "agent 效能評測，結果輸出格式可設定",
+    "幫我處理 agent 評測結果的格式輸出"
+  ],
+  "examples": [
+    {
+      "query": "用 benchmark_suite.json 測試 claude-agent 和 gpt-agent 並比較得分",
+      "params": {
+        "action": "run",
+        "agents": "claude-agent,gpt-agent",
+        "benchmark_file": "benchmark_suite.json"
+      }
+    },
+    {
+      "query": "對 customer-service-agent 進行 100 題問答評測",
+      "params": {
+        "action": "run",
+        "agent_name": "customer-service-agent",
+        "test_cases": "100",
+        "dataset": "qa_dataset.json"
+      }
+    },
+    {
+      "query": "生成評測報告並輸出到 bench-results-2024.json",
+      "params": {
+        "action": "run",
+        "mode": "report",
+        "output": "bench-results-2024.json"
+      }
+    }
+  ],
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "action": {
+        "type": "string"
+      },
+      "agent_name": {
+        "type": "string"
+      },
+      "agents": {
+        "type": "string"
+      },
+      "benchmark_file": {
+        "type": "string"
+      },
+      "dataset": {
+        "type": "string"
+      },
+      "mode": {
+        "type": "string"
+      },
+      "output": {
+        "type": "string"
+      },
+      "test_cases": {
+        "type": "string"
+      }
+    },
+    "required": [
+      "action"
+    ]
+  },
+  "license": "MIT"
+}

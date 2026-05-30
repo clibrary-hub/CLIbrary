@@ -1,0 +1,77 @@
+{
+  "name": "stream-cc",
+  "version": "0.1.0",
+  "description": "即時字幕器",
+  "category": "W",
+  "number": 459,
+  "pain_point": "即時字幕串流",
+  "commercial": "⚠️",
+  "language": "Python",
+  "dependencies": [
+    "whisper",
+    "click",
+    "rich"
+  ],
+  "agent_compatible": true,
+  "mcp_ready": true,
+  "intent_triggers": [
+    "幫我給這個影片加上即時字幕",
+    "直播時需要即時產生字幕",
+    "把這段錄音轉成字幕檔案",
+    "即時語音轉文字並翻譯成字幕",
+    "線上會議自動生成中文字幕",
+    "從麥克風輸入，即時產生繁體中文字幕",
+    "幫我將影片音訊轉成 SRT 字幕檔"
+  ],
+  "examples": [
+    {
+      "query": "將 video.mp4 的英文語音轉成繁體中文字幕並存為 SRT",
+      "params": {
+        "input_file": "video.mp4",
+        "source_lang": "en",
+        "target_lang": "zh-TW",
+        "output_format": "srt"
+      }
+    },
+    {
+      "query": "從麥克風即時輸入，生成繁體中文字幕顯示在終端",
+      "params": {
+        "input_source": "microphone",
+        "target_lang": "zh-TW",
+        "display": "terminal"
+      }
+    },
+    {
+      "query": "將 lecture.wav 轉文字並輸出為 VTT 字幕格式",
+      "params": {
+        "input_file": "lecture.wav",
+        "source_lang": "zh",
+        "output_format": "vtt"
+      }
+    }
+  ],
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "display": {
+        "type": "string"
+      },
+      "input_file": {
+        "type": "string"
+      },
+      "input_source": {
+        "type": "string"
+      },
+      "output_format": {
+        "type": "string"
+      },
+      "source_lang": {
+        "type": "string"
+      },
+      "target_lang": {
+        "type": "string"
+      }
+    }
+  },
+  "license": "MIT"
+}

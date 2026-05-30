@@ -1,0 +1,77 @@
+{
+  "name": "api-sniff",
+  "version": "0.1.0",
+  "description": "API 規格嗅探器",
+  "category": "M",
+  "number": 259,
+  "pain_point": "API 規格自動探測",
+  "commercial": "⚠️",
+  "language": "Python",
+  "dependencies": [
+    "requests",
+    "click",
+    "rich"
+  ],
+  "agent_compatible": true,
+  "mcp_ready": true,
+  "intent_triggers": [
+    "自動探測 API 端點和規格",
+    "嗅探網站背後的 API 結構",
+    "找出網站使用的 API 端點",
+    "API 規格自動發現工具",
+    "我想了解這個服務的 API 有哪些端點",
+    "掃描 API 並嘗試推測 schema",
+    "逆向分析網站 API 規格"
+  ],
+  "examples": [
+    {
+      "query": "嗅探 https://api.example.com 的可用端點",
+      "params": {
+        "action": "run",
+        "base_url": "https://api.example.com"
+      }
+    },
+    {
+      "query": "掃描 https://service.example.com/api 並輸出端點清單",
+      "params": {
+        "action": "run",
+        "base_url": "https://service.example.com/api",
+        "output_file": "api_endpoints.json"
+      }
+    },
+    {
+      "query": "探測 https://myapp.com 的後端 API 並嘗試產生 OpenAPI 規格",
+      "params": {
+        "action": "run",
+        "base_url": "https://myapp.com",
+        "output_format": "openapi"
+      }
+    }
+  ],
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "action": {
+        "type": "string",
+        "description": "操作類型，如 run（執行嗅探）"
+      },
+      "base_url": {
+        "type": "string",
+        "description": "API 基礎 URL"
+      },
+      "output_file": {
+        "type": "string",
+        "description": "輸出規格檔案路徑"
+      },
+      "output_format": {
+        "type": "string",
+        "description": "輸出格式，如 json、openapi"
+      }
+    },
+    "required": [
+      "action",
+      "base_url"
+    ]
+  },
+  "license": "MIT"
+}

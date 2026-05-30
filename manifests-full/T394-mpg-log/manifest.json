@@ -1,0 +1,78 @@
+{
+  "name": "mpg-log",
+  "version": "0.1.0",
+  "description": "油耗紀錄器",
+  "category": "T",
+  "number": 394,
+  "pain_point": "駕車油耗紀錄",
+  "commercial": "✅",
+  "language": "Python",
+  "dependencies": [
+    "sqlite3",
+    "click",
+    "rich"
+  ],
+  "agent_compatible": true,
+  "mcp_ready": true,
+  "intent_triggers": [
+    "記錄這次加油的油耗",
+    "幫我計算我的車每公升跑幾公里",
+    "今天加了 45 公升，里程 1200 公里",
+    "統計最近幾次的油耗趨勢",
+    "我的車油耗變差了，幫我分析",
+    "記錄加油日期、金額和里程",
+    "生成油耗月報"
+  ],
+  "examples": [
+    {
+      "query": "記錄加油：35 公升，里程 23500km，價格 1575 元",
+      "params": {
+        "action": "add",
+        "liters": 35,
+        "odometer": 23500,
+        "cost": 1575
+      }
+    },
+    {
+      "query": "計算最近 5 次加油的平均油耗",
+      "params": {
+        "action": "stats",
+        "last_n": 5
+      }
+    },
+    {
+      "query": "生成 2026 年的油耗報告",
+      "params": {
+        "action": "report",
+        "year": 2026
+      }
+    }
+  ],
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "action": {
+        "type": "string"
+      },
+      "cost": {
+        "type": "integer"
+      },
+      "last_n": {
+        "type": "integer"
+      },
+      "liters": {
+        "type": "integer"
+      },
+      "odometer": {
+        "type": "integer"
+      },
+      "year": {
+        "type": "integer"
+      }
+    },
+    "required": [
+      "action"
+    ]
+  },
+  "license": "MIT"
+}

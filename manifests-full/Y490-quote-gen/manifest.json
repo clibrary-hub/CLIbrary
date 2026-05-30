@@ -1,0 +1,97 @@
+{
+  "name": "quote-gen",
+  "version": "0.1.0",
+  "description": "報價單產生器",
+  "category": "Y",
+  "number": 490,
+  "pain_point": "報價單產生",
+  "commercial": "✅",
+  "language": "Python",
+  "dependencies": [
+    "jinja2",
+    "click",
+    "rich"
+  ],
+  "agent_compatible": true,
+  "mcp_ready": true,
+  "intent_triggers": [
+    "幫我生成一份報價單",
+    "客戶要報價，幫我做一份報價文件",
+    "生成 PDF 報價單給客戶",
+    "這個專案的報價單怎麼開？",
+    "自動生成含稅的報價單",
+    "多項目報價單，含折扣和總價",
+    "正式商業報價單範本生成"
+  ],
+  "examples": [
+    {
+      "query": "生成報價單，客戶「大山公司」，3項服務，總金額 180000 元含稅",
+      "params": {
+        "client_name": "大山公司",
+        "items": [
+          {
+            "name": "系統分析",
+            "qty": 1,
+            "unit_price": 60000
+          },
+          {
+            "name": "開發費用",
+            "qty": 1,
+            "unit_price": 100000
+          },
+          {
+            "name": "維護費",
+            "qty": 1,
+            "unit_price": 20000
+          }
+        ],
+        "tax_rate": 0.05
+      }
+    },
+    {
+      "query": "生成英文版報價單，有效期 30 天，輸出 PDF",
+      "params": {
+        "language": "en",
+        "validity_days": 30,
+        "output_format": "pdf"
+      }
+    },
+    {
+      "query": "用報價單模板生成含折扣的報價，折扣 15%，輸出 DOCX",
+      "params": {
+        "discount_rate": 0.15,
+        "output_format": "docx"
+      }
+    }
+  ],
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "client_name": {
+        "type": "string"
+      },
+      "discount_rate": {
+        "type": "number"
+      },
+      "items": {
+        "type": "array",
+        "items": {
+          "type": "object"
+        }
+      },
+      "language": {
+        "type": "string"
+      },
+      "output_format": {
+        "type": "string"
+      },
+      "tax_rate": {
+        "type": "number"
+      },
+      "validity_days": {
+        "type": "integer"
+      }
+    }
+  },
+  "license": "MIT"
+}

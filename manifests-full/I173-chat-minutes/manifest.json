@@ -1,0 +1,83 @@
+{
+  "name": "chat-minutes",
+  "version": "0.1.0",
+  "description": "IM 會議紀錄",
+  "category": "I",
+  "number": 173,
+  "pain_point": "群組事件要寫紀錄",
+  "commercial": "⚠️",
+  "language": "Python",
+  "dependencies": [
+    "anthropic",
+    "click",
+    "rich"
+  ],
+  "agent_compatible": true,
+  "mcp_ready": true,
+  "intent_triggers": [
+    "把 Slack 頻道的討論記錄轉成正式會議紀錄",
+    "群組 IM 對話結束後自動生成會議摘要",
+    "幫我從 Teams 對話紀錄提取決議事項",
+    "我想把這段群組對話整理成有行動項目的會議記錄",
+    "IM 訊息太散，幫我自動整理成結構化的紀錄",
+    "開完線上會議後自動把聊天記錄轉成會議紀要",
+    "從 chat-log.txt 提取待辦事項和決議"
+  ],
+  "examples": [
+    {
+      "query": "把 slack-thread.txt 中的討論轉成有待辦事項的會議紀錄",
+      "params": {
+        "action": "generate",
+        "input_file": "slack-thread.txt",
+        "output": "meeting-minutes.md"
+      }
+    },
+    {
+      "query": "從 Slack #project-alpha 頻道今天的對話生成紀要",
+      "params": {
+        "action": "generate",
+        "platform": "slack",
+        "channel": "project-alpha",
+        "date": "today"
+      }
+    },
+    {
+      "query": "整理 teams-chat.json 並只提取決議和行動項目",
+      "params": {
+        "action": "extract",
+        "input_file": "teams-chat.json",
+        "extract": "decisions,action_items"
+      }
+    }
+  ],
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "action": {
+        "type": "string"
+      },
+      "channel": {
+        "type": "string"
+      },
+      "date": {
+        "type": "string"
+      },
+      "extract": {
+        "type": "string"
+      },
+      "input_file": {
+        "type": "string"
+      },
+      "output": {
+        "type": "string"
+      },
+      "platform": {
+        "type": "string"
+      }
+    },
+    "required": [
+      "action"
+    ]
+  },
+  "license": "MIT"
+}

@@ -1,0 +1,85 @@
+{
+  "name": "human-gate",
+  "version": "0.1.0",
+  "description": "人類審批關卡",
+  "category": "D",
+  "number": 72,
+  "pain_point": "重要任務需要審批",
+  "commercial": "✅",
+  "language": "Python",
+  "dependencies": [
+    "click",
+    "rich",
+    "sqlite3"
+  ],
+  "agent_compatible": true,
+  "mcp_ready": true,
+  "intent_triggers": [
+    "這個操作需要人工確認才能繼續",
+    "建立人工審核關卡",
+    "AI 執行前先問一下人",
+    "設定需要人類確認的任務步驟",
+    "在執行危險動作前暫停等待審批",
+    "高風險操作需要管理員批准",
+    "等待用戶審批後再繼續流程",
+    "危險指令執行前需要人工確認",
+    "不是沙箱而是需要手動 yes 的確認",
+    "rm -rf 等破壞性操作的人工審核",
+    "執行前等待人類核准",
+    "加入人工審核的安全閘"
+  ],
+  "examples": [
+    {
+      "query": "在刪除資料庫前設置人工審批關卡",
+      "params": {
+        "gate_name": "delete_database_approval",
+        "message": "確認要刪除整個資料庫嗎？",
+        "action": "run"
+      }
+    },
+    {
+      "query": "設定部署到 production 需要管理員批准",
+      "params": {
+        "gate_name": "production_deploy",
+        "approvers": [
+          "admin@example.com"
+        ],
+        "action": "run"
+      }
+    },
+    {
+      "query": "查詢等待審批的任務清單",
+      "params": {
+        "action": "run",
+        "list_pending": true
+      }
+    }
+  ],
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "action": {
+        "type": "string"
+      },
+      "approvers": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      },
+      "gate_name": {
+        "type": "string"
+      },
+      "list_pending": {
+        "type": "boolean"
+      },
+      "message": {
+        "type": "string"
+      }
+    },
+    "required": [
+      "action"
+    ]
+  },
+  "license": "MIT"
+}

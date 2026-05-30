@@ -1,0 +1,80 @@
+{
+  "name": "arxiv-feed",
+  "version": "0.1.0",
+  "description": "Arxiv 推播器",
+  "category": "S",
+  "number": 380,
+  "pain_point": "學術新訊推播",
+  "commercial": "⚠️",
+  "language": "Python",
+  "dependencies": [
+    "feedparser",
+    "click",
+    "rich"
+  ],
+  "agent_compatible": true,
+  "mcp_ready": true,
+  "intent_triggers": [
+    "訂閱 arXiv 的 NLP 類別每日更新",
+    "幫我追蹤 arXiv 上的最新論文",
+    "今天 arXiv cs.LG 有什麼新論文",
+    "設定關鍵字訂閱 arXiv 論文推播",
+    "每天早上發送最新 AI 論文摘要",
+    "篩選出和 RAG 相關的新 arXiv 論文",
+    "監控特定作者在 arXiv 的新發表"
+  ],
+  "examples": [
+    {
+      "query": "訂閱 arXiv cs.LG 並篩選含有 large language model 的論文",
+      "params": {
+        "category": "cs.LG",
+        "keywords": [
+          "large language model"
+        ],
+        "action": "fetch"
+      }
+    },
+    {
+      "query": "獲取今天 arXiv cs.AI 的前 20 篇論文摘要",
+      "params": {
+        "category": "cs.AI",
+        "limit": 20,
+        "action": "today"
+      }
+    },
+    {
+      "query": "監控 Yann LeCun 在 arXiv 的最新論文並存到 new_papers.json",
+      "params": {
+        "author": "Yann LeCun",
+        "output_file": "new_papers.json"
+      }
+    }
+  ],
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "action": {
+        "type": "string"
+      },
+      "author": {
+        "type": "string"
+      },
+      "category": {
+        "type": "string"
+      },
+      "keywords": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      },
+      "limit": {
+        "type": "integer"
+      },
+      "output_file": {
+        "type": "string"
+      }
+    }
+  },
+  "license": "MIT"
+}

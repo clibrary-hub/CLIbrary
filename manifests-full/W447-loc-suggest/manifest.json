@@ -1,0 +1,89 @@
+{
+  "name": "loc-suggest",
+  "version": "0.1.0",
+  "description": "在地化建議器",
+  "category": "W",
+  "number": 447,
+  "pain_point": "文化在地化建議",
+  "commercial": "⚠️",
+  "language": "Python",
+  "dependencies": [
+    "anthropic",
+    "click",
+    "rich"
+  ],
+  "agent_compatible": true,
+  "mcp_ready": true,
+  "intent_triggers": [
+    "這段文案翻成日文時要注意哪些文化差異？",
+    "幫我提供在地化建議，讓內容更符合當地習慣",
+    "這個 UI 文字翻譯對德國用戶友善嗎？",
+    "替我檢查這段阿拉伯文翻譯是否符合文化習慣",
+    "提供韓國市場的在地化文案建議",
+    "翻譯後有沒有需要在地化調整的地方？",
+    "這個行銷文案在日本市場適合嗎？"
+  ],
+  "examples": [
+    {
+      "query": "分析這段行銷文案翻成日文後的在地化問題",
+      "params": {
+        "text": "Flash sale! Don't miss out!",
+        "source_lang": "en",
+        "target_locale": "ja-JP"
+      }
+    },
+    {
+      "query": "提供這段產品說明翻成阿拉伯文的在地化建議",
+      "params": {
+        "text_file": "product_desc.txt",
+        "target_locale": "ar-SA",
+        "aspects": [
+          "tone",
+          "culture",
+          "idioms"
+        ]
+      }
+    },
+    {
+      "query": "檢查 app_strings_de.json 的德文在地化是否符合德國文化習慣",
+      "params": {
+        "locale_file": "app_strings_de.json",
+        "target_locale": "de-DE",
+        "check_culture": true
+      }
+    }
+  ],
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "aspects": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      },
+      "check_culture": {
+        "type": "boolean"
+      },
+      "locale_file": {
+        "type": "string"
+      },
+      "source_lang": {
+        "type": "string"
+      },
+      "target_locale": {
+        "type": "string"
+      },
+      "text": {
+        "type": "string"
+      },
+      "text_file": {
+        "type": "string"
+      }
+    },
+    "required": [
+      "target_locale"
+    ]
+  },
+  "license": "MIT"
+}

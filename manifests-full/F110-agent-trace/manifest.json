@@ -1,0 +1,86 @@
+{
+  "name": "agent-trace",
+  "version": "0.1.0",
+  "description": "跨 Agent 追蹤器",
+  "category": "F",
+  "number": 110,
+  "pain_point": "跨 Agent 追蹤 trace 困難",
+  "commercial": "✅",
+  "language": "Python",
+  "dependencies": [
+    "opentelemetry",
+    "click",
+    "rich"
+  ],
+  "agent_compatible": true,
+  "mcp_ready": true,
+  "intent_triggers": [
+    "如何追蹤一個請求在多個 Agent 之間的流動？",
+    "Agent 鏈路追蹤要怎麼做？",
+    "我的請求經過五個 Agent 但我不知道哪裡慢",
+    "幫我為 Agent 加上 OpenTelemetry 追蹤",
+    "多 Agent 系統的 trace ID 要怎麼串接？",
+    "Agent 處理鏈的效能瓶頸在哪裡",
+    "我需要可視化 Agent 呼叫鏈的工具"
+  ],
+  "examples": [
+    {
+      "query": "追蹤 request-abc123 在 orchestrator、worker、reporter 三個 Agent 的執行路徑",
+      "params": {
+        "action": "run",
+        "trace_id": "request-abc123",
+        "agents": "orchestrator,worker,reporter"
+      }
+    },
+    {
+      "query": "用 Jaeger 後端收集並可視化 Agent trace",
+      "params": {
+        "action": "run",
+        "backend": "jaeger",
+        "endpoint": "http://localhost:14268/api/traces"
+      }
+    },
+    {
+      "query": "分析最近一小時的 Agent trace，找出延遲超過 2 秒的步驟",
+      "params": {
+        "action": "run",
+        "mode": "analyze",
+        "time_range": "1h",
+        "threshold_ms": "2000"
+      }
+    }
+  ],
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "action": {
+        "type": "string"
+      },
+      "agents": {
+        "type": "string"
+      },
+      "backend": {
+        "type": "string"
+      },
+      "endpoint": {
+        "type": "string"
+      },
+      "mode": {
+        "type": "string"
+      },
+      "threshold_ms": {
+        "type": "string"
+      },
+      "time_range": {
+        "type": "string"
+      },
+      "trace_id": {
+        "type": "string"
+      }
+    },
+    "required": [
+      "action"
+    ]
+  },
+  "license": "MIT"
+}

@@ -1,0 +1,83 @@
+{
+  "name": "mood-log",
+  "version": "0.1.0",
+  "description": "情緒日記器",
+  "category": "K",
+  "number": 213,
+  "pain_point": "心情情緒記錄",
+  "commercial": "✅",
+  "language": "Python",
+  "dependencies": [
+    "sqlite3",
+    "click",
+    "rich"
+  ],
+  "agent_compatible": true,
+  "mcp_ready": true,
+  "intent_triggers": [
+    "記錄我今天的心情狀態",
+    "情緒日記工具，每天記錄心情",
+    "我想追蹤自己的情緒變化",
+    "幫我記下這週的情緒紀錄",
+    "焦慮憂鬱情緒追蹤器",
+    "查看我過去一個月的情緒趨勢",
+    "寫情緒日記並分析心情模式"
+  ],
+  "examples": [
+    {
+      "query": "記錄今天情緒：開心 8 分，附帶備註「完成了大型專案」",
+      "params": {
+        "action": "run",
+        "mood_score": 8,
+        "note": "完成了大型專案",
+        "date": "today"
+      }
+    },
+    {
+      "query": "查看 mood_journal.db 過去 14 天的情緒趨勢",
+      "params": {
+        "action": "run",
+        "db_file": "mood_journal.db",
+        "days": 14,
+        "mode": "trend"
+      }
+    },
+    {
+      "query": "記錄本週每天情緒分數並產生摘要",
+      "params": {
+        "action": "run",
+        "mode": "weekly_summary"
+      }
+    }
+  ],
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "action": {
+        "type": "string"
+      },
+      "date": {
+        "type": "string"
+      },
+      "days": {
+        "type": "integer"
+      },
+      "db_file": {
+        "type": "string"
+      },
+      "mode": {
+        "type": "string"
+      },
+      "mood_score": {
+        "type": "integer"
+      },
+      "note": {
+        "type": "string"
+      }
+    },
+    "required": [
+      "action"
+    ]
+  },
+  "license": "MIT"
+}

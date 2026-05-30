@@ -1,0 +1,80 @@
+{
+  "name": "schema-diff",
+  "version": "0.1.0",
+  "description": "Schema 差異器",
+  "category": "E",
+  "number": 94,
+  "pain_point": "資料 schema diff 看不出",
+  "commercial": "✅",
+  "language": "Python",
+  "dependencies": [
+    "deepdiff",
+    "click",
+    "rich"
+  ],
+  "agent_compatible": true,
+  "mcp_ready": true,
+  "intent_triggers": [
+    "比較兩個 schema 有什麼差異",
+    "這次 API 改版後 schema 變了哪些欄位",
+    "舊版和新版的資料結構差在哪裡",
+    "幫我找出兩個 JSON Schema 的不同之處",
+    "資料庫 schema 升版前後的差異分析",
+    "偵測 schema 欄位新增或刪除的變化",
+    "自動比對兩份 schema 並產生變更報告"
+  ],
+  "examples": [
+    {
+      "query": "比較 schema_v1.json 和 schema_v2.json 的差異",
+      "params": {
+        "schema_a": "schema_v1.json",
+        "schema_b": "schema_v2.json",
+        "action": "diff"
+      }
+    },
+    {
+      "query": "分析 API v1 和 v2 的 response schema 差異並輸出報告",
+      "params": {
+        "schema_a": "api_v1_schema.json",
+        "schema_b": "api_v2_schema.json",
+        "output_file": "schema_changes.json",
+        "action": "diff"
+      }
+    },
+    {
+      "query": "比對資料庫 DDL 升版前後的欄位變化",
+      "params": {
+        "schema_a": "db_schema_old.sql",
+        "schema_b": "db_schema_new.sql",
+        "format": "ddl",
+        "action": "diff"
+      }
+    }
+  ],
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "action": {
+        "type": "string"
+      },
+      "format": {
+        "type": "string"
+      },
+      "output_file": {
+        "type": "string"
+      },
+      "schema_a": {
+        "type": "string"
+      },
+      "schema_b": {
+        "type": "string"
+      }
+    },
+    "required": [
+      "action",
+      "schema_a",
+      "schema_b"
+    ]
+  },
+  "license": "MIT"
+}

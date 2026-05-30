@@ -1,0 +1,78 @@
+{
+  "name": "expense-report",
+  "version": "0.1.0",
+  "description": "報帳產生器",
+  "category": "J",
+  "number": 183,
+  "pain_point": "報帳流程繁瑣",
+  "commercial": "✅",
+  "language": "Python",
+  "dependencies": [
+    "jinja2",
+    "click",
+    "rich"
+  ],
+  "agent_compatible": true,
+  "mcp_ready": true,
+  "intent_triggers": [
+    "出差回來要報帳，幫我自動產生報帳單",
+    "把我的消費記錄自動整理成公司報帳格式",
+    "每個月底需要生成費用報告給財務部門",
+    "幫我從 expenses.csv 快速生成 PDF 報帳單",
+    "出差費用很多，想一鍵生成報帳文件",
+    "費用報告要含明細、分類和總金額，幫我生成",
+    "自動產生符合公司格式的費用申請報表"
+  ],
+  "examples": [
+    {
+      "query": "從 expenses.csv 生成本月出差費用報告 PDF",
+      "params": {
+        "action": "generate",
+        "input": "expenses.csv",
+        "period": "this_month",
+        "output": "expense-report-april.pdf"
+      }
+    },
+    {
+      "query": "用 report-template.html.j2 和 trip-data.csv 生成日本出差報帳單",
+      "params": {
+        "action": "generate",
+        "template": "report-template.html.j2",
+        "input": "trip-data.csv",
+        "output": "japan-trip-report.pdf"
+      }
+    },
+    {
+      "query": "預覽報帳報告格式，不輸出檔案",
+      "params": {
+        "action": "preview",
+        "input": "expenses.csv"
+      }
+    }
+  ],
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "action": {
+        "type": "string"
+      },
+      "input": {
+        "type": "string"
+      },
+      "output": {
+        "type": "string"
+      },
+      "period": {
+        "type": "string"
+      },
+      "template": {
+        "type": "string"
+      }
+    },
+    "required": [
+      "action",
+      "input"
+    ]
+  },
+  "license": "MIT"
+}

@@ -1,0 +1,93 @@
+{
+  "name": "tr-cost",
+  "version": "0.1.0",
+  "description": "翻譯預算器",
+  "category": "W",
+  "number": 456,
+  "pain_point": "翻譯預算估算",
+  "commercial": "✅",
+  "language": "Python",
+  "dependencies": [
+    "click",
+    "rich",
+    "decimal"
+  ],
+  "agent_compatible": true,
+  "mcp_ready": true,
+  "intent_triggers": [
+    "估算這份文件的翻譯費用",
+    "幫我計算翻譯 100 頁文件要多少錢",
+    "這個翻譯專案的預算要怎麼規劃？",
+    "按字數或字元數估算翻譯成本",
+    "比較機器翻譯和人工翻譯的費用差異",
+    "翻譯費用估算，含校對和審稿費",
+    "這份合約英翻中，大概要花多少？"
+  ],
+  "examples": [
+    {
+      "query": "估算 contract_5000words.docx 從英文翻成繁體中文的費用，人工翻譯每字 0.5 元",
+      "params": {
+        "source_file": "contract_5000words.docx",
+        "source_lang": "en",
+        "target_lang": "zh-TW",
+        "rate_per_word": 0.5
+      }
+    },
+    {
+      "query": "計算 20 個語系各翻 50 頁的總翻譯預算",
+      "params": {
+        "pages": 50,
+        "languages_count": 20,
+        "rate_per_page": 800
+      }
+    },
+    {
+      "query": "比較機翻（每百字 0.5 元）和人工翻譯（每字 1 元）的成本差異，文件 8000 字",
+      "params": {
+        "word_count": 8000,
+        "mt_rate": 0.005,
+        "human_rate": 1.0,
+        "compare": true
+      }
+    }
+  ],
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "compare": {
+        "type": "boolean"
+      },
+      "human_rate": {
+        "type": "number"
+      },
+      "languages_count": {
+        "type": "integer"
+      },
+      "mt_rate": {
+        "type": "number"
+      },
+      "pages": {
+        "type": "integer"
+      },
+      "rate_per_page": {
+        "type": "integer"
+      },
+      "rate_per_word": {
+        "type": "number"
+      },
+      "source_file": {
+        "type": "string"
+      },
+      "source_lang": {
+        "type": "string"
+      },
+      "target_lang": {
+        "type": "string"
+      },
+      "word_count": {
+        "type": "integer"
+      }
+    }
+  },
+  "license": "MIT"
+}

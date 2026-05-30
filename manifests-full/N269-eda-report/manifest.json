@@ -1,0 +1,83 @@
+{
+  "name": "eda-report",
+  "version": "0.1.0",
+  "description": "EDA 報告器",
+  "category": "N",
+  "number": 269,
+  "pain_point": "資料 EDA 報告",
+  "commercial": "✅",
+  "language": "Python",
+  "dependencies": [
+    "ydata-profiling",
+    "click",
+    "rich"
+  ],
+  "agent_compatible": true,
+  "mcp_ready": true,
+  "intent_triggers": [
+    "CSV 資料自動 EDA 工具",
+    "自動產生 EDA 探索性資料分析報告",
+    "ydata profiling 風格的資料報告",
+    "快速了解一個新 CSV 的所有資訊",
+    "幫我做一份完整的資料分析報告",
+    "我有新資料集，幫我做初步探索分析",
+    "資料品質報告，包含分布和缺失值",
+    "對資料集做探索性分析並產出報告",
+    "EDA 報告指定輸出的格式",
+    "自動化資料探索，含圖文說明",
+    "CSV 跑完 EDA 後用文字解釋每張圖",
+    "產出 profiling 報告，描述資料分佈"
+  ],
+  "examples": [
+    {
+      "query": "對 sales_data.csv 產生完整 EDA 報告",
+      "params": {
+        "action": "run",
+        "input_file": "sales_data.csv",
+        "output_file": "eda_report.html"
+      }
+    },
+    {
+      "query": "快速 EDA customer_churn.csv 並輸出摘要",
+      "params": {
+        "action": "run",
+        "input_file": "customer_churn.csv",
+        "minimal": true
+      }
+    },
+    {
+      "query": "產生 financial_data.csv 的深度資料探索報告",
+      "params": {
+        "action": "run",
+        "input_file": "financial_data.csv",
+        "title": "Financial EDA",
+        "output_file": "financial_eda.html"
+      }
+    }
+  ],
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "action": {
+        "type": "string"
+      },
+      "input_file": {
+        "type": "string"
+      },
+      "minimal": {
+        "type": "boolean"
+      },
+      "output_file": {
+        "type": "string"
+      },
+      "title": {
+        "type": "string"
+      }
+    },
+    "required": [
+      "action",
+      "input_file"
+    ]
+  },
+  "license": "MIT"
+}

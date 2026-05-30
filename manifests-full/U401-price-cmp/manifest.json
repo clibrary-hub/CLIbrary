@@ -1,0 +1,80 @@
+{
+  "name": "price-cmp",
+  "version": "0.1.0",
+  "description": "多平台比價器",
+  "category": "U",
+  "number": 401,
+  "pain_point": "多平台比價",
+  "commercial": "❌",
+  "language": "Python",
+  "dependencies": [
+    "requests",
+    "click",
+    "rich"
+  ],
+  "agent_compatible": true,
+  "mcp_ready": true,
+  "intent_triggers": [
+    "幫我比較這個商品在各平台的價格",
+    "我想知道同一樣東西在蝦皮、momo、pchome哪裡最便宜",
+    "查一下這個型號在不同網站的售價差多少",
+    "我要買耳機，哪個平台現在最划算？",
+    "跨平台比價一下，看看哪邊有優惠",
+    "同款商品各電商賣多少錢，幫我整理",
+    "我不想一個一個網站查，直接給我最低價在哪裡"
+  ],
+  "examples": [
+    {
+      "query": "幫我比較 Sony WH-1000XM5 在蝦皮、momo、PChome 的價格",
+      "params": {
+        "product_name": "Sony WH-1000XM5",
+        "platforms": [
+          "shopee",
+          "momo",
+          "pchome"
+        ]
+      }
+    },
+    {
+      "query": "查 iPhone 15 Pro 256GB 各平台最低售價",
+      "params": {
+        "product_name": "iPhone 15 Pro 256GB",
+        "platforms": [
+          "shopee",
+          "momo",
+          "pchome",
+          "yahoo"
+        ]
+      }
+    },
+    {
+      "query": "Dyson V15 吸塵器現在哪個網站最便宜？",
+      "params": {
+        "product_name": "Dyson V15",
+        "platforms": [
+          "shopee",
+          "momo"
+        ]
+      }
+    }
+  ],
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "platforms": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      },
+      "product_name": {
+        "type": "string"
+      }
+    },
+    "required": [
+      "platforms",
+      "product_name"
+    ]
+  },
+  "license": "MIT"
+}

@@ -1,0 +1,87 @@
+{
+  "name": "mcp-bridge",
+  "version": "0.1.0",
+  "description": "MCP 協議橋接",
+  "category": "F",
+  "number": 114,
+  "pain_point": "跨模型工具規格不通",
+  "commercial": "✅",
+  "language": "Python",
+  "dependencies": [
+    "click",
+    "rich",
+    "requests"
+  ],
+  "agent_compatible": true,
+  "mcp_ready": true,
+  "intent_triggers": [
+    "如何讓不同 LLM 模型共用同一套工具？",
+    "我的工具只支援 Claude 但想讓 GPT 也能用",
+    "跨模型工具協議橋接要怎麼實現",
+    "MCP 協議是什麼，如何整合到現有系統",
+    "幫我建一個 MCP 橋接讓多個模型共享工具",
+    "不同廠商 LLM 的工具呼叫格式不相容問題",
+    "想讓 Anthropic 工具和 OpenAI 工具互通"
+  ],
+  "examples": [
+    {
+      "query": "建立 MCP bridge 讓 GPT-4 使用原本為 Claude 寫的 web-search 工具",
+      "params": {
+        "action": "run",
+        "source_model": "claude",
+        "target_model": "gpt4",
+        "tool_name": "web-search"
+      }
+    },
+    {
+      "query": "啟動 MCP server 並暴露 tools.yaml 中定義的所有工具",
+      "params": {
+        "action": "run",
+        "mode": "server",
+        "tools_config": "tools.yaml",
+        "port": "3000"
+      }
+    },
+    {
+      "query": "測試 MCP bridge 連線是否正常並列出可用工具",
+      "params": {
+        "action": "run",
+        "mode": "test",
+        "endpoint": "http://localhost:3000"
+      }
+    }
+  ],
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "action": {
+        "type": "string"
+      },
+      "endpoint": {
+        "type": "string"
+      },
+      "mode": {
+        "type": "string"
+      },
+      "port": {
+        "type": "string"
+      },
+      "source_model": {
+        "type": "string"
+      },
+      "target_model": {
+        "type": "string"
+      },
+      "tool_name": {
+        "type": "string"
+      },
+      "tools_config": {
+        "type": "string"
+      }
+    },
+    "required": [
+      "action"
+    ]
+  },
+  "license": "MIT"
+}

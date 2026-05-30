@@ -1,0 +1,78 @@
+{
+  "name": "timeout-shield",
+  "version": "0.1.0",
+  "description": "超時保護器",
+  "category": "D",
+  "number": 75,
+  "pain_point": "任務超時無自動斬斷",
+  "commercial": "✅",
+  "language": "Python",
+  "dependencies": [
+    "signal",
+    "click",
+    "rich"
+  ],
+  "agent_compatible": true,
+  "mcp_ready": true,
+  "intent_triggers": [
+    "設定任務執行的超時限制",
+    "如果超過 30 秒就自動中止",
+    "保護長時間任務不要卡死",
+    "設定 API 呼叫的超時上限",
+    "任務跑太久了，幫我設個時間炸彈",
+    "建立超時機制防止無限等待",
+    "60 秒後自動中斷並回報結果"
+  ],
+  "examples": [
+    {
+      "query": "設定任務執行超過 60 秒自動中止",
+      "params": {
+        "timeout_seconds": 60,
+        "action": "run"
+      }
+    },
+    {
+      "query": "為 API 請求設定 30 秒超時保護",
+      "params": {
+        "task_name": "api_request",
+        "timeout_seconds": 30,
+        "on_timeout": "notify",
+        "action": "run"
+      }
+    },
+    {
+      "query": "執行任務並在超時後自動重試",
+      "params": {
+        "timeout_seconds": 120,
+        "on_timeout": "retry",
+        "max_retries": 3,
+        "action": "run"
+      }
+    }
+  ],
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "action": {
+        "type": "string"
+      },
+      "max_retries": {
+        "type": "integer"
+      },
+      "on_timeout": {
+        "type": "string"
+      },
+      "task_name": {
+        "type": "string"
+      },
+      "timeout_seconds": {
+        "type": "integer"
+      }
+    },
+    "required": [
+      "action",
+      "timeout_seconds"
+    ]
+  },
+  "license": "MIT"
+}

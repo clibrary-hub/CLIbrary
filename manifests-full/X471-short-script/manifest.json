@@ -1,0 +1,82 @@
+{
+  "name": "short-script",
+  "version": "0.1.0",
+  "description": "短影音腳本器",
+  "category": "X",
+  "number": 471,
+  "pain_point": "短影音腳本拆稿",
+  "commercial": "✅",
+  "language": "Python",
+  "dependencies": [
+    "anthropic",
+    "click",
+    "rich"
+  ],
+  "agent_compatible": true,
+  "mcp_ready": true,
+  "intent_triggers": [
+    "幫我寫一個 60 秒的 Reels 腳本",
+    "這篇文章改成 TikTok 短影音腳本",
+    "生成短影音的分鏡腳本",
+    "把這個主題拆成 30 秒的影片腳本",
+    "我要拍 YouTube Shorts，幫我寫腳本",
+    "短影音腳本要有開場、內容、結尾",
+    "把長文章拆分成多個短影音腳本"
+  ],
+  "examples": [
+    {
+      "query": "為「3個省錢技巧」生成 60 秒 TikTok 腳本，含開場鉤子",
+      "params": {
+        "topic": "3個省錢技巧",
+        "platform": "tiktok",
+        "duration_seconds": 60,
+        "include_hook": true
+      }
+    },
+    {
+      "query": "把 article.txt 拆成 5 個 30 秒的 Reels 短影音腳本系列",
+      "params": {
+        "input_file": "article.txt",
+        "platform": "reels",
+        "duration_seconds": 30,
+        "series_count": 5
+      }
+    },
+    {
+      "query": "生成 YouTube Shorts 腳本，主題「AI 改變未來工作」，15秒",
+      "params": {
+        "topic": "AI 改變未來工作",
+        "platform": "youtube_shorts",
+        "duration_seconds": 15
+      }
+    }
+  ],
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "duration_seconds": {
+        "type": "integer"
+      },
+      "include_hook": {
+        "type": "boolean"
+      },
+      "input_file": {
+        "type": "string"
+      },
+      "platform": {
+        "type": "string"
+      },
+      "series_count": {
+        "type": "integer"
+      },
+      "topic": {
+        "type": "string"
+      }
+    },
+    "required": [
+      "duration_seconds",
+      "platform"
+    ]
+  },
+  "license": "MIT"
+}

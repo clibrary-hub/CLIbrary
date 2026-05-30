@@ -1,0 +1,68 @@
+{
+  "name": "grafana-port",
+  "version": "0.1.0",
+  "description": "Grafana 搬遷器",
+  "category": "Q",
+  "number": 331,
+  "pain_point": "Grafana 儀表搬遷",
+  "commercial": "⚠️",
+  "language": "Python",
+  "dependencies": [
+    "requests",
+    "click",
+    "rich"
+  ],
+  "agent_compatible": true,
+  "mcp_ready": true,
+  "intent_triggers": [
+    "把 Grafana dashboard 從舊伺服器搬到新的",
+    "備份所有 Grafana 儀表板設定",
+    "把本機的 Grafana dashboard 遷移到雲端",
+    "匯出所有 Grafana dashboard 的 JSON",
+    "在新的 Grafana 匯入這些儀表板",
+    "複製 Grafana 的 datasource 設定到新環境",
+    "列出所有 Grafana dashboard 清單"
+  ],
+  "examples": [
+    {
+      "query": "從 http://old-grafana:3000 匯出所有 dashboard",
+      "params": {
+        "source_url": "http://old-grafana:3000",
+        "action": "export"
+      }
+    },
+    {
+      "query": "把 dashboards/ 資料夾的 JSON 匯入 http://new-grafana:3000",
+      "params": {
+        "target_url": "http://new-grafana:3000",
+        "dashboards_dir": "dashboards/",
+        "action": "import"
+      }
+    },
+    {
+      "query": "搬遷 Grafana dashboard 從 staging 到 production",
+      "params": {
+        "source_url": "http://staging-grafana:3000",
+        "target_url": "http://prod-grafana:3000"
+      }
+    }
+  ],
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "action": {
+        "type": "string"
+      },
+      "dashboards_dir": {
+        "type": "string"
+      },
+      "source_url": {
+        "type": "string"
+      },
+      "target_url": {
+        "type": "string"
+      }
+    }
+  },
+  "license": "MIT"
+}

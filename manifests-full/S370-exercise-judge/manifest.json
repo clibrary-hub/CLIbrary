@@ -1,0 +1,74 @@
+{
+  "name": "exercise-judge",
+  "version": "0.1.0",
+  "description": "練習評測器",
+  "category": "S",
+  "number": 370,
+  "pain_point": "程式練習評測",
+  "commercial": "✅",
+  "language": "Python",
+  "dependencies": [
+    "subprocess",
+    "click",
+    "rich"
+  ],
+  "agent_compatible": true,
+  "mcp_ready": true,
+  "intent_triggers": [
+    "幫我評測這個程式練習的解答",
+    "測試我的 LeetCode 解法是否正確",
+    "執行測試案例驗證我的程式碼",
+    "判斷我的演算法答案對不對",
+    "批改程式作業並給出反饋",
+    "測試我的解法的時間複雜度",
+    "評估程式碼的正確性和效率"
+  ],
+  "examples": [
+    {
+      "query": "評測 solution.py 針對 test_cases.json 的所有測試案例",
+      "params": {
+        "solution_file": "solution.py",
+        "test_cases_file": "test_cases.json"
+      }
+    },
+    {
+      "query": "執行 my_answer.py 並比較輸出和 expected_output.txt",
+      "params": {
+        "solution_file": "my_answer.py",
+        "expected_output": "expected_output.txt"
+      }
+    },
+    {
+      "query": "評測 exercise.py 並分析時間和空間複雜度",
+      "params": {
+        "solution_file": "exercise.py",
+        "analyze_complexity": true
+      }
+    }
+  ],
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "solution_file": {
+        "type": "string",
+        "description": "待評測的解答程式碼路徑"
+      },
+      "test_cases_file": {
+        "type": "string",
+        "description": "測試案例 JSON 檔案路徑"
+      },
+      "expected_output": {
+        "type": "string",
+        "description": "預期輸出檔案路徑"
+      },
+      "analyze_complexity": {
+        "type": "boolean",
+        "description": "是否分析複雜度"
+      }
+    },
+    "required": [
+      "solution_file"
+    ]
+  },
+  "license": "MIT"
+}

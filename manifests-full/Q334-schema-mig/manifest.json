@@ -1,0 +1,66 @@
+{
+  "name": "schema-mig",
+  "version": "0.1.0",
+  "description": "Schema 遷移器",
+  "category": "Q",
+  "number": 334,
+  "pain_point": "DB schema migration",
+  "commercial": "✅",
+  "language": "Python",
+  "dependencies": [
+    "alembic",
+    "click",
+    "rich"
+  ],
+  "agent_compatible": true,
+  "mcp_ready": true,
+  "intent_triggers": [
+    "幫我執行資料庫 schema 遷移",
+    "產生 Alembic migration 腳本",
+    "DB 遷移前先確認 migration plan",
+    "回滾上一個 database migration",
+    "比較 dev 和 production 的 schema 差異",
+    "把 migration 腳本套用到資料庫",
+    "列出所有待執行的 migration"
+  ],
+  "examples": [
+    {
+      "query": "產生新的 Alembic migration 腳本，說明加了 user_profile 表",
+      "params": {
+        "action": "generate",
+        "message": "add user_profile table"
+      }
+    },
+    {
+      "query": "執行所有待跑的 migration 升級到最新版本",
+      "params": {
+        "action": "upgrade",
+        "target": "head"
+      }
+    },
+    {
+      "query": "列出所有 migration 版本和執行狀態",
+      "params": {
+        "action": "history"
+      }
+    }
+  ],
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "action": {
+        "type": "string"
+      },
+      "message": {
+        "type": "string"
+      },
+      "target": {
+        "type": "string"
+      }
+    },
+    "required": [
+      "action"
+    ]
+  },
+  "license": "MIT"
+}

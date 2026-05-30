@@ -1,0 +1,62 @@
+{
+  "name": "link-safe",
+  "version": "0.1.0",
+  "description": "連結安全檢查",
+  "category": "P",
+  "number": 311,
+  "pain_point": "防 Phishing 連結檢查",
+  "commercial": "⚠️",
+  "language": "Python",
+  "dependencies": [
+    "requests",
+    "click",
+    "rich"
+  ],
+  "agent_compatible": true,
+  "mcp_ready": true,
+  "intent_triggers": [
+    "這個連結安不安全，幫我掃描一下",
+    "我收到一封郵件裡有個可疑連結",
+    "檢查這個 URL 是不是釣魚網站",
+    "幫我批次驗證這些連結的安全性",
+    "這個縮短網址點了會不會有風險",
+    "掃描文件裡所有 URL 是否有惡意連結",
+    "這個 domain 是不是假冒的"
+  ],
+  "examples": [
+    {
+      "query": "檢查 http://suspicious-site.com/login 是否為釣魚連結",
+      "params": {
+        "url": "http://suspicious-site.com/login"
+      }
+    },
+    {
+      "query": "批次掃描 urls.txt 裡所有連結的安全性",
+      "params": {
+        "input_file": "urls.txt"
+      }
+    },
+    {
+      "query": "掃描 email_body.txt 中所有 URL 並標記可疑連結",
+      "params": {
+        "input_file": "email_body.txt",
+        "extract_urls": true
+      }
+    }
+  ],
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "extract_urls": {
+        "type": "boolean"
+      },
+      "input_file": {
+        "type": "string"
+      },
+      "url": {
+        "type": "string"
+      }
+    }
+  },
+  "license": "MIT"
+}

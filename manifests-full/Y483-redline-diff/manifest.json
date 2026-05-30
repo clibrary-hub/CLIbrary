@@ -1,0 +1,78 @@
+{
+  "name": "redline-diff",
+  "version": "0.1.0",
+  "description": "合約 Redline",
+  "category": "Y",
+  "number": 483,
+  "pain_point": "合約版本 redline",
+  "commercial": "✅",
+  "language": "Python",
+  "dependencies": [
+    "difflib",
+    "click",
+    "rich"
+  ],
+  "agent_compatible": true,
+  "mcp_ready": true,
+  "intent_triggers": [
+    "比對兩個版本合約的差異",
+    "幫我做合約的 Redline 標記",
+    "找出合約修改前後的改動",
+    "第一版和最新版合約差在哪裡？",
+    "標出對方修改了哪些合約條款",
+    "生成合約版本比較報告",
+    "合約談判過程中追蹤條款變化"
+  ],
+  "examples": [
+    {
+      "query": "比對 contract_v1.docx 和 contract_v2.docx 的差異，生成 Redline 報告",
+      "params": {
+        "file_old": "contract_v1.docx",
+        "file_new": "contract_v2.docx",
+        "output_format": "redline"
+      }
+    },
+    {
+      "query": "找出 original.txt 和 revised.txt 之間新增和刪除的條款",
+      "params": {
+        "file_old": "original.txt",
+        "file_new": "revised.txt",
+        "show_added": true,
+        "show_deleted": true
+      }
+    },
+    {
+      "query": "輸出合約修改的 HTML 版本，新增用綠色標示，刪除用紅色劃線",
+      "params": {
+        "file_old": "agreement_v1.pdf",
+        "file_new": "agreement_v2.pdf",
+        "output_format": "html_redline"
+      }
+    }
+  ],
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "file_new": {
+        "type": "string"
+      },
+      "file_old": {
+        "type": "string"
+      },
+      "output_format": {
+        "type": "string"
+      },
+      "show_added": {
+        "type": "boolean"
+      },
+      "show_deleted": {
+        "type": "boolean"
+      }
+    },
+    "required": [
+      "file_new",
+      "file_old"
+    ]
+  },
+  "license": "MIT"
+}

@@ -1,0 +1,67 @@
+{
+  "name": "secret-scan",
+  "version": "0.1.0",
+  "description": "Secrets 掃描器",
+  "category": "P",
+  "number": 305,
+  "pain_point": "secrets 掃描",
+  "commercial": "✅",
+  "language": "Python",
+  "dependencies": [
+    "re",
+    "pathlib",
+    "click",
+    "rich"
+  ],
+  "agent_compatible": true,
+  "mcp_ready": true,
+  "intent_triggers": [
+    "掃描程式碼裡有沒有硬編碼的 API Key",
+    "有沒有人不小心把密碼 commit 進去 git",
+    "幫我檢查這個 repo 有沒有洩漏 secrets",
+    "掃描所有 .env 檔案是否有敏感資訊外露",
+    "防止 AWS 金鑰被上傳到 GitHub",
+    "找出程式碼中所有帳密相關的字串",
+    "CI 管線跑前先掃描有無 secrets 洩漏"
+  ],
+  "examples": [
+    {
+      "query": "掃描 ./src 資料夾下所有 Python 檔案的 secrets",
+      "params": {
+        "target_dir": "./src",
+        "file_pattern": "*.py"
+      }
+    },
+    {
+      "query": "掃描整個 git repo 包含歷史 commit 的 secrets",
+      "params": {
+        "target_dir": ".",
+        "scan_history": true
+      }
+    },
+    {
+      "query": "掃描 config.yaml 是否含有 AWS 金鑰",
+      "params": {
+        "target_file": "config.yaml"
+      }
+    }
+  ],
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "file_pattern": {
+        "type": "string"
+      },
+      "scan_history": {
+        "type": "boolean"
+      },
+      "target_dir": {
+        "type": "string"
+      },
+      "target_file": {
+        "type": "string"
+      }
+    }
+  },
+  "license": "MIT"
+}

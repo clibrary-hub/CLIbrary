@@ -1,0 +1,73 @@
+{
+  "name": "article-note",
+  "version": "0.1.0",
+  "description": "文章筆記化",
+  "category": "R",
+  "number": 350,
+  "pain_point": "想將文章筆記化",
+  "commercial": "⚠️",
+  "language": "Python",
+  "dependencies": [
+    "anthropic",
+    "requests",
+    "click"
+  ],
+  "agent_compatible": true,
+  "mcp_ready": true,
+  "intent_triggers": [
+    "把這篇文章自動轉成學習筆記",
+    "幫我把 URL 的文章轉換成 Markdown 筆記",
+    "閱讀這篇文章並幫我整理成結構化筆記",
+    "把網頁文章的重點摘錄成可複習的筆記",
+    "文章太長，幫我提煉成一篇筆記",
+    "自動化讀文章做筆記的流程",
+    "把 PDF 論文轉成可搜尋的筆記"
+  ],
+  "examples": [
+    {
+      "query": "把 https://blog.example.com/article 轉成 Markdown 筆記",
+      "params": {
+        "url": "https://blog.example.com/article",
+        "output_file": "notes/article_note.md"
+      }
+    },
+    {
+      "query": "把 article.pdf 轉成有摘要和要點的學習筆記",
+      "params": {
+        "input_file": "article.pdf",
+        "format": "structured"
+      }
+    },
+    {
+      "query": "把 articles/ 資料夾的所有文章批次轉成筆記",
+      "params": {
+        "input_dir": "articles/",
+        "output_dir": "notes/"
+      }
+    }
+  ],
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "format": {
+        "type": "string"
+      },
+      "input_dir": {
+        "type": "string"
+      },
+      "input_file": {
+        "type": "string"
+      },
+      "output_dir": {
+        "type": "string"
+      },
+      "output_file": {
+        "type": "string"
+      },
+      "url": {
+        "type": "string"
+      }
+    }
+  },
+  "license": "MIT"
+}

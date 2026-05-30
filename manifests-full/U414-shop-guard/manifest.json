@@ -1,0 +1,78 @@
+{
+  "name": "shop-guard",
+  "version": "0.1.0",
+  "description": "購物守門員",
+  "category": "U",
+  "number": 414,
+  "pain_point": "預算購物守門員",
+  "commercial": "✅",
+  "language": "Python",
+  "dependencies": [
+    "sqlite3",
+    "click",
+    "rich"
+  ],
+  "agent_compatible": true,
+  "mcp_ready": true,
+  "intent_triggers": [
+    "幫我設定本月購物預算，超過要警告",
+    "這筆購物還在預算內嗎？",
+    "控制我的衝動購物，設一個每月上限",
+    "查詢本月已花了多少在購物上",
+    "幫我守住這個月 5000 元的購物預算",
+    "買這個東西前先確認還有多少預算",
+    "統計本月購物支出，有沒有超標？"
+  ],
+  "examples": [
+    {
+      "query": "設定本月購物預算上限為 5000 元，超過 80% 時警告",
+      "params": {
+        "monthly_budget": 5000,
+        "warning_threshold": 0.8,
+        "month": "2024-01"
+      }
+    },
+    {
+      "query": "我剛買了 1200 元的東西，記錄並更新剩餘預算",
+      "params": {
+        "amount": 1200,
+        "item": "運動鞋",
+        "platform": "momo"
+      }
+    },
+    {
+      "query": "查詢這個月購物支出明細和剩餘預算",
+      "params": {
+        "month": "2024-01",
+        "show_detail": true
+      }
+    }
+  ],
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "amount": {
+        "type": "integer"
+      },
+      "item": {
+        "type": "string"
+      },
+      "month": {
+        "type": "string"
+      },
+      "monthly_budget": {
+        "type": "integer"
+      },
+      "platform": {
+        "type": "string"
+      },
+      "show_detail": {
+        "type": "boolean"
+      },
+      "warning_threshold": {
+        "type": "number"
+      }
+    }
+  },
+  "license": "MIT"
+}

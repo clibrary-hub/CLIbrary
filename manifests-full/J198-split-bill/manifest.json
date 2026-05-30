@@ -1,0 +1,86 @@
+{
+  "name": "split-bill",
+  "version": "0.1.0",
+  "description": "分帳器",
+  "category": "J",
+  "number": 198,
+  "pain_point": "共同支出分帳麻煩",
+  "commercial": "✅",
+  "language": "Python",
+  "dependencies": [
+    "sqlite3",
+    "click",
+    "rich"
+  ],
+  "agent_compatible": true,
+  "mcp_ready": true,
+  "intent_triggers": [
+    "旅遊回來要算分帳，幫我計算每個人應付多少",
+    "朋友一起吃飯，AA 制要怎麼快速算",
+    "記錄一趟旅行的所有共同支出並分帳",
+    "分帳工具，支援不等比例分攤",
+    "幫我算出誰欠誰多少錢，讓結算最簡化",
+    "公司聚餐費用分帳，自動計算每人應付",
+    "旅遊帳單拆分器，處理多人多筆支出"
+  ],
+  "examples": [
+    {
+      "query": "記錄 Alice 付了 NT$3,000 餐費，4 人平均分攤",
+      "params": {
+        "action": "add",
+        "payer": "Alice",
+        "amount": "3000",
+        "participants": "Alice,Bob,Carol,Dave",
+        "split": "equal"
+      }
+    },
+    {
+      "query": "計算這次旅遊每人的最終應付/應收金額",
+      "params": {
+        "action": "settle",
+        "trip": "日本旅遊"
+      }
+    },
+    {
+      "query": "從 expenses.csv 匯入支出記錄並計算最簡分帳方案",
+      "params": {
+        "action": "settle",
+        "input": "expenses.csv",
+        "optimize": "true"
+      }
+    }
+  ],
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "action": {
+        "type": "string"
+      },
+      "amount": {
+        "type": "string"
+      },
+      "input": {
+        "type": "string"
+      },
+      "optimize": {
+        "type": "string"
+      },
+      "participants": {
+        "type": "string"
+      },
+      "payer": {
+        "type": "string"
+      },
+      "split": {
+        "type": "string"
+      },
+      "trip": {
+        "type": "string"
+      }
+    },
+    "required": [
+      "action"
+    ]
+  },
+  "license": "MIT"
+}

@@ -1,0 +1,78 @@
+{
+  "name": "refactor-verify",
+  "version": "0.1.0",
+  "description": "重構等價驗證器",
+  "category": "C",
+  "number": 47,
+  "pain_point": "重構是否等價無法驗證",
+  "commercial": "✅",
+  "language": "Python",
+  "dependencies": [
+    "ast",
+    "pytest",
+    "click"
+  ],
+  "agent_compatible": true,
+  "mcp_ready": true,
+  "intent_triggers": [
+    "驗證重構前後程式碼功能等價",
+    "重構完了，確認行為沒有改變",
+    "跑測試驗證 AI 的重構結果",
+    "確保重構後的輸出和原本一樣",
+    "比對重構前後的 AST 差異",
+    "自動驗證這次重構不破壞原有邏輯",
+    "用 pytest 確認重構等價性"
+  ],
+  "examples": [
+    {
+      "query": "驗證 original.py 和 refactored.py 行為等價",
+      "params": {
+        "original_file": "original.py",
+        "refactored_file": "refactored.py",
+        "action": "run"
+      }
+    },
+    {
+      "query": "跑所有測試確認重構後的 utils.py 行為不變",
+      "params": {
+        "refactored_file": "utils.py",
+        "test_dir": "tests/",
+        "action": "run"
+      }
+    },
+    {
+      "query": "比對 AST 並輸出差異報告",
+      "params": {
+        "original_file": "module_v1.py",
+        "refactored_file": "module_v2.py",
+        "action": "run",
+        "output_file": "ast_diff.json"
+      }
+    }
+  ],
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "action": {
+        "type": "string"
+      },
+      "original_file": {
+        "type": "string"
+      },
+      "output_file": {
+        "type": "string"
+      },
+      "refactored_file": {
+        "type": "string"
+      },
+      "test_dir": {
+        "type": "string"
+      }
+    },
+    "required": [
+      "action",
+      "refactored_file"
+    ]
+  },
+  "license": "MIT"
+}

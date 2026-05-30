@@ -1,0 +1,77 @@
+{
+  "name": "meditate",
+  "version": "0.1.0",
+  "description": "冥想計時器",
+  "category": "K",
+  "number": 214,
+  "pain_point": "冥想計時",
+  "commercial": "✅",
+  "language": "Python",
+  "dependencies": [
+    "rich",
+    "click",
+    "plyer"
+  ],
+  "agent_compatible": true,
+  "mcp_ready": true,
+  "intent_triggers": [
+    "開始一個 10 分鐘的冥想計時",
+    "幫我計時冥想，結束後通知我",
+    "我想做正念冥想，需要計時器",
+    "冥想計時工具，帶提示音",
+    "設定 20 分鐘的靜心練習",
+    "每天冥想計時器，記錄練習時間",
+    "啟動冥想模式並計時"
+  ],
+  "examples": [
+    {
+      "query": "開始 15 分鐘冥想，結束時發出提示音",
+      "params": {
+        "action": "run",
+        "duration_minutes": 15,
+        "notify": true
+      }
+    },
+    {
+      "query": "做 5 分鐘呼吸冥想練習",
+      "params": {
+        "action": "run",
+        "duration_minutes": 5,
+        "mode": "breathing"
+      }
+    },
+    {
+      "query": "啟動 20 分鐘冥想計時，中間不要打擾",
+      "params": {
+        "action": "run",
+        "duration_minutes": 20,
+        "silent": true
+      }
+    }
+  ],
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "action": {
+        "type": "string"
+      },
+      "duration_minutes": {
+        "type": "integer"
+      },
+      "mode": {
+        "type": "string"
+      },
+      "notify": {
+        "type": "boolean"
+      },
+      "silent": {
+        "type": "boolean"
+      }
+    },
+    "required": [
+      "action",
+      "duration_minutes"
+    ]
+  },
+  "license": "MIT"
+}

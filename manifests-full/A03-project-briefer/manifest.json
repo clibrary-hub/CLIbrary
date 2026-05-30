@@ -1,0 +1,69 @@
+{
+  "name": "project-briefer",
+  "version": "0.1.0",
+  "description": "專案摘要產生器",
+  "category": "A",
+  "number": 3,
+  "pain_point": "每次對話都要重新描述專案背景",
+  "commercial": "✅",
+  "language": "Python",
+  "dependencies": [
+    "pathlib",
+    "rich",
+    "gitpython"
+  ],
+  "agent_compatible": true,
+  "mcp_ready": true,
+  "intent_triggers": [
+    "幫我產生一份專案摘要給 AI 看",
+    "生成這個 repo 的背景說明文件",
+    "我不想每次都重新介紹專案，幫我自動產生",
+    "建立一份專案簡介讓 Agent 快速了解",
+    "自動摘要這個專案的核心功能",
+    "把專案重點整理成一段說明",
+    "幫我產出專案 brief，省去每次重複解釋"
+  ],
+  "examples": [
+    {
+      "query": "為 /workspace/my-app 這個專案產生摘要",
+      "params": {
+        "project_path": "/workspace/my-app"
+      }
+    },
+    {
+      "query": "生成專案摘要並儲存到 BRIEF.md",
+      "params": {
+        "project_path": ".",
+        "output_file": "BRIEF.md"
+      }
+    },
+    {
+      "query": "產出專案背景說明，包含技術棧和主要功能",
+      "params": {
+        "project_path": ".",
+        "include_tech_stack": true
+      }
+    }
+  ],
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "project_path": {
+        "type": "string",
+        "description": "要產生摘要的專案根目錄路徑"
+      },
+      "output_file": {
+        "type": "string",
+        "description": "輸出摘要的目標檔案路徑"
+      },
+      "include_tech_stack": {
+        "type": "boolean",
+        "description": "是否包含技術棧資訊"
+      }
+    },
+    "required": [
+      "project_path"
+    ]
+  },
+  "license": "MIT"
+}

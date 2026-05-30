@@ -1,0 +1,75 @@
+{
+  "name": "fig-pull",
+  "version": "0.1.0",
+  "description": "圖表抽取器",
+  "category": "S",
+  "number": 374,
+  "pain_point": "跨論文圖表抽取",
+  "commercial": "⚠️",
+  "language": "Python",
+  "dependencies": [
+    "pymupdf",
+    "click",
+    "rich"
+  ],
+  "agent_compatible": true,
+  "mcp_ready": true,
+  "intent_triggers": [
+    "把這篇論文的所有圖表抽取出來",
+    "幫我從多篇 PDF 論文提取圖片",
+    "抽取論文裡的實驗結果圖",
+    "把 PDF 裡的表格轉成可編輯格式",
+    "批次從 20 篇論文抽取架構圖",
+    "找出論文第 3 頁的圖 2",
+    "收集多篇論文的比較表格"
+  ],
+  "examples": [
+    {
+      "query": "從 paper.pdf 抽取所有圖表到 figures/ 目錄",
+      "params": {
+        "input_file": "paper.pdf",
+        "output_dir": "figures/"
+      }
+    },
+    {
+      "query": "批次從 papers/ 所有 PDF 抽取圖片和表格",
+      "params": {
+        "input_dir": "papers/",
+        "output_dir": "extracted/",
+        "extract_tables": true
+      }
+    },
+    {
+      "query": "只抽取 report.pdf 第 4-8 頁的圖表",
+      "params": {
+        "input_file": "report.pdf",
+        "pages": "4-8",
+        "output_dir": "figs/"
+      }
+    }
+  ],
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "extract_tables": {
+        "type": "boolean"
+      },
+      "input_dir": {
+        "type": "string"
+      },
+      "input_file": {
+        "type": "string"
+      },
+      "output_dir": {
+        "type": "string"
+      },
+      "pages": {
+        "type": "string"
+      }
+    },
+    "required": [
+      "output_dir"
+    ]
+  },
+  "license": "MIT"
+}

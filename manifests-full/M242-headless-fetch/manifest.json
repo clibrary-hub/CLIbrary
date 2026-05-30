@@ -1,0 +1,81 @@
+{
+  "name": "headless-fetch",
+  "version": "0.1.0",
+  "description": "Headless 抓取",
+  "category": "M",
+  "number": 242,
+  "pain_point": "動態網站 SSR 抓取",
+  "commercial": "⚠️",
+  "language": "Python",
+  "dependencies": [
+    "playwright",
+    "click",
+    "rich"
+  ],
+  "agent_compatible": true,
+  "mcp_ready": true,
+  "intent_triggers": [
+    "抓取動態渲染的 JavaScript 網頁",
+    "Playwright 無頭瀏覽器爬蟲",
+    "SPA 網站爬取工具",
+    "動態網站爬蟲，需要等 JS 執行完",
+    "抓取需要登入或滾動載入的網頁",
+    "用 headless 模式擷取動態內容",
+    "爬取 React/Vue 寫的 SPA 網站"
+  ],
+  "examples": [
+    {
+      "query": "用 headless 模式抓取 https://spa.example.com 的資料",
+      "params": {
+        "action": "run",
+        "url": "https://spa.example.com",
+        "wait_for": ".main-content"
+      }
+    },
+    {
+      "query": "登入後抓取 https://dashboard.example.com 的資料",
+      "params": {
+        "action": "run",
+        "url": "https://dashboard.example.com",
+        "login_url": "https://dashboard.example.com/login",
+        "credentials_file": "login.json"
+      }
+    },
+    {
+      "query": "截圖並抓取 https://app.example.com 完整頁面內容",
+      "params": {
+        "action": "run",
+        "url": "https://app.example.com",
+        "screenshot": true
+      }
+    }
+  ],
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "action": {
+        "type": "string"
+      },
+      "credentials_file": {
+        "type": "string"
+      },
+      "login_url": {
+        "type": "string"
+      },
+      "screenshot": {
+        "type": "boolean"
+      },
+      "url": {
+        "type": "string"
+      },
+      "wait_for": {
+        "type": "string"
+      }
+    },
+    "required": [
+      "action",
+      "url"
+    ]
+  },
+  "license": "MIT"
+}

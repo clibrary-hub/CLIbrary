@@ -1,0 +1,78 @@
+{
+  "name": "otp-collect",
+  "version": "0.1.0",
+  "description": "OTP 集中器",
+  "category": "I",
+  "number": 174,
+  "pain_point": "SMS 驗證碼分散",
+  "commercial": "⚠️",
+  "language": "Python",
+  "dependencies": [
+    "click",
+    "rich",
+    "sqlite3"
+  ],
+  "agent_compatible": true,
+  "mcp_ready": true,
+  "intent_triggers": [
+    "SMS 驗證碼散在不同手機很難找，需要集中管理",
+    "幫我把 OTP 驗證碼統一收集到一個地方",
+    "想從信箱自動抓取 OTP 驗證碼",
+    "每次登入都要找驗證碼，需要集中顯示工具",
+    "掃描郵件找出最近的驗證碼並顯示",
+    "幫我建立 OTP 歷史記錄方便查詢",
+    "自動從信件抓取並暫存最新的驗證碼"
+  ],
+  "examples": [
+    {
+      "query": "掃描收件匣找出過去 30 分鐘的 OTP 驗證碼",
+      "params": {
+        "action": "scan",
+        "minutes": "30",
+        "source": "email"
+      }
+    },
+    {
+      "query": "列出今天收到的所有驗證碼並顯示來源服務",
+      "params": {
+        "action": "list",
+        "date": "today"
+      }
+    },
+    {
+      "query": "查詢最近 Google 帳號的 OTP 驗證碼",
+      "params": {
+        "action": "scan",
+        "service": "Google",
+        "latest": "true"
+      }
+    }
+  ],
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "action": {
+        "type": "string"
+      },
+      "date": {
+        "type": "string"
+      },
+      "latest": {
+        "type": "string"
+      },
+      "minutes": {
+        "type": "string"
+      },
+      "service": {
+        "type": "string"
+      },
+      "source": {
+        "type": "string"
+      }
+    },
+    "required": [
+      "action"
+    ]
+  },
+  "license": "MIT"
+}

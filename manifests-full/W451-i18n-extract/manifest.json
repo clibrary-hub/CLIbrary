@@ -1,0 +1,80 @@
+{
+  "name": "i18n-extract",
+  "version": "0.1.0",
+  "description": "字串抽取器",
+  "category": "W",
+  "number": 451,
+  "pain_point": "程式碼字串抽取",
+  "commercial": "✅",
+  "language": "Python",
+  "dependencies": [
+    "ast",
+    "re",
+    "click",
+    "rich"
+  ],
+  "agent_compatible": true,
+  "mcp_ready": true,
+  "intent_triggers": [
+    "從程式碼中抽取所有需要翻譯的字串",
+    "找出 React 組件裡所有硬寫的文字",
+    "掃描程式碼，列出尚未 i18n 化的字串",
+    "把程式碼裡的中文字串全部抽出來",
+    "生成 i18n 字串資源檔案",
+    "找出哪些地方的字串還沒有用翻譯函數包裝",
+    "抽取所有 t() 函數呼叫的翻譯鍵"
+  ],
+  "examples": [
+    {
+      "query": "掃描 /src 目錄所有 .py 檔，抽取所有中文字串",
+      "params": {
+        "source_dir": "/src",
+        "file_pattern": "*.py",
+        "lang_pattern": "zh"
+      }
+    },
+    {
+      "query": "從 components/*.tsx 找出所有未包裝在 t() 中的英文字串",
+      "params": {
+        "source_dir": "components",
+        "file_pattern": "*.tsx",
+        "unwrapped_only": true
+      }
+    },
+    {
+      "query": "抽取 app.js 中所有字串並生成 en.json 資源檔",
+      "params": {
+        "source_file": "app.js",
+        "output_file": "en.json",
+        "output_format": "json"
+      }
+    }
+  ],
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "file_pattern": {
+        "type": "string"
+      },
+      "lang_pattern": {
+        "type": "string"
+      },
+      "output_file": {
+        "type": "string"
+      },
+      "output_format": {
+        "type": "string"
+      },
+      "source_dir": {
+        "type": "string"
+      },
+      "source_file": {
+        "type": "string"
+      },
+      "unwrapped_only": {
+        "type": "boolean"
+      }
+    }
+  },
+  "license": "MIT"
+}

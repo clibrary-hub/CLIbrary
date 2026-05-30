@@ -1,0 +1,66 @@
+{
+  "name": "ci-diag",
+  "version": "0.1.0",
+  "description": "CI 失敗診斷器",
+  "category": "Q",
+  "number": 327,
+  "pain_point": "CI 失敗自動診斷",
+  "commercial": "✅",
+  "language": "Python",
+  "dependencies": [
+    "anthropic",
+    "click",
+    "rich"
+  ],
+  "agent_compatible": true,
+  "mcp_ready": true,
+  "intent_triggers": [
+    "CI 跑失敗了，幫我看看是哪裡出問題",
+    "分析 GitHub Actions 的錯誤日誌",
+    "Pipeline 掛掉了，找出根本原因",
+    "這個 CI 錯誤訊息怎麼修",
+    "自動診斷 Jenkins build failure",
+    "掃描 CI log 並給出修復建議",
+    "把 CI 失敗原因整理成摘要給工程師"
+  ],
+  "examples": [
+    {
+      "query": "分析 ci_log.txt 的失敗原因並給出修復建議",
+      "params": {
+        "log_file": "ci_log.txt"
+      }
+    },
+    {
+      "query": "診斷 GitHub Actions run_id=12345 的失敗",
+      "params": {
+        "provider": "github",
+        "run_id": "12345"
+      }
+    },
+    {
+      "query": "分析 pipeline_output.log 並分類錯誤類型",
+      "params": {
+        "log_file": "pipeline_output.log",
+        "categorize": true
+      }
+    }
+  ],
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "categorize": {
+        "type": "boolean"
+      },
+      "log_file": {
+        "type": "string"
+      },
+      "provider": {
+        "type": "string"
+      },
+      "run_id": {
+        "type": "string"
+      }
+    }
+  },
+  "license": "MIT"
+}

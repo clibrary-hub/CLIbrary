@@ -1,0 +1,84 @@
+{
+  "name": "sla-watch",
+  "version": "0.1.0",
+  "description": "SLA 守望者",
+  "category": "Y",
+  "number": 497,
+  "pain_point": "SLA 違約偵測",
+  "commercial": "✅",
+  "language": "Python",
+  "dependencies": [
+    "sqlite3",
+    "click",
+    "rich"
+  ],
+  "agent_compatible": true,
+  "mcp_ready": true,
+  "intent_triggers": [
+    "監測 SLA 有沒有違約",
+    "哪些服務票快超過 SLA 時限了？",
+    "查看 SLA 達成率報告",
+    "有哪些客戶的 SLA 已經違約？",
+    "SLA 快到期的工單提醒我",
+    "本月 SLA 違約率是多少？",
+    "設定 SLA 時限並追蹤達成狀況"
+  ],
+  "examples": [
+    {
+      "query": "查詢所有距離 SLA 截止時間不到 2 小時的工單",
+      "params": {
+        "alert_before_hours": 2,
+        "status": "open"
+      }
+    },
+    {
+      "query": "生成本月 SLA 達成率報告，按客戶和優先級分析",
+      "params": {
+        "month": "2024-01",
+        "group_by": [
+          "customer",
+          "priority"
+        ],
+        "report_type": "sla_compliance"
+      }
+    },
+    {
+      "query": "標記所有已違反 SLA 的高優先級工單，發送警報",
+      "params": {
+        "priority": "high",
+        "status": "sla_breached",
+        "send_alert": true
+      }
+    }
+  ],
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "alert_before_hours": {
+        "type": "integer"
+      },
+      "group_by": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      },
+      "month": {
+        "type": "string"
+      },
+      "priority": {
+        "type": "string"
+      },
+      "report_type": {
+        "type": "string"
+      },
+      "send_alert": {
+        "type": "boolean"
+      },
+      "status": {
+        "type": "string"
+      }
+    }
+  },
+  "license": "MIT"
+}

@@ -1,0 +1,87 @@
+{
+  "name": "multi-paper",
+  "version": "0.1.0",
+  "description": "跨語檢索器",
+  "category": "S",
+  "number": 376,
+  "pain_point": "跨語言搜尋學術",
+  "commercial": "⚠️",
+  "language": "Python",
+  "dependencies": [
+    "anthropic",
+    "requests",
+    "click"
+  ],
+  "agent_compatible": true,
+  "mcp_ready": true,
+  "intent_triggers": [
+    "搜尋中文和日文的相關研究論文",
+    "用英文關鍵字找中文學術文獻",
+    "跨語言搜尋這個主題的最新研究",
+    "同時在多個語言的資料庫搜尋",
+    "把日文論文的搜尋結果翻譯摘要",
+    "找出同一個研究主題在不同語言的學術資源",
+    "整合多語言的文獻搜尋結果"
+  ],
+  "examples": [
+    {
+      "query": "用「自然語言處理」跨語搜尋中英日三語的相關論文",
+      "params": {
+        "query": "自然語言處理",
+        "languages": [
+          "zh",
+          "en",
+          "ja"
+        ]
+      }
+    },
+    {
+      "query": "搜尋 deep learning 並翻譯中文摘要",
+      "params": {
+        "query": "deep learning",
+        "target_language": "zh-TW",
+        "translate_abstracts": true
+      }
+    },
+    {
+      "query": "在 CiNii 和 CNKI 搜尋量子計算相關研究",
+      "params": {
+        "query": "量子計算",
+        "sources": [
+          "cnki",
+          "cinii"
+        ]
+      }
+    }
+  ],
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "languages": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      },
+      "query": {
+        "type": "string"
+      },
+      "sources": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      },
+      "target_language": {
+        "type": "string"
+      },
+      "translate_abstracts": {
+        "type": "boolean"
+      }
+    },
+    "required": [
+      "query"
+    ]
+  },
+  "license": "MIT"
+}

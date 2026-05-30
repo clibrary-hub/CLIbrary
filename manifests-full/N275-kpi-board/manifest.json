@@ -1,0 +1,83 @@
+{
+  "name": "kpi-board",
+  "version": "0.1.0",
+  "description": "KPI 儀表板",
+  "category": "N",
+  "number": 275,
+  "pain_point": "KPI 儀表板",
+  "commercial": "✅",
+  "language": "Python",
+  "dependencies": [
+    "rich",
+    "click",
+    "sqlite3"
+  ],
+  "agent_compatible": true,
+  "mcp_ready": true,
+  "intent_triggers": [
+    "在終端機顯示 KPI 儀表板",
+    "快速看各項關鍵指標的達成狀況",
+    "CLI 版本的 KPI 追蹤面板",
+    "把 KPI 目標和現況對比顯示",
+    "即時 KPI 監控工具",
+    "每天早上自動顯示今日 KPI 狀態",
+    "用命令列追蹤業績達成率"
+  ],
+  "examples": [
+    {
+      "query": "顯示 kpi_data.csv 的本月 KPI 達成狀況",
+      "params": {
+        "action": "show",
+        "input_file": "kpi_data.csv",
+        "period": "monthly"
+      }
+    },
+    {
+      "query": "從 metrics.db 載入 KPI 並顯示達成率",
+      "params": {
+        "action": "show",
+        "db_file": "metrics.db",
+        "show_progress": true
+      }
+    },
+    {
+      "query": "設定 Q2 銷售 KPI 目標並追蹤",
+      "params": {
+        "action": "set",
+        "metric": "sales_revenue",
+        "target": 1000000,
+        "period": "Q2"
+      }
+    }
+  ],
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "action": {
+        "type": "string"
+      },
+      "db_file": {
+        "type": "string"
+      },
+      "input_file": {
+        "type": "string"
+      },
+      "metric": {
+        "type": "string"
+      },
+      "period": {
+        "type": "string"
+      },
+      "show_progress": {
+        "type": "boolean"
+      },
+      "target": {
+        "type": "integer"
+      }
+    },
+    "required": [
+      "action"
+    ]
+  },
+  "license": "MIT"
+}

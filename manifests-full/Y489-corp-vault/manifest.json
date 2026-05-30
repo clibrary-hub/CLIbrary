@@ -1,0 +1,78 @@
+{
+  "name": "corp-vault",
+  "version": "0.1.0",
+  "description": "公司文件保管",
+  "category": "Y",
+  "number": 489,
+  "pain_point": "公司登記文件整理",
+  "commercial": "✅",
+  "language": "Python",
+  "dependencies": [
+    "sqlite3",
+    "click",
+    "rich"
+  ],
+  "agent_compatible": true,
+  "mcp_ready": true,
+  "intent_triggers": [
+    "幫我整理公司的重要法律文件",
+    "公司章程放哪了？幫我查一下",
+    "管理公司的登記文件和有效期",
+    "哪些公司文件快要到期需要更新？",
+    "建立公司文件保管庫",
+    "追蹤公司執照的更新日期",
+    "列出所有公司法律文件清單"
+  ],
+  "examples": [
+    {
+      "query": "新增公司登記証書到保管庫，有效期 2025-12-31",
+      "params": {
+        "document_name": "公司登記証書",
+        "file_path": "cert_2024.pdf",
+        "expiry_date": "2025-12-31",
+        "category": "登記文件"
+      }
+    },
+    {
+      "query": "查詢未來 90 天內到期的所有公司文件",
+      "params": {
+        "expire_within_days": 90,
+        "show_all": false
+      }
+    },
+    {
+      "query": "列出所有公司文件清單，依類別分類顯示",
+      "params": {
+        "group_by": "category",
+        "show_all": true
+      }
+    }
+  ],
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "category": {
+        "type": "string"
+      },
+      "document_name": {
+        "type": "string"
+      },
+      "expire_within_days": {
+        "type": "integer"
+      },
+      "expiry_date": {
+        "type": "string"
+      },
+      "file_path": {
+        "type": "string"
+      },
+      "group_by": {
+        "type": "string"
+      },
+      "show_all": {
+        "type": "boolean"
+      }
+    }
+  },
+  "license": "MIT"
+}

@@ -1,0 +1,82 @@
+{
+  "name": "corr-matrix",
+  "version": "0.1.0",
+  "description": "相關矩陣器",
+  "category": "N",
+  "number": 271,
+  "pain_point": "散點/相關矩陣",
+  "commercial": "✅",
+  "language": "Python",
+  "dependencies": [
+    "pandas",
+    "matplotlib",
+    "click"
+  ],
+  "agent_compatible": true,
+  "mcp_ready": true,
+  "intent_triggers": [
+    "幫我畫一張相關矩陣熱力圖",
+    "各欄位之間的相關性怎麼看",
+    "CSV 資料的變數相關分析",
+    "找出哪些欄位之間有強相關",
+    "視覺化多變量之間的相關係數",
+    "散點矩陣圖分析資料關係",
+    "我想知道哪些特徵彼此高度相關"
+  ],
+  "examples": [
+    {
+      "query": "對 housing.csv 所有數值欄位畫相關矩陣",
+      "params": {
+        "action": "run",
+        "input_file": "housing.csv",
+        "output_plot": "corr_matrix.png"
+      }
+    },
+    {
+      "query": "分析 sales_data.csv 的欄位相關性並輸出熱力圖",
+      "params": {
+        "action": "run",
+        "input_file": "sales_data.csv",
+        "method": "pearson",
+        "output_plot": "sales_corr.png"
+      }
+    },
+    {
+      "query": "用 customer_features.csv 畫散點矩陣找高相關變數",
+      "params": {
+        "action": "run",
+        "input_file": "customer_features.csv",
+        "threshold": 0.7,
+        "output_file": "high_corr.csv"
+      }
+    }
+  ],
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "action": {
+        "type": "string"
+      },
+      "input_file": {
+        "type": "string"
+      },
+      "method": {
+        "type": "string"
+      },
+      "output_file": {
+        "type": "string"
+      },
+      "output_plot": {
+        "type": "string"
+      },
+      "threshold": {
+        "type": "number"
+      }
+    },
+    "required": [
+      "action",
+      "input_file"
+    ]
+  },
+  "license": "MIT"
+}

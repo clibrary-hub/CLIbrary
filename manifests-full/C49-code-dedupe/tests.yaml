@@ -1,0 +1,24 @@
+tool: code-dedupe
+type: readonly
+generated: "2026-04-27"
+skip: false
+
+setup:
+  files:
+    - path: testdata/dup.py
+      content: "def foo(items):\n    result = []\n    for x in items:\n        if x > 0:\n            result.append(x)\n    return result\n\ndef bar(data):\n    output = []\n    for x in data:\n        if x > 0:\n            output.append(x)\n    return output\n"
+
+cases:
+  - id: help_works
+    description: --help exits 0
+    cmd: ["--help"]
+    expect:
+      exit_code: 0
+      stdout_contains: "Usage:"
+  - id: scan_produces_output
+    description: scan runs and returns output
+    cmd: ["scan", "testdata/dup.py", "--format", "json"]
+    expect:
+      exit_code: 1
+      is_valid_json: true
+      json_is_array: true

@@ -1,0 +1,88 @@
+{
+  "name": "log-focus",
+  "version": "0.1.0",
+  "description": "日誌焦點提取器",
+  "category": "E",
+  "number": 85,
+  "pain_point": "日誌雜訊找不到關鍵",
+  "commercial": "✅",
+  "language": "Python",
+  "dependencies": [
+    "re",
+    "rich",
+    "click"
+  ],
+  "agent_compatible": true,
+  "mcp_ready": true,
+  "intent_triggers": [
+    "從日誌中提取 ERROR 和警告訊息",
+    "幫我找日誌裡的關鍵錯誤",
+    "日誌太長了，只給我看重要的部分",
+    "過濾 log 檔，找出所有異常",
+    "把這個 server.log 的重點提煉出來",
+    "掃描日誌找出過去 1 小時的錯誤",
+    "讓 AI 分析日誌中的問題"
+  ],
+  "examples": [
+    {
+      "query": "從 app.log 提取所有 ERROR 等級的訊息",
+      "params": {
+        "log_file": "app.log",
+        "level": "ERROR",
+        "action": "run"
+      }
+    },
+    {
+      "query": "找出 server.log 中過去 2 小時的異常",
+      "params": {
+        "log_file": "server.log",
+        "hours": 2,
+        "action": "run"
+      }
+    },
+    {
+      "query": "過濾日誌並輸出關鍵事件到 focus.txt",
+      "params": {
+        "log_file": "system.log",
+        "output_file": "focus.txt",
+        "keywords": [
+          "Exception",
+          "Error",
+          "Critical"
+        ],
+        "action": "run"
+      }
+    }
+  ],
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "action": {
+        "type": "string"
+      },
+      "hours": {
+        "type": "integer"
+      },
+      "keywords": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      },
+      "level": {
+        "type": "string"
+      },
+      "log_file": {
+        "type": "string"
+      },
+      "output_file": {
+        "type": "string"
+      }
+    },
+    "required": [
+      "action",
+      "log_file"
+    ]
+  },
+  "license": "MIT"
+}

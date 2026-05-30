@@ -1,0 +1,75 @@
+{
+  "name": "doc-to-md",
+  "version": "0.1.0",
+  "description": "文件轉 Markdown",
+  "category": "E",
+  "number": 82,
+  "pain_point": "PDF/Office 無法直接處理",
+  "commercial": "✅",
+  "language": "Python",
+  "dependencies": [
+    "pymupdf",
+    "python-docx",
+    "click"
+  ],
+  "agent_compatible": true,
+  "mcp_ready": true,
+  "intent_triggers": [
+    "把 PDF 轉換成 Markdown 格式",
+    "Word 檔轉 Markdown 給 AI 讀",
+    "把這個 Office 文件轉成可處理的格式",
+    "把 report.pdf 的內容提取出來",
+    "把 doc 檔轉成 AI 能讀的格式",
+    "把 Excel 表格轉成 Markdown",
+    "批次把 docs/ 裡的 PDF 轉成 MD"
+  ],
+  "examples": [
+    {
+      "query": "把 report.pdf 轉換成 Markdown",
+      "params": {
+        "input_file": "report.pdf",
+        "action": "run"
+      }
+    },
+    {
+      "query": "把 proposal.docx 轉成 Markdown 儲存",
+      "params": {
+        "input_file": "proposal.docx",
+        "output_file": "proposal.md",
+        "action": "run"
+      }
+    },
+    {
+      "query": "批次轉換 docs/ 目錄所有 PDF 和 Word 檔",
+      "params": {
+        "input_dir": "docs/",
+        "output_dir": "markdown/",
+        "action": "run"
+      }
+    }
+  ],
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "action": {
+        "type": "string"
+      },
+      "input_dir": {
+        "type": "string"
+      },
+      "input_file": {
+        "type": "string"
+      },
+      "output_dir": {
+        "type": "string"
+      },
+      "output_file": {
+        "type": "string"
+      }
+    },
+    "required": [
+      "action"
+    ]
+  },
+  "license": "MIT"
+}

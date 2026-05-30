@@ -1,0 +1,80 @@
+{
+  "name": "agent-acl",
+  "version": "0.1.0",
+  "description": "Agent 權限控管",
+  "category": "F",
+  "number": 105,
+  "pain_point": "Agent 信任邊界不清",
+  "commercial": "✅",
+  "language": "Python",
+  "dependencies": [
+    "click",
+    "rich",
+    "pydantic"
+  ],
+  "agent_compatible": true,
+  "mcp_ready": true,
+  "intent_triggers": [
+    "怎麼限制哪些 Agent 可以存取哪些資源？",
+    "Agent 之間的信任邊界要怎麼設定？",
+    "我需要一個 Agent 存取控制清單",
+    "不想讓某個 Agent 隨便呼叫其他 Agent",
+    "如何給 Agent 設定角色和權限？",
+    "Agent 系統中的 ACL 怎麼管理",
+    "想防止未授權的 Agent 執行特定操作"
+  ],
+  "examples": [
+    {
+      "query": "設定 agent-scraper 只能讀取，不能寫入資料庫",
+      "params": {
+        "action": "run",
+        "agent_name": "agent-scraper",
+        "permissions": "read",
+        "resource": "database"
+      }
+    },
+    {
+      "query": "查看所有 Agent 目前的權限清單",
+      "params": {
+        "action": "run",
+        "mode": "list"
+      }
+    },
+    {
+      "query": "建立 admin-agent 角色並賦予完整系統存取權限",
+      "params": {
+        "action": "run",
+        "agent_name": "admin-agent",
+        "role": "admin",
+        "permissions": "read,write,execute"
+      }
+    }
+  ],
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "action": {
+        "type": "string"
+      },
+      "agent_name": {
+        "type": "string"
+      },
+      "mode": {
+        "type": "string"
+      },
+      "permissions": {
+        "type": "string"
+      },
+      "resource": {
+        "type": "string"
+      },
+      "role": {
+        "type": "string"
+      }
+    },
+    "required": [
+      "action"
+    ]
+  },
+  "license": "MIT"
+}

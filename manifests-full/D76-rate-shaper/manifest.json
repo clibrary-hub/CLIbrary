@@ -1,0 +1,80 @@
+{
+  "name": "rate-shaper",
+  "version": "0.1.0",
+  "description": "速率整形器",
+  "category": "D",
+  "number": 76,
+  "pain_point": "連續調用造成限流",
+  "commercial": "✅",
+  "language": "Python",
+  "dependencies": [
+    "ratelimit",
+    "click",
+    "rich"
+  ],
+  "agent_compatible": true,
+  "mcp_ready": true,
+  "intent_triggers": [
+    "幫我控制 API 呼叫速率，不要被限流",
+    "設定每分鐘最多呼叫 60 次",
+    "平滑化 Agent 的請求頻率",
+    "防止連續呼叫 API 被封鎖",
+    "設定速率限制，控制請求節奏",
+    "把這些請求分散在 10 分鐘內發送",
+    "整形請求速率，符合 API 配額"
+  ],
+  "examples": [
+    {
+      "query": "設定每分鐘最多 30 次 API 呼叫",
+      "params": {
+        "rate_limit": 30,
+        "period": "minute",
+        "action": "run"
+      }
+    },
+    {
+      "query": "平滑化 1000 個請求，分散在 10 分鐘內",
+      "params": {
+        "total_requests": 1000,
+        "duration_minutes": 10,
+        "action": "run"
+      }
+    },
+    {
+      "query": "設定令牌桶速率限制，每秒 5 個",
+      "params": {
+        "rate_limit": 5,
+        "period": "second",
+        "algorithm": "token_bucket",
+        "action": "run"
+      }
+    }
+  ],
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "action": {
+        "type": "string"
+      },
+      "algorithm": {
+        "type": "string"
+      },
+      "duration_minutes": {
+        "type": "integer"
+      },
+      "period": {
+        "type": "string"
+      },
+      "rate_limit": {
+        "type": "integer"
+      },
+      "total_requests": {
+        "type": "integer"
+      }
+    },
+    "required": [
+      "action"
+    ]
+  },
+  "license": "MIT"
+}

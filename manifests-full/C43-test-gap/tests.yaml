@@ -1,0 +1,22 @@
+tool: test-gap
+type: readonly
+generated: "2026-04-27"
+skip: false
+
+setup:
+  files:
+    - path: testdata/mymod.py
+      content: "def add(a, b):\n    return a + b\ndef sub(a, b):\n    return a - b\n"
+
+cases:
+  - id: help_works
+    description: --help exits 0
+    cmd: ["--help"]
+    expect:
+      exit_code: 0
+      stdout_contains: "Usage:"
+  - id: scan_produces_output
+    description: scan runs and returns output
+    cmd: ["scan", "testdata/mymod.py"]
+    expect:
+      exit_code: 1

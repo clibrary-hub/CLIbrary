@@ -1,0 +1,94 @@
+{
+  "name": "llm-compare",
+  "version": "0.1.0",
+  "description": "模型比對器",
+  "category": "O",
+  "number": 282,
+  "pain_point": "多模型結果比對",
+  "commercial": "⚠️",
+  "language": "Python",
+  "dependencies": [
+    "anthropic",
+    "click",
+    "rich"
+  ],
+  "agent_compatible": true,
+  "mcp_ready": true,
+  "intent_triggers": [
+    "比較不同 LLM 對同一問題的回答差異",
+    "同時跑 Claude 和 GPT 看哪個回答更好",
+    "多模型並行比對工具",
+    "我想評估哪個模型最適合我的任務",
+    "把相同 prompt 打給多個模型並排對比",
+    "A/B 測試不同 AI 模型的回答品質",
+    "批次比較多個模型在測試集上的表現"
+  ],
+  "examples": [
+    {
+      "query": "把 test_prompts.jsonl 同時送給 claude-3-haiku 和 claude-3-sonnet 比較",
+      "params": {
+        "action": "compare",
+        "input_file": "test_prompts.jsonl",
+        "models": [
+          "claude-3-haiku-20240307",
+          "claude-3-5-sonnet-20241022"
+        ],
+        "output_file": "comparison.csv"
+      }
+    },
+    {
+      "query": "對單一 prompt 快速比較三個模型的回答",
+      "params": {
+        "action": "compare",
+        "prompt": "請解釋量子糾纏",
+        "models": [
+          "claude-3-haiku-20240307",
+          "claude-3-5-sonnet-20241022"
+        ],
+        "show_diff": true
+      }
+    },
+    {
+      "query": "批次評估 eval_set.csv 上不同模型的準確率",
+      "params": {
+        "action": "eval",
+        "input_file": "eval_set.csv",
+        "metric": "accuracy",
+        "output_file": "eval_results.json"
+      }
+    }
+  ],
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "action": {
+        "type": "string"
+      },
+      "input_file": {
+        "type": "string"
+      },
+      "metric": {
+        "type": "string"
+      },
+      "models": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      },
+      "output_file": {
+        "type": "string"
+      },
+      "prompt": {
+        "type": "string"
+      },
+      "show_diff": {
+        "type": "boolean"
+      }
+    },
+    "required": [
+      "action"
+    ]
+  },
+  "license": "MIT"
+}

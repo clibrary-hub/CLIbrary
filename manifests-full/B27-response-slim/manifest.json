@@ -1,0 +1,77 @@
+{
+  "name": "response-slim",
+  "version": "0.1.0",
+  "description": "回覆瘦身摘要器",
+  "category": "B",
+  "number": 27,
+  "pain_point": "Agent 回覆太冗長",
+  "commercial": "✅",
+  "language": "Python",
+  "dependencies": [
+    "anthropic",
+    "click",
+    "rich"
+  ],
+  "agent_compatible": true,
+  "mcp_ready": true,
+  "intent_triggers": [
+    "把這個回覆壓縮成 3 行重點",
+    "AI 說太多了，幫我摘要一下",
+    "把這段長回覆提煉成精簡版本",
+    "去掉廢話，只留下核心答案",
+    "把 500 字的回覆縮成 100 字",
+    "摘要這段回覆的重點給我",
+    "把冗長的 AI 輸出做瘦身處理"
+  ],
+  "examples": [
+    {
+      "query": "把這段回覆壓縮到 100 字以內",
+      "params": {
+        "input_text": "...",
+        "max_words": 100,
+        "action": "run"
+      }
+    },
+    {
+      "query": "把 AI 的回答提煉成 5 個重點條列",
+      "params": {
+        "input_text": "...",
+        "format": "bullet_points",
+        "action": "run"
+      }
+    },
+    {
+      "query": "精簡這段技術說明，去掉範例只留結論",
+      "params": {
+        "input_text": "...",
+        "remove_examples": true,
+        "action": "run"
+      }
+    }
+  ],
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "action": {
+        "type": "string"
+      },
+      "format": {
+        "type": "string"
+      },
+      "input_text": {
+        "type": "string"
+      },
+      "max_words": {
+        "type": "integer"
+      },
+      "remove_examples": {
+        "type": "boolean"
+      }
+    },
+    "required": [
+      "action",
+      "input_text"
+    ]
+  },
+  "license": "MIT"
+}

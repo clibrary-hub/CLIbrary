@@ -1,0 +1,74 @@
+{
+  "name": "behavior-alert",
+  "version": "0.1.0",
+  "description": "行為告警器",
+  "category": "P",
+  "number": 310,
+  "pain_point": "行為日誌異常告警",
+  "commercial": "✅",
+  "language": "Python",
+  "dependencies": [
+    "click",
+    "rich",
+    "sqlite3"
+  ],
+  "agent_compatible": true,
+  "mcp_ready": true,
+  "intent_triggers": [
+    "監測系統日誌有沒有異常行為",
+    "有人在奇怪的時間登入，幫我告警",
+    "分析 access log 找出可疑的請求模式",
+    "設定規則：如果失敗登入超過 5 次就通知我",
+    "幫我建立行為基準線並偵測偏差",
+    "掃描 auth.log 找出暴力破解嘗試",
+    "哪些帳號的存取行為不符合正常模式"
+  ],
+  "examples": [
+    {
+      "query": "分析 auth.log 並告警所有在凌晨 0-5 點的登入事件",
+      "params": {
+        "log_file": "auth.log",
+        "alert_hours": "0-5"
+      }
+    },
+    {
+      "query": "掃描 access.log 找出失敗登入超過 10 次的 IP",
+      "params": {
+        "log_file": "access.log",
+        "threshold": 10,
+        "event_type": "failed_login"
+      }
+    },
+    {
+      "query": "監測 /var/log/syslog 並在發現異常時輸出 alert.json",
+      "params": {
+        "log_file": "/var/log/syslog",
+        "output_file": "alert.json"
+      }
+    }
+  ],
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "alert_hours": {
+        "type": "string"
+      },
+      "event_type": {
+        "type": "string"
+      },
+      "log_file": {
+        "type": "string"
+      },
+      "output_file": {
+        "type": "string"
+      },
+      "threshold": {
+        "type": "integer"
+      }
+    },
+    "required": [
+      "log_file"
+    ]
+  },
+  "license": "MIT"
+}

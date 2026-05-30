@@ -1,0 +1,80 @@
+{
+  "name": "dry-run",
+  "version": "0.1.0",
+  "description": "預演模式包裝器",
+  "category": "D",
+  "number": 79,
+  "pain_point": "流程缺少 dry-run 模式",
+  "commercial": "✅",
+  "language": "Python",
+  "dependencies": [
+    "click",
+    "rich",
+    "subprocess"
+  ],
+  "agent_compatible": true,
+  "mcp_ready": true,
+  "intent_triggers": [
+    "先 dry-run 看一下會發生什麼",
+    "模擬執行，不要真的改東西",
+    "預演這個腳本的效果",
+    "在實際執行前先看看結果",
+    "加上 dry-run 模式測試",
+    "假跑一遍確認沒問題再正式執行",
+    "把這個流程包裝成支援 dry-run"
+  ],
+  "examples": [
+    {
+      "query": "dry-run 模式執行 deploy.sh",
+      "params": {
+        "command": "bash deploy.sh",
+        "dry_run": true,
+        "action": "run"
+      }
+    },
+    {
+      "query": "預演資料庫遷移，顯示會做的改動",
+      "params": {
+        "command": "python migrate.py",
+        "dry_run": true,
+        "show_plan": true,
+        "action": "run"
+      }
+    },
+    {
+      "query": "在 dry-run 確認後自動執行真實流程",
+      "params": {
+        "command": "python cleanup.py",
+        "dry_run": false,
+        "confirm_first": true,
+        "action": "run"
+      }
+    }
+  ],
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "action": {
+        "type": "string"
+      },
+      "command": {
+        "type": "string"
+      },
+      "confirm_first": {
+        "type": "boolean"
+      },
+      "dry_run": {
+        "type": "boolean"
+      },
+      "show_plan": {
+        "type": "boolean"
+      }
+    },
+    "required": [
+      "action",
+      "command",
+      "dry_run"
+    ]
+  },
+  "license": "MIT"
+}

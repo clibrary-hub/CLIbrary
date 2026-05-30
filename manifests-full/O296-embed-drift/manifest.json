@@ -1,0 +1,94 @@
+{
+  "name": "embed-drift",
+  "version": "0.1.0",
+  "description": "嵌入漂移監測",
+  "category": "O",
+  "number": 296,
+  "pain_point": "嵌入漂移監測",
+  "commercial": "✅",
+  "language": "Python",
+  "dependencies": [
+    "sentence-transformers",
+    "click",
+    "rich"
+  ],
+  "agent_compatible": true,
+  "mcp_ready": true,
+  "intent_triggers": [
+    "我想知道新資料和訓練資料的分布差異",
+    "檢測模型輸入資料分布是否有偏移",
+    "監測 embedding 向量隨時間的漂移",
+    "比較兩個時間點的 embedding 分布",
+    "向量漂移偵測工具，發現 data drift",
+    "生產環境的嵌入品質監控",
+    "追蹤語意嵌入空間的變化趨勢",
+    "fine-tune 前後 embedding 向量有沒有飄移",
+    "新模型對同一批文字的 embedding 是否改變",
+    "cosine similarity 監控 embedding 漂移程度",
+    "模型更新後 representation 空間的變化量",
+    "追蹤 embedding 隨時間的 drift 趨勢"
+  ],
+  "examples": [
+    {
+      "query": "比較 baseline_embeddings.npy 和 current_embeddings.npy 的漂移",
+      "params": {
+        "action": "compare",
+        "baseline_file": "baseline_embeddings.npy",
+        "current_file": "current_embeddings.npy",
+        "output_file": "drift_report.json"
+      }
+    },
+    {
+      "query": "監測 queries.jsonl 過去一週的語意漂移趨勢",
+      "params": {
+        "action": "monitor",
+        "input_file": "queries.jsonl",
+        "text_col": "query",
+        "window_days": 7
+      }
+    },
+    {
+      "query": "對 new_docs.csv 和 training_docs.csv 計算分布距離",
+      "params": {
+        "action": "compare",
+        "baseline_file": "training_docs.csv",
+        "current_file": "new_docs.csv",
+        "text_col": "content",
+        "metric": "cosine"
+      }
+    }
+  ],
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "action": {
+        "type": "string"
+      },
+      "baseline_file": {
+        "type": "string"
+      },
+      "current_file": {
+        "type": "string"
+      },
+      "input_file": {
+        "type": "string"
+      },
+      "metric": {
+        "type": "string"
+      },
+      "output_file": {
+        "type": "string"
+      },
+      "text_col": {
+        "type": "string"
+      },
+      "window_days": {
+        "type": "integer"
+      }
+    },
+    "required": [
+      "action"
+    ]
+  },
+  "license": "MIT"
+}

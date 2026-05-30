@@ -1,0 +1,66 @@
+{
+  "name": "ssl-renew-check",
+  "version": "0.1.0",
+  "description": "續期檢查",
+  "category": "Q",
+  "number": 339,
+  "pain_point": "SSL 一鍵自動續期檢查",
+  "commercial": "✅",
+  "language": "Python",
+  "dependencies": [
+    "ssl",
+    "click",
+    "rich"
+  ],
+  "agent_compatible": true,
+  "mcp_ready": true,
+  "intent_triggers": [
+    "檢查 SSL 憑證快不快到期了",
+    "幫我掃描所有網站的憑證有效期",
+    "30 天內到期的 SSL 憑證提醒我",
+    "這個網站的 HTTPS 憑證什麼時候到期",
+    "批次檢查多個域名的 SSL 狀態",
+    "憑證要到期了要自動更新嗎",
+    "確認 Let's Encrypt 憑證是否需要續期"
+  ],
+  "examples": [
+    {
+      "query": "檢查 example.com 的 SSL 憑證到期日",
+      "params": {
+        "host": "example.com"
+      }
+    },
+    {
+      "query": "批次檢查 domains.txt 裡所有域名的憑證，找出 30 天內到期的",
+      "params": {
+        "hosts_file": "domains.txt",
+        "warn_days": 30
+      }
+    },
+    {
+      "query": "掃描 sites.txt 所有網站的 SSL 狀態並輸出報告",
+      "params": {
+        "hosts_file": "sites.txt",
+        "output_report": "ssl_status.json"
+      }
+    }
+  ],
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "host": {
+        "type": "string"
+      },
+      "hosts_file": {
+        "type": "string"
+      },
+      "output_report": {
+        "type": "string"
+      },
+      "warn_days": {
+        "type": "integer"
+      }
+    }
+  },
+  "license": "MIT"
+}

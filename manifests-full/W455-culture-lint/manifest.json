@@ -1,0 +1,78 @@
+{
+  "name": "culture-lint",
+  "version": "0.1.0",
+  "description": "文化敏感詞",
+  "category": "W",
+  "number": 455,
+  "pain_point": "文化敏感詞檢查",
+  "commercial": "✅",
+  "language": "Python",
+  "dependencies": [
+    "click",
+    "rich",
+    "yaml"
+  ],
+  "agent_compatible": true,
+  "mcp_ready": true,
+  "intent_triggers": [
+    "幫我檢查翻譯內容有沒有文化敏感詞",
+    "這段文字在日本市場有沒有冒犯性詞彙？",
+    "掃描多語內容，找出可能不適當的表達",
+    "中東市場的翻譯有沒有宗教或文化禁忌？",
+    "幫我確認廣告文案在目標市場是否合適",
+    "找出翻譯中可能引起文化誤解的詞彙",
+    "這個品牌名稱在中文裡有沒有負面含義？"
+  ],
+  "examples": [
+    {
+      "query": "掃描 marketing_ja.txt 找出對日本用戶可能冒犯的詞彙",
+      "params": {
+        "text_file": "marketing_ja.txt",
+        "target_locale": "ja-JP",
+        "check_cultural": true
+      }
+    },
+    {
+      "query": "檢查 ar_content.json 的阿拉伯文翻譯是否有宗教敏感詞",
+      "params": {
+        "content_file": "ar_content.json",
+        "target_locale": "ar",
+        "sensitivity_type": "religious"
+      }
+    },
+    {
+      "query": "批次掃描 /locales 下所有翻譯文件的文化敏感詞",
+      "params": {
+        "locales_dir": "/locales",
+        "report_file": "sensitivity_report.txt"
+      }
+    }
+  ],
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "check_cultural": {
+        "type": "boolean"
+      },
+      "content_file": {
+        "type": "string"
+      },
+      "locales_dir": {
+        "type": "string"
+      },
+      "report_file": {
+        "type": "string"
+      },
+      "sensitivity_type": {
+        "type": "string"
+      },
+      "target_locale": {
+        "type": "string"
+      },
+      "text_file": {
+        "type": "string"
+      }
+    }
+  },
+  "license": "MIT"
+}

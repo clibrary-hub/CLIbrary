@@ -1,0 +1,88 @@
+{
+  "name": "model-quant",
+  "version": "0.1.0",
+  "description": "模型量化器",
+  "category": "O",
+  "number": 298,
+  "pain_point": "模型量化工具",
+  "commercial": "✅",
+  "language": "Python",
+  "dependencies": [
+    "llama-cpp-python",
+    "click",
+    "rich"
+  ],
+  "agent_compatible": true,
+  "mcp_ready": true,
+  "intent_triggers": [
+    "把模型量化以減少記憶體佔用",
+    "將 LLM 轉成 GGUF 量化格式",
+    "模型量化工具，讓大模型能在本地跑",
+    "把 HuggingFace 模型量化成 4bit",
+    "減小模型體積以便在 CPU 上推論",
+    "本地部署用的模型量化和轉換",
+    "量化 LLM 並評估效能損失"
+  ],
+  "examples": [
+    {
+      "query": "把 llama3_8b 模型量化成 Q4_K_M GGUF 格式",
+      "params": {
+        "action": "quantize",
+        "model_path": "llama3_8b/",
+        "output_format": "gguf",
+        "quantization": "Q4_K_M"
+      }
+    },
+    {
+      "query": "將 mistral-7b 轉換並量化到 Q8_0",
+      "params": {
+        "action": "quantize",
+        "model_path": "mistral-7b/",
+        "quantization": "Q8_0",
+        "output_file": "mistral-7b-q8.gguf"
+      }
+    },
+    {
+      "query": "比較量化前後模型在 benchmark.jsonl 的效能",
+      "params": {
+        "action": "benchmark",
+        "original_model": "mistral-7b/",
+        "quantized_model": "mistral-7b-q4.gguf",
+        "test_file": "benchmark.jsonl"
+      }
+    }
+  ],
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "action": {
+        "type": "string"
+      },
+      "model_path": {
+        "type": "string"
+      },
+      "original_model": {
+        "type": "string"
+      },
+      "output_file": {
+        "type": "string"
+      },
+      "output_format": {
+        "type": "string"
+      },
+      "quantization": {
+        "type": "string"
+      },
+      "quantized_model": {
+        "type": "string"
+      },
+      "test_file": {
+        "type": "string"
+      }
+    },
+    "required": [
+      "action"
+    ]
+  },
+  "license": "MIT"
+}

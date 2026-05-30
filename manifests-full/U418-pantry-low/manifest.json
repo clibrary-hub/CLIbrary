@@ -1,0 +1,75 @@
+{
+  "name": "pantry-low",
+  "version": "0.1.0",
+  "description": "家庫提醒器",
+  "category": "U",
+  "number": 418,
+  "pain_point": "庫存低提醒",
+  "commercial": "✅",
+  "language": "Python",
+  "dependencies": [
+    "sqlite3",
+    "click",
+    "rich"
+  ],
+  "agent_compatible": true,
+  "mcp_ready": true,
+  "intent_triggers": [
+    "家裡什麼東西快沒了？",
+    "幫我追蹤家用庫存，低了就提醒",
+    "洗碗精剩最後一罐，提醒我補貨",
+    "檢查一下家裡食材庫存",
+    "哪些日用品需要補充了？",
+    "我剛買了一箱牛奶，更新一下庫存",
+    "設定庫存低於安全水位時通知我"
+  ],
+  "examples": [
+    {
+      "query": "記錄家裡有衛生紙 3 包，安全庫存是 2 包，低於時提醒",
+      "params": {
+        "item": "衛生紙",
+        "current_stock": 3,
+        "min_stock": 2,
+        "unit": "包"
+      }
+    },
+    {
+      "query": "查詢目前所有低於安全庫存的家用品",
+      "params": {
+        "show_low_stock_only": true
+      }
+    },
+    {
+      "query": "更新橄欖油庫存，剛買了 2 瓶，現在共 3 瓶",
+      "params": {
+        "item": "橄欖油",
+        "added_quantity": 2,
+        "current_stock": 3
+      }
+    }
+  ],
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "added_quantity": {
+        "type": "integer"
+      },
+      "current_stock": {
+        "type": "integer"
+      },
+      "item": {
+        "type": "string"
+      },
+      "min_stock": {
+        "type": "integer"
+      },
+      "show_low_stock_only": {
+        "type": "boolean"
+      },
+      "unit": {
+        "type": "string"
+      }
+    }
+  },
+  "license": "MIT"
+}

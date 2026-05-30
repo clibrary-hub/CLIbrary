@@ -1,0 +1,83 @@
+{
+  "name": "api-compat",
+  "version": "0.1.0",
+  "description": "API 相容性檢查",
+  "category": "C",
+  "number": 46,
+  "pain_point": "與現有 API 不相容",
+  "commercial": "✅",
+  "language": "Python",
+  "dependencies": [
+    "ast",
+    "click",
+    "rich"
+  ],
+  "agent_compatible": true,
+  "mcp_ready": true,
+  "intent_triggers": [
+    "找出所有會因 API 更新而失效的呼叫",
+    "檢查 AI 寫的程式碼和現有 API 是否相容",
+    "確認 API 介面沒有被破壞",
+    "掃描 breaking change 和不相容的呼叫",
+    "分析 API 變更對現有程式碼的影響",
+    "升級後的 API 和舊程式碼相容嗎",
+    "驗證新舊版本 API 的相容性",
+    "API 重構後驗證下游相容性",
+    "重構不破壞現有 client 的驗證",
+    "API 向下相容性自動化測試",
+    "確認重構後 client 不用改 code",
+    "API 變更的相容性回歸測試"
+  ],
+  "examples": [
+    {
+      "query": "檢查 client.py 和最新 API v2 的相容性",
+      "params": {
+        "source_file": "client.py",
+        "api_spec": "api_v2_spec.json",
+        "action": "run"
+      }
+    },
+    {
+      "query": "掃描 src/ 目錄中所有 API 呼叫的相容性",
+      "params": {
+        "source_path": "src/",
+        "action": "run"
+      }
+    },
+    {
+      "query": "比較 API v1 和 v2 找出 breaking changes",
+      "params": {
+        "old_api_spec": "api_v1.json",
+        "new_api_spec": "api_v2.json",
+        "action": "run"
+      }
+    }
+  ],
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "action": {
+        "type": "string"
+      },
+      "api_spec": {
+        "type": "string"
+      },
+      "new_api_spec": {
+        "type": "string"
+      },
+      "old_api_spec": {
+        "type": "string"
+      },
+      "source_file": {
+        "type": "string"
+      },
+      "source_path": {
+        "type": "string"
+      }
+    },
+    "required": [
+      "action"
+    ]
+  },
+  "license": "MIT"
+}

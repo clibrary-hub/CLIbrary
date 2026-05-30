@@ -1,0 +1,74 @@
+{
+  "name": "k8s-tail",
+  "version": "0.1.0",
+  "description": "k8s 多 Pod 日誌",
+  "category": "Q",
+  "number": 323,
+  "pain_point": "k8s log tail",
+  "commercial": "✅",
+  "language": "Python",
+  "dependencies": [
+    "kubernetes",
+    "click",
+    "rich"
+  ],
+  "agent_compatible": true,
+  "mcp_ready": true,
+  "intent_triggers": [
+    "同時追蹤 k8s 多個 pod 的 log",
+    "幫我看 production namespace 所有 pod 的錯誤日誌",
+    "即時 tail 多個服務的日誌流",
+    "篩選包含 ERROR 的 k8s pod 日誌",
+    "把 k8s 日誌輸出整合到一個視窗",
+    "追蹤某個 deployment 下所有 replica 的日誌",
+    "k8s 日誌太多了，只顯示最近 5 分鐘的"
+  ],
+  "examples": [
+    {
+      "query": "同時追蹤 production namespace 下 app=api 標籤的所有 pod 日誌",
+      "params": {
+        "namespace": "production",
+        "label": "app=api"
+      }
+    },
+    {
+      "query": "篩選 staging 的 pod 日誌中含有 ERROR 的行",
+      "params": {
+        "namespace": "staging",
+        "grep": "ERROR",
+        "tail_lines": 100
+      }
+    },
+    {
+      "query": "追蹤 my-deployment deployment 的日誌並輸出到 logs.txt",
+      "params": {
+        "deployment": "my-deployment",
+        "output_file": "logs.txt"
+      }
+    }
+  ],
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "deployment": {
+        "type": "string"
+      },
+      "grep": {
+        "type": "string"
+      },
+      "label": {
+        "type": "string"
+      },
+      "namespace": {
+        "type": "string"
+      },
+      "output_file": {
+        "type": "string"
+      },
+      "tail_lines": {
+        "type": "integer"
+      }
+    }
+  },
+  "license": "MIT"
+}

@@ -1,0 +1,86 @@
+{
+  "name": "data-scrub",
+  "version": "0.1.0",
+  "description": "髒資料清洗器",
+  "category": "E",
+  "number": 97,
+  "pain_point": "髒資料清洗繁瑣",
+  "commercial": "✅",
+  "language": "Python",
+  "dependencies": [
+    "pandas",
+    "click",
+    "rich"
+  ],
+  "agent_compatible": true,
+  "mcp_ready": true,
+  "intent_triggers": [
+    "這個 CSV 有很多空值和格式錯誤，幫我清洗",
+    "自動修復資料裡的髒資料問題",
+    "把 NULL 值填補起來，清理資料格式",
+    "偵測並移除資料中的異常值",
+    "清洗資料集裡的重複記錄和無效值",
+    "資料前處理：去除空白、統一大小寫",
+    "批次清理多個 CSV 檔案的髒資料"
+  ],
+  "examples": [
+    {
+      "query": "清洗 raw_data.csv 中的空值和格式錯誤",
+      "params": {
+        "input_file": "raw_data.csv",
+        "action": "run"
+      }
+    },
+    {
+      "query": "移除 users.csv 中的重複記錄並填補空值為預設值",
+      "params": {
+        "input_file": "users.csv",
+        "fill_null": "N/A",
+        "remove_duplicates": true,
+        "output_file": "users_clean.csv",
+        "action": "run"
+      }
+    },
+    {
+      "query": "清洗 transactions.csv 的髒資料，移除異常值並輸出報告",
+      "params": {
+        "input_file": "transactions.csv",
+        "remove_outliers": true,
+        "output_file": "transactions_clean.csv",
+        "report_file": "scrub_report.json",
+        "action": "run"
+      }
+    }
+  ],
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "action": {
+        "type": "string"
+      },
+      "fill_null": {
+        "type": "string"
+      },
+      "input_file": {
+        "type": "string"
+      },
+      "output_file": {
+        "type": "string"
+      },
+      "remove_duplicates": {
+        "type": "boolean"
+      },
+      "remove_outliers": {
+        "type": "boolean"
+      },
+      "report_file": {
+        "type": "string"
+      }
+    },
+    "required": [
+      "action",
+      "input_file"
+    ]
+  },
+  "license": "MIT"
+}

@@ -1,0 +1,65 @@
+{
+  "name": "price-history",
+  "version": "0.1.0",
+  "description": "價歷追蹤器",
+  "category": "U",
+  "number": 402,
+  "pain_point": "歷史價格追蹤",
+  "commercial": "⚠️",
+  "language": "Python",
+  "dependencies": [
+    "sqlite3",
+    "click",
+    "rich"
+  ],
+  "agent_compatible": true,
+  "mcp_ready": true,
+  "intent_triggers": [
+    "這個商品的歷史價格走勢是什麼？",
+    "幫我看一下這款產品過去幾個月的價格變化",
+    "這東西之前有沒有比現在更便宜過？",
+    "追蹤某商品的歷史售價紀錄",
+    "我想知道這個型號最低曾經賣到多少錢",
+    "幫我查一下上個月這個商品的價格",
+    "現在這個價格是歷史低點嗎？"
+  ],
+  "examples": [
+    {
+      "query": "幫我查 Nike Air Max 90 過去 3 個月的價格紀錄",
+      "params": {
+        "product_name": "Nike Air Max 90",
+        "days": 90
+      }
+    },
+    {
+      "query": "Switch 遊戲機最近半年的歷史價格走勢",
+      "params": {
+        "product_name": "Nintendo Switch OLED",
+        "days": 180
+      }
+    },
+    {
+      "query": "這個商品的最低歷史成交價是多少？",
+      "params": {
+        "product_name": "Logitech MX Master 3",
+        "days": 365
+      }
+    }
+  ],
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "days": {
+        "type": "integer"
+      },
+      "product_name": {
+        "type": "string"
+      }
+    },
+    "required": [
+      "days",
+      "product_name"
+    ]
+  },
+  "license": "MIT"
+}

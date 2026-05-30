@@ -1,0 +1,82 @@
+{
+  "name": "data-narrate",
+  "version": "0.1.0",
+  "description": "資料敘事器",
+  "category": "N",
+  "number": 279,
+  "pain_point": "資料故事自動敘事",
+  "commercial": "⚠️",
+  "language": "Python",
+  "dependencies": [
+    "anthropic",
+    "pandas",
+    "click"
+  ],
+  "agent_compatible": true,
+  "mcp_ready": true,
+  "intent_triggers": [
+    "把資料分析結果自動寫成文字報告",
+    "讓 AI 把數字講成一個故事",
+    "資料敘事工具，自動產生洞察說明",
+    "幫我把圖表數字轉成可讀的文字摘要",
+    "自動生成資料分析的文字解說",
+    "把 CSV 的趨勢和異常用自然語言描述",
+    "業績報告要配上文字洞察，幫我自動產生"
+  ],
+  "examples": [
+    {
+      "query": "把 quarterly_sales.csv 的資料轉成業績敘述報告",
+      "params": {
+        "action": "narrate",
+        "input_file": "quarterly_sales.csv",
+        "output_file": "sales_narrative.md"
+      }
+    },
+    {
+      "query": "對 website_metrics.csv 產生一段用戶行為洞察文字",
+      "params": {
+        "action": "narrate",
+        "input_file": "website_metrics.csv",
+        "focus": "trends",
+        "language": "zh-TW"
+      }
+    },
+    {
+      "query": "自動描述 kpi_dashboard.csv 本月的亮點和警示",
+      "params": {
+        "action": "narrate",
+        "input_file": "kpi_dashboard.csv",
+        "highlight_anomalies": true,
+        "output_file": "kpi_story.txt"
+      }
+    }
+  ],
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "action": {
+        "type": "string"
+      },
+      "focus": {
+        "type": "string"
+      },
+      "highlight_anomalies": {
+        "type": "boolean"
+      },
+      "input_file": {
+        "type": "string"
+      },
+      "language": {
+        "type": "string"
+      },
+      "output_file": {
+        "type": "string"
+      }
+    },
+    "required": [
+      "action",
+      "input_file"
+    ]
+  },
+  "license": "MIT"
+}

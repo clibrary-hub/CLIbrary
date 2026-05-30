@@ -1,0 +1,84 @@
+{
+  "name": "report-build",
+  "version": "0.1.0",
+  "description": "報表建構器",
+  "category": "N",
+  "number": 274,
+  "pain_point": "想匯出 PowerBI 風格報表",
+  "commercial": "✅",
+  "language": "Python",
+  "dependencies": [
+    "jinja2",
+    "click",
+    "rich"
+  ],
+  "agent_compatible": true,
+  "mcp_ready": true,
+  "intent_triggers": [
+    "幫我把資料做成 PowerBI 風格的報表",
+    "自動產生 HTML 資料報告",
+    "把 CSV 匯出成漂亮的分析報表",
+    "建立可分享的資料視覺化報告頁面",
+    "我想產生一份月報自動化報表",
+    "資料報表生成工具，類似儀表板風格",
+    "把分析結果包成一份完整 HTML 報告"
+  ],
+  "examples": [
+    {
+      "query": "用 monthly_kpi.csv 建立月度 KPI 報表",
+      "params": {
+        "action": "build",
+        "input_file": "monthly_kpi.csv",
+        "output_file": "kpi_report.html",
+        "title": "月度 KPI 報告"
+      }
+    },
+    {
+      "query": "把 sales_summary.csv 匯出成 PowerBI 風格 HTML 報告",
+      "params": {
+        "action": "build",
+        "input_file": "sales_summary.csv",
+        "template": "powerbi",
+        "output_file": "sales_report.html"
+      }
+    },
+    {
+      "query": "用自訂模板產生 Q4 財務報表",
+      "params": {
+        "action": "build",
+        "input_file": "q4_financial.csv",
+        "template_file": "custom_template.html",
+        "output_file": "q4_report.html"
+      }
+    }
+  ],
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "action": {
+        "type": "string"
+      },
+      "input_file": {
+        "type": "string"
+      },
+      "output_file": {
+        "type": "string"
+      },
+      "template": {
+        "type": "string"
+      },
+      "template_file": {
+        "type": "string"
+      },
+      "title": {
+        "type": "string"
+      }
+    },
+    "required": [
+      "action",
+      "input_file",
+      "output_file"
+    ]
+  },
+  "license": "MIT"
+}

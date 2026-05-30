@@ -1,0 +1,85 @@
+{
+  "name": "news-layout",
+  "version": "0.1.0",
+  "description": "電子報排版器",
+  "category": "X",
+  "number": 469,
+  "pain_point": "Newsletter 排版",
+  "commercial": "✅",
+  "language": "Python",
+  "dependencies": [
+    "jinja2",
+    "click",
+    "rich"
+  ],
+  "agent_compatible": true,
+  "mcp_ready": true,
+  "intent_triggers": [
+    "幫我把這些內容排版成電子報格式",
+    "生成一份 HTML 電子報模板",
+    "把文章轉成 Newsletter 排版",
+    "電子報的 HTML 格式怎麼做？",
+    "用模板排版這週的電子報",
+    "生成適合 Mailchimp 的電子報 HTML",
+    "把文字內容整理成電子報可以發送的格式"
+  ],
+  "examples": [
+    {
+      "query": "用 newsletter_content.md 內容生成電子報 HTML，使用藍色主題",
+      "params": {
+        "content_file": "newsletter_content.md",
+        "theme": "blue",
+        "output_file": "newsletter.html"
+      }
+    },
+    {
+      "query": "生成包含頭圖、3 篇文章摘要和 CTA 按鈕的電子報模板",
+      "params": {
+        "sections": [
+          "header_image",
+          "article_summaries",
+          "cta_button"
+        ],
+        "article_count": 3
+      }
+    },
+    {
+      "query": "把這週新聞 news_list.json 排版成週報電子報，適合 Gmail",
+      "params": {
+        "content_file": "news_list.json",
+        "target_client": "gmail",
+        "format": "weekly_digest"
+      }
+    }
+  ],
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "article_count": {
+        "type": "integer"
+      },
+      "content_file": {
+        "type": "string"
+      },
+      "format": {
+        "type": "string"
+      },
+      "output_file": {
+        "type": "string"
+      },
+      "sections": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      },
+      "target_client": {
+        "type": "string"
+      },
+      "theme": {
+        "type": "string"
+      }
+    }
+  },
+  "license": "MIT"
+}

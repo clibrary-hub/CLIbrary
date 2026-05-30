@@ -1,0 +1,85 @@
+{
+  "name": "hook-gen",
+  "version": "0.1.0",
+  "description": "開頭吊鉤產生器",
+  "category": "X",
+  "number": 464,
+  "pain_point": "文章引導開頭",
+  "commercial": "✅",
+  "language": "Python",
+  "dependencies": [
+    "anthropic",
+    "click",
+    "rich"
+  ],
+  "agent_compatible": true,
+  "mcp_ready": true,
+  "intent_triggers": [
+    "幫我寫一個抓住讀者的開頭",
+    "這篇文章的第一句太平淡，改成吊鉤式開頭",
+    "生成幾個吸引人的文章開場方式",
+    "我的部落格文章開頭沒有吸引力，幫我改",
+    "寫一個讓人想繼續讀下去的引言",
+    "用問句或衝突感的方式開場",
+    "為 YouTube 影片腳本生成開場白"
+  ],
+  "examples": [
+    {
+      "query": "為「如何提升工作效率」這篇文章生成 3 種不同風格的開頭",
+      "params": {
+        "topic": "如何提升工作效率",
+        "hook_count": 3,
+        "styles": [
+          "question",
+          "story",
+          "shocking_fact"
+        ]
+      }
+    },
+    {
+      "query": "把 blog_intro.txt 改成更有吊鉤效果的開場段落",
+      "params": {
+        "input_file": "blog_intro.txt",
+        "hook_type": "curiosity_gap"
+      }
+    },
+    {
+      "query": "為 YouTube 影片「投資新手必看」生成 15 秒的開場白",
+      "params": {
+        "topic": "投資新手必看",
+        "medium": "youtube",
+        "duration_seconds": 15
+      }
+    }
+  ],
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "duration_seconds": {
+        "type": "integer"
+      },
+      "hook_count": {
+        "type": "integer"
+      },
+      "hook_type": {
+        "type": "string"
+      },
+      "input_file": {
+        "type": "string"
+      },
+      "medium": {
+        "type": "string"
+      },
+      "styles": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      },
+      "topic": {
+        "type": "string"
+      }
+    }
+  },
+  "license": "MIT"
+}

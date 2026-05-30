@@ -1,0 +1,70 @@
+{
+  "name": "docker-cleanup",
+  "version": "0.1.0",
+  "description": "Docker 清理器",
+  "category": "Q",
+  "number": 321,
+  "pain_point": "Docker 殘留清理",
+  "commercial": "✅",
+  "language": "Python",
+  "dependencies": [
+    "docker",
+    "click",
+    "rich"
+  ],
+  "agent_compatible": true,
+  "mcp_ready": true,
+  "intent_triggers": [
+    "Docker 佔了太多磁碟空間，幫我清理",
+    "刪掉所有停止的容器和沒用的 image",
+    "清除 dangling image 和 volume",
+    "Docker 系統要做一次大掃除",
+    "列出哪些 image 很久沒用了可以刪掉",
+    "清理 Docker build cache 釋放空間",
+    "我想只保留最新版的 image，其他都刪"
+  ],
+  "examples": [
+    {
+      "query": "清理所有停止的容器、沒用的 image 和 volume",
+      "params": {
+        "clean_containers": true,
+        "clean_images": true,
+        "clean_volumes": true
+      }
+    },
+    {
+      "query": "只刪除超過 30 天未使用的 Docker image",
+      "params": {
+        "clean_images": true,
+        "older_than_days": 30
+      }
+    },
+    {
+      "query": "預覽清理結果（dry run），不實際刪除",
+      "params": {
+        "dry_run": true
+      }
+    }
+  ],
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "clean_containers": {
+        "type": "boolean"
+      },
+      "clean_images": {
+        "type": "boolean"
+      },
+      "clean_volumes": {
+        "type": "boolean"
+      },
+      "dry_run": {
+        "type": "boolean"
+      },
+      "older_than_days": {
+        "type": "integer"
+      }
+    }
+  },
+  "license": "MIT"
+}

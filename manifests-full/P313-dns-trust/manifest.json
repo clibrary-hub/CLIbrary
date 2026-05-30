@@ -1,0 +1,80 @@
+{
+  "name": "dns-trust",
+  "version": "0.1.0",
+  "description": "DNS 信任查詢",
+  "category": "P",
+  "number": 313,
+  "pain_point": "DNS 防汙染查詢",
+  "commercial": "✅",
+  "language": "Python",
+  "dependencies": [
+    "dnspython",
+    "click",
+    "rich"
+  ],
+  "agent_compatible": true,
+  "mcp_ready": true,
+  "intent_triggers": [
+    "查詢這個域名的 DNS 是否被汙染",
+    "我的 DNS 解析結果跟預期不一樣",
+    "驗證這個域名的 DNSSEC 設定",
+    "這個網站域名是不是 DNS 被劫持了",
+    "比較不同 DNS 伺服器的解析結果",
+    "查詢 MX、TXT、A 等 DNS 記錄",
+    "幫我確認 domain 的反向解析是否正確"
+  ],
+  "examples": [
+    {
+      "query": "查詢 example.com 的 A 和 MX 記錄",
+      "params": {
+        "domain": "example.com",
+        "record_types": [
+          "A",
+          "MX"
+        ]
+      }
+    },
+    {
+      "query": "比較 8.8.8.8 和 1.1.1.1 對 example.com 的解析結果",
+      "params": {
+        "domain": "example.com",
+        "resolvers": [
+          "8.8.8.8",
+          "1.1.1.1"
+        ]
+      }
+    },
+    {
+      "query": "驗證 mysite.org 的 DNSSEC 是否設定正確",
+      "params": {
+        "domain": "mysite.org",
+        "check_dnssec": true
+      }
+    }
+  ],
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "domain": {
+        "type": "string",
+        "description": "要查詢的域名"
+      },
+      "record_types": {
+        "type": "array",
+        "description": "要查詢的 DNS 記錄類型列表"
+      },
+      "resolvers": {
+        "type": "array",
+        "description": "要使用的 DNS 解析伺服器列表"
+      },
+      "check_dnssec": {
+        "type": "boolean",
+        "description": "是否驗證 DNSSEC"
+      }
+    },
+    "required": [
+      "domain"
+    ]
+  },
+  "license": "MIT"
+}

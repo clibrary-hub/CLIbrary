@@ -1,0 +1,78 @@
+{
+  "name": "recipe-nutri",
+  "version": "0.1.0",
+  "description": "食譜營養分析",
+  "category": "K",
+  "number": 212,
+  "pain_point": "食譜營養分析",
+  "commercial": "✅",
+  "language": "Python",
+  "dependencies": [
+    "sqlite3",
+    "click",
+    "rich"
+  ],
+  "agent_compatible": true,
+  "mcp_ready": true,
+  "intent_triggers": [
+    "分析這道食譜的營養成分",
+    "幫我計算我常做的菜有多少蛋白質",
+    "食譜營養分析工具，看看熱量和巨量營養素",
+    "這道料理的碳水和脂肪各有多少",
+    "我想知道自製便當的營養均衡嗎",
+    "食材列表轉換成營養標示",
+    "分析食譜的卡路里、蛋白質、脂肪、碳水"
+  ],
+  "examples": [
+    {
+      "query": "分析番茄炒蛋食譜（雞蛋3顆、番茄2顆）的營養",
+      "params": {
+        "action": "run",
+        "recipe_name": "番茄炒蛋",
+        "ingredients": "雞蛋:3個,番茄:2個"
+      }
+    },
+    {
+      "query": "從 recipe.json 讀取食材並計算每份的營養成分",
+      "params": {
+        "action": "run",
+        "input_file": "recipe.json",
+        "servings": 2
+      }
+    },
+    {
+      "query": "批次分析 recipes/ 目錄下所有食譜的熱量",
+      "params": {
+        "action": "run",
+        "input_dir": "recipes/"
+      }
+    }
+  ],
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "action": {
+        "type": "string"
+      },
+      "ingredients": {
+        "type": "string"
+      },
+      "input_dir": {
+        "type": "string"
+      },
+      "input_file": {
+        "type": "string"
+      },
+      "recipe_name": {
+        "type": "string"
+      },
+      "servings": {
+        "type": "integer"
+      }
+    },
+    "required": [
+      "action"
+    ]
+  },
+  "license": "MIT"
+}

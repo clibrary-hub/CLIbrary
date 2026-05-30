@@ -1,0 +1,78 @@
+{
+  "name": "restock",
+  "version": "0.1.0",
+  "description": "補貨提醒器",
+  "category": "U",
+  "number": 409,
+  "pain_point": "重複購物提醒",
+  "commercial": "✅",
+  "language": "Python",
+  "dependencies": [
+    "sqlite3",
+    "click",
+    "rich"
+  ],
+  "agent_compatible": true,
+  "mcp_ready": true,
+  "intent_triggers": [
+    "幫我設定補貨提醒，衛生紙快用完了",
+    "記錄我的日用品補貨週期",
+    "哪些日常用品該補貨了？",
+    "設定定期提醒我買咖啡豆",
+    "追蹤家裡消耗品的補貨時間",
+    "上次買洗髮精是什麼時候？該補了嗎？",
+    "建立自動補貨提醒清單"
+  ],
+  "examples": [
+    {
+      "query": "設定衛生紙每 30 天補貨一次，庫存剩 2 包時提醒",
+      "params": {
+        "item": "衛生紙",
+        "restock_interval_days": 30,
+        "low_stock_threshold": 2
+      }
+    },
+    {
+      "query": "列出本週需要補貨的所有日用品",
+      "params": {
+        "due_within_days": 7
+      }
+    },
+    {
+      "query": "記錄剛買了咖啡豆 500g，大約能用 20 天",
+      "params": {
+        "item": "咖啡豆",
+        "quantity": "500g",
+        "last_purchase_date": "2024-01-27",
+        "days_supply": 20
+      }
+    }
+  ],
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "days_supply": {
+        "type": "integer"
+      },
+      "due_within_days": {
+        "type": "integer"
+      },
+      "item": {
+        "type": "string"
+      },
+      "last_purchase_date": {
+        "type": "string"
+      },
+      "low_stock_threshold": {
+        "type": "integer"
+      },
+      "quantity": {
+        "type": "string"
+      },
+      "restock_interval_days": {
+        "type": "integer"
+      }
+    }
+  },
+  "license": "MIT"
+}

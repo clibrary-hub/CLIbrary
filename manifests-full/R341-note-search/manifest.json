@@ -1,0 +1,73 @@
+{
+  "name": "note-search",
+  "version": "0.1.0",
+  "description": "筆記搜尋器",
+  "category": "R",
+  "number": 341,
+  "pain_point": "筆記跨工具搜尋",
+  "commercial": "✅",
+  "language": "Python",
+  "dependencies": [
+    "whoosh",
+    "click",
+    "rich"
+  ],
+  "agent_compatible": true,
+  "mcp_ready": true,
+  "intent_triggers": [
+    "在我所有筆記裡搜尋關鍵字",
+    "我記得以前寫過一篇關於 Docker 的筆記",
+    "找出所有包含這個概念的筆記",
+    "跨 Obsidian 和 Notion 搜尋筆記",
+    "全文搜尋我的筆記庫",
+    "幫我找最近一週新增的筆記",
+    "搜尋帶有特定標籤的筆記"
+  ],
+  "examples": [
+    {
+      "query": "在 ~/notes 搜尋含有 machine learning 的筆記",
+      "params": {
+        "notes_dir": "~/notes",
+        "query": "machine learning"
+      }
+    },
+    {
+      "query": "搜尋最近 7 天新增且包含 #todo 標籤的筆記",
+      "params": {
+        "notes_dir": "~/notes",
+        "query": "#todo",
+        "days": 7
+      }
+    },
+    {
+      "query": "在 obsidian_vault/ 全文搜尋 GPT 相關筆記並輸出結果",
+      "params": {
+        "notes_dir": "obsidian_vault/",
+        "query": "GPT",
+        "output_file": "results.json"
+      }
+    }
+  ],
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "days": {
+        "type": "integer"
+      },
+      "notes_dir": {
+        "type": "string"
+      },
+      "output_file": {
+        "type": "string"
+      },
+      "query": {
+        "type": "string"
+      }
+    },
+    "required": [
+      "notes_dir",
+      "query"
+    ]
+  },
+  "license": "MIT"
+}

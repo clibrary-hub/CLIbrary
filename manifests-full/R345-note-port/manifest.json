@@ -1,0 +1,81 @@
+{
+  "name": "note-port",
+  "version": "0.1.0",
+  "description": "筆記搬遷器",
+  "category": "R",
+  "number": 345,
+  "pain_point": "不同筆記應用搬遷",
+  "commercial": "⚠️",
+  "language": "Python",
+  "dependencies": [
+    "click",
+    "rich",
+    "pathlib"
+  ],
+  "agent_compatible": true,
+  "mcp_ready": true,
+  "intent_triggers": [
+    "把 Notion 的筆記搬到 Obsidian",
+    "從 Evernote 匯出轉換成 Markdown",
+    "把 Bear 的筆記遷移到 Logseq",
+    "遷移筆記並保留原有的標籤和連結",
+    "把舊筆記格式批次轉換成 Markdown",
+    "搬遷過程中保留圖片和附件",
+    "把 Roam Research 匯出轉成 Obsidian 格式"
+  ],
+  "examples": [
+    {
+      "query": "把 notion_export/ 的 Notion 匯出轉換為 Obsidian 格式",
+      "params": {
+        "source_format": "notion",
+        "target_format": "obsidian",
+        "input_dir": "notion_export/",
+        "output_dir": "obsidian_vault/"
+      }
+    },
+    {
+      "query": "轉換 evernote_backup.enex 為 Markdown 筆記",
+      "params": {
+        "source_format": "evernote",
+        "input_file": "evernote_backup.enex",
+        "output_dir": "markdown_notes/"
+      }
+    },
+    {
+      "query": "把 bear_notes/ 遷移到 logseq/ 並保留所有標籤",
+      "params": {
+        "source_format": "bear",
+        "target_format": "logseq",
+        "input_dir": "bear_notes/",
+        "keep_tags": true
+      }
+    }
+  ],
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "input_dir": {
+        "type": "string"
+      },
+      "input_file": {
+        "type": "string"
+      },
+      "keep_tags": {
+        "type": "boolean"
+      },
+      "output_dir": {
+        "type": "string"
+      },
+      "source_format": {
+        "type": "string"
+      },
+      "target_format": {
+        "type": "string"
+      }
+    },
+    "required": [
+      "source_format"
+    ]
+  },
+  "license": "MIT"
+}

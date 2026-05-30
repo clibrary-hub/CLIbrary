@@ -1,0 +1,86 @@
+{
+  "name": "copyright-gen",
+  "version": "0.1.0",
+  "description": "著作權聲明",
+  "category": "Y",
+  "number": 486,
+  "pain_point": "著作權聲明產生",
+  "commercial": "✅",
+  "language": "Python",
+  "dependencies": [
+    "jinja2",
+    "click",
+    "rich"
+  ],
+  "agent_compatible": true,
+  "mcp_ready": true,
+  "intent_triggers": [
+    "幫我生成網站的著作權聲明",
+    "軟體要加著作權宣告，幫我生成",
+    "這個作品的版權聲明怎麼寫？",
+    "批次為所有原始碼文件加上著作權標頭",
+    "生成符合法律要求的版權宣告文字",
+    "網頁 footer 的版權聲明格式",
+    "開源專案的 Copyright notice 怎麼寫？"
+  ],
+  "examples": [
+    {
+      "query": "為公司「ABC 科技」生成 2024 年的網站著作權聲明，繁體中文版",
+      "params": {
+        "owner": "ABC 科技",
+        "year": 2024,
+        "language": "zh-TW",
+        "type": "website"
+      }
+    },
+    {
+      "query": "批次為 /src 目錄所有 Python 文件添加著作權標頭",
+      "params": {
+        "source_dir": "/src",
+        "owner": "My Company Ltd",
+        "year": 2024,
+        "license": "MIT"
+      }
+    },
+    {
+      "query": "生成 MIT 開源授權的著作權聲明，包含免責條款",
+      "params": {
+        "owner": "Jane Doe",
+        "year": 2024,
+        "license": "MIT",
+        "include_disclaimer": true
+      }
+    }
+  ],
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "include_disclaimer": {
+        "type": "boolean"
+      },
+      "language": {
+        "type": "string"
+      },
+      "license": {
+        "type": "string"
+      },
+      "owner": {
+        "type": "string"
+      },
+      "source_dir": {
+        "type": "string"
+      },
+      "type": {
+        "type": "string"
+      },
+      "year": {
+        "type": "integer"
+      }
+    },
+    "required": [
+      "owner",
+      "year"
+    ]
+  },
+  "license": "MIT"
+}

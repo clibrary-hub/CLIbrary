@@ -1,0 +1,87 @@
+{
+  "name": "data-dedupe-ml",
+  "version": "0.1.0",
+  "description": "訓練去重器",
+  "category": "O",
+  "number": 289,
+  "pain_point": "訓練資料去重",
+  "commercial": "✅",
+  "language": "Python",
+  "dependencies": [
+    "sentence-transformers",
+    "click",
+    "rich"
+  ],
+  "agent_compatible": true,
+  "mcp_ready": true,
+  "intent_triggers": [
+    "清除訓練資料集中的重複樣本",
+    "語意層級的訓練資料去重",
+    "我的訓練集有很多相似句子，幫我去重",
+    "用向量相似度找出並移除重複訓練資料",
+    "LLM 訓練資料品質清理工具",
+    "去除語意重複的 fine-tuning 樣本",
+    "訓練集去重並統計重複率"
+  ],
+  "examples": [
+    {
+      "query": "對 training_data.jsonl 做語意去重",
+      "params": {
+        "action": "dedupe",
+        "input_file": "training_data.jsonl",
+        "text_col": "input",
+        "output_file": "deduped_data.jsonl"
+      }
+    },
+    {
+      "query": "用相似度門檻 0.9 清除 qa_dataset.csv 的重複樣本",
+      "params": {
+        "action": "dedupe",
+        "input_file": "qa_dataset.csv",
+        "text_col": "question",
+        "threshold": 0.9,
+        "output_file": "clean_qa.csv"
+      }
+    },
+    {
+      "query": "分析 ft_dataset.jsonl 的重複率但不刪除",
+      "params": {
+        "action": "analyze",
+        "input_file": "ft_dataset.jsonl",
+        "text_col": "prompt",
+        "threshold": 0.85
+      }
+    }
+  ],
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "action": {
+        "type": "string",
+        "description": "操作類型，如 dedupe（去重）、analyze（分析重複率）"
+      },
+      "input_file": {
+        "type": "string",
+        "description": "輸入資料路徑（CSV 或 JSONL）"
+      },
+      "text_col": {
+        "type": "string",
+        "description": "要比較的文字欄位名稱"
+      },
+      "threshold": {
+        "type": "number",
+        "description": "相似度門檻值（0-1，超過則視為重複）"
+      },
+      "output_file": {
+        "type": "string",
+        "description": "去重後輸出路徑"
+      }
+    },
+    "required": [
+      "action",
+      "input_file",
+      "text_col"
+    ]
+  },
+  "license": "MIT"
+}

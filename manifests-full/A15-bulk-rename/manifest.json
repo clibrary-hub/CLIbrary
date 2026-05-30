@@ -1,0 +1,79 @@
+{
+  "name": "bulk-rename",
+  "version": "0.1.0",
+  "description": "批次重新命名器",
+  "category": "A",
+  "number": 15,
+  "pain_point": "想批次重新命名但規則複雜",
+  "commercial": "✅",
+  "language": "Python",
+  "dependencies": [
+    "pathlib",
+    "click",
+    "rich"
+  ],
+  "agent_compatible": true,
+  "mcp_ready": true,
+  "intent_triggers": [
+    "批次把所有圖片加上日期前綴",
+    "幫我把 001.txt 到 100.txt 改成有意義的名字",
+    "一次重新命名這個資料夾下所有的 .csv 檔",
+    "根據規則批次改檔名",
+    "把所有 report_xxx 開頭的檔案改成統一格式",
+    "自動替換檔名中的特定字串",
+    "批次命名，並加上流水號"
+  ],
+  "examples": [
+    {
+      "query": "把 photos/ 下所有 .jpg 加上 2024_ 前綴",
+      "params": {
+        "target_path": "photos/",
+        "file_filter": "*.jpg",
+        "prefix": "2024_"
+      }
+    },
+    {
+      "query": "把所有 report_v1_xxx 改成 report_xxx 去掉版本號",
+      "params": {
+        "target_path": "reports/",
+        "pattern": "report_v1_(.*)",
+        "replacement": "report_\\1"
+      }
+    },
+    {
+      "query": "批次重命名 data/ 下的 csv 檔，加上流水號",
+      "params": {
+        "target_path": "data/",
+        "file_filter": "*.csv",
+        "add_sequence": true
+      }
+    }
+  ],
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "add_sequence": {
+        "type": "boolean"
+      },
+      "file_filter": {
+        "type": "string"
+      },
+      "pattern": {
+        "type": "string"
+      },
+      "prefix": {
+        "type": "string"
+      },
+      "replacement": {
+        "type": "string"
+      },
+      "target_path": {
+        "type": "string"
+      }
+    },
+    "required": [
+      "target_path"
+    ]
+  },
+  "license": "MIT"
+}

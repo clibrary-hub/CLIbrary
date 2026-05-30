@@ -1,0 +1,70 @@
+{
+  "name": "tag-suggest",
+  "version": "0.1.0",
+  "description": "標籤建議器",
+  "category": "R",
+  "number": 348,
+  "pain_point": "自動標籤建議",
+  "commercial": "✅",
+  "language": "Python",
+  "dependencies": [
+    "anthropic",
+    "click",
+    "rich"
+  ],
+  "agent_compatible": true,
+  "mcp_ready": true,
+  "intent_triggers": [
+    "幫這篇筆記自動打上標籤",
+    "這篇文章應該加哪些 tag",
+    "批次為所有沒有標籤的筆記建議標籤",
+    "根據內容幫我分類筆記",
+    "建議和現有標籤體系一致的新標籤",
+    "分析這篇筆記的主題並推薦標籤",
+    "為整個筆記庫做標籤標準化"
+  ],
+  "examples": [
+    {
+      "query": "為 machine_learning_notes.md 建議適合的標籤",
+      "params": {
+        "input_file": "machine_learning_notes.md"
+      }
+    },
+    {
+      "query": "批次為 notes/ 目錄下所有沒有標籤的筆記建議標籤",
+      "params": {
+        "notes_dir": "notes/",
+        "only_untagged": true
+      }
+    },
+    {
+      "query": "根據 existing_tags.txt 中的現有標籤為 new_note.md 建議最相關的 5 個",
+      "params": {
+        "input_file": "new_note.md",
+        "existing_tags_file": "existing_tags.txt",
+        "max_tags": 5
+      }
+    }
+  ],
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "existing_tags_file": {
+        "type": "string"
+      },
+      "input_file": {
+        "type": "string"
+      },
+      "max_tags": {
+        "type": "integer"
+      },
+      "notes_dir": {
+        "type": "string"
+      },
+      "only_untagged": {
+        "type": "boolean"
+      }
+    }
+  },
+  "license": "MIT"
+}

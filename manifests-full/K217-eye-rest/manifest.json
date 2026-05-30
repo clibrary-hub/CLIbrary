@@ -1,0 +1,77 @@
+{
+  "name": "eye-rest",
+  "version": "0.1.0",
+  "description": "護眼提醒器",
+  "category": "K",
+  "number": 217,
+  "pain_point": "避免久盯螢幕",
+  "commercial": "✅",
+  "language": "Python",
+  "dependencies": [
+    "plyer",
+    "click",
+    "schedule"
+  ],
+  "agent_compatible": true,
+  "mcp_ready": true,
+  "intent_triggers": [
+    "提醒我每隔一段時間休息眼睛",
+    "盯螢幕太久了，設定護眼提醒",
+    "20-20-20 護眼法則提醒工具",
+    "每 20 分鐘提醒我看遠處休息眼睛",
+    "防止眼睛疲勞的定時提醒",
+    "護眼排程通知，遠離螢幕",
+    "我需要一個眼睛休息提醒器"
+  ],
+  "examples": [
+    {
+      "query": "按照 20-20-20 法則每 20 分鐘提醒我休息眼睛",
+      "params": {
+        "action": "run",
+        "interval_minutes": 20,
+        "rule": "20-20-20"
+      }
+    },
+    {
+      "query": "每小時提醒我閉眼休息 5 分鐘",
+      "params": {
+        "action": "run",
+        "interval_minutes": 60,
+        "rest_minutes": 5
+      }
+    },
+    {
+      "query": "啟動護眼模式，工作 8 小時期間每 30 分鐘提醒",
+      "params": {
+        "action": "run",
+        "interval_minutes": 30,
+        "duration_hours": 8
+      }
+    }
+  ],
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "action": {
+        "type": "string"
+      },
+      "duration_hours": {
+        "type": "integer"
+      },
+      "interval_minutes": {
+        "type": "integer"
+      },
+      "rest_minutes": {
+        "type": "integer"
+      },
+      "rule": {
+        "type": "string"
+      }
+    },
+    "required": [
+      "action",
+      "interval_minutes"
+    ]
+  },
+  "license": "MIT"
+}

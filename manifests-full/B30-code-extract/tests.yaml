@@ -1,0 +1,23 @@
+tool: code-extract
+type: transform
+generated: "2026-04-27"
+skip: false
+
+setup:
+  files:
+    - path: testdata/chat.md
+      content: "```python\nprint('hello world extract test')\n```\n"
+
+cases:
+  - id: help_works
+    description: --help exits 0
+    cmd: ["--help"]
+    expect:
+      exit_code: 0
+      stdout_contains: "Usage:"
+  - id: process_file
+    description: process input file
+    cmd: ["from", "testdata/chat.md"]
+    expect:
+      exit_code: 0
+      stdout_contains: hello world extract test

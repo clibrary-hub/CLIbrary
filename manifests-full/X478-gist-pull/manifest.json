@@ -1,0 +1,78 @@
+{
+  "name": "gist-pull",
+  "version": "0.1.0",
+  "description": "精華抽取器",
+  "category": "X",
+  "number": 478,
+  "pain_point": "文章重點精煉",
+  "commercial": "✅",
+  "language": "Python",
+  "dependencies": [
+    "anthropic",
+    "click",
+    "rich"
+  ],
+  "agent_compatible": true,
+  "mcp_ready": true,
+  "intent_triggers": [
+    "幫我抽取這篇文章的精華要點",
+    "長文章太難讀，給我最重要的幾點",
+    "這份報告的核心結論是什麼？",
+    "用條列方式總結文章重點",
+    "從這本書摘錄最有價值的段落",
+    "快速掌握長篇文章的精華",
+    "抽取這篇論文的核心論點"
+  ],
+  "examples": [
+    {
+      "query": "從 report_50pages.pdf 第 1-20 頁抽取 5 個關鍵要點",
+      "params": {
+        "input_file": "report_50pages.pdf",
+        "pages": "1-20",
+        "key_points": 5
+      }
+    },
+    {
+      "query": "摘取 article.txt 的精華，濃縮成 3 個重點條列",
+      "params": {
+        "input_file": "article.txt",
+        "summary_points": 3,
+        "format": "bullet"
+      }
+    },
+    {
+      "query": "從 meeting_transcript.txt 提取所有決議事項和行動項目",
+      "params": {
+        "input_file": "meeting_transcript.txt",
+        "extract_type": "decisions_and_actions"
+      }
+    }
+  ],
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "extract_type": {
+        "type": "string"
+      },
+      "format": {
+        "type": "string"
+      },
+      "input_file": {
+        "type": "string"
+      },
+      "key_points": {
+        "type": "integer"
+      },
+      "pages": {
+        "type": "string"
+      },
+      "summary_points": {
+        "type": "integer"
+      }
+    },
+    "required": [
+      "input_file"
+    ]
+  },
+  "license": "MIT"
+}

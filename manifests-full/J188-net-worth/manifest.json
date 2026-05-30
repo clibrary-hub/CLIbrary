@@ -1,0 +1,82 @@
+{
+  "name": "net-worth",
+  "version": "0.1.0",
+  "description": "淨值追蹤器",
+  "category": "J",
+  "number": 188,
+  "pain_point": "個人資產淨值追蹤",
+  "commercial": "✅",
+  "language": "Python",
+  "dependencies": [
+    "sqlite3",
+    "click",
+    "rich"
+  ],
+  "agent_compatible": true,
+  "mcp_ready": true,
+  "intent_triggers": [
+    "我想知道自己的個人淨值是多少",
+    "幫我追蹤總資產減總負債的淨值變化",
+    "每月更新我的資產負債表並計算淨值",
+    "需要一個個人財務淨值追蹤工具",
+    "記錄存款、投資和負債，計算目前淨值",
+    "想看自己財務狀況每個月的成長趨勢",
+    "建立個人資產負債表並定期更新淨值"
+  ],
+  "examples": [
+    {
+      "query": "新增資產：儲蓄帳戶 TWD 500,000",
+      "params": {
+        "action": "add",
+        "type": "asset",
+        "name": "儲蓄帳戶",
+        "amount": "500000",
+        "currency": "TWD"
+      }
+    },
+    {
+      "query": "計算目前總資產、總負債和淨值",
+      "params": {
+        "action": "calculate",
+        "show_breakdown": "true"
+      }
+    },
+    {
+      "query": "顯示過去 12 個月淨值變化趨勢",
+      "params": {
+        "action": "history",
+        "months": "12"
+      }
+    }
+  ],
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "action": {
+        "type": "string"
+      },
+      "amount": {
+        "type": "string"
+      },
+      "currency": {
+        "type": "string"
+      },
+      "months": {
+        "type": "string"
+      },
+      "name": {
+        "type": "string"
+      },
+      "show_breakdown": {
+        "type": "string"
+      },
+      "type": {
+        "type": "string"
+      }
+    },
+    "required": [
+      "action"
+    ]
+  },
+  "license": "MIT"
+}

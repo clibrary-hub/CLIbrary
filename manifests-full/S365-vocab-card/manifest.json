@@ -1,0 +1,78 @@
+{
+  "name": "vocab-card",
+  "version": "0.1.0",
+  "description": "詞彙卡片器",
+  "category": "S",
+  "number": 365,
+  "pain_point": "字彙抽取與卡片化",
+  "commercial": "✅",
+  "language": "Python",
+  "dependencies": [
+    "anthropic",
+    "sqlite3",
+    "click"
+  ],
+  "agent_compatible": true,
+  "mcp_ready": true,
+  "intent_triggers": [
+    "從這篇文章抽取不認識的單字並製作學習卡片",
+    "幫我把生字做成含例句的單字卡",
+    "從 PDF 教科書提取專業術語並製卡",
+    "我想記 GRE 字彙，幫我建立卡片",
+    "把高頻單字做成可複習的卡片",
+    "從對話中抽取新詞彙並加上解釋",
+    "批次把詞彙清單轉成學習卡片"
+  ],
+  "examples": [
+    {
+      "query": "從 article.txt 抽取進階英文詞彙並製作含例句的卡片",
+      "params": {
+        "input_file": "article.txt",
+        "language": "en",
+        "include_examples": true
+      }
+    },
+    {
+      "query": "把 gre_words.txt 的 GRE 字彙清單轉成卡片儲存到 db",
+      "params": {
+        "input_file": "gre_words.txt",
+        "deck_name": "GRE"
+      }
+    },
+    {
+      "query": "從 textbook.pdf 第 3-5 章提取所有術語並建卡",
+      "params": {
+        "input_file": "textbook.pdf",
+        "pages": "3-5",
+        "extract_terms": true
+      }
+    }
+  ],
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "deck_name": {
+        "type": "string"
+      },
+      "extract_terms": {
+        "type": "boolean"
+      },
+      "include_examples": {
+        "type": "boolean"
+      },
+      "input_file": {
+        "type": "string"
+      },
+      "language": {
+        "type": "string"
+      },
+      "pages": {
+        "type": "string"
+      }
+    },
+    "required": [
+      "input_file"
+    ]
+  },
+  "license": "MIT"
+}

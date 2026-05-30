@@ -1,0 +1,78 @@
+{
+  "name": "read-score",
+  "version": "0.1.0",
+  "description": "可讀性評分器",
+  "category": "X",
+  "number": 476,
+  "pain_point": "文章可讀性評分",
+  "commercial": "✅",
+  "language": "Python",
+  "dependencies": [
+    "textstat",
+    "click",
+    "rich"
+  ],
+  "agent_compatible": true,
+  "mcp_ready": true,
+  "intent_triggers": [
+    "評估這篇文章的可讀性",
+    "這段文字適合幾歲的讀者？",
+    "文章太難讀了嗎？幫我評分",
+    "計算 Flesch 可讀性分數",
+    "這篇技術文章的閱讀難度如何？",
+    "幫我找出哪些段落可讀性最低",
+    "比較幾個版本文章的可讀性分數"
+  ],
+  "examples": [
+    {
+      "query": "評估 article.txt 的 Flesch-Kincaid 可讀性分數",
+      "params": {
+        "input_file": "article.txt",
+        "metric": "flesch_kincaid"
+      }
+    },
+    {
+      "query": "找出 report.docx 中可讀性最低的前 5 個段落",
+      "params": {
+        "input_file": "report.docx",
+        "find_difficult": true,
+        "top_n": 5
+      }
+    },
+    {
+      "query": "比較修改前後兩個版本的可讀性提升程度",
+      "params": {
+        "file_before": "v1_article.txt",
+        "file_after": "v2_article.txt",
+        "compare": true
+      }
+    }
+  ],
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "compare": {
+        "type": "boolean"
+      },
+      "file_after": {
+        "type": "string"
+      },
+      "file_before": {
+        "type": "string"
+      },
+      "find_difficult": {
+        "type": "boolean"
+      },
+      "input_file": {
+        "type": "string"
+      },
+      "metric": {
+        "type": "string"
+      },
+      "top_n": {
+        "type": "integer"
+      }
+    }
+  },
+  "license": "MIT"
+}

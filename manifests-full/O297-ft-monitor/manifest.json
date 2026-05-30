@@ -1,0 +1,90 @@
+{
+  "name": "ft-monitor",
+  "version": "0.1.0",
+  "description": "微調監測器",
+  "category": "O",
+  "number": 297,
+  "pain_point": "微調品質追蹤",
+  "commercial": "✅",
+  "language": "Python",
+  "dependencies": [
+    "click",
+    "rich",
+    "sqlite3"
+  ],
+  "agent_compatible": true,
+  "mcp_ready": true,
+  "intent_triggers": [
+    "監測模型微調的訓練進度和品質",
+    "追蹤 fine-tuning 模型的性能變化",
+    "微調模型和基礎模型的效能對比",
+    "我想看微調後模型是否真的有進步",
+    "模型微調品質監控和警報工具",
+    "比較不同微調實驗的結果",
+    "持續追蹤 fine-tuned model 的線上表現"
+  ],
+  "examples": [
+    {
+      "query": "追蹤 fine_tuning_job_id=ft-xxx 的訓練進度",
+      "params": {
+        "action": "track",
+        "job_id": "ft-xxx",
+        "provider": "openai"
+      }
+    },
+    {
+      "query": "比較微調前後模型在 eval_set.jsonl 的準確率",
+      "params": {
+        "action": "compare",
+        "baseline_model": "claude-3-haiku-20240307",
+        "finetuned_model": "ft:claude-3-haiku:my-org:my-model",
+        "eval_file": "eval_set.jsonl"
+      }
+    },
+    {
+      "query": "記錄本次微調實驗的參數和結果到 experiment_log",
+      "params": {
+        "action": "log",
+        "experiment_name": "customer_service_v2",
+        "model": "claude-3-haiku-20240307",
+        "metrics_file": "training_metrics.json"
+      }
+    }
+  ],
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "action": {
+        "type": "string"
+      },
+      "baseline_model": {
+        "type": "string"
+      },
+      "eval_file": {
+        "type": "string"
+      },
+      "experiment_name": {
+        "type": "string"
+      },
+      "finetuned_model": {
+        "type": "string"
+      },
+      "job_id": {
+        "type": "string"
+      },
+      "metrics_file": {
+        "type": "string"
+      },
+      "model": {
+        "type": "string"
+      },
+      "provider": {
+        "type": "string"
+      }
+    },
+    "required": [
+      "action"
+    ]
+  },
+  "license": "MIT"
+}

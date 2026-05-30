@@ -1,0 +1,75 @@
+{
+  "name": "srs-deck",
+  "version": "0.1.0",
+  "description": "間隔重複卡片",
+  "category": "S",
+  "number": 364,
+  "pain_point": "Spaced Repetition 卡片",
+  "commercial": "✅",
+  "language": "Python",
+  "dependencies": [
+    "sqlite3",
+    "click",
+    "rich"
+  ],
+  "agent_compatible": true,
+  "mcp_ready": true,
+  "intent_triggers": [
+    "我要用間隔重複法學習這些單字",
+    "建立一個 SRS 卡片組來背英文",
+    "今天要複習哪些卡片",
+    "記錄我答對答錯了哪張卡片",
+    "把筆記轉成 Anki 間隔重複卡片",
+    "幫我管理學習進度和複習排程",
+    "匯入 CSV 建立 spaced repetition 卡片組"
+  ],
+  "examples": [
+    {
+      "query": "從 vocabulary.csv 建立新的 SRS 卡片組",
+      "params": {
+        "action": "import",
+        "input_file": "vocabulary.csv",
+        "deck_name": "vocabulary"
+      }
+    },
+    {
+      "query": "列出今天需要複習的所有卡片",
+      "params": {
+        "action": "review",
+        "deck_name": "vocabulary"
+      }
+    },
+    {
+      "query": "記錄 card_id=42 答對，更新複習排程",
+      "params": {
+        "action": "record",
+        "card_id": 42,
+        "result": "correct"
+      }
+    }
+  ],
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "action": {
+        "type": "string"
+      },
+      "card_id": {
+        "type": "integer"
+      },
+      "deck_name": {
+        "type": "string"
+      },
+      "input_file": {
+        "type": "string"
+      },
+      "result": {
+        "type": "string"
+      }
+    },
+    "required": [
+      "action"
+    ]
+  },
+  "license": "MIT"
+}

@@ -1,0 +1,82 @@
+{
+  "name": "rss-fold",
+  "version": "0.1.0",
+  "description": "RSS 聚合器",
+  "category": "M",
+  "number": 247,
+  "pain_point": "RSS 聚合",
+  "commercial": "✅",
+  "language": "Python",
+  "dependencies": [
+    "feedparser",
+    "click",
+    "rich"
+  ],
+  "agent_compatible": true,
+  "mcp_ready": true,
+  "intent_triggers": [
+    "聚合多個 RSS 訂閱源的文章",
+    "RSS 閱讀器，把多個訂閱整合在一起",
+    "每天抓取訂閱的部落格新文章",
+    "RSS 聚合工具，整理成摘要清單",
+    "把多個新聞網站的 RSS 合併",
+    "訂閱 RSS 並定時更新",
+    "技術文章 RSS 聚合，每日早報"
+  ],
+  "examples": [
+    {
+      "query": "聚合 feeds.txt 中所有 RSS 訂閱的今日新文章",
+      "params": {
+        "action": "run",
+        "feeds_file": "feeds.txt",
+        "since": "today"
+      }
+    },
+    {
+      "query": "抓取 https://blog.example.com/rss 的最新 10 篇文章",
+      "params": {
+        "action": "run",
+        "feed_url": "https://blog.example.com/rss",
+        "limit": 10
+      }
+    },
+    {
+      "query": "從 rss_sources.json 聚合科技新聞並輸出 daily_digest.txt",
+      "params": {
+        "action": "run",
+        "config_file": "rss_sources.json",
+        "output_file": "daily_digest.txt"
+      }
+    }
+  ],
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "action": {
+        "type": "string"
+      },
+      "config_file": {
+        "type": "string"
+      },
+      "feed_url": {
+        "type": "string"
+      },
+      "feeds_file": {
+        "type": "string"
+      },
+      "limit": {
+        "type": "integer"
+      },
+      "output_file": {
+        "type": "string"
+      },
+      "since": {
+        "type": "string"
+      }
+    },
+    "required": [
+      "action"
+    ]
+  },
+  "license": "MIT"
+}

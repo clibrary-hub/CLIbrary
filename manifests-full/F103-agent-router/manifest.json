@@ -1,0 +1,77 @@
+{
+  "name": "agent-router",
+  "version": "0.1.0",
+  "description": "任務分派路由器",
+  "category": "F",
+  "number": 103,
+  "pain_point": "多 Agent 任務分派無策略",
+  "commercial": "✅",
+  "language": "Python",
+  "dependencies": [
+    "click",
+    "rich",
+    "pydantic"
+  ],
+  "agent_compatible": true,
+  "mcp_ready": true,
+  "intent_triggers": [
+    "怎麼讓任務自動分配給最適合的 Agent？",
+    "我有多個 Agent 但不知道任務該給誰做",
+    "幫我做一個根據能力派任務的路由器",
+    "Agent 任務分配需要有策略不能隨機分",
+    "想根據 Agent 的負載平衡分派任務",
+    "如何設定規則讓特定類型任務去特定 Agent",
+    "多 Agent 協作時任務調度怎麼處理"
+  ],
+  "examples": [
+    {
+      "query": "根據任務類型把 NLP 任務路由到 nlp-agent，圖片任務路由到 vision-agent",
+      "params": {
+        "action": "run",
+        "strategy": "type_based",
+        "rules_file": "routing_rules.json"
+      }
+    },
+    {
+      "query": "用輪詢方式把 50 個任務分給 agent1、agent2、agent3",
+      "params": {
+        "action": "run",
+        "strategy": "round_robin",
+        "agents": "agent1,agent2,agent3",
+        "task_count": "50"
+      }
+    },
+    {
+      "query": "依照 Agent 目前負載動態路由任務",
+      "params": {
+        "action": "run",
+        "strategy": "load_balance"
+      }
+    }
+  ],
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "action": {
+        "type": "string"
+      },
+      "agents": {
+        "type": "string"
+      },
+      "rules_file": {
+        "type": "string"
+      },
+      "strategy": {
+        "type": "string"
+      },
+      "task_count": {
+        "type": "string"
+      }
+    },
+    "required": [
+      "action",
+      "strategy"
+    ]
+  },
+  "license": "MIT"
+}

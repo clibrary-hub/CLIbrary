@@ -1,0 +1,74 @@
+{
+  "name": "flow-dash",
+  "version": "0.1.0",
+  "description": "流程儀表板",
+  "category": "D",
+  "number": 80,
+  "pain_point": "任務狀態無集中儀表板",
+  "commercial": "✅",
+  "language": "Python",
+  "dependencies": [
+    "rich",
+    "click",
+    "sqlite3"
+  ],
+  "agent_compatible": true,
+  "mcp_ready": true,
+  "intent_triggers": [
+    "顯示所有 Agent 任務的狀態儀表板",
+    "給我一個任務執行狀況的總覽",
+    "打開流程監控面板",
+    "查看目前所有正在跑的任務",
+    "顯示今日任務成功率和失敗數",
+    "我想看一個整合的任務儀表板",
+    "列出所有等待、執行中、完成的任務"
+  ],
+  "examples": [
+    {
+      "query": "顯示所有任務的即時儀表板",
+      "params": {
+        "action": "run",
+        "refresh_interval": 5
+      }
+    },
+    {
+      "query": "查看今天的任務執行統計",
+      "params": {
+        "action": "run",
+        "date_filter": "today"
+      }
+    },
+    {
+      "query": "顯示 pipeline_a 流程的詳細狀態",
+      "params": {
+        "flow_name": "pipeline_a",
+        "action": "run"
+      }
+    }
+  ],
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "flow_name": {
+        "type": "string",
+        "description": "要查看的特定流程名稱"
+      },
+      "refresh_interval": {
+        "type": "integer",
+        "description": "儀表板自動刷新間隔秒數"
+      },
+      "date_filter": {
+        "type": "string",
+        "description": "日期篩選：today、week 或 all"
+      },
+      "action": {
+        "type": "string",
+        "description": "操作類型：run（執行）"
+      }
+    },
+    "required": [
+      "action"
+    ]
+  },
+  "license": "MIT"
+}

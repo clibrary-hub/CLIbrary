@@ -1,0 +1,79 @@
+{
+  "name": "watermark",
+  "version": "0.1.0",
+  "description": "浮水印器",
+  "category": "P",
+  "number": 315,
+  "pain_point": "文件浮水印",
+  "commercial": "✅",
+  "language": "Python",
+  "dependencies": [
+    "Pillow",
+    "click",
+    "rich"
+  ],
+  "agent_compatible": true,
+  "mcp_ready": true,
+  "intent_triggers": [
+    "幫我在這張圖片上加浮水印",
+    "在 PDF 每頁加上公司名稱水印",
+    "批次給所有文件圖片加機密浮水印",
+    "加一個半透明的浮水印在圖片右下角",
+    "這份簡報每頁都要加上草稿浮水印",
+    "加入日期時間作為浮水印",
+    "針對不同收件人加上個人化浮水印"
+  ],
+  "examples": [
+    {
+      "query": "在 photo.jpg 右下角加入半透明的 CONFIDENTIAL 浮水印",
+      "params": {
+        "input_file": "photo.jpg",
+        "text": "CONFIDENTIAL",
+        "position": "bottom-right",
+        "opacity": 0.5
+      }
+    },
+    {
+      "query": "批次給 images/ 資料夾所有 PNG 加上公司 logo 浮水印",
+      "params": {
+        "input_dir": "images/",
+        "watermark_image": "logo.png"
+      }
+    },
+    {
+      "query": "在 contract.pdf 每頁加上 DRAFT 對角線浮水印",
+      "params": {
+        "input_file": "contract.pdf",
+        "text": "DRAFT",
+        "style": "diagonal"
+      }
+    }
+  ],
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "input_dir": {
+        "type": "string"
+      },
+      "input_file": {
+        "type": "string"
+      },
+      "opacity": {
+        "type": "number"
+      },
+      "position": {
+        "type": "string"
+      },
+      "style": {
+        "type": "string"
+      },
+      "text": {
+        "type": "string"
+      },
+      "watermark_image": {
+        "type": "string"
+      }
+    }
+  },
+  "license": "MIT"
+}

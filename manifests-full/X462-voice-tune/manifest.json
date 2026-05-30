@@ -1,0 +1,79 @@
+{
+  "name": "voice-tune",
+  "version": "0.1.0",
+  "description": "口吻調整器",
+  "category": "X",
+  "number": 462,
+  "pain_point": "文章口吻調整",
+  "commercial": "✅",
+  "language": "Python",
+  "dependencies": [
+    "anthropic",
+    "click",
+    "rich"
+  ],
+  "agent_compatible": true,
+  "mcp_ready": true,
+  "intent_triggers": [
+    "幫我把這篇文章改得更正式一點",
+    "這段話太學術了，改得口語化一些",
+    "把這封信的語氣調整得更友善",
+    "文章口吻太強硬，幫我軟化",
+    "這段行銷文案改成更有趣的風格",
+    "把技術文章改成給一般人看的語氣",
+    "調整這段文字，讓它聽起來更有說服力"
+  ],
+  "examples": [
+    {
+      "query": "把 email_draft.txt 的語氣從正式改成輕鬆友善",
+      "params": {
+        "input_file": "email_draft.txt",
+        "target_tone": "friendly",
+        "source_tone": "formal"
+      }
+    },
+    {
+      "query": "這段產品說明太技術性，幫我改成一般消費者能理解的口吻",
+      "params": {
+        "text": "本產品採用先進的 OLED 技術，具有 120Hz 刷新率和 HDR 10+ 支援。",
+        "target_audience": "general",
+        "target_tone": "casual"
+      }
+    },
+    {
+      "query": "把這篇部落格文章的語氣調整成更權威、更專業的風格",
+      "params": {
+        "input_file": "blog_post.txt",
+        "target_tone": "authoritative",
+        "preserve_meaning": true
+      }
+    }
+  ],
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "input_file": {
+        "type": "string"
+      },
+      "preserve_meaning": {
+        "type": "boolean"
+      },
+      "source_tone": {
+        "type": "string"
+      },
+      "target_audience": {
+        "type": "string"
+      },
+      "target_tone": {
+        "type": "string"
+      },
+      "text": {
+        "type": "string"
+      }
+    },
+    "required": [
+      "target_tone"
+    ]
+  },
+  "license": "MIT"
+}

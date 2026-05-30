@@ -1,0 +1,70 @@
+{
+  "name": "wx-brief",
+  "version": "0.1.0",
+  "description": "天氣摘要器",
+  "category": "T",
+  "number": 388,
+  "pain_point": "在地天氣速報",
+  "commercial": "⚠️",
+  "language": "Python",
+  "dependencies": [
+    "requests",
+    "click",
+    "rich"
+  ],
+  "agent_compatible": true,
+  "mcp_ready": true,
+  "intent_triggers": [
+    "幫我查東京這週的天氣",
+    "明天去大阪要不要帶傘",
+    "我下週要去的地方天氣怎麼樣",
+    "查詢行程期間的天氣預報",
+    "今天台北溫度和降雨機率",
+    "幫我確認旅遊目的地的天氣概況",
+    "這幾天適合去海邊玩嗎"
+  ],
+  "examples": [
+    {
+      "query": "查詢東京 2026-07-10 到 2026-07-15 的天氣預報",
+      "params": {
+        "location": "東京",
+        "date_from": "2026-07-10",
+        "date_to": "2026-07-15"
+      }
+    },
+    {
+      "query": "取得台北今天的天氣摘要包含溫度和降雨機率",
+      "params": {
+        "location": "台北",
+        "date": "today"
+      }
+    },
+    {
+      "query": "批次查詢行程 itinerary.md 裡所有城市的天氣",
+      "params": {
+        "itinerary_file": "itinerary.md"
+      }
+    }
+  ],
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "date": {
+        "type": "string"
+      },
+      "date_from": {
+        "type": "string"
+      },
+      "date_to": {
+        "type": "string"
+      },
+      "itinerary_file": {
+        "type": "string"
+      },
+      "location": {
+        "type": "string"
+      }
+    }
+  },
+  "license": "MIT"
+}

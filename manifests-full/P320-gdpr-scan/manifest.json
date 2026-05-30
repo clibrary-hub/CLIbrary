@@ -1,0 +1,80 @@
+{
+  "name": "gdpr-scan",
+  "version": "0.1.0",
+  "description": "GDPR 掃描器",
+  "category": "P",
+  "number": 320,
+  "pain_point": "法遵掃描（GDPR）",
+  "commercial": "✅",
+  "language": "Python",
+  "dependencies": [
+    "anthropic",
+    "click",
+    "rich"
+  ],
+  "agent_compatible": true,
+  "mcp_ready": true,
+  "intent_triggers": [
+    "GDPR 合規性程式碼掃描",
+    "找出沒有取得用戶同意就蒐集的資料",
+    "我要做 GDPR 合規審查",
+    "掃描 API 回應有沒有不必要的個資欄位",
+    "驗證 code 是否真的實作隱私刪除",
+    "法規遵循的程式碼審計",
+    "確認資料刪除邏輯有真正執行",
+    "這個網站的資料處理有沒有 GDPR 問題",
+    "隱私聲明與實作一致性驗證",
+    "掃描程式碼是否符合 GDPR 規範",
+    "幫我找出違反 GDPR 的個資處理邏輯",
+    "檢查資料庫有沒有保存過久的個人資料",
+    "稽核程式碼是否符合個資法存留期規定",
+    "驗證資料刪除邏輯的個資法合規性",
+    "個資法存留期的程式碼稽核",
+    "隱私聲明說會刪資料，幫我掃 code 確認",
+    "驗證 code 是否真的執行了隱私聲明裡的刪資料"
+  ],
+  "examples": [
+    {
+      "query": "掃描 ./src 程式碼是否有未授權的個資收集",
+      "params": {
+        "target_dir": "./src",
+        "regulation": "GDPR"
+      }
+    },
+    {
+      "query": "分析 database_schema.sql 是否有個資保存期限問題",
+      "params": {
+        "input_file": "database_schema.sql",
+        "check_retention": true
+      }
+    },
+    {
+      "query": "掃描 api_responses/ 目錄的 JSON 回應是否洩漏個資欄位",
+      "params": {
+        "target_dir": "api_responses/",
+        "output_report": "gdpr_report.json"
+      }
+    }
+  ],
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "check_retention": {
+        "type": "boolean"
+      },
+      "input_file": {
+        "type": "string"
+      },
+      "output_report": {
+        "type": "string"
+      },
+      "regulation": {
+        "type": "string"
+      },
+      "target_dir": {
+        "type": "string"
+      }
+    }
+  },
+  "license": "MIT"
+}

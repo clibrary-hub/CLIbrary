@@ -1,0 +1,84 @@
+{
+  "name": "format-fix",
+  "version": "0.1.0",
+  "description": "結構資料修復",
+  "category": "E",
+  "number": 90,
+  "pain_point": "JSON/YAML 格式錯誤",
+  "commercial": "✅",
+  "language": "Python",
+  "dependencies": [
+    "json",
+    "pyyaml",
+    "click",
+    "rich"
+  ],
+  "agent_compatible": true,
+  "mcp_ready": true,
+  "intent_triggers": [
+    "AI 輸出的 JSON 解析不了，修一下",
+    "把這段不合法的 JSON 修成有效格式",
+    "診斷並修復 config.yaml 的格式錯誤",
+    "YAML 語法錯誤，幫我修正",
+    "把格式錯誤的 JSON 重新整理",
+    "修復這個損壞的 JSON 格式",
+    "自動修復結構資料的格式問題",
+    "只做格式化不跑 lint rule",
+    "prettier 或 black 自動排版，跳過 linter",
+    "縮排亂掉用自動格式化整理",
+    "自動格式化程式碼，不檢查規則",
+    "black/prettier 格式化，忽略 lint 警告"
+  ],
+  "examples": [
+    {
+      "query": "修復 config.json 的格式錯誤",
+      "params": {
+        "input_file": "config.json",
+        "file_type": "json",
+        "action": "run"
+      }
+    },
+    {
+      "query": "自動修復並重新格式化 settings.yaml",
+      "params": {
+        "input_file": "settings.yaml",
+        "file_type": "yaml",
+        "action": "run",
+        "output_file": "settings_fixed.yaml"
+      }
+    },
+    {
+      "query": "批次修復 configs/ 目錄下所有 JSON 檔",
+      "params": {
+        "input_dir": "configs/",
+        "file_type": "json",
+        "action": "run"
+      }
+    }
+  ],
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "action": {
+        "type": "string"
+      },
+      "file_type": {
+        "type": "string"
+      },
+      "input_dir": {
+        "type": "string"
+      },
+      "input_file": {
+        "type": "string"
+      },
+      "output_file": {
+        "type": "string"
+      }
+    },
+    "required": [
+      "action",
+      "file_type"
+    ]
+  },
+  "license": "MIT"
+}

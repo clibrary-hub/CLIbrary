@@ -1,0 +1,73 @@
+{
+  "name": "flow-tracker",
+  "version": "0.1.0",
+  "description": "流程進度追蹤器",
+  "category": "D",
+  "number": 66,
+  "pain_point": "多步驟流程無進度追蹤",
+  "commercial": "✅",
+  "language": "Python",
+  "dependencies": [
+    "rich",
+    "click",
+    "sqlite3"
+  ],
+  "agent_compatible": true,
+  "mcp_ready": true,
+  "intent_triggers": [
+    "追蹤這個多步驟流程的進度",
+    "顯示目前任務進行到哪一步了",
+    "幫我知道整個工作流程的完成狀態",
+    "比對流程計畫和實際執行進度",
+    "記錄每個步驟的完成時間",
+    "流程跑到一半，看看剩幾步",
+    "可視化多步驟 Agent 流程的狀態"
+  ],
+  "examples": [
+    {
+      "query": "追蹤 data_pipeline 流程的執行進度",
+      "params": {
+        "flow_name": "data_pipeline",
+        "action": "diff"
+      }
+    },
+    {
+      "query": "比對計畫步驟和已完成步驟的差異",
+      "params": {
+        "flow_name": "onboarding_flow",
+        "action": "diff",
+        "compare_plan": true
+      }
+    },
+    {
+      "query": "記錄 step_3 已完成並更新進度",
+      "params": {
+        "flow_name": "deploy_flow",
+        "completed_step": "step_3",
+        "action": "diff"
+      }
+    }
+  ],
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "action": {
+        "type": "string"
+      },
+      "compare_plan": {
+        "type": "boolean"
+      },
+      "completed_step": {
+        "type": "string"
+      },
+      "flow_name": {
+        "type": "string"
+      }
+    },
+    "required": [
+      "action",
+      "flow_name"
+    ]
+  },
+  "license": "MIT"
+}

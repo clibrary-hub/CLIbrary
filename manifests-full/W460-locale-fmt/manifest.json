@@ -1,0 +1,79 @@
+{
+  "name": "locale-fmt",
+  "version": "0.1.0",
+  "description": "在地格式器",
+  "category": "W",
+  "number": 460,
+  "pain_point": "在地日期/數字格式",
+  "commercial": "✅",
+  "language": "Python",
+  "dependencies": [
+    "babel",
+    "click",
+    "rich"
+  ],
+  "agent_compatible": true,
+  "mcp_ready": true,
+  "intent_triggers": [
+    "把日期格式轉成美國格式",
+    "這個數字要怎麼按照德國習慣顯示？",
+    "幫我轉換日期到日本格式",
+    "貨幣格式要符合台灣當地習慣",
+    "統一換算各地的日期和數字格式",
+    "把 2024-01-27 轉成各國常用的日期格式",
+    "確認這些數字和日期顯示格式符合在地規範"
+  ],
+  "examples": [
+    {
+      "query": "將 2024-01-27 轉成美國 (en-US) 日期格式",
+      "params": {
+        "input_date": "2024-01-27",
+        "target_locale": "en-US",
+        "format_type": "date"
+      }
+    },
+    {
+      "query": "把數字 1234567.89 按德國 (de-DE) 格式顯示",
+      "params": {
+        "input_number": 1234567.89,
+        "target_locale": "de-DE",
+        "format_type": "number"
+      }
+    },
+    {
+      "query": "批次轉換 data.json 中所有日期欄位到日本 (ja-JP) 格式",
+      "params": {
+        "input_file": "data.json",
+        "target_locale": "ja-JP",
+        "convert_dates": true
+      }
+    }
+  ],
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "convert_dates": {
+        "type": "boolean"
+      },
+      "format_type": {
+        "type": "string"
+      },
+      "input_date": {
+        "type": "string"
+      },
+      "input_file": {
+        "type": "string"
+      },
+      "input_number": {
+        "type": "number"
+      },
+      "target_locale": {
+        "type": "string"
+      }
+    },
+    "required": [
+      "target_locale"
+    ]
+  },
+  "license": "MIT"
+}

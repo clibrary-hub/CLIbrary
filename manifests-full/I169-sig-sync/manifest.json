@@ -1,0 +1,81 @@
+{
+  "name": "sig-sync",
+  "version": "0.1.0",
+  "description": "簽名檔同步",
+  "category": "I",
+  "number": 169,
+  "pain_point": "公司簽名檔不統一",
+  "commercial": "✅",
+  "language": "Python",
+  "dependencies": [
+    "click",
+    "rich",
+    "jinja2"
+  ],
+  "agent_compatible": true,
+  "mcp_ready": true,
+  "intent_triggers": [
+    "公司的郵件簽名檔每個人格式都不一樣",
+    "幫我統一全公司的電子郵件簽名檔格式",
+    "想用模板生成標準化的郵件簽名並同步給全員",
+    "更新公司 LOGO 後需要批次更新所有人的簽名檔",
+    "我需要針對不同部門生成不同風格的簽名檔",
+    "簽名檔同步工具，確保所有成員格式一致",
+    "從員工資料 CSV 批次生成各自的簽名檔"
+  ],
+  "examples": [
+    {
+      "query": "從 employees.csv 批次生成所有員工的標準簽名檔",
+      "params": {
+        "action": "generate",
+        "input": "employees.csv",
+        "template": "signature.html.j2",
+        "output_dir": "signatures/"
+      }
+    },
+    {
+      "query": "用 sig-template.html 更新 John 的簽名檔，職稱改為 Senior Engineer",
+      "params": {
+        "action": "generate",
+        "name": "John",
+        "title": "Senior Engineer",
+        "template": "sig-template.html.j2"
+      }
+    },
+    {
+      "query": "預覽用 template.j2 生成的簽名檔效果",
+      "params": {
+        "action": "preview",
+        "template": "template.j2"
+      }
+    }
+  ],
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "action": {
+        "type": "string"
+      },
+      "input": {
+        "type": "string"
+      },
+      "name": {
+        "type": "string"
+      },
+      "output_dir": {
+        "type": "string"
+      },
+      "template": {
+        "type": "string"
+      },
+      "title": {
+        "type": "string"
+      }
+    },
+    "required": [
+      "action",
+      "template"
+    ]
+  },
+  "license": "MIT"
+}

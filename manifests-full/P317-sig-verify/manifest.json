@@ -1,0 +1,74 @@
+{
+  "name": "sig-verify",
+  "version": "0.1.0",
+  "description": "簽章驗證器",
+  "category": "P",
+  "number": 317,
+  "pain_point": "簽章驗證",
+  "commercial": "✅",
+  "language": "Python",
+  "dependencies": [
+    "cryptography",
+    "click",
+    "rich"
+  ],
+  "agent_compatible": true,
+  "mcp_ready": true,
+  "intent_triggers": [
+    "驗證這個文件的數位簽章是否有效",
+    "確認這個軟體套件是官方發布的",
+    "幫我驗證 GPG 簽章",
+    "這個安裝檔的 hash 是否和官方一致",
+    "驗證 JWT token 的簽章有效性",
+    "確認郵件的數位簽章是否可信",
+    "批次驗證多個檔案的簽章"
+  ],
+  "examples": [
+    {
+      "query": "驗證 software.tar.gz 的 GPG 簽章 software.tar.gz.sig",
+      "params": {
+        "input_file": "software.tar.gz",
+        "signature_file": "software.tar.gz.sig"
+      }
+    },
+    {
+      "query": "使用公鑰 pubkey.pem 驗證 document.pdf 的 RSA 簽章",
+      "params": {
+        "input_file": "document.pdf",
+        "public_key": "pubkey.pem",
+        "algorithm": "RSA"
+      }
+    },
+    {
+      "query": "驗證 SHA256 雜湊值是否符合官方公告的 checksum.txt",
+      "params": {
+        "input_file": "installer.exe",
+        "checksum_file": "checksum.txt"
+      }
+    }
+  ],
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "algorithm": {
+        "type": "string"
+      },
+      "checksum_file": {
+        "type": "string"
+      },
+      "input_file": {
+        "type": "string"
+      },
+      "public_key": {
+        "type": "string"
+      },
+      "signature_file": {
+        "type": "string"
+      }
+    },
+    "required": [
+      "input_file"
+    ]
+  },
+  "license": "MIT"
+}

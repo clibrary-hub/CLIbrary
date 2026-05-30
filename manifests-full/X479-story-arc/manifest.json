@@ -1,0 +1,75 @@
+{
+  "name": "story-arc",
+  "version": "0.1.0",
+  "description": "故事結構器",
+  "category": "X",
+  "number": 479,
+  "pain_point": "故事結構檢查",
+  "commercial": "✅",
+  "language": "Python",
+  "dependencies": [
+    "anthropic",
+    "click",
+    "rich"
+  ],
+  "agent_compatible": true,
+  "mcp_ready": true,
+  "intent_triggers": [
+    "分析這篇故事的敘事結構",
+    "幫我檢查文章的起承轉合",
+    "這個劇本的故事弧線完整嗎？",
+    "用英雄之旅結構分析這篇文章",
+    "故事缺少衝突點，幫我指出",
+    "我的文章結構有問題嗎？",
+    "生成符合三幕劇結構的故事框架"
+  ],
+  "examples": [
+    {
+      "query": "分析 story.txt 的敘事結構，找出起點、衝突、高潮、結局",
+      "params": {
+        "input_file": "story.txt",
+        "structure_model": "three_act"
+      }
+    },
+    {
+      "query": "用英雄之旅 12 步驟分析這篇文章的故事弧",
+      "params": {
+        "input_file": "article.txt",
+        "structure_model": "hero_journey"
+      }
+    },
+    {
+      "query": "生成一個「本土創業家逆境翻身」主題的三幕劇結構大綱",
+      "params": {
+        "theme": "創業家逆境翻身",
+        "structure_model": "three_act",
+        "generate": true
+      }
+    }
+  ],
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "input_file": {
+        "type": "string",
+        "description": "要分析的故事或文章文件路徑"
+      },
+      "structure_model": {
+        "type": "string",
+        "description": "故事結構模型：three_act、hero_journey、freytag"
+      },
+      "theme": {
+        "type": "string",
+        "description": "要生成故事結構的主題"
+      },
+      "generate": {
+        "type": "boolean",
+        "description": "是否生成新的故事結構框架"
+      }
+    },
+    "required": [
+      "structure_model"
+    ]
+  },
+  "license": "MIT"
+}

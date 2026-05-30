@@ -1,0 +1,77 @@
+{
+  "name": "pcap-brief",
+  "version": "0.1.0",
+  "description": "抓包摘要器",
+  "category": "M",
+  "number": 252,
+  "pain_point": "網路抓包分析",
+  "commercial": "✅",
+  "language": "Python",
+  "dependencies": [
+    "scapy",
+    "click",
+    "rich"
+  ],
+  "agent_compatible": true,
+  "mcp_ready": true,
+  "intent_triggers": [
+    "分析網路封包抓取檔案",
+    "解析 pcap 檔案摘要",
+    "幫我看看這個 pcap 裡有什麼流量",
+    "網路封包分析工具，看流量摘要",
+    "從抓包檔案找出異常流量",
+    "PCAP 流量摘要和統計",
+    "分析網路抓包並輸出摘要報告"
+  ],
+  "examples": [
+    {
+      "query": "分析 capture.pcap 的網路流量摘要",
+      "params": {
+        "action": "run",
+        "input_file": "capture.pcap"
+      }
+    },
+    {
+      "query": "從 network.pcap 中找出所有 HTTP 請求",
+      "params": {
+        "action": "run",
+        "input_file": "network.pcap",
+        "filter": "http"
+      }
+    },
+    {
+      "query": "摘要 traffic.pcap 並統計各 IP 的流量大小",
+      "params": {
+        "action": "run",
+        "input_file": "traffic.pcap",
+        "group_by": "ip"
+      }
+    }
+  ],
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "action": {
+        "type": "string",
+        "description": "操作類型，如 run（執行分析）"
+      },
+      "input_file": {
+        "type": "string",
+        "description": "輸入 PCAP 檔案路徑"
+      },
+      "filter": {
+        "type": "string",
+        "description": "封包過濾條件，如 http、tcp、udp"
+      },
+      "group_by": {
+        "type": "string",
+        "description": "統計分組欄位，如 ip、protocol"
+      }
+    },
+    "required": [
+      "action",
+      "input_file"
+    ]
+  },
+  "license": "MIT"
+}

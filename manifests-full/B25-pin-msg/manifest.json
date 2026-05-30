@@ -1,0 +1,71 @@
+{
+  "name": "pin-msg",
+  "version": "0.1.0",
+  "description": "關鍵訊息釘選器",
+  "category": "B",
+  "number": 25,
+  "pain_point": "重要指令被前文蓋過",
+  "commercial": "✅",
+  "language": "Python",
+  "dependencies": [
+    "sqlite3",
+    "rich",
+    "click"
+  ],
+  "agent_compatible": true,
+  "mcp_ready": true,
+  "intent_triggers": [
+    "把這條指令釘選起來，確保 AI 不忘",
+    "重要規則要一直保留在上下文中",
+    "釘選這段說明，讓 Agent 隨時參考",
+    "防止重要提示被後續對話蓋掉",
+    "把這個限制條件固定住",
+    "每次對話都要記得這個規則",
+    "釘選系統規範到對話頂端"
+  ],
+  "examples": [
+    {
+      "query": "釘選「所有回覆必須用繁體中文」這條規則",
+      "params": {
+        "message": "所有回覆必須用繁體中文",
+        "priority": "high",
+        "action": "run"
+      }
+    },
+    {
+      "query": "把「禁止修改 production 設定」釘選到對話",
+      "params": {
+        "message": "禁止修改 production 設定",
+        "action": "run"
+      }
+    },
+    {
+      "query": "列出所有已釘選的關鍵訊息",
+      "params": {
+        "action": "run",
+        "list_all": true
+      }
+    }
+  ],
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "action": {
+        "type": "string"
+      },
+      "list_all": {
+        "type": "boolean"
+      },
+      "message": {
+        "type": "string"
+      },
+      "priority": {
+        "type": "string"
+      }
+    },
+    "required": [
+      "action"
+    ]
+  },
+  "license": "MIT"
+}

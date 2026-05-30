@@ -1,0 +1,82 @@
+{
+  "name": "syntax-rep",
+  "version": "0.1.0",
+  "description": "句法重複器",
+  "category": "X",
+  "number": 477,
+  "pain_point": "句法重複偵測",
+  "commercial": "✅",
+  "language": "Python",
+  "dependencies": [
+    "anthropic",
+    "click",
+    "rich"
+  ],
+  "agent_compatible": true,
+  "mcp_ready": true,
+  "intent_triggers": [
+    "幫我找出文章裡重複用的句型",
+    "這篇文章句法太單調，幫我找出問題",
+    "偵測文章中重複出現的開頭句式",
+    "找出哪些詞彙和句型用太頻繁",
+    "文章句子結構太像，幫我診斷",
+    "找出重複的過渡詞和連接詞",
+    "這篇作文有幾處句法重複？"
+  ],
+  "examples": [
+    {
+      "query": "分析 essay.txt 中重複使用的句型和連接詞",
+      "params": {
+        "input_file": "essay.txt",
+        "check_sentence_patterns": true,
+        "check_connectors": true
+      }
+    },
+    {
+      "query": "找出 article.txt 中出現超過 3 次的相同句子開頭",
+      "params": {
+        "input_file": "article.txt",
+        "repeat_threshold": 3,
+        "check_sentence_starters": true
+      }
+    },
+    {
+      "query": "比較文章修改前後的句法多樣性改善",
+      "params": {
+        "file_before": "draft_v1.txt",
+        "file_after": "draft_v2.txt",
+        "diversity_score": true
+      }
+    }
+  ],
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "check_connectors": {
+        "type": "boolean"
+      },
+      "check_sentence_patterns": {
+        "type": "boolean"
+      },
+      "check_sentence_starters": {
+        "type": "boolean"
+      },
+      "diversity_score": {
+        "type": "boolean"
+      },
+      "file_after": {
+        "type": "string"
+      },
+      "file_before": {
+        "type": "string"
+      },
+      "input_file": {
+        "type": "string"
+      },
+      "repeat_threshold": {
+        "type": "integer"
+      }
+    }
+  },
+  "license": "MIT"
+}

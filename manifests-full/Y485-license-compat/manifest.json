@@ -1,0 +1,84 @@
+{
+  "name": "license-compat",
+  "version": "0.1.0",
+  "description": "授權相容檢查",
+  "category": "Y",
+  "number": 485,
+  "pain_point": "開源授權相容檢查",
+  "commercial": "✅",
+  "language": "Python",
+  "dependencies": [
+    "click",
+    "rich",
+    "yaml"
+  ],
+  "agent_compatible": true,
+  "mcp_ready": true,
+  "intent_triggers": [
+    "我的專案用了 MIT 和 GPL 套件，有衝突嗎？",
+    "幫我檢查開源授權的相容性",
+    "這個 Apache 2.0 授權可以用在商業專案嗎？",
+    "掃描專案依賴的所有開源授權",
+    "GPL 和 LGPL 授權有什麼差別？",
+    "這個商業軟體可以使用 GPL 套件嗎？",
+    "列出所有不相容的開源授權組合"
+  ],
+  "examples": [
+    {
+      "query": "掃描 requirements.txt 的所有套件授權，找出與商業使用不相容的授權",
+      "params": {
+        "requirements_file": "requirements.txt",
+        "project_type": "commercial",
+        "check_compatibility": true
+      }
+    },
+    {
+      "query": "檢查同時使用 MIT、Apache 2.0 和 GPL-3.0 套件是否有授權衝突",
+      "params": {
+        "licenses": [
+          "MIT",
+          "Apache-2.0",
+          "GPL-3.0"
+        ],
+        "check_conflicts": true
+      }
+    },
+    {
+      "query": "分析 package.json 中所有 npm 套件的授權合規性",
+      "params": {
+        "package_file": "package.json",
+        "output_report": "license_report.txt"
+      }
+    }
+  ],
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "check_compatibility": {
+        "type": "boolean"
+      },
+      "check_conflicts": {
+        "type": "boolean"
+      },
+      "licenses": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      },
+      "output_report": {
+        "type": "string"
+      },
+      "package_file": {
+        "type": "string"
+      },
+      "project_type": {
+        "type": "string"
+      },
+      "requirements_file": {
+        "type": "string"
+      }
+    }
+  },
+  "license": "MIT"
+}

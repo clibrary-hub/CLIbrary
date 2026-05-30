@@ -1,0 +1,96 @@
+{
+  "name": "trip-split",
+  "version": "0.1.0",
+  "description": "行程分帳器",
+  "category": "T",
+  "number": 397,
+  "pain_point": "多人合分行程帳",
+  "commercial": "✅",
+  "language": "Python",
+  "dependencies": [
+    "sqlite3",
+    "click",
+    "rich"
+  ],
+  "agent_compatible": true,
+  "mcp_ready": true,
+  "intent_triggers": [
+    "幫我們幾個人算旅遊分帳",
+    "計算這次旅行誰欠誰多少錢",
+    "記錄旅遊花費並平均分攤",
+    "幫我算 4 個人一起旅遊的帳",
+    "記錄 Alice 墊付了飯店費用",
+    "生成旅遊分帳明細和結帳清單",
+    "計算最少轉帳次數的分帳方案"
+  ],
+  "examples": [
+    {
+      "query": "建立東京旅遊分帳：Alice、Bob、Carol 三人",
+      "params": {
+        "action": "create",
+        "trip_name": "東京旅遊",
+        "members": [
+          "Alice",
+          "Bob",
+          "Carol"
+        ]
+      }
+    },
+    {
+      "query": "記錄 Alice 墊付飯店費用 12000 元，3 人平分",
+      "params": {
+        "action": "add",
+        "payer": "Alice",
+        "amount": 12000,
+        "description": "飯店費用",
+        "split_among": [
+          "Alice",
+          "Bob",
+          "Carol"
+        ]
+      }
+    },
+    {
+      "query": "計算最終分帳結果和最少轉帳次數",
+      "params": {
+        "action": "settle"
+      }
+    }
+  ],
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "action": {
+        "type": "string"
+      },
+      "amount": {
+        "type": "integer"
+      },
+      "description": {
+        "type": "string"
+      },
+      "members": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      },
+      "payer": {
+        "type": "string"
+      },
+      "split_among": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      },
+      "trip_name": {
+        "type": "string"
+      }
+    },
+    "required": [
+      "action"
+    ]
+  },
+  "license": "MIT"
+}

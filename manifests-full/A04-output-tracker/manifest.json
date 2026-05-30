@@ -1,0 +1,79 @@
+{
+  "name": "output-tracker",
+  "version": "0.1.0",
+  "description": "產出追蹤器",
+  "category": "A",
+  "number": 4,
+  "pain_point": "Agent 產出檔案散落各處難以追蹤",
+  "commercial": "✅",
+  "language": "Python",
+  "dependencies": [
+    "watchdog",
+    "sqlite3",
+    "rich"
+  ],
+  "agent_compatible": true,
+  "mcp_ready": true,
+  "intent_triggers": [
+    "建立一個產出日誌，方便事後查閱",
+    "比對任務前後有哪些新檔案",
+    "列出最近被新增或修改的檔案清單",
+    "匯出這次 Agent 執行的產出報告",
+    "我想知道剛才 AI 改了哪些地方",
+    "追蹤 Agent 產生了哪些檔案",
+    "幫我記錄這次任務的所有產出",
+    "監控某個路徑有任何檔案變動就通知我",
+    "inotify 方式即時監看目錄異動",
+    "文件被改寫時觸發後續動作",
+    "watch 目錄，有變動馬上告知",
+    "持續監看指定路徑，不只看 git 歷史",
+    "檔案系統異動的即時警報"
+  ],
+  "examples": [
+    {
+      "query": "追蹤 /project 目錄在執行任務後的變更",
+      "params": {
+        "watch_path": "/project",
+        "action": "diff"
+      }
+    },
+    {
+      "query": "匯出今天所有 Agent 產出的檔案清單到 output_log.json",
+      "params": {
+        "watch_path": ".",
+        "action": "export",
+        "output_file": "output_log.json"
+      }
+    },
+    {
+      "query": "比對任務執行前後的目錄差異",
+      "params": {
+        "watch_path": ".",
+        "action": "diff",
+        "since": "2024-01-01T00:00:00"
+      }
+    }
+  ],
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "action": {
+        "type": "string"
+      },
+      "output_file": {
+        "type": "string"
+      },
+      "since": {
+        "type": "string"
+      },
+      "watch_path": {
+        "type": "string"
+      }
+    },
+    "required": [
+      "action",
+      "watch_path"
+    ]
+  },
+  "license": "MIT"
+}

@@ -1,0 +1,71 @@
+{
+  "name": "agent-macro",
+  "version": "0.1.0",
+  "description": "Agent 巨集錄製器",
+  "category": "D",
+  "number": 61,
+  "pain_point": "重複任務每次手動下指令",
+  "commercial": "✅",
+  "language": "Python",
+  "dependencies": [
+    "click",
+    "rich",
+    "yaml"
+  ],
+  "agent_compatible": true,
+  "mcp_ready": true,
+  "intent_triggers": [
+    "把這組重複操作錄製成巨集",
+    "我每天都要做同樣的 Agent 任務，幫我自動化",
+    "錄製這次的指令序列，方便下次重播",
+    "建立一個 Agent 巨集，一鍵執行",
+    "把這些步驟存成可重複使用的腳本",
+    "我想把這個工作流程自動化",
+    "執行我上次錄製的巨集"
+  ],
+  "examples": [
+    {
+      "query": "錄製一個每日報告生成的 Agent 巨集",
+      "params": {
+        "macro_name": "daily_report",
+        "action": "run"
+      }
+    },
+    {
+      "query": "執行名為 code_review 的 Agent 巨集",
+      "params": {
+        "macro_name": "code_review",
+        "action": "run",
+        "execute": true
+      }
+    },
+    {
+      "query": "列出所有已錄製的巨集",
+      "params": {
+        "action": "run",
+        "list_all": true
+      }
+    }
+  ],
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "action": {
+        "type": "string"
+      },
+      "execute": {
+        "type": "boolean"
+      },
+      "list_all": {
+        "type": "boolean"
+      },
+      "macro_name": {
+        "type": "string"
+      }
+    },
+    "required": [
+      "action"
+    ]
+  },
+  "license": "MIT"
+}

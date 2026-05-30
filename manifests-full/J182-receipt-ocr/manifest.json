@@ -1,0 +1,76 @@
+{
+  "name": "receipt-ocr",
+  "version": "0.1.0",
+  "description": "收據 OCR",
+  "category": "J",
+  "number": 182,
+  "pain_point": "發票收據掃描麻煩",
+  "commercial": "✅",
+  "language": "Python",
+  "dependencies": [
+    "pytesseract",
+    "Pillow",
+    "click"
+  ],
+  "agent_compatible": true,
+  "mcp_ready": true,
+  "intent_triggers": [
+    "幫我掃描發票圖片並自動提取金額和日期",
+    "把收據照片用 OCR 轉成數字帳本資料",
+    "我有一堆收據圖片，想批次 OCR 識別",
+    "拍一張發票就能自動記帳，有這種工具嗎",
+    "餐廳收據掃描後自動加到費用清單",
+    "想把紙本發票轉成數位格式方便報帳",
+    "批次掃描資料夾裡的所有收據圖片"
+  ],
+  "examples": [
+    {
+      "query": "OCR 識別 receipt.jpg 並提取日期、金額和商家名稱",
+      "params": {
+        "action": "scan",
+        "input_file": "receipt.jpg",
+        "output": "receipt-data.json"
+      }
+    },
+    {
+      "query": "批次 OCR 識別 receipts/ 資料夾中所有圖片並匯出 CSV",
+      "params": {
+        "action": "scan",
+        "input_dir": "receipts/",
+        "output": "receipts-extracted.csv"
+      }
+    },
+    {
+      "query": "掃描 invoice.png 並自動分類費用類別",
+      "params": {
+        "action": "scan",
+        "input_file": "invoice.png",
+        "categorize": "true"
+      }
+    }
+  ],
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "action": {
+        "type": "string"
+      },
+      "categorize": {
+        "type": "string"
+      },
+      "input_dir": {
+        "type": "string"
+      },
+      "input_file": {
+        "type": "string"
+      },
+      "output": {
+        "type": "string"
+      }
+    },
+    "required": [
+      "action"
+    ]
+  },
+  "license": "MIT"
+}

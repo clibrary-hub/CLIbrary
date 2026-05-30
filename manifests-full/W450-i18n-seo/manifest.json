@@ -1,0 +1,84 @@
+{
+  "name": "i18n-seo",
+  "version": "0.1.0",
+  "description": "i18n SEO 工具",
+  "category": "W",
+  "number": 450,
+  "pain_point": "多語 SEO 標籤",
+  "commercial": "✅",
+  "language": "Python",
+  "dependencies": [
+    "click",
+    "rich",
+    "pyyaml"
+  ],
+  "agent_compatible": true,
+  "mcp_ready": true,
+  "intent_triggers": [
+    "幫我生成多語系的 SEO 標籤",
+    "檢查多語網站的 hreflang 設定",
+    "為各語言版本生成 meta description",
+    "多語 SEO 優化，確認 hreflang 正確",
+    "生成繁體中文版的 SEO title 和描述",
+    "掃描網站多語 SEO 設定是否完整",
+    "哪些頁面缺少多語 SEO 標籤？"
+  ],
+  "examples": [
+    {
+      "query": "為 homepage.html 生成英文、中文、日文的 hreflang 標籤",
+      "params": {
+        "html_file": "homepage.html",
+        "locales": [
+          "en-US",
+          "zh-TW",
+          "ja-JP"
+        ]
+      }
+    },
+    {
+      "query": "掃描 /pages 下所有 HTML，找出缺少 hreflang 的頁面",
+      "params": {
+        "pages_dir": "/pages",
+        "check_hreflang": true
+      }
+    },
+    {
+      "query": "為 page.yaml 的多語版本生成完整 SEO meta 標籤",
+      "params": {
+        "content_file": "page.yaml",
+        "generate_meta": true,
+        "locales": [
+          "en",
+          "zh-TW"
+        ]
+      }
+    }
+  ],
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "check_hreflang": {
+        "type": "boolean"
+      },
+      "content_file": {
+        "type": "string"
+      },
+      "generate_meta": {
+        "type": "boolean"
+      },
+      "html_file": {
+        "type": "string"
+      },
+      "locales": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      },
+      "pages_dir": {
+        "type": "string"
+      }
+    }
+  },
+  "license": "MIT"
+}

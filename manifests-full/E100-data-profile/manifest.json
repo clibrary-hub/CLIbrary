@@ -1,0 +1,79 @@
+{
+  "name": "data-profile",
+  "version": "0.1.0",
+  "description": "資料剖析器",
+  "category": "E",
+  "number": 100,
+  "pain_point": "Agent 不認得資料分布",
+  "commercial": "✅",
+  "language": "Python",
+  "dependencies": [
+    "pandas",
+    "ydata-profiling",
+    "click"
+  ],
+  "agent_compatible": true,
+  "mcp_ready": true,
+  "intent_triggers": [
+    "幫我剖析這個資料集的統計分布",
+    "產生資料探索報告，了解每個欄位的分布",
+    "分析 CSV 裡每個欄位的最大值最小值和分布",
+    "讓 Agent 理解這份資料的整體狀況",
+    "自動生成資料集的 EDA 報告",
+    "掌握資料分布特性，包含偏態和異常值",
+    "快速剖析新資料集，了解資料品質和分布"
+  ],
+  "examples": [
+    {
+      "query": "剖析 sales_data.csv 並產生資料分析報告",
+      "params": {
+        "input_file": "sales_data.csv",
+        "action": "run"
+      }
+    },
+    {
+      "query": "分析 users.csv 的資料分布並輸出 HTML 報告",
+      "params": {
+        "input_file": "users.csv",
+        "output_file": "users_profile.html",
+        "output_format": "html",
+        "action": "run"
+      }
+    },
+    {
+      "query": "剖析 transactions.csv 前 10000 筆資料的統計特性",
+      "params": {
+        "input_file": "transactions.csv",
+        "sample_rows": 10000,
+        "output_file": "profile_report.json",
+        "output_format": "json",
+        "action": "run"
+      }
+    }
+  ],
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "action": {
+        "type": "string"
+      },
+      "input_file": {
+        "type": "string"
+      },
+      "output_file": {
+        "type": "string"
+      },
+      "output_format": {
+        "type": "string"
+      },
+      "sample_rows": {
+        "type": "integer"
+      }
+    },
+    "required": [
+      "action",
+      "input_file"
+    ]
+  },
+  "license": "MIT"
+}

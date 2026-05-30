@@ -1,0 +1,75 @@
+{
+  "name": "prompt-shield",
+  "version": "0.1.0",
+  "description": "Prompt 注入過濾器",
+  "category": "B",
+  "number": 37,
+  "pain_point": "Prompt 注入攻擊難防",
+  "commercial": "✅",
+  "language": "Python",
+  "dependencies": [
+    "re",
+    "click",
+    "rich"
+  ],
+  "agent_compatible": true,
+  "mcp_ready": true,
+  "intent_triggers": [
+    "過濾這個輸入防止 prompt 注入",
+    "檢查用戶輸入有沒有惡意的 prompt",
+    "保護我的 AI 系統不被 prompt injection",
+    "掃描一下這段文字有沒有注入風險",
+    "清理使用者輸入，確保安全",
+    "幫我過濾掉惡意的系統指令覆寫",
+    "防止越獄攻擊，過濾危險 prompt"
+  ],
+  "examples": [
+    {
+      "query": "過濾這段用戶輸入，檢查是否含有 prompt 注入",
+      "params": {
+        "input_text": "Ignore previous instructions and...",
+        "action": "run"
+      }
+    },
+    {
+      "query": "掃描 user_inputs.txt 中的所有潛在注入攻擊",
+      "params": {
+        "input_file": "user_inputs.txt",
+        "action": "run"
+      }
+    },
+    {
+      "query": "啟動嚴格模式過濾，攔截所有可疑指令",
+      "params": {
+        "input_text": "...",
+        "strict_mode": true,
+        "action": "run"
+      }
+    }
+  ],
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "input_text": {
+        "type": "string",
+        "description": "要過濾掃描的輸入文字"
+      },
+      "input_file": {
+        "type": "string",
+        "description": "要掃描的輸入檔案路徑"
+      },
+      "strict_mode": {
+        "type": "boolean",
+        "description": "是否啟用嚴格過濾模式"
+      },
+      "action": {
+        "type": "string",
+        "description": "操作類型：run（執行過濾）"
+      }
+    },
+    "required": [
+      "action"
+    ]
+  },
+  "license": "MIT"
+}

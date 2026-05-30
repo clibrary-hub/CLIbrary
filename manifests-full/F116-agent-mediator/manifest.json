@@ -1,0 +1,90 @@
+{
+  "name": "agent-mediator",
+  "version": "0.1.0",
+  "description": "對話協調者",
+  "category": "F",
+  "number": 116,
+  "pain_point": "多 Agent 對話無協調者",
+  "commercial": "✅",
+  "language": "Python",
+  "dependencies": [
+    "anthropic",
+    "click",
+    "rich"
+  ],
+  "agent_compatible": true,
+  "mcp_ready": true,
+  "intent_triggers": [
+    "多個 AI Agent 對話時需要一個主持人",
+    "怎麼讓 Agent 之間的對話有結構？",
+    "我需要一個協調 Agent 之間溝通的工具",
+    "多 Agent 討論容易混亂需要仲裁者",
+    "幫我建立一個對話協調 Agent 來主持會議",
+    "Agent 發言順序和話題控制要怎麼做",
+    "想讓多個 AI 協作討論並輸出共識結論"
+  ],
+  "examples": [
+    {
+      "query": "讓 analyst、critic、presenter 三個 Agent 合作寫出產品分析報告",
+      "params": {
+        "action": "run",
+        "agents": "analyst,critic,presenter",
+        "topic": "Q4產品分析",
+        "rounds": "3"
+      }
+    },
+    {
+      "query": "協調 research-agent 和 writer-agent 完成部落格文章撰寫",
+      "params": {
+        "action": "run",
+        "coordinator": "auto",
+        "participants": "research-agent,writer-agent",
+        "goal": "完成技術部落格文章"
+      }
+    },
+    {
+      "query": "啟動 mediator 模式，限制每個 Agent 每輪最多回應 200 字",
+      "params": {
+        "action": "run",
+        "max_words_per_turn": "200",
+        "max_rounds": "5"
+      }
+    }
+  ],
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "action": {
+        "type": "string"
+      },
+      "agents": {
+        "type": "string"
+      },
+      "coordinator": {
+        "type": "string"
+      },
+      "goal": {
+        "type": "string"
+      },
+      "max_rounds": {
+        "type": "string"
+      },
+      "max_words_per_turn": {
+        "type": "string"
+      },
+      "participants": {
+        "type": "string"
+      },
+      "rounds": {
+        "type": "string"
+      },
+      "topic": {
+        "type": "string"
+      }
+    },
+    "required": [
+      "action"
+    ]
+  },
+  "license": "MIT"
+}

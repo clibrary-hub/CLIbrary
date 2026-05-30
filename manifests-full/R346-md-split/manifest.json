@@ -1,0 +1,74 @@
+{
+  "name": "md-split",
+  "version": "0.1.0",
+  "description": "Markdown 拆分",
+  "category": "R",
+  "number": 346,
+  "pain_point": "Markdown 大檔拆分",
+  "commercial": "✅",
+  "language": "Python",
+  "dependencies": [
+    "click",
+    "rich",
+    "pathlib"
+  ],
+  "agent_compatible": true,
+  "mcp_ready": true,
+  "intent_triggers": [
+    "把這個大 Markdown 文件拆成小檔案",
+    "按照 H2 標題把 notes.md 拆成獨立筆記",
+    "這個 Markdown 太長了，幫我拆分",
+    "把書的每一章節拆成獨立 Markdown 檔",
+    "按標題層級自動拆分 Markdown",
+    "把 wiki.md 的每個段落拆成單獨頁面",
+    "拆分後保留原有的目錄結構"
+  ],
+  "examples": [
+    {
+      "query": "按 H2 標題把 big_notes.md 拆分到 output/ 目錄",
+      "params": {
+        "input_file": "big_notes.md",
+        "split_by": "h2",
+        "output_dir": "output/"
+      }
+    },
+    {
+      "query": "把 book.md 按每個 # 章節拆成獨立檔案",
+      "params": {
+        "input_file": "book.md",
+        "split_by": "h1",
+        "output_dir": "chapters/"
+      }
+    },
+    {
+      "query": "拆分 handbook.md 並以標題文字作為檔名",
+      "params": {
+        "input_file": "handbook.md",
+        "split_by": "h2",
+        "filename_from": "title"
+      }
+    }
+  ],
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "filename_from": {
+        "type": "string"
+      },
+      "input_file": {
+        "type": "string"
+      },
+      "output_dir": {
+        "type": "string"
+      },
+      "split_by": {
+        "type": "string"
+      }
+    },
+    "required": [
+      "input_file",
+      "split_by"
+    ]
+  },
+  "license": "MIT"
+}

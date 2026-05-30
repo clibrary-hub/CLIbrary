@@ -1,0 +1,79 @@
+{
+  "name": "agent-card",
+  "version": "0.1.0",
+  "description": "Agent 能力名片",
+  "category": "F",
+  "number": 109,
+  "pain_point": "Agent 能力無法廣告",
+  "commercial": "✅",
+  "language": "Python",
+  "dependencies": [
+    "click",
+    "rich",
+    "pydantic"
+  ],
+  "agent_compatible": true,
+  "mcp_ready": true,
+  "intent_triggers": [
+    "怎麼讓其他人知道我的 Agent 能做什麼？",
+    "想為 Agent 產生一張能力說明卡片",
+    "Agent 的功能描述要怎麼標準化？",
+    "幫我生成一份 Agent 能力介紹文件",
+    "我需要讓 Agent 自我介紹其擅長的任務",
+    "怎麼用結構化方式描述 Agent 的技能？",
+    "Agent 能力廣告缺少統一格式"
+  ],
+  "examples": [
+    {
+      "query": "為 my-research-agent 產生能力名片並輸出 agent-card.json",
+      "params": {
+        "action": "run",
+        "agent_name": "my-research-agent",
+        "output_file": "agent-card.json"
+      }
+    },
+    {
+      "query": "用 Markdown 格式生成 agent 的能力說明",
+      "params": {
+        "action": "run",
+        "format": "markdown",
+        "output_file": "agent-readme.md"
+      }
+    },
+    {
+      "query": "列出 agents/ 目錄下所有 Agent 的能力名片",
+      "params": {
+        "action": "run",
+        "mode": "list_all",
+        "agents_dir": "agents/"
+      }
+    }
+  ],
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "action": {
+        "type": "string"
+      },
+      "agent_name": {
+        "type": "string"
+      },
+      "agents_dir": {
+        "type": "string"
+      },
+      "format": {
+        "type": "string"
+      },
+      "mode": {
+        "type": "string"
+      },
+      "output_file": {
+        "type": "string"
+      }
+    },
+    "required": [
+      "action"
+    ]
+  },
+  "license": "MIT"
+}

@@ -1,0 +1,87 @@
+{
+  "name": "expense-merge",
+  "version": "0.1.0",
+  "description": "跨帳戶記帳",
+  "category": "J",
+  "number": 181,
+  "pain_point": "多帳戶支出難整合",
+  "commercial": "⚠️",
+  "language": "Python",
+  "dependencies": [
+    "pandas",
+    "click",
+    "rich"
+  ],
+  "agent_compatible": true,
+  "mcp_ready": true,
+  "intent_triggers": [
+    "我有信用卡、現金和電子支付，想統一記帳",
+    "幫我整合多個銀行帳戶的支出記錄",
+    "不同帳戶的消費難以統計，需要整合工具",
+    "把玉山和中信帳單 CSV 合併成一份帳本",
+    "跨帳戶記帳整合，讓我看清楚每月總支出",
+    "多個消費渠道難統計，幫我合併記帳",
+    "整合多卡支出資料並按類別統計"
+  ],
+  "examples": [
+    {
+      "query": "合併 esun.csv 和 ctbc.csv 兩個銀行帳單，按日期排序",
+      "params": {
+        "action": "merge",
+        "files": "esun.csv,ctbc.csv",
+        "sort": "date",
+        "output": "merged-expenses.csv"
+      }
+    },
+    {
+      "query": "整合所有帳戶，按類別（餐飲、交通、娛樂）統計本月支出",
+      "params": {
+        "action": "merge",
+        "period": "this_month",
+        "group_by": "category",
+        "output": "monthly-summary.csv"
+      }
+    },
+    {
+      "query": "從 accounts/ 資料夾批次讀取所有 CSV 並合併去重",
+      "params": {
+        "action": "merge",
+        "input_dir": "accounts/",
+        "deduplicate": "true"
+      }
+    }
+  ],
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "action": {
+        "type": "string"
+      },
+      "deduplicate": {
+        "type": "string"
+      },
+      "files": {
+        "type": "string"
+      },
+      "group_by": {
+        "type": "string"
+      },
+      "input_dir": {
+        "type": "string"
+      },
+      "output": {
+        "type": "string"
+      },
+      "period": {
+        "type": "string"
+      },
+      "sort": {
+        "type": "string"
+      }
+    },
+    "required": [
+      "action"
+    ]
+  },
+  "license": "MIT"
+}

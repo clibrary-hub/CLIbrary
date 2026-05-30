@@ -1,0 +1,70 @@
+{
+  "name": "lecture-notes",
+  "version": "0.1.0",
+  "description": "講座筆記器",
+  "category": "S",
+  "number": 366,
+  "pain_point": "講座影片做筆記",
+  "commercial": "⚠️",
+  "language": "Python",
+  "dependencies": [
+    "whisper",
+    "anthropic",
+    "click"
+  ],
+  "agent_compatible": true,
+  "mcp_ready": true,
+  "intent_triggers": [
+    "把 YouTube 講座影片轉成學習筆記",
+    "我有一個演講錄音，幫我做成筆記",
+    "把 MP3 課堂錄音轉換成結構化筆記",
+    "幫我從課程影片自動生成大綱",
+    "這個 Podcast 的內容幫我整理成重點",
+    "把 Zoom 錄影轉成可搜尋的筆記",
+    "從演講字幕生成有章節的學習筆記"
+  ],
+  "examples": [
+    {
+      "query": "把 lecture_01.mp3 轉換成結構化 Markdown 學習筆記",
+      "params": {
+        "input_file": "lecture_01.mp3",
+        "output_file": "notes/lecture_01.md"
+      }
+    },
+    {
+      "query": "從 seminar.mp4 的字幕生成含重點標記的筆記",
+      "params": {
+        "input_file": "seminar.mp4",
+        "use_subtitles": true
+      }
+    },
+    {
+      "query": "批次把 recordings/ 的所有錄音轉成筆記",
+      "params": {
+        "input_dir": "recordings/",
+        "output_dir": "notes/"
+      }
+    }
+  ],
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "input_dir": {
+        "type": "string"
+      },
+      "input_file": {
+        "type": "string"
+      },
+      "output_dir": {
+        "type": "string"
+      },
+      "output_file": {
+        "type": "string"
+      },
+      "use_subtitles": {
+        "type": "boolean"
+      }
+    }
+  },
+  "license": "MIT"
+}

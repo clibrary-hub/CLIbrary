@@ -1,0 +1,78 @@
+{
+  "name": "uptime-ping",
+  "version": "0.1.0",
+  "description": "可達性測試器",
+  "category": "M",
+  "number": 248,
+  "pain_point": "網站可達性測試",
+  "commercial": "✅",
+  "language": "Python",
+  "dependencies": [
+    "requests",
+    "click",
+    "rich"
+  ],
+  "agent_compatible": true,
+  "mcp_ready": true,
+  "intent_triggers": [
+    "測試這些網站能不能連上",
+    "批次 ping 網址，看哪些掛了",
+    "網站可達性測試工具",
+    "幫我快速測試一批 URL 是否能訪問",
+    "傳送 ping 測試多個伺服器的連線狀態",
+    "發送請求確認服務是否正常",
+    "批次測試 URL 列表的可用性"
+  ],
+  "examples": [
+    {
+      "query": "傳送 ping 給 https://service.example.com 確認可達性",
+      "params": {
+        "action": "send",
+        "url": "https://service.example.com"
+      }
+    },
+    {
+      "query": "批次測試 server_list.txt 中所有主機的連線狀態",
+      "params": {
+        "action": "send",
+        "urls_file": "server_list.txt",
+        "timeout": 5
+      }
+    },
+    {
+      "query": "每分鐘 ping 三個生產環境 URL 並記錄結果",
+      "params": {
+        "action": "send",
+        "urls": "https://api.prod.com,https://web.prod.com,https://cdn.prod.com",
+        "interval": 60
+      }
+    }
+  ],
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "action": {
+        "type": "string"
+      },
+      "interval": {
+        "type": "integer"
+      },
+      "timeout": {
+        "type": "integer"
+      },
+      "url": {
+        "type": "string"
+      },
+      "urls": {
+        "type": "string"
+      },
+      "urls_file": {
+        "type": "string"
+      }
+    },
+    "required": [
+      "action"
+    ]
+  },
+  "license": "MIT"
+}

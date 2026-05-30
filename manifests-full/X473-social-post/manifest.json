@@ -1,0 +1,88 @@
+{
+  "name": "social-post",
+  "version": "0.1.0",
+  "description": "社群貼文器",
+  "category": "X",
+  "number": 473,
+  "pain_point": "圖文社群貼文產",
+  "commercial": "⚠️",
+  "language": "Python",
+  "dependencies": [
+    "anthropic",
+    "click",
+    "rich"
+  ],
+  "agent_compatible": true,
+  "mcp_ready": true,
+  "intent_triggers": [
+    "寫一則吸引人的社群媒體貼文",
+    "這篇文章改成 Facebook 貼文",
+    "生成附有 Hashtag 的 IG 貼文",
+    "幫我生成 Instagram 貼文文案",
+    "幫我寫 LinkedIn 的專業貼文",
+    "生成 Twitter/X 推文文案",
+    "這個活動要怎麼在社群上宣傳？",
+    "根據短片內容產生 Threads 貼文",
+    "影片配套社群媒體文案",
+    "短片對應的社群貼文生成",
+    "從影片產生對應文字貼文",
+    "視頻轉社群文案"
+  ],
+  "examples": [
+    {
+      "query": "為新產品上市生成 Instagram 貼文，附 10 個相關 Hashtag",
+      "params": {
+        "topic": "新產品上市",
+        "platform": "instagram",
+        "hashtag_count": 10
+      }
+    },
+    {
+      "query": "把 article.txt 改寫成 LinkedIn 的專業貼文，300 字以內",
+      "params": {
+        "input_file": "article.txt",
+        "platform": "linkedin",
+        "max_words": 300,
+        "tone": "professional"
+      }
+    },
+    {
+      "query": "生成 5 則 Facebook 活動宣傳貼文變體，主題「年末感恩特賣」",
+      "params": {
+        "topic": "年末感恩特賣",
+        "platform": "facebook",
+        "variants": 5
+      }
+    }
+  ],
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "hashtag_count": {
+        "type": "integer"
+      },
+      "input_file": {
+        "type": "string"
+      },
+      "max_words": {
+        "type": "integer"
+      },
+      "platform": {
+        "type": "string"
+      },
+      "tone": {
+        "type": "string"
+      },
+      "topic": {
+        "type": "string"
+      },
+      "variants": {
+        "type": "integer"
+      }
+    },
+    "required": [
+      "platform"
+    ]
+  },
+  "license": "MIT"
+}

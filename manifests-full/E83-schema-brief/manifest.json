@@ -1,0 +1,79 @@
+{
+  "name": "schema-brief",
+  "version": "0.1.0",
+  "description": "Schema 摘要器",
+  "category": "E",
+  "number": 83,
+  "pain_point": "DB schema 難讓 Agent 理解",
+  "commercial": "✅",
+  "language": "Python",
+  "dependencies": [
+    "sqlalchemy",
+    "click",
+    "rich"
+  ],
+  "agent_compatible": true,
+  "mcp_ready": true,
+  "intent_triggers": [
+    "幫我把資料庫 schema 摘要給 AI",
+    "讓 Agent 了解資料庫結構",
+    "產生 DB schema 的簡短說明",
+    "把資料庫表格結構摘要出來",
+    "告訴 AI 這個資料庫有哪些欄位",
+    "生成 schema 描述方便寫 SQL",
+    "把 PostgreSQL schema 整理成可讀格式"
+  ],
+  "examples": [
+    {
+      "query": "摘要 PostgreSQL 資料庫的所有 schema",
+      "params": {
+        "db_url": "postgresql://user:pass@localhost/mydb",
+        "action": "run"
+      }
+    },
+    {
+      "query": "把 users 和 orders 表的 schema 摘要出來",
+      "params": {
+        "db_url": "sqlite:///app.db",
+        "tables": [
+          "users",
+          "orders"
+        ],
+        "action": "run"
+      }
+    },
+    {
+      "query": "產生 schema 摘要並儲存到 db_schema.md",
+      "params": {
+        "db_url": "postgresql://localhost/mydb",
+        "output_file": "db_schema.md",
+        "action": "run"
+      }
+    }
+  ],
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "action": {
+        "type": "string"
+      },
+      "db_url": {
+        "type": "string"
+      },
+      "output_file": {
+        "type": "string"
+      },
+      "tables": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    },
+    "required": [
+      "action",
+      "db_url"
+    ]
+  },
+  "license": "MIT"
+}

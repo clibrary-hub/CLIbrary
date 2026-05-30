@@ -1,0 +1,79 @@
+{
+  "name": "impact-trace",
+  "version": "0.1.0",
+  "description": "改動影響追蹤器",
+  "category": "C",
+  "number": 54,
+  "pain_point": "不知道改動的 blast radius",
+  "commercial": "✅",
+  "language": "Python",
+  "dependencies": [
+    "ast",
+    "gitpython",
+    "click"
+  ],
+  "agent_compatible": true,
+  "mcp_ready": true,
+  "intent_triggers": [
+    "如果改了這個函數，會影響到哪些地方",
+    "分析這次改動的影響範圍",
+    "追蹤修改 utils.py 後的 blast radius",
+    "找出所有依賴這個模組的呼叫者",
+    "評估這個變更的風險",
+    "改動會波及多少個地方",
+    "列出所有依賴這個函數的程式碼"
+  ],
+  "examples": [
+    {
+      "query": "追蹤修改 db_connect 函數會影響哪些地方",
+      "params": {
+        "target_function": "db_connect",
+        "source_file": "database.py",
+        "action": "run"
+      }
+    },
+    {
+      "query": "分析修改 config.py 的所有影響",
+      "params": {
+        "target_file": "config.py",
+        "project_path": ".",
+        "action": "run"
+      }
+    },
+    {
+      "query": "評估最近的 git commit 的影響範圍",
+      "params": {
+        "git_commit": "HEAD",
+        "project_path": ".",
+        "action": "run"
+      }
+    }
+  ],
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "action": {
+        "type": "string"
+      },
+      "git_commit": {
+        "type": "string"
+      },
+      "project_path": {
+        "type": "string"
+      },
+      "source_file": {
+        "type": "string"
+      },
+      "target_file": {
+        "type": "string"
+      },
+      "target_function": {
+        "type": "string"
+      }
+    },
+    "required": [
+      "action"
+    ]
+  },
+  "license": "MIT"
+}

@@ -1,0 +1,78 @@
+{
+  "name": "dataset-find",
+  "version": "0.1.0",
+  "description": "資料集發現器",
+  "category": "M",
+  "number": 260,
+  "pain_point": "公開資料集發現",
+  "commercial": "✅",
+  "language": "Python",
+  "dependencies": [
+    "requests",
+    "click",
+    "rich"
+  ],
+  "agent_compatible": true,
+  "mcp_ready": true,
+  "intent_triggers": [
+    "幫我找相關的公開資料集",
+    "資料集搜尋工具，找 Kaggle 或政府開放資料",
+    "我需要機器學習訓練用的資料集",
+    "搜尋台灣氣象相關的公開資料",
+    "發現並下載公開資料集",
+    "找到適合我研究主題的 dataset",
+    "搜尋財務或商業相關的公開資料集"
+  ],
+  "examples": [
+    {
+      "query": "掃描並找出與「氣象預測」相關的公開資料集",
+      "params": {
+        "action": "scan",
+        "keyword": "氣象預測",
+        "source": "kaggle"
+      }
+    },
+    {
+      "query": "搜尋台灣政府開放資料平台上的「交通事故」資料集",
+      "params": {
+        "action": "search",
+        "keyword": "交通事故",
+        "source": "gov_tw"
+      }
+    },
+    {
+      "query": "找出 NLP 文本分類用的中文語料資料集",
+      "params": {
+        "action": "search",
+        "keyword": "中文文本分類",
+        "task": "nlp",
+        "limit": 10
+      }
+    }
+  ],
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "action": {
+        "type": "string"
+      },
+      "keyword": {
+        "type": "string"
+      },
+      "limit": {
+        "type": "integer"
+      },
+      "source": {
+        "type": "string"
+      },
+      "task": {
+        "type": "string"
+      }
+    },
+    "required": [
+      "action",
+      "keyword"
+    ]
+  },
+  "license": "MIT"
+}

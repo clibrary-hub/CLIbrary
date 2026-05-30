@@ -1,0 +1,74 @@
+{
+  "name": "cite-check",
+  "version": "0.1.0",
+  "description": "引用檢查器",
+  "category": "X",
+  "number": 467,
+  "pain_point": "文章引用合規檢查",
+  "commercial": "✅",
+  "language": "Python",
+  "dependencies": [
+    "re",
+    "click",
+    "rich"
+  ],
+  "agent_compatible": true,
+  "mcp_ready": true,
+  "intent_triggers": [
+    "幫我檢查這篇論文的引用格式是否正確",
+    "這些參考文獻符合 APA 格式嗎？",
+    "掃描文章，找出沒有引用來源的陳述",
+    "引用格式不統一，幫我整理",
+    "文章裡有幾處引用格式有問題",
+    "確認所有引用都有對應的參考文獻",
+    "轉換引用格式，從 MLA 改為 APA"
+  ],
+  "examples": [
+    {
+      "query": "檢查 thesis.docx 的所有引用是否符合 APA 第 7 版格式",
+      "params": {
+        "input_file": "thesis.docx",
+        "citation_style": "APA7"
+      }
+    },
+    {
+      "query": "找出 article.txt 中所有有數據引用但沒有標注來源的段落",
+      "params": {
+        "input_file": "article.txt",
+        "find_unsourced": true
+      }
+    },
+    {
+      "query": "將 paper.txt 的 MLA 引用格式批次轉換成 Chicago 格式",
+      "params": {
+        "input_file": "paper.txt",
+        "from_style": "MLA",
+        "to_style": "Chicago"
+      }
+    }
+  ],
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "citation_style": {
+        "type": "string"
+      },
+      "find_unsourced": {
+        "type": "boolean"
+      },
+      "from_style": {
+        "type": "string"
+      },
+      "input_file": {
+        "type": "string"
+      },
+      "to_style": {
+        "type": "string"
+      }
+    },
+    "required": [
+      "input_file"
+    ]
+  },
+  "license": "MIT"
+}

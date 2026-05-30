@@ -1,0 +1,85 @@
+{
+  "name": "mail-translate",
+  "version": "0.1.0",
+  "description": "郵件翻譯助手",
+  "category": "I",
+  "number": 178,
+  "pain_point": "跨語言郵件回覆",
+  "commercial": "⚠️",
+  "language": "Python",
+  "dependencies": [
+    "anthropic",
+    "click",
+    "rich"
+  ],
+  "agent_compatible": true,
+  "mcp_ready": true,
+  "intent_triggers": [
+    "收到英文信件，幫我翻譯並生成中文回覆草稿",
+    "日本客戶寄來日文信，幫我翻成中文",
+    "跨語言郵件溝通工具，翻譯並回覆",
+    "我想把這封中文信翻成英文後寄出",
+    "收到法語郵件不懂，幫我翻譯成繁體中文",
+    "郵件翻譯助手，支援多語言互譯",
+    "幫我把信件翻成英文並保持原本的語氣"
+  ],
+  "examples": [
+    {
+      "query": "把 english-mail.txt 翻譯成繁體中文",
+      "params": {
+        "action": "translate",
+        "input_file": "english-mail.txt",
+        "target_lang": "zh-TW"
+      }
+    },
+    {
+      "query": "翻譯收件匣最新一封日文信件並生成回覆草稿",
+      "params": {
+        "action": "translate",
+        "source": "inbox_latest",
+        "target_lang": "zh-TW",
+        "generate_reply": "true"
+      }
+    },
+    {
+      "query": "把以下文字翻成英文並輸出：「感謝您的詢問，我們將盡快回覆」",
+      "params": {
+        "action": "translate",
+        "text": "感謝您的詢問，我們將盡快回覆",
+        "target_lang": "en",
+        "output": "translated.txt"
+      }
+    }
+  ],
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "action": {
+        "type": "string"
+      },
+      "generate_reply": {
+        "type": "string"
+      },
+      "input_file": {
+        "type": "string"
+      },
+      "output": {
+        "type": "string"
+      },
+      "source": {
+        "type": "string"
+      },
+      "target_lang": {
+        "type": "string"
+      },
+      "text": {
+        "type": "string"
+      }
+    },
+    "required": [
+      "action",
+      "target_lang"
+    ]
+  },
+  "license": "MIT"
+}

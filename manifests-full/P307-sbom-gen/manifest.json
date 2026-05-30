@@ -1,0 +1,70 @@
+{
+  "name": "sbom-gen",
+  "version": "0.1.0",
+  "description": "SBOM 產生器",
+  "category": "P",
+  "number": 307,
+  "pain_point": "軟體 SBOM",
+  "commercial": "✅",
+  "language": "Python",
+  "dependencies": [
+    "cyclonedx-bom",
+    "click",
+    "rich"
+  ],
+  "agent_compatible": true,
+  "mcp_ready": true,
+  "intent_triggers": [
+    "幫我產生這個專案的 SBOM 清單",
+    "我需要軟體成分分析報告給客戶",
+    "生成 CycloneDX 格式的依賴清單",
+    "輸出 SPDX SBOM 供法遵審查",
+    "列出這個 Docker image 用到的所有套件",
+    "客戶要求提供軟體物料清單",
+    "掃描專案依賴並產生安全報告"
+  ],
+  "examples": [
+    {
+      "query": "掃描 ./myapp 並產生 CycloneDX JSON 格式的 SBOM",
+      "params": {
+        "project_dir": "./myapp",
+        "format": "cyclonedx-json"
+      }
+    },
+    {
+      "query": "為 requirements.txt 產生 SPDX 格式 SBOM 輸出到 sbom.spdx",
+      "params": {
+        "requirements_file": "requirements.txt",
+        "format": "spdx",
+        "output_file": "sbom.spdx"
+      }
+    },
+    {
+      "query": "掃描 Docker image myapp:latest 的所有套件",
+      "params": {
+        "docker_image": "myapp:latest"
+      }
+    }
+  ],
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "docker_image": {
+        "type": "string"
+      },
+      "format": {
+        "type": "string"
+      },
+      "output_file": {
+        "type": "string"
+      },
+      "project_dir": {
+        "type": "string"
+      },
+      "requirements_file": {
+        "type": "string"
+      }
+    }
+  },
+  "license": "MIT"
+}

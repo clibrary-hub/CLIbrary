@@ -1,0 +1,77 @@
+{
+  "name": "compose-orch",
+  "version": "0.1.0",
+  "description": "Compose 編排器",
+  "category": "Q",
+  "number": 322,
+  "pain_point": "多容器啟停編排",
+  "commercial": "✅",
+  "language": "Python",
+  "dependencies": [
+    "docker",
+    "click",
+    "rich"
+  ],
+  "agent_compatible": true,
+  "mcp_ready": true,
+  "intent_triggers": [
+    "按照依賴順序啟動所有 Docker Compose 服務",
+    "我要一次管理多個 compose 專案的生命週期",
+    "幫我編排多個微服務的啟動順序",
+    "等資料庫 ready 之後再啟動 API 服務",
+    "批次重啟所有 unhealthy 的容器",
+    "合併多個 docker-compose.yml 設定",
+    "監測所有服務的健康狀態並自動重啟"
+  ],
+  "examples": [
+    {
+      "query": "按依賴順序啟動 docker-compose.yml 的所有服務",
+      "params": {
+        "compose_file": "docker-compose.yml",
+        "action": "up"
+      }
+    },
+    {
+      "query": "等 db 服務健康後才啟動 api 服務",
+      "params": {
+        "compose_file": "docker-compose.yml",
+        "wait_for": "db",
+        "then_start": "api"
+      }
+    },
+    {
+      "query": "合併 base.yml 和 override.yml 並啟動",
+      "params": {
+        "compose_files": [
+          "base.yml",
+          "override.yml"
+        ],
+        "action": "up"
+      }
+    }
+  ],
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "action": {
+        "type": "string"
+      },
+      "compose_file": {
+        "type": "string"
+      },
+      "compose_files": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      },
+      "then_start": {
+        "type": "string"
+      },
+      "wait_for": {
+        "type": "string"
+      }
+    }
+  },
+  "license": "MIT"
+}

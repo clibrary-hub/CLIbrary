@@ -1,0 +1,33 @@
+tool: name-lint
+type: readonly
+generated: "2026-04-27"
+skip: false
+
+setup:
+  files:
+    - path: testdata/badnames.py
+      content: "MyVar = 1\ndef BadFunc(): pass\n"
+    - path: testdata/goodnames.py
+      content: "my_var = 1\ndef good_func(): pass\n"
+
+cases:
+  - id: help_works
+    description: --help exits 0
+    cmd: ["--help"]
+    expect:
+      exit_code: 0
+      stdout_contains: "Usage:"
+  - id: scan_produces_output
+    description: check runs and returns output
+    cmd: ["check", "testdata/badnames.py", "--format", "json"]
+    expect:
+      exit_code: 1
+      is_valid_json: true
+      json_has_key: violations
+  - id: scan_clean_file
+    description: scanning clean file produces no findings
+    cmd: ["check", "testdata/goodnames.py", "--format", "json"]
+    expect:
+      exit_code: 0
+      is_valid_json: true
+      json_has_key: violations

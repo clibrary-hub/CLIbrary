@@ -1,0 +1,83 @@
+{
+  "name": "nda-tpl",
+  "version": "0.1.0",
+  "description": "NDA 模板器",
+  "category": "Y",
+  "number": 484,
+  "pain_point": "NDA 標準模板",
+  "commercial": "✅",
+  "language": "Python",
+  "dependencies": [
+    "jinja2",
+    "click",
+    "rich"
+  ],
+  "agent_compatible": true,
+  "mcp_ready": true,
+  "intent_triggers": [
+    "幫我生成一份 NDA 保密協議",
+    "我需要一份標準的保密合約模板",
+    "公司要和新夥伴合作，先簽 NDA",
+    "生成雙向保密協議範本",
+    "NDA 要涵蓋哪些條款？幫我起草",
+    "員工入職前要簽保密協議，幫我生成",
+    "合作洽談前的保密協議模板"
+  ],
+  "examples": [
+    {
+      "query": "生成一份甲乙雙方的雙向 NDA，有效期 2 年，適用台灣法律",
+      "params": {
+        "nda_type": "mutual",
+        "duration_years": 2,
+        "jurisdiction": "Taiwan",
+        "language": "zh-TW"
+      }
+    },
+    {
+      "query": "生成公司給員工簽的單向保密協議，含競業禁止條款",
+      "params": {
+        "nda_type": "one_way",
+        "party_a": "公司",
+        "include_non_compete": true,
+        "language": "zh-TW"
+      }
+    },
+    {
+      "query": "生成英文雙向 NDA，適用加州法律，有效期 3 年",
+      "params": {
+        "nda_type": "mutual",
+        "duration_years": 3,
+        "jurisdiction": "California",
+        "language": "en"
+      }
+    }
+  ],
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "duration_years": {
+        "type": "integer"
+      },
+      "include_non_compete": {
+        "type": "boolean"
+      },
+      "jurisdiction": {
+        "type": "string"
+      },
+      "language": {
+        "type": "string"
+      },
+      "nda_type": {
+        "type": "string"
+      },
+      "party_a": {
+        "type": "string"
+      }
+    },
+    "required": [
+      "language",
+      "nda_type"
+    ]
+  },
+  "license": "MIT"
+}

@@ -1,0 +1,91 @@
+{
+  "name": "privacy-gen",
+  "version": "0.1.0",
+  "description": "隱私政策產生",
+  "category": "Y",
+  "number": 487,
+  "pain_point": "GDPR/個資文件產",
+  "commercial": "✅",
+  "language": "Python",
+  "dependencies": [
+    "jinja2",
+    "anthropic",
+    "click"
+  ],
+  "agent_compatible": true,
+  "mcp_ready": true,
+  "intent_triggers": [
+    "幫我生成網站的隱私政策",
+    "App 需要隱私權政策，幫我產一份",
+    "符合 GDPR 的隱私政策範本",
+    "台灣個資法的隱私聲明怎麼寫？",
+    "生成用戶資料收集和使用的說明文件",
+    "我的 SaaS 產品需要隱私政策",
+    "Cookie 政策和隱私政策幫我一起生成"
+  ],
+  "examples": [
+    {
+      "query": "為電商網站生成符合台灣個資法的隱私政策，繁體中文版",
+      "params": {
+        "business_type": "ecommerce",
+        "jurisdiction": "Taiwan",
+        "language": "zh-TW",
+        "data_types": [
+          "姓名",
+          "email",
+          "購買記錄"
+        ]
+      }
+    },
+    {
+      "query": "生成符合 GDPR 的 SaaS 應用隱私政策，英文版",
+      "params": {
+        "business_type": "saas",
+        "jurisdiction": "EU_GDPR",
+        "language": "en",
+        "include_cookie_policy": true
+      }
+    },
+    {
+      "query": "生成手機 App 的隱私政策，含資料收集、使用和保護說明",
+      "params": {
+        "business_type": "mobile_app",
+        "jurisdiction": "Taiwan",
+        "language": "zh-TW",
+        "app_name": "MyApp"
+      }
+    }
+  ],
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "app_name": {
+        "type": "string"
+      },
+      "business_type": {
+        "type": "string"
+      },
+      "data_types": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      },
+      "include_cookie_policy": {
+        "type": "boolean"
+      },
+      "jurisdiction": {
+        "type": "string"
+      },
+      "language": {
+        "type": "string"
+      }
+    },
+    "required": [
+      "business_type",
+      "jurisdiction",
+      "language"
+    ]
+  },
+  "license": "MIT"
+}

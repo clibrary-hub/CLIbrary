@@ -1,0 +1,79 @@
+{
+  "name": "retry-policy",
+  "version": "0.1.0",
+  "description": "重試策略執行器",
+  "category": "D",
+  "number": 74,
+  "pain_point": "失敗任務缺少自動重試",
+  "commercial": "✅",
+  "language": "Python",
+  "dependencies": [
+    "tenacity",
+    "click",
+    "rich"
+  ],
+  "agent_compatible": true,
+  "mcp_ready": true,
+  "intent_triggers": [
+    "任務失敗了，自動重試 3 次",
+    "設定指數退避重試策略",
+    "幫我把這個任務加上重試機制",
+    "API 呼叫失敗時自動重試",
+    "設定最多重試 5 次，每次間隔 10 秒",
+    "讓 Agent 任務在失敗時自動重試",
+    "配置智能重試策略避免頻繁失敗"
+  ],
+  "examples": [
+    {
+      "query": "設定最多重試 3 次，指數退避",
+      "params": {
+        "max_attempts": 3,
+        "backoff_type": "exponential",
+        "action": "run"
+      }
+    },
+    {
+      "query": "對 API 呼叫設定重試策略，間隔 5 秒",
+      "params": {
+        "task_name": "api_call",
+        "max_attempts": 5,
+        "wait_seconds": 5,
+        "action": "run"
+      }
+    },
+    {
+      "query": "查看目前的重試策略設定",
+      "params": {
+        "action": "run",
+        "list_policies": true
+      }
+    }
+  ],
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "action": {
+        "type": "string"
+      },
+      "backoff_type": {
+        "type": "string"
+      },
+      "list_policies": {
+        "type": "boolean"
+      },
+      "max_attempts": {
+        "type": "integer"
+      },
+      "task_name": {
+        "type": "string"
+      },
+      "wait_seconds": {
+        "type": "integer"
+      }
+    },
+    "required": [
+      "action"
+    ]
+  },
+  "license": "MIT"
+}

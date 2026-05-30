@@ -1,0 +1,78 @@
+{
+  "name": "meta-gen",
+  "version": "0.1.0",
+  "description": "Meta 標籤產生器",
+  "category": "X",
+  "number": 466,
+  "pain_point": "SEO meta 自動產",
+  "commercial": "✅",
+  "language": "Python",
+  "dependencies": [
+    "anthropic",
+    "click",
+    "rich"
+  ],
+  "agent_compatible": true,
+  "mcp_ready": true,
+  "intent_triggers": [
+    "幫我生成這個頁面的 SEO meta 標籤",
+    "自動產生 meta description 和 title",
+    "這篇文章缺少 SEO 描述，幫我補上",
+    "生成 Open Graph 和 Twitter Card 標籤",
+    "批次為多個頁面生成 meta 標籤",
+    "這個部落格文章的 SEO 設定不完整",
+    "根據文章內容自動生成關鍵字 meta 標籤"
+  ],
+  "examples": [
+    {
+      "query": "為 blog_post.txt 生成 SEO title（60 字以內）和 meta description（160 字以內）",
+      "params": {
+        "content_file": "blog_post.txt",
+        "title_max_chars": 60,
+        "desc_max_chars": 160
+      }
+    },
+    {
+      "query": "為這篇文章生成完整的 Open Graph meta 標籤組",
+      "params": {
+        "content_file": "article.html",
+        "include_og": true,
+        "include_twitter_card": true
+      }
+    },
+    {
+      "query": "批次為 /pages 目錄下所有 HTML 頁面生成缺少的 meta 描述",
+      "params": {
+        "pages_dir": "/pages",
+        "overwrite_existing": false
+      }
+    }
+  ],
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "content_file": {
+        "type": "string"
+      },
+      "desc_max_chars": {
+        "type": "integer"
+      },
+      "include_og": {
+        "type": "boolean"
+      },
+      "include_twitter_card": {
+        "type": "boolean"
+      },
+      "overwrite_existing": {
+        "type": "boolean"
+      },
+      "pages_dir": {
+        "type": "string"
+      },
+      "title_max_chars": {
+        "type": "integer"
+      }
+    }
+  },
+  "license": "MIT"
+}

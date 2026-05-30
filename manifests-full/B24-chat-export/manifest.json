@@ -1,0 +1,76 @@
+{
+  "name": "chat-export",
+  "version": "0.1.0",
+  "description": "對話標準化匯出器",
+  "category": "B",
+  "number": 24,
+  "pain_point": "對話匯出格式不統一",
+  "commercial": "✅",
+  "language": "Python",
+  "dependencies": [
+    "json",
+    "markdown",
+    "click"
+  ],
+  "agent_compatible": true,
+  "mcp_ready": true,
+  "intent_triggers": [
+    "把這次對話匯出成 Markdown 文件",
+    "導出聊天記錄為 JSON 格式",
+    "幫我把對話存成可以分享的格式",
+    "匯出所有對話記錄到一個檔案",
+    "把這段 AI 對話轉成標準格式儲存",
+    "導出對話並傳送出去",
+    "把聊天記錄整理成可閱讀的報告"
+  ],
+  "examples": [
+    {
+      "query": "匯出今天的對話記錄為 Markdown 格式",
+      "params": {
+        "output_format": "markdown",
+        "output_file": "chat_export.md",
+        "action": "export"
+      }
+    },
+    {
+      "query": "把對話導出為 JSON 並傳送",
+      "params": {
+        "output_format": "json",
+        "action": "send"
+      }
+    },
+    {
+      "query": "匯出最近 100 條訊息到 conversation.txt",
+      "params": {
+        "limit": 100,
+        "output_file": "conversation.txt",
+        "action": "export"
+      }
+    }
+  ],
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "output_format": {
+        "type": "string",
+        "description": "輸出格式：json、markdown 或 text"
+      },
+      "output_file": {
+        "type": "string",
+        "description": "匯出的目標檔案路徑"
+      },
+      "action": {
+        "type": "string",
+        "description": "操作類型：export（匯出）或 send（傳送）"
+      },
+      "limit": {
+        "type": "integer",
+        "description": "匯出的最大訊息條數"
+      }
+    },
+    "required": [
+      "action"
+    ]
+  },
+  "license": "MIT"
+}

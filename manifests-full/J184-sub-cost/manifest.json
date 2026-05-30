@@ -1,0 +1,82 @@
+{
+  "name": "sub-cost",
+  "version": "0.1.0",
+  "description": "訂閱總帳器",
+  "category": "J",
+  "number": 184,
+  "pain_point": "訂閱費用不知總額",
+  "commercial": "✅",
+  "language": "Python",
+  "dependencies": [
+    "sqlite3",
+    "click",
+    "rich"
+  ],
+  "agent_compatible": true,
+  "mcp_ready": true,
+  "intent_triggers": [
+    "我不知道自己每月在訂閱服務上花了多少錢",
+    "幫我列出所有軟體訂閱和月費加總",
+    "想追蹤 Netflix、Spotify、Adobe 等訂閱費用",
+    "每個月有多少固定訂閱支出我沒概念",
+    "需要管理公司的 SaaS 訂閱費用清單",
+    "訂閱費用追蹤工具，提醒即將續費的服務",
+    "計算我一年花在訂閱上的總金額"
+  ],
+  "examples": [
+    {
+      "query": "新增 Netflix 月費 NT$390 到訂閱清單",
+      "params": {
+        "action": "add",
+        "name": "Netflix",
+        "amount": "390",
+        "currency": "TWD",
+        "cycle": "monthly"
+      }
+    },
+    {
+      "query": "列出所有訂閱服務並計算月費和年費總計",
+      "params": {
+        "action": "list",
+        "show_total": "true"
+      }
+    },
+    {
+      "query": "查看 7 天內即將續費的訂閱服務",
+      "params": {
+        "action": "upcoming",
+        "days": "7"
+      }
+    }
+  ],
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "action": {
+        "type": "string"
+      },
+      "amount": {
+        "type": "string"
+      },
+      "currency": {
+        "type": "string"
+      },
+      "cycle": {
+        "type": "string"
+      },
+      "days": {
+        "type": "string"
+      },
+      "name": {
+        "type": "string"
+      },
+      "show_total": {
+        "type": "string"
+      }
+    },
+    "required": [
+      "action"
+    ]
+  },
+  "license": "MIT"
+}

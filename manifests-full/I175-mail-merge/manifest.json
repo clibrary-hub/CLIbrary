@@ -1,0 +1,88 @@
+{
+  "name": "mail-merge",
+  "version": "0.1.0",
+  "description": "客製群發器",
+  "category": "I",
+  "number": 175,
+  "pain_point": "寄發大量個人化信",
+  "commercial": "⚠️",
+  "language": "Python",
+  "dependencies": [
+    "smtplib",
+    "jinja2",
+    "click"
+  ],
+  "agent_compatible": true,
+  "mcp_ready": true,
+  "intent_triggers": [
+    "想批次寄送個人化邀請信給 200 位客戶",
+    "幫我合併名單和模板，一次寄出個別化信件",
+    "需要群發但每封信要用收件人名字客製化",
+    "從 CSV 名單批次生成並發送個人化行銷信",
+    "寄給所有用戶不同內容的更新通知信",
+    "mail merge 工具，模板加資料批次群發",
+    "大量寄信但每封要有不同的姓名和訂單資訊"
+  ],
+  "examples": [
+    {
+      "query": "用 template.html.j2 和 contacts.csv 批次發送個人化信件",
+      "params": {
+        "action": "send",
+        "template": "template.html.j2",
+        "data": "contacts.csv",
+        "subject": "您的專屬優惠"
+      }
+    },
+    {
+      "query": "預覽合併結果，不實際發送",
+      "params": {
+        "action": "preview",
+        "template": "template.html.j2",
+        "data": "contacts.csv",
+        "limit": "3"
+      }
+    },
+    {
+      "query": "從 members.csv 發送會員更新通知，每批 50 封間隔 5 秒",
+      "params": {
+        "action": "send",
+        "template": "update-notice.j2",
+        "data": "members.csv",
+        "batch_size": "50",
+        "delay_seconds": "5"
+      }
+    }
+  ],
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "action": {
+        "type": "string"
+      },
+      "batch_size": {
+        "type": "string"
+      },
+      "data": {
+        "type": "string"
+      },
+      "delay_seconds": {
+        "type": "string"
+      },
+      "limit": {
+        "type": "string"
+      },
+      "subject": {
+        "type": "string"
+      },
+      "template": {
+        "type": "string"
+      }
+    },
+    "required": [
+      "action",
+      "data",
+      "template"
+    ]
+  },
+  "license": "MIT"
+}

@@ -1,0 +1,74 @@
+{
+  "name": "changelog-bot",
+  "version": "0.1.0",
+  "description": "Changelog 產生器",
+  "category": "C",
+  "number": 58,
+  "pain_point": "無 changelog 維護",
+  "commercial": "✅",
+  "language": "Python",
+  "dependencies": [
+    "gitpython",
+    "click",
+    "rich"
+  ],
+  "agent_compatible": true,
+  "mcp_ready": true,
+  "intent_triggers": [
+    "自動產生這個版本的 changelog",
+    "幫我從 git log 生成 CHANGELOG.md",
+    "整理這次發版的改動記錄",
+    "從 commit history 產生變更日誌",
+    "更新 CHANGELOG，加入最新功能",
+    "產生 v2.0 的版本發布說明",
+    "整理過去一個月的所有改動"
+  ],
+  "examples": [
+    {
+      "query": "從最近 50 個 commit 產生 changelog",
+      "params": {
+        "commit_count": 50,
+        "action": "run"
+      }
+    },
+    {
+      "query": "產生 v1.5.0 到 v2.0.0 的版本變更日誌",
+      "params": {
+        "from_tag": "v1.5.0",
+        "to_tag": "v2.0.0",
+        "action": "run"
+      }
+    },
+    {
+      "query": "自動生成 CHANGELOG.md 並更新到現有檔案",
+      "params": {
+        "output_file": "CHANGELOG.md",
+        "action": "run"
+      }
+    }
+  ],
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "action": {
+        "type": "string"
+      },
+      "commit_count": {
+        "type": "integer"
+      },
+      "from_tag": {
+        "type": "string"
+      },
+      "output_file": {
+        "type": "string"
+      },
+      "to_tag": {
+        "type": "string"
+      }
+    },
+    "required": [
+      "action"
+    ]
+  },
+  "license": "MIT"
+}

@@ -1,0 +1,90 @@
+{
+  "name": "str-expand-est",
+  "version": "0.1.0",
+  "description": "翻譯擴張估算",
+  "category": "W",
+  "number": 449,
+  "pain_point": "字串放大/縮小占位",
+  "commercial": "✅",
+  "language": "Python",
+  "dependencies": [
+    "click",
+    "rich",
+    "pandas"
+  ],
+  "agent_compatible": true,
+  "mcp_ready": true,
+  "intent_triggers": [
+    "翻譯後字串會放大多少？UI 空間夠嗎？",
+    "估算英文翻成德文後的字串長度擴張",
+    "這段文字翻成其他語言後按鈕放得下嗎？",
+    "幫我預估翻譯後的 UI 文字擴張率",
+    "多語化時哪些字串最可能溢出 UI 邊界？",
+    "計算從英文翻成各語言的平均字串擴張比例",
+    "哪個語言的翻譯版本字串最長？"
+  ],
+  "examples": [
+    {
+      "query": "估算 en.json 翻成德文後的字串平均擴張率",
+      "params": {
+        "source_file": "en.json",
+        "source_lang": "en",
+        "target_lang": "de"
+      }
+    },
+    {
+      "query": "找出 UI 字串中翻成中文後超過 20 個字的項目",
+      "params": {
+        "source_file": "strings.json",
+        "target_lang": "zh-TW",
+        "max_chars": 20,
+        "flag_overflow": true
+      }
+    },
+    {
+      "query": "批次估算英文字串翻成日文、中文、德文的擴張率對比",
+      "params": {
+        "source_file": "ui_strings.json",
+        "target_langs": [
+          "ja",
+          "zh-TW",
+          "de"
+        ],
+        "output_csv": "expansion_report.csv"
+      }
+    }
+  ],
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "flag_overflow": {
+        "type": "boolean"
+      },
+      "max_chars": {
+        "type": "integer"
+      },
+      "output_csv": {
+        "type": "string"
+      },
+      "source_file": {
+        "type": "string"
+      },
+      "source_lang": {
+        "type": "string"
+      },
+      "target_lang": {
+        "type": "string"
+      },
+      "target_langs": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    },
+    "required": [
+      "source_file"
+    ]
+  },
+  "license": "MIT"
+}

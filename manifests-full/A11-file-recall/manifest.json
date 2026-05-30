@@ -1,0 +1,78 @@
+{
+  "name": "file-recall",
+  "version": "0.1.0",
+  "description": "模糊記憶檔案搜尋器",
+  "category": "A",
+  "number": 11,
+  "pain_point": "找不到上次那份檔是哪個",
+  "commercial": "✅",
+  "language": "Python",
+  "dependencies": [
+    "whoosh",
+    "rich",
+    "click"
+  ],
+  "agent_compatible": true,
+  "mcp_ready": true,
+  "intent_triggers": [
+    "搜尋所有包含 API 關鍵字的檔案",
+    "找上週建立的那個 txt 檔",
+    "幫我找上次那份報告",
+    "找一下最近有改過的設定檔",
+    "我忘記存在哪了，幫我模糊搜尋",
+    "搜尋一下有沒有跟登入相關的檔案",
+    "我記得有個叫什麼分析的檔案，找找看",
+    "從 Drive 根據檔名關鍵字找檔案",
+    "搜尋雲端存的特定檔案",
+    "按檔名找 Google Drive 上的檔案",
+    "雲端筆記依照名稱找回來",
+    "找出檔名包含某個字的雲端檔案"
+  ],
+  "examples": [
+    {
+      "query": "在 /project 下搜尋跟登入有關的檔案",
+      "params": {
+        "search_path": "/project",
+        "query": "登入"
+      }
+    },
+    {
+      "query": "模糊搜尋名稱含有 config 的所有檔案",
+      "params": {
+        "search_path": ".",
+        "query": "config",
+        "action": "search"
+      }
+    },
+    {
+      "query": "找出 docs/ 目錄下所有 markdown 報告",
+      "params": {
+        "search_path": "docs/",
+        "query": "report",
+        "file_filter": "*.md"
+      }
+    }
+  ],
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "action": {
+        "type": "string"
+      },
+      "file_filter": {
+        "type": "string"
+      },
+      "query": {
+        "type": "string"
+      },
+      "search_path": {
+        "type": "string"
+      }
+    },
+    "required": [
+      "query",
+      "search_path"
+    ]
+  },
+  "license": "MIT"
+}

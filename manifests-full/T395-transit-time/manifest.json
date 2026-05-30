@@ -1,0 +1,85 @@
+{
+  "name": "transit-time",
+  "version": "0.1.0",
+  "description": "大眾運輸時刻",
+  "category": "T",
+  "number": 395,
+  "pain_point": "公共運輸時刻",
+  "commercial": "⚠️",
+  "language": "Python",
+  "dependencies": [
+    "requests",
+    "click",
+    "rich"
+  ],
+  "agent_compatible": true,
+  "mcp_ready": true,
+  "intent_triggers": [
+    "查詢從新宿到秋葉原的電車時刻",
+    "幾點有公車從這裡到機場",
+    "現在幾點有地鐵可以搭",
+    "查台鐵台北到台南的時刻表",
+    "轉乘最少次怎麼去這個地方",
+    "最後一班電車是幾點",
+    "查詢大眾運輸的最快到達方式"
+  ],
+  "examples": [
+    {
+      "query": "查詢東京新宿到秋葉原 2026-07-10 14:00 後的電車",
+      "params": {
+        "from": "新宿",
+        "to": "秋葉原",
+        "city": "東京",
+        "after_time": "14:00"
+      }
+    },
+    {
+      "query": "查台北到高雄的高鐵時刻表，2026-07-15 出發",
+      "params": {
+        "from": "台北",
+        "to": "高雄",
+        "date": "2026-07-15",
+        "train_type": "THSR"
+      }
+    },
+    {
+      "query": "查桃園機場到台北車站最快的交通選項",
+      "params": {
+        "from": "桃園機場",
+        "to": "台北車站",
+        "optimize": "speed"
+      }
+    }
+  ],
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "after_time": {
+        "type": "string"
+      },
+      "city": {
+        "type": "string"
+      },
+      "date": {
+        "type": "string"
+      },
+      "from": {
+        "type": "string"
+      },
+      "optimize": {
+        "type": "string"
+      },
+      "to": {
+        "type": "string"
+      },
+      "train_type": {
+        "type": "string"
+      }
+    },
+    "required": [
+      "from",
+      "to"
+    ]
+  },
+  "license": "MIT"
+}

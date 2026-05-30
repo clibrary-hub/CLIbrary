@@ -1,0 +1,80 @@
+{
+  "name": "script-hub",
+  "version": "0.1.0",
+  "description": "腳本中央倉",
+  "category": "D",
+  "number": 78,
+  "pain_point": "自動化腳本到處散落",
+  "commercial": "✅",
+  "language": "Python",
+  "dependencies": [
+    "click",
+    "rich",
+    "sqlite3"
+  ],
+  "agent_compatible": true,
+  "mcp_ready": true,
+  "intent_triggers": [
+    "把所有腳本集中管理",
+    "找一下我之前存的備份腳本",
+    "建立腳本中央庫方便查找",
+    "把 AI 產出的腳本都存到中央倉",
+    "搜尋所有可用的自動化腳本",
+    "列出所有標記為清理用途的腳本",
+    "從腳本庫中執行 cleanup 腳本"
+  ],
+  "examples": [
+    {
+      "query": "把 backup.sh 加入腳本中央倉",
+      "params": {
+        "script_file": "backup.sh",
+        "tags": [
+          "backup",
+          "daily"
+        ],
+        "action": "run"
+      }
+    },
+    {
+      "query": "搜尋腳本庫中所有標記為 deploy 的腳本",
+      "params": {
+        "search_tag": "deploy",
+        "action": "run"
+      }
+    },
+    {
+      "query": "列出所有已儲存的腳本",
+      "params": {
+        "action": "run",
+        "list_all": true
+      }
+    }
+  ],
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "action": {
+        "type": "string"
+      },
+      "list_all": {
+        "type": "boolean"
+      },
+      "script_file": {
+        "type": "string"
+      },
+      "search_tag": {
+        "type": "string"
+      },
+      "tags": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    },
+    "required": [
+      "action"
+    ]
+  },
+  "license": "MIT"
+}

@@ -1,0 +1,74 @@
+{
+  "name": "cart-nudge",
+  "version": "0.1.0",
+  "description": "結帳提醒器",
+  "category": "U",
+  "number": 411,
+  "pain_point": "購物車提醒結帳",
+  "commercial": "⚠️",
+  "language": "Python",
+  "dependencies": [
+    "click",
+    "rich",
+    "plyer"
+  ],
+  "agent_compatible": true,
+  "mcp_ready": true,
+  "intent_triggers": [
+    "我購物車裡有東西忘記結帳，幫我提醒",
+    "設定提醒我今晚要完成結帳",
+    "購物車放太久了，提醒我去看一下",
+    "幫我追蹤待結帳的購物車商品",
+    "蝦皮購物車裡有幾個商品還沒買",
+    "設定購物車提醒，今天限時優惠",
+    "哪些購物車商品快要限時結束了？"
+  ],
+  "examples": [
+    {
+      "query": "提醒我今晚 8 點去結帳蝦皮購物車",
+      "params": {
+        "platform": "shopee",
+        "remind_time": "20:00",
+        "note": "今晚記得結帳"
+      }
+    },
+    {
+      "query": "記錄 momo 購物車有 3 件商品，明天是最後優惠日",
+      "params": {
+        "platform": "momo",
+        "item_count": 3,
+        "deadline": "2024-01-28"
+      }
+    },
+    {
+      "query": "列出所有平台待結帳的購物車提醒",
+      "params": {
+        "show_all": true
+      }
+    }
+  ],
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "deadline": {
+        "type": "string"
+      },
+      "item_count": {
+        "type": "integer"
+      },
+      "note": {
+        "type": "string"
+      },
+      "platform": {
+        "type": "string"
+      },
+      "remind_time": {
+        "type": "string"
+      },
+      "show_all": {
+        "type": "boolean"
+      }
+    }
+  },
+  "license": "MIT"
+}

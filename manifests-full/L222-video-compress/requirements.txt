@@ -1,0 +1,3 @@
+click
+ffmpeg-python
+rich

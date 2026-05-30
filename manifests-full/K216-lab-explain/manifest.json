@@ -1,0 +1,75 @@
+{
+  "name": "lab-explain",
+  "version": "0.1.0",
+  "description": "健檢報告解讀器",
+  "category": "K",
+  "number": 216,
+  "pain_point": "健檢報告解讀難",
+  "commercial": "⚠️",
+  "language": "Python",
+  "dependencies": [
+    "anthropic",
+    "click",
+    "rich"
+  ],
+  "agent_compatible": true,
+  "mcp_ready": true,
+  "intent_triggers": [
+    "幫我解讀健康檢查報告",
+    "健檢報告看不懂，幫我解釋每個指標",
+    "血液檢查的 LDL 和 HDL 分別是什麼意思",
+    "我的健檢報告有紅字，是什麼問題",
+    "醫院健康報告指數說明工具",
+    "把健檢數值翻譯成白話文",
+    "解讀 lab report 中的異常指標"
+  ],
+  "examples": [
+    {
+      "query": "解讀我的健檢報告 lab_report_2024.pdf 中的所有異常值",
+      "params": {
+        "action": "run",
+        "input_file": "lab_report_2024.pdf"
+      }
+    },
+    {
+      "query": "解釋 ALT 58、AST 45、Cholesterol 215 這幾個數值",
+      "params": {
+        "action": "run",
+        "values": "ALT:58,AST:45,Cholesterol:215"
+      }
+    },
+    {
+      "query": "把 health_check.txt 中的所有指標解釋成白話文",
+      "params": {
+        "action": "run",
+        "input_file": "health_check.txt",
+        "lang": "zh"
+      }
+    }
+  ],
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "action": {
+        "type": "string",
+        "description": "操作類型，如 run（執行解讀）"
+      },
+      "input_file": {
+        "type": "string",
+        "description": "健檢報告檔案路徑"
+      },
+      "values": {
+        "type": "string",
+        "description": "手動輸入的檢測值，格式：指標:數值，以逗號分隔"
+      },
+      "lang": {
+        "type": "string",
+        "description": "輸出語言，如 zh（中文）、en（英文）"
+      }
+    },
+    "required": [
+      "action"
+    ]
+  },
+  "license": "MIT"
+}

@@ -1,0 +1,78 @@
+{
+  "name": "thread-summarize",
+  "version": "0.1.0",
+  "description": "信件串摘要",
+  "category": "I",
+  "number": 167,
+  "pain_point": "群組郵件討論失序",
+  "commercial": "⚠️",
+  "language": "Python",
+  "dependencies": [
+    "imaplib",
+    "anthropic",
+    "click"
+  ],
+  "agent_compatible": true,
+  "mcp_ready": true,
+  "intent_triggers": [
+    "群組討論信件太長，幫我用 AI 摘要重點",
+    "這個信件串有 50 封，快速告訴我目前狀態",
+    "跨部門郵件討論亂掉了，需要整理摘要",
+    "幫我把這條信件串的決議事項整理出來",
+    "想了解某個 email thread 的結論而不用看每封信",
+    "客戶往返信件太多，AI 幫我摘出關鍵需求",
+    "信件串摘要工具，快速掌握討論脈絡"
+  ],
+  "examples": [
+    {
+      "query": "摘要主旨包含「Q2 預算討論」的信件串重點",
+      "params": {
+        "action": "summarize",
+        "subject": "Q2 預算討論"
+      }
+    },
+    {
+      "query": "從 thread.eml 提取信件串並生成結構化摘要",
+      "params": {
+        "action": "summarize",
+        "input_file": "thread.eml",
+        "output": "thread-summary.txt"
+      }
+    },
+    {
+      "query": "列出過去 7 天超過 10 封的長串信件並逐一摘要",
+      "params": {
+        "action": "summarize",
+        "days": "7",
+        "min_thread_size": "10"
+      }
+    }
+  ],
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "action": {
+        "type": "string"
+      },
+      "days": {
+        "type": "string"
+      },
+      "input_file": {
+        "type": "string"
+      },
+      "min_thread_size": {
+        "type": "string"
+      },
+      "output": {
+        "type": "string"
+      },
+      "subject": {
+        "type": "string"
+      }
+    },
+    "required": [
+      "action"
+    ]
+  },
+  "license": "MIT"
+}

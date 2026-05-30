@@ -1,0 +1,73 @@
+{
+  "name": "test-gap",
+  "version": "0.1.0",
+  "description": "覆蓋率缺口分析器",
+  "category": "C",
+  "number": 43,
+  "pain_point": "測試覆蓋率不足",
+  "commercial": "✅",
+  "language": "Python",
+  "dependencies": [
+    "coverage",
+    "click",
+    "rich"
+  ],
+  "agent_compatible": true,
+  "mcp_ready": true,
+  "intent_triggers": [
+    "找出哪些程式碼沒有被測試覆蓋",
+    "分析測試覆蓋率的缺口",
+    "告訴我哪些函數缺少單元測試",
+    "掃描未測試的程式碼路徑",
+    "幫我找出測試覆蓋率低的模組",
+    "分析 coverage 報告找出缺口",
+    "列出所有沒有對應測試的函數"
+  ],
+  "examples": [
+    {
+      "query": "分析 src/ 目錄的測試覆蓋率缺口",
+      "params": {
+        "target_path": "src/",
+        "action": "run"
+      }
+    },
+    {
+      "query": "找出 utils.py 中所有未被覆蓋的函數",
+      "params": {
+        "target_path": "utils.py",
+        "action": "run",
+        "min_coverage": 80
+      }
+    },
+    {
+      "query": "產出覆蓋率分析報告到 coverage_gap.json",
+      "params": {
+        "target_path": ".",
+        "output_file": "coverage_gap.json",
+        "action": "run"
+      }
+    }
+  ],
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "action": {
+        "type": "string"
+      },
+      "min_coverage": {
+        "type": "integer"
+      },
+      "output_file": {
+        "type": "string"
+      },
+      "target_path": {
+        "type": "string"
+      }
+    },
+    "required": [
+      "action",
+      "target_path"
+    ]
+  },
+  "license": "MIT"
+}

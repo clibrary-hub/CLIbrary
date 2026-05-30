@@ -1,0 +1,76 @@
+{
+  "name": "len-flex",
+  "version": "0.1.0",
+  "description": "文長伸縮器",
+  "category": "X",
+  "number": 463,
+  "pain_point": "文章長度伸縮",
+  "commercial": "✅",
+  "language": "Python",
+  "dependencies": [
+    "anthropic",
+    "click",
+    "rich"
+  ],
+  "agent_compatible": true,
+  "mcp_ready": true,
+  "intent_triggers": [
+    "把這篇文章縮短到 200 字以內",
+    "這段說明太短了，幫我擴充到 500 字",
+    "文章字數太多，幫我精簡但保留重點",
+    "這份報告要延伸寫成 1000 字",
+    "壓縮這段摘要，讓它更精煉",
+    "幫我把這個段落擴寫得更豐富詳細",
+    "調整文章長度，符合字數限制"
+  ],
+  "examples": [
+    {
+      "query": "把 article.txt 從 800 字縮短到 300 字以內，保留核心觀點",
+      "params": {
+        "input_file": "article.txt",
+        "target_words": 300,
+        "mode": "shrink"
+      }
+    },
+    {
+      "query": "將這段 50 字的摘要擴充成 200 字的完整段落",
+      "params": {
+        "text": "AI 正在改變工作方式。",
+        "target_words": 200,
+        "mode": "expand"
+      }
+    },
+    {
+      "query": "調整 introduction.txt 到恰好 150 字，不超過也不少於",
+      "params": {
+        "input_file": "introduction.txt",
+        "target_words": 150,
+        "strict": true
+      }
+    }
+  ],
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "input_file": {
+        "type": "string"
+      },
+      "mode": {
+        "type": "string"
+      },
+      "strict": {
+        "type": "boolean"
+      },
+      "target_words": {
+        "type": "integer"
+      },
+      "text": {
+        "type": "string"
+      }
+    },
+    "required": [
+      "target_words"
+    ]
+  },
+  "license": "MIT"
+}

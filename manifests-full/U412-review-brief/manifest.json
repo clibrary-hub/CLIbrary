@@ -1,0 +1,74 @@
+{
+  "name": "review-brief",
+  "version": "0.1.0",
+  "description": "評價摘要器",
+  "category": "U",
+  "number": 412,
+  "pain_point": "商品評價摘要",
+  "commercial": "⚠️",
+  "language": "Python",
+  "dependencies": [
+    "anthropic",
+    "click",
+    "rich"
+  ],
+  "agent_compatible": true,
+  "mcp_ready": true,
+  "intent_triggers": [
+    "幫我看這個商品的評價，整理重點",
+    "這款產品買家怎麼說？給我摘要",
+    "太多評論了，幫我統整優缺點",
+    "這個商品的好評和差評各有哪些共同點？",
+    "買之前幫我分析一下這款的使用者回饋",
+    "幫我把幾百則評論濃縮成重點",
+    "這產品最常被抱怨的問題是什麼？"
+  ],
+  "examples": [
+    {
+      "query": "幫我摘要這款藍芽耳機的 200 則評價，找出最常見的優缺點",
+      "params": {
+        "product_name": "Soundcore Life Q30",
+        "review_count": 200,
+        "language": "zh"
+      }
+    },
+    {
+      "query": "分析這個商品URL的評論，整理成條列式報告",
+      "params": {
+        "product_url": "https://shopee.tw/product/123",
+        "format": "bullet_points"
+      }
+    },
+    {
+      "query": "這個產品評分 4.2 星，幫我解讀扣分原因",
+      "params": {
+        "product_name": "小米空氣清淨機",
+        "rating": 4.2
+      }
+    }
+  ],
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "format": {
+        "type": "string"
+      },
+      "language": {
+        "type": "string"
+      },
+      "product_name": {
+        "type": "string"
+      },
+      "product_url": {
+        "type": "string"
+      },
+      "rating": {
+        "type": "number"
+      },
+      "review_count": {
+        "type": "integer"
+      }
+    }
+  },
+  "license": "MIT"
+}

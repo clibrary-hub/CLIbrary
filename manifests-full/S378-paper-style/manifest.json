@@ -1,0 +1,71 @@
+{
+  "name": "paper-style",
+  "version": "0.1.0",
+  "description": "論文格式器",
+  "category": "S",
+  "number": 378,
+  "pain_point": "論文格式校稿",
+  "commercial": "✅",
+  "language": "Python",
+  "dependencies": [
+    "re",
+    "click",
+    "rich"
+  ],
+  "agent_compatible": true,
+  "mcp_ready": true,
+  "intent_triggers": [
+    "把論文格式化成 APA 7 規範",
+    "幫我檢查論文的引用格式",
+    "論文格式有問題，幫我校正",
+    "把參考文獻統一成 IEEE 格式",
+    "確認 Markdown 論文草稿的格式正確",
+    "把 .tex 論文套用 ACL 格式",
+    "自動修正論文中的格式不一致問題"
+  ],
+  "examples": [
+    {
+      "query": "把 paper.md 的引用格式統一成 APA 7",
+      "params": {
+        "input_file": "paper.md",
+        "citation_style": "APA7"
+      }
+    },
+    {
+      "query": "驗證 thesis.tex 是否符合 IEEE 格式規範",
+      "params": {
+        "input_file": "thesis.tex",
+        "style": "IEEE",
+        "action": "validate"
+      }
+    },
+    {
+      "query": "批次格式化 papers/ 所有文件的參考文獻",
+      "params": {
+        "input_dir": "papers/",
+        "citation_style": "APA7"
+      }
+    }
+  ],
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "action": {
+        "type": "string"
+      },
+      "citation_style": {
+        "type": "string"
+      },
+      "input_dir": {
+        "type": "string"
+      },
+      "input_file": {
+        "type": "string"
+      },
+      "style": {
+        "type": "string"
+      }
+    }
+  },
+  "license": "MIT"
+}

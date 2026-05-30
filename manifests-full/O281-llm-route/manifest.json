@@ -1,0 +1,79 @@
+{
+  "name": "llm-route",
+  "version": "0.1.0",
+  "description": "模型路由器",
+  "category": "O",
+  "number": 281,
+  "pain_point": "多模型路由",
+  "commercial": "⚠️",
+  "language": "Python",
+  "dependencies": [
+    "anthropic",
+    "click",
+    "rich"
+  ],
+  "agent_compatible": true,
+  "mcp_ready": true,
+  "intent_triggers": [
+    "根據任務類型自動選最適合的 LLM",
+    "多模型路由器，便宜任務用小模型",
+    "智能分派不同任務給不同 AI 模型",
+    "自動決定這個 prompt 要用哪個模型",
+    "複雜任務用 Claude Sonnet，簡單任務用 Haiku",
+    "多模型負載均衡和智能路由",
+    "依成本和能力動態選擇 LLM"
+  ],
+  "examples": [
+    {
+      "query": "自動路由這批 prompts.txt 到最適合的模型",
+      "params": {
+        "action": "route",
+        "input_file": "prompts.txt",
+        "strategy": "cost_optimized"
+      }
+    },
+    {
+      "query": "根據 task_type 欄位把 tasks.csv 分派給不同模型",
+      "params": {
+        "action": "route",
+        "input_file": "tasks.csv",
+        "task_col": "task_type",
+        "output_file": "routed_results.jsonl"
+      }
+    },
+    {
+      "query": "設定路由規則：摘要用 haiku，程式碼用 sonnet",
+      "params": {
+        "action": "configure",
+        "rules_file": "routing_rules.json"
+      }
+    }
+  ],
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "action": {
+        "type": "string"
+      },
+      "input_file": {
+        "type": "string"
+      },
+      "output_file": {
+        "type": "string"
+      },
+      "rules_file": {
+        "type": "string"
+      },
+      "strategy": {
+        "type": "string"
+      },
+      "task_col": {
+        "type": "string"
+      }
+    },
+    "required": [
+      "action"
+    ]
+  },
+  "license": "MIT"
+}

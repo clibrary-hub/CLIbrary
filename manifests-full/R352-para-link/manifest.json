@@ -1,0 +1,71 @@
+{
+  "name": "para-link",
+  "version": "0.1.0",
+  "description": "段落連結器",
+  "category": "R",
+  "number": 352,
+  "pain_point": "段落連結化",
+  "commercial": "✅",
+  "language": "Python",
+  "dependencies": [
+    "re",
+    "pathlib",
+    "click",
+    "rich"
+  ],
+  "agent_compatible": true,
+  "mcp_ready": true,
+  "intent_triggers": [
+    "幫筆記中的每個段落加上錨點連結",
+    "把文字中的概念自動連結到對應的筆記",
+    "在 Markdown 中自動建立段落間的交叉連結",
+    "掃描筆記庫並建立相關概念的雙向連結",
+    "把相似段落內容連結在一起",
+    "自動識別並連結重要術語到定義頁",
+    "為長文章加入章節內部連結"
+  ],
+  "examples": [
+    {
+      "query": "為 notes/ 中出現的所有術語自動建立 wiki 連結",
+      "params": {
+        "notes_dir": "notes/",
+        "auto_link": true
+      }
+    },
+    {
+      "query": "為 guide.md 的每個 H2 段落加上錨點 id",
+      "params": {
+        "input_file": "guide.md",
+        "add_anchors": true
+      }
+    },
+    {
+      "query": "連結 tutorial.md 中提到的概念到 glossary/ 目錄的對應筆記",
+      "params": {
+        "input_file": "tutorial.md",
+        "link_from_dir": "glossary/"
+      }
+    }
+  ],
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "add_anchors": {
+        "type": "boolean"
+      },
+      "auto_link": {
+        "type": "boolean"
+      },
+      "input_file": {
+        "type": "string"
+      },
+      "link_from_dir": {
+        "type": "string"
+      },
+      "notes_dir": {
+        "type": "string"
+      }
+    }
+  },
+  "license": "MIT"
+}

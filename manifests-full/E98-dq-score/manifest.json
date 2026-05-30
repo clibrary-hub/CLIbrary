@@ -1,0 +1,81 @@
+{
+  "name": "dq-score",
+  "version": "0.1.0",
+  "description": "資料品質評分器",
+  "category": "E",
+  "number": 98,
+  "pain_point": "資料品質無法量化",
+  "commercial": "✅",
+  "language": "Python",
+  "dependencies": [
+    "pandas",
+    "click",
+    "rich"
+  ],
+  "agent_compatible": true,
+  "mcp_ready": true,
+  "intent_triggers": [
+    "幫我評估這個資料集的品質有多好",
+    "量化這份 CSV 的資料品質分數",
+    "資料進模型前想先知道品質如何",
+    "產生資料品質報告，包含完整性和一致性",
+    "這批資料的空值率、重複率是多少",
+    "自動掃描並評分資料集的各項品質指標",
+    "給我一個資料品質的綜合評分和改善建議"
+  ],
+  "examples": [
+    {
+      "query": "評估 sales_data.csv 的整體資料品質",
+      "params": {
+        "input_file": "sales_data.csv",
+        "action": "run"
+      }
+    },
+    {
+      "query": "為 user_data.csv 產生完整的資料品質報告",
+      "params": {
+        "input_file": "user_data.csv",
+        "output_file": "dq_report.json",
+        "action": "run"
+      }
+    },
+    {
+      "query": "評分 transactions.csv 的完整性、一致性和準確性",
+      "params": {
+        "input_file": "transactions.csv",
+        "metrics": [
+          "completeness",
+          "consistency",
+          "accuracy"
+        ],
+        "output_file": "quality_score.json",
+        "action": "run"
+      }
+    }
+  ],
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "action": {
+        "type": "string"
+      },
+      "input_file": {
+        "type": "string"
+      },
+      "metrics": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      },
+      "output_file": {
+        "type": "string"
+      }
+    },
+    "required": [
+      "action",
+      "input_file"
+    ]
+  },
+  "license": "MIT"
+}

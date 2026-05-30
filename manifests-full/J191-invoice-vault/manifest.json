@@ -1,0 +1,87 @@
+{
+  "name": "invoice-vault",
+  "version": "0.1.0",
+  "description": "發票保管庫",
+  "category": "J",
+  "number": 191,
+  "pain_point": "發票管理混亂",
+  "commercial": "✅",
+  "language": "Python",
+  "dependencies": [
+    "sqlite3",
+    "click",
+    "rich"
+  ],
+  "agent_compatible": true,
+  "mcp_ready": true,
+  "intent_triggers": [
+    "我的發票散落各處，需要統一數位保管",
+    "幫我建立一個發票電子保管庫",
+    "想把所有紙本和電子發票存入資料庫管理",
+    "報稅或報帳時找不到發票，需要集中管理工具",
+    "新增一筆發票到保管庫並設定類別",
+    "搜尋某個日期範圍內的所有發票",
+    "發票保管庫，支援新增、查詢、匯出功能"
+  ],
+  "examples": [
+    {
+      "query": "新增一張 2024-03-15 的電腦周邊發票，金額 NT$3,500",
+      "params": {
+        "action": "add",
+        "date": "2024-03-15",
+        "amount": "3500",
+        "category": "3C設備",
+        "vendor": "電腦城"
+      }
+    },
+    {
+      "query": "搜尋本季所有餐飲發票並計算總金額",
+      "params": {
+        "action": "search",
+        "category": "餐飲",
+        "period": "this_quarter"
+      }
+    },
+    {
+      "query": "匯出 2023 年全年發票清單為 CSV",
+      "params": {
+        "action": "export",
+        "year": "2023",
+        "output": "invoices-2023.csv"
+      }
+    }
+  ],
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "action": {
+        "type": "string"
+      },
+      "amount": {
+        "type": "string"
+      },
+      "category": {
+        "type": "string"
+      },
+      "date": {
+        "type": "string"
+      },
+      "output": {
+        "type": "string"
+      },
+      "period": {
+        "type": "string"
+      },
+      "vendor": {
+        "type": "string"
+      },
+      "year": {
+        "type": "string"
+      }
+    },
+    "required": [
+      "action"
+    ]
+  },
+  "license": "MIT"
+}

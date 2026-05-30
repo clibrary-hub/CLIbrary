@@ -1,0 +1,79 @@
+{
+  "name": "web-fetch",
+  "version": "0.1.0",
+  "description": "網頁抓取器",
+  "category": "M",
+  "number": 241,
+  "pain_point": "網頁靜態抓取",
+  "commercial": "⚠️",
+  "language": "Python",
+  "dependencies": [
+    "requests",
+    "beautifulsoup4",
+    "click"
+  ],
+  "agent_compatible": true,
+  "mcp_ready": true,
+  "intent_triggers": [
+    "抓取這個網頁的內容",
+    "網頁抓取工具，擷取 HTML 靜態頁面",
+    "把網址的內容下載成文字",
+    "爬取網站資料並解析",
+    "從網頁擷取特定元素的文字",
+    "靜態網頁爬蟲，抓取並儲存 HTML",
+    "抓取網頁文章內容並儲存"
+  ],
+  "examples": [
+    {
+      "query": "抓取 https://example.com/news 的所有新聞標題",
+      "params": {
+        "action": "run",
+        "url": "https://example.com/news",
+        "selector": "h2.title"
+      }
+    },
+    {
+      "query": "下載 https://blog.example.com 的首頁 HTML 並存檔",
+      "params": {
+        "action": "run",
+        "url": "https://blog.example.com",
+        "output_file": "homepage.html"
+      }
+    },
+    {
+      "query": "批次抓取 urls.txt 中所有網址的內容",
+      "params": {
+        "action": "run",
+        "urls_file": "urls.txt",
+        "output_dir": "pages/"
+      }
+    }
+  ],
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "action": {
+        "type": "string"
+      },
+      "output_dir": {
+        "type": "string"
+      },
+      "output_file": {
+        "type": "string"
+      },
+      "selector": {
+        "type": "string"
+      },
+      "url": {
+        "type": "string"
+      },
+      "urls_file": {
+        "type": "string"
+      }
+    },
+    "required": [
+      "action"
+    ]
+  },
+  "license": "MIT"
+}

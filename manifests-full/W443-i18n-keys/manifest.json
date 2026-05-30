@@ -1,0 +1,88 @@
+{
+  "name": "i18n-keys",
+  "version": "0.1.0",
+  "description": "字串鍵管理器",
+  "category": "W",
+  "number": 443,
+  "pain_point": "App 字串 i18n 管理",
+  "commercial": "✅",
+  "language": "Python",
+  "dependencies": [
+    "click",
+    "rich",
+    "pyyaml"
+  ],
+  "agent_compatible": true,
+  "mcp_ready": true,
+  "intent_triggers": [
+    "幫我管理 App 的多語言字串鍵",
+    "找出哪些 i18n Key 還沒有中文翻譯",
+    "比較兩個語言的翻譯檔案，找出缺漏",
+    "列出所有未翻譯的字串鍵",
+    "新增 i18n Key 到翻譯檔案",
+    "整理 locale 資料夾的翻譯資源",
+    "哪些語系缺少必要的字串？"
+  ],
+  "examples": [
+    {
+      "query": "掃描 /src/locales 找出 en.json 有但 zh-TW.json 沒有的 key",
+      "params": {
+        "locales_dir": "/src/locales",
+        "source_lang": "en",
+        "compare_lang": "zh-TW"
+      }
+    },
+    {
+      "query": "新增 key 'button.save' 到所有語系翻譯檔案",
+      "params": {
+        "key": "button.save",
+        "default_value": "Save",
+        "locales": [
+          "en",
+          "zh-TW",
+          "ja"
+        ]
+      }
+    },
+    {
+      "query": "列出 zh-TW.json 中所有空值或未翻譯的字串鍵",
+      "params": {
+        "locale_file": "zh-TW.json",
+        "show_empty": true
+      }
+    }
+  ],
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "compare_lang": {
+        "type": "string"
+      },
+      "default_value": {
+        "type": "string"
+      },
+      "key": {
+        "type": "string"
+      },
+      "locale_file": {
+        "type": "string"
+      },
+      "locales": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      },
+      "locales_dir": {
+        "type": "string"
+      },
+      "show_empty": {
+        "type": "boolean"
+      },
+      "source_lang": {
+        "type": "string"
+      }
+    }
+  },
+  "license": "MIT"
+}

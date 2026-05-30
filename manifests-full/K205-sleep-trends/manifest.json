@@ -1,0 +1,77 @@
+{
+  "name": "sleep-trends",
+  "version": "0.1.0",
+  "description": "睡眠趨勢分析",
+  "category": "K",
+  "number": 205,
+  "pain_point": "睡眠資料無統合",
+  "commercial": "⚠️",
+  "language": "Python",
+  "dependencies": [
+    "pandas",
+    "matplotlib",
+    "click"
+  ],
+  "agent_compatible": true,
+  "mcp_ready": true,
+  "intent_triggers": [
+    "分析我最近的睡眠品質有沒有改善",
+    "我想看過去一個月的睡眠趨勢",
+    "睡眠記錄統計分析，找出規律",
+    "幫我整理睡眠數據，畫出趨勢圖",
+    "我睡眠不規律，想用資料了解原因",
+    "檢視睡眠時數長期變化",
+    "根據睡眠資料分析我的作息模式"
+  ],
+  "examples": [
+    {
+      "query": "分析 sleep_data.csv 過去 30 天的睡眠趨勢",
+      "params": {
+        "action": "run",
+        "input_file": "sleep_data.csv",
+        "days": 30
+      }
+    },
+    {
+      "query": "讀取手錶匯出的睡眠記錄並產生折線圖",
+      "params": {
+        "action": "run",
+        "input_file": "watch_sleep_export.json"
+      }
+    },
+    {
+      "query": "統計本月平均睡眠時數和深眠比例",
+      "params": {
+        "action": "run",
+        "input_file": "sleep_log.csv",
+        "output": "summary"
+      }
+    }
+  ],
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "action": {
+        "type": "string",
+        "description": "操作類型，如 run（執行分析）"
+      },
+      "input_file": {
+        "type": "string",
+        "description": "睡眠資料檔案路徑（CSV 或 JSON）"
+      },
+      "days": {
+        "type": "integer",
+        "description": "分析天數範圍"
+      },
+      "output": {
+        "type": "string",
+        "description": "輸出類型，如 summary、chart"
+      }
+    },
+    "required": [
+      "action",
+      "input_file"
+    ]
+  },
+  "license": "MIT"
+}

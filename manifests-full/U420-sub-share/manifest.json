@@ -1,0 +1,93 @@
+{
+  "name": "sub-share",
+  "version": "0.1.0",
+  "description": "訂閱分帳器",
+  "category": "U",
+  "number": 420,
+  "pain_point": "訂閱共享分帳",
+  "commercial": "✅",
+  "language": "Python",
+  "dependencies": [
+    "sqlite3",
+    "click",
+    "rich"
+  ],
+  "agent_compatible": true,
+  "mcp_ready": true,
+  "intent_triggers": [
+    "我們幾個人共用 Netflix，幫我算每人分多少",
+    "訂閱家庭方案，幫我計算分帳金額",
+    "Spotify 家庭版和朋友共用，怎麼收費最公平？",
+    "幫我記錄共享訂閱的分帳情況",
+    "這個月誰還沒付 YouTube Premium 的分攤費？",
+    "計算共享訂閱每個人的應付金額",
+    "整理共享帳戶的付款紀錄"
+  ],
+  "examples": [
+    {
+      "query": "Netflix 家庭方案每月 330 元，5 人共享，每人應付多少？",
+      "params": {
+        "service": "Netflix",
+        "monthly_cost": 330,
+        "members": 5
+      }
+    },
+    {
+      "query": "記錄小明、小華已付本月 Spotify 分帳 60 元，小李未付",
+      "params": {
+        "service": "Spotify",
+        "paid_members": [
+          "小明",
+          "小華"
+        ],
+        "unpaid_members": [
+          "小李"
+        ],
+        "amount_per_person": 60
+      }
+    },
+    {
+      "query": "查看所有共享訂閱的分帳狀況和未收款紀錄",
+      "params": {
+        "show_all": true,
+        "show_unpaid": true
+      }
+    }
+  ],
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "amount_per_person": {
+        "type": "integer"
+      },
+      "members": {
+        "type": "integer"
+      },
+      "monthly_cost": {
+        "type": "integer"
+      },
+      "paid_members": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      },
+      "service": {
+        "type": "string"
+      },
+      "show_all": {
+        "type": "boolean"
+      },
+      "show_unpaid": {
+        "type": "boolean"
+      },
+      "unpaid_members": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  },
+  "license": "MIT"
+}

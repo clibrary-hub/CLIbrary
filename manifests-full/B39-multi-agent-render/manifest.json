@@ -1,0 +1,77 @@
+{
+  "name": "multi-agent-render",
+  "version": "0.1.0",
+  "description": "多角色對話排版",
+  "category": "B",
+  "number": 39,
+  "pain_point": "多 Agent 對話排版亂",
+  "commercial": "✅",
+  "language": "Python",
+  "dependencies": [
+    "rich",
+    "click",
+    "jinja2"
+  ],
+  "agent_compatible": true,
+  "mcp_ready": true,
+  "intent_triggers": [
+    "把多個 Agent 的對話整理成清晰的格式",
+    "排版多角色 AI 討論的輸出",
+    "讓多 Agent 的回覆有顏色區分",
+    "把這段多人對話渲染成可閱讀的報告",
+    "美化多 Agent 的協作輸出",
+    "把不同 AI 的發言分欄顯示",
+    "渲染多角色討論，標明每個發言者"
+  ],
+  "examples": [
+    {
+      "query": "把 agents_chat.json 中 3 個 Agent 的對話排版",
+      "params": {
+        "input_file": "agents_chat.json",
+        "agent_count": 3,
+        "action": "run"
+      }
+    },
+    {
+      "query": "用 HTML 模板渲染多角色對話",
+      "params": {
+        "input_file": "multi_agent_log.json",
+        "template": "html",
+        "action": "run"
+      }
+    },
+    {
+      "query": "把 Agent A、B、C 的討論渲染成彩色終端輸出",
+      "params": {
+        "input_file": "discussion.json",
+        "output_format": "terminal",
+        "action": "run"
+      }
+    }
+  ],
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "action": {
+        "type": "string"
+      },
+      "agent_count": {
+        "type": "integer"
+      },
+      "input_file": {
+        "type": "string"
+      },
+      "output_format": {
+        "type": "string"
+      },
+      "template": {
+        "type": "string"
+      }
+    },
+    "required": [
+      "action",
+      "input_file"
+    ]
+  },
+  "license": "MIT"
+}

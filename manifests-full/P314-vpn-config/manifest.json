@@ -1,0 +1,77 @@
+{
+  "name": "vpn-config",
+  "version": "0.1.0",
+  "description": "VPN 設定器",
+  "category": "P",
+  "number": 314,
+  "pain_point": "VPN 設定整理",
+  "commercial": "✅",
+  "language": "Python",
+  "dependencies": [
+    "click",
+    "rich",
+    "yaml"
+  ],
+  "agent_compatible": true,
+  "mcp_ready": true,
+  "intent_triggers": [
+    "幫我整理 VPN 設定檔",
+    "產生 WireGuard 的設定檔",
+    "我需要設定多個 VPN 伺服器的連線配置",
+    "匯出 OpenVPN 設定給遠端員工",
+    "驗證 VPN 設定檔格式是否正確",
+    "把多個 VPN peer 的設定合併成一個",
+    "幫我建立新的 VPN 節點設定"
+  ],
+  "examples": [
+    {
+      "query": "產生 WireGuard 伺服器端設定檔，IP 為 10.0.0.1/24",
+      "params": {
+        "type": "wireguard",
+        "role": "server",
+        "ip": "10.0.0.1/24"
+      }
+    },
+    {
+      "query": "驗證 client.ovpn 設定格式是否符合 OpenVPN 規範",
+      "params": {
+        "config_file": "client.ovpn",
+        "action": "validate"
+      }
+    },
+    {
+      "query": "把 peers.yaml 的 WireGuard peer 清單加入 wg0.conf",
+      "params": {
+        "peers_file": "peers.yaml",
+        "target_config": "wg0.conf"
+      }
+    }
+  ],
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "action": {
+        "type": "string"
+      },
+      "config_file": {
+        "type": "string"
+      },
+      "ip": {
+        "type": "string"
+      },
+      "peers_file": {
+        "type": "string"
+      },
+      "role": {
+        "type": "string"
+      },
+      "target_config": {
+        "type": "string"
+      },
+      "type": {
+        "type": "string"
+      }
+    }
+  },
+  "license": "MIT"
+}

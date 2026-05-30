@@ -1,0 +1,85 @@
+{
+  "name": "podcast-script",
+  "version": "0.1.0",
+  "description": "Podcast 腳本器",
+  "category": "X",
+  "number": 472,
+  "pain_point": "Podcast 腳本拆稿",
+  "commercial": "✅",
+  "language": "Python",
+  "dependencies": [
+    "anthropic",
+    "click",
+    "rich"
+  ],
+  "agent_compatible": true,
+  "mcp_ready": true,
+  "intent_triggers": [
+    "幫我寫一集 Podcast 的腳本",
+    "這個主題要怎麼做成 20 分鐘的 Podcast？",
+    "生成 Podcast 節目的訪談問題清單",
+    "把文章改寫成 Podcast 對話腳本",
+    "我要準備 Podcast 錄音，幫我整理腳本",
+    "生成有開場白和結尾語的 Podcast 稿",
+    "Podcast 雙人對話的腳本格式"
+  ],
+  "examples": [
+    {
+      "query": "為「數位遊牧生活」主題生成 20 分鐘 Podcast 獨白腳本",
+      "params": {
+        "topic": "數位遊牧生活",
+        "duration_minutes": 20,
+        "format": "monologue"
+      }
+    },
+    {
+      "query": "把 blog_post.txt 改成雙人對話的 Podcast 腳本格式",
+      "params": {
+        "input_file": "blog_post.txt",
+        "format": "dialogue",
+        "hosts": [
+          "主持人A",
+          "主持人B"
+        ]
+      }
+    },
+    {
+      "query": "生成訪談嘉賓的問題清單，主題「新創創業心得」，10個問題",
+      "params": {
+        "topic": "新創創業心得",
+        "format": "interview",
+        "question_count": 10
+      }
+    }
+  ],
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "duration_minutes": {
+        "type": "integer"
+      },
+      "format": {
+        "type": "string"
+      },
+      "hosts": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      },
+      "input_file": {
+        "type": "string"
+      },
+      "question_count": {
+        "type": "integer"
+      },
+      "topic": {
+        "type": "string"
+      }
+    },
+    "required": [
+      "format"
+    ]
+  },
+  "license": "MIT"
+}

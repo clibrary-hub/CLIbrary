@@ -1,0 +1,88 @@
+{
+  "name": "cohort-analyze",
+  "version": "0.1.0",
+  "description": "Cohort 分析器",
+  "category": "N",
+  "number": 278,
+  "pain_point": "Cohort 分析",
+  "commercial": "✅",
+  "language": "Python",
+  "dependencies": [
+    "pandas",
+    "matplotlib",
+    "click"
+  ],
+  "agent_compatible": true,
+  "mcp_ready": true,
+  "intent_triggers": [
+    "做 cohort 分析看客戶留存率",
+    "按月份群組分析用戶留存",
+    "我想知道不同時期加入的用戶留存情況",
+    "客戶流失分析，cohort 留存熱力圖",
+    "按用戶入會月份追蹤後續活躍率",
+    "訂閱制產品的 cohort 留存分析",
+    "分析各批次用戶的長期行為變化"
+  ],
+  "examples": [
+    {
+      "query": "對 user_orders.csv 做月份 cohort 留存分析",
+      "params": {
+        "action": "run",
+        "input_file": "user_orders.csv",
+        "user_col": "user_id",
+        "date_col": "order_date",
+        "cohort_period": "month"
+      }
+    },
+    {
+      "query": "分析 subscribers.csv 的用戶訂閱留存率並輸出熱力圖",
+      "params": {
+        "action": "run",
+        "input_file": "subscribers.csv",
+        "user_col": "subscriber_id",
+        "date_col": "subscription_date",
+        "output_plot": "cohort_heatmap.png"
+      }
+    },
+    {
+      "query": "按季度群組分析 customer_activity.csv 的活躍率",
+      "params": {
+        "action": "run",
+        "input_file": "customer_activity.csv",
+        "cohort_period": "quarter",
+        "output_file": "cohort_result.csv"
+      }
+    }
+  ],
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "action": {
+        "type": "string"
+      },
+      "cohort_period": {
+        "type": "string"
+      },
+      "date_col": {
+        "type": "string"
+      },
+      "input_file": {
+        "type": "string"
+      },
+      "output_file": {
+        "type": "string"
+      },
+      "output_plot": {
+        "type": "string"
+      },
+      "user_col": {
+        "type": "string"
+      }
+    },
+    "required": [
+      "action",
+      "input_file"
+    ]
+  },
+  "license": "MIT"
+}

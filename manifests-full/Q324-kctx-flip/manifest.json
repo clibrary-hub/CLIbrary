@@ -1,0 +1,62 @@
+{
+  "name": "kctx-flip",
+  "version": "0.1.0",
+  "description": "Context 切換器",
+  "category": "Q",
+  "number": 324,
+  "pain_point": "k8s context 切換",
+  "commercial": "✅",
+  "language": "Python",
+  "dependencies": [
+    "click",
+    "rich",
+    "yaml"
+  ],
+  "agent_compatible": true,
+  "mcp_ready": true,
+  "intent_triggers": [
+    "切換到 production 的 k8s context",
+    "我要在不同的 k8s cluster 間切換",
+    "列出所有可用的 kubeconfig context",
+    "切到 staging 環境的 kubernetes context",
+    "幫我快速切換 k8s 叢集",
+    "顯示目前使用的 k8s context 是哪一個",
+    "在多個 kubeconfig 檔案間切換"
+  ],
+  "examples": [
+    {
+      "query": "切換到 production-cluster 的 k8s context",
+      "params": {
+        "context_name": "production-cluster"
+      }
+    },
+    {
+      "query": "列出所有 kubeconfig context 並標示目前使用中的",
+      "params": {
+        "action": "list"
+      }
+    },
+    {
+      "query": "從 ~/.kube/staging.yaml 切換到 staging-cluster context",
+      "params": {
+        "kubeconfig": "~/.kube/staging.yaml",
+        "context_name": "staging-cluster"
+      }
+    }
+  ],
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "action": {
+        "type": "string"
+      },
+      "context_name": {
+        "type": "string"
+      },
+      "kubeconfig": {
+        "type": "string"
+      }
+    }
+  },
+  "license": "MIT"
+}

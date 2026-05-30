@@ -1,0 +1,4502 @@
+[
+  {
+    "folder": "A01-repo-map",
+    "status": "error",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 1,
+    "run_ms": 121,
+    "run_output": "[缺少依賴] Traceback (most recent call last):\n  File \"C:\\Users\\Jimmy\\Desktop\\cli-tools\\500CLI\\A01-repo-map\\repo-map.py\", line 16, in <module>\n    from git import Repo\nModuleNotFoundError: No module named 'git'"
+  },
+  {
+    "folder": "A02-ctx-pack",
+    "status": "error",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 1,
+    "run_ms": 134,
+    "run_output": "[缺少依賴] Traceback (most recent call last):\n  File \"C:\\Users\\Jimmy\\Desktop\\cli-tools\\500CLI\\A02-ctx-pack\\ctx-pack.py\", line 16, in <module>\n    import tiktoken\nModuleNotFoundError: No module named 'tiktoken'"
+  },
+  {
+    "folder": "A03-project-briefer",
+    "status": "error",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 1,
+    "run_ms": 117,
+    "run_output": "[缺少依賴] Traceback (most recent call last):\n  File \"C:\\Users\\Jimmy\\Desktop\\cli-tools\\500CLI\\A03-project-briefer\\project-briefer.py\", line 16, in <module>\n    from git import Repo\nModuleNotFoundError: No module named 'git'"
+  },
+  {
+    "folder": "A04-output-tracker",
+    "status": "error",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 1,
+    "run_ms": 134,
+    "run_output": "[缺少依賴] Traceback (most recent call last):\n  File \"C:\\Users\\Jimmy\\Desktop\\cli-tools\\500CLI\\A04-output-tracker\\output-tracker.py\", line 17, in <module>\n    from watchdog.observers import Observer\nModuleNotFoundError: No module named 'watchdog'"
+  },
+  {
+    "folder": "A05-diff-review",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 137,
+    "run_output": "Usage: diff-review.py [OPTIONS] COMMAND [ARGS]...\n\n  多版本差異比較器\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  diff  比對兩者差異\n  scan  掃描並分析目標內容"
+  },
+  {
+    "folder": "A06-snap-guard",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 85,
+    "run_output": "Usage: snap-guard.py [OPTIONS] COMMAND [ARGS]...\n\n  加工前快照保護器\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  scan  掃描並分析目標內容"
+  },
+  {
+    "folder": "A07-chunk-feeder",
+    "status": "error",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 1,
+    "run_ms": 142,
+    "run_output": "[缺少依賴] Traceback (most recent call last):\n  File \"C:\\Users\\Jimmy\\Desktop\\cli-tools\\500CLI\\A07-chunk-feeder\\chunk-feeder.py\", line 16, in <module>\n    import tiktoken\nModuleNotFoundError: No module named 'tiktoken'"
+  },
+  {
+    "folder": "A08-recent-changes",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 142,
+    "run_output": "Usage: recent-changes.py [OPTIONS] COMMAND [ARGS]...\n\n  最近變更偵測器\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  diff  比對兩者差異"
+  },
+  {
+    "folder": "A09-code-clip",
+    "status": "error",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 1,
+    "run_ms": 128,
+    "run_output": "[缺少依賴] Traceback (most recent call last):\n  File \"C:\\Users\\Jimmy\\Desktop\\cli-tools\\500CLI\\A09-code-clip\\code-clip.py\", line 16, in <module>\n    import black\nModuleNotFoundError: No module named 'black'"
+  },
+  {
+    "folder": "A10-merge-pilot",
+    "status": "error",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 1,
+    "run_ms": 142,
+    "run_output": "[缺少依賴] Traceback (most recent call last):\n  File \"C:\\Users\\Jimmy\\Desktop\\cli-tools\\500CLI\\A10-merge-pilot\\merge-pilot.py\", line 16, in <module>\n    from git import Repo\nModuleNotFoundError: No module named 'git'"
+  },
+  {
+    "folder": "A11-file-recall",
+    "status": "error",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 1,
+    "run_ms": 133,
+    "run_output": "[缺少依賴] Traceback (most recent call last):\n  File \"C:\\Users\\Jimmy\\Desktop\\cli-tools\\500CLI\\A11-file-recall\\file-recall.py\", line 16, in <module>\n    from whoosh import index\nModuleNotFoundError: No module named 'whoosh'"
+  },
+  {
+    "folder": "A12-dup-finder",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 137,
+    "run_output": "usage: dup-finder.py [-h] [--verbose] [target]\n\ndup-finder — 重複檔案偵測清理器\n\npositional arguments:\n  target         目標\n\noptions:\n  -h, --help     show this help message and exit\n  --verbose, -v  詳細輸出"
+  },
+  {
+    "folder": "A13-path-normalize",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 155,
+    "run_output": "Usage: path-normalize.py [OPTIONS] COMMAND [ARGS]...\n\n  路徑跨平台標準化\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  run  執行處理流程"
+  },
+  {
+    "folder": "A14-filename-clean",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 78,
+    "run_output": "Usage: filename-clean.py [OPTIONS] COMMAND [ARGS]...\n\n  檔名清洗器\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  run  執行處理流程"
+  },
+  {
+    "folder": "A15-bulk-rename",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 148,
+    "run_output": "Usage: bulk-rename.py [OPTIONS] COMMAND [ARGS]...\n\n  批次重新命名器\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  run  執行處理流程"
+  },
+  {
+    "folder": "A16-download-sorter",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 76,
+    "run_output": "Usage: download-sorter.py [OPTIONS] COMMAND [ARGS]...\n\n  下載分類器\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  run  執行處理流程"
+  },
+  {
+    "folder": "A17-dir-weigh",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 138,
+    "run_output": "Usage: dir-weigh.py [OPTIONS] COMMAND [ARGS]...\n\n  資料夾佔用分析器\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  scan  掃描並分析目標內容"
+  },
+  {
+    "folder": "A18-bigfile-locate",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 131,
+    "run_output": "Usage: bigfile-locate.py [OPTIONS] COMMAND [ARGS]...\n\n  大檔案定位器\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  scan  掃描並分析目標內容"
+  },
+  {
+    "folder": "A19-proj-bundle",
+    "status": "error",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 1,
+    "run_ms": 57,
+    "run_output": "[缺少依賴] Traceback (most recent call last):\n  File \"C:\\Users\\Jimmy\\Desktop\\cli-tools\\500CLI\\A19-proj-bundle\\proj-bundle.py\", line 13, in <module>\n    from git import Repo\nModuleNotFoundError: No module named 'git'"
+  },
+  {
+    "folder": "A20-agent-pack",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 143,
+    "run_output": "Usage: agent-pack.py [OPTIONS] COMMAND [ARGS]...\n\n  Agent 互傳打包格式\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  export  匯出結果到檔案"
+  },
+  {
+    "folder": "B21-chat-grep",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 145,
+    "run_output": "Usage: chat-grep.py [OPTIONS] COMMAND [ARGS]...\n\n  對話歷史搜尋器\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  search  搜尋並顯示結果\n  send    處理並發送訊息"
+  },
+  {
+    "folder": "B22-decision-log",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 136,
+    "run_output": "Usage: decision-log.py [OPTIONS] COMMAND [ARGS]...\n\n  決策記錄追蹤器\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  run  執行主要功能"
+  },
+  {
+    "folder": "B23-prompt-vault",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 140,
+    "run_output": "Usage: prompt-vault.py [OPTIONS] COMMAND [ARGS]...\n\n  Prompt 模板庫\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  run  執行主要功能"
+  },
+  {
+    "folder": "B24-chat-export",
+    "status": "error",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 1,
+    "run_ms": 74,
+    "run_output": "[缺少依賴] Traceback (most recent call last):\n  File \"C:\\Users\\Jimmy\\Desktop\\cli-tools\\500CLI\\B24-chat-export\\chat-export.py\", line 13, in <module>\n    import markdown\nModuleNotFoundError: No module named 'markdown'"
+  },
+  {
+    "folder": "B25-pin-msg",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 133,
+    "run_output": "Usage: pin-msg.py [OPTIONS] COMMAND [ARGS]...\n\n  關鍵訊息釘選器\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  run  執行主要功能"
+  },
+  {
+    "folder": "B26-ctx-bridge",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 132,
+    "run_output": "Usage: ctx-bridge.py [OPTIONS] COMMAND [ARGS]...\n\n  跨 Agent 上下文橋接\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  run  執行主要功能"
+  },
+  {
+    "folder": "B27-response-slim",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 1353,
+    "run_output": "Usage: response-slim.py [OPTIONS] COMMAND [ARGS]...\n\n  回覆瘦身摘要器\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  run  執行主要功能"
+  },
+  {
+    "folder": "B28-token-meter",
+    "status": "error",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 1,
+    "run_ms": 119,
+    "run_output": "[缺少依賴] Traceback (most recent call last):\n  File \"C:\\Users\\Jimmy\\Desktop\\cli-tools\\500CLI\\B28-token-meter\\token-meter.py\", line 17, in <module>\n    import tiktoken\nModuleNotFoundError: No module named 'tiktoken'"
+  },
+  {
+    "folder": "B29-sysprompt-git",
+    "status": "error",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 1,
+    "run_ms": 134,
+    "run_output": "[缺少依賴] Traceback (most recent call last):\n  File \"C:\\Users\\Jimmy\\Desktop\\cli-tools\\500CLI\\B29-sysprompt-git\\sysprompt-git.py\", line 16, in <module>\n    from git import Repo\nModuleNotFoundError: No module named 'git'"
+  },
+  {
+    "folder": "B30-code-extract",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 136,
+    "run_output": "Usage: code-extract.py [OPTIONS] COMMAND [ARGS]...\n\n  對話程式碼提取器\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  run  執行主要功能"
+  },
+  {
+    "folder": "B31-chat-transcode",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 133,
+    "run_output": "Usage: chat-transcode.py [OPTIONS] COMMAND [ARGS]...\n\n  對話格式轉換器\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  send  處理並發送訊息"
+  },
+  {
+    "folder": "B32-mem-store",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 137,
+    "run_output": "Usage: mem-store.py [OPTIONS] COMMAND [ARGS]...\n\n  本地長期記憶庫\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  run  執行主要功能"
+  },
+  {
+    "folder": "B33-mem-reconcile",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 763,
+    "run_output": "usage: mem-reconcile.py [-h] [--verbose] [target]\n\nmem-reconcile — 記憶整理整合器\n\npositional arguments:\n  target         目標\n\noptions:\n  -h, --help     show this help message and exit\n  --verbose, -v  詳細輸出"
+  },
+  {
+    "folder": "B34-chat-semsearch",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 131,
+    "run_output": "usage: chat-semsearch.py [-h] [--verbose] [target]\n\nchat-semsearch — 語意對話搜尋\n\npositional arguments:\n  target         目標\n\noptions:\n  -h, --help     show this help message and exit\n  --verbose, -v  詳細輸出"
+  },
+  {
+    "folder": "B35-chat-branch",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 136,
+    "run_output": "Usage: chat-branch.py [OPTIONS] COMMAND [ARGS]...\n\n  對話分支版控器\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  send  處理並發送訊息"
+  },
+  {
+    "folder": "B36-chat-to-card",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 765,
+    "run_output": "Usage: chat-to-card.py [OPTIONS] COMMAND [ARGS]...\n\n  對話卡片化\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  send  處理並發送訊息"
+  },
+  {
+    "folder": "B37-prompt-shield",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 141,
+    "run_output": "Usage: prompt-shield.py [OPTIONS] COMMAND [ARGS]...\n\n  Prompt 注入過濾器\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  run  執行主要功能"
+  },
+  {
+    "folder": "B38-pii-redact",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 146,
+    "run_output": "Usage: pii-redact.py [OPTIONS] COMMAND [ARGS]...\n\n  PII 遮罩器\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  run  執行主要功能"
+  },
+  {
+    "folder": "B39-multi-agent-render",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 188,
+    "run_output": "Usage: multi-agent-render.py [OPTIONS] COMMAND [ARGS]...\n\n  多角色對話排版\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  run  執行主要功能"
+  },
+  {
+    "folder": "B40-chat-sync",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 145,
+    "run_output": "Usage: chat-sync.py [OPTIONS] COMMAND [ARGS]...\n\n  對話跨裝置同步\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  export  匯出結果到檔案\n  send    處理並發送訊息"
+  },
+  {
+    "folder": "C41-lint-guard",
+    "status": "ok",
+    "syntax_ok": true,
+    "has_todo": false,
+    "run_exit": 0,
+    "run_ms": 146,
+    "run_output": "Usage: lint-guard.py [OPTIONS] COMMAND [ARGS]...\n\n  lint-guard — 自動 lint 修復工具\n\n  偵測 Python 程式碼問題，支援 ruff 或純 AST 分析。\n\nOptions:\n  --help  Show this message and exit.\n\nCommands:\n  check  檢查單一 FILE 的 lint 問題。\n  scan   掃描 PATH 目錄或檔案的 Python 程式碼。"
+  },
+  {
+    "folder": "C42-style-snap",
+    "status": "ok",
+    "syntax_ok": true,
+    "has_todo": false,
+    "run_exit": 0,
+    "run_ms": 144,
+    "run_output": "Usage: style-snap.py [OPTIONS] COMMAND [ARGS]...\n\n  style-snap — 程式碼風格擷取器\n\n  分析 Python 專案的程式碼風格並生成報告。\n\nOptions:\n  --help  Show this message and exit.\n\nCommands:\n  analyze  分析 PATH 的 Python 程式碼風格。\n  show     讀取並顯示已儲存的 .style-snap.json。"
+  },
+  {
+    "folder": "C43-test-gap",
+    "status": "ok",
+    "syntax_ok": true,
+    "has_todo": false,
+    "run_exit": 0,
+    "run_ms": 139,
+    "run_output": "Usage: test-gap.py [OPTIONS] COMMAND [ARGS]...\n\n  test-gap — 測試覆蓋率缺口分析器\n\n  找出哪些函式/類別缺少對應的測試。\n\nOptions:\n  --help  Show this message and exit.\n\nCommands:\n  report  顯示上次掃描的報告（從快取讀取）。\n  scan    掃描 PATH 找出未測試的函式與類別。"
+  },
+  {
+    "folder": "C44-dep-audit",
+    "status": "ok",
+    "syntax_ok": true,
+    "has_todo": false,
+    "run_exit": 0,
+    "run_ms": 147,
+    "run_output": "Usage: dep-audit.py [OPTIONS] COMMAND [ARGS]...\n\n  dep-audit — 依賴審計清理器\n\n  比對 requirements.txt 和實際 import 使用情況。\n\nOptions:\n  --help  Show this message and exit.\n\nCommands:\n  check  檢查 PATH 的依賴使用情況。\n  clean  移除 PATH 的 requirements.txt 中未使用的依賴。"
+  },
+  {
+    "folder": "C45-sec-scan",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": false,
+    "run_exit": 0,
+    "run_ms": 148,
+    "run_output": "Usage: sec-scan.py [OPTIONS] COMMAND [ARGS]...\n\n  sec-scan — Python 安全掃描器\n\n  用 AST 分析偵測常見安全漏洞，不需要外部工具。\n\nOptions:\n  --help  Show this message and exit.\n\nCommands:\n  report  顯示上次掃描的結果（從快取讀取）。\n  scan    掃描 PATH 找出安全問題。"
+  },
+  {
+    "folder": "C46-api-compat",
+    "status": "ok",
+    "syntax_ok": true,
+    "has_todo": false,
+    "run_exit": 0,
+    "run_ms": 148,
+    "run_output": "Usage: api-compat.py [OPTIONS] COMMAND [ARGS]...\n\n  api-compat — API 相容性檢查工具。\n\n  偵測兩個 Python 版本之間的 BREAKING CHANGES。\n\nOptions:\n  --help  Show this message and exit.\n\nCommands:\n  check    對比當前工作區與指定 git commit 的 API 差異。\n  compare  比較兩個 Python 檔案的公開 API。"
+  },
+  {
+    "folder": "C47-refactor-verify",
+    "status": "ok",
+    "syntax_ok": true,
+    "has_todo": false,
+    "run_exit": 0,
+    "run_ms": 146,
+    "run_output": "Usage: refactor-verify.py [OPTIONS] COMMAND [ARGS]...\n\n  refactor-verify — 重構等價驗證器。\n\n  在重構前後執行測試，驗證重構是否保持等價行為。\n\nOptions:\n  --help  Show this message and exit.\n\nCommands:\n  after   執行測試並與 before snapshot 對比。\n  before  執行測試並儲存 before snapshot。\n  run     完整流程：執行測試並與已存在的 snapshot 比較。"
+  },
+  {
+    "folder": "C48-type-fill",
+    "status": "ok",
+    "syntax_ok": true,
+    "has_todo": false,
+    "run_exit": 0,
+    "run_ms": 142,
+    "run_output": "Usage: type-fill.py [OPTIONS] COMMAND [ARGS]...\n\n  type-fill — 型別補全器。\n\n  掃描 Python 檔案，找出缺少 type annotation 的函式參數和回傳值。\n\nOptions:\n  --help  Show this message and exit.\n\nCommands:\n  report  針對單一檔案輸出詳細型別缺失報告。\n  scan    掃描目錄或檔案，列出缺少型別標注的函式。\n  stats   顯示型別標注覆蓋率統計。"
+  },
+  {
+    "folder": "C49-code-dedupe",
+    "status": "ok",
+    "syntax_ok": true,
+    "has_todo": false,
+    "run_exit": 0,
+    "run_ms": 155,
+    "run_output": "Usage: code-dedupe.py [OPTIONS] COMMAND [ARGS]...\n\n  code-dedupe — 重複碼清理器。\n\n  偵測相似或重複的程式碼區塊，使用 token-based 相似度比較。\n\nOptions:\n  --help  Show this message and exit.\n\nCommands:\n  report  產生重複碼報告（同 scan，保留向後相容的指令名稱）。\n  scan    掃描目錄或檔案，找出相似的函式對。"
+  },
+  {
+    "folder": "C50-doc-fill",
+    "status": "ok",
+    "syntax_ok": true,
+    "has_todo": false,
+    "run_exit": 0,
+    "run_ms": 136,
+    "run_output": "Usage: doc-fill.py [OPTIONS] COMMAND [ARGS]...\n\n  doc-fill — 文件註解填充器。\n\n  掃描 Python 檔案，找出缺少 docstring 的函式和類別，並可自動補全。\n\nOptions:\n  --help  Show this message and exit.\n\nCommands:\n  generate  自動為缺少 docstring 的定義補上基本文件。\n  scan      掃描並列出缺少 docstring 的定義。\n  stats     顯示 docstring 覆蓋率統計。"
+  },
+  {
+    "folder": "C51-dead-code",
+    "status": "ok",
+    "syntax_ok": true,
+    "has_todo": false,
+    "run_exit": 0,
+    "run_ms": 136,
+    "run_output": "Usage: dead-code.py [OPTIONS] COMMAND [ARGS]...\n\n  dead-code — 死碼偵測器\n\n  掃描 Python 專案，找出定義了但從未被呼叫的函式/類別/變數。\n\nOptions:\n  --help  Show this message and exit.\n\nCommands:\n  report  產生死碼報告（同 scan，可單獨呼叫）。\n  scan    掃描 PATH 找出死碼（預設目前目錄）。"
+  },
+  {
+    "folder": "C52-func-split",
+    "status": "ok",
+    "syntax_ok": true,
+    "has_todo": false,
+    "run_exit": 0,
+    "run_ms": 135,
+    "run_output": "Usage: func-split.py [OPTIONS] COMMAND [ARGS]...\n\n  func-split — 長函式拆分建議器\n\n  找出超過 N 行的函式並建議拆分位置。\n\nOptions:\n  --help  Show this message and exit.\n\nCommands:\n  analyze  深度分析 FILE 中的特定函式，顯示內部段落與拆分建議。\n  scan     掃描 PATH 找出過長函式（預設目前目錄）。"
+  },
+  {
+    "folder": "C53-name-lint",
+    "status": "ok",
+    "syntax_ok": true,
+    "has_todo": false,
+    "run_exit": 0,
+    "run_ms": 138,
+    "run_output": "Usage: name-lint.py [OPTIONS] COMMAND [ARGS]...\n\n  name-lint — 命名規約檢查器\n\n  檢查 Python 程式碼命名是否符合 PEP 8 等規約。\n\nOptions:\n  --help  Show this message and exit.\n\nCommands:\n  check   檢查 PATH 的命名規約（預設目前目錄）。\n  report  產生命名規約報告（同 check，可單獨呼叫）。"
+  },
+  {
+    "folder": "C54-impact-trace",
+    "status": "ok",
+    "syntax_ok": true,
+    "has_todo": false,
+    "run_exit": 0,
+    "run_ms": 139,
+    "run_output": "Usage: impact-trace.py [OPTIONS] COMMAND [ARGS]...\n\n  impact-trace — 改動影響追蹤器\n\n  分析改動一個函式的 blast radius。\n\nOptions:\n  --help  Show this message and exit.\n\nCommands:\n  graph  輸出整個專案的呼叫圖。\n  trace  追蹤 FUNCTION_NAME 的影響範圍（blast radius）。"
+  },
+  {
+    "folder": "C55-commit-fmt",
+    "status": "ok",
+    "syntax_ok": true,
+    "has_todo": false,
+    "run_exit": 0,
+    "run_ms": 147,
+    "run_output": "Usage: commit-fmt.py [OPTIONS] COMMAND [ARGS]...\n\n  commit-fmt — Commit 訊息格式器\n\n  驗證/格式化/建立符合 Conventional Commits 規範的 git commit message。\n\nOptions:\n  --help  Show this message and exit.\n\nCommands:\n  check         驗證 MESSAGE_OR_FILE 是否符合 Conventional Commits 格式。\n  create        互動式建立 Conventional Commits 格式的 commit message。\n  format        嘗試自動格式化 MESSAGE 為 Conventional Commits 格式。\n  install-hook  安裝 commit-msg git hook 到指定 repo。"
+  },
+  {
+    "folder": "C56-pr-brief",
+    "status": "ok",
+    "syntax_ok": true,
+    "has_todo": false,
+    "run_exit": 0,
+    "run_ms": 215,
+    "run_output": "Usage: pr-brief.py [OPTIONS] COMMAND [ARGS]...\n\n  PR 自動摘要器 — 根據 git diff 產生 PR 描述\n\nOptions:\n  --help  Show this message and exit.\n\nCommands:\n  diff      顯示與 base branch 的 diff 統計\n  generate  根據 git diff 自動產生 PR 描述"
+  },
+  {
+    "folder": "C57-test-locate",
+    "status": "ok",
+    "syntax_ok": true,
+    "has_todo": false,
+    "run_exit": 0,
+    "run_ms": 150,
+    "run_output": "Usage: test-locate.py [OPTIONS] COMMAND [ARGS]...\n\n  測試對應器 — 找到 source 與 test 的對應關係\n\nOptions:\n  --help  Show this message and exit.\n\nCommands:\n  find     給定 source 檔案或函式名，找對應的 test 檔案/函式\n  map      顯示所有 source <-> test 對應關係\n  orphans  找出沒有對應 test 的 source 檔案"
+  },
+  {
+    "folder": "C58-changelog-bot",
+    "status": "ok",
+    "syntax_ok": true,
+    "has_todo": false,
+    "run_exit": 0,
+    "run_ms": 187,
+    "run_output": "Usage: changelog-bot.py [OPTIONS] COMMAND [ARGS]...\n\n  Changelog 產生器 — 從 git log 自動生成 CHANGELOG.md\n\nOptions:\n  --help  Show this message and exit.\n\nCommands:\n  generate  根據 git log 產生 CHANGELOG.md\n  preview   預覽 changelog，不存檔\n  update    只更新最新版本（Unreleased）部分"
+  },
+  {
+    "folder": "C59-const-extract",
+    "status": "ok",
+    "syntax_ok": true,
+    "has_todo": false,
+    "run_exit": 0,
+    "run_ms": 157,
+    "run_output": "Usage: const-extract.py [OPTIONS] COMMAND [ARGS]...\n\n  常數抽取器 — 掃描 Python 程式碼中重複的 literal，建議抽取為常數\n\nOptions:\n  --help  Show this message and exit.\n\nCommands:\n  extract  互動式抽取單一檔案中的重複 literal 為常數（加到檔案頂部）\n  report   輸出重複常數報告（table 或 JSON）\n  scan     掃描 Python 程式碼，找出重複使用的 literal"
+  },
+  {
+    "folder": "C60-todo-board",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 161,
+    "run_output": "Usage: todo-board.py [OPTIONS] COMMAND [ARGS]...\n\n  TODO 集中追蹤器 — 掃描並集中顯示專案中的 TODO/FIXME/HACK 等標記\n\nOptions:\n  --help  Show this message and exit.\n\nCommands:\n  list   列出 TODO 項目，支援按 file/tag/author 篩選\n  scan   掃描專案中所有 TODO/FIXME/HACK 等標記\n  stats  顯示各類 tag 的數量統計"
+  },
+  {
+    "folder": "D61-agent-macro",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 186,
+    "run_output": "Usage: agent-macro.py [OPTIONS] COMMAND [ARGS]...\n\n  Agent 巨集錄製器\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  run  執行主要功能"
+  },
+  {
+    "folder": "D62-agent-notify",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 136,
+    "run_output": "Usage: agent-notify.py [OPTIONS] COMMAND [ARGS]...\n\n  任務通知器\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  send  處理並發送訊息"
+  },
+  {
+    "folder": "D63-agent-cron",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 131,
+    "run_output": "Usage: agent-cron.py [OPTIONS] COMMAND [ARGS]...\n\n  Agent 排程器\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  run  執行主要功能"
+  },
+  {
+    "folder": "D64-pre-check",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 133,
+    "run_output": "Usage: pre-check.py [OPTIONS] COMMAND [ARGS]...\n\n  環境前置檢查器\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  scan  掃描並分析目標內容"
+  },
+  {
+    "folder": "D65-checkpoint",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 147,
+    "run_output": "Usage: checkpoint.py [OPTIONS] COMMAND [ARGS]...\n\n  斷點恢復器\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  scan  掃描並分析目標內容"
+  },
+  {
+    "folder": "D66-flow-tracker",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 133,
+    "run_output": "Usage: flow-tracker.py [OPTIONS] COMMAND [ARGS]...\n\n  流程進度追蹤器\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  diff  比對兩者差異"
+  },
+  {
+    "folder": "D67-ai-gate",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 750,
+    "run_output": "Usage: ai-gate.py [OPTIONS] COMMAND [ARGS]...\n\n  AI 品質關卡\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  run  執行主要功能"
+  },
+  {
+    "folder": "D68-agent-config",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 150,
+    "run_output": "Usage: agent-config.py [OPTIONS] COMMAND [ARGS]...\n\n  設定遷移器\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  run  執行主要功能"
+  },
+  {
+    "folder": "D69-agent-pool",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 134,
+    "run_output": "Usage: agent-pool.py [OPTIONS] COMMAND [ARGS]...\n\n  Agent 任務池\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  run  執行主要功能"
+  },
+  {
+    "folder": "D70-sandbox-run",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 140,
+    "run_output": "Usage: sandbox-run.py [OPTIONS] COMMAND [ARGS]...\n\n  命令沙箱執行\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  run  執行處理流程"
+  },
+  {
+    "folder": "D71-task-replay",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 144,
+    "run_output": "Usage: task-replay.py [OPTIONS] COMMAND [ARGS]...\n\n  任務重放器\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  generate  生成內容\n  send      處理並發送訊息"
+  },
+  {
+    "folder": "D72-human-gate",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 147,
+    "run_output": "Usage: human-gate.py [OPTIONS] COMMAND [ARGS]...\n\n  人類審批關卡\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  run  執行主要功能"
+  },
+  {
+    "folder": "D73-agent-queue",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 143,
+    "run_output": "Usage: agent-queue.py [OPTIONS] COMMAND [ARGS]...\n\n  任務佇列服務\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  run  執行主要功能"
+  },
+  {
+    "folder": "D74-retry-policy",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 137,
+    "run_output": "Usage: retry-policy.py [OPTIONS] COMMAND [ARGS]...\n\n  重試策略執行器\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  run  執行主要功能"
+  },
+  {
+    "folder": "D75-timeout-shield",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 139,
+    "run_output": "Usage: timeout-shield.py [OPTIONS] COMMAND [ARGS]...\n\n  超時保護器\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  run  執行主要功能"
+  },
+  {
+    "folder": "D76-rate-shaper",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 138,
+    "run_output": "Usage: rate-shaper.py [OPTIONS] COMMAND [ARGS]...\n\n  速率整形器\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  run  執行主要功能"
+  },
+  {
+    "folder": "D77-agent-record",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 142,
+    "run_output": "Usage: agent-record.py [OPTIONS] COMMAND [ARGS]...\n\n  操作錄製器\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  run  執行主要功能"
+  },
+  {
+    "folder": "D78-script-hub",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 148,
+    "run_output": "Usage: script-hub.py [OPTIONS] COMMAND [ARGS]...\n\n  腳本中央倉\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  run  執行主要功能"
+  },
+  {
+    "folder": "D79-dry-run",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 135,
+    "run_output": "Usage: dry-run.py [OPTIONS] COMMAND [ARGS]...\n\n  預演模式包裝器\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  run  執行處理流程"
+  },
+  {
+    "folder": "D80-flow-dash",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 139,
+    "run_output": "Usage: flow-dash.py [OPTIONS] COMMAND [ARGS]...\n\n  流程儀表板\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  run  執行主要功能"
+  },
+  {
+    "folder": "E100-data-profile",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 881,
+    "run_output": "Usage: data-profile.py [OPTIONS] COMMAND [ARGS]...\n\n  資料剖析器\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  run  執行主要功能"
+  },
+  {
+    "folder": "E81-web-clean",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 190,
+    "run_output": "usage: web-clean.py [-h] [--verbose] [target]\n\nweb-clean — 網頁清洗器\n\npositional arguments:\n  target         目標\n\noptions:\n  -h, --help     show this help message and exit\n  --verbose, -v  詳細輸出"
+  },
+  {
+    "folder": "E82-doc-to-md",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 73,
+    "run_output": "Usage: doc-to-md.py [OPTIONS] COMMAND [ARGS]...\n\n  文件轉 Markdown\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  run  執行處理流程"
+  },
+  {
+    "folder": "E83-schema-brief",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 134,
+    "run_output": "Usage: schema-brief.py [OPTIONS] COMMAND [ARGS]...\n\n  Schema 摘要器\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  run  執行主要功能"
+  },
+  {
+    "folder": "E84-api-slim",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 134,
+    "run_output": "Usage: api-slim.py [OPTIONS] COMMAND [ARGS]...\n\n  API 回應瘦身器\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  run  執行主要功能"
+  },
+  {
+    "folder": "E85-log-focus",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 132,
+    "run_output": "Usage: log-focus.py [OPTIONS] COMMAND [ARGS]...\n\n  日誌焦點提取器\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  run  執行主要功能"
+  },
+  {
+    "folder": "E86-env-sync",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 136,
+    "run_output": "Usage: env-sync.py [OPTIONS] COMMAND [ARGS]...\n\n  環境變數同步器\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  export  匯出結果到檔案"
+  },
+  {
+    "folder": "E87-i18n-sync",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 142,
+    "run_output": "Usage: i18n-sync.py [OPTIONS] COMMAND [ARGS]...\n\n  翻譯同步器\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  export  匯出結果到檔案"
+  },
+  {
+    "folder": "E88-git-fetch-auth",
+    "status": "error",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 1,
+    "run_ms": 159,
+    "run_output": "[缺少依賴] Traceback (most recent call last):\n  File \"C:\\Users\\Jimmy\\Desktop\\cli-tools\\500CLI\\E88-git-fetch-auth\\git-fetch-auth.py\", line 16, in <module>\n    from git import Repo\nModuleNotFoundError: No module named 'git'"
+  },
+  {
+    "folder": "E89-ocr-feed",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 94,
+    "run_output": "Usage: ocr-feed.py [OPTIONS] COMMAND [ARGS]...\n\n  截圖 OCR 餵入器\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  run  執行主要功能"
+  },
+  {
+    "folder": "E90-format-fix",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 141,
+    "run_output": "Usage: format-fix.py [OPTIONS] COMMAND [ARGS]...\n\n  結構資料修復\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  run  執行處理流程"
+  },
+  {
+    "folder": "E91-csv-infer",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 473,
+    "run_output": "Usage: csv-infer.py [OPTIONS] COMMAND [ARGS]...\n\n  CSV 結構推斷器\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  run  執行主要功能"
+  },
+  {
+    "folder": "E92-json-path",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 139,
+    "run_output": "Usage: json-path.py [OPTIONS] COMMAND [ARGS]...\n\n  JSON 路徑搜尋器\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  run  執行主要功能"
+  },
+  {
+    "folder": "E93-data-transcode",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 509,
+    "run_output": "Usage: data-transcode.py [OPTIONS] COMMAND [ARGS]...\n\n  多格式轉換器\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  run  執行主要功能"
+  },
+  {
+    "folder": "E94-schema-diff",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 141,
+    "run_output": "Usage: schema-diff.py [OPTIONS] COMMAND [ARGS]...\n\n  Schema 差異器\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  diff  比對兩者差異"
+  },
+  {
+    "folder": "E95-stream-pipe",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 137,
+    "run_output": "Usage: stream-pipe.py [OPTIONS] COMMAND [ARGS]...\n\n  串流管線器\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  run  執行主要功能"
+  },
+  {
+    "folder": "E96-data-join",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 499,
+    "run_output": "Usage: data-join.py [OPTIONS] COMMAND [ARGS]...\n\n  多源 join 器\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  run  執行主要功能"
+  },
+  {
+    "folder": "E97-data-scrub",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 472,
+    "run_output": "Usage: data-scrub.py [OPTIONS] COMMAND [ARGS]...\n\n  髒資料清洗器\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  run  執行主要功能"
+  },
+  {
+    "folder": "E98-dq-score",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 460,
+    "run_output": "Usage: dq-score.py [OPTIONS] COMMAND [ARGS]...\n\n  資料品質評分器\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  run  執行主要功能"
+  },
+  {
+    "folder": "E99-smart-sample",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 464,
+    "run_output": "Usage: smart-sample.py [OPTIONS] COMMAND [ARGS]...\n\n  智慧抽樣器\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  run  執行主要功能"
+  },
+  {
+    "folder": "F101-agent-bus",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 152,
+    "run_output": "Usage: agent-bus.py [OPTIONS] COMMAND [ARGS]...\n\n  Agent 訊息匯流排\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  run  執行主要功能"
+  },
+  {
+    "folder": "F102-agent-iface",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 149,
+    "run_output": "Usage: agent-iface.py [OPTIONS] COMMAND [ARGS]...\n\n  Agent 介面適配器\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  run  執行主要功能"
+  },
+  {
+    "folder": "F103-agent-router",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 141,
+    "run_output": "Usage: agent-router.py [OPTIONS] COMMAND [ARGS]...\n\n  任務分派路由器\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  run  執行主要功能"
+  },
+  {
+    "folder": "F104-agent-reducer",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 146,
+    "run_output": "Usage: agent-reducer.py [OPTIONS] COMMAND [ARGS]...\n\n  結果聚合器\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  run  執行主要功能"
+  },
+  {
+    "folder": "F105-agent-acl",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 133,
+    "run_output": "Usage: agent-acl.py [OPTIONS] COMMAND [ARGS]...\n\n  Agent 權限控管\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  run  執行主要功能"
+  },
+  {
+    "folder": "F106-agent-vote",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 136,
+    "run_output": "Usage: agent-vote.py [OPTIONS] COMMAND [ARGS]...\n\n  Agent 投票決策器\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  run  執行主要功能"
+  },
+  {
+    "folder": "F107-agent-role",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 130,
+    "run_output": "Usage: agent-role.py [OPTIONS] COMMAND [ARGS]...\n\n  角色定義器\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  run  執行主要功能"
+  },
+  {
+    "folder": "F108-tool-registry",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 138,
+    "run_output": "Usage: tool-registry.py [OPTIONS] COMMAND [ARGS]...\n\n  工具註冊中心\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  run  執行主要功能"
+  },
+  {
+    "folder": "F109-agent-card",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 148,
+    "run_output": "Usage: agent-card.py [OPTIONS] COMMAND [ARGS]...\n\n  Agent 能力名片\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  run  執行主要功能"
+  },
+  {
+    "folder": "F110-agent-trace",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 147,
+    "run_output": "Usage: agent-trace.py [OPTIONS] COMMAND [ARGS]...\n\n  跨 Agent 追蹤器\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  run  執行主要功能"
+  },
+  {
+    "folder": "F111-agent-deadlock",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 140,
+    "run_output": "Usage: agent-deadlock.py [OPTIONS] COMMAND [ARGS]...\n\n  死鎖偵測器\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  run  執行主要功能"
+  },
+  {
+    "folder": "F112-agent-health",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 229,
+    "run_output": "Usage: agent-health.py [OPTIONS] COMMAND [ARGS]...\n\n  Agent 健康檢測\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  run  執行主要功能"
+  },
+  {
+    "folder": "F113-tool-call-norm",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 135,
+    "run_output": "Usage: tool-call-norm.py [OPTIONS] COMMAND [ARGS]...\n\n  Tool Call 標準化\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  send  處理並發送訊息"
+  },
+  {
+    "folder": "F114-mcp-bridge",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 225,
+    "run_output": "Usage: mcp-bridge.py [OPTIONS] COMMAND [ARGS]...\n\n  MCP 協議橋接\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  run  執行主要功能"
+  },
+  {
+    "folder": "F115-agent-hook",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 132,
+    "run_output": "Usage: agent-hook.py [OPTIONS] COMMAND [ARGS]...\n\n  Webhook 集中器\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  run  執行主要功能"
+  },
+  {
+    "folder": "F116-agent-mediator",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 811,
+    "run_output": "Usage: agent-mediator.py [OPTIONS] COMMAND [ARGS]...\n\n  對話協調者\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  run  執行主要功能"
+  },
+  {
+    "folder": "F117-result-cache",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 144,
+    "run_output": "Usage: result-cache.py [OPTIONS] COMMAND [ARGS]...\n\n  結果共享快取\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  run  執行主要功能"
+  },
+  {
+    "folder": "F118-agent-bench",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 749,
+    "run_output": "Usage: agent-bench.py [OPTIONS] COMMAND [ARGS]...\n\n  Agent 評測器\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  run  執行主要功能"
+  },
+  {
+    "folder": "F119-agent-billing",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 139,
+    "run_output": "Usage: agent-billing.py [OPTIONS] COMMAND [ARGS]...\n\n  多 Agent 計費分攤\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  run  執行主要功能"
+  },
+  {
+    "folder": "F120-agent-failover",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 219,
+    "run_output": "Usage: agent-failover.py [OPTIONS] COMMAND [ARGS]...\n\n  Agent 故障切換\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  run  執行主要功能"
+  },
+  {
+    "folder": "G121-todo-merge",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 135,
+    "run_output": "Usage: todo-merge.py [OPTIONS] COMMAND [ARGS]...\n\n  待辦集中器\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  diff      比對兩者差異\n  generate  生成內容\n  run       執行處理流程"
+  },
+  {
+    "folder": "G122-pomo",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 133,
+    "run_output": "Usage: pomo.py [OPTIONS] COMMAND [ARGS]...\n\n  終端番茄鐘\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  run  執行主要功能"
+  },
+  {
+    "folder": "G123-focus-log",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 135,
+    "run_output": "Usage: focus-log.py [OPTIONS] COMMAND [ARGS]...\n\n  專注時間記錄器\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  run  執行主要功能"
+  },
+  {
+    "folder": "G124-daily-recap",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 782,
+    "run_output": "usage: daily-recap.py [-h] [--verbose] [target]\n\ndaily-recap — 每日自動回顧器\n\npositional arguments:\n  target         目標\n\noptions:\n  -h, --help     show this help message and exit\n  --verbose, -v  詳細輸出"
+  },
+  {
+    "folder": "G125-morning-boot",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 142,
+    "run_output": "Usage: morning-boot.py [OPTIONS] COMMAND [ARGS]...\n\n  晨啟動工作流\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  run  執行主要功能"
+  },
+  {
+    "folder": "G126-night-wind",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 141,
+    "run_output": "Usage: night-wind.py [OPTIONS] COMMAND [ARGS]...\n\n  睡前清場器\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  run  執行主要功能"
+  },
+  {
+    "folder": "G127-worklog",
+    "status": "error",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 1,
+    "run_ms": 119,
+    "run_output": "[缺少依賴] Traceback (most recent call last):\n  File \"C:\\Users\\Jimmy\\Desktop\\cli-tools\\500CLI\\G127-worklog\\worklog.py\", line 17, in <module>\n    from git import Repo\nModuleNotFoundError: No module named 'git'"
+  },
+  {
+    "folder": "G128-meeting-prep",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 778,
+    "run_output": "Usage: meeting-prep.py [OPTIONS] COMMAND [ARGS]...\n\n  會議準備器\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  run  執行主要功能"
+  },
+  {
+    "folder": "G129-meeting-notes",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 750,
+    "run_output": "usage: meeting-notes.py [-h] [--verbose] [target]\n\nmeeting-notes — 會議筆記器\n\npositional arguments:\n  target         目標\n\noptions:\n  -h, --help     show this help message and exit\n  --verbose, -v  詳細輸出"
+  },
+  {
+    "folder": "G130-weekly-report",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 744,
+    "run_output": "Usage: weekly-report.py [OPTIONS] COMMAND [ARGS]...\n\n  週報產生器\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  run  執行主要功能"
+  },
+  {
+    "folder": "G131-okr-track",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 139,
+    "run_output": "Usage: okr-track.py [OPTIONS] COMMAND [ARGS]...\n\n  OKR 追蹤器\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  diff  比對兩者差異"
+  },
+  {
+    "folder": "G132-task-breakdown",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 739,
+    "run_output": "Usage: task-breakdown.py [OPTIONS] COMMAND [ARGS]...\n\n  任務拆解器\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  generate  生成內容\n  run       執行處理流程\n  send      處理並發送訊息"
+  },
+  {
+    "folder": "G133-time-track",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 160,
+    "run_output": "Usage: time-track.py [OPTIONS] COMMAND [ARGS]...\n\n  自動時間追蹤\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  diff  比對兩者差異"
+  },
+  {
+    "folder": "G134-version-cleaner",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 134,
+    "run_output": "Usage: version-cleaner.py [OPTIONS] COMMAND [ARGS]...\n\n  版本清理器\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  run  執行處理流程"
+  },
+  {
+    "folder": "G135-archive-bot",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 76,
+    "run_output": "Usage: archive-bot.py [OPTIONS] COMMAND [ARGS]...\n\n  自動封存器\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  run  執行主要功能"
+  },
+  {
+    "folder": "G136-decision-search",
+    "status": "error",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 1,
+    "run_ms": 124,
+    "run_output": "[缺少依賴] Traceback (most recent call last):\n  File \"C:\\Users\\Jimmy\\Desktop\\cli-tools\\500CLI\\G136-decision-search\\decision-search.py\", line 17, in <module>\n    from whoosh import index\nModuleNotFoundError: No module named 'whoosh'"
+  },
+  {
+    "folder": "G137-audio-minutes",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 758,
+    "run_output": "Usage: audio-minutes.py [OPTIONS] COMMAND [ARGS]...\n\n  會議轉摘要\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  run  執行主要功能"
+  },
+  {
+    "folder": "G138-inbox-zero",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 732,
+    "run_output": "Usage: inbox-zero.py [OPTIONS] COMMAND [ARGS]...\n\n  收件匣自動清空器\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  run  執行主要功能"
+  },
+  {
+    "folder": "G139-omni-search",
+    "status": "error",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 1,
+    "run_ms": 135,
+    "run_output": "[缺少依賴] Traceback (most recent call last):\n  File \"C:\\Users\\Jimmy\\Desktop\\cli-tools\\500CLI\\G139-omni-search\\omni-search.py\", line 16, in <module>\n    from whoosh import index\nModuleNotFoundError: No module named 'whoosh'"
+  },
+  {
+    "folder": "G140-quick-idea",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 141,
+    "run_output": "Usage: quick-idea.py [OPTIONS] COMMAND [ARGS]...\n\n  想法即時投擲器\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  run  執行主要功能"
+  },
+  {
+    "folder": "H141-cal-merge",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 74,
+    "run_output": "Usage: cal-merge.py [OPTIONS] COMMAND [ARGS]...\n\n  日曆合併器\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  diff  比對兩者差異"
+  },
+  {
+    "folder": "H142-slot-find",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 138,
+    "run_output": "Usage: slot-find.py [OPTIONS] COMMAND [ARGS]...\n\n  共同時段搜尋\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  scan    掃描並分析目標內容\n  search  搜尋並顯示結果"
+  },
+  {
+    "folder": "H143-tz-convert",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 141,
+    "run_output": "Usage: tz-convert.py [OPTIONS] COMMAND [ARGS]...\n\n  時區換算器\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  run  執行處理流程"
+  },
+  {
+    "folder": "H144-book-flow",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 139,
+    "run_output": "Usage: book-flow.py [OPTIONS] COMMAND [ARGS]...\n\n  預約流程器\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  run  執行主要功能"
+  },
+  {
+    "folder": "H145-cal-conflict",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 135,
+    "run_output": "Usage: cal-conflict.py [OPTIONS] COMMAND [ARGS]...\n\n  衝突偵測器\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  diff  比對兩者差異"
+  },
+  {
+    "folder": "H146-recur-helper",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 138,
+    "run_output": "Usage: recur-helper.py [OPTIONS] COMMAND [ARGS]...\n\n  重複規則助手\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  run  執行主要功能"
+  },
+  {
+    "folder": "H147-trip-plan",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 163,
+    "run_output": "Usage: trip-plan.py [OPTIONS] COMMAND [ARGS]...\n\n  行程排程器\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  generate  生成內容"
+  },
+  {
+    "folder": "H148-reminder-rank",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 138,
+    "run_output": "Usage: reminder-rank.py [OPTIONS] COMMAND [ARGS]...\n\n  提醒優先排序\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  run  執行主要功能"
+  },
+  {
+    "folder": "H149-overwork-guard",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 138,
+    "run_output": "Usage: overwork-guard.py [OPTIONS] COMMAND [ARGS]...\n\n  過勞守門員\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  scan  掃描並分析目標內容"
+  },
+  {
+    "folder": "H150-deadline-board",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 137,
+    "run_output": "Usage: deadline-board.py [OPTIONS] COMMAND [ARGS]...\n\n  截止日看板\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  run  執行主要功能"
+  },
+  {
+    "folder": "H151-countdown",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 138,
+    "run_output": "Usage: countdown.py [OPTIONS] COMMAND [ARGS]...\n\n  倒數提醒器\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  run   執行處理流程\n  scan  掃描並分析目標內容"
+  },
+  {
+    "folder": "H152-deep-work-plan",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 137,
+    "run_output": "Usage: deep-work-plan.py [OPTIONS] COMMAND [ARGS]...\n\n  深工排程器\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  generate  生成內容"
+  },
+  {
+    "folder": "H153-away-mode",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 133,
+    "run_output": "Usage: away-mode.py [OPTIONS] COMMAND [ARGS]...\n\n  出差代辦模式\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  run  執行主要功能"
+  },
+  {
+    "folder": "H154-nl-cal",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 749,
+    "run_output": "Usage: nl-cal.py [OPTIONS] COMMAND [ARGS]...\n\n  自然語言建會\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  run  執行主要功能"
+  },
+  {
+    "folder": "H155-dnd-rules",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 153,
+    "run_output": "Usage: dnd-rules.py [OPTIONS] COMMAND [ARGS]...\n\n  勿擾規則器\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  run  執行主要功能"
+  },
+  {
+    "folder": "H156-meeting-cost",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 143,
+    "run_output": "Usage: meeting-cost.py [OPTIONS] COMMAND [ARGS]...\n\n  會議成本計算\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  run  執行主要功能"
+  },
+  {
+    "folder": "H157-study-plan",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 138,
+    "run_output": "Usage: study-plan.py [OPTIONS] COMMAND [ARGS]...\n\n  學習計畫追蹤\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  generate  生成內容"
+  },
+  {
+    "folder": "H158-routine-bot",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 134,
+    "run_output": "Usage: routine-bot.py [OPTIONS] COMMAND [ARGS]...\n\n  例行事務提醒\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  run  執行主要功能"
+  },
+  {
+    "folder": "H159-procrastinate-nudge",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 146,
+    "run_output": "Usage: procrastinate-nudge.py [OPTIONS] COMMAND [ARGS]...\n\n  反拖延提醒\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  run  執行主要功能"
+  },
+  {
+    "folder": "H160-time-blocks",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 135,
+    "run_output": "Usage: time-blocks.py [OPTIONS] COMMAND [ARGS]...\n\n  時間區塊視覺化\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  run  執行主要功能"
+  },
+  {
+    "folder": "I161-mail-sort",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 757,
+    "run_output": "Usage: mail-sort.py [OPTIONS] COMMAND [ARGS]...\n\n  郵件智慧分類\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  run   執行處理流程\n  send  處理並發送訊息"
+  },
+  {
+    "folder": "I162-mail-priority",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 749,
+    "run_output": "Usage: mail-priority.py [OPTIONS] COMMAND [ARGS]...\n\n  信件優先評分\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  send  處理並發送訊息"
+  },
+  {
+    "folder": "I163-unsub-bot",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 135,
+    "run_output": "Usage: unsub-bot.py [OPTIONS] COMMAND [ARGS]...\n\n  自動退訂器\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  run  執行主要功能"
+  },
+  {
+    "folder": "I164-mail-draft",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 748,
+    "run_output": "Usage: mail-draft.py [OPTIONS] COMMAND [ARGS]...\n\n  AI 草稿產生器\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  generate  生成內容\n  send      處理並發送訊息"
+  },
+  {
+    "folder": "I165-mail-followup",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 141,
+    "run_output": "usage: mail-followup.py [-h] [--verbose] [target]\n\nmail-followup — 待回信追蹤\n\npositional arguments:\n  target         目標\n\noptions:\n  -h, --help     show this help message and exit\n  --verbose, -v  詳細輸出"
+  },
+  {
+    "folder": "I166-mail-unify",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 138,
+    "run_output": "Usage: mail-unify.py [OPTIONS] COMMAND [ARGS]...\n\n  跨帳戶統合\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  send  處理並發送訊息"
+  },
+  {
+    "folder": "I167-thread-summarize",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 763,
+    "run_output": "Usage: thread-summarize.py [OPTIONS] COMMAND [ARGS]...\n\n  信件串摘要\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  run  執行主要功能"
+  },
+  {
+    "folder": "I168-mail-schedule",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 78,
+    "run_output": "Usage: mail-schedule.py [OPTIONS] COMMAND [ARGS]...\n\n  排程寄信\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  generate  生成內容\n  send      處理並發送訊息"
+  },
+  {
+    "folder": "I169-sig-sync",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 159,
+    "run_output": "Usage: sig-sync.py [OPTIONS] COMMAND [ARGS]...\n\n  簽名檔同步\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  export  匯出結果到檔案"
+  },
+  {
+    "folder": "I170-chat-search",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 216,
+    "run_output": "Usage: chat-search.py [OPTIONS] COMMAND [ARGS]...\n\n  IM 跨平台搜尋\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  search  搜尋並顯示結果\n  send    處理並發送訊息"
+  },
+  {
+    "folder": "I171-im-digest",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 739,
+    "run_output": "Usage: im-digest.py [OPTIONS] COMMAND [ARGS]...\n\n  IM 摘要器\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  run  執行主要功能"
+  },
+  {
+    "folder": "I172-auto-reply",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 157,
+    "run_output": "Usage: auto-reply.py [OPTIONS] COMMAND [ARGS]...\n\n  規則式自動回\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  send  處理並發送訊息"
+  },
+  {
+    "folder": "I173-chat-minutes",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 761,
+    "run_output": "Usage: chat-minutes.py [OPTIONS] COMMAND [ARGS]...\n\n  IM 會議紀錄\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  send  處理並發送訊息"
+  },
+  {
+    "folder": "I174-otp-collect",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 142,
+    "run_output": "Usage: otp-collect.py [OPTIONS] COMMAND [ARGS]...\n\n  OTP 集中器\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  run  執行主要功能"
+  },
+  {
+    "folder": "I175-mail-merge",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 108,
+    "run_output": "Usage: mail-merge.py [OPTIONS] COMMAND [ARGS]...\n\n  客製群發器\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  diff  比對兩者差異\n  send  處理並發送訊息"
+  },
+  {
+    "folder": "I176-attach-vault",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 80,
+    "run_output": "Usage: attach-vault.py [OPTIONS] COMMAND [ARGS]...\n\n  附件保管庫\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  run  執行主要功能"
+  },
+  {
+    "folder": "I177-tone-shift",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 749,
+    "run_output": "Usage: tone-shift.py [OPTIONS] COMMAND [ARGS]...\n\n  文字語氣轉換\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  run  執行主要功能"
+  },
+  {
+    "folder": "I178-mail-translate",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 760,
+    "run_output": "Usage: mail-translate.py [OPTIONS] COMMAND [ARGS]...\n\n  郵件翻譯助手\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  send  處理並發送訊息"
+  },
+  {
+    "folder": "I179-mail-proof",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 88,
+    "run_output": "Usage: mail-proof.py [OPTIONS] COMMAND [ARGS]...\n\n  郵件校稿器\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  send  處理並發送訊息"
+  },
+  {
+    "folder": "I180-mail-to-task",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 775,
+    "run_output": "usage: mail-to-task.py [-h] [--verbose] [target]\n\nmail-to-task — 郵件轉任務器\n\npositional arguments:\n  target         目標\n\noptions:\n  -h, --help     show this help message and exit\n  --verbose, -v  詳細輸出"
+  },
+  {
+    "folder": "J181-expense-merge",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 475,
+    "run_output": "Usage: expense-merge.py [OPTIONS] COMMAND [ARGS]...\n\n  跨帳戶記帳\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  diff  比對兩者差異"
+  },
+  {
+    "folder": "J182-receipt-ocr",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 76,
+    "run_output": "Usage: receipt-ocr.py [OPTIONS] COMMAND [ARGS]...\n\n  收據 OCR\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  run  執行主要功能"
+  },
+  {
+    "folder": "J183-expense-report",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 165,
+    "run_output": "Usage: expense-report.py [OPTIONS] COMMAND [ARGS]...\n\n  報帳產生器\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  run  執行主要功能"
+  },
+  {
+    "folder": "J184-sub-cost",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 144,
+    "run_output": "Usage: sub-cost.py [OPTIONS] COMMAND [ARGS]...\n\n  訂閱總帳器\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  run  執行主要功能"
+  },
+  {
+    "folder": "J185-fx-rate",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 228,
+    "run_output": "Usage: fx-rate.py [OPTIONS] COMMAND [ARGS]...\n\n  匯率查詢器\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  run  執行主要功能"
+  },
+  {
+    "folder": "J186-multi-ccy-ledger",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 153,
+    "run_output": "Usage: multi-ccy-ledger.py [OPTIONS] COMMAND [ARGS]...\n\n  多幣別帳本\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  run  執行主要功能"
+  },
+  {
+    "folder": "J187-crypto-portfolio",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 220,
+    "run_output": "Usage: crypto-portfolio.py [OPTIONS] COMMAND [ARGS]...\n\n  加密資產聚合\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  run  執行主要功能"
+  },
+  {
+    "folder": "J188-net-worth",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 133,
+    "run_output": "Usage: net-worth.py [OPTIONS] COMMAND [ARGS]...\n\n  淨值追蹤器\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  run  執行主要功能"
+  },
+  {
+    "folder": "J189-budget-guard",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 146,
+    "run_output": "Usage: budget-guard.py [OPTIONS] COMMAND [ARGS]...\n\n  預算守門員\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  scan  掃描並分析目標內容"
+  },
+  {
+    "folder": "J190-tax-collect",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 144,
+    "run_output": "Usage: tax-collect.py [OPTIONS] COMMAND [ARGS]...\n\n  報稅資料收集器\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  run  執行主要功能"
+  },
+  {
+    "folder": "J191-invoice-vault",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 133,
+    "run_output": "Usage: invoice-vault.py [OPTIONS] COMMAND [ARGS]...\n\n  發票保管庫\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  run  執行主要功能"
+  },
+  {
+    "folder": "J192-invoice-gen",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 157,
+    "run_output": "Usage: invoice-gen.py [OPTIONS] COMMAND [ARGS]...\n\n  發票產生器\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  run  執行主要功能"
+  },
+  {
+    "folder": "J193-compound-calc",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 139,
+    "run_output": "Usage: compound-calc.py [OPTIONS] COMMAND [ARGS]...\n\n  複利計算器\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  run  執行主要功能"
+  },
+  {
+    "folder": "J194-stock-track",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 142,
+    "run_output": "Usage: stock-track.py [OPTIONS] COMMAND [ARGS]...\n\n  部位績效追蹤\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  diff  比對兩者差異"
+  },
+  {
+    "folder": "J195-recon-bot",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 462,
+    "run_output": "Usage: recon-bot.py [OPTIONS] COMMAND [ARGS]...\n\n  對帳機器人\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  run  執行主要功能"
+  },
+  {
+    "folder": "J196-loan-calc",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 138,
+    "run_output": "Usage: loan-calc.py [OPTIONS] COMMAND [ARGS]...\n\n  貸款試算器\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  run  執行主要功能"
+  },
+  {
+    "folder": "J197-depreciate-calc",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 133,
+    "run_output": "Usage: depreciate-calc.py [OPTIONS] COMMAND [ARGS]...\n\n  折舊計算器\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  run  執行主要功能"
+  },
+  {
+    "folder": "J198-split-bill",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 151,
+    "run_output": "Usage: split-bill.py [OPTIONS] COMMAND [ARGS]...\n\n  分帳器\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  run  執行主要功能"
+  },
+  {
+    "folder": "J199-tax-est",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 144,
+    "run_output": "Usage: tax-est.py [OPTIONS] COMMAND [ARGS]...\n\n  個稅試算器\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  run  執行主要功能"
+  },
+  {
+    "folder": "J200-dup-charge",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 485,
+    "run_output": "Usage: dup-charge.py [OPTIONS] COMMAND [ARGS]...\n\n  重複扣款偵測器\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  run  執行主要功能"
+  },
+  {
+    "folder": "K201-health-merge",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 481,
+    "run_output": "Usage: health-merge.py [OPTIONS] COMMAND [ARGS]...\n\n  健康資料整合\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  diff  比對兩者差異"
+  },
+  {
+    "folder": "K202-cal-count",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 144,
+    "run_output": "Usage: cal-count.py [OPTIONS] COMMAND [ARGS]...\n\n  熱量計算器\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  scan  掃描並分析目標內容"
+  },
+  {
+    "folder": "K203-water-nudge",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 80,
+    "run_output": "Usage: water-nudge.py [OPTIONS] COMMAND [ARGS]...\n\n  喝水提醒器\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  run  執行主要功能"
+  },
+  {
+    "folder": "K204-stand-up",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 78,
+    "run_output": "Usage: stand-up.py [OPTIONS] COMMAND [ARGS]...\n\n  起身提醒器\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  run  執行主要功能"
+  },
+  {
+    "folder": "K205-sleep-trends",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 412,
+    "run_output": "Usage: sleep-trends.py [OPTIONS] COMMAND [ARGS]...\n\n  睡眠趨勢分析\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  run  執行主要功能"
+  },
+  {
+    "folder": "K206-workout-plan",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 161,
+    "run_output": "Usage: workout-plan.py [OPTIONS] COMMAND [ARGS]...\n\n  健身計畫追蹤\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  generate  生成內容"
+  },
+  {
+    "folder": "K207-pr-log",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 141,
+    "run_output": "Usage: pr-log.py [OPTIONS] COMMAND [ARGS]...\n\n  個人最佳紀錄\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  run  執行主要功能"
+  },
+  {
+    "folder": "K208-run-analyze",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 396,
+    "run_output": "Usage: run-analyze.py [OPTIONS] COMMAND [ARGS]...\n\n  跑步分析器\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  run   執行處理流程\n  scan  掃描並分析目標內容"
+  },
+  {
+    "folder": "K209-stretch-cron",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 74,
+    "run_output": "Usage: stretch-cron.py [OPTIONS] COMMAND [ARGS]...\n\n  拉伸提醒器\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  run  執行主要功能"
+  },
+  {
+    "folder": "K210-cycle-track",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 139,
+    "run_output": "Usage: cycle-track.py [OPTIONS] COMMAND [ARGS]...\n\n  週期追蹤器\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  diff  比對兩者差異"
+  },
+  {
+    "folder": "K211-med-reminder",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 80,
+    "run_output": "Usage: med-reminder.py [OPTIONS] COMMAND [ARGS]...\n\n  用藥提醒器\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  run  執行主要功能"
+  },
+  {
+    "folder": "K212-recipe-nutri",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 139,
+    "run_output": "Usage: recipe-nutri.py [OPTIONS] COMMAND [ARGS]...\n\n  食譜營養分析\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  run  執行主要功能"
+  },
+  {
+    "folder": "K213-mood-log",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 138,
+    "run_output": "Usage: mood-log.py [OPTIONS] COMMAND [ARGS]...\n\n  情緒日記器\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  run  執行主要功能"
+  },
+  {
+    "folder": "K214-meditate",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 136,
+    "run_output": "Usage: meditate.py [OPTIONS] COMMAND [ARGS]...\n\n  冥想計時器\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  run  執行主要功能"
+  },
+  {
+    "folder": "K215-weight-trend",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 83,
+    "run_output": "Usage: weight-trend.py [OPTIONS] COMMAND [ARGS]...\n\n  體重趨勢器\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  scan  掃描並分析目標內容"
+  },
+  {
+    "folder": "K216-lab-explain",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 782,
+    "run_output": "Usage: lab-explain.py [OPTIONS] COMMAND [ARGS]...\n\n  健檢報告解讀器\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  run  執行主要功能"
+  },
+  {
+    "folder": "K217-eye-rest",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 78,
+    "run_output": "Usage: eye-rest.py [OPTIONS] COMMAND [ARGS]...\n\n  護眼提醒器\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  run  執行主要功能"
+  },
+  {
+    "folder": "K218-step-goal",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 149,
+    "run_output": "Usage: step-goal.py [OPTIONS] COMMAND [ARGS]...\n\n  步數目標追蹤\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  run  執行主要功能"
+  },
+  {
+    "folder": "K219-drug-check",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 223,
+    "run_output": "Usage: drug-check.py [OPTIONS] COMMAND [ARGS]...\n\n  藥物交互查詢\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  scan  掃描並分析目標內容"
+  },
+  {
+    "folder": "K220-gym-route",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 139,
+    "run_output": "Usage: gym-route.py [OPTIONS] COMMAND [ARGS]...\n\n  健身房路徑器\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  run  執行主要功能"
+  },
+  {
+    "folder": "L221-video-to-gif",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 139,
+    "run_output": "Usage: video-to-gif.py [OPTIONS] COMMAND [ARGS]...\n\n  影片轉 GIF\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  run  執行主要功能"
+  },
+  {
+    "folder": "L222-video-compress",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 138,
+    "run_output": "Usage: video-compress.py [OPTIONS] COMMAND [ARGS]...\n\n  智慧壓縮器\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  run  執行主要功能"
+  },
+  {
+    "folder": "L223-video-trim",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 131,
+    "run_output": "Usage: video-trim.py [OPTIONS] COMMAND [ARGS]...\n\n  批次剪輯器\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  run  執行主要功能"
+  },
+  {
+    "folder": "L224-auto-subtitle",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 75,
+    "run_output": "Usage: auto-subtitle.py [OPTIONS] COMMAND [ARGS]...\n\n  自動字幕產生器\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  run  執行主要功能"
+  },
+  {
+    "folder": "L225-sub-translate",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 750,
+    "run_output": "Usage: sub-translate.py [OPTIONS] COMMAND [ARGS]...\n\n  字幕翻譯器\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  run  執行主要功能"
+  },
+  {
+    "folder": "L226-img-shrink",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 135,
+    "run_output": "Usage: img-shrink.py [OPTIONS] COMMAND [ARGS]...\n\n  圖片批壓器\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  run  執行主要功能"
+  },
+  {
+    "folder": "L227-bg-remove",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 76,
+    "run_output": "Usage: bg-remove.py [OPTIONS] COMMAND [ARGS]...\n\n  背景移除器\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  export  匯出結果到檔案"
+  },
+  {
+    "folder": "L228-shot-annotate",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 134,
+    "run_output": "Usage: shot-annotate.py [OPTIONS] COMMAND [ARGS]...\n\n  截圖標註器\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  run  執行主要功能"
+  },
+  {
+    "folder": "L229-shot-blur",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 135,
+    "run_output": "Usage: shot-blur.py [OPTIONS] COMMAND [ARGS]...\n\n  敏感區塊模糊\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  run  執行主要功能"
+  },
+  {
+    "folder": "L230-img-transcode",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 138,
+    "run_output": "Usage: img-transcode.py [OPTIONS] COMMAND [ARGS]...\n\n  圖片格式轉換\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  run  執行主要功能"
+  },
+  {
+    "folder": "L231-thumb-make",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 136,
+    "run_output": "Usage: thumb-make.py [OPTIONS] COMMAND [ARGS]...\n\n  縮圖產生器\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  generate  生成內容"
+  },
+  {
+    "folder": "L232-video-recode",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 133,
+    "run_output": "Usage: video-recode.py [OPTIONS] COMMAND [ARGS]...\n\n  影片重編碼\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  run  執行主要功能"
+  },
+  {
+    "folder": "L233-audio-denoise",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 78,
+    "run_output": "Usage: audio-denoise.py [OPTIONS] COMMAND [ARGS]...\n\n  音訊降噪器\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  run  執行主要功能"
+  },
+  {
+    "folder": "L234-audio-stt",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 133,
+    "run_output": "Usage: audio-stt.py [OPTIONS] COMMAND [ARGS]...\n\n  語音轉文字\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  run  執行主要功能"
+  },
+  {
+    "folder": "L235-text-tts",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 132,
+    "run_output": "Usage: text-tts.py [OPTIONS] COMMAND [ARGS]...\n\n  文字轉語音\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  run  執行主要功能"
+  },
+  {
+    "folder": "L236-live-clip",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 139,
+    "run_output": "Usage: live-clip.py [OPTIONS] COMMAND [ARGS]...\n\n  直播切片器\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  export  匯出結果到檔案"
+  },
+  {
+    "folder": "L237-video-summary",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 747,
+    "run_output": "Usage: video-summary.py [OPTIONS] COMMAND [ARGS]...\n\n  影片摘要器\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  run  執行主要功能"
+  },
+  {
+    "folder": "L238-img-ocr",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 76,
+    "run_output": "Usage: img-ocr.py [OPTIONS] COMMAND [ARGS]...\n\n  圖片 OCR 器\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  run  執行主要功能"
+  },
+  {
+    "folder": "L239-exif-clean",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 74,
+    "run_output": "Usage: exif-clean.py [OPTIONS] COMMAND [ARGS]...\n\n  EXIF 清除器\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  run  執行處理流程"
+  },
+  {
+    "folder": "L240-gif-opt",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 131,
+    "run_output": "Usage: gif-opt.py [OPTIONS] COMMAND [ARGS]...\n\n  動圖最佳化器\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  run  執行主要功能"
+  },
+  {
+    "folder": "M241-web-fetch",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 162,
+    "run_output": "Usage: web-fetch.py [OPTIONS] COMMAND [ARGS]...\n\n  網頁抓取器\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  run  執行主要功能"
+  },
+  {
+    "folder": "M242-headless-fetch",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 130,
+    "run_output": "Usage: headless-fetch.py [OPTIONS] COMMAND [ARGS]...\n\n  Headless 抓取\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  run  執行主要功能"
+  },
+  {
+    "folder": "M243-page-watch",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 160,
+    "run_output": "Usage: page-watch.py [OPTIONS] COMMAND [ARGS]...\n\n  變動監控器\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  scan  掃描並分析目標內容"
+  },
+  {
+    "folder": "M244-price-watch",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 183,
+    "run_output": "Usage: price-watch.py [OPTIONS] COMMAND [ARGS]...\n\n  價格追蹤器\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  scan  掃描並分析目標內容"
+  },
+  {
+    "folder": "M245-api-monitor",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 214,
+    "run_output": "Usage: api-monitor.py [OPTIONS] COMMAND [ARGS]...\n\n  API 監測器\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  scan  掃描並分析目標內容"
+  },
+  {
+    "folder": "M246-cert-watch",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 131,
+    "run_output": "Usage: cert-watch.py [OPTIONS] COMMAND [ARGS]...\n\n  憑證守望者\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  scan  掃描並分析目標內容"
+  },
+  {
+    "folder": "M247-rss-fold",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 137,
+    "run_output": "Usage: rss-fold.py [OPTIONS] COMMAND [ARGS]...\n\n  RSS 聚合器\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  run  執行主要功能"
+  },
+  {
+    "folder": "M248-uptime-ping",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 213,
+    "run_output": "Usage: uptime-ping.py [OPTIONS] COMMAND [ARGS]...\n\n  可達性測試器\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  send  處理並發送訊息"
+  },
+  {
+    "folder": "M249-link-check",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 167,
+    "run_output": "Usage: link-check.py [OPTIONS] COMMAND [ARGS]...\n\n  死鏈檢查器\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  scan  掃描並分析目標內容"
+  },
+  {
+    "folder": "M250-perf-audit",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 217,
+    "run_output": "Usage: perf-audit.py [OPTIONS] COMMAND [ARGS]...\n\n  效能稽核器\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  scan  掃描並分析目標內容"
+  },
+  {
+    "folder": "M251-seo-audit",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 164,
+    "run_output": "Usage: seo-audit.py [OPTIONS] COMMAND [ARGS]...\n\n  SEO 稽核器\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  scan  掃描並分析目標內容"
+  },
+  {
+    "folder": "M252-pcap-brief",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 131,
+    "run_output": "Usage: pcap-brief.py [OPTIONS] COMMAND [ARGS]...\n\n  抓包摘要器\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  run  執行主要功能"
+  },
+  {
+    "folder": "M253-sitemap-gen",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 162,
+    "run_output": "Usage: sitemap-gen.py [OPTIONS] COMMAND [ARGS]...\n\n  Sitemap 產生器\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  scan  掃描並分析目標內容"
+  },
+  {
+    "folder": "M254-ld-extract",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 162,
+    "run_output": "Usage: ld-extract.py [OPTIONS] COMMAND [ARGS]...\n\n  結構化資料提取\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  run  執行主要功能"
+  },
+  {
+    "folder": "M255-web-snap-tr",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 744,
+    "run_output": "Usage: web-snap-tr.py [OPTIONS] COMMAND [ARGS]...\n\n  網站翻譯快照\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  run  執行主要功能"
+  },
+  {
+    "folder": "M256-page-archive",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 167,
+    "run_output": "Usage: page-archive.py [OPTIONS] COMMAND [ARGS]...\n\n  離線存檔器\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  run  執行主要功能"
+  },
+  {
+    "folder": "M257-page-diff",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 166,
+    "run_output": "Usage: page-diff.py [OPTIONS] COMMAND [ARGS]...\n\n  網頁差異器\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  diff  比對兩者差異"
+  },
+  {
+    "folder": "M258-polite-crawler",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 167,
+    "run_output": "Usage: polite-crawler.py [OPTIONS] COMMAND [ARGS]...\n\n  守規範爬蟲\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  run  執行主要功能"
+  },
+  {
+    "folder": "M259-api-sniff",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 217,
+    "run_output": "Usage: api-sniff.py [OPTIONS] COMMAND [ARGS]...\n\n  API 規格嗅探器\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  run  執行主要功能"
+  },
+  {
+    "folder": "M260-dataset-find",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 213,
+    "run_output": "Usage: dataset-find.py [OPTIONS] COMMAND [ARGS]...\n\n  資料集發現器\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  scan    掃描並分析目標內容\n  search  搜尋並顯示結果"
+  },
+  {
+    "folder": "N261-csv-stat",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 456,
+    "run_output": "Usage: csv-stat.py [OPTIONS] COMMAND [ARGS]...\n\n  CSV 統計器\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  run  執行主要功能"
+  },
+  {
+    "folder": "N262-term-plot",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 148,
+    "run_output": "Usage: term-plot.py [OPTIONS] COMMAND [ARGS]...\n\n  終端繪圖器\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  run  執行主要功能"
+  },
+  {
+    "folder": "N263-csv-sql",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 132,
+    "run_output": "Usage: csv-sql.py [OPTIONS] COMMAND [ARGS]...\n\n  CSV SQL 引擎\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  run  執行主要功能"
+  },
+  {
+    "folder": "N264-pivot-quick",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 443,
+    "run_output": "Usage: pivot-quick.py [OPTIONS] COMMAND [ARGS]...\n\n  樞紐表器\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  run  執行主要功能"
+  },
+  {
+    "folder": "N265-ab-test",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 132,
+    "run_output": "Usage: ab-test.py [OPTIONS] COMMAND [ARGS]...\n\n  AB 檢定器\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  run  執行主要功能"
+  },
+  {
+    "folder": "N266-ts-decompose",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 131,
+    "run_output": "Usage: ts-decompose.py [OPTIONS] COMMAND [ARGS]...\n\n  時序分解器\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  generate  生成內容"
+  },
+  {
+    "folder": "N267-anomaly-detect",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 137,
+    "run_output": "Usage: anomaly-detect.py [OPTIONS] COMMAND [ARGS]...\n\n  異常偵測器\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  run  執行主要功能"
+  },
+  {
+    "folder": "N268-cluster-quick",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 135,
+    "run_output": "Usage: cluster-quick.py [OPTIONS] COMMAND [ARGS]...\n\n  快速群集器\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  run  執行主要功能"
+  },
+  {
+    "folder": "N269-eda-report",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 137,
+    "run_output": "Usage: eda-report.py [OPTIONS] COMMAND [ARGS]...\n\n  EDA 報告器\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  run  執行主要功能"
+  },
+  {
+    "folder": "N270-regress-quick",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 131,
+    "run_output": "Usage: regress-quick.py [OPTIONS] COMMAND [ARGS]...\n\n  快速迴歸\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  run  執行主要功能"
+  },
+  {
+    "folder": "N271-corr-matrix",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 391,
+    "run_output": "Usage: corr-matrix.py [OPTIONS] COMMAND [ARGS]...\n\n  相關矩陣器\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  run  執行主要功能"
+  },
+  {
+    "folder": "N272-chart-title",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 730,
+    "run_output": "Usage: chart-title.py [OPTIONS] COMMAND [ARGS]...\n\n  圖表標題器\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  run  執行主要功能"
+  },
+  {
+    "folder": "N273-chart-alt",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 735,
+    "run_output": "Usage: chart-alt.py [OPTIONS] COMMAND [ARGS]...\n\n  Alt 文字器\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  run  執行主要功能"
+  },
+  {
+    "folder": "N274-report-build",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 162,
+    "run_output": "Usage: report-build.py [OPTIONS] COMMAND [ARGS]...\n\n  報表建構器\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  generate  生成內容"
+  },
+  {
+    "folder": "N275-kpi-board",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 137,
+    "run_output": "Usage: kpi-board.py [OPTIONS] COMMAND [ARGS]...\n\n  KPI 儀表板\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  run  執行主要功能"
+  },
+  {
+    "folder": "N276-period-cmp",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 466,
+    "run_output": "Usage: period-cmp.py [OPTIONS] COMMAND [ARGS]...\n\n  期比計算器\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  run  執行主要功能"
+  },
+  {
+    "folder": "N277-what-if",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 448,
+    "run_output": "Usage: what-if.py [OPTIONS] COMMAND [ARGS]...\n\n  假設模擬器\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  run  執行主要功能"
+  },
+  {
+    "folder": "N278-cohort-analyze",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 399,
+    "run_output": "Usage: cohort-analyze.py [OPTIONS] COMMAND [ARGS]...\n\n  Cohort 分析器\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  scan  掃描並分析目標內容"
+  },
+  {
+    "folder": "N279-data-narrate",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 1075,
+    "run_output": "Usage: data-narrate.py [OPTIONS] COMMAND [ARGS]...\n\n  資料敘事器\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  run  執行主要功能"
+  },
+  {
+    "folder": "N280-forecast-quick",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 134,
+    "run_output": "Usage: forecast-quick.py [OPTIONS] COMMAND [ARGS]...\n\n  快速預測器\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  run  執行主要功能"
+  },
+  {
+    "folder": "O281-llm-route",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 734,
+    "run_output": "Usage: llm-route.py [OPTIONS] COMMAND [ARGS]...\n\n  模型路由器\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  run  執行主要功能"
+  },
+  {
+    "folder": "O282-llm-compare",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 759,
+    "run_output": "Usage: llm-compare.py [OPTIONS] COMMAND [ARGS]...\n\n  模型比對器\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  diff  比對兩者差異"
+  },
+  {
+    "folder": "O283-embed-index",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 73,
+    "run_output": "Usage: embed-index.py [OPTIONS] COMMAND [ARGS]...\n\n  向量索引器\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  run  執行主要功能"
+  },
+  {
+    "folder": "O284-rag-eval",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 731,
+    "run_output": "Usage: rag-eval.py [OPTIONS] COMMAND [ARGS]...\n\n  RAG 評估器\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  run  執行主要功能"
+  },
+  {
+    "folder": "O285-prompt-eval",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 746,
+    "run_output": "Usage: prompt-eval.py [OPTIONS] COMMAND [ARGS]...\n\n  Prompt 評測器\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  run  執行主要功能"
+  },
+  {
+    "folder": "O286-llm-jsonschema",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 135,
+    "run_output": "Usage: llm-jsonschema.py [OPTIONS] COMMAND [ARGS]...\n\n  JSON 驗證器\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  run  執行主要功能"
+  },
+  {
+    "folder": "O287-halluc-check",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 748,
+    "run_output": "Usage: halluc-check.py [OPTIONS] COMMAND [ARGS]...\n\n  幻覺檢查器\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  scan  掃描並分析目標內容"
+  },
+  {
+    "folder": "O288-ft-dataset",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 449,
+    "run_output": "Usage: ft-dataset.py [OPTIONS] COMMAND [ARGS]...\n\n  微調資料器\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  run  執行主要功能"
+  },
+  {
+    "folder": "O289-data-dedupe-ml",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 141,
+    "run_output": "Usage: data-dedupe-ml.py [OPTIONS] COMMAND [ARGS]...\n\n  訓練去重器\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  run  執行主要功能"
+  },
+  {
+    "folder": "O290-llm-cost-opt",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 745,
+    "run_output": "Usage: llm-cost-opt.py [OPTIONS] COMMAND [ARGS]...\n\n  成本最佳化器\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  run  執行主要功能"
+  },
+  {
+    "folder": "O291-tok-trim",
+    "status": "error",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 1,
+    "run_ms": 130,
+    "run_output": "[缺少依賴] Traceback (most recent call last):\n  File \"C:\\Users\\Jimmy\\Desktop\\cli-tools\\500CLI\\O291-tok-trim\\tok-trim.py\", line 16, in <module>\n    import tiktoken\nModuleNotFoundError: No module named 'tiktoken'"
+  },
+  {
+    "folder": "O292-agent-eval",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 741,
+    "run_output": "Usage: agent-eval.py [OPTIONS] COMMAND [ARGS]...\n\n  Agent 評測器\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  run  執行主要功能"
+  },
+  {
+    "folder": "O293-llm-cache",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 139,
+    "run_output": "Usage: llm-cache.py [OPTIONS] COMMAND [ARGS]...\n\n  LLM 快取\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  run  執行主要功能"
+  },
+  {
+    "folder": "O294-model-vault",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 139,
+    "run_output": "Usage: model-vault.py [OPTIONS] COMMAND [ARGS]...\n\n  模型版本管理\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  run  執行主要功能"
+  },
+  {
+    "folder": "O295-pi-test",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 750,
+    "run_output": "Usage: pi-test.py [OPTIONS] COMMAND [ARGS]...\n\n  提示注入測試器\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  run  執行主要功能"
+  },
+  {
+    "folder": "O296-embed-drift",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 138,
+    "run_output": "Usage: embed-drift.py [OPTIONS] COMMAND [ARGS]...\n\n  嵌入漂移監測\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  run  執行主要功能"
+  },
+  {
+    "folder": "O297-ft-monitor",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 139,
+    "run_output": "Usage: ft-monitor.py [OPTIONS] COMMAND [ARGS]...\n\n  微調監測器\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  scan  掃描並分析目標內容"
+  },
+  {
+    "folder": "O298-model-quant",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 131,
+    "run_output": "Usage: model-quant.py [OPTIONS] COMMAND [ARGS]...\n\n  模型量化器\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  run  執行主要功能"
+  },
+  {
+    "folder": "O299-infer-bench",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 136,
+    "run_output": "Usage: infer-bench.py [OPTIONS] COMMAND [ARGS]...\n\n  推論基準器\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  run  執行主要功能"
+  },
+  {
+    "folder": "O300-llm-replay",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 151,
+    "run_output": "Usage: llm-replay.py [OPTIONS] COMMAND [ARGS]...\n\n  流量回放器\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  run  執行主要功能"
+  },
+  {
+    "folder": "P301-pwn-check",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 221,
+    "run_output": "Usage: pwn-check.py [OPTIONS] COMMAND [ARGS]...\n\n  帳密洩漏查詢\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  scan  掃描並分析目標內容"
+  },
+  {
+    "folder": "P302-pw-gen",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 135,
+    "run_output": "Usage: pw-gen.py [OPTIONS] COMMAND [ARGS]...\n\n  密碼產生器\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  run  執行主要功能"
+  },
+  {
+    "folder": "P303-file-crypt",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 132,
+    "run_output": "Usage: file-crypt.py [OPTIONS] COMMAND [ARGS]...\n\n  檔案加解密器\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  run  執行主要功能"
+  },
+  {
+    "folder": "P304-key-exchange",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 136,
+    "run_output": "Usage: key-exchange.py [OPTIONS] COMMAND [ARGS]...\n\n  金鑰交換助手\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  run  執行主要功能"
+  },
+  {
+    "folder": "P305-secret-scan",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 139,
+    "run_output": "Usage: secret-scan.py [OPTIONS] COMMAND [ARGS]...\n\n  Secrets 掃描器\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  scan  掃描並分析目標內容"
+  },
+  {
+    "folder": "P306-pii-mask",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 138,
+    "run_output": "Usage: pii-mask.py [OPTIONS] COMMAND [ARGS]...\n\n  PII 遮罩器\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  send  處理並發送訊息"
+  },
+  {
+    "folder": "P307-sbom-gen",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 139,
+    "run_output": "Usage: sbom-gen.py [OPTIONS] COMMAND [ARGS]...\n\n  SBOM 產生器\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  run  執行主要功能"
+  },
+  {
+    "folder": "P308-cve-check",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 222,
+    "run_output": "Usage: cve-check.py [OPTIONS] COMMAND [ARGS]...\n\n  CVE 查詢器\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  scan  掃描並分析目標內容"
+  },
+  {
+    "folder": "P309-tls-audit",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 132,
+    "run_output": "Usage: tls-audit.py [OPTIONS] COMMAND [ARGS]...\n\n  TLS 稽核器\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  scan  掃描並分析目標內容"
+  },
+  {
+    "folder": "P310-behavior-alert",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 136,
+    "run_output": "Usage: behavior-alert.py [OPTIONS] COMMAND [ARGS]...\n\n  行為告警器\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  send  處理並發送訊息"
+  },
+  {
+    "folder": "P311-link-safe",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 218,
+    "run_output": "Usage: link-safe.py [OPTIONS] COMMAND [ARGS]...\n\n  連結安全檢查\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  run  執行主要功能"
+  },
+  {
+    "folder": "P312-policy-brief",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 737,
+    "run_output": "Usage: policy-brief.py [OPTIONS] COMMAND [ARGS]...\n\n  隱私政策摘要\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  run  執行主要功能"
+  },
+  {
+    "folder": "P313-dns-trust",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 138,
+    "run_output": "Usage: dns-trust.py [OPTIONS] COMMAND [ARGS]...\n\n  DNS 信任查詢\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  run  執行主要功能"
+  },
+  {
+    "folder": "P314-vpn-config",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 146,
+    "run_output": "Usage: vpn-config.py [OPTIONS] COMMAND [ARGS]...\n\n  VPN 設定器\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  run  執行主要功能"
+  },
+  {
+    "folder": "P315-watermark",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 134,
+    "run_output": "Usage: watermark.py [OPTIONS] COMMAND [ARGS]...\n\n  浮水印器\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  run  執行主要功能"
+  },
+  {
+    "folder": "P316-wm-detect",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 132,
+    "run_output": "Usage: wm-detect.py [OPTIONS] COMMAND [ARGS]...\n\n  浮水印偵測器\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  run  執行主要功能"
+  },
+  {
+    "folder": "P317-sig-verify",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 133,
+    "run_output": "Usage: sig-verify.py [OPTIONS] COMMAND [ARGS]...\n\n  簽章驗證器\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  run  執行主要功能"
+  },
+  {
+    "folder": "P318-key-rotate",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 134,
+    "run_output": "Usage: key-rotate.py [OPTIONS] COMMAND [ARGS]...\n\n  金鑰輪轉器\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  run  執行主要功能"
+  },
+  {
+    "folder": "P319-redteam-prompt",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 726,
+    "run_output": "Usage: redteam-prompt.py [OPTIONS] COMMAND [ARGS]...\n\n  紅隊測試器\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  run  執行主要功能"
+  },
+  {
+    "folder": "P320-gdpr-scan",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 727,
+    "run_output": "Usage: gdpr-scan.py [OPTIONS] COMMAND [ARGS]...\n\n  GDPR 掃描器\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  scan  掃描並分析目標內容"
+  },
+  {
+    "folder": "Q321-docker-cleanup",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 136,
+    "run_output": "Usage: docker-cleanup.py [OPTIONS] COMMAND [ARGS]...\n\n  Docker 清理器\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  run  執行處理流程"
+  },
+  {
+    "folder": "Q322-compose-orch",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 141,
+    "run_output": "Usage: compose-orch.py [OPTIONS] COMMAND [ARGS]...\n\n  Compose 編排器\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  generate  生成內容"
+  },
+  {
+    "folder": "Q323-k8s-tail",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 132,
+    "run_output": "Usage: k8s-tail.py [OPTIONS] COMMAND [ARGS]...\n\n  k8s 多 Pod 日誌\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  run  執行主要功能"
+  },
+  {
+    "folder": "Q324-kctx-flip",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 147,
+    "run_output": "Usage: kctx-flip.py [OPTIONS] COMMAND [ARGS]...\n\n  Context 切換器\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  run  執行主要功能"
+  },
+  {
+    "folder": "Q325-tf-brief",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 734,
+    "run_output": "Usage: tf-brief.py [OPTIONS] COMMAND [ARGS]...\n\n  Terraform 摘要器\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  generate  生成內容"
+  },
+  {
+    "folder": "Q326-cloud-cost",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 133,
+    "run_output": "Usage: cloud-cost.py [OPTIONS] COMMAND [ARGS]...\n\n  雲端花費守門員\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  run  執行主要功能"
+  },
+  {
+    "folder": "Q327-ci-diag",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 738,
+    "run_output": "Usage: ci-diag.py [OPTIONS] COMMAND [ARGS]...\n\n  CI 失敗診斷器\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  run  執行主要功能"
+  },
+  {
+    "folder": "Q328-deploy-rollback",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 145,
+    "run_output": "Usage: deploy-rollback.py [OPTIONS] COMMAND [ARGS]...\n\n  部署回滾器\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  run  執行主要功能"
+  },
+  {
+    "folder": "Q329-flag-cli",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 145,
+    "run_output": "Usage: flag-cli.py [OPTIONS] COMMAND [ARGS]...\n\n  Feature Flag CLI\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  run  執行主要功能"
+  },
+  {
+    "folder": "Q330-promql-helper",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 750,
+    "run_output": "Usage: promql-helper.py [OPTIONS] COMMAND [ARGS]...\n\n  PromQL 助手\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  run  執行主要功能"
+  },
+  {
+    "folder": "Q331-grafana-port",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 222,
+    "run_output": "Usage: grafana-port.py [OPTIONS] COMMAND [ARGS]...\n\n  Grafana 搬遷器\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  run  執行主要功能"
+  },
+  {
+    "folder": "Q332-nginx-try",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 138,
+    "run_output": "Usage: nginx-try.py [OPTIONS] COMMAND [ARGS]...\n\n  Nginx 配置試跑器\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  run  執行主要功能"
+  },
+  {
+    "folder": "Q333-slow-sql",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 137,
+    "run_output": "Usage: slow-sql.py [OPTIONS] COMMAND [ARGS]...\n\n  慢查詢分析器\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  run  執行主要功能"
+  },
+  {
+    "folder": "Q334-schema-mig",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 133,
+    "run_output": "Usage: schema-mig.py [OPTIONS] COMMAND [ARGS]...\n\n  Schema 遷移器\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  run  執行主要功能"
+  },
+  {
+    "folder": "Q335-db-snap",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 134,
+    "run_output": "Usage: db-snap.py [OPTIONS] COMMAND [ARGS]...\n\n  DB 備份器\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  run  執行主要功能"
+  },
+  {
+    "folder": "Q336-log-ship",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 146,
+    "run_output": "Usage: log-ship.py [OPTIONS] COMMAND [ARGS]...\n\n  Log Shipping 設定器\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  send  處理並發送訊息"
+  },
+  {
+    "folder": "Q337-img-scan",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 135,
+    "run_output": "Usage: img-scan.py [OPTIONS] COMMAND [ARGS]...\n\n  Image 漏洞掃描\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  scan  掃描並分析目標內容"
+  },
+  {
+    "folder": "Q338-dns-audit",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 142,
+    "run_output": "Usage: dns-audit.py [OPTIONS] COMMAND [ARGS]...\n\n  DNS 稽核器\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  scan  掃描並分析目標內容"
+  },
+  {
+    "folder": "Q339-ssl-renew-check",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 138,
+    "run_output": "Usage: ssl-renew-check.py [OPTIONS] COMMAND [ARGS]...\n\n  續期檢查\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  scan  掃描並分析目標內容"
+  },
+  {
+    "folder": "Q340-pipeline-tpl",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 167,
+    "run_output": "Usage: pipeline-tpl.py [OPTIONS] COMMAND [ARGS]...\n\n  CI 樣板器\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  run  執行主要功能"
+  },
+  {
+    "folder": "R341-note-search",
+    "status": "error",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 1,
+    "run_ms": 136,
+    "run_output": "[缺少依賴] Traceback (most recent call last):\n  File \"C:\\Users\\Jimmy\\Desktop\\cli-tools\\500CLI\\R341-note-search\\note-search.py\", line 16, in <module>\n    from whoosh import index\nModuleNotFoundError: No module named 'whoosh'"
+  },
+  {
+    "folder": "R342-backlinks",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 141,
+    "run_output": "Usage: backlinks.py [OPTIONS] COMMAND [ARGS]...\n\n  反向連結器\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  run  執行主要功能"
+  },
+  {
+    "folder": "R343-zettel",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 141,
+    "run_output": "Usage: zettel.py [OPTIONS] COMMAND [ARGS]...\n\n  Zettelkasten CLI\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  run  執行主要功能"
+  },
+  {
+    "folder": "R344-note-graph",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 146,
+    "run_output": "Usage: note-graph.py [OPTIONS] COMMAND [ARGS]...\n\n  筆記圖譜器\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  run  執行主要功能"
+  },
+  {
+    "folder": "R345-note-port",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 145,
+    "run_output": "Usage: note-port.py [OPTIONS] COMMAND [ARGS]...\n\n  筆記搬遷器\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  run  執行主要功能"
+  },
+  {
+    "folder": "R346-md-split",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 143,
+    "run_output": "Usage: md-split.py [OPTIONS] COMMAND [ARGS]...\n\n  Markdown 拆分\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  run  執行處理流程"
+  },
+  {
+    "folder": "R347-note-git",
+    "status": "error",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 1,
+    "run_ms": 135,
+    "run_output": "[缺少依賴] Traceback (most recent call last):\n  File \"C:\\Users\\Jimmy\\Desktop\\cli-tools\\500CLI\\R347-note-git\\note-git.py\", line 16, in <module>\n    from git import Repo\nModuleNotFoundError: No module named 'git'"
+  },
+  {
+    "folder": "R348-tag-suggest",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 770,
+    "run_output": "Usage: tag-suggest.py [OPTIONS] COMMAND [ARGS]...\n\n  標籤建議器\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  run  執行主要功能"
+  },
+  {
+    "folder": "R349-highlight-collect",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 142,
+    "run_output": "Usage: highlight-collect.py [OPTIONS] COMMAND [ARGS]...\n\n  高亮收集器\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  run  執行主要功能"
+  },
+  {
+    "folder": "R350-article-note",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 815,
+    "run_output": "Usage: article-note.py [OPTIONS] COMMAND [ARGS]...\n\n  文章筆記化\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  run  執行主要功能"
+  },
+  {
+    "folder": "R351-note-dedupe",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 142,
+    "run_output": "Usage: note-dedupe.py [OPTIONS] COMMAND [ARGS]...\n\n  筆記去重器\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  run  執行主要功能"
+  },
+  {
+    "folder": "R352-para-link",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 143,
+    "run_output": "Usage: para-link.py [OPTIONS] COMMAND [ARGS]...\n\n  段落連結器\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  run  執行主要功能"
+  },
+  {
+    "folder": "R353-know-fuse",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 792,
+    "run_output": "Usage: know-fuse.py [OPTIONS] COMMAND [ARGS]...\n\n  知識融合器\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  run  執行主要功能"
+  },
+  {
+    "folder": "R354-card-make",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 788,
+    "run_output": "Usage: card-make.py [OPTIONS] COMMAND [ARGS]...\n\n  知識卡片產生\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  generate  生成內容"
+  },
+  {
+    "folder": "R355-keypoint-pull",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 731,
+    "run_output": "Usage: keypoint-pull.py [OPTIONS] COMMAND [ARGS]...\n\n  重點抽取器\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  run  執行主要功能"
+  },
+  {
+    "folder": "R356-wiki-pub",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 139,
+    "run_output": "Usage: wiki-pub.py [OPTIONS] COMMAND [ARGS]...\n\n  知識庫發佈器\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  run  執行主要功能"
+  },
+  {
+    "folder": "R357-bib-tidy",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 156,
+    "run_output": "Usage: bib-tidy.py [OPTIONS] COMMAND [ARGS]...\n\n  BibTeX 整理器\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  run  執行主要功能"
+  },
+  {
+    "folder": "R358-paper-dedupe",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 136,
+    "run_output": "Usage: paper-dedupe.py [OPTIONS] COMMAND [ARGS]...\n\n  文獻去重器\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  run  執行主要功能"
+  },
+  {
+    "folder": "R359-latex-fix",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 135,
+    "run_output": "Usage: latex-fix.py [OPTIONS] COMMAND [ARGS]...\n\n  LaTeX 修復器\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  run  執行處理流程"
+  },
+  {
+    "folder": "R360-wiki-deploy",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 135,
+    "run_output": "Usage: wiki-deploy.py [OPTIONS] COMMAND [ARGS]...\n\n  Wiki 部署器\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  run  執行主要功能"
+  },
+  {
+    "folder": "S361-paper-find",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 222,
+    "run_output": "Usage: paper-find.py [OPTIONS] COMMAND [ARGS]...\n\n  文獻搜尋器\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  scan    掃描並分析目標內容\n  search  搜尋並顯示結果"
+  },
+  {
+    "folder": "S362-paper-brief",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 756,
+    "run_output": "Usage: paper-brief.py [OPTIONS] COMMAND [ARGS]...\n\n  論文摘要器\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  run  執行主要功能"
+  },
+  {
+    "folder": "S363-cite-graph",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 179,
+    "run_output": "Usage: cite-graph.py [OPTIONS] COMMAND [ARGS]...\n\n  引用網絡器\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  run  執行主要功能"
+  },
+  {
+    "folder": "S364-srs-deck",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 151,
+    "run_output": "Usage: srs-deck.py [OPTIONS] COMMAND [ARGS]...\n\n  間隔重複卡片\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  run  執行主要功能"
+  },
+  {
+    "folder": "S365-vocab-card",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 727,
+    "run_output": "Usage: vocab-card.py [OPTIONS] COMMAND [ARGS]...\n\n  詞彙卡片器\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  run  執行主要功能"
+  },
+  {
+    "folder": "S366-lecture-notes",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 778,
+    "run_output": "Usage: lecture-notes.py [OPTIONS] COMMAND [ARGS]...\n\n  講座筆記器\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  run  執行主要功能"
+  },
+  {
+    "folder": "S367-book-cross",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 764,
+    "run_output": "Usage: book-cross.py [OPTIONS] COMMAND [ARGS]...\n\n  跨書比對器\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  run  執行主要功能"
+  },
+  {
+    "folder": "S368-quiz-gen",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 784,
+    "run_output": "Usage: quiz-gen.py [OPTIONS] COMMAND [ARGS]...\n\n  題目產生器\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  run  執行主要功能"
+  },
+  {
+    "folder": "S369-mock-interview",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 754,
+    "run_output": "Usage: mock-interview.py [OPTIONS] COMMAND [ARGS]...\n\n  模擬面試器\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  run  執行主要功能"
+  },
+  {
+    "folder": "S370-exercise-judge",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 140,
+    "run_output": "Usage: exercise-judge.py [OPTIONS] COMMAND [ARGS]...\n\n  練習評測器\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  run  執行主要功能"
+  },
+  {
+    "folder": "S371-concept-map",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 766,
+    "run_output": "Usage: concept-map.py [OPTIONS] COMMAND [ARGS]...\n\n  概念地圖器\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  scan  掃描並分析目標內容"
+  },
+  {
+    "folder": "S372-thesis-track",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 144,
+    "run_output": "Usage: thesis-track.py [OPTIONS] COMMAND [ARGS]...\n\n  論文進度追蹤\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  diff  比對兩者差異"
+  },
+  {
+    "folder": "S373-pdf-marks",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 141,
+    "run_output": "Usage: pdf-marks.py [OPTIONS] COMMAND [ARGS]...\n\n  PDF 註記器\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  run  執行主要功能"
+  },
+  {
+    "folder": "S374-fig-pull",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 143,
+    "run_output": "Usage: fig-pull.py [OPTIONS] COMMAND [ARGS]...\n\n  圖表抽取器\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  run  執行主要功能"
+  },
+  {
+    "folder": "S375-lab-log",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 145,
+    "run_output": "Usage: lab-log.py [OPTIONS] COMMAND [ARGS]...\n\n  實驗紀錄器\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  run  執行主要功能"
+  },
+  {
+    "folder": "S376-multi-paper",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 807,
+    "run_output": "Usage: multi-paper.py [OPTIONS] COMMAND [ARGS]...\n\n  跨語檢索器\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  run  執行主要功能"
+  },
+  {
+    "folder": "S377-rq-split",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 763,
+    "run_output": "Usage: rq-split.py [OPTIONS] COMMAND [ARGS]...\n\n  問題拆解器\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  run  執行主要功能"
+  },
+  {
+    "folder": "S378-paper-style",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 142,
+    "run_output": "Usage: paper-style.py [OPTIONS] COMMAND [ARGS]...\n\n  論文格式器\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  run  執行主要功能"
+  },
+  {
+    "folder": "S379-caption-gen",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 755,
+    "run_output": "Usage: caption-gen.py [OPTIONS] COMMAND [ARGS]...\n\n  圖說產生器\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  run  執行主要功能"
+  },
+  {
+    "folder": "S380-arxiv-feed",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 139,
+    "run_output": "Usage: arxiv-feed.py [OPTIONS] COMMAND [ARGS]...\n\n  Arxiv 推播器\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  run  執行主要功能"
+  },
+  {
+    "folder": "T381-trip-pack",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 747,
+    "run_output": "Usage: trip-pack.py [OPTIONS] COMMAND [ARGS]...\n\n  行程整合器\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  export  匯出結果到檔案"
+  },
+  {
+    "folder": "T382-flight-watch",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 173,
+    "run_output": "Usage: flight-watch.py [OPTIONS] COMMAND [ARGS]...\n\n  機票追蹤器\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  scan  掃描並分析目標內容"
+  },
+  {
+    "folder": "T383-stay-compare",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 232,
+    "run_output": "Usage: stay-compare.py [OPTIONS] COMMAND [ARGS]...\n\n  住宿比對器\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  diff  比對兩者差異"
+  },
+  {
+    "folder": "T384-trip-budget",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 149,
+    "run_output": "Usage: trip-budget.py [OPTIONS] COMMAND [ARGS]...\n\n  旅遊預算器\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  run  執行主要功能"
+  },
+  {
+    "folder": "T385-visa-doc",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 147,
+    "run_output": "Usage: visa-doc.py [OPTIONS] COMMAND [ARGS]...\n\n  簽證文件清單\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  run  執行處理流程"
+  },
+  {
+    "folder": "T386-trip-tz",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 136,
+    "run_output": "Usage: trip-tz.py [OPTIONS] COMMAND [ARGS]...\n\n  行程時區器\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  run  執行主要功能"
+  },
+  {
+    "folder": "T387-pack-list",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 762,
+    "run_output": "Usage: pack-list.py [OPTIONS] COMMAND [ARGS]...\n\n  行李清單器\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  export  匯出結果到檔案"
+  },
+  {
+    "folder": "T388-wx-brief",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 224,
+    "run_output": "Usage: wx-brief.py [OPTIONS] COMMAND [ARGS]...\n\n  天氣摘要器\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  run  執行主要功能"
+  },
+  {
+    "folder": "T389-route-build",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 233,
+    "run_output": "Usage: route-build.py [OPTIONS] COMMAND [ARGS]...\n\n  路線產生器\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  generate  生成內容"
+  },
+  {
+    "folder": "T390-eats-suggest",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 227,
+    "run_output": "Usage: eats-suggest.py [OPTIONS] COMMAND [ARGS]...\n\n  餐廳推薦器\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  run  執行主要功能"
+  },
+  {
+    "folder": "T391-menu-tr",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 739,
+    "run_output": "Usage: menu-tr.py [OPTIONS] COMMAND [ARGS]...\n\n  菜單翻譯器\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  run  執行主要功能"
+  },
+  {
+    "folder": "T392-emergency-card",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 148,
+    "run_output": "Usage: emergency-card.py [OPTIONS] COMMAND [ARGS]...\n\n  緊急卡\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  diff  比對兩者差異"
+  },
+  {
+    "folder": "T393-lost-list",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 139,
+    "run_output": "Usage: lost-list.py [OPTIONS] COMMAND [ARGS]...\n\n  失物清單器\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  run  執行主要功能"
+  },
+  {
+    "folder": "T394-mpg-log",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 134,
+    "run_output": "Usage: mpg-log.py [OPTIONS] COMMAND [ARGS]...\n\n  油耗紀錄器\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  run  執行主要功能"
+  },
+  {
+    "folder": "T395-transit-time",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 233,
+    "run_output": "Usage: transit-time.py [OPTIONS] COMMAND [ARGS]...\n\n  大眾運輸時刻\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  run  執行主要功能"
+  },
+  {
+    "folder": "T396-trip-recap",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 750,
+    "run_output": "Usage: trip-recap.py [OPTIONS] COMMAND [ARGS]...\n\n  遊記產生器\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  run  執行主要功能"
+  },
+  {
+    "folder": "T397-trip-split",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 137,
+    "run_output": "Usage: trip-split.py [OPTIONS] COMMAND [ARGS]...\n\n  行程分帳器\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  run  執行主要功能"
+  },
+  {
+    "folder": "T398-phrase-pal",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 763,
+    "run_output": "Usage: phrase-pal.py [OPTIONS] COMMAND [ARGS]...\n\n  在地用語助手\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  run  執行主要功能"
+  },
+  {
+    "folder": "T399-travel-ins",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 759,
+    "run_output": "Usage: travel-ins.py [OPTIONS] COMMAND [ARGS]...\n\n  旅保建議器\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  run  執行主要功能"
+  },
+  {
+    "folder": "T400-trip-conflict",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 139,
+    "run_output": "Usage: trip-conflict.py [OPTIONS] COMMAND [ARGS]...\n\n  行程衝突器\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  diff  比對兩者差異"
+  },
+  {
+    "folder": "U401-price-cmp",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 221,
+    "run_output": "Usage: price-cmp.py [OPTIONS] COMMAND [ARGS]...\n\n  多平台比價器\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  run  執行主要功能"
+  },
+  {
+    "folder": "U402-price-history",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 216,
+    "run_output": "Usage: price-history.py [OPTIONS] COMMAND [ARGS]...\n\n  價歷追蹤器\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  run  執行主要功能"
+  },
+  {
+    "folder": "U403-shop-list",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 144,
+    "run_output": "Usage: shop-list.py [OPTIONS] COMMAND [ARGS]...\n\n  購物清單器\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  run  執行主要功能"
+  },
+  {
+    "folder": "U404-order-hub",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 142,
+    "run_output": "Usage: order-hub.py [OPTIONS] COMMAND [ARGS]...\n\n  訂單集中器\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  run  執行主要功能"
+  },
+  {
+    "folder": "U405-return-track",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 141,
+    "run_output": "Usage: return-track.py [OPTIONS] COMMAND [ARGS]...\n\n  退貨追蹤器\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  diff  比對兩者差異"
+  },
+  {
+    "folder": "U406-coupon-vault",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 141,
+    "run_output": "Usage: coupon-vault.py [OPTIONS] COMMAND [ARGS]...\n\n  折價券保管庫\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  run  執行主要功能"
+  },
+  {
+    "folder": "U407-sub-expire",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 145,
+    "run_output": "Usage: sub-expire.py [OPTIONS] COMMAND [ARGS]...\n\n  訂閱到期器\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  run  執行主要功能"
+  },
+  {
+    "folder": "U408-sub-cancel",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 147,
+    "run_output": "Usage: sub-cancel.py [OPTIONS] COMMAND [ARGS]...\n\n  訂閱取消助手\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  run  執行主要功能"
+  },
+  {
+    "folder": "U409-restock",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 144,
+    "run_output": "Usage: restock.py [OPTIONS] COMMAND [ARGS]...\n\n  補貨提醒器\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  run  執行主要功能"
+  },
+  {
+    "folder": "U410-gift-list",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 136,
+    "run_output": "Usage: gift-list.py [OPTIONS] COMMAND [ARGS]...\n\n  送禮清單器\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  run  執行主要功能"
+  },
+  {
+    "folder": "U411-cart-nudge",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 138,
+    "run_output": "Usage: cart-nudge.py [OPTIONS] COMMAND [ARGS]...\n\n  結帳提醒器\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  run  執行主要功能"
+  },
+  {
+    "folder": "U412-review-brief",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 765,
+    "run_output": "Usage: review-brief.py [OPTIONS] COMMAND [ARGS]...\n\n  評價摘要器\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  diff  比對兩者差異\n  scan  掃描並分析目標內容"
+  },
+  {
+    "folder": "U413-review-real",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 746,
+    "run_output": "Usage: review-real.py [OPTIONS] COMMAND [ARGS]...\n\n  假評論偵測器\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  diff  比對兩者差異\n  scan  掃描並分析目標內容"
+  },
+  {
+    "folder": "U414-shop-guard",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 145,
+    "run_output": "Usage: shop-guard.py [OPTIONS] COMMAND [ARGS]...\n\n  購物守門員\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  scan  掃描並分析目標內容"
+  },
+  {
+    "folder": "U415-pay-est",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 138,
+    "run_output": "Usage: pay-est.py [OPTIONS] COMMAND [ARGS]...\n\n  跨幣付款試算\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  run  執行主要功能"
+  },
+  {
+    "folder": "U416-flash-deal",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 79,
+    "run_output": "Usage: flash-deal.py [OPTIONS] COMMAND [ARGS]...\n\n  搶購提醒器\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  run  執行主要功能"
+  },
+  {
+    "folder": "U417-combo-opt",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 129,
+    "run_output": "Usage: combo-opt.py [OPTIONS] COMMAND [ARGS]...\n\n  換購最佳化器\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  run  執行主要功能"
+  },
+  {
+    "folder": "U418-pantry-low",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 133,
+    "run_output": "Usage: pantry-low.py [OPTIONS] COMMAND [ARGS]...\n\n  家庫提醒器\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  run  執行主要功能"
+  },
+  {
+    "folder": "U419-resell-pm",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 137,
+    "run_output": "Usage: resell-pm.py [OPTIONS] COMMAND [ARGS]...\n\n  二手再售助手\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  run  執行主要功能"
+  },
+  {
+    "folder": "U420-sub-share",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 137,
+    "run_output": "Usage: sub-share.py [OPTIONS] COMMAND [ARGS]...\n\n  訂閱分帳器\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  run  執行主要功能"
+  },
+  {
+    "folder": "V421-iot-bridge",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 141,
+    "run_output": "Usage: iot-bridge.py [OPTIONS] COMMAND [ARGS]...\n\n  IoT 橋接器\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  run  執行主要功能"
+  },
+  {
+    "folder": "V422-scene-flip",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 218,
+    "run_output": "Usage: scene-flip.py [OPTIONS] COMMAND [ARGS]...\n\n  場景切換器\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  run  執行主要功能"
+  },
+  {
+    "folder": "V423-light-schedule",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 132,
+    "run_output": "Usage: light-schedule.py [OPTIONS] COMMAND [ARGS]...\n\n  燈光排程器\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  generate  生成內容"
+  },
+  {
+    "folder": "V424-hvac-rule",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 141,
+    "run_output": "Usage: hvac-rule.py [OPTIONS] COMMAND [ARGS]...\n\n  空調規則器\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  run  執行主要功能"
+  },
+  {
+    "folder": "V425-cam-events",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 767,
+    "run_output": "Usage: cam-events.py [OPTIONS] COMMAND [ARGS]...\n\n  安防事件摘要\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  run  執行主要功能"
+  },
+  {
+    "folder": "V426-lock-log",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 136,
+    "run_output": "Usage: lock-log.py [OPTIONS] COMMAND [ARGS]...\n\n  門鎖紀錄器\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  run  執行主要功能"
+  },
+  {
+    "folder": "V427-power-watch",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 132,
+    "run_output": "Usage: power-watch.py [OPTIONS] COMMAND [ARGS]...\n\n  用電監測器\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  scan  掃描並分析目標內容"
+  },
+  {
+    "folder": "V428-solar-track",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 175,
+    "run_output": "Usage: solar-track.py [OPTIONS] COMMAND [ARGS]...\n\n  太陽能追蹤器\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  diff  比對兩者差異"
+  },
+  {
+    "folder": "V429-print-queue",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 141,
+    "run_output": "Usage: print-queue.py [OPTIONS] COMMAND [ARGS]...\n\n  列印佇列器\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  run  執行主要功能"
+  },
+  {
+    "folder": "V430-pet-feed",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 139,
+    "run_output": "Usage: pet-feed.py [OPTIONS] COMMAND [ARGS]...\n\n  餵食排程器\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  run  執行主要功能"
+  },
+  {
+    "folder": "V431-air-watch",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 147,
+    "run_output": "Usage: air-watch.py [OPTIONS] COMMAND [ARGS]...\n\n  空氣告警器\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  scan  掃描並分析目標內容"
+  },
+  {
+    "folder": "V432-blind-schedule",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 138,
+    "run_output": "Usage: blind-schedule.py [OPTIONS] COMMAND [ARGS]...\n\n  窗簾排程器\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  generate  生成內容"
+  },
+  {
+    "folder": "V433-leak-alert",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 143,
+    "run_output": "Usage: leak-alert.py [OPTIONS] COMMAND [ARGS]...\n\n  漏水告警器\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  send  處理並發送訊息"
+  },
+  {
+    "folder": "V434-nas-health",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 222,
+    "run_output": "Usage: nas-health.py [OPTIONS] COMMAND [ARGS]...\n\n  NAS 健康檢查\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  run  執行主要功能"
+  },
+  {
+    "folder": "V435-home-traffic",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 145,
+    "run_output": "Usage: home-traffic.py [OPTIONS] COMMAND [ARGS]...\n\n  家用流量分析\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  run  執行主要功能"
+  },
+  {
+    "folder": "V436-home-backup",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 83,
+    "run_output": "Usage: home-backup.py [OPTIONS] COMMAND [ARGS]...\n\n  家庭備份器\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  export  匯出結果到檔案"
+  },
+  {
+    "folder": "V437-cam-privacy",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 229,
+    "run_output": "Usage: cam-privacy.py [OPTIONS] COMMAND [ARGS]...\n\n  隱私模式器\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  run  執行主要功能"
+  },
+  {
+    "folder": "V438-rule-conflict",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 140,
+    "run_output": "Usage: rule-conflict.py [OPTIONS] COMMAND [ARGS]...\n\n  規則衝突器\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  diff  比對兩者差異"
+  },
+  {
+    "folder": "V439-mqtt-tap",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 136,
+    "run_output": "Usage: mqtt-tap.py [OPTIONS] COMMAND [ARGS]...\n\n  MQTT 監聽器\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  run  執行主要功能"
+  },
+  {
+    "folder": "V440-energy-tip",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 740,
+    "run_output": "Usage: energy-tip.py [OPTIONS] COMMAND [ARGS]...\n\n  節能建議器\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  run  執行主要功能"
+  },
+  {
+    "folder": "W441-doc-tr",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 740,
+    "run_output": "Usage: doc-tr.py [OPTIONS] COMMAND [ARGS]...\n\n  文件翻譯器\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  run  執行處理流程"
+  },
+  {
+    "folder": "W442-srt-tr",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 754,
+    "run_output": "Usage: srt-tr.py [OPTIONS] COMMAND [ARGS]...\n\n  SRT 翻譯器\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  run  執行主要功能"
+  },
+  {
+    "folder": "W443-i18n-keys",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 138,
+    "run_output": "Usage: i18n-keys.py [OPTIONS] COMMAND [ARGS]...\n\n  字串鍵管理器\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  run  執行主要功能"
+  },
+  {
+    "folder": "W444-tm-store",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 139,
+    "run_output": "Usage: tm-store.py [OPTIONS] COMMAND [ARGS]...\n\n  翻譯記憶庫\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  run  執行主要功能"
+  },
+  {
+    "folder": "W445-glossary",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 147,
+    "run_output": "Usage: glossary.py [OPTIONS] COMMAND [ARGS]...\n\n  術語表管理器\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  run  執行主要功能"
+  },
+  {
+    "folder": "W446-mt-eval",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 141,
+    "run_output": "Usage: mt-eval.py [OPTIONS] COMMAND [ARGS]...\n\n  MT 品質評估器\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  run  執行主要功能"
+  },
+  {
+    "folder": "W447-loc-suggest",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 751,
+    "run_output": "Usage: loc-suggest.py [OPTIONS] COMMAND [ARGS]...\n\n  在地化建議器\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  run  執行主要功能"
+  },
+  {
+    "folder": "W448-lang-align",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 147,
+    "run_output": "Usage: lang-align.py [OPTIONS] COMMAND [ARGS]...\n\n  多語對齊器\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  run  執行主要功能"
+  },
+  {
+    "folder": "W449-str-expand-est",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 535,
+    "run_output": "Usage: str-expand-est.py [OPTIONS] COMMAND [ARGS]...\n\n  翻譯擴張估算\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  run  執行主要功能"
+  },
+  {
+    "folder": "W450-i18n-seo",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 139,
+    "run_output": "Usage: i18n-seo.py [OPTIONS] COMMAND [ARGS]...\n\n  i18n SEO 工具\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  run  執行主要功能"
+  },
+  {
+    "folder": "W451-i18n-extract",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 139,
+    "run_output": "Usage: i18n-extract.py [OPTIONS] COMMAND [ARGS]...\n\n  字串抽取器\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  run  執行主要功能"
+  },
+  {
+    "folder": "W452-plural-rules",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 153,
+    "run_output": "Usage: plural-rules.py [OPTIONS] COMMAND [ARGS]...\n\n  複數規則器\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  run  執行主要功能"
+  },
+  {
+    "folder": "W453-rtl-check",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 137,
+    "run_output": "Usage: rtl-check.py [OPTIONS] COMMAND [ARGS]...\n\n  RTL 檢查器\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  scan  掃描並分析目標內容"
+  },
+  {
+    "folder": "W454-font-cover",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 136,
+    "run_output": "Usage: font-cover.py [OPTIONS] COMMAND [ARGS]...\n\n  字型涵蓋器\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  run  執行主要功能"
+  },
+  {
+    "folder": "W455-culture-lint",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 151,
+    "run_output": "Usage: culture-lint.py [OPTIONS] COMMAND [ARGS]...\n\n  文化敏感詞\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  run  執行主要功能"
+  },
+  {
+    "folder": "W456-tr-cost",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 131,
+    "run_output": "Usage: tr-cost.py [OPTIONS] COMMAND [ARGS]...\n\n  翻譯預算器\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  run  執行主要功能"
+  },
+  {
+    "folder": "W457-bi-read",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 783,
+    "run_output": "Usage: bi-read.py [OPTIONS] COMMAND [ARGS]...\n\n  雙語閱讀器\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  run  執行主要功能"
+  },
+  {
+    "folder": "W458-img-tr",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 762,
+    "run_output": "Usage: img-tr.py [OPTIONS] COMMAND [ARGS]...\n\n  圖內文翻譯器\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  run  執行主要功能"
+  },
+  {
+    "folder": "W459-stream-cc",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 133,
+    "run_output": "Usage: stream-cc.py [OPTIONS] COMMAND [ARGS]...\n\n  即時字幕器\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  run  執行主要功能"
+  },
+  {
+    "folder": "W460-locale-fmt",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 134,
+    "run_output": "Usage: locale-fmt.py [OPTIONS] COMMAND [ARGS]...\n\n  在地格式器\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  run  執行主要功能"
+  },
+  {
+    "folder": "X461-outline-bot",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 740,
+    "run_output": "Usage: outline-bot.py [OPTIONS] COMMAND [ARGS]...\n\n  大綱產生器\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  run  執行主要功能"
+  },
+  {
+    "folder": "X462-voice-tune",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 748,
+    "run_output": "Usage: voice-tune.py [OPTIONS] COMMAND [ARGS]...\n\n  口吻調整器\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  run  執行主要功能"
+  },
+  {
+    "folder": "X463-len-flex",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 775,
+    "run_output": "Usage: len-flex.py [OPTIONS] COMMAND [ARGS]...\n\n  文長伸縮器\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  run  執行主要功能"
+  },
+  {
+    "folder": "X464-hook-gen",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 764,
+    "run_output": "Usage: hook-gen.py [OPTIONS] COMMAND [ARGS]...\n\n  開頭吊鉤產生器\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  run  執行主要功能"
+  },
+  {
+    "folder": "X465-title-variants",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 759,
+    "run_output": "Usage: title-variants.py [OPTIONS] COMMAND [ARGS]...\n\n  標題變體器\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  run  執行主要功能"
+  },
+  {
+    "folder": "X466-meta-gen",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 748,
+    "run_output": "Usage: meta-gen.py [OPTIONS] COMMAND [ARGS]...\n\n  Meta 標籤產生器\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  run  執行主要功能"
+  },
+  {
+    "folder": "X467-cite-check",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 147,
+    "run_output": "Usage: cite-check.py [OPTIONS] COMMAND [ARGS]...\n\n  引用檢查器\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  scan  掃描並分析目標內容"
+  },
+  {
+    "folder": "X468-plag-scan",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 132,
+    "run_output": "Usage: plag-scan.py [OPTIONS] COMMAND [ARGS]...\n\n  抄襲掃描器\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  scan  掃描並分析目標內容"
+  },
+  {
+    "folder": "X469-news-layout",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 161,
+    "run_output": "Usage: news-layout.py [OPTIONS] COMMAND [ARGS]...\n\n  電子報排版器\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  run  執行主要功能"
+  },
+  {
+    "folder": "X470-blog-pub",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 220,
+    "run_output": "Usage: blog-pub.py [OPTIONS] COMMAND [ARGS]...\n\n  部落格發佈器\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  run  執行主要功能"
+  },
+  {
+    "folder": "X471-short-script",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 771,
+    "run_output": "Usage: short-script.py [OPTIONS] COMMAND [ARGS]...\n\n  短影音腳本器\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  run  執行主要功能"
+  },
+  {
+    "folder": "X472-podcast-script",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 762,
+    "run_output": "Usage: podcast-script.py [OPTIONS] COMMAND [ARGS]...\n\n  Podcast 腳本器\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  run  執行主要功能"
+  },
+  {
+    "folder": "X473-social-post",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 761,
+    "run_output": "Usage: social-post.py [OPTIONS] COMMAND [ARGS]...\n\n  社群貼文器\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  run  執行主要功能"
+  },
+  {
+    "folder": "X474-xpost",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 752,
+    "run_output": "Usage: xpost.py [OPTIONS] COMMAND [ARGS]...\n\n  跨平台重排器\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  run  執行主要功能"
+  },
+  {
+    "folder": "X475-caption-img",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 753,
+    "run_output": "Usage: caption-img.py [OPTIONS] COMMAND [ARGS]...\n\n  圖配文產生器\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  run  執行主要功能"
+  },
+  {
+    "folder": "X476-read-score",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 142,
+    "run_output": "Usage: read-score.py [OPTIONS] COMMAND [ARGS]...\n\n  可讀性評分器\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  run  執行主要功能"
+  },
+  {
+    "folder": "X477-syntax-rep",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 757,
+    "run_output": "Usage: syntax-rep.py [OPTIONS] COMMAND [ARGS]...\n\n  句法重複器\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  run  執行主要功能"
+  },
+  {
+    "folder": "X478-gist-pull",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 748,
+    "run_output": "Usage: gist-pull.py [OPTIONS] COMMAND [ARGS]...\n\n  精華抽取器\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  run  執行主要功能"
+  },
+  {
+    "folder": "X479-story-arc",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 763,
+    "run_output": "Usage: story-arc.py [OPTIONS] COMMAND [ARGS]...\n\n  故事結構器\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  run  執行主要功能"
+  },
+  {
+    "folder": "X480-quote-story",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 795,
+    "run_output": "Usage: quote-story.py [OPTIONS] COMMAND [ARGS]...\n\n  引用故事化器\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  run  執行主要功能"
+  },
+  {
+    "folder": "Y481-contract-brief",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 770,
+    "run_output": "Usage: contract-brief.py [OPTIONS] COMMAND [ARGS]...\n\n  合約摘要器\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  run  執行主要功能"
+  },
+  {
+    "folder": "Y482-contract-risk",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 744,
+    "run_output": "Usage: contract-risk.py [OPTIONS] COMMAND [ARGS]...\n\n  風險條款偵測\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  run  執行主要功能"
+  },
+  {
+    "folder": "Y483-redline-diff",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 154,
+    "run_output": "Usage: redline-diff.py [OPTIONS] COMMAND [ARGS]...\n\n  合約 Redline\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  diff  比對兩者差異"
+  },
+  {
+    "folder": "Y484-nda-tpl",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 162,
+    "run_output": "Usage: nda-tpl.py [OPTIONS] COMMAND [ARGS]...\n\n  NDA 模板器\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  run  執行主要功能"
+  },
+  {
+    "folder": "Y485-license-compat",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 154,
+    "run_output": "Usage: license-compat.py [OPTIONS] COMMAND [ARGS]...\n\n  授權相容檢查\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  run  執行主要功能"
+  },
+  {
+    "folder": "Y486-copyright-gen",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 163,
+    "run_output": "Usage: copyright-gen.py [OPTIONS] COMMAND [ARGS]...\n\n  著作權聲明\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  export  匯出結果到檔案"
+  },
+  {
+    "folder": "Y487-privacy-gen",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 781,
+    "run_output": "Usage: privacy-gen.py [OPTIONS] COMMAND [ARGS]...\n\n  隱私政策產生\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  run  執行主要功能"
+  },
+  {
+    "folder": "Y488-tm-prelim",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 225,
+    "run_output": "Usage: tm-prelim.py [OPTIONS] COMMAND [ARGS]...\n\n  商標初查器\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  run  執行主要功能"
+  },
+  {
+    "folder": "Y489-corp-vault",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 137,
+    "run_output": "Usage: corp-vault.py [OPTIONS] COMMAND [ARGS]...\n\n  公司文件保管\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  run  執行主要功能"
+  },
+  {
+    "folder": "Y490-quote-gen",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 163,
+    "run_output": "Usage: quote-gen.py [OPTIONS] COMMAND [ARGS]...\n\n  報價單產生器\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  run  執行主要功能"
+  },
+  {
+    "folder": "Y491-po-flow",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 137,
+    "run_output": "Usage: po-flow.py [OPTIONS] COMMAND [ARGS]...\n\n  採購流程器\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  run  執行主要功能"
+  },
+  {
+    "folder": "Y492-mou-draft",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 781,
+    "run_output": "Usage: mou-draft.py [OPTIONS] COMMAND [ARGS]...\n\n  MOU 草擬器\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  generate  生成內容"
+  },
+  {
+    "folder": "Y493-hr-onoff",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 141,
+    "run_output": "Usage: hr-onoff.py [OPTIONS] COMMAND [ARGS]...\n\n  HR 流程器\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  scan  掃描並分析目標內容"
+  },
+  {
+    "folder": "Y494-travel-claim",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 174,
+    "run_output": "Usage: travel-claim.py [OPTIONS] COMMAND [ARGS]...\n\n  差旅報帳器\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  run  執行主要功能"
+  },
+  {
+    "folder": "Y495-cust-onboard",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 139,
+    "run_output": "Usage: cust-onboard.py [OPTIONS] COMMAND [ARGS]...\n\n  客戶入手流程\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  run  執行主要功能"
+  },
+  {
+    "folder": "Y496-ticket-route",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 765,
+    "run_output": "Usage: ticket-route.py [OPTIONS] COMMAND [ARGS]...\n\n  客訴路由器\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  run  執行主要功能"
+  },
+  {
+    "folder": "Y497-sla-watch",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 145,
+    "run_output": "Usage: sla-watch.py [OPTIONS] COMMAND [ARGS]...\n\n  SLA 守望者\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  scan  掃描並分析目標內容"
+  },
+  {
+    "folder": "Y498-comp-watch",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 801,
+    "run_output": "Usage: comp-watch.py [OPTIONS] COMMAND [ARGS]...\n\n  競品監測器\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  scan  掃描並分析目標內容"
+  },
+  {
+    "folder": "Y499-bizplan-kpi",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 752,
+    "run_output": "Usage: bizplan-kpi.py [OPTIONS] COMMAND [ARGS]...\n\n  商計 KPI 整理\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  generate  生成內容"
+  },
+  {
+    "folder": "Y500-pitch-fmt",
+    "status": "skeleton",
+    "syntax_ok": true,
+    "has_todo": true,
+    "run_exit": 0,
+    "run_ms": 1006,
+    "run_output": "Usage: pitch-fmt.py [OPTIONS] COMMAND [ARGS]...\n\n  簡報排版器\n\nOptions:\n  -v, --verbose\n  --help         Show this message and exit.\n\nCommands:\n  run  執行主要功能"
+  }
+]

@@ -1,0 +1,75 @@
+{
+  "name": "token-meter",
+  "version": "0.1.0",
+  "description": "Token 計量計費器",
+  "category": "B",
+  "number": 28,
+  "pain_point": "無法追蹤 Token 用量與費用",
+  "commercial": "✅",
+  "language": "Python",
+  "dependencies": [
+    "tiktoken",
+    "sqlite3",
+    "rich"
+  ],
+  "agent_compatible": true,
+  "mcp_ready": true,
+  "intent_triggers": [
+    "幫我算一下這段文字用了多少 token",
+    "追蹤這個月的 API token 消費",
+    "計算這次對話花了多少錢",
+    "掃描 token 用量，看是否超預算",
+    "統計一下 GPT-4 和 Claude 的費用比較",
+    "告訴我這個 prompt 有多少 token",
+    "監控每日 token 用量並發出警報"
+  ],
+  "examples": [
+    {
+      "query": "計算這段文字的 token 數量",
+      "params": {
+        "input_text": "Hello, this is a test message.",
+        "model": "gpt-4",
+        "action": "scan"
+      }
+    },
+    {
+      "query": "掃描本月所有 API 呼叫的 token 用量",
+      "params": {
+        "action": "scan",
+        "period": "monthly"
+      }
+    },
+    {
+      "query": "計算 prompt.txt 的 token 數並估算費用",
+      "params": {
+        "input_file": "prompt.txt",
+        "model": "claude-3-sonnet",
+        "action": "scan"
+      }
+    }
+  ],
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "action": {
+        "type": "string"
+      },
+      "input_file": {
+        "type": "string"
+      },
+      "input_text": {
+        "type": "string"
+      },
+      "model": {
+        "type": "string"
+      },
+      "period": {
+        "type": "string"
+      }
+    },
+    "required": [
+      "action"
+    ]
+  },
+  "license": "MIT"
+}

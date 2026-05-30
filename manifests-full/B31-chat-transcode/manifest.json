@@ -1,0 +1,79 @@
+{
+  "name": "chat-transcode",
+  "version": "0.1.0",
+  "description": "對話格式轉換器",
+  "category": "B",
+  "number": 31,
+  "pain_point": "跨模型遷移對話格式不同",
+  "commercial": "✅",
+  "language": "Python",
+  "dependencies": [
+    "json",
+    "click",
+    "rich"
+  ],
+  "agent_compatible": true,
+  "mcp_ready": true,
+  "intent_triggers": [
+    "把 ChatGPT 的對話格式轉成 Claude 格式",
+    "把這個 OpenAI 格式的歷史記錄轉換",
+    "跨模型遷移對話，需要格式轉換",
+    "把對話記錄從 JSON 轉成 Markdown",
+    "轉換聊天記錄的格式讓另一個 AI 讀",
+    "把 Anthropic 的對話格式轉成通用格式",
+    "幫我做對話格式的跨平台轉換"
+  ],
+  "examples": [
+    {
+      "query": "把 openai_chat.json 轉成 Claude 格式",
+      "params": {
+        "input_file": "openai_chat.json",
+        "source_format": "openai",
+        "target_format": "claude",
+        "action": "send"
+      }
+    },
+    {
+      "query": "把對話格式從 Anthropic 轉成通用 Markdown",
+      "params": {
+        "input_file": "chat.json",
+        "source_format": "anthropic",
+        "target_format": "markdown",
+        "action": "send"
+      }
+    },
+    {
+      "query": "批次轉換 chats/ 目錄下所有對話格式",
+      "params": {
+        "input_dir": "chats/",
+        "target_format": "openai",
+        "action": "send"
+      }
+    }
+  ],
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "action": {
+        "type": "string"
+      },
+      "input_dir": {
+        "type": "string"
+      },
+      "input_file": {
+        "type": "string"
+      },
+      "source_format": {
+        "type": "string"
+      },
+      "target_format": {
+        "type": "string"
+      }
+    },
+    "required": [
+      "action",
+      "target_format"
+    ]
+  },
+  "license": "MIT"
+}

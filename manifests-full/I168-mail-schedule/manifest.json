@@ -1,0 +1,84 @@
+{
+  "name": "mail-schedule",
+  "version": "0.1.0",
+  "description": "排程寄信",
+  "category": "I",
+  "number": 168,
+  "pain_point": "需要安排寄送時間",
+  "commercial": "⚠️",
+  "language": "Python",
+  "dependencies": [
+    "smtplib",
+    "schedule",
+    "click"
+  ],
+  "agent_compatible": true,
+  "mcp_ready": true,
+  "intent_triggers": [
+    "我想安排信件在明天早上 9 點自動寄出",
+    "幫我把這封信排程到週五下午再發送",
+    "想在非工作時間準備好信件但等上班後才發",
+    "節假日寫好信件，設定工作日再自動寄出",
+    "需要定時寄送的週報通知，幫我排程",
+    "信件排程工具，讓我在最佳時間點發信",
+    "幫我設定每週一早上自動寄出團隊摘要信"
+  ],
+  "examples": [
+    {
+      "query": "排程 draft.txt 信件在 2024-03-15 09:00 寄給 boss@company.com",
+      "params": {
+        "action": "schedule",
+        "input_file": "draft.txt",
+        "to": "boss@company.com",
+        "send_at": "2024-03-15 09:00"
+      }
+    },
+    {
+      "query": "設定每週一上午 8:30 自動發送週報給 team@company.com",
+      "params": {
+        "action": "schedule",
+        "input_file": "weekly-report.txt",
+        "to": "team@company.com",
+        "repeat": "weekly",
+        "time": "08:30",
+        "weekday": "Monday"
+      }
+    },
+    {
+      "query": "列出所有已排程待發送的郵件",
+      "params": {
+        "action": "list"
+      }
+    }
+  ],
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "action": {
+        "type": "string"
+      },
+      "input_file": {
+        "type": "string"
+      },
+      "repeat": {
+        "type": "string"
+      },
+      "send_at": {
+        "type": "string"
+      },
+      "time": {
+        "type": "string"
+      },
+      "to": {
+        "type": "string"
+      },
+      "weekday": {
+        "type": "string"
+      }
+    },
+    "required": [
+      "action"
+    ]
+  },
+  "license": "MIT"
+}

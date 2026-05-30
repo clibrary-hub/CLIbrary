@@ -1,0 +1,92 @@
+{
+  "name": "xpost",
+  "version": "0.1.0",
+  "description": "跨平台重排器",
+  "category": "X",
+  "number": 474,
+  "pain_point": "跨平台貼文重排",
+  "commercial": "⚠️",
+  "language": "Python",
+  "dependencies": [
+    "anthropic",
+    "click",
+    "rich"
+  ],
+  "agent_compatible": true,
+  "mcp_ready": true,
+  "intent_triggers": [
+    "把這篇文章改成各平台版本",
+    "同一內容適配不同社群媒體格式",
+    "我要同時發佈到 IG、FB 和 LinkedIn，幫我各自調整",
+    "根據各平台字數限制重排文案",
+    "跨平台發文，讓內容最適合每個平台",
+    "這篇部落格改成 Twitter 的推文串",
+    "為同一活動生成不同平台的客製貼文"
+  ],
+  "examples": [
+    {
+      "query": "把 blog_post.txt 分別改寫成 Instagram、Twitter、LinkedIn 版本",
+      "params": {
+        "input_file": "blog_post.txt",
+        "target_platforms": [
+          "instagram",
+          "twitter",
+          "linkedin"
+        ]
+      }
+    },
+    {
+      "query": "這則新聞稿改成 5 個平台的社群貼文版本，保留核心訊息",
+      "params": {
+        "input_file": "press_release.txt",
+        "target_platforms": [
+          "fb",
+          "ig",
+          "twitter",
+          "linkedin",
+          "line"
+        ],
+        "preserve_key_message": true
+      }
+    },
+    {
+      "query": "長文章拆成 Twitter 推文串，每則不超過 280 字",
+      "params": {
+        "input_file": "article.txt",
+        "platform": "twitter",
+        "max_chars": 280,
+        "format": "thread"
+      }
+    }
+  ],
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "format": {
+        "type": "string"
+      },
+      "input_file": {
+        "type": "string"
+      },
+      "max_chars": {
+        "type": "integer"
+      },
+      "platform": {
+        "type": "string"
+      },
+      "preserve_key_message": {
+        "type": "boolean"
+      },
+      "target_platforms": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    },
+    "required": [
+      "input_file"
+    ]
+  },
+  "license": "MIT"
+}

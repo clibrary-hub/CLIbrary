@@ -1,0 +1,72 @@
+{
+  "name": "highlight-collect",
+  "version": "0.1.0",
+  "description": "高亮收集器",
+  "category": "R",
+  "number": 349,
+  "pain_point": "高亮重點集中",
+  "commercial": "✅",
+  "language": "Python",
+  "dependencies": [
+    "re",
+    "pathlib",
+    "click",
+    "rich"
+  ],
+  "agent_compatible": true,
+  "mcp_ready": true,
+  "intent_triggers": [
+    "把所有筆記中的高亮重點集中在一起",
+    "抓出 Markdown 裡所有標黃的文字",
+    "收集讀書筆記裡所有 == 高亮 == 的句子",
+    "整理所有筆記的重點摘錄",
+    "把 Obsidian 高亮匯出成獨立清單",
+    "找出所有 callout 和重點標記",
+    "統整多本書的高亮筆記"
+  ],
+  "examples": [
+    {
+      "query": "收集 reading_notes/ 下所有 Markdown 的高亮文字",
+      "params": {
+        "notes_dir": "reading_notes/",
+        "output_file": "highlights.md"
+      }
+    },
+    {
+      "query": "從 book_notes.md 抓出所有 ==高亮== 的句子",
+      "params": {
+        "input_file": "book_notes.md",
+        "format": "obsidian"
+      }
+    },
+    {
+      "query": "批次收集 vault/ 所有筆記的高亮並按來源分組",
+      "params": {
+        "notes_dir": "vault/",
+        "group_by_source": true,
+        "output_file": "all_highlights.md"
+      }
+    }
+  ],
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "format": {
+        "type": "string"
+      },
+      "group_by_source": {
+        "type": "boolean"
+      },
+      "input_file": {
+        "type": "string"
+      },
+      "notes_dir": {
+        "type": "string"
+      },
+      "output_file": {
+        "type": "string"
+      }
+    }
+  },
+  "license": "MIT"
+}

@@ -1,0 +1,80 @@
+{
+  "name": "agent-pool",
+  "version": "0.1.0",
+  "description": "Agent 任務池",
+  "category": "D",
+  "number": 69,
+  "pain_point": "多任務無法並行管理",
+  "commercial": "✅",
+  "language": "Python",
+  "dependencies": [
+    "concurrent.futures",
+    "click",
+    "rich"
+  ],
+  "agent_compatible": true,
+  "mcp_ready": true,
+  "intent_triggers": [
+    "並行執行多個 AI 請求，提高效率",
+    "限制最多同時執行 3 個 Agent",
+    "同時跑 5 個 Agent 任務",
+    "建立任務池並行處理多個請求",
+    "把這 10 個任務丟進任務池",
+    "建立 Agent worker pool 處理任務佇列",
+    "管理多個 AI 任務的並行執行",
+    "建立 agent 任務池限定在指定目錄",
+    "多個 agent 並行處理，範圍限當前目錄",
+    "agent worker pool 限制工作範圍",
+    "設定 agent pool 的執行範圍邊界",
+    "指定工作目錄後啟動 agent 任務池"
+  ],
+  "examples": [
+    {
+      "query": "建立包含 5 個 worker 的 Agent 任務池",
+      "params": {
+        "pool_size": 5,
+        "action": "run"
+      }
+    },
+    {
+      "query": "並行執行 tasks.json 中的 10 個任務",
+      "params": {
+        "tasks_file": "tasks.json",
+        "pool_size": 3,
+        "action": "run"
+      }
+    },
+    {
+      "query": "監控任務池的執行狀態",
+      "params": {
+        "action": "run",
+        "monitor": true
+      }
+    }
+  ],
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "pool_size": {
+        "type": "integer",
+        "description": "任務池的最大並行 worker 數量"
+      },
+      "tasks_file": {
+        "type": "string",
+        "description": "包含任務清單的檔案路徑"
+      },
+      "action": {
+        "type": "string",
+        "description": "操作類型：run（執行）"
+      },
+      "monitor": {
+        "type": "boolean",
+        "description": "是否啟用任務池監控"
+      }
+    },
+    "required": [
+      "action"
+    ]
+  },
+  "license": "MIT"
+}

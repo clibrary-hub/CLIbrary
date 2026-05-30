@@ -1,0 +1,75 @@
+{
+  "name": "flash-deal",
+  "version": "0.1.0",
+  "description": "搶購提醒器",
+  "category": "U",
+  "number": 416,
+  "pain_point": "限時搶購提醒",
+  "commercial": "⚠️",
+  "language": "Python",
+  "dependencies": [
+    "plyer",
+    "click",
+    "sqlite3"
+  ],
+  "agent_compatible": true,
+  "mcp_ready": true,
+  "intent_triggers": [
+    "幫我設定搶購提醒，下午三點整開搶",
+    "這個商品今晚 12 點限量搶購，提醒我",
+    "雙十一特賣開始前 10 分鐘提醒我",
+    "追蹤限時特價活動，快開始前通知我",
+    "設定閃購鬧鐘，避免錯過限時優惠",
+    "這個 PS5 遊戲今天下午 2 點才開放購買，提醒我",
+    "有沒有今天的搶購活動提醒清單？"
+  ],
+  "examples": [
+    {
+      "query": "設定 2024-01-28 15:00 的蝦皮搶購提醒，商品是 PS5 主機",
+      "params": {
+        "product": "PS5 主機",
+        "platform": "shopee",
+        "flash_time": "2024-01-28 15:00",
+        "remind_before_minutes": 10
+      }
+    },
+    {
+      "query": "列出今天所有待搶購的活動提醒",
+      "params": {
+        "date": "2024-01-28"
+      }
+    },
+    {
+      "query": "新增雙十一 23:59 限量特賣提醒，要在 23:45 提醒我",
+      "params": {
+        "event": "雙十一限量特賣",
+        "flash_time": "2024-11-11 23:59",
+        "remind_before_minutes": 14
+      }
+    }
+  ],
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "date": {
+        "type": "string"
+      },
+      "event": {
+        "type": "string"
+      },
+      "flash_time": {
+        "type": "string"
+      },
+      "platform": {
+        "type": "string"
+      },
+      "product": {
+        "type": "string"
+      },
+      "remind_before_minutes": {
+        "type": "integer"
+      }
+    }
+  },
+  "license": "MIT"
+}

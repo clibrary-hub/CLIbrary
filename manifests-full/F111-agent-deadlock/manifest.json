@@ -1,0 +1,81 @@
+{
+  "name": "agent-deadlock",
+  "version": "0.1.0",
+  "description": "死鎖偵測器",
+  "category": "F",
+  "number": 111,
+  "pain_point": "多 Agent 死鎖無法解",
+  "commercial": "✅",
+  "language": "Python",
+  "dependencies": [
+    "click",
+    "rich",
+    "asyncio"
+  ],
+  "agent_compatible": true,
+  "mcp_ready": true,
+  "intent_triggers": [
+    "我的 Agent 系統卡死了不知道原因",
+    "多個 Agent 互相等待造成死鎖怎麼偵測？",
+    "Agent 互相依賴導致系統無法繼續執行",
+    "幫我找出 Agent 系統中的循環依賴",
+    "怎麼自動解除 Agent 之間的死鎖狀態",
+    "Agent 鎖定資源後忘記釋放問題",
+    "我需要一個 Agent 死鎖監控和警告工具"
+  ],
+  "examples": [
+    {
+      "query": "掃描 agents/ 目錄下所有 Agent 的依賴關係找出死鎖",
+      "params": {
+        "action": "run",
+        "agents_dir": "agents/",
+        "mode": "scan"
+      }
+    },
+    {
+      "query": "監控即時 Agent 系統，發現死鎖立刻通知",
+      "params": {
+        "action": "run",
+        "mode": "monitor",
+        "notify": "slack",
+        "webhook_url": "https://hooks.slack.com/xxx"
+      }
+    },
+    {
+      "query": "強制解除 agent-A 和 agent-B 之間的死鎖",
+      "params": {
+        "action": "run",
+        "mode": "resolve",
+        "agents": "agent-A,agent-B"
+      }
+    }
+  ],
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "action": {
+        "type": "string"
+      },
+      "agents": {
+        "type": "string"
+      },
+      "agents_dir": {
+        "type": "string"
+      },
+      "mode": {
+        "type": "string"
+      },
+      "notify": {
+        "type": "string"
+      },
+      "webhook_url": {
+        "type": "string"
+      }
+    },
+    "required": [
+      "action",
+      "mode"
+    ]
+  },
+  "license": "MIT"
+}

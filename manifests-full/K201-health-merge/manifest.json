@@ -1,0 +1,72 @@
+{
+  "name": "health-merge",
+  "version": "0.1.0",
+  "description": "健康資料整合",
+  "category": "K",
+  "number": 201,
+  "pain_point": "跨裝置健康資料分散",
+  "commercial": "⚠️",
+  "language": "Python",
+  "dependencies": [
+    "pandas",
+    "click",
+    "rich"
+  ],
+  "agent_compatible": true,
+  "mcp_ready": true,
+  "intent_triggers": [
+    "把我不同裝置的健康資料合併在一起",
+    "Apple Watch 跟 Fitbit 的數據能整合嗎",
+    "我的健康記錄散落在各個 App，怎麼統一管理",
+    "幫我把手機和手錶的健康數據合一",
+    "跨平台健康資料整合工具",
+    "不同來源的體能資料怎麼合并比對",
+    "健康資料太分散，能不能一次匯總"
+  ],
+  "examples": [
+    {
+      "query": "把 apple_health.csv 和 fitbit_export.csv 合併，找出兩邊不同的紀錄",
+      "params": {
+        "action": "diff",
+        "source_a": "apple_health.csv",
+        "source_b": "fitbit_export.csv"
+      }
+    },
+    {
+      "query": "比對本週 Garmin 和 Google Fit 資料差異",
+      "params": {
+        "action": "diff",
+        "source_a": "garmin_week.json",
+        "source_b": "googlefit_week.json"
+      }
+    },
+    {
+      "query": "整合三個健康來源檔案並輸出統一格式",
+      "params": {
+        "action": "diff",
+        "source_a": "health_a.csv",
+        "source_b": "health_b.csv"
+      }
+    }
+  ],
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "action": {
+        "type": "string"
+      },
+      "source_a": {
+        "type": "string"
+      },
+      "source_b": {
+        "type": "string"
+      }
+    },
+    "required": [
+      "action",
+      "source_a",
+      "source_b"
+    ]
+  },
+  "license": "MIT"
+}

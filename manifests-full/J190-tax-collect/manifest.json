@@ -1,0 +1,79 @@
+{
+  "name": "tax-collect",
+  "version": "0.1.0",
+  "description": "報稅資料收集器",
+  "category": "J",
+  "number": 190,
+  "pain_point": "報稅資料分散",
+  "commercial": "⚠️",
+  "language": "Python",
+  "dependencies": [
+    "sqlite3",
+    "click",
+    "rich"
+  ],
+  "agent_compatible": true,
+  "mcp_ready": true,
+  "intent_triggers": [
+    "報稅季到了，幫我把所有相關資料收集整理",
+    "我的報稅資料散落各處，需要統一收集工具",
+    "幫我整理全年收入、扣除額和相關憑證",
+    "想在報稅前把所有需要的資料一次整合",
+    "薪資、稿費、投資收益都要申報，幫我收集",
+    "報稅資料收集工具，自動整理全年財務記錄",
+    "快速整理所有可扣除項目並計算應稅所得"
+  ],
+  "examples": [
+    {
+      "query": "收集 2023 年全年薪資、投資和其他收入資料",
+      "params": {
+        "action": "collect",
+        "year": "2023",
+        "income_types": "salary,investment,freelance"
+      }
+    },
+    {
+      "query": "從 income-records/ 資料夾整理所有收入憑證",
+      "params": {
+        "action": "collect",
+        "input_dir": "income-records/",
+        "output": "tax-data-2023.json"
+      }
+    },
+    {
+      "query": "列出所有可扣除項目並計算預估應稅所得",
+      "params": {
+        "action": "summary",
+        "year": "2023",
+        "show_deductions": "true"
+      }
+    }
+  ],
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "action": {
+        "type": "string"
+      },
+      "income_types": {
+        "type": "string"
+      },
+      "input_dir": {
+        "type": "string"
+      },
+      "output": {
+        "type": "string"
+      },
+      "show_deductions": {
+        "type": "string"
+      },
+      "year": {
+        "type": "string"
+      }
+    },
+    "required": [
+      "action"
+    ]
+  },
+  "license": "MIT"
+}

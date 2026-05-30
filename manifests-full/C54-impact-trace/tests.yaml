@@ -1,0 +1,24 @@
+tool: impact-trace
+type: readonly
+generated: "2026-04-27"
+skip: false
+
+setup:
+  files:
+    - path: testdata/code.py
+      content: "def a(): pass\ndef b(): a()\ndef c(): b()\n"
+
+cases:
+  - id: help_works
+    description: --help exits 0
+    cmd: ["--help"]
+    expect:
+      exit_code: 0
+      stdout_contains: "Usage:"
+  - id: scan_produces_output
+    description: graph runs and returns output
+    cmd: ["graph", "testdata/code.py"]
+    expect:
+      exit_code: 0
+      is_valid_json: true
+      json_has_key: nodes

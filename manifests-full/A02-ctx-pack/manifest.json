@@ -1,0 +1,80 @@
+{
+  "name": "ctx-pack",
+  "version": "0.1.0",
+  "description": "智能上下文打包器",
+  "category": "A",
+  "number": 2,
+  "pain_point": "上下文視窗爆炸，無法塞進所有檔案",
+  "commercial": "✅",
+  "language": "Python",
+  "dependencies": [
+    "tiktoken",
+    "rich",
+    "click"
+  ],
+  "agent_compatible": true,
+  "mcp_ready": true,
+  "intent_triggers": [
+    "幫我把專案打包成 AI 可以讀的格式",
+    "上下文太長了，幫我智能截斷",
+    "選出最重要的檔案放進上下文",
+    "把這些檔案整理成適合丟給 LLM 的格式",
+    "打包專案內容但不要超過 8000 tokens",
+    "我的 token 快爆了，幫我精簡一下內容",
+    "壓縮一下這些檔案塞進上下文視窗",
+    "壓縮路徑內容送給 Claude 不爆 token",
+    "控制送給 AI 的 context 大小",
+    "打包程式碼給 LLM 且不超過 token 限制",
+    "context 壓縮避免 token 超限",
+    "把程式碼目錄壓縮進 token 預算"
+  ],
+  "examples": [
+    {
+      "query": "把 src/ 目錄打包，限制在 4000 tokens 以內",
+      "params": {
+        "source_path": "src/",
+        "max_tokens": 4000
+      }
+    },
+    {
+      "query": "匯出專案上下文到 context.txt，只包含 .py 檔",
+      "params": {
+        "source_path": ".",
+        "output_file": "context.txt",
+        "file_filter": "*.py"
+      }
+    },
+    {
+      "query": "智能壓縮這個 repo 的內容，優先保留核心邏輯",
+      "params": {
+        "source_path": ".",
+        "max_tokens": 8000,
+        "priority": "core"
+      }
+    }
+  ],
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "file_filter": {
+        "type": "string"
+      },
+      "max_tokens": {
+        "type": "integer"
+      },
+      "output_file": {
+        "type": "string"
+      },
+      "priority": {
+        "type": "string"
+      },
+      "source_path": {
+        "type": "string"
+      }
+    },
+    "required": [
+      "source_path"
+    ]
+  },
+  "license": "MIT"
+}

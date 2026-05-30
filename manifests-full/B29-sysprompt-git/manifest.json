@@ -1,0 +1,75 @@
+{
+  "name": "sysprompt-git",
+  "version": "0.1.0",
+  "description": "System Prompt 版控",
+  "category": "B",
+  "number": 29,
+  "pain_point": "System Prompt 版本混亂",
+  "commercial": "✅",
+  "language": "Python",
+  "dependencies": [
+    "gitpython",
+    "click",
+    "rich"
+  ],
+  "agent_compatible": true,
+  "mcp_ready": true,
+  "intent_triggers": [
+    "幫我把 system prompt 做版本控制",
+    "儲存這個 prompt 的新版本",
+    "回滾到上一個 system prompt 版本",
+    "比較不同版本的 system prompt 差異",
+    "建立 prompt 版本歷史記錄",
+    "給這個 system prompt 打個標籤",
+    "管理不同場景的 system prompt 版本"
+  ],
+  "examples": [
+    {
+      "query": "儲存目前的 system prompt 為版本 v2.1",
+      "params": {
+        "version_tag": "v2.1",
+        "prompt_file": "system_prompt.txt",
+        "action": "run"
+      }
+    },
+    {
+      "query": "回滾 system prompt 到 v1.0 版本",
+      "params": {
+        "version_tag": "v1.0",
+        "action": "run"
+      }
+    },
+    {
+      "query": "比較 v1.0 和 v2.0 的 system prompt 差異",
+      "params": {
+        "version_a": "v1.0",
+        "version_b": "v2.0",
+        "action": "run"
+      }
+    }
+  ],
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "action": {
+        "type": "string"
+      },
+      "prompt_file": {
+        "type": "string"
+      },
+      "version_a": {
+        "type": "string"
+      },
+      "version_b": {
+        "type": "string"
+      },
+      "version_tag": {
+        "type": "string"
+      }
+    },
+    "required": [
+      "action"
+    ]
+  },
+  "license": "MIT"
+}

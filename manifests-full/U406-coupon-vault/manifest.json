@@ -1,0 +1,78 @@
+{
+  "name": "coupon-vault",
+  "version": "0.1.0",
+  "description": "折價券保管庫",
+  "category": "U",
+  "number": 406,
+  "pain_point": "折價券集中",
+  "commercial": "⚠️",
+  "language": "Python",
+  "dependencies": [
+    "sqlite3",
+    "click",
+    "rich"
+  ],
+  "agent_compatible": true,
+  "mcp_ready": true,
+  "intent_triggers": [
+    "幫我整理手上的折價券",
+    "查看有哪些優惠券還沒過期",
+    "我忘記我有什麼折扣碼，幫我列出來",
+    "這張購物金什麼時候到期？",
+    "新增一張折價券到我的保管庫",
+    "有沒有快過期的優惠碼要趕快用掉？",
+    "幫我找可以用在這次購物的折價券"
+  ],
+  "examples": [
+    {
+      "query": "新增 momo 折扣碼 SAVE100，2024-02-29 到期，滿 500 折 100",
+      "params": {
+        "code": "SAVE100",
+        "platform": "momo",
+        "expire_date": "2024-02-29",
+        "discount": 100,
+        "min_amount": 500
+      }
+    },
+    {
+      "query": "列出所有本週到期的折價券",
+      "params": {
+        "expire_within_days": 7
+      }
+    },
+    {
+      "query": "查找適用於蝦皮購物的未使用折扣碼",
+      "params": {
+        "platform": "shopee",
+        "status": "unused"
+      }
+    }
+  ],
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "code": {
+        "type": "string"
+      },
+      "discount": {
+        "type": "integer"
+      },
+      "expire_date": {
+        "type": "string"
+      },
+      "expire_within_days": {
+        "type": "integer"
+      },
+      "min_amount": {
+        "type": "integer"
+      },
+      "platform": {
+        "type": "string"
+      },
+      "status": {
+        "type": "string"
+      }
+    }
+  },
+  "license": "MIT"
+}

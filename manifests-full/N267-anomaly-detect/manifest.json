@@ -1,0 +1,91 @@
+{
+  "name": "anomaly-detect",
+  "version": "0.1.0",
+  "description": "異常偵測器",
+  "category": "N",
+  "number": 267,
+  "pain_point": "異常偵測",
+  "commercial": "✅",
+  "language": "Python",
+  "dependencies": [
+    "scikit-learn",
+    "click",
+    "rich"
+  ],
+  "agent_compatible": true,
+  "mcp_ready": true,
+  "intent_triggers": [
+    "自動標記資料集中的異常點",
+    "從 log 數值中找出異常的時間點",
+    "時序資料異常偵測分析",
+    "latency 時序資料做異常偵測",
+    "我的感測器資料有異常，幫我找出來",
+    "用機器學習偵測異常數據",
+    "grep 完 log 之後對數值做 anomaly detection",
+    "異常偵測工具，找出離群點",
+    "統計方法找出時序中的離群值",
+    "偵測資料中的異常值",
+    "access log 的 latency 有沒有異常",
+    "metric log 用 z-score 找 spike",
+    "找出交易資料中的可疑紀錄",
+    "access log latency 異常 spike 偵測",
+    "log 中 latency 欄位的 spike 分析"
+  ],
+  "examples": [
+    {
+      "query": "偵測 sensor_data.csv 中的溫度異常值",
+      "params": {
+        "action": "run",
+        "input_file": "sensor_data.csv",
+        "value_col": "temperature",
+        "method": "isolation_forest"
+      }
+    },
+    {
+      "query": "從 transactions.csv 找出可能的詐欺交易（異常偵測）",
+      "params": {
+        "action": "run",
+        "input_file": "transactions.csv",
+        "method": "lof",
+        "contamination": 0.05
+      }
+    },
+    {
+      "query": "分析 server_metrics.csv 找出 CPU 使用率的異常時間點",
+      "params": {
+        "action": "run",
+        "input_file": "server_metrics.csv",
+        "value_col": "cpu_usage",
+        "output_file": "anomalies.json"
+      }
+    }
+  ],
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "action": {
+        "type": "string"
+      },
+      "contamination": {
+        "type": "number"
+      },
+      "input_file": {
+        "type": "string"
+      },
+      "method": {
+        "type": "string"
+      },
+      "output_file": {
+        "type": "string"
+      },
+      "value_col": {
+        "type": "string"
+      }
+    },
+    "required": [
+      "action",
+      "input_file"
+    ]
+  },
+  "license": "MIT"
+}

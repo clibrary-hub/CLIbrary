@@ -1,0 +1,70 @@
+{
+  "name": "return-track",
+  "version": "0.1.0",
+  "description": "退貨追蹤器",
+  "category": "U",
+  "number": 405,
+  "pain_point": "退貨流程提醒",
+  "commercial": "⚠️",
+  "language": "Python",
+  "dependencies": [
+    "sqlite3",
+    "click",
+    "rich"
+  ],
+  "agent_compatible": true,
+  "mcp_ready": true,
+  "intent_triggers": [
+    "我申請了退貨，幫我追蹤進度",
+    "退貨退款還沒收到，現在到哪個步驟了？",
+    "記錄這筆退貨申請，提醒我有沒有期限",
+    "這個訂單我要退貨，幫我管理流程",
+    "查一下退貨截止日期是什麼時候",
+    "我的退款什麼時候會入帳？",
+    "追蹤退貨申請狀態，有沒有需要補件？"
+  ],
+  "examples": [
+    {
+      "query": "追蹤訂單 #RT2024012 的退貨進度",
+      "params": {
+        "order_id": "RT2024012",
+        "platform": "shopee"
+      }
+    },
+    {
+      "query": "momo 退貨申請已提交，幫我記錄並提醒7天後確認退款",
+      "params": {
+        "platform": "momo",
+        "return_date": "2024-01-27",
+        "remind_days": 7
+      }
+    },
+    {
+      "query": "列出所有進行中的退貨案件",
+      "params": {
+        "status": "in_progress"
+      }
+    }
+  ],
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "order_id": {
+        "type": "string"
+      },
+      "platform": {
+        "type": "string"
+      },
+      "remind_days": {
+        "type": "integer"
+      },
+      "return_date": {
+        "type": "string"
+      },
+      "status": {
+        "type": "string"
+      }
+    }
+  },
+  "license": "MIT"
+}

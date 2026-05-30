@@ -1,0 +1,71 @@
+{
+  "name": "diff-review",
+  "version": "0.1.0",
+  "description": "多版本差異比較器",
+  "category": "A",
+  "number": 5,
+  "pain_point": "無法快速比較不同版本產出",
+  "commercial": "✅",
+  "language": "Python",
+  "dependencies": [
+    "difflib",
+    "rich",
+    "click"
+  ],
+  "agent_compatible": true,
+  "mcp_ready": true,
+  "intent_triggers": [
+    "幫我比較這兩個版本的差異",
+    "看看 v1 和 v2 有什麼不同",
+    "快速 diff 一下這兩份檔案",
+    "顯示舊版本和新版本的改動",
+    "我想知道這次更新改了什麼",
+    "比對兩個輸出結果的差異",
+    "幫我做版本差異審查"
+  ],
+  "examples": [
+    {
+      "query": "比較 output_v1.txt 和 output_v2.txt 的差異",
+      "params": {
+        "file_a": "output_v1.txt",
+        "file_b": "output_v2.txt"
+      }
+    },
+    {
+      "query": "掃描 src/ 目錄並比對上次的快照差異",
+      "params": {
+        "target_path": "src/",
+        "action": "scan"
+      }
+    },
+    {
+      "query": "diff 兩個 JSON 報告，輸出 HTML 格式",
+      "params": {
+        "file_a": "report_old.json",
+        "file_b": "report_new.json",
+        "output_format": "html"
+      }
+    }
+  ],
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "action": {
+        "type": "string"
+      },
+      "file_a": {
+        "type": "string"
+      },
+      "file_b": {
+        "type": "string"
+      },
+      "output_format": {
+        "type": "string"
+      },
+      "target_path": {
+        "type": "string"
+      }
+    }
+  },
+  "license": "MIT"
+}

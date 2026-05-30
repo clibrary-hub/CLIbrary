@@ -1,0 +1,83 @@
+{
+  "name": "ft-dataset",
+  "version": "0.1.0",
+  "description": "微調資料器",
+  "category": "O",
+  "number": 288,
+  "pain_point": "模型微調資料整理",
+  "commercial": "✅",
+  "language": "Python",
+  "dependencies": [
+    "pandas",
+    "click",
+    "rich"
+  ],
+  "agent_compatible": true,
+  "mcp_ready": true,
+  "intent_triggers": [
+    "整理 LLM 微調用的訓練資料",
+    "把對話記錄轉換成 fine-tuning 格式",
+    "準備模型微調的 JSONL 資料集",
+    "我有 QA 資料，想轉成 OpenAI fine-tune 格式",
+    "清理和驗證微調訓練資料集",
+    "把客服對話轉成模型微調格式",
+    "fine-tuning 資料集的格式轉換和品質檢查"
+  ],
+  "examples": [
+    {
+      "query": "把 qa_pairs.csv 轉成 Claude fine-tuning JSONL 格式",
+      "params": {
+        "action": "convert",
+        "input_file": "qa_pairs.csv",
+        "format": "claude",
+        "output_file": "ft_dataset.jsonl"
+      }
+    },
+    {
+      "query": "驗證 training_data.jsonl 的格式是否符合 OpenAI fine-tune 規範",
+      "params": {
+        "action": "validate",
+        "input_file": "training_data.jsonl",
+        "format": "openai"
+      }
+    },
+    {
+      "query": "把 customer_chats.csv 清理並轉成微調訓練對話格式",
+      "params": {
+        "action": "convert",
+        "input_file": "customer_chats.csv",
+        "user_col": "customer_message",
+        "assistant_col": "agent_reply",
+        "output_file": "chat_ft.jsonl"
+      }
+    }
+  ],
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "action": {
+        "type": "string"
+      },
+      "assistant_col": {
+        "type": "string"
+      },
+      "format": {
+        "type": "string"
+      },
+      "input_file": {
+        "type": "string"
+      },
+      "output_file": {
+        "type": "string"
+      },
+      "user_col": {
+        "type": "string"
+      }
+    },
+    "required": [
+      "action",
+      "input_file"
+    ]
+  },
+  "license": "MIT"
+}

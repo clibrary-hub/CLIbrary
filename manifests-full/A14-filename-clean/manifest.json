@@ -1,0 +1,69 @@
+{
+  "name": "filename-clean",
+  "version": "0.1.0",
+  "description": "檔名清洗器",
+  "category": "A",
+  "number": 14,
+  "pain_point": "檔名一堆奇怪空白與符號",
+  "commercial": "✅",
+  "language": "Python",
+  "dependencies": [
+    "pathlib",
+    "click",
+    "re"
+  ],
+  "agent_compatible": true,
+  "mcp_ready": true,
+  "intent_triggers": [
+    "清理這些亂七八糟的檔名",
+    "移除檔名裡的特殊符號和空白",
+    "幫我把檔名整理成乾淨的格式",
+    "下載的檔案名稱很亂，幫我修",
+    "把所有檔名的空格換成底線",
+    "清掉檔名裡的中文括號和特殊字元",
+    "批次清洗這個資料夾的所有檔名"
+  ],
+  "examples": [
+    {
+      "query": "清洗 /downloads 目錄下所有檔案的名稱",
+      "params": {
+        "target_path": "/downloads"
+      }
+    },
+    {
+      "query": "移除 photos/ 中所有 .jpg 檔名的特殊字元",
+      "params": {
+        "target_path": "photos/",
+        "file_filter": "*.jpg"
+      }
+    },
+    {
+      "query": "把 reports/ 中的空格全部換成底線",
+      "params": {
+        "target_path": "reports/",
+        "replace_spaces": true
+      }
+    }
+  ],
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "target_path": {
+        "type": "string",
+        "description": "要清洗檔名的目錄路徑"
+      },
+      "file_filter": {
+        "type": "string",
+        "description": "限定清洗的檔案類型 glob 表達式"
+      },
+      "replace_spaces": {
+        "type": "boolean",
+        "description": "是否將空格替換為底線"
+      }
+    },
+    "required": [
+      "target_path"
+    ]
+  },
+  "license": "MIT"
+}

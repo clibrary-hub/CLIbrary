@@ -1,0 +1,85 @@
+{
+  "name": "video-to-gif",
+  "version": "0.1.0",
+  "description": "影片轉 GIF",
+  "category": "L",
+  "number": 221,
+  "pain_point": "影片轉 GIF 步驟多",
+  "commercial": "✅",
+  "language": "Python",
+  "dependencies": [
+    "ffmpeg-python",
+    "click",
+    "rich"
+  ],
+  "agent_compatible": true,
+  "mcp_ready": true,
+  "intent_triggers": [
+    "把影片片段轉成 GIF 動圖",
+    "幫我把 MP4 的某個片段輸出成 GIF",
+    "影片轉 GIF 工具，懶人一鍵操作",
+    "截取影片 10 到 20 秒轉成動圖",
+    "我要把說明影片轉成 GIF 放到文件裡",
+    "video 轉 gif 批次處理",
+    "把 demo 影片變成 GIF 方便分享"
+  ],
+  "examples": [
+    {
+      "query": "把 demo.mp4 的前 10 秒轉成 GIF，解析度 480p",
+      "params": {
+        "action": "run",
+        "input_file": "demo.mp4",
+        "start": "00:00:00",
+        "end": "00:00:10",
+        "width": 480
+      }
+    },
+    {
+      "query": "將 tutorial.mp4 第 30 秒到 45 秒轉成 GIF",
+      "params": {
+        "action": "run",
+        "input_file": "tutorial.mp4",
+        "start": "00:00:30",
+        "end": "00:00:45"
+      }
+    },
+    {
+      "query": "批次把 clips/ 目錄下所有 MP4 轉成 GIF",
+      "params": {
+        "action": "run",
+        "input_dir": "clips/",
+        "output_dir": "gifs/"
+      }
+    }
+  ],
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "action": {
+        "type": "string"
+      },
+      "end": {
+        "type": "string"
+      },
+      "input_dir": {
+        "type": "string"
+      },
+      "input_file": {
+        "type": "string"
+      },
+      "output_dir": {
+        "type": "string"
+      },
+      "start": {
+        "type": "string"
+      },
+      "width": {
+        "type": "integer"
+      }
+    },
+    "required": [
+      "action"
+    ]
+  },
+  "license": "MIT"
+}

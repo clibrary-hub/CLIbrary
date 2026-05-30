@@ -1,0 +1,69 @@
+{
+  "name": "snap-guard",
+  "version": "0.1.0",
+  "description": "加工前快照保護器",
+  "category": "A",
+  "number": 6,
+  "pain_point": "Agent 修改前缺乏備份",
+  "commercial": "✅",
+  "language": "Python",
+  "dependencies": [
+    "shutil",
+    "hashlib",
+    "click"
+  ],
+  "agent_compatible": true,
+  "mcp_ready": true,
+  "intent_triggers": [
+    "在 Agent 修改前先幫我備份",
+    "建立一個快照，以防萬一",
+    "先拍個快照再開始改",
+    "把目前狀態存起來當保險",
+    "執行前先做一份完整備份",
+    "我怕 AI 改爛，先快照一下",
+    "掃描並記錄現有檔案的 hash 值"
+  ],
+  "examples": [
+    {
+      "query": "在修改 /project/src 之前先建立快照",
+      "params": {
+        "target_path": "/project/src"
+      }
+    },
+    {
+      "query": "掃描目前目錄，把所有檔案 hash 記錄下來",
+      "params": {
+        "target_path": ".",
+        "action": "scan"
+      }
+    },
+    {
+      "query": "備份 configs/ 資料夾到 backups/snap_20240101",
+      "params": {
+        "target_path": "configs/",
+        "snapshot_dir": "backups/snap_20240101"
+      }
+    }
+  ],
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "target_path": {
+        "type": "string",
+        "description": "要建立快照的目標目錄路徑"
+      },
+      "snapshot_dir": {
+        "type": "string",
+        "description": "快照儲存的目標目錄"
+      },
+      "action": {
+        "type": "string",
+        "description": "操作類型：scan（掃描記錄）或 backup（完整備份）"
+      }
+    },
+    "required": [
+      "target_path"
+    ]
+  },
+  "license": "MIT"
+}

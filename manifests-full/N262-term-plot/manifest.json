@@ -1,0 +1,84 @@
+{
+  "name": "term-plot",
+  "version": "0.1.0",
+  "description": "終端繪圖器",
+  "category": "N",
+  "number": 262,
+  "pain_point": "終端做圖",
+  "commercial": "✅",
+  "language": "Python",
+  "dependencies": [
+    "plotext",
+    "click",
+    "rich"
+  ],
+  "agent_compatible": true,
+  "mcp_ready": true,
+  "intent_triggers": [
+    "在終端機畫折線圖",
+    "終端繪圖工具，不開瀏覽器就能看圖",
+    "用 CLI 畫出資料的視覺化圖表",
+    "在 SSH 環境中畫簡單圖表",
+    "把 CSV 資料在終端機裡畫成圖",
+    "快速用命令列做資料視覺化",
+    "終端機上直接顯示長條圖或折線圖"
+  ],
+  "examples": [
+    {
+      "query": "在終端機畫出 sales.csv 的 monthly_revenue 折線圖",
+      "params": {
+        "action": "run",
+        "input_file": "sales.csv",
+        "chart_type": "line",
+        "x_col": "month",
+        "y_col": "monthly_revenue"
+      }
+    },
+    {
+      "query": "用終端繪圖顯示 temperatures.csv 的每日溫度長條圖",
+      "params": {
+        "action": "run",
+        "input_file": "temperatures.csv",
+        "chart_type": "bar",
+        "x_col": "date",
+        "y_col": "temp"
+      }
+    },
+    {
+      "query": "在終端顯示 [1,4,9,16,25] 的散點圖",
+      "params": {
+        "action": "run",
+        "data": "1,4,9,16,25",
+        "chart_type": "scatter"
+      }
+    }
+  ],
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "action": {
+        "type": "string"
+      },
+      "chart_type": {
+        "type": "string"
+      },
+      "data": {
+        "type": "string"
+      },
+      "input_file": {
+        "type": "string"
+      },
+      "x_col": {
+        "type": "string"
+      },
+      "y_col": {
+        "type": "string"
+      }
+    },
+    "required": [
+      "action",
+      "chart_type"
+    ]
+  },
+  "license": "MIT"
+}

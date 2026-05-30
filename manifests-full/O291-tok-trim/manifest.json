@@ -1,0 +1,92 @@
+{
+  "name": "tok-trim",
+  "version": "0.1.0",
+  "description": "Token 截斷器",
+  "category": "O",
+  "number": 291,
+  "pain_point": "Token 截斷器",
+  "commercial": "✅",
+  "language": "Python",
+  "dependencies": [
+    "tiktoken",
+    "click",
+    "rich"
+  ],
+  "agent_compatible": true,
+  "mcp_ready": true,
+  "intent_triggers": [
+    "把文字截斷到符合 token 限制",
+    "自動裁剪超長文字以符合 LLM 上下文視窗",
+    "計算並截斷到指定的 token 數量",
+    "我的 prompt 超出 token 限制，幫我截短",
+    "批次處理文件並截斷到指定 token 長度",
+    "智能截斷保留最重要的內容",
+    "統計文字的 token 數並自動截斷"
+  ],
+  "examples": [
+    {
+      "query": "把 long_document.txt 截斷到 4096 tokens",
+      "params": {
+        "action": "trim",
+        "input_file": "long_document.txt",
+        "max_tokens": 4096,
+        "output_file": "trimmed_doc.txt"
+      }
+    },
+    {
+      "query": "計算 prompts.jsonl 每筆的 token 數並標記超限的",
+      "params": {
+        "action": "count",
+        "input_file": "prompts.jsonl",
+        "text_col": "prompt",
+        "model": "cl100k_base",
+        "limit": 8192
+      }
+    },
+    {
+      "query": "批次截斷 documents/ 資料夾所有 txt 到 2048 tokens",
+      "params": {
+        "action": "batch_trim",
+        "input_dir": "documents/",
+        "max_tokens": 2048,
+        "output_dir": "trimmed_docs/"
+      }
+    }
+  ],
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "action": {
+        "type": "string"
+      },
+      "input_dir": {
+        "type": "string"
+      },
+      "input_file": {
+        "type": "string"
+      },
+      "limit": {
+        "type": "integer"
+      },
+      "max_tokens": {
+        "type": "integer"
+      },
+      "model": {
+        "type": "string"
+      },
+      "output_dir": {
+        "type": "string"
+      },
+      "output_file": {
+        "type": "string"
+      },
+      "text_col": {
+        "type": "string"
+      }
+    },
+    "required": [
+      "action"
+    ]
+  },
+  "license": "MIT"
+}

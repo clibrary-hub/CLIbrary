@@ -1,0 +1,90 @@
+{
+  "name": "po-flow",
+  "version": "0.1.0",
+  "description": "採購流程器",
+  "category": "Y",
+  "number": 491,
+  "pain_point": "採購單跑流程",
+  "commercial": "✅",
+  "language": "Python",
+  "dependencies": [
+    "sqlite3",
+    "click",
+    "rich"
+  ],
+  "agent_compatible": true,
+  "mcp_ready": true,
+  "intent_triggers": [
+    "幫我建立採購申請單並送出審核",
+    "追蹤這筆採購單的審核進度",
+    "採購流程自動化，多層級審核",
+    "查詢待審核的採購申請",
+    "這個採購案現在到哪個審核階段？",
+    "採購訂單管理和狀態追蹤",
+    "生成採購請款記錄"
+  ],
+  "examples": [
+    {
+      "query": "建立採購申請：辦公設備採購 50000 元，申請人小明，請款到 IT 部門",
+      "params": {
+        "item": "辦公設備",
+        "amount": 50000,
+        "requester": "小明",
+        "department": "IT",
+        "status": "pending"
+      }
+    },
+    {
+      "query": "查詢本月所有待審核的採購申請，按金額排序",
+      "params": {
+        "month": "2024-01",
+        "status": "pending",
+        "sort_by": "amount"
+      }
+    },
+    {
+      "query": "核准採購申請 PO-2024-0127，附上採購主管簽核記錄",
+      "params": {
+        "po_number": "PO-2024-0127",
+        "action": "approve",
+        "approver": "採購主管"
+      }
+    }
+  ],
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "action": {
+        "type": "string"
+      },
+      "amount": {
+        "type": "integer"
+      },
+      "approver": {
+        "type": "string"
+      },
+      "department": {
+        "type": "string"
+      },
+      "item": {
+        "type": "string"
+      },
+      "month": {
+        "type": "string"
+      },
+      "po_number": {
+        "type": "string"
+      },
+      "requester": {
+        "type": "string"
+      },
+      "sort_by": {
+        "type": "string"
+      },
+      "status": {
+        "type": "string"
+      }
+    }
+  },
+  "license": "MIT"
+}

@@ -1,0 +1,84 @@
+{
+  "name": "ai-gate",
+  "version": "0.1.0",
+  "description": "AI 品質關卡",
+  "category": "D",
+  "number": 67,
+  "pain_point": "CI/CD 缺 AI 品質關卡",
+  "commercial": "✅",
+  "language": "Python",
+  "dependencies": [
+    "anthropic",
+    "click",
+    "rich"
+  ],
+  "agent_compatible": true,
+  "mcp_ready": true,
+  "intent_triggers": [
+    "Pipeline 加一個 AI review 步驟",
+    "用 AI 把關每次 PR 的品質",
+    "部署前讓 AI 審查程式碼品質",
+    "建立 AI 驅動的品質門控",
+    "自動用 AI 審核產出是否達標",
+    "在 CI/CD 加入 AI 品質檢查",
+    "設定 AI 關卡，不通過不能合入",
+    "LLM 回傳前過濾 prompt injection",
+    "AI 輸出安全把關防敏感字",
+    "攔截 LLM 輸出中的有害內容",
+    "防止 prompt 注入的 AI 安全層",
+    "LLM 輸出前的安全過濾器"
+  ],
+  "examples": [
+    {
+      "query": "在 CI 流程中加入 AI 程式碼品質審核",
+      "params": {
+        "target_path": "src/",
+        "gate_type": "code_quality",
+        "action": "run"
+      }
+    },
+    {
+      "query": "用 AI 檢查 PR 是否符合品質標準",
+      "params": {
+        "pr_diff_file": "pr.diff",
+        "action": "run",
+        "fail_on_issues": true
+      }
+    },
+    {
+      "query": "設定 AI 關卡並定義最低品質分數",
+      "params": {
+        "min_score": 80,
+        "gate_type": "security",
+        "action": "run"
+      }
+    }
+  ],
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "action": {
+        "type": "string"
+      },
+      "fail_on_issues": {
+        "type": "boolean"
+      },
+      "gate_type": {
+        "type": "string"
+      },
+      "min_score": {
+        "type": "integer"
+      },
+      "pr_diff_file": {
+        "type": "string"
+      },
+      "target_path": {
+        "type": "string"
+      }
+    },
+    "required": [
+      "action"
+    ]
+  },
+  "license": "MIT"
+}

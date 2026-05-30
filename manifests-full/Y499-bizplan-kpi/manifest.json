@@ -1,0 +1,92 @@
+{
+  "name": "bizplan-kpi",
+  "version": "0.1.0",
+  "description": "商計 KPI 整理",
+  "category": "Y",
+  "number": 499,
+  "pain_point": "商業計畫 KPI 整理",
+  "commercial": "✅",
+  "language": "Python",
+  "dependencies": [
+    "anthropic",
+    "click",
+    "rich"
+  ],
+  "agent_compatible": true,
+  "mcp_ready": true,
+  "intent_triggers": [
+    "幫我整理商業計畫的 KPI 指標",
+    "這個商業計畫的關鍵績效指標有哪些？",
+    "設定業務目標和追蹤 KPI",
+    "生成季度 KPI 報告",
+    "幫我把商業計畫書的目標轉成可衡量的 KPI",
+    "追蹤業務計畫各項指標的達成情況",
+    "給我這個 SaaS 商業模式的關鍵 KPI 清單"
+  ],
+  "examples": [
+    {
+      "query": "分析 bizplan.pdf 並提取所有可量化的 KPI 指標",
+      "params": {
+        "input_file": "bizplan.pdf",
+        "extract_kpis": true,
+        "categorize": true
+      }
+    },
+    {
+      "query": "為 SaaS 訂閱商業模式生成標準 KPI 清單，含財務和用戶指標",
+      "params": {
+        "business_model": "saas",
+        "kpi_categories": [
+          "financial",
+          "user_growth",
+          "retention"
+        ],
+        "quarters": 4
+      }
+    },
+    {
+      "query": "追蹤 Q1 2024 的 KPI 達成率，對比目標值和實際值",
+      "params": {
+        "period": "Q1_2024",
+        "kpi_file": "kpi_targets.json",
+        "actual_file": "kpi_actual.json"
+      }
+    }
+  ],
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "actual_file": {
+        "type": "string"
+      },
+      "business_model": {
+        "type": "string"
+      },
+      "categorize": {
+        "type": "boolean"
+      },
+      "extract_kpis": {
+        "type": "boolean"
+      },
+      "input_file": {
+        "type": "string"
+      },
+      "kpi_categories": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      },
+      "kpi_file": {
+        "type": "string"
+      },
+      "period": {
+        "type": "string"
+      },
+      "quarters": {
+        "type": "integer"
+      }
+    }
+  },
+  "license": "MIT"
+}

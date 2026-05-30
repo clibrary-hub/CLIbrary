@@ -1,0 +1,81 @@
+{
+  "name": "ticket-route",
+  "version": "0.1.0",
+  "description": "客訴路由器",
+  "category": "Y",
+  "number": 496,
+  "pain_point": "客訴分類路由",
+  "commercial": "✅",
+  "language": "Python",
+  "dependencies": [
+    "anthropic",
+    "sqlite3",
+    "click"
+  ],
+  "agent_compatible": true,
+  "mcp_ready": true,
+  "intent_triggers": [
+    "幫我把客訴轉給正確的部門處理",
+    "這個客服票應該分配給誰？",
+    "自動分類客戶投訴並路由到對應團隊",
+    "客服系統票單自動分配",
+    "這個問題是技術部門還是客服負責？",
+    "根據客訴內容自動判斷優先級",
+    "整理未分配的客訴單並建議路由"
+  ],
+  "examples": [
+    {
+      "query": "分析這封客訴郵件並路由到正確部門",
+      "params": {
+        "ticket_content": "我購買的產品不能使用，登入一直失敗",
+        "auto_route": true
+      }
+    },
+    {
+      "query": "列出所有技術問題類的未分配客訴單，按緊急度排序",
+      "params": {
+        "category": "technical",
+        "status": "unassigned",
+        "sort_by": "priority"
+      }
+    },
+    {
+      "query": "批次分析 tickets.json 中 100 張客訴單，自動分類和分配",
+      "params": {
+        "tickets_file": "tickets.json",
+        "auto_classify": true,
+        "auto_assign": true
+      }
+    }
+  ],
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "auto_assign": {
+        "type": "boolean"
+      },
+      "auto_classify": {
+        "type": "boolean"
+      },
+      "auto_route": {
+        "type": "boolean"
+      },
+      "category": {
+        "type": "string"
+      },
+      "sort_by": {
+        "type": "string"
+      },
+      "status": {
+        "type": "string"
+      },
+      "ticket_content": {
+        "type": "string"
+      },
+      "tickets_file": {
+        "type": "string"
+      }
+    }
+  },
+  "license": "MIT"
+}

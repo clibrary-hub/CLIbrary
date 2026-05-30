@@ -1,0 +1,75 @@
+{
+  "name": "task-replay",
+  "version": "0.1.0",
+  "description": "任務重放器",
+  "category": "D",
+  "number": 71,
+  "pain_point": "想將任務轉為可重放",
+  "commercial": "✅",
+  "language": "Python",
+  "dependencies": [
+    "sqlite3",
+    "click",
+    "rich"
+  ],
+  "agent_compatible": true,
+  "mcp_ready": true,
+  "intent_triggers": [
+    "把這個任務錄製成可重放的格式",
+    "重播上次的任務執行過程",
+    "生成一個可重放的任務腳本",
+    "把任務步驟記錄下來方便重複",
+    "傳送並重放這個任務序列",
+    "建立可重放的 Agent 測試案例",
+    "把這次任務生成為回放檔案"
+  ],
+  "examples": [
+    {
+      "query": "把 data_processing 任務生成為可重放格式",
+      "params": {
+        "task_name": "data_processing",
+        "action": "generate"
+      }
+    },
+    {
+      "query": "重放並傳送 task_20240101.replay 的執行記錄",
+      "params": {
+        "replay_file": "task_20240101.replay",
+        "action": "send"
+      }
+    },
+    {
+      "query": "生成任務重放檔案並輸出到 replay/",
+      "params": {
+        "task_name": "weekly_cleanup",
+        "output_dir": "replay/",
+        "action": "generate"
+      }
+    }
+  ],
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "task_name": {
+        "type": "string",
+        "description": "要錄製或重放的任務名稱"
+      },
+      "replay_file": {
+        "type": "string",
+        "description": "要重放的任務記錄檔案路徑"
+      },
+      "action": {
+        "type": "string",
+        "description": "操作類型：generate（生成）或 send（傳送重放）"
+      },
+      "output_dir": {
+        "type": "string",
+        "description": "重放檔案輸出目錄"
+      }
+    },
+    "required": [
+      "action"
+    ]
+  },
+  "license": "MIT"
+}

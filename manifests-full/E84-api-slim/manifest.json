@@ -1,0 +1,84 @@
+{
+  "name": "api-slim",
+  "version": "0.1.0",
+  "description": "API 回應瘦身器",
+  "category": "E",
+  "number": 84,
+  "pain_point": "API 回應太大",
+  "commercial": "✅",
+  "language": "Python",
+  "dependencies": [
+    "jq",
+    "click",
+    "rich"
+  ],
+  "agent_compatible": true,
+  "mcp_ready": true,
+  "intent_triggers": [
+    "API 回應太大，幫我精簡",
+    "從 JSON 回應中只取出需要的欄位",
+    "縮減 API 回應，只留重要資料",
+    "把這個 1MB 的 JSON 回應壓縮",
+    "過濾 API 結果，只保留關鍵欄位",
+    "把 API 回應瘦身後再傳給 Agent",
+    "用 jq 過濾 API 回應的欄位"
+  ],
+  "examples": [
+    {
+      "query": "從 API 回應中只取出 id、name、email 欄位",
+      "params": {
+        "input_file": "api_response.json",
+        "fields": [
+          "id",
+          "name",
+          "email"
+        ],
+        "action": "run"
+      }
+    },
+    {
+      "query": "壓縮這個大型 JSON 回應，保留前 100 筆",
+      "params": {
+        "input_file": "large_response.json",
+        "limit": 100,
+        "action": "run"
+      }
+    },
+    {
+      "query": "用 jq 篩選 API 回應中 status=active 的記錄",
+      "params": {
+        "input_file": "users_response.json",
+        "jq_filter": ".[] | select(.status == \"active\")",
+        "action": "run"
+      }
+    }
+  ],
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "action": {
+        "type": "string"
+      },
+      "fields": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      },
+      "input_file": {
+        "type": "string"
+      },
+      "jq_filter": {
+        "type": "string"
+      },
+      "limit": {
+        "type": "integer"
+      }
+    },
+    "required": [
+      "action",
+      "input_file"
+    ]
+  },
+  "license": "MIT"
+}

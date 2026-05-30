@@ -1,0 +1,90 @@
+{
+  "name": "mou-draft",
+  "version": "0.1.0",
+  "description": "MOU 草擬器",
+  "category": "Y",
+  "number": 492,
+  "pain_point": "合作備忘錄草擬",
+  "commercial": "✅",
+  "language": "Python",
+  "dependencies": [
+    "anthropic",
+    "jinja2",
+    "click"
+  ],
+  "agent_compatible": true,
+  "mcp_ready": true,
+  "intent_triggers": [
+    "幫我草擬一份合作備忘錄 MOU",
+    "兩公司合作洽談，先寫一份 MOU",
+    "生成學術合作 MOU 範本",
+    "MOU 要涵蓋哪些條款？幫我起草",
+    "合作備忘錄的格式是什麼？",
+    "戰略合作協議書草稿",
+    "政府和企業合作的 MOU 範本"
+  ],
+  "examples": [
+    {
+      "query": "草擬台灣 A 公司和日本 B 公司的技術合作備忘錄，中英雙語版",
+      "params": {
+        "party_a": "A 公司（台灣）",
+        "party_b": "B 公司（日本）",
+        "purpose": "技術合作",
+        "language": "bilingual"
+      }
+    },
+    {
+      "query": "生成大學和企業的產學合作 MOU，有效期 3 年",
+      "params": {
+        "party_a": "國立大學",
+        "party_b": "科技公司",
+        "purpose": "產學合作",
+        "duration_years": 3,
+        "language": "zh-TW"
+      }
+    },
+    {
+      "query": "草擬策略聯盟 MOU，含業務範圍、資源分工和保密條款",
+      "params": {
+        "purpose": "策略聯盟",
+        "sections": [
+          "業務範圍",
+          "資源分工",
+          "保密"
+        ],
+        "language": "zh-TW"
+      }
+    }
+  ],
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "duration_years": {
+        "type": "integer"
+      },
+      "language": {
+        "type": "string"
+      },
+      "party_a": {
+        "type": "string"
+      },
+      "party_b": {
+        "type": "string"
+      },
+      "purpose": {
+        "type": "string"
+      },
+      "sections": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    },
+    "required": [
+      "language",
+      "purpose"
+    ]
+  },
+  "license": "MIT"
+}

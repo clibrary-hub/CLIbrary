@@ -1,0 +1,79 @@
+{
+  "name": "agent-reducer",
+  "version": "0.1.0",
+  "description": "結果聚合器",
+  "category": "F",
+  "number": 104,
+  "pain_point": "Agent 結果難以聚合",
+  "commercial": "✅",
+  "language": "Python",
+  "dependencies": [
+    "click",
+    "rich",
+    "pydantic"
+  ],
+  "agent_compatible": true,
+  "mcp_ready": true,
+  "intent_triggers": [
+    "多個 Agent 各自回傳結果要怎麼合併？",
+    "想把五個 Agent 的輸出匯總成一份報告",
+    "Agent 結果聚合有沒有現成工具？",
+    "平行執行的 Agent 結果怎麼收集整合",
+    "我需要把多個 Agent 回傳的 JSON 合成一個",
+    "怎麼做 map-reduce 風格的 Agent 結果合併",
+    "Agent 輸出的資料結構不同要怎麼統一整合"
+  ],
+  "examples": [
+    {
+      "query": "把三個搜尋 Agent 的結果去重後合併成一份",
+      "params": {
+        "action": "run",
+        "mode": "deduplicate",
+        "input_files": "result1.json,result2.json,result3.json"
+      }
+    },
+    {
+      "query": "將 10 個 Agent 的分析結果用投票方式選出最終答案",
+      "params": {
+        "action": "run",
+        "mode": "vote",
+        "agent_count": "10"
+      }
+    },
+    {
+      "query": "聚合 agent-output-*.json 所有檔案並輸出 summary.json",
+      "params": {
+        "action": "run",
+        "pattern": "agent-output-*.json",
+        "output": "summary.json"
+      }
+    }
+  ],
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "action": {
+        "type": "string"
+      },
+      "agent_count": {
+        "type": "string"
+      },
+      "input_files": {
+        "type": "string"
+      },
+      "mode": {
+        "type": "string"
+      },
+      "output": {
+        "type": "string"
+      },
+      "pattern": {
+        "type": "string"
+      }
+    },
+    "required": [
+      "action"
+    ]
+  },
+  "license": "MIT"
+}

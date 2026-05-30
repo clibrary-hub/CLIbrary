@@ -1,0 +1,74 @@
+{
+  "name": "mail-followup",
+  "version": "0.1.0",
+  "description": "待回信追蹤",
+  "category": "I",
+  "number": 165,
+  "pain_point": "要回信就忘",
+  "commercial": "⚠️",
+  "language": "Python",
+  "dependencies": [
+    "imaplib",
+    "sqlite3",
+    "rich"
+  ],
+  "agent_compatible": true,
+  "mcp_ready": true,
+  "intent_triggers": [
+    "我常常忘記要回信，需要一個待回追蹤工具",
+    "幫我追蹤哪些信超過 3 天還沒回",
+    "想管理我的待回信清單，不要漏掉任何人",
+    "客戶信件等我回覆超過 2 天了，幫我提醒",
+    "需要一個信件跟進提醒系統",
+    "掃描寄件匣確認哪些信沒有收到回應",
+    "建立待辦回信清單並標記優先順序"
+  ],
+  "examples": [
+    {
+      "query": "掃描收件匣，找出超過 48 小時未回的信件",
+      "params": {
+        "action": "scan",
+        "hours_overdue": "48"
+      }
+    },
+    {
+      "query": "列出所有待回信件並按等待時間排序",
+      "params": {
+        "action": "list",
+        "sort": "waiting_time"
+      }
+    },
+    {
+      "query": "標記「與 Bob 的合約討論」信件已回覆完成",
+      "params": {
+        "action": "done",
+        "subject": "與 Bob 的合約討論"
+      }
+    }
+  ],
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "action": {
+        "type": "string",
+        "description": "執行動作，如 scan、list、done、remind"
+      },
+      "hours_overdue": {
+        "type": "string",
+        "description": "超過幾小時未回視為逾期"
+      },
+      "sort": {
+        "type": "string",
+        "description": "排序方式，如 waiting_time、priority"
+      },
+      "subject": {
+        "type": "string",
+        "description": "信件主旨關鍵字"
+      }
+    },
+    "required": [
+      "action"
+    ]
+  },
+  "license": "MIT"
+}

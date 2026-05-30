@@ -1,0 +1,94 @@
+{
+  "name": "travel-ins",
+  "version": "0.1.0",
+  "description": "旅保建議器",
+  "category": "T",
+  "number": 399,
+  "pain_point": "旅遊保險建議",
+  "commercial": "⚠️",
+  "language": "Python",
+  "dependencies": [
+    "anthropic",
+    "click",
+    "rich"
+  ],
+  "agent_compatible": true,
+  "mcp_ready": true,
+  "intent_triggers": [
+    "幫我選旅遊平安保險",
+    "去日本 7 天需要買什麼旅遊保險",
+    "比較旅遊保險方案的保障內容",
+    "帶小孩出國需要加什麼保險",
+    "建議適合這次行程的旅保方案",
+    "這個保險方案夠嗎，幫我評估",
+    "去高風險地區需要什麼特別保障"
+  ],
+  "examples": [
+    {
+      "query": "建議台灣人去日本 10 天的旅遊保險方案",
+      "params": {
+        "destination": "日本",
+        "days": 10,
+        "travelers": 1
+      }
+    },
+    {
+      "query": "比較含醫療緊急救援的旅遊保險，每天預算 100 元以內",
+      "params": {
+        "destination": "歐洲",
+        "days": 14,
+        "max_daily_budget": 100,
+        "must_include": [
+          "medical"
+        ]
+      }
+    },
+    {
+      "query": "評估這次去東南亞探險旅遊需要哪些特殊保障",
+      "params": {
+        "destination": "東南亞",
+        "trip_type": "adventure",
+        "activities": [
+          "潛水",
+          "攀岩"
+        ]
+      }
+    }
+  ],
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "activities": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      },
+      "days": {
+        "type": "integer"
+      },
+      "destination": {
+        "type": "string"
+      },
+      "max_daily_budget": {
+        "type": "integer"
+      },
+      "must_include": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      },
+      "travelers": {
+        "type": "integer"
+      },
+      "trip_type": {
+        "type": "string"
+      }
+    },
+    "required": [
+      "destination"
+    ]
+  },
+  "license": "MIT"
+}

@@ -1,0 +1,22 @@
+tool: token-meter
+type: transform
+generated: "2026-04-27"
+skip: false
+
+setup:
+  files:
+    - path: testdata/sample.txt
+      content: "Hello world this is a test sentence.\nHello world this is a test sentence.\nHello world this is a test sentence.\nHello world this is a test sentence.\nHello world this is a test sentence.\nHello world this is a test sentence.\nHello world this is a test sentence.\nHello world this is a test sentence.\nHello world this is a test sentence.\nHello world this is a test sentence.\n"
+
+cases:
+  - id: help_works
+    description: --help exits 0
+    cmd: ["--help"]
+    expect:
+      exit_code: 0
+      stdout_contains: "Usage:"
+  - id: process_file
+    description: process input file
+    cmd: ["count", "testdata/sample.txt"]
+    expect:
+      exit_code: 0

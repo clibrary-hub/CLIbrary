@@ -1,0 +1,77 @@
+{
+  "name": "book-cross",
+  "version": "0.1.0",
+  "description": "跨書比對器",
+  "category": "S",
+  "number": 367,
+  "pain_point": "多教材交叉比對",
+  "commercial": "⚠️",
+  "language": "Python",
+  "dependencies": [
+    "anthropic",
+    "click",
+    "rich"
+  ],
+  "agent_compatible": true,
+  "mcp_ready": true,
+  "intent_triggers": [
+    "比較兩本教科書對同一個主題的解釋",
+    "找出這三本書的共同觀點和分歧",
+    "交叉比較多份資料的說法是否一致",
+    "哪本書對這個概念解釋得最好",
+    "把多本書的相關章節放在一起比較",
+    "找出教材中彼此矛盾的地方",
+    "整合多個來源對同一個概念的定義"
+  ],
+  "examples": [
+    {
+      "query": "比較 book1.md 和 book2.md 對「機器學習」的解釋",
+      "params": {
+        "files": [
+          "book1.md",
+          "book2.md"
+        ],
+        "topic": "機器學習"
+      }
+    },
+    {
+      "query": "找出 textbook1.pdf、textbook2.pdf 和 textbook3.pdf 對強化學習的共同點",
+      "params": {
+        "files": [
+          "textbook1.pdf",
+          "textbook2.pdf",
+          "textbook3.pdf"
+        ],
+        "find": "common"
+      }
+    },
+    {
+      "query": "比較 books/ 裡所有書對「深度學習」章節的不同觀點",
+      "params": {
+        "books_dir": "books/",
+        "topic": "深度學習"
+      }
+    }
+  ],
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "books_dir": {
+        "type": "string"
+      },
+      "files": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      },
+      "find": {
+        "type": "string"
+      },
+      "topic": {
+        "type": "string"
+      }
+    }
+  },
+  "license": "MIT"
+}

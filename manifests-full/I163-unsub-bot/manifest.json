@@ -1,0 +1,78 @@
+{
+  "name": "unsub-bot",
+  "version": "0.1.0",
+  "description": "自動退訂器",
+  "category": "I",
+  "number": 163,
+  "pain_point": "訂閱信太多",
+  "commercial": "⚠️",
+  "language": "Python",
+  "dependencies": [
+    "imaplib",
+    "click",
+    "rich"
+  ],
+  "agent_compatible": true,
+  "mcp_ready": true,
+  "intent_triggers": [
+    "我的信箱塞滿訂閱信，幫我批次退訂",
+    "每天收到幾十封 newsletter，想一鍵清除",
+    "幫我找出所有訂閱類郵件並自動點退訂連結",
+    "想快速退訂所有促銷信和行銷郵件",
+    "收件匣有太多不想看的定期郵件，怎麼清",
+    "自動掃描信箱找出可退訂的來源",
+    "清理郵件訂閱清單，退訂那些我不再需要的"
+  ],
+  "examples": [
+    {
+      "query": "掃描信箱找出所有訂閱信來源並列出清單",
+      "params": {
+        "action": "scan",
+        "inbox": "INBOX"
+      }
+    },
+    {
+      "query": "自動退訂 newsletter-source.txt 中列出的所有來源",
+      "params": {
+        "action": "unsubscribe",
+        "input_file": "newsletter-source.txt"
+      }
+    },
+    {
+      "query": "列出過去 30 天訂閱信來源並只退訂超過 10 封的",
+      "params": {
+        "action": "scan",
+        "days": "30",
+        "min_count": "10",
+        "auto_unsub": "true"
+      }
+    }
+  ],
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "action": {
+        "type": "string"
+      },
+      "auto_unsub": {
+        "type": "string"
+      },
+      "days": {
+        "type": "string"
+      },
+      "inbox": {
+        "type": "string"
+      },
+      "input_file": {
+        "type": "string"
+      },
+      "min_count": {
+        "type": "string"
+      }
+    },
+    "required": [
+      "action"
+    ]
+  },
+  "license": "MIT"
+}

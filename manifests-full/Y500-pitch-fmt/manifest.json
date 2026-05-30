@@ -1,0 +1,91 @@
+{
+  "name": "pitch-fmt",
+  "version": "0.1.0",
+  "description": "簡報排版器",
+  "category": "Y",
+  "number": 500,
+  "pain_point": "簡報自動排版",
+  "commercial": "⚠️",
+  "language": "Python",
+  "dependencies": [
+    "anthropic",
+    "python-pptx",
+    "click"
+  ],
+  "agent_compatible": true,
+  "mcp_ready": true,
+  "intent_triggers": [
+    "幫我排版這份投資人簡報",
+    "把文字內容轉成投影片格式",
+    "自動生成 pitch deck 的版面",
+    "幫我把商業計畫做成投影片",
+    "一鍵排版簡報，套用專業模板",
+    "投資人簡報的標準格式是什麼？",
+    "把 outline 轉成 PowerPoint 簡報"
+  ],
+  "examples": [
+    {
+      "query": "把 pitch_content.md 的內容排版成 10 頁 PowerPoint 簡報，使用深藍色商務模板",
+      "params": {
+        "content_file": "pitch_content.md",
+        "slides": 10,
+        "template": "dark_blue",
+        "output_file": "pitch_deck.pptx"
+      }
+    },
+    {
+      "query": "生成新創公司 pitch deck，含問題、解決方案、市場規模、商業模式等標準章節",
+      "params": {
+        "sections": [
+          "Problem",
+          "Solution",
+          "Market",
+          "Business Model",
+          "Team",
+          "Financials"
+        ],
+        "template": "startup",
+        "output_file": "startup_pitch.pptx"
+      }
+    },
+    {
+      "query": "把 bizplan.txt 的投資人簡報內容自動拆成 15 張投影片並排版",
+      "params": {
+        "content_file": "bizplan.txt",
+        "slides": 15,
+        "auto_layout": true,
+        "output_format": "pptx"
+      }
+    }
+  ],
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "auto_layout": {
+        "type": "boolean"
+      },
+      "content_file": {
+        "type": "string"
+      },
+      "output_file": {
+        "type": "string"
+      },
+      "output_format": {
+        "type": "string"
+      },
+      "sections": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      },
+      "slides": {
+        "type": "integer"
+      },
+      "template": {
+        "type": "string"
+      }
+    }
+  },
+  "license": "MIT"
+}

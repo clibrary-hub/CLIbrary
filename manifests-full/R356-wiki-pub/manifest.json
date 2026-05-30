@@ -1,0 +1,73 @@
+{
+  "name": "wiki-pub",
+  "version": "0.1.0",
+  "description": "知識庫發佈器",
+  "category": "R",
+  "number": 356,
+  "pain_point": "知識庫匯出靜態網站",
+  "commercial": "✅",
+  "language": "Python",
+  "dependencies": [
+    "mkdocs",
+    "click",
+    "rich"
+  ],
+  "agent_compatible": true,
+  "mcp_ready": true,
+  "intent_triggers": [
+    "把我的 Markdown 筆記發佈成靜態網站",
+    "把知識庫部署成可分享的網頁",
+    "用 MkDocs 把筆記轉成文件網站",
+    "把 Obsidian vault 發佈到 GitHub Pages",
+    "建立可以搜尋的知識庫網站",
+    "把私人筆記發佈成公開的 wiki",
+    "自動化知識庫的建置和部署"
+  ],
+  "examples": [
+    {
+      "query": "把 docs/ 的 Markdown 筆記用 MkDocs 建置成靜態網站",
+      "params": {
+        "docs_dir": "docs/",
+        "action": "build",
+        "output_dir": "site/"
+      }
+    },
+    {
+      "query": "把 notes/ 發佈到 GitHub Pages",
+      "params": {
+        "docs_dir": "notes/",
+        "action": "deploy",
+        "target": "github-pages"
+      }
+    },
+    {
+      "query": "啟動 docs/ 的 MkDocs 本地預覽伺服器",
+      "params": {
+        "docs_dir": "docs/",
+        "action": "serve"
+      }
+    }
+  ],
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "action": {
+        "type": "string"
+      },
+      "docs_dir": {
+        "type": "string"
+      },
+      "output_dir": {
+        "type": "string"
+      },
+      "target": {
+        "type": "string"
+      }
+    },
+    "required": [
+      "action",
+      "docs_dir"
+    ]
+  },
+  "license": "MIT"
+}

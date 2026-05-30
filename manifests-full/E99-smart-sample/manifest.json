@@ -1,0 +1,83 @@
+{
+  "name": "smart-sample",
+  "version": "0.1.0",
+  "description": "智慧抽樣器",
+  "category": "E",
+  "number": 99,
+  "pain_point": "樣本過大需抽樣",
+  "commercial": "✅",
+  "language": "Python",
+  "dependencies": [
+    "pandas",
+    "click",
+    "rich"
+  ],
+  "agent_compatible": true,
+  "mcp_ready": true,
+  "intent_triggers": [
+    "這個資料集有 100 萬筆，幫我抽出代表性樣本",
+    "從大型資料集智慧抽樣，保持分布特性",
+    "隨機抽取 10% 的資料進行分析",
+    "按照分層抽樣方式取出有代表性的資料",
+    "資料太多跑不動，幫我抽樣縮小規模",
+    "抽樣時要保持各類別的比例一致",
+    "從百萬筆資料中智慧抽取 1000 筆樣本"
+  ],
+  "examples": [
+    {
+      "query": "從 large_dataset.csv 中隨機抽取 5000 筆樣本",
+      "params": {
+        "input_file": "large_dataset.csv",
+        "sample_size": 5000,
+        "action": "run"
+      }
+    },
+    {
+      "query": "按 category 欄位分層抽樣 10%，輸出到 sample.csv",
+      "params": {
+        "input_file": "products.csv",
+        "sample_ratio": 0.1,
+        "stratify_column": "category",
+        "output_file": "sample.csv",
+        "action": "run"
+      }
+    },
+    {
+      "query": "從 transactions.csv 智慧抽取 2000 筆代表性樣本並報告分布",
+      "params": {
+        "input_file": "transactions.csv",
+        "sample_size": 2000,
+        "output_file": "sample_transactions.csv",
+        "action": "run"
+      }
+    }
+  ],
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "action": {
+        "type": "string"
+      },
+      "input_file": {
+        "type": "string"
+      },
+      "output_file": {
+        "type": "string"
+      },
+      "sample_ratio": {
+        "type": "number"
+      },
+      "sample_size": {
+        "type": "integer"
+      },
+      "stratify_column": {
+        "type": "string"
+      }
+    },
+    "required": [
+      "action",
+      "input_file"
+    ]
+  },
+  "license": "MIT"
+}

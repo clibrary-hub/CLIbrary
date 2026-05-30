@@ -1,0 +1,78 @@
+{
+  "name": "tm-store",
+  "version": "0.1.0",
+  "description": "翻譯記憶庫",
+  "category": "W",
+  "number": 444,
+  "pain_point": "翻譯記憶庫 TM",
+  "commercial": "✅",
+  "language": "Python",
+  "dependencies": [
+    "sqlite3",
+    "click",
+    "rich"
+  ],
+  "agent_compatible": true,
+  "mcp_ready": true,
+  "intent_triggers": [
+    "建立翻譯記憶庫，存放已確認的翻譯",
+    "查詢這個句子有沒有翻譯記憶可以重用",
+    "把這批翻譯結果存入翻譯記憶庫",
+    "翻譯記憶庫搜尋，找相似的句子",
+    "匯入 TMX 翻譯記憶檔案",
+    "翻譯這段文字時先查翻譯記憶庫",
+    "統計翻譯記憶庫的複用率"
+  ],
+  "examples": [
+    {
+      "query": "搜尋翻譯記憶庫中與「Submit button」相似度 80% 以上的條目",
+      "params": {
+        "query_text": "Submit button",
+        "source_lang": "en",
+        "similarity_threshold": 0.8
+      }
+    },
+    {
+      "query": "匯入 project_tm.tmx 到本地翻譯記憶庫",
+      "params": {
+        "import_file": "project_tm.tmx",
+        "file_format": "tmx"
+      }
+    },
+    {
+      "query": "把翻譯確認的 translation_pairs.json 新增到記憶庫",
+      "params": {
+        "pairs_file": "translation_pairs.json",
+        "source_lang": "en",
+        "target_lang": "zh-TW"
+      }
+    }
+  ],
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "file_format": {
+        "type": "string"
+      },
+      "import_file": {
+        "type": "string"
+      },
+      "pairs_file": {
+        "type": "string"
+      },
+      "query_text": {
+        "type": "string"
+      },
+      "similarity_threshold": {
+        "type": "number"
+      },
+      "source_lang": {
+        "type": "string"
+      },
+      "target_lang": {
+        "type": "string"
+      }
+    }
+  },
+  "license": "MIT"
+}

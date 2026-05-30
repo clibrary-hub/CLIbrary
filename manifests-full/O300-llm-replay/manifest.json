@@ -1,0 +1,86 @@
+{
+  "name": "llm-replay",
+  "version": "0.1.0",
+  "description": "流量回放器",
+  "category": "O",
+  "number": 300,
+  "pain_point": "LLM 流量回放",
+  "commercial": "✅",
+  "language": "Python",
+  "dependencies": [
+    "sqlite3",
+    "click",
+    "rich"
+  ],
+  "agent_compatible": true,
+  "mcp_ready": true,
+  "intent_triggers": [
+    "重放歷史 LLM API 流量做測試",
+    "把線上 API 請求重放到新模型",
+    "用真實流量測試模型升級是否相容",
+    "LLM 流量回放工具，驗證新版模型",
+    "記錄並重放 API 呼叫做回歸測試",
+    "比較新舊模型在相同請求的回答差異",
+    "shadow testing：用歷史流量測試新模型"
+  ],
+  "examples": [
+    {
+      "query": "把 api_logs.jsonl 回放到新模型 claude-3-5-sonnet-20241022",
+      "params": {
+        "action": "replay",
+        "input_file": "api_logs.jsonl",
+        "target_model": "claude-3-5-sonnet-20241022",
+        "output_file": "replay_results.jsonl"
+      }
+    },
+    {
+      "query": "比較 api_logs.jsonl 在新舊模型的回答差異",
+      "params": {
+        "action": "diff_replay",
+        "input_file": "api_logs.jsonl",
+        "old_model": "claude-3-haiku-20240307",
+        "new_model": "claude-3-5-sonnet-20241022",
+        "output_file": "diff_report.json"
+      }
+    },
+    {
+      "query": "錄製本次 API 呼叫到 session_log.jsonl",
+      "params": {
+        "action": "record",
+        "output_file": "session_log.jsonl",
+        "duration_minutes": 60
+      }
+    }
+  ],
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "action": {
+        "type": "string"
+      },
+      "duration_minutes": {
+        "type": "integer"
+      },
+      "input_file": {
+        "type": "string"
+      },
+      "new_model": {
+        "type": "string"
+      },
+      "old_model": {
+        "type": "string"
+      },
+      "output_file": {
+        "type": "string"
+      },
+      "target_model": {
+        "type": "string"
+      }
+    },
+    "required": [
+      "action",
+      "output_file"
+    ]
+  },
+  "license": "MIT"
+}

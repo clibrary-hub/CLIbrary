@@ -1,0 +1,74 @@
+{
+  "name": "slow-sql",
+  "version": "0.1.0",
+  "description": "慢查詢分析器",
+  "category": "Q",
+  "number": 333,
+  "pain_point": "資料庫慢查詢分析",
+  "commercial": "✅",
+  "language": "Python",
+  "dependencies": [
+    "sqlalchemy",
+    "click",
+    "rich"
+  ],
+  "agent_compatible": true,
+  "mcp_ready": true,
+  "intent_triggers": [
+    "資料庫有慢查詢，幫我分析一下",
+    "找出執行超過 1 秒的 SQL",
+    "分析 MySQL slow log 找出效能瓶頸",
+    "這個 SQL 語句為什麼跑很慢",
+    "幫我找出需要加索引的查詢",
+    "掃描 slow_query.log 並整理報告",
+    "哪些表被掃描最多次，需要優化"
+  ],
+  "examples": [
+    {
+      "query": "分析 slow_query.log 找出最慢的 10 條 SQL",
+      "params": {
+        "log_file": "slow_query.log",
+        "top_n": 10
+      }
+    },
+    {
+      "query": "找出執行時間超過 2 秒的所有查詢",
+      "params": {
+        "log_file": "mysql_slow.log",
+        "threshold_seconds": 2
+      }
+    },
+    {
+      "query": "分析慢查詢並建議哪些欄位需要加索引",
+      "params": {
+        "log_file": "slow_query.log",
+        "suggest_index": true
+      }
+    }
+  ],
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "log_file": {
+        "type": "string",
+        "description": "慢查詢日誌檔案路徑"
+      },
+      "threshold_seconds": {
+        "type": "number",
+        "description": "慢查詢閾值（秒）"
+      },
+      "top_n": {
+        "type": "integer",
+        "description": "顯示最慢的 N 條查詢"
+      },
+      "suggest_index": {
+        "type": "boolean",
+        "description": "是否建議索引優化"
+      }
+    },
+    "required": [
+      "log_file"
+    ]
+  },
+  "license": "MIT"
+}

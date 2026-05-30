@@ -1,0 +1,23 @@
+tool: multi-agent-render
+type: transform
+generated: "2026-04-27"
+skip: false
+
+setup:
+  files:
+    - path: testdata/conv.json
+      content: "[{\"role\":\"user\",\"agent\":\"Alice\",\"content\":\"hello world render test\"},{\"role\":\"assistant\",\"agent\":\"Bob\",\"content\":\"acknowledged\"}]"
+
+cases:
+  - id: help_works
+    description: --help exits 0
+    cmd: ["--help"]
+    expect:
+      exit_code: 0
+      stdout_contains: "Usage:"
+  - id: process_file
+    description: process input file
+    cmd: ["render", "testdata/conv.json"]
+    expect:
+      exit_code: 0
+      stdout_contains: hello world render test

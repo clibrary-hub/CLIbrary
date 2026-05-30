@@ -1,0 +1,78 @@
+{
+  "name": "med-reminder",
+  "version": "0.1.0",
+  "description": "用藥提醒器",
+  "category": "K",
+  "number": 211,
+  "pain_point": "用藥提醒分散",
+  "commercial": "✅",
+  "language": "Python",
+  "dependencies": [
+    "plyer",
+    "click",
+    "sqlite3"
+  ],
+  "agent_compatible": true,
+  "mcp_ready": true,
+  "intent_triggers": [
+    "提醒我每天按時吃藥",
+    "設定服藥提醒，早上 8 點一次",
+    "我有三種藥要吃，幫我安排提醒時間",
+    "用藥管理工具，設定多個藥物提醒",
+    "老人家要按時服藥，需要提醒器",
+    "定時推送吃藥通知",
+    "設定早中晚三次用藥提醒"
+  ],
+  "examples": [
+    {
+      "query": "設定每天早上 8:00 提醒吃血壓藥",
+      "params": {
+        "action": "run",
+        "medication": "血壓藥",
+        "time": "08:00",
+        "frequency": "daily"
+      }
+    },
+    {
+      "query": "新增三種藥物提醒：早上 metformin、午後 vitamin D、晚上 omega-3",
+      "params": {
+        "action": "run",
+        "medications": "metformin:08:00,vitamin_D:13:00,omega3:20:00"
+      }
+    },
+    {
+      "query": "啟動用藥提醒系統",
+      "params": {
+        "action": "run",
+        "config_file": "meds_schedule.json"
+      }
+    }
+  ],
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "action": {
+        "type": "string"
+      },
+      "config_file": {
+        "type": "string"
+      },
+      "frequency": {
+        "type": "string"
+      },
+      "medication": {
+        "type": "string"
+      },
+      "medications": {
+        "type": "string"
+      },
+      "time": {
+        "type": "string"
+      }
+    },
+    "required": [
+      "action"
+    ]
+  },
+  "license": "MIT"
+}

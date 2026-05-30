@@ -1,0 +1,74 @@
+{
+  "name": "mem-store",
+  "version": "0.1.0",
+  "description": "本地長期記憶庫",
+  "category": "B",
+  "number": 32,
+  "pain_point": "無長期記憶儲存",
+  "commercial": "✅",
+  "language": "Python",
+  "dependencies": [
+    "sqlite3",
+    "rich",
+    "click"
+  ],
+  "agent_compatible": true,
+  "mcp_ready": true,
+  "intent_triggers": [
+    "幫我把這個資訊存到長期記憶",
+    "記住我的偏好設定，下次還能用",
+    "把這個知識點存起來供以後查詢",
+    "建立一個持久化的 AI 記憶庫",
+    "儲存用戶資料到本地記憶",
+    "我希望 AI 下次記得我的習慣",
+    "把重要資訊寫入長期記憶體"
+  ],
+  "examples": [
+    {
+      "query": "把「用戶偏好繁體中文」存到長期記憶",
+      "params": {
+        "key": "language_preference",
+        "value": "繁體中文",
+        "action": "run"
+      }
+    },
+    {
+      "query": "查詢長期記憶中關於資料庫設定的資訊",
+      "params": {
+        "query": "資料庫設定",
+        "action": "run"
+      }
+    },
+    {
+      "query": "列出所有儲存在長期記憶中的項目",
+      "params": {
+        "action": "run",
+        "list_all": true
+      }
+    }
+  ],
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "action": {
+        "type": "string"
+      },
+      "key": {
+        "type": "string"
+      },
+      "list_all": {
+        "type": "boolean"
+      },
+      "query": {
+        "type": "string"
+      },
+      "value": {
+        "type": "string"
+      }
+    },
+    "required": [
+      "action"
+    ]
+  },
+  "license": "MIT"
+}

@@ -1,0 +1,82 @@
+{
+  "name": "glossary",
+  "version": "0.1.0",
+  "description": "術語表管理器",
+  "category": "W",
+  "number": 445,
+  "pain_point": "術語表管理",
+  "commercial": "✅",
+  "language": "Python",
+  "dependencies": [
+    "sqlite3",
+    "click",
+    "rich"
+  ],
+  "agent_compatible": true,
+  "mcp_ready": true,
+  "intent_triggers": [
+    "幫我建立產品的翻譯術語表",
+    "這個技術詞彙的官方中文翻譯是什麼？",
+    "新增術語條目到術語表",
+    "查詢這個英文詞在術語表中的對應翻譯",
+    "匯出術語表給翻譯人員參考",
+    "確保所有翻譯都使用一致的術語",
+    "找出文件中術語翻譯不一致的地方"
+  ],
+  "examples": [
+    {
+      "query": "新增術語：'API Gateway' 中文為 'API 閘道'，標記為技術類",
+      "params": {
+        "source_term": "API Gateway",
+        "target_term": "API 閘道",
+        "source_lang": "en",
+        "target_lang": "zh-TW",
+        "category": "技術"
+      }
+    },
+    {
+      "query": "查詢術語表中包含 'cloud' 的所有條目",
+      "params": {
+        "search_keyword": "cloud",
+        "source_lang": "en"
+      }
+    },
+    {
+      "query": "匯出完整術語表為 CSV 格式",
+      "params": {
+        "export_format": "csv",
+        "output_file": "glossary_export.csv"
+      }
+    }
+  ],
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "category": {
+        "type": "string"
+      },
+      "export_format": {
+        "type": "string"
+      },
+      "output_file": {
+        "type": "string"
+      },
+      "search_keyword": {
+        "type": "string"
+      },
+      "source_lang": {
+        "type": "string"
+      },
+      "source_term": {
+        "type": "string"
+      },
+      "target_lang": {
+        "type": "string"
+      },
+      "target_term": {
+        "type": "string"
+      }
+    }
+  },
+  "license": "MIT"
+}

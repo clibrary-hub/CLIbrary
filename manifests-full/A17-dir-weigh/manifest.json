@@ -1,0 +1,69 @@
+{
+  "name": "dir-weigh",
+  "version": "0.1.0",
+  "description": "資料夾佔用分析器",
+  "category": "A",
+  "number": 17,
+  "pain_point": "不知道某資料夾佔用多少",
+  "commercial": "✅",
+  "language": "Python",
+  "dependencies": [
+    "pathlib",
+    "rich",
+    "click"
+  ],
+  "agent_compatible": true,
+  "mcp_ready": true,
+  "intent_triggers": [
+    "告訴我這個資料夾佔用了多少空間",
+    "分析磁碟使用量，哪個目錄最大",
+    "掃描一下 /data 目錄，看看哪個子目錄最占空間",
+    "我的硬碟快滿了，找出哪裡最重",
+    "顯示各子目錄的大小排行",
+    "計算 node_modules 佔了多少",
+    "給我一份資料夾佔用空間的報告"
+  ],
+  "examples": [
+    {
+      "query": "分析 /var/log 目錄的磁碟佔用情況",
+      "params": {
+        "scan_path": "/var/log"
+      }
+    },
+    {
+      "query": "掃描 /project 並列出前 10 大子目錄",
+      "params": {
+        "scan_path": "/project",
+        "top_n": 10
+      }
+    },
+    {
+      "query": "計算 src/ 下各子目錄大小，輸出 JSON",
+      "params": {
+        "scan_path": "src/",
+        "output_format": "json"
+      }
+    }
+  ],
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "scan_path": {
+        "type": "string",
+        "description": "要分析佔用的目錄路徑"
+      },
+      "top_n": {
+        "type": "integer",
+        "description": "顯示最大的前 N 個子目錄"
+      },
+      "output_format": {
+        "type": "string",
+        "description": "輸出格式：text 或 json"
+      }
+    },
+    "required": [
+      "scan_path"
+    ]
+  },
+  "license": "MIT"
+}

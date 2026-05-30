@@ -1,0 +1,3 @@
+Pillow
+anthropic
+click

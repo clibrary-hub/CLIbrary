@@ -1,0 +1,71 @@
+{
+  "name": "card-make",
+  "version": "0.1.0",
+  "description": "知識卡片產生",
+  "category": "R",
+  "number": 354,
+  "pain_point": "自動生成知識卡片",
+  "commercial": "✅",
+  "language": "Python",
+  "dependencies": [
+    "anthropic",
+    "click",
+    "rich"
+  ],
+  "agent_compatible": true,
+  "mcp_ready": true,
+  "intent_triggers": [
+    "把這篇筆記轉成一張知識卡片",
+    "幫我從文章自動產生重點卡片",
+    "生成適合分享的知識摘要卡片",
+    "把概念整理成一頁的知識卡片格式",
+    "批次把多篇筆記轉成知識卡片",
+    "產生包含問答的學習卡片",
+    "把讀書筆記整理成 Anki 格式卡片"
+  ],
+  "examples": [
+    {
+      "query": "把 machine_learning.md 轉成知識摘要卡片",
+      "params": {
+        "input_file": "machine_learning.md",
+        "card_format": "summary"
+      }
+    },
+    {
+      "query": "從 chapter1.md 產生 10 張問答式學習卡片",
+      "params": {
+        "input_file": "chapter1.md",
+        "card_format": "qa",
+        "count": 10
+      }
+    },
+    {
+      "query": "批次把 notes/ 所有筆記轉成 Anki 卡片格式",
+      "params": {
+        "input_dir": "notes/",
+        "output_format": "anki"
+      }
+    }
+  ],
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "card_format": {
+        "type": "string"
+      },
+      "count": {
+        "type": "integer"
+      },
+      "input_dir": {
+        "type": "string"
+      },
+      "input_file": {
+        "type": "string"
+      },
+      "output_format": {
+        "type": "string"
+      }
+    }
+  },
+  "license": "MIT"
+}

@@ -1,0 +1,79 @@
+{
+  "name": "api-monitor",
+  "version": "0.1.0",
+  "description": "API 監測器",
+  "category": "M",
+  "number": 245,
+  "pain_point": "API 健康監測",
+  "commercial": "✅",
+  "language": "Python",
+  "dependencies": [
+    "requests",
+    "click",
+    "rich"
+  ],
+  "agent_compatible": true,
+  "mcp_ready": true,
+  "intent_triggers": [
+    "監測 API 是否正常運作",
+    "API 健康檢查工具",
+    "定時 ping API 端點並回報狀態",
+    "API 可用性監控，掛掉時告警",
+    "掃描多個 API 端點的健康狀況",
+    "檢查 REST API 的回應時間和狀態碼",
+    "我想知道上線的 API 有沒有異常"
+  ],
+  "examples": [
+    {
+      "query": "掃描 https://api.example.com/health 的 API 健康狀態",
+      "params": {
+        "action": "scan",
+        "url": "https://api.example.com/health",
+        "expected_status": 200
+      }
+    },
+    {
+      "query": "每 5 分鐘監測 endpoints.json 中所有 API 端點",
+      "params": {
+        "action": "scan",
+        "endpoints_file": "endpoints.json",
+        "check_interval": 300
+      }
+    },
+    {
+      "query": "測試 API 回應時間，超過 1 秒就警告",
+      "params": {
+        "action": "scan",
+        "url": "https://api.myservice.com",
+        "max_response_ms": 1000
+      }
+    }
+  ],
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "action": {
+        "type": "string"
+      },
+      "check_interval": {
+        "type": "integer"
+      },
+      "endpoints_file": {
+        "type": "string"
+      },
+      "expected_status": {
+        "type": "integer"
+      },
+      "max_response_ms": {
+        "type": "integer"
+      },
+      "url": {
+        "type": "string"
+      }
+    },
+    "required": [
+      "action"
+    ]
+  },
+  "license": "MIT"
+}

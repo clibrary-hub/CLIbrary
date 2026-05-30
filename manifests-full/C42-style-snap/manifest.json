@@ -1,0 +1,73 @@
+{
+  "name": "style-snap",
+  "version": "0.1.0",
+  "description": "程式碼風格擷取器",
+  "category": "C",
+  "number": 42,
+  "pain_point": "Agent 不知專案風格",
+  "commercial": "✅",
+  "language": "Python",
+  "dependencies": [
+    "ast",
+    "click",
+    "rich"
+  ],
+  "agent_compatible": true,
+  "mcp_ready": true,
+  "intent_triggers": [
+    "分析這個專案的程式碼風格",
+    "告訴 AI 我的專案用什麼命名慣例",
+    "擷取現有程式碼的風格供 Agent 參考",
+    "掃描 codebase 的風格規範",
+    "把專案的程式碼風格記錄下來",
+    "讓 AI 學習我的專案寫作習慣",
+    "分析縮排、命名方式等程式碼風格"
+  ],
+  "examples": [
+    {
+      "query": "分析 src/ 目錄的程式碼風格",
+      "params": {
+        "target_path": "src/",
+        "action": "run"
+      }
+    },
+    {
+      "query": "擷取 Python 程式碼的命名慣例和縮排風格",
+      "params": {
+        "target_path": ".",
+        "language": "python",
+        "action": "run"
+      }
+    },
+    {
+      "query": "產生專案風格快照並儲存到 style_guide.json",
+      "params": {
+        "target_path": ".",
+        "output_file": "style_guide.json",
+        "action": "run"
+      }
+    }
+  ],
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "action": {
+        "type": "string"
+      },
+      "language": {
+        "type": "string"
+      },
+      "output_file": {
+        "type": "string"
+      },
+      "target_path": {
+        "type": "string"
+      }
+    },
+    "required": [
+      "action",
+      "target_path"
+    ]
+  },
+  "license": "MIT"
+}

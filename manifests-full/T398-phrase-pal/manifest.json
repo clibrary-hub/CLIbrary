@@ -1,0 +1,85 @@
+{
+  "name": "phrase-pal",
+  "version": "0.1.0",
+  "description": "在地用語助手",
+  "category": "T",
+  "number": 398,
+  "pain_point": "跨語言問路",
+  "commercial": "✅",
+  "language": "Python",
+  "dependencies": [
+    "anthropic",
+    "click",
+    "rich"
+  ],
+  "agent_compatible": true,
+  "mcp_ready": true,
+  "intent_triggers": [
+    "幫我用日文問路",
+    "用當地語言說「廁所在哪」",
+    "把這句話翻成韓文讓我可以問路",
+    "出發前學一些實用的在地用語",
+    "幫我查這個地方的常用生活短語",
+    "用法文點餐的常用說法",
+    "旅遊時的緊急求助用語"
+  ],
+  "examples": [
+    {
+      "query": "幫我翻譯「最近的地鐵站怎麼走」成日文",
+      "params": {
+        "phrase": "最近的地鐵站怎麼走",
+        "target_language": "ja",
+        "with_pronunciation": true
+      }
+    },
+    {
+      "query": "生成在義大利旅遊的 20 個實用短語清單",
+      "params": {
+        "destination": "義大利",
+        "target_language": "it",
+        "count": 20,
+        "category": "travel"
+      }
+    },
+    {
+      "query": "把「我對蝦子過敏」翻成泰文和英文",
+      "params": {
+        "phrase": "我對蝦子過敏",
+        "target_languages": [
+          "th",
+          "en"
+        ]
+      }
+    }
+  ],
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "category": {
+        "type": "string"
+      },
+      "count": {
+        "type": "integer"
+      },
+      "destination": {
+        "type": "string"
+      },
+      "phrase": {
+        "type": "string"
+      },
+      "target_language": {
+        "type": "string"
+      },
+      "target_languages": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      },
+      "with_pronunciation": {
+        "type": "boolean"
+      }
+    }
+  },
+  "license": "MIT"
+}

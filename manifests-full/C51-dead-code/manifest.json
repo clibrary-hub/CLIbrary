@@ -1,0 +1,75 @@
+{
+  "name": "dead-code",
+  "version": "0.1.0",
+  "description": "死碼偵測器",
+  "category": "C",
+  "number": 51,
+  "pain_point": "找不到死碼",
+  "commercial": "✅",
+  "language": "Python",
+  "dependencies": [
+    "vulture",
+    "click",
+    "rich"
+  ],
+  "agent_compatible": true,
+  "mcp_ready": true,
+  "intent_triggers": [
+    "找出從未被呼叫的函數",
+    "掃描 codebase 中的死碼",
+    "有哪些程式碼從來沒被執行過",
+    "清理 AI 留下的無用程式碼",
+    "找出未使用的變數和類別",
+    "幫我刪除所有死碼",
+    "分析未使用的 import 和函數"
+  ],
+  "examples": [
+    {
+      "query": "掃描 src/ 目錄找出所有死碼",
+      "params": {
+        "target_path": "src/",
+        "action": "run"
+      }
+    },
+    {
+      "query": "找出 main.py 中未被使用的函數和變數",
+      "params": {
+        "target_file": "main.py",
+        "action": "run",
+        "confidence": 80
+      }
+    },
+    {
+      "query": "掃描整個專案並輸出死碼報告",
+      "params": {
+        "target_path": ".",
+        "action": "run",
+        "output_file": "dead_code_report.json"
+      }
+    }
+  ],
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "action": {
+        "type": "string"
+      },
+      "confidence": {
+        "type": "integer"
+      },
+      "output_file": {
+        "type": "string"
+      },
+      "target_file": {
+        "type": "string"
+      },
+      "target_path": {
+        "type": "string"
+      }
+    },
+    "required": [
+      "action"
+    ]
+  },
+  "license": "MIT"
+}

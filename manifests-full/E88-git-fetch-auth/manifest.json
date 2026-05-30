@@ -1,0 +1,80 @@
+{
+  "name": "git-fetch-auth",
+  "version": "0.1.0",
+  "description": "認證抓取器",
+  "category": "E",
+  "number": 88,
+  "pain_point": "Agent 存取私有 Git",
+  "commercial": "✅",
+  "language": "Python",
+  "dependencies": [
+    "gitpython",
+    "click",
+    "rich"
+  ],
+  "agent_compatible": true,
+  "mcp_ready": true,
+  "intent_triggers": [
+    "幫 Agent 設定 Git 認證存取私有 repo",
+    "抓取私有 GitHub repo 的內容",
+    "設定 SSH key 讓 AI 可以 clone",
+    "讓 Agent 存取受保護的 Git 倉庫",
+    "配置 Git token 認證",
+    "抓取需要認證的私有倉庫",
+    "解決 Agent clone 私有 repo 的認證問題"
+  ],
+  "examples": [
+    {
+      "query": "設定 GitHub token 讓 Agent 可以 clone 私有 repo",
+      "params": {
+        "platform": "github",
+        "token": "ghp_xxxx",
+        "action": "run"
+      }
+    },
+    {
+      "query": "用 SSH key 認證 clone gitlab 私有倉庫",
+      "params": {
+        "platform": "gitlab",
+        "auth_type": "ssh",
+        "repo_url": "git@gitlab.com:org/repo.git",
+        "action": "run"
+      }
+    },
+    {
+      "query": "設定認證並 fetch 指定 branch",
+      "params": {
+        "repo_url": "https://github.com/private/repo",
+        "branch": "main",
+        "action": "run"
+      }
+    }
+  ],
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "action": {
+        "type": "string"
+      },
+      "auth_type": {
+        "type": "string"
+      },
+      "branch": {
+        "type": "string"
+      },
+      "platform": {
+        "type": "string"
+      },
+      "repo_url": {
+        "type": "string"
+      },
+      "token": {
+        "type": "string"
+      }
+    },
+    "required": [
+      "action"
+    ]
+  },
+  "license": "MIT"
+}

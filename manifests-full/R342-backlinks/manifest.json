@@ -1,0 +1,75 @@
+{
+  "name": "backlinks",
+  "version": "0.1.0",
+  "description": "反向連結器",
+  "category": "R",
+  "number": 342,
+  "pain_point": "筆記反向連結維護",
+  "commercial": "✅",
+  "language": "Python",
+  "dependencies": [
+    "pathlib",
+    "re",
+    "click",
+    "rich"
+  ],
+  "agent_compatible": true,
+  "mcp_ready": true,
+  "intent_triggers": [
+    "哪些筆記有連結到這篇",
+    "找出所有引用了 Python 筆記的文章",
+    "建立筆記的反向連結索引",
+    "更新所有筆記的 backlinks 區塊",
+    "這個概念被哪幾篇筆記參照",
+    "找出沒有任何 backlink 的孤立筆記",
+    "分析筆記之間的連結關係"
+  ],
+  "examples": [
+    {
+      "query": "找出 notes/ 裡所有連結到 python.md 的筆記",
+      "params": {
+        "notes_dir": "notes/",
+        "target_note": "python.md"
+      }
+    },
+    {
+      "query": "建立整個 vault/ 的 backlinks 索引",
+      "params": {
+        "notes_dir": "vault/",
+        "action": "build_index"
+      }
+    },
+    {
+      "query": "找出所有孤立筆記（沒有被其他筆記連結的）",
+      "params": {
+        "notes_dir": "notes/",
+        "find_orphans": true
+      }
+    }
+  ],
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "notes_dir": {
+        "type": "string",
+        "description": "筆記目錄路徑"
+      },
+      "target_note": {
+        "type": "string",
+        "description": "要查詢反向連結的筆記檔名"
+      },
+      "action": {
+        "type": "string",
+        "description": "操作：build_index、query"
+      },
+      "find_orphans": {
+        "type": "boolean",
+        "description": "是否找出孤立筆記"
+      }
+    },
+    "required": [
+      "notes_dir"
+    ]
+  },
+  "license": "MIT"
+}

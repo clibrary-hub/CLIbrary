@@ -1,0 +1,96 @@
+{
+  "name": "combo-opt",
+  "version": "0.1.0",
+  "description": "換購最佳化器",
+  "category": "U",
+  "number": 417,
+  "pain_point": "換購最佳組合",
+  "commercial": "✅",
+  "language": "Python",
+  "dependencies": [
+    "click",
+    "rich",
+    "itertools"
+  ],
+  "agent_compatible": true,
+  "mcp_ready": true,
+  "intent_triggers": [
+    "我有換購點數，怎麼組合最划算？",
+    "幫我算這張滿額換購要怎麼搭配最值得",
+    "買什麼組合可以觸發折扣？",
+    "計算滿 999 換購應該怎麼選商品",
+    "我要湊單，幫我找出最優組合",
+    "换購活動有很多選項，哪個組合最省錢？",
+    "買多件有折扣，幫我算最佳購買方案"
+  ],
+  "examples": [
+    {
+      "query": "購物滿 1000 換購，我有 A(300)、B(450)、C(600)三件商品，怎麼組合最省？",
+      "params": {
+        "threshold": 1000,
+        "items": [
+          {
+            "name": "A",
+            "price": 300
+          },
+          {
+            "name": "B",
+            "price": 450
+          },
+          {
+            "name": "C",
+            "price": 600
+          }
+        ]
+      }
+    },
+    {
+      "query": "買 3 件打 85 折，我有 5 件想買的，幫我選最划算的 3 件",
+      "params": {
+        "buy_count": 3,
+        "discount_rate": 0.85,
+        "items": [
+          "商品A 200元",
+          "商品B 350元",
+          "商品C 180元",
+          "商品D 420元",
+          "商品E 290元"
+        ]
+      }
+    },
+    {
+      "query": "滿 2000 免運，我目前購物車 1650 元，再買什麼最划算？",
+      "params": {
+        "current_amount": 1650,
+        "free_shipping_threshold": 2000
+      }
+    }
+  ],
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "buy_count": {
+        "type": "integer"
+      },
+      "current_amount": {
+        "type": "integer"
+      },
+      "discount_rate": {
+        "type": "number"
+      },
+      "free_shipping_threshold": {
+        "type": "integer"
+      },
+      "items": {
+        "type": "array",
+        "items": {
+          "type": "object"
+        }
+      },
+      "threshold": {
+        "type": "integer"
+      }
+    }
+  },
+  "license": "MIT"
+}

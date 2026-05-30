@@ -1,0 +1,85 @@
+{
+  "name": "shop-list",
+  "version": "0.1.0",
+  "description": "購物清單器",
+  "category": "U",
+  "number": 403,
+  "pain_point": "購物清單",
+  "commercial": "✅",
+  "language": "Python",
+  "dependencies": [
+    "sqlite3",
+    "click",
+    "rich"
+  ],
+  "agent_compatible": true,
+  "mcp_ready": true,
+  "intent_triggers": [
+    "幫我建立一份購物清單",
+    "我需要記錄今天要買的東西",
+    "把這些商品加入我的購物清單",
+    "查看目前購物清單有哪些項目",
+    "我去超市前先整理一下要買什麼",
+    "幫我管理日常採購清單",
+    "從購物清單移除已買的項目"
+  ],
+  "examples": [
+    {
+      "query": "把牛奶、雞蛋、麵包加入今天的購物清單",
+      "params": {
+        "items": [
+          "牛奶",
+          "雞蛋",
+          "麵包"
+        ],
+        "list_name": "今日採購"
+      }
+    },
+    {
+      "query": "新增一份週末家庭購物清單，包含10樣食材",
+      "params": {
+        "items": [
+          "豬肉",
+          "青菜",
+          "豆腐",
+          "蔥",
+          "薑",
+          "蒜",
+          "醬油",
+          "米",
+          "油",
+          "鹽"
+        ],
+        "list_name": "週末採購"
+      }
+    },
+    {
+      "query": "顯示我目前所有待購商品清單",
+      "params": {
+        "list_name": "全部",
+        "show_completed": false
+      }
+    }
+  ],
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "items": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      },
+      "list_name": {
+        "type": "string"
+      },
+      "show_completed": {
+        "type": "boolean"
+      }
+    },
+    "required": [
+      "list_name"
+    ]
+  },
+  "license": "MIT"
+}

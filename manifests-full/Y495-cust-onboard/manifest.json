@@ -1,0 +1,78 @@
+{
+  "name": "cust-onboard",
+  "version": "0.1.0",
+  "description": "客戶入手流程",
+  "category": "Y",
+  "number": 495,
+  "pain_point": "客戶 onboarding 流程",
+  "commercial": "✅",
+  "language": "Python",
+  "dependencies": [
+    "sqlite3",
+    "click",
+    "rich"
+  ],
+  "agent_compatible": true,
+  "mcp_ready": true,
+  "intent_triggers": [
+    "新客戶入手流程幫我建立",
+    "客戶 onboarding 要跑哪些步驟？",
+    "追蹤新客戶的導入進度",
+    "生成客戶入手流程 checklist",
+    "這個客戶的 onboarding 完成了嗎？",
+    "建立 SaaS 產品的客戶導入流程",
+    "客戶完成哪些設定了，哪些還沒？"
+  ],
+  "examples": [
+    {
+      "query": "為新客戶「ABC 公司」建立 onboarding checklist，使用 SaaS 產品",
+      "params": {
+        "customer": "ABC 公司",
+        "product_type": "saas",
+        "start_date": "2024-01-27"
+      }
+    },
+    {
+      "query": "查詢「XYZ 有限公司」的 onboarding 進度，哪些步驟還未完成",
+      "params": {
+        "customer": "XYZ 有限公司",
+        "show_pending": true,
+        "show_completed": false
+      }
+    },
+    {
+      "query": "列出所有 onboarding 未完成的客戶，按入手日期排序",
+      "params": {
+        "status": "incomplete",
+        "sort_by": "start_date"
+      }
+    }
+  ],
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "customer": {
+        "type": "string"
+      },
+      "product_type": {
+        "type": "string"
+      },
+      "show_completed": {
+        "type": "boolean"
+      },
+      "show_pending": {
+        "type": "boolean"
+      },
+      "sort_by": {
+        "type": "string"
+      },
+      "start_date": {
+        "type": "string"
+      },
+      "status": {
+        "type": "string"
+      }
+    }
+  },
+  "license": "MIT"
+}

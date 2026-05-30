@@ -1,0 +1,76 @@
+{
+  "name": "img-scan",
+  "version": "0.1.0",
+  "description": "Image 漏洞掃描",
+  "category": "Q",
+  "number": 337,
+  "pain_point": "容器漏洞掃描",
+  "commercial": "✅",
+  "language": "Python",
+  "dependencies": [
+    "subprocess",
+    "click",
+    "rich"
+  ],
+  "agent_compatible": true,
+  "mcp_ready": true,
+  "intent_triggers": [
+    "掃描 Docker image 有沒有安全漏洞",
+    "這個容器 image 有多少個 CVE",
+    "部署前先掃描一下 image 的安全性",
+    "用 Trivy 掃描 myapp:latest 的漏洞",
+    "找出容器 image 中高危等級的漏洞",
+    "掃描 base image 的所有已知漏洞",
+    "CI 流程中自動掃描容器安全性"
+  ],
+  "examples": [
+    {
+      "query": "用 Trivy 掃描 nginx:latest image 的所有漏洞",
+      "params": {
+        "image": "nginx:latest",
+        "scanner": "trivy"
+      }
+    },
+    {
+      "query": "掃描 myapp:v1.0 只顯示 HIGH 和 CRITICAL 等級漏洞",
+      "params": {
+        "image": "myapp:v1.0",
+        "severity": [
+          "HIGH",
+          "CRITICAL"
+        ]
+      }
+    },
+    {
+      "query": "掃描所有 docker-compose.yml 中的 image 並輸出報告",
+      "params": {
+        "compose_file": "docker-compose.yml",
+        "output_report": "scan_report.json"
+      }
+    }
+  ],
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "compose_file": {
+        "type": "string"
+      },
+      "image": {
+        "type": "string"
+      },
+      "output_report": {
+        "type": "string"
+      },
+      "scanner": {
+        "type": "string"
+      },
+      "severity": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  },
+  "license": "MIT"
+}

@@ -1,0 +1,78 @@
+{
+  "name": "rtl-check",
+  "version": "0.1.0",
+  "description": "RTL 檢查器",
+  "category": "W",
+  "number": 453,
+  "pain_point": "RTL 語系排版檢查",
+  "commercial": "✅",
+  "language": "Python",
+  "dependencies": [
+    "click",
+    "rich",
+    "re"
+  ],
+  "agent_compatible": true,
+  "mcp_ready": true,
+  "intent_triggers": [
+    "檢查阿拉伯文版本的排版方向是否正確",
+    "RTL 語系支援有沒有問題？",
+    "掃描 HTML 找出缺少 dir='rtl' 的元素",
+    "希伯來文版本的文字方向設定正確嗎？",
+    "幫我找出阿拉伯文介面的 RTL 排版問題",
+    "確認 CSS 有沒有加入 RTL 相關樣式",
+    "這個頁面支援右到左閱讀方向嗎？"
+  ],
+  "examples": [
+    {
+      "query": "掃描 ar.html 找出所有缺少 RTL 方向屬性的文字容器",
+      "params": {
+        "html_file": "ar.html",
+        "check_dir_attr": true,
+        "locale": "ar"
+      }
+    },
+    {
+      "query": "檢查 app.css 是否包含阿拉伯文所需的 RTL 樣式覆蓋",
+      "params": {
+        "css_file": "app.css",
+        "check_rtl_styles": true
+      }
+    },
+    {
+      "query": "掃描 /templates 下所有阿拉伯文頁面的 RTL 合規性",
+      "params": {
+        "templates_dir": "/templates",
+        "locale": "ar",
+        "generate_report": true
+      }
+    }
+  ],
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "check_dir_attr": {
+        "type": "boolean"
+      },
+      "check_rtl_styles": {
+        "type": "boolean"
+      },
+      "css_file": {
+        "type": "string"
+      },
+      "generate_report": {
+        "type": "boolean"
+      },
+      "html_file": {
+        "type": "string"
+      },
+      "locale": {
+        "type": "string"
+      },
+      "templates_dir": {
+        "type": "string"
+      }
+    }
+  },
+  "license": "MIT"
+}

@@ -1,0 +1,105 @@
+{
+  "name": "travel-claim",
+  "version": "0.1.0",
+  "description": "差旅報帳器",
+  "category": "Y",
+  "number": 494,
+  "pain_point": "員工差旅報帳",
+  "commercial": "✅",
+  "language": "Python",
+  "dependencies": [
+    "jinja2",
+    "click",
+    "rich"
+  ],
+  "agent_compatible": true,
+  "mcp_ready": true,
+  "intent_triggers": [
+    "幫我填差旅報帳單",
+    "我這次出差的費用明細要怎麼申報？",
+    "生成差旅費用報帳表格",
+    "整理這次出差的收據和費用",
+    "自動計算差旅費用並生成報帳文件",
+    "幫我整理日本出差的費用，包含機票住宿餐費",
+    "差旅費用超過預算多少？"
+  ],
+  "examples": [
+    {
+      "query": "生成小明 2024-01-20 至 01-23 台北到東京出差的費用報帳單",
+      "params": {
+        "employee": "小明",
+        "destination": "東京",
+        "start_date": "2024-01-20",
+        "end_date": "2024-01-23",
+        "expenses": [
+          {
+            "type": "機票",
+            "amount": 18000
+          },
+          {
+            "type": "住宿",
+            "amount": 12000
+          },
+          {
+            "type": "餐費",
+            "amount": 3000
+          }
+        ]
+      }
+    },
+    {
+      "query": "計算出差費用並與公司差旅補貼標準比較，超出部分標記",
+      "params": {
+        "total_amount": 35000,
+        "policy_limit": 30000,
+        "flag_over_limit": true
+      }
+    },
+    {
+      "query": "生成 PDF 格式差旅報帳單，含明細表和簽名欄位",
+      "params": {
+        "output_format": "pdf",
+        "include_signature": true
+      }
+    }
+  ],
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "destination": {
+        "type": "string"
+      },
+      "employee": {
+        "type": "string"
+      },
+      "end_date": {
+        "type": "string"
+      },
+      "expenses": {
+        "type": "array",
+        "items": {
+          "type": "object"
+        }
+      },
+      "flag_over_limit": {
+        "type": "boolean"
+      },
+      "include_signature": {
+        "type": "boolean"
+      },
+      "output_format": {
+        "type": "string"
+      },
+      "policy_limit": {
+        "type": "integer"
+      },
+      "start_date": {
+        "type": "string"
+      },
+      "total_amount": {
+        "type": "integer"
+      }
+    }
+  },
+  "license": "MIT"
+}

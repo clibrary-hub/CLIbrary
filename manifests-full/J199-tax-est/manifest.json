@@ -1,0 +1,83 @@
+{
+  "name": "tax-est",
+  "version": "0.1.0",
+  "description": "個稅試算器",
+  "category": "J",
+  "number": 199,
+  "pain_point": "退稅試算難",
+  "commercial": "⚠️",
+  "language": "Python",
+  "dependencies": [
+    "click",
+    "rich",
+    "decimal"
+  ],
+  "agent_compatible": true,
+  "mcp_ready": true,
+  "intent_triggers": [
+    "幫我試算今年的個人所得稅要繳多少",
+    "我的薪資加上稿費，應稅所得怎麼算",
+    "今年可以退多少稅？幫我試算",
+    "個人綜合所得稅試算工具",
+    "扣除撫養親屬後的應繳稅額是多少",
+    "計算薪資所得扣繳後還需要補繳的稅",
+    "試算不同扣除項目下的最低稅負"
+  ],
+  "examples": [
+    {
+      "query": "試算年收入 NT$1,200,000，已預扣稅 NT$60,000，應補繳或退稅金額",
+      "params": {
+        "action": "estimate",
+        "income": "1200000",
+        "withheld": "60000",
+        "dependents": "2"
+      }
+    },
+    {
+      "query": "計算薪資 80 萬加副業收入 20 萬的綜合所得稅",
+      "params": {
+        "action": "estimate",
+        "salary": "800000",
+        "other_income": "200000"
+      }
+    },
+    {
+      "query": "比較申報分離課稅和合併申報哪個節稅效果更好",
+      "params": {
+        "action": "compare",
+        "income": "1500000",
+        "capital_gains": "300000"
+      }
+    }
+  ],
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "action": {
+        "type": "string"
+      },
+      "capital_gains": {
+        "type": "string"
+      },
+      "dependents": {
+        "type": "string"
+      },
+      "income": {
+        "type": "string"
+      },
+      "other_income": {
+        "type": "string"
+      },
+      "salary": {
+        "type": "string"
+      },
+      "withheld": {
+        "type": "string"
+      }
+    },
+    "required": [
+      "action"
+    ]
+  },
+  "license": "MIT"
+}

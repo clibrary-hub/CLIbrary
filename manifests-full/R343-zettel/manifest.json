@@ -1,0 +1,79 @@
+{
+  "name": "zettel",
+  "version": "0.1.0",
+  "description": "Zettelkasten CLI",
+  "category": "R",
+  "number": 343,
+  "pain_point": "卡片盒筆記法支援",
+  "commercial": "✅",
+  "language": "Python",
+  "dependencies": [
+    "sqlite3",
+    "click",
+    "rich"
+  ],
+  "agent_compatible": true,
+  "mcp_ready": true,
+  "intent_triggers": [
+    "用 Zettelkasten 方法建立一張新的知識卡片",
+    "幫我實踐卡片盒筆記法",
+    "新增一個 zettel 並連結到相關概念",
+    "我要用 CLI 管理 Zettelkasten 筆記系統",
+    "列出所有的 zettel 和它們的連結",
+    "搜尋 zettelkasten 裡的特定概念",
+    "把這段文字轉換成 zettel 卡片"
+  ],
+  "examples": [
+    {
+      "query": "建立新 zettel：標題為「費曼學習法」並連結到「學習技巧」",
+      "params": {
+        "action": "create",
+        "title": "費曼學習法",
+        "links": [
+          "學習技巧"
+        ]
+      }
+    },
+    {
+      "query": "列出所有連結到 20231001-learning 的 zettel",
+      "params": {
+        "action": "backlinks",
+        "zettel_id": "20231001-learning"
+      }
+    },
+    {
+      "query": "搜尋 zettelkasten 資料庫中的 consciousness 相關卡片",
+      "params": {
+        "action": "search",
+        "query": "consciousness"
+      }
+    }
+  ],
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "action": {
+        "type": "string"
+      },
+      "links": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      },
+      "query": {
+        "type": "string"
+      },
+      "title": {
+        "type": "string"
+      },
+      "zettel_id": {
+        "type": "string"
+      }
+    },
+    "required": [
+      "action"
+    ]
+  },
+  "license": "MIT"
+}

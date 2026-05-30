@@ -1,0 +1,80 @@
+{
+  "name": "chart-alt",
+  "version": "0.1.0",
+  "description": "Alt 文字器",
+  "category": "N",
+  "number": 273,
+  "pain_point": "圖表轉可訪問描述",
+  "commercial": "✅",
+  "language": "Python",
+  "dependencies": [
+    "anthropic",
+    "click",
+    "rich"
+  ],
+  "agent_compatible": true,
+  "mcp_ready": true,
+  "intent_triggers": [
+    "幫我的圖表產生無障礙 alt 文字",
+    "圖表要加上無障礙描述給視障用戶",
+    "自動產生圖片的 alt text 說明",
+    "把圖表轉換成文字描述",
+    "讓 AI 解讀圖表並寫出文字版本",
+    "報告圖表需要符合無障礙標準",
+    "將視覺化圖表轉成可讀文字說明"
+  ],
+  "examples": [
+    {
+      "query": "為 sales_chart.png 產生無障礙 alt 文字描述",
+      "params": {
+        "action": "generate",
+        "image_file": "sales_chart.png"
+      }
+    },
+    {
+      "query": "把 revenue_pie.png 轉成詳細文字說明",
+      "params": {
+        "action": "generate",
+        "image_file": "revenue_pie.png",
+        "detail_level": "detailed"
+      }
+    },
+    {
+      "query": "批次為 charts/ 資料夾的所有圖表產生 alt 描述",
+      "params": {
+        "action": "batch",
+        "input_dir": "charts/",
+        "output_file": "alt_texts.json"
+      }
+    }
+  ],
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "action": {
+        "type": "string",
+        "description": "操作類型，如 generate（產生 alt 文字）、batch（批次處理）"
+      },
+      "image_file": {
+        "type": "string",
+        "description": "圖表圖片路徑"
+      },
+      "detail_level": {
+        "type": "string",
+        "description": "描述詳細程度，如 brief、detailed"
+      },
+      "input_dir": {
+        "type": "string",
+        "description": "批次處理的圖片資料夾路徑"
+      },
+      "output_file": {
+        "type": "string",
+        "description": "輸出結果路徑"
+      }
+    },
+    "required": [
+      "action"
+    ]
+  },
+  "license": "MIT"
+}

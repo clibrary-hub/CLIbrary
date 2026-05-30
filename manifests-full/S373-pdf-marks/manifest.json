@@ -1,0 +1,70 @@
+{
+  "name": "pdf-marks",
+  "version": "0.1.0",
+  "description": "PDF 註記器",
+  "category": "S",
+  "number": 373,
+  "pain_point": "文獻 PDF 註記匯出",
+  "commercial": "✅",
+  "language": "Python",
+  "dependencies": [
+    "pymupdf",
+    "click",
+    "rich"
+  ],
+  "agent_compatible": true,
+  "mcp_ready": true,
+  "intent_triggers": [
+    "把 PDF 裡的所有螢光筆標記匯出",
+    "抽取論文 PDF 的所有批注和評論",
+    "把 PDF 高亮和筆記整理成 Markdown",
+    "幫我整理 PDF 閱讀筆記",
+    "匯出論文裡的所有重點標記",
+    "把一堆 PDF 的批注集中到一個文件",
+    "找出 PDF 第 5-10 頁的所有標注"
+  ],
+  "examples": [
+    {
+      "query": "匯出 paper.pdf 的所有高亮和批注到 notes.md",
+      "params": {
+        "input_file": "paper.pdf",
+        "output_file": "notes.md"
+      }
+    },
+    {
+      "query": "批次匯出 papers/ 所有 PDF 的標記",
+      "params": {
+        "input_dir": "papers/",
+        "output_dir": "annotations/"
+      }
+    },
+    {
+      "query": "只匯出 thesis.pdf 第 20-50 頁的批注",
+      "params": {
+        "input_file": "thesis.pdf",
+        "pages": "20-50"
+      }
+    }
+  ],
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "input_dir": {
+        "type": "string"
+      },
+      "input_file": {
+        "type": "string"
+      },
+      "output_dir": {
+        "type": "string"
+      },
+      "output_file": {
+        "type": "string"
+      },
+      "pages": {
+        "type": "string"
+      }
+    }
+  },
+  "license": "MIT"
+}

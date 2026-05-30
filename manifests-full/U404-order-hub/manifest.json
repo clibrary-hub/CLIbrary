@@ -1,0 +1,77 @@
+{
+  "name": "order-hub",
+  "version": "0.1.0",
+  "description": "訂單集中器",
+  "category": "U",
+  "number": 404,
+  "pain_point": "訂單追蹤集中",
+  "commercial": "⚠️",
+  "language": "Python",
+  "dependencies": [
+    "sqlite3",
+    "click",
+    "rich"
+  ],
+  "agent_compatible": true,
+  "mcp_ready": true,
+  "intent_triggers": [
+    "我有很多平台的訂單，幫我整合起來看",
+    "查詢最近的訂單狀態",
+    "幫我看蝦皮和momo的訂單有沒有出貨",
+    "把各電商平台的訂單集中管理",
+    "這筆訂單現在到哪裡了？",
+    "整理一下這個月所有網購訂單",
+    "有幾個訂單還在處理中？"
+  ],
+  "examples": [
+    {
+      "query": "幫我查蝦皮訂單 #SH20240127001 的出貨狀態",
+      "params": {
+        "order_id": "SH20240127001",
+        "platform": "shopee"
+      }
+    },
+    {
+      "query": "列出過去 30 天所有平台的待收貨訂單",
+      "params": {
+        "days": 30,
+        "status": "pending",
+        "platform": "all"
+      }
+    },
+    {
+      "query": "把 momo 和 pchome 上本月所有訂單整合顯示",
+      "params": {
+        "platforms": [
+          "momo",
+          "pchome"
+        ],
+        "days": 30
+      }
+    }
+  ],
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "days": {
+        "type": "integer"
+      },
+      "order_id": {
+        "type": "string"
+      },
+      "platform": {
+        "type": "string"
+      },
+      "platforms": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      },
+      "status": {
+        "type": "string"
+      }
+    }
+  },
+  "license": "MIT"
+}

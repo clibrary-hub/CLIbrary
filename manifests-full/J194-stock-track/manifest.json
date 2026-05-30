@@ -1,0 +1,83 @@
+{
+  "name": "stock-track",
+  "version": "0.1.0",
+  "description": "部位績效追蹤",
+  "category": "J",
+  "number": 194,
+  "pain_point": "股票/ETF 績效追蹤",
+  "commercial": "⚠️",
+  "language": "Python",
+  "dependencies": [
+    "yfinance",
+    "click",
+    "rich"
+  ],
+  "agent_compatible": true,
+  "mcp_ready": true,
+  "intent_triggers": [
+    "我的股票和 ETF 持倉績效怎麼樣？",
+    "幫我計算持有 0050 和 NVDA 的報酬率",
+    "想查看股票投資組合的整體損益",
+    "追蹤我的持股績效並跟大盤比較",
+    "ETF 持倉總覽，顯示目前損益和報酬率",
+    "我有幾支股票想一次查看現在的市值",
+    "投資組合績效分析，包含每支股票的報酬"
+  ],
+  "examples": [
+    {
+      "query": "查詢 AAPL 100 股、TSLA 50 股目前的市值和損益",
+      "params": {
+        "action": "track",
+        "holdings": "AAPL:100,TSLA:50",
+        "currency": "USD"
+      }
+    },
+    {
+      "query": "從 portfolio.csv 載入持倉並計算整體報酬率",
+      "params": {
+        "action": "track",
+        "input": "portfolio.csv",
+        "show_pnl": "true"
+      }
+    },
+    {
+      "query": "比較我的 ETF 組合和大盤過去 1 年的績效",
+      "params": {
+        "action": "compare",
+        "holdings": "0050:100,006208:200",
+        "benchmark": "^TWII",
+        "period": "1y"
+      }
+    }
+  ],
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "action": {
+        "type": "string"
+      },
+      "benchmark": {
+        "type": "string"
+      },
+      "currency": {
+        "type": "string"
+      },
+      "holdings": {
+        "type": "string"
+      },
+      "input": {
+        "type": "string"
+      },
+      "period": {
+        "type": "string"
+      },
+      "show_pnl": {
+        "type": "string"
+      }
+    },
+    "required": [
+      "action"
+    ]
+  },
+  "license": "MIT"
+}

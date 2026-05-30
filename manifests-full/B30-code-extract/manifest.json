@@ -1,0 +1,76 @@
+{
+  "name": "code-extract",
+  "version": "0.1.0",
+  "description": "對話程式碼提取器",
+  "category": "B",
+  "number": 30,
+  "pain_point": "對話中程式碼難提取",
+  "commercial": "✅",
+  "language": "Python",
+  "dependencies": [
+    "re",
+    "rich",
+    "click"
+  ],
+  "agent_compatible": true,
+  "mcp_ready": true,
+  "intent_triggers": [
+    "從對話中提取所有程式碼",
+    "把 AI 回覆裡的 code block 全部抓出來",
+    "幫我從這段聊天記錄取出 Python 程式碼",
+    "提取對話中的所有 SQL 語句",
+    "把聊天裡的 code 存成獨立的檔案",
+    "從這段回覆中萃取可執行的腳本",
+    "抓出對話中所有的 JSON 範例"
+  ],
+  "examples": [
+    {
+      "query": "從 chat_log.txt 中提取所有 Python 程式碼",
+      "params": {
+        "input_file": "chat_log.txt",
+        "language": "python",
+        "action": "run"
+      }
+    },
+    {
+      "query": "提取對話中的 SQL 並儲存到 queries.sql",
+      "params": {
+        "input_file": "conversation.md",
+        "language": "sql",
+        "output_file": "queries.sql",
+        "action": "run"
+      }
+    },
+    {
+      "query": "從 AI 回覆中抓出所有 code block",
+      "params": {
+        "input_text": "...",
+        "action": "run"
+      }
+    }
+  ],
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "action": {
+        "type": "string"
+      },
+      "input_file": {
+        "type": "string"
+      },
+      "input_text": {
+        "type": "string"
+      },
+      "language": {
+        "type": "string"
+      },
+      "output_file": {
+        "type": "string"
+      }
+    },
+    "required": [
+      "action"
+    ]
+  },
+  "license": "MIT"
+}

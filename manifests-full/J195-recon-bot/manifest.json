@@ -1,0 +1,84 @@
+{
+  "name": "recon-bot",
+  "version": "0.1.0",
+  "description": "對帳機器人",
+  "category": "J",
+  "number": 195,
+  "pain_point": "月底對帳麻煩",
+  "commercial": "✅",
+  "language": "Python",
+  "dependencies": [
+    "pandas",
+    "click",
+    "rich"
+  ],
+  "agent_compatible": true,
+  "mcp_ready": true,
+  "intent_triggers": [
+    "月底要對帳，幫我比對銀行帳單和內部記帳",
+    "比較信用卡帳單和記帳本，找出不符的項目",
+    "想自動找出兩份帳單之間的差異",
+    "對帳機器人，比對 CSV 帳單找未配對的項目",
+    "銀行帳戶對帳單和我的記錄有出入，幫我找",
+    "公司帳和銀行帳不符，自動偵測差異",
+    "批次比對多個帳戶的月結對帳"
+  ],
+  "examples": [
+    {
+      "query": "比對 bank-statement.csv 和 my-records.csv，找出未配對項目",
+      "params": {
+        "action": "reconcile",
+        "file_a": "bank-statement.csv",
+        "file_b": "my-records.csv",
+        "output": "diff-report.csv"
+      }
+    },
+    {
+      "query": "對比本月銀行帳單和記帳本，允許金額差異 NT$5",
+      "params": {
+        "action": "reconcile",
+        "file_a": "bank-march.csv",
+        "file_b": "ledger-march.csv",
+        "tolerance": "5"
+      }
+    },
+    {
+      "query": "列出 Q1 三個月每月對帳的差異統計",
+      "params": {
+        "action": "report",
+        "period": "Q1",
+        "summary": "true"
+      }
+    }
+  ],
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "action": {
+        "type": "string"
+      },
+      "file_a": {
+        "type": "string"
+      },
+      "file_b": {
+        "type": "string"
+      },
+      "output": {
+        "type": "string"
+      },
+      "period": {
+        "type": "string"
+      },
+      "summary": {
+        "type": "string"
+      },
+      "tolerance": {
+        "type": "string"
+      }
+    },
+    "required": [
+      "action"
+    ]
+  },
+  "license": "MIT"
+}

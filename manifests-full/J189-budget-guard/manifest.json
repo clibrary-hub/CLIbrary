@@ -1,0 +1,87 @@
+{
+  "name": "budget-guard",
+  "version": "0.1.0",
+  "description": "預算守門員",
+  "category": "J",
+  "number": 189,
+  "pain_point": "預算超支無警告",
+  "commercial": "✅",
+  "language": "Python",
+  "dependencies": [
+    "sqlite3",
+    "click",
+    "rich"
+  ],
+  "agent_compatible": true,
+  "mcp_ready": true,
+  "intent_triggers": [
+    "每個月餐費超支但沒有任何警告，需要預算守門工具",
+    "幫我設定各類支出上限，超過時發出警告",
+    "想在快要超預算時提前提醒我",
+    "設定月預算 NT$20,000 並追蹤使用進度",
+    "我需要一個家庭預算監控工具",
+    "各類別設預算，自動偵測超支行為",
+    "餐飲、交通、娛樂分類預算管理"
+  ],
+  "examples": [
+    {
+      "query": "設定本月餐飲預算 NT$8,000，交通預算 NT$3,000",
+      "params": {
+        "action": "set",
+        "category": "餐飲",
+        "amount": "8000",
+        "period": "this_month",
+        "currency": "TWD"
+      }
+    },
+    {
+      "query": "檢查本月各類別預算使用狀況",
+      "params": {
+        "action": "check",
+        "period": "this_month",
+        "show_progress": "true"
+      }
+    },
+    {
+      "query": "掃描 expenses.csv 並標記超過預算 80% 的類別",
+      "params": {
+        "action": "scan",
+        "input": "expenses.csv",
+        "warn_threshold": "80"
+      }
+    }
+  ],
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "action": {
+        "type": "string"
+      },
+      "amount": {
+        "type": "string"
+      },
+      "category": {
+        "type": "string"
+      },
+      "currency": {
+        "type": "string"
+      },
+      "input": {
+        "type": "string"
+      },
+      "period": {
+        "type": "string"
+      },
+      "show_progress": {
+        "type": "string"
+      },
+      "warn_threshold": {
+        "type": "string"
+      }
+    },
+    "required": [
+      "action"
+    ]
+  },
+  "license": "MIT"
+}

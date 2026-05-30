@@ -1,0 +1,83 @@
+{
+  "name": "i18n-sync",
+  "version": "0.1.0",
+  "description": "翻譯同步器",
+  "category": "E",
+  "number": 87,
+  "pain_point": "多語翻譯檔難維護",
+  "commercial": "✅",
+  "language": "Python",
+  "dependencies": [
+    "click",
+    "rich",
+    "pyyaml"
+  ],
+  "agent_compatible": true,
+  "mcp_ready": true,
+  "intent_triggers": [
+    "同步多語言翻譯檔案",
+    "找出缺少翻譯的 i18n 鍵值",
+    "把中文翻譯同步到英文和日文版",
+    "檢查哪些翻譯鍵只有一種語言",
+    "匯出缺少翻譯的項目清單",
+    "比較 zh.yaml 和 en.yaml 的差異",
+    "維護多語系翻譯檔案的一致性"
+  ],
+  "examples": [
+    {
+      "query": "找出 en.yaml 中缺少的翻譯鍵",
+      "params": {
+        "source_lang": "zh.yaml",
+        "target_lang": "en.yaml",
+        "action": "export"
+      }
+    },
+    {
+      "query": "匯出所有語言缺少翻譯的項目",
+      "params": {
+        "i18n_dir": "locales/",
+        "output_file": "missing_translations.json",
+        "action": "export"
+      }
+    },
+    {
+      "query": "把新增的 zh 翻譯鍵同步到其他語言檔",
+      "params": {
+        "source_lang": "zh.yaml",
+        "all_langs_dir": "locales/",
+        "action": "export",
+        "add_empty": true
+      }
+    }
+  ],
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "action": {
+        "type": "string"
+      },
+      "add_empty": {
+        "type": "boolean"
+      },
+      "all_langs_dir": {
+        "type": "string"
+      },
+      "i18n_dir": {
+        "type": "string"
+      },
+      "output_file": {
+        "type": "string"
+      },
+      "source_lang": {
+        "type": "string"
+      },
+      "target_lang": {
+        "type": "string"
+      }
+    },
+    "required": [
+      "action"
+    ]
+  },
+  "license": "MIT"
+}

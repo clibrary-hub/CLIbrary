@@ -1,0 +1,70 @@
+{
+  "name": "key-rotate",
+  "version": "0.1.0",
+  "description": "金鑰輪轉器",
+  "category": "P",
+  "number": 318,
+  "pain_point": "KMS 金鑰輪轉",
+  "commercial": "⚠️",
+  "language": "Python",
+  "dependencies": [
+    "cryptography",
+    "click",
+    "rich"
+  ],
+  "agent_compatible": true,
+  "mcp_ready": true,
+  "intent_triggers": [
+    "幫我更換 API 金鑰，安全政策規定要定期輪轉",
+    "自動化 AWS 金鑰的輪轉作業",
+    "排程每 90 天自動換一次加密金鑰",
+    "哪些金鑰快到期了需要更換",
+    "執行金鑰輪轉並更新相關的設定檔",
+    "我要備份舊金鑰再輪轉到新金鑰",
+    "列出目前所有金鑰的到期狀態"
+  ],
+  "examples": [
+    {
+      "query": "輪轉 .env 裡的 SECRET_KEY 並更新設定",
+      "params": {
+        "config_file": ".env",
+        "key_name": "SECRET_KEY"
+      }
+    },
+    {
+      "query": "列出 keys/ 目錄所有金鑰的建立日期和到期狀態",
+      "params": {
+        "keys_dir": "keys/",
+        "action": "list"
+      }
+    },
+    {
+      "query": "輪轉 app.yaml 裡所有超過 90 天的 API key",
+      "params": {
+        "config_file": "app.yaml",
+        "max_age_days": 90
+      }
+    }
+  ],
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "action": {
+        "type": "string"
+      },
+      "config_file": {
+        "type": "string"
+      },
+      "key_name": {
+        "type": "string"
+      },
+      "keys_dir": {
+        "type": "string"
+      },
+      "max_age_days": {
+        "type": "integer"
+      }
+    }
+  },
+  "license": "MIT"
+}

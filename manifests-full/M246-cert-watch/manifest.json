@@ -1,0 +1,75 @@
+{
+  "name": "cert-watch",
+  "version": "0.1.0",
+  "description": "憑證守望者",
+  "category": "M",
+  "number": 246,
+  "pain_point": "DNS / 憑證到期監控",
+  "commercial": "✅",
+  "language": "Python",
+  "dependencies": [
+    "ssl",
+    "click",
+    "rich"
+  ],
+  "agent_compatible": true,
+  "mcp_ready": true,
+  "intent_triggers": [
+    "檢查 SSL 憑證快到期了嗎",
+    "域名憑證到期監控工具",
+    "掃描多個網站的 HTTPS 憑證有效期",
+    "我怕憑證過期網站掛掉，幫我監控",
+    "查看 example.com 的憑證還有幾天到期",
+    "批次檢查所有域名的 SSL 憑證狀態",
+    "提前 30 天提醒我憑證要更新"
+  ],
+  "examples": [
+    {
+      "query": "掃描 example.com 的 SSL 憑證剩餘天數",
+      "params": {
+        "action": "scan",
+        "domain": "example.com"
+      }
+    },
+    {
+      "query": "批次檢查 domains.txt 中所有域名的憑證狀態",
+      "params": {
+        "action": "scan",
+        "domains_file": "domains.txt",
+        "warn_days": 30
+      }
+    },
+    {
+      "query": "監控 api.mysite.com 和 www.mysite.com 的憑證，剩 14 天時警報",
+      "params": {
+        "action": "scan",
+        "domains": "api.mysite.com,www.mysite.com",
+        "warn_days": 14
+      }
+    }
+  ],
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "action": {
+        "type": "string"
+      },
+      "domain": {
+        "type": "string"
+      },
+      "domains": {
+        "type": "string"
+      },
+      "domains_file": {
+        "type": "string"
+      },
+      "warn_days": {
+        "type": "integer"
+      }
+    },
+    "required": [
+      "action"
+    ]
+  },
+  "license": "MIT"
+}

@@ -1,0 +1,66 @@
+{
+  "name": "wm-detect",
+  "version": "0.1.0",
+  "description": "浮水印偵測器",
+  "category": "P",
+  "number": 316,
+  "pain_point": "隱形浮水印偵測",
+  "commercial": "✅",
+  "language": "Python",
+  "dependencies": [
+    "Pillow",
+    "click",
+    "rich"
+  ],
+  "agent_compatible": true,
+  "mcp_ready": true,
+  "intent_triggers": [
+    "這張圖有沒有隱藏浮水印",
+    "偵測這個文件是否含有隱形水印",
+    "幫我找出圖片裡的隱藏標記",
+    "這張圖片是哪個版本外洩的，查一下浮水印",
+    "掃描圖片是否有 LSB 隱寫水印",
+    "確認文件中是否包含機密識別碼",
+    "批次掃描一批圖片的水印資訊"
+  ],
+  "examples": [
+    {
+      "query": "偵測 leaked_image.png 中是否含有浮水印",
+      "params": {
+        "input_file": "leaked_image.png"
+      }
+    },
+    {
+      "query": "批次掃描 images/ 目錄下所有圖片的浮水印",
+      "params": {
+        "input_dir": "images/",
+        "output_report": "wm_report.json"
+      }
+    },
+    {
+      "query": "使用 LSB 方法偵測 document.jpg 的隱形水印",
+      "params": {
+        "input_file": "document.jpg",
+        "method": "lsb"
+      }
+    }
+  ],
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "input_dir": {
+        "type": "string"
+      },
+      "input_file": {
+        "type": "string"
+      },
+      "method": {
+        "type": "string"
+      },
+      "output_report": {
+        "type": "string"
+      }
+    }
+  },
+  "license": "MIT"
+}

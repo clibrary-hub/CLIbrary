@@ -1,0 +1,100 @@
+{
+  "name": "ab-test",
+  "version": "0.1.0",
+  "description": "AB 檢定器",
+  "category": "N",
+  "number": 265,
+  "pain_point": "想做 A/B 統計檢定",
+  "commercial": "✅",
+  "language": "Python",
+  "dependencies": [
+    "scipy",
+    "click",
+    "rich"
+  ],
+  "agent_compatible": true,
+  "mcp_ready": true,
+  "intent_triggers": [
+    "做 A/B 測試統計顯著性檢定",
+    "A 組和 B 組的轉換率差異顯著嗎",
+    "AB 統計檢定工具，計算 p-value",
+    "我做了實驗，幫我判斷結果是否顯著",
+    "兩個版本的表現差異有統計意義嗎",
+    "chi-square 或 t-test 做 A/B 分析",
+    "電商 A/B 實驗結果統計分析"
+  ],
+  "examples": [
+    {
+      "query": "A 組 500 次曝光 45 次轉換，B 組 500 次 60 次，結果顯著嗎",
+      "params": {
+        "action": "run",
+        "group_a_n": 500,
+        "group_a_conversions": 45,
+        "group_b_n": 500,
+        "group_b_conversions": 60,
+        "alpha": 0.05
+      }
+    },
+    {
+      "query": "從 ab_results.csv 讀取兩組數據做雙尾 t 檢定",
+      "params": {
+        "action": "run",
+        "input_file": "ab_results.csv",
+        "test_type": "t-test",
+        "tail": "two"
+      }
+    },
+    {
+      "query": "分析 experiment.csv 中 control 和 treatment 組的差異，顯著水準 0.01",
+      "params": {
+        "action": "run",
+        "input_file": "experiment.csv",
+        "group_col": "group",
+        "metric_col": "revenue",
+        "alpha": 0.01
+      }
+    }
+  ],
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "action": {
+        "type": "string"
+      },
+      "alpha": {
+        "type": "number"
+      },
+      "group_a_conversions": {
+        "type": "integer"
+      },
+      "group_a_n": {
+        "type": "integer"
+      },
+      "group_b_conversions": {
+        "type": "integer"
+      },
+      "group_b_n": {
+        "type": "integer"
+      },
+      "group_col": {
+        "type": "string"
+      },
+      "input_file": {
+        "type": "string"
+      },
+      "metric_col": {
+        "type": "string"
+      },
+      "tail": {
+        "type": "string"
+      },
+      "test_type": {
+        "type": "string"
+      }
+    },
+    "required": [
+      "action"
+    ]
+  },
+  "license": "MIT"
+}

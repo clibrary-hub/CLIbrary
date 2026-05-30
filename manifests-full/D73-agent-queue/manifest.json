@@ -1,0 +1,78 @@
+{
+  "name": "agent-queue",
+  "version": "0.1.0",
+  "description": "任務佇列服務",
+  "category": "D",
+  "number": 73,
+  "pain_point": "多 Agent 間沒有任務佇列",
+  "commercial": "✅",
+  "language": "Python",
+  "dependencies": [
+    "sqlite3",
+    "click",
+    "rich"
+  ],
+  "agent_compatible": true,
+  "mcp_ready": true,
+  "intent_triggers": [
+    "把任務加入佇列等待執行",
+    "管理多個 Agent 的任務順序",
+    "建立任務佇列，依序處理",
+    "查看目前任務佇列的狀態",
+    "把 100 個請求排進佇列慢慢跑",
+    "設定優先級佇列，重要任務優先",
+    "多 Agent 共享一個任務佇列"
+  ],
+  "examples": [
+    {
+      "query": "把新任務加入 main_queue 佇列",
+      "params": {
+        "queue_name": "main_queue",
+        "task": "process_report_2024",
+        "action": "run"
+      }
+    },
+    {
+      "query": "查詢 main_queue 目前的佇列狀態",
+      "params": {
+        "queue_name": "main_queue",
+        "action": "run",
+        "status": true
+      }
+    },
+    {
+      "query": "把高優先級任務插入佇列最前面",
+      "params": {
+        "queue_name": "priority_queue",
+        "task": "urgent_cleanup",
+        "priority": "high",
+        "action": "run"
+      }
+    }
+  ],
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "action": {
+        "type": "string"
+      },
+      "priority": {
+        "type": "string"
+      },
+      "queue_name": {
+        "type": "string"
+      },
+      "status": {
+        "type": "boolean"
+      },
+      "task": {
+        "type": "string"
+      }
+    },
+    "required": [
+      "action",
+      "queue_name"
+    ]
+  },
+  "license": "MIT"
+}

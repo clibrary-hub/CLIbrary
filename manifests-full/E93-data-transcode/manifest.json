@@ -1,0 +1,87 @@
+{
+  "name": "data-transcode",
+  "version": "0.1.0",
+  "description": "多格式轉換器",
+  "category": "E",
+  "number": 93,
+  "pain_point": "跨格式轉換麻煩",
+  "commercial": "✅",
+  "language": "Python",
+  "dependencies": [
+    "pandas",
+    "click",
+    "rich"
+  ],
+  "agent_compatible": true,
+  "mcp_ready": true,
+  "intent_triggers": [
+    "把 CSV 轉成 JSON 格式",
+    "把 YAML 設定檔轉換成 JSON",
+    "把多個格式的資料統一轉成 CSV",
+    "幫我把 Excel 轉換成 CSV 檔",
+    "跨格式資料轉換太麻煩了，幫我一鍵搞定",
+    "這個 JSON 要轉成 Parquet 格式存起來",
+    "轉換資料格式同時保留所有欄位",
+    "Parquet 轉 Avro 格式轉換",
+    "資料格式互轉 schema 相同",
+    "大數據格式轉換工具",
+    "列式儲存格式互轉",
+    "Parquet Avro ORC 格式轉換"
+  ],
+  "examples": [
+    {
+      "query": "把 sales_data.csv 轉換成 sales_data.json",
+      "params": {
+        "input_file": "sales_data.csv",
+        "output_file": "sales_data.json",
+        "output_format": "json",
+        "action": "run"
+      }
+    },
+    {
+      "query": "將 report.xlsx 轉換為 CSV 格式方便後續處理",
+      "params": {
+        "input_file": "report.xlsx",
+        "output_format": "csv",
+        "action": "run"
+      }
+    },
+    {
+      "query": "批次轉換 data/ 目錄下所有 JSON 檔案為 Parquet",
+      "params": {
+        "input_path": "data/",
+        "input_format": "json",
+        "output_format": "parquet",
+        "action": "run"
+      }
+    }
+  ],
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "action": {
+        "type": "string"
+      },
+      "input_file": {
+        "type": "string"
+      },
+      "input_format": {
+        "type": "string"
+      },
+      "input_path": {
+        "type": "string"
+      },
+      "output_file": {
+        "type": "string"
+      },
+      "output_format": {
+        "type": "string"
+      }
+    },
+    "required": [
+      "action",
+      "output_format"
+    ]
+  },
+  "license": "MIT"
+}

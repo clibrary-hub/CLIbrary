@@ -1,0 +1,88 @@
+{
+  "name": "trip-tz",
+  "version": "0.1.0",
+  "description": "行程時區器",
+  "category": "T",
+  "number": 386,
+  "pain_point": "多時區行程顯示",
+  "commercial": "✅",
+  "language": "Python",
+  "dependencies": [
+    "pytz",
+    "click",
+    "rich"
+  ],
+  "agent_compatible": true,
+  "mcp_ready": true,
+  "intent_triggers": [
+    "把行程換算成當地時間顯示",
+    "我的行程跨越多個時區，幫我轉換",
+    "出發時台灣是幾點，抵達紐約是幾點",
+    "把行程表的時間都轉換成目的地時區",
+    "轉換時區讓我不容易搞混時間",
+    "幫我把多城市行程的時間統一顯示",
+    "確認跨時區航班的實際當地時間"
+  ],
+  "examples": [
+    {
+      "query": "把行程 itinerary.md 的所有時間轉換為當地時區",
+      "params": {
+        "input_file": "itinerary.md",
+        "action": "convert"
+      }
+    },
+    {
+      "query": "轉換「台灣時間 2026-07-10 14:30 飛往東京，飛行 3 小時」的時間",
+      "params": {
+        "departure_time": "2026-07-10T14:30:00",
+        "from_tz": "Asia/Taipei",
+        "to_tz": "Asia/Tokyo",
+        "flight_hours": 3
+      }
+    },
+    {
+      "query": "顯示北京、紐約、倫敦在同一時間的對應時區",
+      "params": {
+        "reference_time": "2026-07-10T09:00:00+08:00",
+        "cities": [
+          "Beijing",
+          "New York",
+          "London"
+        ]
+      }
+    }
+  ],
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "action": {
+        "type": "string"
+      },
+      "cities": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      },
+      "departure_time": {
+        "type": "string"
+      },
+      "flight_hours": {
+        "type": "integer"
+      },
+      "from_tz": {
+        "type": "string"
+      },
+      "input_file": {
+        "type": "string"
+      },
+      "reference_time": {
+        "type": "string"
+      },
+      "to_tz": {
+        "type": "string"
+      }
+    }
+  },
+  "license": "MIT"
+}

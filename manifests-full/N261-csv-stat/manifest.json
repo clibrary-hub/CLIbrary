@@ -1,0 +1,77 @@
+{
+  "name": "csv-stat",
+  "version": "0.1.0",
+  "description": "CSV 統計器",
+  "category": "N",
+  "number": 261,
+  "pain_point": "想快速看 CSV 分布",
+  "commercial": "✅",
+  "language": "Python",
+  "dependencies": [
+    "pandas",
+    "click",
+    "rich"
+  ],
+  "agent_compatible": true,
+  "mcp_ready": true,
+  "intent_triggers": [
+    "快速看 CSV 的基本統計資訊",
+    "幫我分析這個 CSV 的資料分布",
+    "CSV 統計器，看各欄的平均、最大最小值",
+    "我有一個 CSV，想知道有沒有缺失值",
+    "資料概覽工具，快速查看 dataframe 摘要",
+    "執行 CSV 的描述性統計分析",
+    "看看 sales.csv 的資料分布情況"
+  ],
+  "examples": [
+    {
+      "query": "分析 sales_data.csv 各欄的統計摘要",
+      "params": {
+        "action": "run",
+        "input_file": "sales_data.csv"
+      }
+    },
+    {
+      "query": "查看 customers.csv 的缺失值和分布，輸出報告",
+      "params": {
+        "action": "run",
+        "input_file": "customers.csv",
+        "output_file": "stats_report.json"
+      }
+    },
+    {
+      "query": "統計 transactions.csv 中 amount 欄位的分位數和標準差",
+      "params": {
+        "action": "run",
+        "input_file": "transactions.csv",
+        "columns": "amount"
+      }
+    }
+  ],
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "action": {
+        "type": "string",
+        "description": "操作類型，如 run（執行統計）"
+      },
+      "input_file": {
+        "type": "string",
+        "description": "CSV 檔案路徑"
+      },
+      "columns": {
+        "type": "string",
+        "description": "要分析的欄位名稱，以逗號分隔"
+      },
+      "output_file": {
+        "type": "string",
+        "description": "輸出報告路徑"
+      }
+    },
+    "required": [
+      "action",
+      "input_file"
+    ]
+  },
+  "license": "MIT"
+}

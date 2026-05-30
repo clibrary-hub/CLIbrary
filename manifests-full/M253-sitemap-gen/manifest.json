@@ -1,0 +1,77 @@
+{
+  "name": "sitemap-gen",
+  "version": "0.1.0",
+  "description": "Sitemap 產生器",
+  "category": "M",
+  "number": 253,
+  "pain_point": "sitemap 產生",
+  "commercial": "✅",
+  "language": "Python",
+  "dependencies": [
+    "requests",
+    "beautifulsoup4",
+    "click"
+  ],
+  "agent_compatible": true,
+  "mcp_ready": true,
+  "intent_triggers": [
+    "幫我生成網站的 sitemap.xml",
+    "爬取網站並產生 sitemap",
+    "SEO 優化需要 sitemap，幫我產生一個",
+    "掃描網站所有頁面並輸出 sitemap",
+    "自動產生 XML Sitemap",
+    "網站 sitemap 自動生成工具",
+    "把網站所有連結整理成 sitemap.xml"
+  ],
+  "examples": [
+    {
+      "query": "掃描 https://example.com 並產生 sitemap.xml",
+      "params": {
+        "action": "scan",
+        "url": "https://example.com",
+        "output_file": "sitemap.xml"
+      }
+    },
+    {
+      "query": "爬取 https://myshop.com 最多 200 頁並生成 sitemap",
+      "params": {
+        "action": "scan",
+        "url": "https://myshop.com",
+        "max_pages": 200
+      }
+    },
+    {
+      "query": "產生 https://blog.example.com 的 sitemap，排除 /admin/ 路徑",
+      "params": {
+        "action": "scan",
+        "url": "https://blog.example.com",
+        "exclude": "/admin/"
+      }
+    }
+  ],
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "action": {
+        "type": "string"
+      },
+      "exclude": {
+        "type": "string"
+      },
+      "max_pages": {
+        "type": "integer"
+      },
+      "output_file": {
+        "type": "string"
+      },
+      "url": {
+        "type": "string"
+      }
+    },
+    "required": [
+      "action",
+      "url"
+    ]
+  },
+  "license": "MIT"
+}

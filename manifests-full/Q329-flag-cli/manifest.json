@@ -1,0 +1,67 @@
+{
+  "name": "flag-cli",
+  "version": "0.1.0",
+  "description": "Feature Flag CLI",
+  "category": "Q",
+  "number": 329,
+  "pain_point": "feature flag 管理",
+  "commercial": "⚠️",
+  "language": "Python",
+  "dependencies": [
+    "click",
+    "rich",
+    "yaml"
+  ],
+  "agent_compatible": true,
+  "mcp_ready": true,
+  "intent_triggers": [
+    "開關 feature flag 不用重新部署",
+    "幫我把 new_checkout 功能開關打開",
+    "列出目前所有 feature flag 的狀態",
+    "只針對 10% 的用戶開啟這個新功能",
+    "緊急關閉有問題的 feature flag",
+    "查看 beta_feature 的啟用狀態",
+    "管理多環境的 feature flag 設定"
+  ],
+  "examples": [
+    {
+      "query": "開啟 new_checkout feature flag",
+      "params": {
+        "flag_name": "new_checkout",
+        "action": "enable"
+      }
+    },
+    {
+      "query": "列出 flags.yaml 裡所有 feature flag 的狀態",
+      "params": {
+        "config_file": "flags.yaml",
+        "action": "list"
+      }
+    },
+    {
+      "query": "設定 beta_ui flag 只對 10% 的用戶開啟",
+      "params": {
+        "flag_name": "beta_ui",
+        "rollout_percentage": 10
+      }
+    }
+  ],
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "action": {
+        "type": "string"
+      },
+      "config_file": {
+        "type": "string"
+      },
+      "flag_name": {
+        "type": "string"
+      },
+      "rollout_percentage": {
+        "type": "integer"
+      }
+    }
+  },
+  "license": "MIT"
+}

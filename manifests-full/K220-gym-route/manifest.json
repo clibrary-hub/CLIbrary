@@ -1,0 +1,77 @@
+{
+  "name": "gym-route",
+  "version": "0.1.0",
+  "description": "健身房路徑器",
+  "category": "K",
+  "number": 220,
+  "pain_point": "健身房路線安排",
+  "commercial": "✅",
+  "language": "Python",
+  "dependencies": [
+    "click",
+    "rich",
+    "sqlite3"
+  ],
+  "agent_compatible": true,
+  "mcp_ready": true,
+  "intent_triggers": [
+    "幫我規劃健身房訓練動線",
+    "怎麼安排健身房的器材順序最有效率",
+    "設計一條健身房訓練路線",
+    "我去健身房不知道先練哪個，幫我規劃",
+    "健身房訓練路徑安排工具",
+    "根據今天的訓練部位規劃器材順序",
+    "有效率地安排健身房訓練流程"
+  ],
+  "examples": [
+    {
+      "query": "幫我規劃一條以胸部訓練為主的健身房動線",
+      "params": {
+        "action": "run",
+        "focus": "胸部",
+        "equipment_available": "啞鈴,槓鈴,蝴蝶機,繩索"
+      }
+    },
+    {
+      "query": "根據 gym_equipment.json 安排今天的下肢訓練路線",
+      "params": {
+        "action": "run",
+        "config_file": "gym_equipment.json",
+        "focus": "下肢"
+      }
+    },
+    {
+      "query": "生成一份 45 分鐘全身訓練的器材使用順序",
+      "params": {
+        "action": "run",
+        "duration_minutes": 45,
+        "focus": "全身"
+      }
+    }
+  ],
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "action": {
+        "type": "string"
+      },
+      "config_file": {
+        "type": "string"
+      },
+      "duration_minutes": {
+        "type": "integer"
+      },
+      "equipment_available": {
+        "type": "string"
+      },
+      "focus": {
+        "type": "string"
+      }
+    },
+    "required": [
+      "action",
+      "focus"
+    ]
+  },
+  "license": "MIT"
+}

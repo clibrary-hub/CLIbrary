@@ -1,0 +1,76 @@
+{
+  "name": "file-crypt",
+  "version": "0.1.0",
+  "description": "檔案加解密器",
+  "category": "P",
+  "number": 303,
+  "pain_point": "加密檔案",
+  "commercial": "✅",
+  "language": "Python",
+  "dependencies": [
+    "cryptography",
+    "click",
+    "rich"
+  ],
+  "agent_compatible": true,
+  "mcp_ready": true,
+  "intent_triggers": [
+    "把這個檔案加密，不想讓別人看到",
+    "幫我用密碼把 PDF 加密保護",
+    "解密這個加密過的文件",
+    "用 AES 加密這批重要資料",
+    "我要傳一個敏感檔案，先加密再傳",
+    "批次加密整個資料夾的檔案",
+    "檔案加密後怎麼解密還原"
+  ],
+  "examples": [
+    {
+      "query": "用密碼 secret123 加密 report.pdf",
+      "params": {
+        "input_file": "report.pdf",
+        "password": "secret123",
+        "mode": "encrypt"
+      }
+    },
+    {
+      "query": "解密 report.pdf.enc 並輸出原始檔案",
+      "params": {
+        "input_file": "report.pdf.enc",
+        "password": "secret123",
+        "mode": "decrypt"
+      }
+    },
+    {
+      "query": "批次加密 /data 資料夾下所有 .csv 檔案",
+      "params": {
+        "input_dir": "/data",
+        "pattern": "*.csv",
+        "mode": "encrypt"
+      }
+    }
+  ],
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "input_dir": {
+        "type": "string"
+      },
+      "input_file": {
+        "type": "string"
+      },
+      "mode": {
+        "type": "string"
+      },
+      "password": {
+        "type": "string"
+      },
+      "pattern": {
+        "type": "string"
+      }
+    },
+    "required": [
+      "mode"
+    ]
+  },
+  "license": "MIT"
+}

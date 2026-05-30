@@ -1,0 +1,82 @@
+{
+  "name": "agent-hook",
+  "version": "0.1.0",
+  "description": "Webhook 集中器",
+  "category": "F",
+  "number": 115,
+  "pain_point": "Agent 回呼 webhook 雜亂",
+  "commercial": "⚠️",
+  "language": "Python",
+  "dependencies": [
+    "fastapi",
+    "click",
+    "rich"
+  ],
+  "agent_compatible": true,
+  "mcp_ready": true,
+  "intent_triggers": [
+    "Agent 完成任務後的 webhook 怎麼統一管理？",
+    "我有很多 Agent 各自有不同的 callback URL",
+    "幫我做一個集中式的 webhook 接收器",
+    "Agent 回呼通知四處散落很難維護",
+    "如何讓所有 Agent 事件都進同一個 webhook 端點",
+    "想要一個能接收並路由 Agent 事件的服務",
+    "多個 Agent 的非同步回呼管理工具"
+  ],
+  "examples": [
+    {
+      "query": "啟動 webhook 集中器在 port 8090，接收所有 Agent 的完成事件",
+      "params": {
+        "action": "run",
+        "port": "8090",
+        "event_types": "task_complete,task_failed,task_started"
+      }
+    },
+    {
+      "query": "設定當收到 payment_agent 回呼時轉發到 Slack 和資料庫",
+      "params": {
+        "action": "run",
+        "source_agent": "payment_agent",
+        "forward_to": "slack,database"
+      }
+    },
+    {
+      "query": "查看最近 24 小時的 webhook 接收記錄",
+      "params": {
+        "action": "run",
+        "mode": "logs",
+        "time_range": "24h"
+      }
+    }
+  ],
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "action": {
+        "type": "string"
+      },
+      "event_types": {
+        "type": "string"
+      },
+      "forward_to": {
+        "type": "string"
+      },
+      "mode": {
+        "type": "string"
+      },
+      "port": {
+        "type": "string"
+      },
+      "source_agent": {
+        "type": "string"
+      },
+      "time_range": {
+        "type": "string"
+      }
+    },
+    "required": [
+      "action"
+    ]
+  },
+  "license": "MIT"
+}

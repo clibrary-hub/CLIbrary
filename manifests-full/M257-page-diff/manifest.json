@@ -1,0 +1,76 @@
+{
+  "name": "page-diff",
+  "version": "0.1.0",
+  "description": "網頁差異器",
+  "category": "M",
+  "number": 257,
+  "pain_point": "網站變動 diff",
+  "commercial": "⚠️",
+  "language": "Python",
+  "dependencies": [
+    "requests",
+    "difflib",
+    "click"
+  ],
+  "agent_compatible": true,
+  "mcp_ready": true,
+  "intent_triggers": [
+    "比較兩個時間點的網頁內容差異",
+    "網頁 diff 工具，找出版本間的變化",
+    "比對昨天和今天的網頁有什麼不同",
+    "檢查網頁更新了哪些內容",
+    "抓取網頁並與之前的版本做 diff",
+    "找出競品網站的頁面修改",
+    "網頁版本比對，高亮差異部分"
+  ],
+  "examples": [
+    {
+      "query": "比對 old_page.html 和 https://example.com 當前的差異",
+      "params": {
+        "action": "diff",
+        "source_a": "old_page.html",
+        "source_b": "https://example.com"
+      }
+    },
+    {
+      "query": "比較 snapshot_2024-01.html 和 snapshot_2024-04.html 的差異",
+      "params": {
+        "action": "diff",
+        "source_a": "snapshot_2024-01.html",
+        "source_b": "snapshot_2024-04.html"
+      }
+    },
+    {
+      "query": "抓取 https://policy.example.com 並與上次存檔比對",
+      "params": {
+        "action": "diff",
+        "url": "https://policy.example.com",
+        "compare_with": "policy_archive.html"
+      }
+    }
+  ],
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "action": {
+        "type": "string"
+      },
+      "compare_with": {
+        "type": "string"
+      },
+      "source_a": {
+        "type": "string"
+      },
+      "source_b": {
+        "type": "string"
+      },
+      "url": {
+        "type": "string"
+      }
+    },
+    "required": [
+      "action"
+    ]
+  },
+  "license": "MIT"
+}

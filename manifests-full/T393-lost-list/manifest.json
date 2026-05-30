@@ -1,0 +1,79 @@
+{
+  "name": "lost-list",
+  "version": "0.1.0",
+  "description": "失物清單器",
+  "category": "T",
+  "number": 393,
+  "pain_point": "失物清單",
+  "commercial": "✅",
+  "language": "Python",
+  "dependencies": [
+    "sqlite3",
+    "click",
+    "rich"
+  ],
+  "agent_compatible": true,
+  "mcp_ready": true,
+  "intent_triggers": [
+    "我旅途中遺失了東西，幫我記錄",
+    "建立失物報告清單",
+    "整理旅行中丟失物品的資訊",
+    "幫我填寫失物報案需要的資料",
+    "記錄遺失物品的描述和最後看到的地點",
+    "追蹤找回失物的進度",
+    "列出所有未尋獲的失物"
+  ],
+  "examples": [
+    {
+      "query": "新增失物：藍色 Sony 耳機，遺失於東京澀谷站",
+      "params": {
+        "action": "add",
+        "item": "藍色 Sony 耳機",
+        "location": "東京澀谷站",
+        "date": "2026-07-10"
+      }
+    },
+    {
+      "query": "列出所有未找回的失物清單",
+      "params": {
+        "action": "list",
+        "status": "lost"
+      }
+    },
+    {
+      "query": "更新耳機的狀態為已找回",
+      "params": {
+        "action": "update",
+        "item_id": 1,
+        "status": "found"
+      }
+    }
+  ],
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "action": {
+        "type": "string"
+      },
+      "date": {
+        "type": "string"
+      },
+      "item": {
+        "type": "string"
+      },
+      "item_id": {
+        "type": "integer"
+      },
+      "location": {
+        "type": "string"
+      },
+      "status": {
+        "type": "string"
+      }
+    },
+    "required": [
+      "action"
+    ]
+  },
+  "license": "MIT"
+}

@@ -1,0 +1,80 @@
+{
+  "name": "chart-title",
+  "version": "0.1.0",
+  "description": "圖表標題器",
+  "category": "N",
+  "number": 272,
+  "pain_point": "自動產生圖表標題",
+  "commercial": "✅",
+  "language": "Python",
+  "dependencies": [
+    "anthropic",
+    "click",
+    "rich"
+  ],
+  "agent_compatible": true,
+  "mcp_ready": true,
+  "intent_triggers": [
+    "自動幫我的圖表產生好的標題",
+    "圖表標題要怎麼寫才專業",
+    "AI 建議圖表標題和說明文字",
+    "我有一張銷售折線圖，幫我想標題",
+    "自動產生資料視覺化的標題描述",
+    "圖表配上適合的標題和副標題",
+    "讓 AI 根據資料為圖表命名"
+  ],
+  "examples": [
+    {
+      "query": "為月銷售趨勢折線圖自動產生標題",
+      "params": {
+        "action": "generate",
+        "chart_type": "line",
+        "data_context": "月銷售趨勢 2024"
+      }
+    },
+    {
+      "query": "幫這張客戶分群長條圖想三個標題選項",
+      "params": {
+        "action": "generate",
+        "chart_type": "bar",
+        "data_context": "客戶年齡分群分析",
+        "n_suggestions": 3
+      }
+    },
+    {
+      "query": "為 revenue_breakdown.png 產生專業圖表標題和副標題",
+      "params": {
+        "action": "generate",
+        "image_file": "revenue_breakdown.png",
+        "include_subtitle": true
+      }
+    }
+  ],
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "action": {
+        "type": "string"
+      },
+      "chart_type": {
+        "type": "string"
+      },
+      "data_context": {
+        "type": "string"
+      },
+      "image_file": {
+        "type": "string"
+      },
+      "include_subtitle": {
+        "type": "boolean"
+      },
+      "n_suggestions": {
+        "type": "integer"
+      }
+    },
+    "required": [
+      "action"
+    ]
+  },
+  "license": "MIT"
+}

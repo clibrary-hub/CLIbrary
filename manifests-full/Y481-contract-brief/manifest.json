@@ -1,0 +1,93 @@
+{
+  "name": "contract-brief",
+  "version": "0.1.0",
+  "description": "合約摘要器",
+  "category": "Y",
+  "number": 481,
+  "pain_point": "合約條款摘要",
+  "commercial": "✅",
+  "language": "Python",
+  "dependencies": [
+    "anthropic",
+    "click",
+    "rich"
+  ],
+  "agent_compatible": true,
+  "mcp_ready": true,
+  "intent_triggers": [
+    "幫我摘要這份合約的重要條款",
+    "這份合同太長了，幫我整理關鍵內容",
+    "簽合約前先給我看重點條款",
+    "這個服務合約有哪些主要義務？",
+    "把這份英文合約的要點翻譯成中文摘要",
+    "整理合約中關於付款和終止的條款",
+    "快速瀏覽這份 NDA 的核心規定是什麼？"
+  ],
+  "examples": [
+    {
+      "query": "摘要 service_contract.pdf 的主要條款，重點是付款、期限和終止",
+      "params": {
+        "input_file": "service_contract.pdf",
+        "focus_sections": [
+          "付款",
+          "期限",
+          "終止"
+        ],
+        "language": "zh-TW"
+      }
+    },
+    {
+      "query": "幫我整理這份 50 頁合約的前 10 頁重要條款",
+      "params": {
+        "input_file": "agreement.docx",
+        "pages": "1-10",
+        "output_format": "bullet"
+      }
+    },
+    {
+      "query": "翻譯並摘要這份英文 SaaS 訂閱合約",
+      "params": {
+        "input_file": "saas_agreement_en.pdf",
+        "source_lang": "en",
+        "target_lang": "zh-TW",
+        "summarize": true
+      }
+    }
+  ],
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "focus_sections": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      },
+      "input_file": {
+        "type": "string"
+      },
+      "language": {
+        "type": "string"
+      },
+      "output_format": {
+        "type": "string"
+      },
+      "pages": {
+        "type": "string"
+      },
+      "source_lang": {
+        "type": "string"
+      },
+      "summarize": {
+        "type": "boolean"
+      },
+      "target_lang": {
+        "type": "string"
+      }
+    },
+    "required": [
+      "input_file"
+    ]
+  },
+  "license": "MIT"
+}

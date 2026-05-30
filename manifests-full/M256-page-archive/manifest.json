@@ -1,0 +1,76 @@
+{
+  "name": "page-archive",
+  "version": "0.1.0",
+  "description": "離線存檔器",
+  "category": "M",
+  "number": 256,
+  "pain_point": "抓單頁存離線",
+  "commercial": "⚠️",
+  "language": "Python",
+  "dependencies": [
+    "requests",
+    "beautifulsoup4",
+    "click"
+  ],
+  "agent_compatible": true,
+  "mcp_ready": true,
+  "intent_triggers": [
+    "把網頁存成離線版本",
+    "下載完整網頁包含 CSS 和圖片",
+    "網頁離線存檔工具",
+    "我要把這篇文章存下來，以後沒網路也能看",
+    "抓取完整網頁並儲存為本地檔案",
+    "備份重要網頁到本地",
+    "把網址轉成可離線閱讀的 HTML 檔"
+  ],
+  "examples": [
+    {
+      "query": "把 https://important-article.com/post/123 存成離線 HTML",
+      "params": {
+        "action": "run",
+        "url": "https://important-article.com/post/123",
+        "output_dir": "archives/"
+      }
+    },
+    {
+      "query": "下載 https://docs.example.com 完整頁面包含資源",
+      "params": {
+        "action": "run",
+        "url": "https://docs.example.com",
+        "include_assets": true
+      }
+    },
+    {
+      "query": "批次存檔 reading_list.txt 中所有網址",
+      "params": {
+        "action": "run",
+        "urls_file": "reading_list.txt",
+        "output_dir": "offline_pages/"
+      }
+    }
+  ],
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "action": {
+        "type": "string"
+      },
+      "include_assets": {
+        "type": "boolean"
+      },
+      "output_dir": {
+        "type": "string"
+      },
+      "url": {
+        "type": "string"
+      },
+      "urls_file": {
+        "type": "string"
+      }
+    },
+    "required": [
+      "action"
+    ]
+  },
+  "license": "MIT"
+}

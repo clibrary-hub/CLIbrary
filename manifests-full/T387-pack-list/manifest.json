@@ -1,0 +1,75 @@
+{
+  "name": "pack-list",
+  "version": "0.1.0",
+  "description": "行李清單器",
+  "category": "T",
+  "number": 387,
+  "pain_point": "行李清單產生",
+  "commercial": "✅",
+  "language": "Python",
+  "dependencies": [
+    "anthropic",
+    "click",
+    "rich"
+  ],
+  "agent_compatible": true,
+  "mcp_ready": true,
+  "intent_triggers": [
+    "幫我產生旅遊行李清單",
+    "去海邊玩需要帶什麼東西",
+    "冬天去北海道要帶什麼衣服",
+    "登山需要準備什麼裝備",
+    "7 天歐洲旅遊行李清單",
+    "商務出差的行李清單",
+    "幫我確認行李有沒有漏帶什麼"
+  ],
+  "examples": [
+    {
+      "query": "生成去日本 5 天旅遊的行李清單，季節是秋天",
+      "params": {
+        "destination": "日本",
+        "days": 5,
+        "season": "秋天",
+        "trip_type": "休閒"
+      }
+    },
+    {
+      "query": "產生 3 天商務出差的行李清單",
+      "params": {
+        "days": 3,
+        "trip_type": "商務",
+        "climate": "溫帶"
+      }
+    },
+    {
+      "query": "根據 trip_details.txt 的旅遊資訊生成個人化行李清單",
+      "params": {
+        "input_file": "trip_details.txt"
+      }
+    }
+  ],
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "climate": {
+        "type": "string"
+      },
+      "days": {
+        "type": "integer"
+      },
+      "destination": {
+        "type": "string"
+      },
+      "input_file": {
+        "type": "string"
+      },
+      "season": {
+        "type": "string"
+      },
+      "trip_type": {
+        "type": "string"
+      }
+    }
+  },
+  "license": "MIT"
+}

@@ -1,0 +1,88 @@
+{
+  "name": "period-cmp",
+  "version": "0.1.0",
+  "description": "期比計算器",
+  "category": "N",
+  "number": 276,
+  "pain_point": "同期比/環比計算",
+  "commercial": "✅",
+  "language": "Python",
+  "dependencies": [
+    "pandas",
+    "click",
+    "rich"
+  ],
+  "agent_compatible": true,
+  "mcp_ready": true,
+  "intent_triggers": [
+    "計算同期比和環比變化",
+    "跟去年同期相比成長了多少",
+    "自動計算月環比和年同比",
+    "我想知道這個月跟上個月的差異百分比",
+    "期比分析工具，比較不同時間段的數據",
+    "計算 YoY 和 MoM 成長率",
+    "銷售資料的同期對比分析"
+  ],
+  "examples": [
+    {
+      "query": "計算 monthly_sales.csv 的月環比和年同比",
+      "params": {
+        "action": "run",
+        "input_file": "monthly_sales.csv",
+        "date_col": "month",
+        "value_col": "sales",
+        "compare_type": "both"
+      }
+    },
+    {
+      "query": "對 revenue_2023_2024.csv 做年同比分析",
+      "params": {
+        "action": "run",
+        "input_file": "revenue_2023_2024.csv",
+        "compare_type": "yoy",
+        "output_file": "yoy_report.csv"
+      }
+    },
+    {
+      "query": "計算每個產品線本季跟上季的環比成長率",
+      "params": {
+        "action": "run",
+        "input_file": "product_quarterly.csv",
+        "group_col": "product_line",
+        "compare_type": "qoq"
+      }
+    }
+  ],
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "action": {
+        "type": "string"
+      },
+      "compare_type": {
+        "type": "string"
+      },
+      "date_col": {
+        "type": "string"
+      },
+      "group_col": {
+        "type": "string"
+      },
+      "input_file": {
+        "type": "string"
+      },
+      "output_file": {
+        "type": "string"
+      },
+      "value_col": {
+        "type": "string"
+      }
+    },
+    "required": [
+      "action",
+      "compare_type",
+      "input_file"
+    ]
+  },
+  "license": "MIT"
+}

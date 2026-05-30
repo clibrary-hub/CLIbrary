@@ -1,0 +1,23 @@
+tool: chat-transcode
+type: transform
+generated: "2026-04-27"
+skip: false
+
+setup:
+  files:
+    - path: testdata/chat.json
+      content: "{\"messages\":[{\"role\":\"user\",\"content\":\"hello world transcode test\"}]}"
+
+cases:
+  - id: help_works
+    description: --help exits 0
+    cmd: ["--help"]
+    expect:
+      exit_code: 0
+      stdout_contains: "Usage:"
+  - id: process_file
+    description: process input file
+    cmd: ["convert", "testdata/chat.json", "--from", "anthropic", "--to", "markdown"]
+    expect:
+      exit_code: 0
+      stdout_contains: hello world transcode test

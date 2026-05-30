@@ -1,0 +1,73 @@
+{
+  "name": "chunk-feeder",
+  "version": "0.1.0",
+  "description": "大檔案分塊餵入器",
+  "category": "A",
+  "number": 7,
+  "pain_point": "大檔案無法直接餵給 Agent",
+  "commercial": "✅",
+  "language": "Python",
+  "dependencies": [
+    "tiktoken",
+    "click",
+    "rich"
+  ],
+  "agent_compatible": true,
+  "mcp_ready": true,
+  "intent_triggers": [
+    "把這個大檔案切成幾塊再餵給 AI",
+    "這個檔案太大了，幫我分段處理",
+    "把 PDF 分塊後依序傳給 Agent",
+    "大型 log 檔分批餵入，不要一次塞爆",
+    "幫我把這個 10MB 的文件切成小塊",
+    "分批傳送大檔案給語言模型",
+    "把這個長文本切成 2000 token 一段"
+  ],
+  "examples": [
+    {
+      "query": "把 large_report.txt 切成每塊 2000 tokens",
+      "params": {
+        "input_file": "large_report.txt",
+        "chunk_size": 2000
+      }
+    },
+    {
+      "query": "將 data.json 分塊並輸出到 chunks/ 目錄",
+      "params": {
+        "input_file": "data.json",
+        "output_dir": "chunks/",
+        "chunk_size": 1000
+      }
+    },
+    {
+      "query": "分割 codebase.txt，每塊保留 100 token 重疊",
+      "params": {
+        "input_file": "codebase.txt",
+        "chunk_size": 3000,
+        "overlap": 100
+      }
+    }
+  ],
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "chunk_size": {
+        "type": "integer"
+      },
+      "input_file": {
+        "type": "string"
+      },
+      "output_dir": {
+        "type": "string"
+      },
+      "overlap": {
+        "type": "integer"
+      }
+    },
+    "required": [
+      "chunk_size",
+      "input_file"
+    ]
+  },
+  "license": "MIT"
+}

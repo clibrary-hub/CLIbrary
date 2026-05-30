@@ -1,0 +1,85 @@
+{
+  "name": "stream-pipe",
+  "version": "0.1.0",
+  "description": "串流管線器",
+  "category": "E",
+  "number": 95,
+  "pain_point": "大檔串流處理難",
+  "commercial": "✅",
+  "language": "Python",
+  "dependencies": [
+    "click",
+    "rich",
+    "sys"
+  ],
+  "agent_compatible": true,
+  "mcp_ready": true,
+  "intent_triggers": [
+    "幫我建立一個串流管線來處理大量資料",
+    "設定資料處理管線，一邊讀一邊轉換",
+    "不想把整個檔案載入記憶體，用串流方式處理",
+    "把標準輸入的資料串流處理後輸出",
+    "這個 10GB 的大檔案要怎麼流式處理",
+    "建立多步驟的資料串流處理流程",
+    "用管線方式處理大型日誌檔案",
+    "Kafka topic 即時消費並過濾",
+    "串流資料即時過濾關鍵字",
+    "即時消費 Kafka 訊息邊過濾",
+    "message queue 邊跑邊篩選",
+    "建立串流資料處理管線"
+  ],
+  "examples": [
+    {
+      "query": "串流處理 large_log.txt 並過濾出 ERROR 行",
+      "params": {
+        "input_file": "large_log.txt",
+        "filter_pattern": "ERROR",
+        "action": "run"
+      }
+    },
+    {
+      "query": "建立管線將 stdin 輸入轉換後寫入 output.txt",
+      "params": {
+        "output_file": "output.txt",
+        "transform": "uppercase",
+        "action": "run"
+      }
+    },
+    {
+      "query": "串流讀取 data.csv 並逐行轉換格式，chunk 大小 1000",
+      "params": {
+        "input_file": "data.csv",
+        "chunk_size": 1000,
+        "output_file": "converted.json",
+        "action": "run"
+      }
+    }
+  ],
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "action": {
+        "type": "string"
+      },
+      "chunk_size": {
+        "type": "integer"
+      },
+      "filter_pattern": {
+        "type": "string"
+      },
+      "input_file": {
+        "type": "string"
+      },
+      "output_file": {
+        "type": "string"
+      },
+      "transform": {
+        "type": "string"
+      }
+    },
+    "required": [
+      "action"
+    ]
+  },
+  "license": "MIT"
+}

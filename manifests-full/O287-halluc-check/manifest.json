@@ -1,0 +1,82 @@
+{
+  "name": "halluc-check",
+  "version": "0.1.0",
+  "description": "幻覺檢查器",
+  "category": "O",
+  "number": 287,
+  "pain_point": "LLM 幻覺偵測",
+  "commercial": "✅",
+  "language": "Python",
+  "dependencies": [
+    "anthropic",
+    "click",
+    "rich"
+  ],
+  "agent_compatible": true,
+  "mcp_ready": true,
+  "intent_triggers": [
+    "檢查 LLM 回答有沒有幻覺或捏造事實",
+    "對 AI 輸出做事實核查",
+    "批次偵測 LLM 回應中的不實內容",
+    "我想知道 AI 的回答是否有根據",
+    "LLM 幻覺率評估工具",
+    "比對 AI 回答和參考文件的一致性",
+    "自動標記 AI 生成內容中不可信的部分"
+  ],
+  "examples": [
+    {
+      "query": "檢查 ai_answers.jsonl 的回答是否有幻覺",
+      "params": {
+        "action": "check",
+        "input_file": "ai_answers.jsonl",
+        "output_file": "halluc_report.json"
+      }
+    },
+    {
+      "query": "對照 reference_docs.txt 驗證 llm_outputs.csv 的事實",
+      "params": {
+        "action": "check",
+        "input_file": "llm_outputs.csv",
+        "reference_file": "reference_docs.txt",
+        "answer_col": "response"
+      }
+    },
+    {
+      "query": "批次對 50 個 QA 對做幻覺率統計",
+      "params": {
+        "action": "check",
+        "input_file": "qa_pairs.jsonl",
+        "output_file": "halluc_stats.json",
+        "sample_size": 50
+      }
+    }
+  ],
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "action": {
+        "type": "string"
+      },
+      "answer_col": {
+        "type": "string"
+      },
+      "input_file": {
+        "type": "string"
+      },
+      "output_file": {
+        "type": "string"
+      },
+      "reference_file": {
+        "type": "string"
+      },
+      "sample_size": {
+        "type": "integer"
+      }
+    },
+    "required": [
+      "action",
+      "input_file"
+    ]
+  },
+  "license": "MIT"
+}

@@ -1,0 +1,79 @@
+{
+  "name": "agent-role",
+  "version": "0.1.0",
+  "description": "角色定義器",
+  "category": "F",
+  "number": 107,
+  "pain_point": "Agent 角色無形式化",
+  "commercial": "✅",
+  "language": "Python",
+  "dependencies": [
+    "click",
+    "rich",
+    "pydantic"
+  ],
+  "agent_compatible": true,
+  "mcp_ready": true,
+  "intent_triggers": [
+    "怎麼正式定義每個 Agent 的角色和職責？",
+    "我想給 Agent 設定一個有結構的角色描述",
+    "如何讓 Agent 的職責範圍更清晰？",
+    "Agent 沒有明確角色導致任務重疊",
+    "幫我建立 Agent 角色設定檔",
+    "想用 YAML 或 JSON 定義 Agent 的能力邊界",
+    "多 Agent 系統中角色分工不明確的問題"
+  ],
+  "examples": [
+    {
+      "query": "為 data-analyst-agent 建立角色定義，包含職責和能力範圍",
+      "params": {
+        "action": "run",
+        "agent_name": "data-analyst-agent",
+        "role": "data_analyst",
+        "output_file": "roles/data-analyst.json"
+      }
+    },
+    {
+      "query": "列出系統中所有 Agent 的角色定義",
+      "params": {
+        "action": "run",
+        "mode": "list"
+      }
+    },
+    {
+      "query": "驗證 roles/ 目錄下的角色定義是否符合規格",
+      "params": {
+        "action": "run",
+        "mode": "validate",
+        "roles_dir": "roles/"
+      }
+    }
+  ],
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "action": {
+        "type": "string"
+      },
+      "agent_name": {
+        "type": "string"
+      },
+      "mode": {
+        "type": "string"
+      },
+      "output_file": {
+        "type": "string"
+      },
+      "role": {
+        "type": "string"
+      },
+      "roles_dir": {
+        "type": "string"
+      }
+    },
+    "required": [
+      "action"
+    ]
+  },
+  "license": "MIT"
+}

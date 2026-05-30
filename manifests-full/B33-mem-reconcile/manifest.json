@@ -1,0 +1,74 @@
+{
+  "name": "mem-reconcile",
+  "version": "0.1.0",
+  "description": "記憶整理整合器",
+  "category": "B",
+  "number": 33,
+  "pain_point": "記憶過時或衝突",
+  "commercial": "✅",
+  "language": "Python",
+  "dependencies": [
+    "anthropic",
+    "sqlite3",
+    "rich"
+  ],
+  "agent_compatible": true,
+  "mcp_ready": true,
+  "intent_triggers": [
+    "整理一下 AI 的記憶，有些過時了",
+    "合併重複的記憶項目",
+    "清理衝突的記憶條目",
+    "更新長期記憶，把舊資訊刷新",
+    "幫我整合多份記憶來源",
+    "刪除過時的記憶並保留最新版本",
+    "記憶庫有衝突，幫我調和一下"
+  ],
+  "examples": [
+    {
+      "query": "整合並去除記憶庫中重複的項目",
+      "params": {
+        "action": "run",
+        "deduplicate": true
+      }
+    },
+    {
+      "query": "清除 30 天前的過時記憶條目",
+      "params": {
+        "action": "run",
+        "older_than_days": 30
+      }
+    },
+    {
+      "query": "用 AI 整理並重新組織所有記憶條目",
+      "params": {
+        "action": "run",
+        "use_ai": true
+      }
+    }
+  ],
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "action": {
+        "type": "string",
+        "description": "操作類型：run（執行整合）"
+      },
+      "deduplicate": {
+        "type": "boolean",
+        "description": "是否去除重複記憶條目"
+      },
+      "older_than_days": {
+        "type": "integer",
+        "description": "清除 N 天前的過時記憶"
+      },
+      "use_ai": {
+        "type": "boolean",
+        "description": "是否使用 AI 輔助整理"
+      }
+    },
+    "required": [
+      "action"
+    ]
+  },
+  "license": "MIT"
+}

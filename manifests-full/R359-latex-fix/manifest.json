@@ -1,0 +1,67 @@
+{
+  "name": "latex-fix",
+  "version": "0.1.0",
+  "description": "LaTeX 修復器",
+  "category": "R",
+  "number": 359,
+  "pain_point": "公式 LaTeX 整理",
+  "commercial": "✅",
+  "language": "Python",
+  "dependencies": [
+    "re",
+    "click",
+    "rich"
+  ],
+  "agent_compatible": true,
+  "mcp_ready": true,
+  "intent_triggers": [
+    "修復 LaTeX 文件的語法錯誤",
+    "幫我整理論文裡的數學公式",
+    "LaTeX 編譯失敗，幫我找錯誤",
+    "把 Word 公式轉成 LaTeX 格式",
+    "清理 .tex 文件的格式問題",
+    "修復 Markdown 裡的 LaTeX 公式",
+    "批次修正 .tex 文件的常見錯誤"
+  ],
+  "examples": [
+    {
+      "query": "修復 thesis.tex 的 LaTeX 語法錯誤",
+      "params": {
+        "input_file": "thesis.tex",
+        "action": "fix"
+      }
+    },
+    {
+      "query": "驗證 paper.tex 並找出所有格式問題",
+      "params": {
+        "input_file": "paper.tex",
+        "action": "validate"
+      }
+    },
+    {
+      "query": "批次修復 chapters/ 裡所有 .tex 文件的公式格式",
+      "params": {
+        "input_dir": "chapters/",
+        "fix_math": true
+      }
+    }
+  ],
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "action": {
+        "type": "string"
+      },
+      "fix_math": {
+        "type": "boolean"
+      },
+      "input_dir": {
+        "type": "string"
+      },
+      "input_file": {
+        "type": "string"
+      }
+    }
+  },
+  "license": "MIT"
+}

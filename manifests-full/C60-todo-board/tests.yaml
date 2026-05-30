@@ -1,0 +1,33 @@
+tool: todo-board
+type: readonly
+generated: "2026-04-27"
+skip: false
+
+setup:
+  files:
+    - path: testdata/todos.py
+      content: "# TODO: fix this\n# FIXME: another\nx = 1\n"
+    - path: testdata/clean.py
+      content: "x = 1\n"
+
+cases:
+  - id: help_works
+    description: --help exits 0
+    cmd: ["--help"]
+    expect:
+      exit_code: 0
+      stdout_contains: "Usage:"
+  - id: scan_produces_output
+    description: scan runs and returns output
+    cmd: ["scan", "testdata/", "--format", "json"]
+    expect:
+      exit_code: 0
+      is_valid_json: true
+      json_is_array: true
+      json_min_length: 1
+  - id: scan_clean_file
+    description: scanning clean file produces no findings
+    cmd: ["scan", "testdata/clean.py", "--format", "json"]
+    expect:
+      exit_code: 0
+      stdout_contains: No TODO items found.

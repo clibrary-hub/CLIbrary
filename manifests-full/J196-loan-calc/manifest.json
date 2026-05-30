@@ -1,0 +1,87 @@
+{
+  "name": "loan-calc",
+  "version": "0.1.0",
+  "description": "貸款試算器",
+  "category": "J",
+  "number": 196,
+  "pain_point": "房貸車貸試算",
+  "commercial": "✅",
+  "language": "Python",
+  "dependencies": [
+    "click",
+    "rich",
+    "decimal"
+  ],
+  "agent_compatible": true,
+  "mcp_ready": true,
+  "intent_triggers": [
+    "幫我試算房貸每月要還多少錢",
+    "想知道借 500 萬 20 年利率 2% 的月還款金額",
+    "車貸試算，貸款 80 萬、36 期，利率幾趴",
+    "比較不同利率和期數的貸款方案",
+    "房貸本金加利息總共要還多少",
+    "試算提前還款可以省多少利息",
+    "貸款攤還表，顯示每月本金和利息分配"
+  ],
+  "examples": [
+    {
+      "query": "試算房貸 1000 萬，利率 1.8%，貸款期限 30 年的月付金額",
+      "params": {
+        "action": "calculate",
+        "principal": "10000000",
+        "rate": "1.8",
+        "years": "30"
+      }
+    },
+    {
+      "query": "生成車貸 80 萬、利率 3%、36 期的完整攤還表",
+      "params": {
+        "action": "amortize",
+        "principal": "800000",
+        "rate": "3",
+        "months": "36",
+        "output": "car-loan-schedule.csv"
+      }
+    },
+    {
+      "query": "比較利率 1.5%、2%、2.5% 三種方案的月付和總利息",
+      "params": {
+        "action": "compare",
+        "principal": "5000000",
+        "rates": "1.5,2,2.5",
+        "years": "20"
+      }
+    }
+  ],
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "action": {
+        "type": "string"
+      },
+      "months": {
+        "type": "string"
+      },
+      "output": {
+        "type": "string"
+      },
+      "principal": {
+        "type": "string"
+      },
+      "rate": {
+        "type": "string"
+      },
+      "rates": {
+        "type": "string"
+      },
+      "years": {
+        "type": "string"
+      }
+    },
+    "required": [
+      "action",
+      "principal"
+    ]
+  },
+  "license": "MIT"
+}

@@ -1,0 +1,79 @@
+{
+  "name": "resell-pm",
+  "version": "0.1.0",
+  "description": "二手再售助手",
+  "category": "U",
+  "number": 419,
+  "pain_point": "二手售出提醒",
+  "commercial": "⚠️",
+  "language": "Python",
+  "dependencies": [
+    "click",
+    "rich",
+    "sqlite3"
+  ],
+  "agent_compatible": true,
+  "mcp_ready": true,
+  "intent_triggers": [
+    "我想把舊東西拿去賣，幫我管理二手出售",
+    "記錄這件商品的二手上架資訊",
+    "哪些東西已經在二手平台上架了？",
+    "這個二手商品多久沒人問了，要調整定價嗎？",
+    "幫我追蹤二手出售進度",
+    "二手賣出後更新一下記錄",
+    "整理我在蝦皮上架的二手物品清單"
+  ],
+  "examples": [
+    {
+      "query": "記錄二手 iPhone 12 在蝦皮上架，定價 8500 元，2024-01-27 上架",
+      "params": {
+        "item": "iPhone 12",
+        "platform": "shopee",
+        "price": 8500,
+        "list_date": "2024-01-27"
+      }
+    },
+    {
+      "query": "查詢超過 14 天還未售出的二手商品",
+      "params": {
+        "days_listed": 14,
+        "status": "unsold"
+      }
+    },
+    {
+      "query": "更新 Switch 主機已售出，成交金額 6200 元",
+      "params": {
+        "item": "Nintendo Switch",
+        "status": "sold",
+        "final_price": 6200
+      }
+    }
+  ],
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "days_listed": {
+        "type": "integer"
+      },
+      "final_price": {
+        "type": "integer"
+      },
+      "item": {
+        "type": "string"
+      },
+      "list_date": {
+        "type": "string"
+      },
+      "platform": {
+        "type": "string"
+      },
+      "price": {
+        "type": "integer"
+      },
+      "status": {
+        "type": "string"
+      }
+    }
+  },
+  "license": "MIT"
+}

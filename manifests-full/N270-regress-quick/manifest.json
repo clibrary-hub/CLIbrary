@@ -1,0 +1,81 @@
+{
+  "name": "regress-quick",
+  "version": "0.1.0",
+  "description": "快速迴歸",
+  "category": "N",
+  "number": 270,
+  "pain_point": "迴歸分析快跑",
+  "commercial": "✅",
+  "language": "Python",
+  "dependencies": [
+    "scikit-learn",
+    "click",
+    "rich"
+  ],
+  "agent_compatible": true,
+  "mcp_ready": true,
+  "intent_triggers": [
+    "快速跑一個迴歸分析",
+    "線性迴歸工具，預測目標值",
+    "對 CSV 做迴歸分析找出影響因子",
+    "我想預測銷售額，用歷史資料跑迴歸",
+    "房價預測迴歸模型快速建立",
+    "迴歸分析並輸出 R² 和係數",
+    "比較線性迴歸和隨機森林迴歸的效果"
+  ],
+  "examples": [
+    {
+      "query": "對 housing.csv 做線性迴歸，預測 price 欄位",
+      "params": {
+        "action": "run",
+        "input_file": "housing.csv",
+        "target": "price",
+        "model": "linear"
+      }
+    },
+    {
+      "query": "用 sales_history.csv 訓練隨機森林迴歸預測下個月銷售",
+      "params": {
+        "action": "run",
+        "input_file": "sales_history.csv",
+        "target": "next_month_sales",
+        "model": "random_forest"
+      }
+    },
+    {
+      "query": "對 employee_data.csv 做迴歸分析，找出影響薪資的關鍵因子",
+      "params": {
+        "action": "run",
+        "input_file": "employee_data.csv",
+        "target": "salary",
+        "output_coefficients": true
+      }
+    }
+  ],
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "action": {
+        "type": "string"
+      },
+      "input_file": {
+        "type": "string"
+      },
+      "model": {
+        "type": "string"
+      },
+      "output_coefficients": {
+        "type": "boolean"
+      },
+      "target": {
+        "type": "string"
+      }
+    },
+    "required": [
+      "action",
+      "input_file",
+      "target"
+    ]
+  },
+  "license": "MIT"
+}

@@ -1,0 +1,74 @@
+{
+  "name": "auto-reply",
+  "version": "0.1.0",
+  "description": "規則式自動回",
+  "category": "I",
+  "number": 172,
+  "pain_point": "想對訊息自動回應",
+  "commercial": "⚠️",
+  "language": "Python",
+  "dependencies": [
+    "click",
+    "rich",
+    "yaml"
+  ],
+  "agent_compatible": true,
+  "mcp_ready": true,
+  "intent_triggers": [
+    "想設定當收到特定信件時自動回應固定訊息",
+    "幫我建立規則讓某類訊息自動回覆",
+    "度假中需要自動回覆設定，超過 24 小時未讀就自動回",
+    "收到含有特定關鍵字的信時自動發確認信",
+    "想對客戶詢問信自動回覆一封確認收到的信",
+    "根據 YAML 規則檔自動處理進來的訊息",
+    "設定不同條件觸發不同的自動回覆範本"
+  ],
+  "examples": [
+    {
+      "query": "設定當收到主旨含「詢價」的信時，自動回覆 price-reply.txt 的內容",
+      "params": {
+        "action": "setup",
+        "trigger_keyword": "詢價",
+        "reply_file": "price-reply.txt",
+        "match_field": "subject"
+      }
+    },
+    {
+      "query": "從 rules.yaml 載入自動回覆規則並啟動監聽",
+      "params": {
+        "action": "start",
+        "rules_file": "rules.yaml"
+      }
+    },
+    {
+      "query": "列出目前所有啟用的自動回覆規則",
+      "params": {
+        "action": "list"
+      }
+    }
+  ],
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "action": {
+        "type": "string"
+      },
+      "match_field": {
+        "type": "string"
+      },
+      "reply_file": {
+        "type": "string"
+      },
+      "rules_file": {
+        "type": "string"
+      },
+      "trigger_keyword": {
+        "type": "string"
+      }
+    },
+    "required": [
+      "action"
+    ]
+  },
+  "license": "MIT"
+}

@@ -1,0 +1,23 @@
+tool: sysprompt-git
+type: stateful
+generated: "2026-04-27"
+skip: false
+
+cases:
+  - id: help_works
+    description: --help exits 0
+    cmd: ["--help"]
+    expect:
+      exit_code: 0
+      stdout_contains: "Usage:"
+  - id: write_data
+    description: write/add entry
+    cmd: ["save", "test-prompt-xyz", "--text", "You are a helpful assistant"]
+    expect:
+      exit_code: 0
+  - id: read_data
+    description: read/list entry
+    cmd: ["list"]
+    expect:
+      exit_code: 0
+      stdout_contains: test-prompt-xyz

@@ -1,0 +1,87 @@
+{
+  "name": "ts-decompose",
+  "version": "0.1.0",
+  "description": "時序分解器",
+  "category": "N",
+  "number": 266,
+  "pain_point": "時間序列分解",
+  "commercial": "✅",
+  "language": "Python",
+  "dependencies": [
+    "statsmodels",
+    "click",
+    "rich"
+  ],
+  "agent_compatible": true,
+  "mcp_ready": true,
+  "intent_triggers": [
+    "分解時間序列的趨勢和季節性",
+    "時間序列分解工具，找出週期規律",
+    "把時序資料拆成趨勢、季節、殘差",
+    "我的銷售資料有季節波動，幫我分解",
+    "STL 時序分解，找出長期趨勢",
+    "時間序列資料的週期性分析",
+    "分析銷售時間序列的組成成分"
+  ],
+  "examples": [
+    {
+      "query": "分解 monthly_sales.csv 的時間序列，找出趨勢和季節性",
+      "params": {
+        "action": "generate",
+        "input_file": "monthly_sales.csv",
+        "date_col": "month",
+        "value_col": "sales"
+      }
+    },
+    {
+      "query": "對 stock_price.csv 做加法時序分解",
+      "params": {
+        "action": "generate",
+        "input_file": "stock_price.csv",
+        "model": "additive",
+        "period": 12
+      }
+    },
+    {
+      "query": "分解 daily_visitors.csv 並輸出趨勢圖",
+      "params": {
+        "action": "generate",
+        "input_file": "daily_visitors.csv",
+        "date_col": "date",
+        "value_col": "visitors",
+        "output_plot": "decomp_plot.png"
+      }
+    }
+  ],
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "action": {
+        "type": "string"
+      },
+      "date_col": {
+        "type": "string"
+      },
+      "input_file": {
+        "type": "string"
+      },
+      "model": {
+        "type": "string"
+      },
+      "output_plot": {
+        "type": "string"
+      },
+      "period": {
+        "type": "integer"
+      },
+      "value_col": {
+        "type": "string"
+      }
+    },
+    "required": [
+      "action",
+      "input_file"
+    ]
+  },
+  "license": "MIT"
+}

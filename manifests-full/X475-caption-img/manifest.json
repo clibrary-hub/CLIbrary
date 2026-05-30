@@ -1,0 +1,82 @@
+{
+  "name": "caption-img",
+  "version": "0.1.0",
+  "description": "圖配文產生器",
+  "category": "X",
+  "number": 475,
+  "pain_point": "圖片配文產",
+  "commercial": "✅",
+  "language": "Python",
+  "dependencies": [
+    "anthropic",
+    "Pillow",
+    "click"
+  ],
+  "agent_compatible": true,
+  "mcp_ready": true,
+  "intent_triggers": [
+    "幫我為這張圖片生成文案說明",
+    "這張產品圖需要一段配文",
+    "IG 貼圖配文，風格要有質感",
+    "根據圖片內容生成 Instagram 說明文字",
+    "自動為相簿圖片添加文字說明",
+    "給這張活動照片配上宣傳文案",
+    "圖片配文要有情緒感染力"
+  ],
+  "examples": [
+    {
+      "query": "為 product.jpg 生成 3 個不同風格的 Instagram 配文",
+      "params": {
+        "image_file": "product.jpg",
+        "platform": "instagram",
+        "variants": 3
+      }
+    },
+    {
+      "query": "批次為 /photos 資料夾的旅遊照片生成中文配文說明",
+      "params": {
+        "image_dir": "/photos",
+        "language": "zh-TW",
+        "style": "travel"
+      }
+    },
+    {
+      "query": "分析 event.png 圖片內容，生成活動宣傳配文，加上 Hashtag",
+      "params": {
+        "image_file": "event.png",
+        "include_hashtags": true,
+        "tone": "exciting"
+      }
+    }
+  ],
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "image_dir": {
+        "type": "string"
+      },
+      "image_file": {
+        "type": "string"
+      },
+      "include_hashtags": {
+        "type": "boolean"
+      },
+      "language": {
+        "type": "string"
+      },
+      "platform": {
+        "type": "string"
+      },
+      "style": {
+        "type": "string"
+      },
+      "tone": {
+        "type": "string"
+      },
+      "variants": {
+        "type": "integer"
+      }
+    }
+  },
+  "license": "MIT"
+}

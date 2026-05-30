@@ -1,0 +1,82 @@
+{
+  "name": "mail-sort",
+  "version": "0.1.0",
+  "description": "郵件智慧分類",
+  "category": "I",
+  "number": 161,
+  "pain_point": "收件匣太多分類麻煩",
+  "commercial": "⚠️",
+  "language": "Python",
+  "dependencies": [
+    "imaplib",
+    "anthropic",
+    "click"
+  ],
+  "agent_compatible": true,
+  "mcp_ready": true,
+  "intent_triggers": [
+    "我的收件匣亂到不行，幫我自動分類郵件",
+    "想讓 AI 幫我把信件按照主題歸到不同資料夾",
+    "每天幾百封信，需要自動智慧分類工具",
+    "幫我把促銷信、工作信、通知信分開放",
+    "收件匣零計畫工具，用 AI 自動整理郵件",
+    "有沒有辦法自動把信件移到對應分類資料夾",
+    "我的 Gmail 需要一個智慧分類助手"
+  ],
+  "examples": [
+    {
+      "query": "掃描 Gmail 收件匣，用 AI 分類為工作、訂閱、通知三類",
+      "params": {
+        "action": "sort",
+        "categories": "工作,訂閱,通知",
+        "inbox": "INBOX"
+      }
+    },
+    {
+      "query": "將過去 7 天未讀信件自動分類並移至對應資料夾",
+      "params": {
+        "action": "sort",
+        "days": "7",
+        "unread_only": "true",
+        "move": "true"
+      }
+    },
+    {
+      "query": "預覽分類結果但不實際移動信件",
+      "params": {
+        "action": "sort",
+        "dry_run": "true"
+      }
+    }
+  ],
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "action": {
+        "type": "string"
+      },
+      "categories": {
+        "type": "string"
+      },
+      "days": {
+        "type": "string"
+      },
+      "dry_run": {
+        "type": "string"
+      },
+      "inbox": {
+        "type": "string"
+      },
+      "move": {
+        "type": "string"
+      },
+      "unread_only": {
+        "type": "string"
+      }
+    },
+    "required": [
+      "action"
+    ]
+  },
+  "license": "MIT"
+}

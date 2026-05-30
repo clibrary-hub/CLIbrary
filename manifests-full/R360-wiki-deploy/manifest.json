@@ -1,0 +1,79 @@
+{
+  "name": "wiki-deploy",
+  "version": "0.1.0",
+  "description": "Wiki 部署器",
+  "category": "R",
+  "number": 360,
+  "pain_point": "個人 Wiki 部署",
+  "commercial": "✅",
+  "language": "Python",
+  "dependencies": [
+    "mkdocs",
+    "click",
+    "rich"
+  ],
+  "agent_compatible": true,
+  "mcp_ready": true,
+  "intent_triggers": [
+    "把個人 Wiki 部署到伺服器",
+    "設定 Wiki 網站的密碼保護",
+    "自動更新 Wiki 網站的內容",
+    "部署 Obsidian Publish 的替代方案",
+    "每次更新筆記後自動重新部署 Wiki",
+    "把筆記庫部署成私人 Wiki 網站",
+    "部署 Wiki 到自己的 VPS 上",
+    "把靜態文件網站部署到 VPS",
+    "MkDocs 建好後發布到伺服器",
+    "文件站用 nginx 在 VPS 上提供服務",
+    "把文件站部署到 docker 容器上線",
+    "Wiki 自動同步並更新到遠端主機"
+  ],
+  "examples": [
+    {
+      "query": "把 wiki/ 的筆記部署到 VPS deploy@example.com:/var/www/wiki",
+      "params": {
+        "source_dir": "wiki/",
+        "deploy_target": "deploy@example.com:/var/www/wiki"
+      }
+    },
+    {
+      "query": "建置並部署 docs/ 到 GitHub Pages 分支 gh-pages",
+      "params": {
+        "source_dir": "docs/",
+        "target": "github-pages",
+        "branch": "gh-pages"
+      }
+    },
+    {
+      "query": "自動監測 notes/ 變更並觸發重新部署",
+      "params": {
+        "source_dir": "notes/",
+        "auto_deploy": true
+      }
+    }
+  ],
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "auto_deploy": {
+        "type": "boolean"
+      },
+      "branch": {
+        "type": "string"
+      },
+      "deploy_target": {
+        "type": "string"
+      },
+      "source_dir": {
+        "type": "string"
+      },
+      "target": {
+        "type": "string"
+      }
+    },
+    "required": [
+      "source_dir"
+    ]
+  },
+  "license": "MIT"
+}

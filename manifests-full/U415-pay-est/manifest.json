@@ -1,0 +1,84 @@
+{
+  "name": "pay-est",
+  "version": "0.1.0",
+  "description": "跨幣付款試算",
+  "category": "U",
+  "number": 415,
+  "pain_point": "跨幣別實付試算",
+  "commercial": "✅",
+  "language": "Python",
+  "dependencies": [
+    "click",
+    "rich",
+    "decimal"
+  ],
+  "agent_compatible": true,
+  "mcp_ready": true,
+  "intent_triggers": [
+    "我要買美國網站的商品，換算台幣要多少錢？",
+    "這個日幣價格折台幣含手續費大概多少？",
+    "海外購物用信用卡有沒有手續費？試算一下",
+    "幫我算這筆 USD 199 的購物，實際台幣要付多少",
+    "換算跨境購物的實際費用，包含匯率和手續費",
+    "這個商品標價 80 歐元，台灣買家要付多少？",
+    "跨幣試算，含匯率、信用卡手續費、關稅"
+  ],
+  "examples": [
+    {
+      "query": "USD 299 折台幣，加上信用卡 1.5% 手續費，總共要付多少？",
+      "params": {
+        "amount": 299,
+        "from_currency": "USD",
+        "to_currency": "TWD",
+        "fee_rate": 0.015
+      }
+    },
+    {
+      "query": "日本亞馬遜商品 JPY 15800，試算台幣實付金額含運費",
+      "params": {
+        "amount": 15800,
+        "from_currency": "JPY",
+        "to_currency": "TWD",
+        "shipping_cost": 500
+      }
+    },
+    {
+      "query": "EUR 120 折台幣，匯率用今日牌告",
+      "params": {
+        "amount": 120,
+        "from_currency": "EUR",
+        "to_currency": "TWD",
+        "use_live_rate": true
+      }
+    }
+  ],
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "amount": {
+        "type": "integer"
+      },
+      "fee_rate": {
+        "type": "number"
+      },
+      "from_currency": {
+        "type": "string"
+      },
+      "shipping_cost": {
+        "type": "integer"
+      },
+      "to_currency": {
+        "type": "string"
+      },
+      "use_live_rate": {
+        "type": "boolean"
+      }
+    },
+    "required": [
+      "amount",
+      "from_currency",
+      "to_currency"
+    ]
+  },
+  "license": "MIT"
+}

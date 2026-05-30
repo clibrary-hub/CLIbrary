@@ -1,0 +1,77 @@
+{
+  "name": "chat-sync",
+  "version": "0.1.0",
+  "description": "對話跨裝置同步",
+  "category": "B",
+  "number": 40,
+  "pain_point": "對話備份難跨裝置",
+  "commercial": "✅",
+  "language": "Python",
+  "dependencies": [
+    "rsync",
+    "click",
+    "rich"
+  ],
+  "agent_compatible": true,
+  "mcp_ready": true,
+  "intent_triggers": [
+    "把對話記錄同步到另一台電腦",
+    "備份所有聊天記錄到雲端",
+    "跨裝置同步 AI 對話歷史",
+    "把手機上的對話同步到電腦",
+    "定期備份對話記錄",
+    "匯出並傳送對話備份",
+    "讓多台裝置共享相同的聊天記錄"
+  ],
+  "examples": [
+    {
+      "query": "把本地對話記錄備份到 /backup/chats",
+      "params": {
+        "source_path": "~/.chats",
+        "dest_path": "/backup/chats",
+        "action": "export"
+      }
+    },
+    {
+      "query": "同步對話記錄到遠端伺服器",
+      "params": {
+        "source_path": "~/.chats",
+        "remote_host": "192.168.1.100",
+        "action": "send"
+      }
+    },
+    {
+      "query": "匯出最近 7 天的對話並同步",
+      "params": {
+        "source_path": "~/.chats",
+        "days": 7,
+        "action": "export"
+      }
+    }
+  ],
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "action": {
+        "type": "string"
+      },
+      "days": {
+        "type": "integer"
+      },
+      "dest_path": {
+        "type": "string"
+      },
+      "remote_host": {
+        "type": "string"
+      },
+      "source_path": {
+        "type": "string"
+      }
+    },
+    "required": [
+      "action",
+      "source_path"
+    ]
+  },
+  "license": "MIT"
+}

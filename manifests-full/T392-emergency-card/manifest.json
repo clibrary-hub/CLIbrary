@@ -1,0 +1,79 @@
+{
+  "name": "emergency-card",
+  "version": "0.1.0",
+  "description": "緊急卡",
+  "category": "T",
+  "number": 392,
+  "pain_point": "緊急聯絡資訊整理",
+  "commercial": "✅",
+  "language": "Python",
+  "dependencies": [
+    "click",
+    "rich",
+    "yaml"
+  ],
+  "agent_compatible": true,
+  "mcp_ready": true,
+  "intent_triggers": [
+    "幫我建立旅遊緊急聯絡卡",
+    "整理出國時的緊急資訊卡",
+    "把重要的緊急電話整理成隨身卡片",
+    "生成包含台灣大使館電話的緊急卡",
+    "建立含醫療過敏資訊的緊急卡",
+    "把緊急聯絡資訊輸出成可列印的卡片",
+    "更新我的緊急聯絡人資訊"
+  ],
+  "examples": [
+    {
+      "query": "建立前往日本的緊急聯絡卡，包含台灣大使館和當地緊急電話",
+      "params": {
+        "destination": "日本",
+        "include_embassy": true
+      }
+    },
+    {
+      "query": "生成包含血型 A+、青黴素過敏的個人緊急醫療卡",
+      "params": {
+        "blood_type": "A+",
+        "allergies": [
+          "青黴素"
+        ],
+        "output_file": "emergency_card.pdf"
+      }
+    },
+    {
+      "query": "從 profile.yaml 的個人資料建立完整的緊急聯絡卡",
+      "params": {
+        "input_file": "profile.yaml",
+        "destination": "歐洲"
+      }
+    }
+  ],
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "allergies": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      },
+      "blood_type": {
+        "type": "string"
+      },
+      "destination": {
+        "type": "string"
+      },
+      "include_embassy": {
+        "type": "boolean"
+      },
+      "input_file": {
+        "type": "string"
+      },
+      "output_file": {
+        "type": "string"
+      }
+    }
+  },
+  "license": "MIT"
+}

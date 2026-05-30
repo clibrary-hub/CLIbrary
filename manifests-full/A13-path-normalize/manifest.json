@@ -1,0 +1,67 @@
+{
+  "name": "path-normalize",
+  "version": "0.1.0",
+  "description": "路徑跨平台標準化",
+  "category": "A",
+  "number": 13,
+  "pain_point": "跨平台路徑分隔符不一致",
+  "commercial": "✅",
+  "language": "Python",
+  "dependencies": [
+    "pathlib",
+    "click",
+    "rich"
+  ],
+  "agent_compatible": true,
+  "mcp_ready": true,
+  "intent_triggers": [
+    "把 Windows 路徑轉成 Unix 格式",
+    "統一路徑分隔符，避免跨平台問題",
+    "修正程式碼裡的路徑格式不一致",
+    "把這些路徑轉換成標準格式",
+    "Windows 的反斜線路徑幫我轉成正斜線",
+    "路徑在 Mac 上跑不起來，幫我修",
+    "批次標準化所有設定檔中的路徑"
+  ],
+  "examples": [
+    {
+      "query": "把 C:\\Users\\test\\file.txt 轉換成 Unix 路徑格式",
+      "params": {
+        "input_path": "C:\\Users\\test\\file.txt",
+        "target_platform": "unix"
+      }
+    },
+    {
+      "query": "批次處理 config.yaml 中所有路徑並標準化",
+      "params": {
+        "input_file": "config.yaml",
+        "target_platform": "posix"
+      }
+    },
+    {
+      "query": "執行路徑標準化，輸出到 normalized_paths.json",
+      "params": {
+        "input_path": ".",
+        "output_file": "normalized_paths.json"
+      }
+    }
+  ],
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "input_file": {
+        "type": "string"
+      },
+      "input_path": {
+        "type": "string"
+      },
+      "output_file": {
+        "type": "string"
+      },
+      "target_platform": {
+        "type": "string"
+      }
+    }
+  },
+  "license": "MIT"
+}

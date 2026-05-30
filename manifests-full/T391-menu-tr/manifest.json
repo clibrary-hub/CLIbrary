@@ -1,0 +1,80 @@
+{
+  "name": "menu-tr",
+  "version": "0.1.0",
+  "description": "菜單翻譯器",
+  "category": "T",
+  "number": 391,
+  "pain_point": "點餐圖片菜單翻譯",
+  "commercial": "⚠️",
+  "language": "Python",
+  "dependencies": [
+    "anthropic",
+    "Pillow",
+    "click"
+  ],
+  "agent_compatible": true,
+  "mcp_ready": true,
+  "intent_triggers": [
+    "幫我翻譯這張日文菜單",
+    "看不懂餐廳的菜單，幫我用圖片翻譯",
+    "把這份韓文菜單翻成中文",
+    "拍了一張菜單照片，幫我看懂",
+    "翻譯並解釋菜名的食材",
+    "這道菜是什麼，有沒有過敏原",
+    "把餐廳菜單的 PDF 翻譯成中文"
+  ],
+  "examples": [
+    {
+      "query": "翻譯 menu.jpg 的日文菜單成繁體中文",
+      "params": {
+        "input_file": "menu.jpg",
+        "source_lang": "ja",
+        "target_lang": "zh-TW"
+      }
+    },
+    {
+      "query": "翻譯菜單圖片並標注含有花生的菜色",
+      "params": {
+        "input_file": "menu.png",
+        "target_lang": "zh-TW",
+        "highlight_allergens": [
+          "花生"
+        ]
+      }
+    },
+    {
+      "query": "批次翻譯 menus/ 資料夾裡所有菜單圖片",
+      "params": {
+        "input_dir": "menus/",
+        "target_lang": "zh-TW"
+      }
+    }
+  ],
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "highlight_allergens": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      },
+      "input_dir": {
+        "type": "string"
+      },
+      "input_file": {
+        "type": "string"
+      },
+      "source_lang": {
+        "type": "string"
+      },
+      "target_lang": {
+        "type": "string"
+      }
+    },
+    "required": [
+      "target_lang"
+    ]
+  },
+  "license": "MIT"
+}

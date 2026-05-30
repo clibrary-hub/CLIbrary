@@ -1,0 +1,86 @@
+{
+  "name": "lang-align",
+  "version": "0.1.0",
+  "description": "多語對齊器",
+  "category": "W",
+  "number": 448,
+  "pain_point": "多語版本對齊",
+  "commercial": "✅",
+  "language": "Python",
+  "dependencies": [
+    "click",
+    "rich",
+    "pyyaml"
+  ],
+  "agent_compatible": true,
+  "mcp_ready": true,
+  "intent_triggers": [
+    "幫我對齊中英文版本的文件",
+    "確認多語翻譯文件的段落是否對應",
+    "這兩個語言版本的翻譯有沒有漏掉段落？",
+    "對比英文原文和中文翻譯的對齊情況",
+    "找出哪些段落在翻譯版本中缺失",
+    "建立中英文對照雙語文件",
+    "檢查翻譯前後段落數量是否一致"
+  ],
+  "examples": [
+    {
+      "query": "對齊 readme_en.md 和 readme_zh.md，找出段落對應關係",
+      "params": {
+        "source_file": "readme_en.md",
+        "target_file": "readme_zh.md",
+        "source_lang": "en",
+        "target_lang": "zh-TW"
+      }
+    },
+    {
+      "query": "比較英日中三語版本的說明書，找出哪個版本缺漏段落",
+      "params": {
+        "files": [
+          "manual_en.txt",
+          "manual_ja.txt",
+          "manual_zh.txt"
+        ],
+        "check_missing": true
+      }
+    },
+    {
+      "query": "輸出 en.json 和 zh-TW.json 的對齊比較報告",
+      "params": {
+        "source_file": "en.json",
+        "target_file": "zh-TW.json",
+        "output_format": "report"
+      }
+    }
+  ],
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "check_missing": {
+        "type": "boolean"
+      },
+      "files": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      },
+      "output_format": {
+        "type": "string"
+      },
+      "source_file": {
+        "type": "string"
+      },
+      "source_lang": {
+        "type": "string"
+      },
+      "target_file": {
+        "type": "string"
+      },
+      "target_lang": {
+        "type": "string"
+      }
+    }
+  },
+  "license": "MIT"
+}

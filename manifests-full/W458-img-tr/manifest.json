@@ -1,0 +1,82 @@
+{
+  "name": "img-tr",
+  "version": "0.1.0",
+  "description": "圖內文翻譯器",
+  "category": "W",
+  "number": 458,
+  "pain_point": "圖片內文字翻譯",
+  "commercial": "⚠️",
+  "language": "Python",
+  "dependencies": [
+    "pytesseract",
+    "anthropic",
+    "click"
+  ],
+  "agent_compatible": true,
+  "mcp_ready": true,
+  "intent_triggers": [
+    "把圖片裡的日文文字翻譯成中文",
+    "這張截圖的英文內容幫我翻譯",
+    "OCR 辨識圖片文字後翻譯",
+    "翻譯這張說明圖的文字",
+    "圖片裡的外文字幕幫我看懂",
+    "掃描圖片文字並翻成中文",
+    "把這個截圖的英文介面翻成中文"
+  ],
+  "examples": [
+    {
+      "query": "辨識並翻譯 screenshot.png 中的日文文字到繁體中文",
+      "params": {
+        "input_image": "screenshot.png",
+        "source_lang": "ja",
+        "target_lang": "zh-TW"
+      }
+    },
+    {
+      "query": "批次翻譯 /images 資料夾內所有圖片的英文文字",
+      "params": {
+        "input_dir": "/images",
+        "source_lang": "en",
+        "target_lang": "zh-TW",
+        "output_dir": "/translated"
+      }
+    },
+    {
+      "query": "辨識 manual_page.jpg 的韓文說明，翻譯後輸出文字檔",
+      "params": {
+        "input_image": "manual_page.jpg",
+        "source_lang": "ko",
+        "target_lang": "zh-TW",
+        "output_file": "translated.txt"
+      }
+    }
+  ],
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "input_dir": {
+        "type": "string"
+      },
+      "input_image": {
+        "type": "string"
+      },
+      "output_dir": {
+        "type": "string"
+      },
+      "output_file": {
+        "type": "string"
+      },
+      "source_lang": {
+        "type": "string"
+      },
+      "target_lang": {
+        "type": "string"
+      }
+    },
+    "required": [
+      "source_lang",
+      "target_lang"
+    ]
+  },
+  "license": "MIT"
+}

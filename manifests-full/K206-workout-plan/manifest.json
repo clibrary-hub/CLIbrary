@@ -1,0 +1,75 @@
+{
+  "name": "workout-plan",
+  "version": "0.1.0",
+  "description": "健身計畫追蹤",
+  "category": "K",
+  "number": 206,
+  "pain_point": "訓練計畫無進度",
+  "commercial": "✅",
+  "language": "Python",
+  "dependencies": [
+    "sqlite3",
+    "rich",
+    "click"
+  ],
+  "agent_compatible": true,
+  "mcp_ready": true,
+  "intent_triggers": [
+    "幫我產生一份健身訓練計畫",
+    "我想追蹤健身進度，幫我建立計畫",
+    "製作一週訓練課表",
+    "健身計畫管理工具，記錄每次訓練",
+    "我需要一個能追蹤肌力訓練進度的系統",
+    "生成個人化的健身課表",
+    "健身訓練計畫還沒有完成進度追蹤功能"
+  ],
+  "examples": [
+    {
+      "query": "幫我生成一份以增肌為目標的 4 天訓練計畫",
+      "params": {
+        "action": "generate",
+        "goal": "增肌",
+        "days_per_week": 4
+      }
+    },
+    {
+      "query": "根據 my_fitness_profile.json 生成本週課表",
+      "params": {
+        "action": "generate",
+        "profile_file": "my_fitness_profile.json"
+      }
+    },
+    {
+      "query": "建立胸背腿三分化訓練計畫，每組 3 天",
+      "params": {
+        "action": "generate",
+        "split": "胸背腿",
+        "days_per_week": 3
+      }
+    }
+  ],
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "action": {
+        "type": "string"
+      },
+      "days_per_week": {
+        "type": "integer"
+      },
+      "goal": {
+        "type": "string"
+      },
+      "profile_file": {
+        "type": "string"
+      },
+      "split": {
+        "type": "string"
+      }
+    },
+    "required": [
+      "action"
+    ]
+  },
+  "license": "MIT"
+}

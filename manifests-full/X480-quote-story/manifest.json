@@ -1,0 +1,79 @@
+{
+  "name": "quote-story",
+  "version": "0.1.0",
+  "description": "引用故事化器",
+  "category": "X",
+  "number": 480,
+  "pain_point": "引用故事化",
+  "commercial": "✅",
+  "language": "Python",
+  "dependencies": [
+    "anthropic",
+    "click",
+    "rich"
+  ],
+  "agent_compatible": true,
+  "mcp_ready": true,
+  "intent_triggers": [
+    "把這句名言轉化成故事形式",
+    "這個引用語幫我延伸成一篇短文",
+    "把乾燥的引言變成有故事感的內容",
+    "名人名言的背後故事是什麼？",
+    "幫我把這段引用改寫成小故事",
+    "用故事詮釋這句格言的意涵",
+    "引用語配上具體情境和案例"
+  ],
+  "examples": [
+    {
+      "query": "把「失敗是成功之母」這句話故事化，寫成 300 字的激勵短文",
+      "params": {
+        "quote": "失敗是成功之母",
+        "target_words": 300,
+        "style": "inspirational"
+      }
+    },
+    {
+      "query": "為 quotes.txt 中每一句名言各生成一個小故事場景",
+      "params": {
+        "quotes_file": "quotes.txt",
+        "story_length": 150,
+        "style": "narrative"
+      }
+    },
+    {
+      "query": "把愛因斯坦名言轉化成現代職場情境的小故事",
+      "params": {
+        "quote": "Imagination is more important than knowledge.",
+        "context": "現代職場",
+        "language": "zh-TW"
+      }
+    }
+  ],
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "context": {
+        "type": "string"
+      },
+      "language": {
+        "type": "string"
+      },
+      "quote": {
+        "type": "string"
+      },
+      "quotes_file": {
+        "type": "string"
+      },
+      "story_length": {
+        "type": "integer"
+      },
+      "style": {
+        "type": "string"
+      },
+      "target_words": {
+        "type": "integer"
+      }
+    }
+  },
+  "license": "MIT"
+}

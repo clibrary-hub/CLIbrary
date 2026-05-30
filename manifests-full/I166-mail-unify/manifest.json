@@ -1,0 +1,78 @@
+{
+  "name": "mail-unify",
+  "version": "0.1.0",
+  "description": "跨帳戶統合",
+  "category": "I",
+  "number": 166,
+  "pain_point": "跨郵箱整合麻煩",
+  "commercial": "⚠️",
+  "language": "Python",
+  "dependencies": [
+    "imaplib",
+    "click",
+    "rich"
+  ],
+  "agent_compatible": true,
+  "mcp_ready": true,
+  "intent_triggers": [
+    "我有三個郵箱，想在一個地方統一查看所有信件",
+    "把公司信箱和私人信箱的郵件整合在一起",
+    "跨帳戶的郵件管理太麻煩，有統合工具嗎",
+    "想把多個 Gmail 帳號的收件匣合併顯示",
+    "不想一個一個帳號切換，幫我整合所有郵箱",
+    "統一管理工作、個人、副業三個信箱的郵件",
+    "多帳戶郵件整合並去除重複信件"
+  ],
+  "examples": [
+    {
+      "query": "整合 work@company.com 和 personal@gmail.com 兩個帳戶的收件匣",
+      "params": {
+        "action": "unify",
+        "accounts": "work@company.com,personal@gmail.com"
+      }
+    },
+    {
+      "query": "從 accounts.yaml 讀取帳戶設定並統一顯示今日未讀信件",
+      "params": {
+        "action": "unify",
+        "config": "accounts.yaml",
+        "unread_only": "true",
+        "date": "today"
+      }
+    },
+    {
+      "query": "整合後匯出統一收件匣為 unified-inbox.csv",
+      "params": {
+        "action": "unify",
+        "output": "unified-inbox.csv"
+      }
+    }
+  ],
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "accounts": {
+        "type": "string"
+      },
+      "action": {
+        "type": "string"
+      },
+      "config": {
+        "type": "string"
+      },
+      "date": {
+        "type": "string"
+      },
+      "output": {
+        "type": "string"
+      },
+      "unread_only": {
+        "type": "string"
+      }
+    },
+    "required": [
+      "action"
+    ]
+  },
+  "license": "MIT"
+}

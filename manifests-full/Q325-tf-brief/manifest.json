@@ -1,0 +1,69 @@
+{
+  "name": "tf-brief",
+  "version": "0.1.0",
+  "description": "Terraform 摘要器",
+  "category": "Q",
+  "number": 325,
+  "pain_point": "Terraform plan 摘要",
+  "commercial": "✅",
+  "language": "Python",
+  "dependencies": [
+    "anthropic",
+    "click",
+    "rich"
+  ],
+  "agent_compatible": true,
+  "mcp_ready": true,
+  "intent_triggers": [
+    "幫我看 terraform plan 的輸出結果",
+    "這個 Terraform 計畫會改動哪些資源",
+    "摘要 tf plan 的變更並標出風險",
+    "這次 apply 會不會刪掉什麼重要的東西",
+    "把 terraform plan 的輸出翻譯成人話",
+    "Terraform plan 太長了，幫我抓重點",
+    "哪些資源會被建立、修改或刪除"
+  ],
+  "examples": [
+    {
+      "query": "摘要 terraform.plan 的所有資源變更",
+      "params": {
+        "plan_file": "terraform.plan"
+      }
+    },
+    {
+      "query": "分析 plan_output.txt 並標出所有將被刪除的資源",
+      "params": {
+        "plan_file": "plan_output.txt",
+        "highlight": "destroy"
+      }
+    },
+    {
+      "query": "把 infra/terraform.tfplan 產生 HTML 摘要報告",
+      "params": {
+        "plan_file": "infra/terraform.tfplan",
+        "output_format": "html"
+      }
+    }
+  ],
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "plan_file": {
+        "type": "string",
+        "description": "Terraform plan 檔案路徑"
+      },
+      "highlight": {
+        "type": "string",
+        "description": "要特別標示的變更類型，如 destroy"
+      },
+      "output_format": {
+        "type": "string",
+        "description": "輸出格式：text、html、json"
+      }
+    },
+    "required": [
+      "plan_file"
+    ]
+  },
+  "license": "MIT"
+}

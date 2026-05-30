@@ -1,0 +1,95 @@
+{
+  "name": "title-variants",
+  "version": "0.1.0",
+  "description": "標題變體器",
+  "category": "X",
+  "number": 465,
+  "pain_point": "標題 A/B 變體",
+  "commercial": "✅",
+  "language": "Python",
+  "dependencies": [
+    "anthropic",
+    "click",
+    "rich"
+  ],
+  "agent_compatible": true,
+  "mcp_ready": true,
+  "intent_triggers": [
+    "幫我生成幾個不同版本的標題",
+    "這個標題做 A/B 測試，給我 5 個變體",
+    "電子報標題太無聊，幫我想幾個吸睛版本",
+    "測試哪個標題點擊率最高",
+    "同一篇文章，用不同角度下幾個標題",
+    "這個產品名稱幫我想幾種行銷標題",
+    "YouTube 影片標題的 A/B 測試版本"
+  ],
+  "examples": [
+    {
+      "query": "為「Python 學習指南」生成 5 個不同風格的標題變體",
+      "params": {
+        "base_title": "Python 學習指南",
+        "variants_count": 5,
+        "styles": [
+          "curiosity",
+          "how-to",
+          "list",
+          "benefit",
+          "urgency"
+        ]
+      }
+    },
+    {
+      "query": "幫這篇文章標題做 A/B 測試：原標題「節省時間的10個技巧」",
+      "params": {
+        "original_title": "節省時間的10個技巧",
+        "target_platform": "blog",
+        "variants_count": 3
+      }
+    },
+    {
+      "query": "針對電子商務廣告，生成 6 個強調價格優惠的標題變體",
+      "params": {
+        "product": "藍芽耳機",
+        "focus": "price",
+        "variants_count": 6,
+        "platform": "ads"
+      }
+    }
+  ],
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "base_title": {
+        "type": "string"
+      },
+      "focus": {
+        "type": "string"
+      },
+      "original_title": {
+        "type": "string"
+      },
+      "platform": {
+        "type": "string"
+      },
+      "product": {
+        "type": "string"
+      },
+      "styles": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      },
+      "target_platform": {
+        "type": "string"
+      },
+      "variants_count": {
+        "type": "integer"
+      }
+    },
+    "required": [
+      "variants_count"
+    ]
+  },
+  "license": "MIT"
+}

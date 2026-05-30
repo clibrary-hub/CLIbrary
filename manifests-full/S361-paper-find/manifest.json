@@ -1,0 +1,74 @@
+{
+  "name": "paper-find",
+  "version": "0.1.0",
+  "description": "文獻搜尋器",
+  "category": "S",
+  "number": 361,
+  "pain_point": "文獻搜尋整合",
+  "commercial": "⚠️",
+  "language": "Python",
+  "dependencies": [
+    "requests",
+    "click",
+    "rich"
+  ],
+  "agent_compatible": true,
+  "mcp_ready": true,
+  "intent_triggers": [
+    "幫我搜尋關於 transformer 架構的論文",
+    "找出這個主題最新的學術研究",
+    "在 arXiv 和 Semantic Scholar 搜尋文獻",
+    "搜尋 2023 年後的機器學習綜述論文",
+    "找出被引用最多次的 BERT 相關論文",
+    "幫我找這個問題的現有解決方案文獻",
+    "搜尋特定作者的所有論文"
+  ],
+  "examples": [
+    {
+      "query": "在 arXiv 搜尋 retrieval augmented generation 最近 6 個月的論文",
+      "params": {
+        "query": "retrieval augmented generation",
+        "source": "arxiv",
+        "months": 6
+      }
+    },
+    {
+      "query": "搜尋 Yann LeCun 在 2023 年發表的所有論文",
+      "params": {
+        "author": "Yann LeCun",
+        "year": 2023
+      }
+    },
+    {
+      "query": "找出被引用超過 500 次的 attention mechanism 相關論文",
+      "params": {
+        "query": "attention mechanism",
+        "min_citations": 500
+      }
+    }
+  ],
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "author": {
+        "type": "string"
+      },
+      "min_citations": {
+        "type": "integer"
+      },
+      "months": {
+        "type": "integer"
+      },
+      "query": {
+        "type": "string"
+      },
+      "source": {
+        "type": "string"
+      },
+      "year": {
+        "type": "integer"
+      }
+    }
+  },
+  "license": "MIT"
+}

@@ -1,0 +1,80 @@
+{
+  "name": "fx-rate",
+  "version": "0.1.0",
+  "description": "匯率查詢器",
+  "category": "J",
+  "number": 185,
+  "pain_point": "匯率即時查詢",
+  "commercial": "⚠️",
+  "language": "Python",
+  "dependencies": [
+    "requests",
+    "click",
+    "rich"
+  ],
+  "agent_compatible": true,
+  "mcp_ready": true,
+  "intent_triggers": [
+    "幫我查現在美金對台幣的匯率",
+    "我要換日幣，現在的匯率是多少",
+    "計算 500 美元換成台幣是多少",
+    "即時查詢多種貨幣的匯率",
+    "記錄匯率歷史並顯示趨勢",
+    "公司出帳需要即時匯率轉換工具",
+    "查詢歐元、英鎊、日幣對新台幣的即時匯率"
+  ],
+  "examples": [
+    {
+      "query": "查詢 USD/TWD 現在的匯率",
+      "params": {
+        "action": "query",
+        "from": "USD",
+        "to": "TWD"
+      }
+    },
+    {
+      "query": "換算 1000 美元等於多少台幣",
+      "params": {
+        "action": "convert",
+        "amount": "1000",
+        "from": "USD",
+        "to": "TWD"
+      }
+    },
+    {
+      "query": "查詢過去 30 天的 USD/TWD 匯率歷史",
+      "params": {
+        "action": "history",
+        "from": "USD",
+        "to": "TWD",
+        "days": "30"
+      }
+    }
+  ],
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "action": {
+        "type": "string"
+      },
+      "amount": {
+        "type": "string"
+      },
+      "days": {
+        "type": "string"
+      },
+      "from": {
+        "type": "string"
+      },
+      "to": {
+        "type": "string"
+      }
+    },
+    "required": [
+      "action",
+      "from",
+      "to"
+    ]
+  },
+  "license": "MIT"
+}

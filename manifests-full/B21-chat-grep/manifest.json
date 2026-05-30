@@ -1,0 +1,69 @@
+{
+  "name": "chat-grep",
+  "version": "0.1.0",
+  "description": "對話歷史搜尋器",
+  "category": "B",
+  "number": 21,
+  "pain_point": "歷史對話無法搜尋",
+  "commercial": "✅",
+  "language": "Python",
+  "dependencies": [
+    "sqlite3",
+    "rich",
+    "click"
+  ],
+  "agent_compatible": true,
+  "mcp_ready": true,
+  "intent_triggers": [
+    "搜尋之前跟 AI 的對話紀錄",
+    "找找看我有沒有問過這個問題",
+    "幫我在歷史對話中找登入相關的內容",
+    "上次那個解決方案在哪一段對話",
+    "搜尋所有提到 API 的歷史訊息",
+    "找出我半年前的那段技術討論",
+    "全文搜尋聊天記錄"
+  ],
+  "examples": [
+    {
+      "query": "搜尋歷史對話中所有提到「資料庫」的內容",
+      "params": {
+        "query": "資料庫",
+        "action": "search"
+      }
+    },
+    {
+      "query": "找出過去 30 天的對話中關於 Python 的討論",
+      "params": {
+        "query": "Python",
+        "action": "search",
+        "days": 30
+      }
+    },
+    {
+      "query": "搜尋並傳送包含「部署流程」的對話片段",
+      "params": {
+        "query": "部署流程",
+        "action": "send"
+      }
+    }
+  ],
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "action": {
+        "type": "string"
+      },
+      "days": {
+        "type": "integer"
+      },
+      "query": {
+        "type": "string"
+      }
+    },
+    "required": [
+      "action",
+      "query"
+    ]
+  },
+  "license": "MIT"
+}

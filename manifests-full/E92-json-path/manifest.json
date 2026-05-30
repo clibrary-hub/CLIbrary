@@ -1,0 +1,78 @@
+{
+  "name": "json-path",
+  "version": "0.1.0",
+  "description": "JSON 路徑搜尋器",
+  "category": "E",
+  "number": 92,
+  "pain_point": "大 JSON 找路徑很慢",
+  "commercial": "✅",
+  "language": "Python",
+  "dependencies": [
+    "jmespath",
+    "click",
+    "rich"
+  ],
+  "agent_compatible": true,
+  "mcp_ready": true,
+  "intent_triggers": [
+    "幫我在這個大型 JSON 裡找到特定路徑的值",
+    "用 JMESPath 查詢 JSON 裡的資料",
+    "這個 JSON 太複雜了，幫我找到我要的欄位",
+    "在 API 回傳的 JSON 裡搜尋特定的 key",
+    "快速定位 JSON 結構中的某個節點",
+    "從巢狀 JSON 提取多層路徑的值",
+    "用路徑表達式批次查詢 JSON 資料"
+  ],
+  "examples": [
+    {
+      "query": "在 response.json 中查詢 users[*].email 路徑",
+      "params": {
+        "json_file": "response.json",
+        "path_query": "users[*].email",
+        "action": "run"
+      }
+    },
+    {
+      "query": "搜尋 config.json 裡所有 timeout 相關的設定",
+      "params": {
+        "json_file": "config.json",
+        "search_key": "timeout",
+        "action": "run"
+      }
+    },
+    {
+      "query": "從 api_result.json 提取 data.items[0].id 並輸出結果",
+      "params": {
+        "json_file": "api_result.json",
+        "path_query": "data.items[0].id",
+        "output_file": "extracted.json",
+        "action": "run"
+      }
+    }
+  ],
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "action": {
+        "type": "string"
+      },
+      "json_file": {
+        "type": "string"
+      },
+      "output_file": {
+        "type": "string"
+      },
+      "path_query": {
+        "type": "string"
+      },
+      "search_key": {
+        "type": "string"
+      }
+    },
+    "required": [
+      "action",
+      "json_file"
+    ]
+  },
+  "license": "MIT"
+}

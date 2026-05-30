@@ -1,0 +1,74 @@
+{
+  "name": "prompt-vault",
+  "version": "0.1.0",
+  "description": "Prompt 模板庫",
+  "category": "B",
+  "number": 23,
+  "pain_point": "Prompt 寫了又忘",
+  "commercial": "✅",
+  "language": "Python",
+  "dependencies": [
+    "sqlite3",
+    "rich",
+    "click"
+  ],
+  "agent_compatible": true,
+  "mcp_ready": true,
+  "intent_triggers": [
+    "把這個 prompt 存到模板庫",
+    "找找之前寫過的程式碼審查 prompt",
+    "列出所有 prompt 模板",
+    "我想重用上次的翻譯 prompt",
+    "新增一個 prompt 到我的收藏",
+    "搜尋跟測試相關的 prompt 模板",
+    "幫我管理常用的 AI 指令模板"
+  ],
+  "examples": [
+    {
+      "query": "儲存這個程式碼審查 prompt 模板",
+      "params": {
+        "name": "code_review",
+        "content": "請審查以下程式碼，指出潛在問題...",
+        "action": "run"
+      }
+    },
+    {
+      "query": "搜尋所有跟翻譯相關的 prompt",
+      "params": {
+        "keyword": "翻譯",
+        "action": "run"
+      }
+    },
+    {
+      "query": "列出所有已儲存的 prompt 模板",
+      "params": {
+        "action": "run",
+        "list_all": true
+      }
+    }
+  ],
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "action": {
+        "type": "string"
+      },
+      "content": {
+        "type": "string"
+      },
+      "keyword": {
+        "type": "string"
+      },
+      "list_all": {
+        "type": "boolean"
+      },
+      "name": {
+        "type": "string"
+      }
+    },
+    "required": [
+      "action"
+    ]
+  },
+  "license": "MIT"
+}

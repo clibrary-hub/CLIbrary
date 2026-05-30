@@ -1,0 +1,22 @@
+tool: dep-audit
+type: readonly
+generated: "2026-04-27"
+skip: false
+
+setup:
+  files:
+    - path: testdata/mymod.py
+      content: "import os\ndef f(): pass\n"
+
+cases:
+  - id: help_works
+    description: --help exits 0
+    cmd: ["--help"]
+    expect:
+      exit_code: 0
+      stdout_contains: "Usage:"
+  - id: scan_produces_output
+    description: check runs and returns output
+    cmd: ["check", "testdata/"]
+    expect:
+      exit_code: 0

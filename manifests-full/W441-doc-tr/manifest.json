@@ -1,0 +1,80 @@
+{
+  "name": "doc-tr",
+  "version": "0.1.0",
+  "description": "文件翻譯器",
+  "category": "W",
+  "number": 441,
+  "pain_point": "文件批次翻譯",
+  "commercial": "⚠️",
+  "language": "Python",
+  "dependencies": [
+    "anthropic",
+    "click",
+    "rich"
+  ],
+  "agent_compatible": true,
+  "mcp_ready": true,
+  "intent_triggers": [
+    "幫我把這份 PDF 文件翻譯成中文",
+    "批次翻譯這個資料夾裡的所有 Word 文件",
+    "把這份英文合約翻成繁體中文",
+    "我有一堆文件要翻譯，能批次處理嗎？",
+    "翻譯這份技術文件，保留原有格式",
+    "將日文說明書翻成中文",
+    "幫我翻譯多個語系的版本"
+  ],
+  "examples": [
+    {
+      "query": "把 contract_en.docx 翻譯成繁體中文，保留原始格式",
+      "params": {
+        "input_file": "contract_en.docx",
+        "target_lang": "zh-TW",
+        "preserve_format": true
+      }
+    },
+    {
+      "query": "批次翻譯 /docs 資料夾內所有英文 PDF 到中文",
+      "params": {
+        "input_dir": "/docs",
+        "file_pattern": "*.pdf",
+        "source_lang": "en",
+        "target_lang": "zh-TW"
+      }
+    },
+    {
+      "query": "翻譯 manual.txt，從日文到繁體中文",
+      "params": {
+        "input_file": "manual.txt",
+        "source_lang": "ja",
+        "target_lang": "zh-TW"
+      }
+    }
+  ],
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "file_pattern": {
+        "type": "string"
+      },
+      "input_dir": {
+        "type": "string"
+      },
+      "input_file": {
+        "type": "string"
+      },
+      "preserve_format": {
+        "type": "boolean"
+      },
+      "source_lang": {
+        "type": "string"
+      },
+      "target_lang": {
+        "type": "string"
+      }
+    },
+    "required": [
+      "target_lang"
+    ]
+  },
+  "license": "MIT"
+}

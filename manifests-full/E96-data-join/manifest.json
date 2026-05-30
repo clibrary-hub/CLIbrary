@@ -1,0 +1,88 @@
+{
+  "name": "data-join",
+  "version": "0.1.0",
+  "description": "多源 join 器",
+  "category": "E",
+  "number": 96,
+  "pain_point": "跨來源 join 沒工具",
+  "commercial": "✅",
+  "language": "Python",
+  "dependencies": [
+    "pandas",
+    "click",
+    "rich"
+  ],
+  "agent_compatible": true,
+  "mcp_ready": true,
+  "intent_triggers": [
+    "把兩個 CSV 用共同欄位 join 起來",
+    "合併 users.csv 和 orders.csv 的資料",
+    "跨來源資料需要做 left join，幫我處理",
+    "把資料庫匯出的兩個表格做 join 操作",
+    "根據 user_id 把多個資料來源合併",
+    "幫我做多對多的資料關聯合併",
+    "跨檔案 join 資料並輸出合併結果"
+  ],
+  "examples": [
+    {
+      "query": "把 users.csv 和 orders.csv 用 user_id 做 inner join",
+      "params": {
+        "left_file": "users.csv",
+        "right_file": "orders.csv",
+        "join_key": "user_id",
+        "join_type": "inner",
+        "action": "run"
+      }
+    },
+    {
+      "query": "合併 products.csv 和 inventory.csv 並輸出 merged.csv",
+      "params": {
+        "left_file": "products.csv",
+        "right_file": "inventory.csv",
+        "join_key": "product_id",
+        "output_file": "merged.csv",
+        "action": "run"
+      }
+    },
+    {
+      "query": "對 sales.json 和 regions.json 做 left join 保留所有銷售記錄",
+      "params": {
+        "left_file": "sales.json",
+        "right_file": "regions.json",
+        "join_key": "region_code",
+        "join_type": "left",
+        "action": "run"
+      }
+    }
+  ],
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "action": {
+        "type": "string"
+      },
+      "join_key": {
+        "type": "string"
+      },
+      "join_type": {
+        "type": "string"
+      },
+      "left_file": {
+        "type": "string"
+      },
+      "output_file": {
+        "type": "string"
+      },
+      "right_file": {
+        "type": "string"
+      }
+    },
+    "required": [
+      "action",
+      "join_key",
+      "left_file",
+      "right_file"
+    ]
+  },
+  "license": "MIT"
+}

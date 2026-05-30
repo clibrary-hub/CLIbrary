@@ -1,0 +1,78 @@
+{
+  "name": "plag-scan",
+  "version": "0.1.0",
+  "description": "抄襲掃描器",
+  "category": "X",
+  "number": 468,
+  "pain_point": "抄襲相似度檢測",
+  "commercial": "⚠️",
+  "language": "Python",
+  "dependencies": [
+    "sentence-transformers",
+    "click",
+    "rich"
+  ],
+  "agent_compatible": true,
+  "mcp_ready": true,
+  "intent_triggers": [
+    "幫我掃描這篇文章有沒有抄襲",
+    "和其他文章的相似度高不高？",
+    "AI 生成的內容和已知資料有沒有重複？",
+    "這篇論文交出去前先查重",
+    "比對兩篇文章的相似程度",
+    "找出文章中哪些段落可能有抄襲",
+    "這段文字是否過度相似已發表的文章？"
+  ],
+  "examples": [
+    {
+      "query": "掃描 essay.txt 和 /reference_docs 中文件的相似度，門檻設 80%",
+      "params": {
+        "input_file": "essay.txt",
+        "reference_dir": "/reference_docs",
+        "similarity_threshold": 0.8
+      }
+    },
+    {
+      "query": "比對 article_A.txt 和 article_B.txt 的相似度分析",
+      "params": {
+        "file_a": "article_A.txt",
+        "file_b": "article_B.txt",
+        "detail_report": true
+      }
+    },
+    {
+      "query": "查重 report.docx，輸出相似段落的詳細報告",
+      "params": {
+        "input_file": "report.docx",
+        "output_report": "plagiarism_report.txt"
+      }
+    }
+  ],
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "detail_report": {
+        "type": "boolean"
+      },
+      "file_a": {
+        "type": "string"
+      },
+      "file_b": {
+        "type": "string"
+      },
+      "input_file": {
+        "type": "string"
+      },
+      "output_report": {
+        "type": "string"
+      },
+      "reference_dir": {
+        "type": "string"
+      },
+      "similarity_threshold": {
+        "type": "number"
+      }
+    }
+  },
+  "license": "MIT"
+}

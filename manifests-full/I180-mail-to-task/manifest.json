@@ -1,0 +1,78 @@
+{
+  "name": "mail-to-task",
+  "version": "0.1.0",
+  "description": "郵件轉任務器",
+  "category": "I",
+  "number": 180,
+  "pain_point": "想一鍵把信轉任務",
+  "commercial": "⚠️",
+  "language": "Python",
+  "dependencies": [
+    "imaplib",
+    "anthropic",
+    "sqlite3"
+  ],
+  "agent_compatible": true,
+  "mcp_ready": true,
+  "intent_triggers": [
+    "想把郵件裡的待辦事項自動轉成任務",
+    "收到工作指派信後，幫我自動加到任務清單",
+    "一鍵把信件內容轉換成 TODO 項目",
+    "AI 自動解析信件中的行動項目並建立任務",
+    "看完信不想手動記，幫我把信件轉成任務",
+    "郵件轉任務工具，自動抓取待辦事項",
+    "從信件批次提取任務並存入任務管理系統"
+  ],
+  "examples": [
+    {
+      "query": "掃描今天收件匣，用 AI 提取所有行動項目建立任務",
+      "params": {
+        "action": "extract",
+        "date": "today",
+        "save_to": "tasks.db"
+      }
+    },
+    {
+      "query": "把主旨含「指派」的信件轉換成任務並設定截止日期",
+      "params": {
+        "action": "extract",
+        "subject_keyword": "指派",
+        "set_due_date": "true"
+      }
+    },
+    {
+      "query": "列出從郵件轉換的所有待完成任務",
+      "params": {
+        "action": "list",
+        "status": "pending"
+      }
+    }
+  ],
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "action": {
+        "type": "string"
+      },
+      "date": {
+        "type": "string"
+      },
+      "save_to": {
+        "type": "string"
+      },
+      "set_due_date": {
+        "type": "string"
+      },
+      "status": {
+        "type": "string"
+      },
+      "subject_keyword": {
+        "type": "string"
+      }
+    },
+    "required": [
+      "action"
+    ]
+  },
+  "license": "MIT"
+}

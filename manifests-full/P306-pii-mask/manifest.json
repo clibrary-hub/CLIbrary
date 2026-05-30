@@ -1,0 +1,75 @@
+{
+  "name": "pii-mask",
+  "version": "0.1.0",
+  "description": "PII 遮罩器",
+  "category": "P",
+  "number": 306,
+  "pain_point": "隱私資料遮罩",
+  "commercial": "✅",
+  "language": "Python",
+  "dependencies": [
+    "presidio-analyzer",
+    "click",
+    "rich"
+  ],
+  "agent_compatible": true,
+  "mcp_ready": true,
+  "intent_triggers": [
+    "把文件裡的個資遮掉",
+    "遮蔽 CSV 裡的姓名和電話號碼",
+    "我要把客戶資料做 PII 脫敏再分享",
+    "移除文字中的身分證號和生日",
+    "文件給外部廠商前先把個資遮罩",
+    "把日誌裡的 IP 位址和 email 去識別化",
+    "批次處理多個文件的隱私資料遮蔽"
+  ],
+  "examples": [
+    {
+      "query": "遮蔽 customer_data.csv 裡所有的電話和 email",
+      "params": {
+        "input_file": "customer_data.csv",
+        "pii_types": [
+          "PHONE_NUMBER",
+          "EMAIL_ADDRESS"
+        ]
+      }
+    },
+    {
+      "query": "對 report.txt 做完整 PII 脫敏，輸出到 report_masked.txt",
+      "params": {
+        "input_file": "report.txt",
+        "output_file": "report_masked.txt"
+      }
+    },
+    {
+      "query": "遮蔽 logs/ 目錄下所有日誌的 IP 位址",
+      "params": {
+        "input_dir": "logs/",
+        "pii_types": [
+          "IP_ADDRESS"
+        ]
+      }
+    }
+  ],
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "input_dir": {
+        "type": "string"
+      },
+      "input_file": {
+        "type": "string"
+      },
+      "output_file": {
+        "type": "string"
+      },
+      "pii_types": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  },
+  "license": "MIT"
+}

@@ -1,0 +1,70 @@
+{
+  "name": "rq-split",
+  "version": "0.1.0",
+  "description": "問題拆解器",
+  "category": "S",
+  "number": 377,
+  "pain_point": "研究問題拆解",
+  "commercial": "✅",
+  "language": "Python",
+  "dependencies": [
+    "anthropic",
+    "click",
+    "rich"
+  ],
+  "agent_compatible": true,
+  "mcp_ready": true,
+  "intent_triggers": [
+    "幫我把研究問題拆解成可執行的子問題",
+    "這個研究主題太大了，如何分解",
+    "把大研究問題拆成幾個小問題來逐一解決",
+    "幫我設計研究問題的結構",
+    "把模糊的研究方向具體化成研究問題",
+    "分解 RQ 並規劃研究方法",
+    "把論文主題拆成可量化的子研究"
+  ],
+  "examples": [
+    {
+      "query": "把「AI 對教育的影響」拆解成 5 個具體研究問題",
+      "params": {
+        "research_topic": "AI 對教育的影響",
+        "num_questions": 5
+      }
+    },
+    {
+      "query": "分解 research_proposal.md 的主問題並建議研究方法",
+      "params": {
+        "input_file": "research_proposal.md",
+        "suggest_methods": true
+      }
+    },
+    {
+      "query": "把「如何改善 LLM 的推理能力」拆成可測試的研究假設",
+      "params": {
+        "research_topic": "如何改善 LLM 的推理能力",
+        "output_type": "hypotheses"
+      }
+    }
+  ],
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "input_file": {
+        "type": "string"
+      },
+      "num_questions": {
+        "type": "integer"
+      },
+      "output_type": {
+        "type": "string"
+      },
+      "research_topic": {
+        "type": "string"
+      },
+      "suggest_methods": {
+        "type": "boolean"
+      }
+    }
+  },
+  "license": "MIT"
+}

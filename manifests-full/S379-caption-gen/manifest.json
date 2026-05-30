@@ -1,0 +1,70 @@
+{
+  "name": "caption-gen",
+  "version": "0.1.0",
+  "description": "圖說產生器",
+  "category": "S",
+  "number": 379,
+  "pain_point": "圖表自動產 caption",
+  "commercial": "✅",
+  "language": "Python",
+  "dependencies": [
+    "anthropic",
+    "click",
+    "rich"
+  ],
+  "agent_compatible": true,
+  "mcp_ready": true,
+  "intent_triggers": [
+    "幫圖表自動產生圖說",
+    "這張實驗結果圖需要一個 caption",
+    "批次為論文的所有圖生成描述",
+    "幫我寫一個符合學術規範的圖說",
+    "根據圖片內容自動生成 Figure 說明",
+    "把這張圖的 caption 改得更學術",
+    "為簡報的每張圖自動產生說明文字"
+  ],
+  "examples": [
+    {
+      "query": "為 results_figure.png 產生學術論文風格的圖說",
+      "params": {
+        "input_file": "results_figure.png",
+        "style": "academic"
+      }
+    },
+    {
+      "query": "批次為 figures/ 所有圖片生成 Figure 1、Figure 2...的說明",
+      "params": {
+        "input_dir": "figures/",
+        "numbering": true
+      }
+    },
+    {
+      "query": "根據 paper.md 的上下文為 fig3.png 產生合適的 caption",
+      "params": {
+        "input_file": "fig3.png",
+        "context_file": "paper.md"
+      }
+    }
+  ],
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "context_file": {
+        "type": "string"
+      },
+      "input_dir": {
+        "type": "string"
+      },
+      "input_file": {
+        "type": "string"
+      },
+      "numbering": {
+        "type": "boolean"
+      },
+      "style": {
+        "type": "string"
+      }
+    }
+  },
+  "license": "MIT"
+}

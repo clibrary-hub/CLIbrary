@@ -1,0 +1,81 @@
+{
+  "name": "pr-log",
+  "version": "0.1.0",
+  "description": "個人最佳紀錄",
+  "category": "K",
+  "number": 207,
+  "pain_point": "PR 紀錄分散",
+  "commercial": "✅",
+  "language": "Python",
+  "dependencies": [
+    "sqlite3",
+    "rich",
+    "click"
+  ],
+  "agent_compatible": true,
+  "mcp_ready": true,
+  "intent_triggers": [
+    "記錄我的個人最佳運動成績",
+    "我深蹲今天破了 PR，幫我記下來",
+    "查看我各項運動的歷史最佳紀錄",
+    "PR 追蹤工具，記錄舉重個人紀錄",
+    "我想知道我臥推的最高重量是哪一次",
+    "更新我的跑步最快成績",
+    "管理健身房訓練個人紀錄"
+  ],
+  "examples": [
+    {
+      "query": "記錄今天臥推 PR：100kg 3 下",
+      "params": {
+        "action": "run",
+        "exercise": "臥推",
+        "weight_kg": 100,
+        "reps": 3
+      }
+    },
+    {
+      "query": "查看深蹲的所有歷史最佳紀錄",
+      "params": {
+        "action": "run",
+        "exercise": "深蹲",
+        "mode": "history"
+      }
+    },
+    {
+      "query": "更新 5km 跑步 PR 為 22 分 30 秒",
+      "params": {
+        "action": "run",
+        "exercise": "5km跑步",
+        "time": "22:30"
+      }
+    }
+  ],
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "action": {
+        "type": "string"
+      },
+      "exercise": {
+        "type": "string"
+      },
+      "mode": {
+        "type": "string"
+      },
+      "reps": {
+        "type": "integer"
+      },
+      "time": {
+        "type": "string"
+      },
+      "weight_kg": {
+        "type": "integer"
+      }
+    },
+    "required": [
+      "action",
+      "exercise"
+    ]
+  },
+  "license": "MIT"
+}

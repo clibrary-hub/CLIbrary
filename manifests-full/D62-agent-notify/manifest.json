@@ -1,0 +1,76 @@
+{
+  "name": "agent-notify",
+  "version": "0.1.0",
+  "description": "任務通知器",
+  "category": "D",
+  "number": 62,
+  "pain_point": "Agent 失敗無通知",
+  "commercial": "⚠️",
+  "language": "Python",
+  "dependencies": [
+    "plyer",
+    "click",
+    "rich"
+  ],
+  "agent_compatible": true,
+  "mcp_ready": true,
+  "intent_triggers": [
+    "任務完成後通知我",
+    "Agent 失敗的話發個通知給我",
+    "長時間執行任務完成後提醒",
+    "設定任務失敗的警報",
+    "傳送任務執行狀態通知",
+    "Agent 跑完後給我一個桌面通知",
+    "任務成功或失敗都要通知我"
+  ],
+  "examples": [
+    {
+      "query": "任務完成後傳送桌面通知",
+      "params": {
+        "message": "任務執行完成",
+        "notification_type": "desktop",
+        "action": "send"
+      }
+    },
+    {
+      "query": "Agent 失敗時傳送 email 通知",
+      "params": {
+        "message": "Agent 執行失敗",
+        "notification_type": "email",
+        "recipient": "admin@example.com",
+        "action": "send"
+      }
+    },
+    {
+      "query": "設定任務執行超過 10 分鐘的超時通知",
+      "params": {
+        "timeout_minutes": 10,
+        "action": "send"
+      }
+    }
+  ],
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "action": {
+        "type": "string"
+      },
+      "message": {
+        "type": "string"
+      },
+      "notification_type": {
+        "type": "string"
+      },
+      "recipient": {
+        "type": "string"
+      },
+      "timeout_minutes": {
+        "type": "integer"
+      }
+    },
+    "required": [
+      "action"
+    ]
+  },
+  "license": "MIT"
+}

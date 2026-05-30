@@ -1,0 +1,83 @@
+{
+  "name": "cluster-quick",
+  "version": "0.1.0",
+  "description": "快速群集器",
+  "category": "N",
+  "number": 268,
+  "pain_point": "群集分析",
+  "commercial": "✅",
+  "language": "Python",
+  "dependencies": [
+    "scikit-learn",
+    "click",
+    "rich"
+  ],
+  "agent_compatible": true,
+  "mcp_ready": true,
+  "intent_triggers": [
+    "對資料做群集分析",
+    "K-Means 快速群集工具",
+    "幫我把客戶分成幾個群",
+    "資料分群分析，找出相似族群",
+    "快速對 CSV 做群集並標記分群",
+    "分析使用者行為找出不同族群",
+    "無監督學習群集分析工具"
+  ],
+  "examples": [
+    {
+      "query": "對 customers.csv 做 K=4 的 K-Means 群集分析",
+      "params": {
+        "action": "run",
+        "input_file": "customers.csv",
+        "algorithm": "kmeans",
+        "n_clusters": 4
+      }
+    },
+    {
+      "query": "對 user_behavior.csv 做 DBSCAN 群集，找出自然群",
+      "params": {
+        "action": "run",
+        "input_file": "user_behavior.csv",
+        "algorithm": "dbscan",
+        "eps": 0.5
+      }
+    },
+    {
+      "query": "分群 products.csv 並輸出各群的特徵摘要",
+      "params": {
+        "action": "run",
+        "input_file": "products.csv",
+        "n_clusters": 3,
+        "output_file": "cluster_result.csv"
+      }
+    }
+  ],
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "action": {
+        "type": "string"
+      },
+      "algorithm": {
+        "type": "string"
+      },
+      "eps": {
+        "type": "number"
+      },
+      "input_file": {
+        "type": "string"
+      },
+      "n_clusters": {
+        "type": "integer"
+      },
+      "output_file": {
+        "type": "string"
+      }
+    },
+    "required": [
+      "action",
+      "input_file"
+    ]
+  },
+  "license": "MIT"
+}

@@ -1,0 +1,82 @@
+{
+  "name": "mail-priority",
+  "version": "0.1.0",
+  "description": "信件優先評分",
+  "category": "I",
+  "number": 162,
+  "pain_point": "重要信件易漏看",
+  "commercial": "⚠️",
+  "language": "Python",
+  "dependencies": [
+    "imaplib",
+    "anthropic",
+    "click"
+  ],
+  "agent_compatible": true,
+  "mcp_ready": true,
+  "intent_triggers": [
+    "重要的信一直被我漏看，需要優先評分工具",
+    "幫我把收件匣的信按重要程度排序",
+    "有沒有 AI 可以幫我標記哪些信需要優先處理",
+    "想讓郵件自動依照緊急程度打分數",
+    "老闆的信要排第一，訂閱信排最後，怎麼做",
+    "每天早上先看高優先信件，幫我自動篩選",
+    "信件太多，需要 AI 判斷哪些信最緊急"
+  ],
+  "examples": [
+    {
+      "query": "掃描今天收件匣，用 AI 對每封信評 1-5 分優先度",
+      "params": {
+        "action": "score",
+        "date": "today",
+        "scale": "1-5"
+      }
+    },
+    {
+      "query": "列出優先度 4 分以上的信件並標記為重要",
+      "params": {
+        "action": "score",
+        "min_score": "4",
+        "mark_important": "true"
+      }
+    },
+    {
+      "query": "分析過去 3 天信件並輸出優先排序報告",
+      "params": {
+        "action": "score",
+        "days": "3",
+        "output": "priority-report.txt"
+      }
+    }
+  ],
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "action": {
+        "type": "string"
+      },
+      "date": {
+        "type": "string"
+      },
+      "days": {
+        "type": "string"
+      },
+      "mark_important": {
+        "type": "string"
+      },
+      "min_score": {
+        "type": "string"
+      },
+      "output": {
+        "type": "string"
+      },
+      "scale": {
+        "type": "string"
+      }
+    },
+    "required": [
+      "action"
+    ]
+  },
+  "license": "MIT"
+}

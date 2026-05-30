@@ -1,0 +1,75 @@
+{
+  "name": "seo-audit",
+  "version": "0.1.0",
+  "description": "SEO 稽核器",
+  "category": "M",
+  "number": 251,
+  "pain_point": "SEO 概況檢查",
+  "commercial": "✅",
+  "language": "Python",
+  "dependencies": [
+    "requests",
+    "beautifulsoup4",
+    "click"
+  ],
+  "agent_compatible": true,
+  "mcp_ready": true,
+  "intent_triggers": [
+    "幫我做網站 SEO 健康檢查",
+    "SEO 稽核工具，找出 meta 和 title 問題",
+    "掃描網頁的 SEO 問題",
+    "我的網站排名不好，幫我做 SEO 分析",
+    "檢查頁面的 H1、meta description、canonical 標籤",
+    "批次稽核網站所有頁面的 SEO 狀況",
+    "SEO 概況報告，找出改善空間"
+  ],
+  "examples": [
+    {
+      "query": "掃描 https://mywebsite.com 的首頁 SEO 問題",
+      "params": {
+        "action": "scan",
+        "url": "https://mywebsite.com"
+      }
+    },
+    {
+      "query": "批次 SEO 稽核 pages.txt 中所有網頁",
+      "params": {
+        "action": "scan",
+        "urls_file": "pages.txt",
+        "output_file": "seo_report.json"
+      }
+    },
+    {
+      "query": "檢查 https://shop.example.com/products 的 title 和 meta description 完整性",
+      "params": {
+        "action": "scan",
+        "url": "https://shop.example.com/products",
+        "checks": "title,meta_description,h1,canonical"
+      }
+    }
+  ],
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "action": {
+        "type": "string"
+      },
+      "checks": {
+        "type": "string"
+      },
+      "output_file": {
+        "type": "string"
+      },
+      "url": {
+        "type": "string"
+      },
+      "urls_file": {
+        "type": "string"
+      }
+    },
+    "required": [
+      "action"
+    ]
+  },
+  "license": "MIT"
+}

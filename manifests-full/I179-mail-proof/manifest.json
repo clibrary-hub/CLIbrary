@@ -1,0 +1,75 @@
+{
+  "name": "mail-proof",
+  "version": "0.1.0",
+  "description": "郵件校稿器",
+  "category": "I",
+  "number": 179,
+  "pain_point": "寄前自動拼字檢查",
+  "commercial": "✅",
+  "language": "Python",
+  "dependencies": [
+    "language-tool-python",
+    "click"
+  ],
+  "agent_compatible": true,
+  "mcp_ready": true,
+  "intent_triggers": [
+    "寄信前幫我自動檢查拼字和語法錯誤",
+    "想在發送郵件前自動校稿，避免寄出有錯的信",
+    "英文信件語法不確定，幫我用工具檢查",
+    "自動找出郵件草稿中的拼字錯誤和句子問題",
+    "我寫的信容易有錯字，需要傳送前自動掃描",
+    "郵件校稿工具，支援英文和中文檢查",
+    "幫我校對這封重要客戶信件的文法"
+  ],
+  "examples": [
+    {
+      "query": "校稿 draft.txt 並列出所有語法和拼字問題",
+      "params": {
+        "action": "check",
+        "input_file": "draft.txt",
+        "language": "en-US"
+      }
+    },
+    {
+      "query": "自動修正 email-draft.txt 中的錯誤並儲存修正版",
+      "params": {
+        "action": "fix",
+        "input_file": "email-draft.txt",
+        "output": "email-corrected.txt"
+      }
+    },
+    {
+      "query": "檢查以下英文段落的文法：「I has sent the report yesterday」",
+      "params": {
+        "action": "check",
+        "text": "I has sent the report yesterday",
+        "language": "en-US"
+      }
+    }
+  ],
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "action": {
+        "type": "string"
+      },
+      "input_file": {
+        "type": "string"
+      },
+      "language": {
+        "type": "string"
+      },
+      "output": {
+        "type": "string"
+      },
+      "text": {
+        "type": "string"
+      }
+    },
+    "required": [
+      "action"
+    ]
+  },
+  "license": "MIT"
+}

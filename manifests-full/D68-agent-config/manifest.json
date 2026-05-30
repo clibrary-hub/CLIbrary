@@ -1,0 +1,78 @@
+{
+  "name": "agent-config",
+  "version": "0.1.0",
+  "description": "設定遷移器",
+  "category": "D",
+  "number": 68,
+  "pain_point": "Agent 設定無法跨專案遷移",
+  "commercial": "✅",
+  "language": "Python",
+  "dependencies": [
+    "click",
+    "rich",
+    "yaml"
+  ],
+  "agent_compatible": true,
+  "mcp_ready": true,
+  "intent_triggers": [
+    "把這個 Agent 設定遷移到新專案",
+    "複製一份設定到另一個環境",
+    "匯出 Agent 設定方便跨專案使用",
+    "把設定檔標準化並遷移",
+    "在新環境套用舊的 Agent 設定",
+    "把 dev 環境的設定同步到 staging",
+    "管理多個專案的 Agent 設定"
+  ],
+  "examples": [
+    {
+      "query": "把 project_a 的 Agent 設定遷移到 project_b",
+      "params": {
+        "source_project": "project_a",
+        "target_project": "project_b",
+        "action": "run"
+      }
+    },
+    {
+      "query": "匯出目前的 Agent 設定到 agent_config.yaml",
+      "params": {
+        "output_file": "agent_config.yaml",
+        "action": "run"
+      }
+    },
+    {
+      "query": "從 config_template.yaml 匯入設定到目前環境",
+      "params": {
+        "config_file": "config_template.yaml",
+        "action": "run",
+        "import": true
+      }
+    }
+  ],
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "action": {
+        "type": "string"
+      },
+      "config_file": {
+        "type": "string"
+      },
+      "import": {
+        "type": "boolean"
+      },
+      "output_file": {
+        "type": "string"
+      },
+      "source_project": {
+        "type": "string"
+      },
+      "target_project": {
+        "type": "string"
+      }
+    },
+    "required": [
+      "action"
+    ]
+  },
+  "license": "MIT"
+}

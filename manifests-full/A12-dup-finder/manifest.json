@@ -1,0 +1,73 @@
+{
+  "name": "dup-finder",
+  "version": "0.1.0",
+  "description": "重複檔案偵測清理器",
+  "category": "A",
+  "number": 12,
+  "pain_point": "大量重複檔案佔空間",
+  "commercial": "✅",
+  "language": "Python",
+  "dependencies": [
+    "hashlib",
+    "pathlib",
+    "rich"
+  ],
+  "agent_compatible": true,
+  "mcp_ready": true,
+  "intent_triggers": [
+    "幫我找出重複的檔案",
+    "掃描一下有哪些檔案是一樣的",
+    "清理重複檔，釋出空間",
+    "這個資料夾太大了，找找有沒有重複的",
+    "刪除所有重複的圖片",
+    "偵測 downloads/ 裡面的重複檔案",
+    "搜尋並列出所有相同內容的檔案"
+  ],
+  "examples": [
+    {
+      "query": "掃描 /home/user/downloads 找出重複檔案",
+      "params": {
+        "scan_path": "/home/user/downloads",
+        "action": "scan"
+      }
+    },
+    {
+      "query": "搜尋 /media 中所有重複的圖片",
+      "params": {
+        "scan_path": "/media",
+        "action": "search",
+        "file_filter": "*.jpg"
+      }
+    },
+    {
+      "query": "找出重複檔案並輸出清單到 duplicates.json",
+      "params": {
+        "scan_path": ".",
+        "action": "scan",
+        "output_file": "duplicates.json"
+      }
+    }
+  ],
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "action": {
+        "type": "string"
+      },
+      "file_filter": {
+        "type": "string"
+      },
+      "output_file": {
+        "type": "string"
+      },
+      "scan_path": {
+        "type": "string"
+      }
+    },
+    "required": [
+      "action",
+      "scan_path"
+    ]
+  },
+  "license": "MIT"
+}

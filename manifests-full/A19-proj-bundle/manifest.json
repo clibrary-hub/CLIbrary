@@ -1,0 +1,87 @@
+{
+  "name": "proj-bundle",
+  "version": "0.1.0",
+  "description": "專案精簡打包器",
+  "category": "A",
+  "number": 19,
+  "pain_point": "想把專案壓縮給 Agent 看",
+  "commercial": "✅",
+  "language": "Python",
+  "dependencies": [
+    "zipfile",
+    "pathlib",
+    "gitpython"
+  ],
+  "agent_compatible": true,
+  "mcp_ready": true,
+  "intent_triggers": [
+    "把專案打包成 zip 給 AI 分析",
+    "壓縮這個 repo 排除 node_modules",
+    "幫我把專案精簡後打包",
+    "建立一個可以傳給 Agent 的專案包",
+    "匯出專案的主要程式碼，不要包含測試",
+    "打包 src/ 目錄到一個壓縮檔",
+    "產出一份適合 code review 的精簡包"
+  ],
+  "examples": [
+    {
+      "query": "打包 /my-project 並排除 .git 和 node_modules",
+      "params": {
+        "project_path": "/my-project",
+        "exclude": [
+          ".git",
+          "node_modules"
+        ]
+      }
+    },
+    {
+      "query": "匯出 src/ 目錄為 project_bundle.zip",
+      "params": {
+        "project_path": "src/",
+        "output_file": "project_bundle.zip"
+      }
+    },
+    {
+      "query": "精簡打包專案，只保留 .py 和 .json 檔",
+      "params": {
+        "project_path": ".",
+        "include_patterns": [
+          "*.py",
+          "*.json"
+        ],
+        "output_file": "slim_bundle.zip"
+      }
+    }
+  ],
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "project_path": {
+        "type": "string",
+        "description": "要打包的專案根目錄路徑"
+      },
+      "output_file": {
+        "type": "string",
+        "description": "打包輸出的 zip 檔案路徑"
+      },
+      "exclude": {
+        "type": "array",
+        "description": "要排除的目錄或檔案名稱清單",
+        "items": {
+          "type": "string"
+        }
+      },
+      "include_patterns": {
+        "type": "array",
+        "description": "只包含符合的 glob 模式清單",
+        "items": {
+          "type": "string"
+        }
+      }
+    },
+    "required": [
+      "project_path"
+    ]
+  },
+  "license": "MIT"
+}

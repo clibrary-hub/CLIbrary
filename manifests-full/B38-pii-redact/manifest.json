@@ -1,0 +1,85 @@
+{
+  "name": "pii-redact",
+  "version": "0.1.0",
+  "description": "PII 遮罩器",
+  "category": "B",
+  "number": 38,
+  "pain_point": "對話 PII 外洩風險",
+  "commercial": "✅",
+  "language": "Python",
+  "dependencies": [
+    "presidio-analyzer",
+    "click",
+    "rich"
+  ],
+  "agent_compatible": true,
+  "mcp_ready": true,
+  "intent_triggers": [
+    "把這段文字裡的個人資料遮罩掉",
+    "移除姓名和電話號碼等敏感資訊",
+    "在傳給 AI 前先過濾個資",
+    "把 email 和身分證號碼都遮掉",
+    "保護個人隱私，清除 PII",
+    "這份文件有個資，幫我全部脫敏",
+    "確保發送給 API 的資料不含個資"
+  ],
+  "examples": [
+    {
+      "query": "遮罩這段對話中的所有電話號碼和 email",
+      "params": {
+        "input_text": "請聯繫 john@example.com 或撥打 0912345678",
+        "pii_types": [
+          "email",
+          "phone"
+        ],
+        "action": "run"
+      }
+    },
+    {
+      "query": "掃描 customer_data.txt 並遮罩所有個資",
+      "params": {
+        "input_file": "customer_data.txt",
+        "action": "run",
+        "output_file": "redacted_data.txt"
+      }
+    },
+    {
+      "query": "對這份報告做完整的個資脫敏處理",
+      "params": {
+        "input_file": "report.docx",
+        "action": "run",
+        "full_redact": true
+      }
+    }
+  ],
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "action": {
+        "type": "string"
+      },
+      "full_redact": {
+        "type": "boolean"
+      },
+      "input_file": {
+        "type": "string"
+      },
+      "input_text": {
+        "type": "string"
+      },
+      "output_file": {
+        "type": "string"
+      },
+      "pii_types": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    },
+    "required": [
+      "action"
+    ]
+  },
+  "license": "MIT"
+}

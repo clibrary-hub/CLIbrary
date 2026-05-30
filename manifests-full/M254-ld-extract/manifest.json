@@ -1,0 +1,75 @@
+{
+  "name": "ld-extract",
+  "version": "0.1.0",
+  "description": "結構化資料提取",
+  "category": "M",
+  "number": 254,
+  "pain_point": "抓 JSON-LD 結構化資料",
+  "commercial": "⚠️",
+  "language": "Python",
+  "dependencies": [
+    "requests",
+    "beautifulsoup4",
+    "click"
+  ],
+  "agent_compatible": true,
+  "mcp_ready": true,
+  "intent_triggers": [
+    "從網頁提取 JSON-LD 結構化資料",
+    "抓取頁面的 schema.org 結構化標記",
+    "提取網頁的 structured data",
+    "解析網頁的 JSON-LD 並輸出",
+    "批次從多個網頁提取 LD 資料",
+    "網站 structured data 提取工具",
+    "把網頁的商品資訊結構化 JSON 提取出來"
+  ],
+  "examples": [
+    {
+      "query": "從 https://product.example.com/item/1 提取 JSON-LD 資料",
+      "params": {
+        "action": "run",
+        "url": "https://product.example.com/item/1"
+      }
+    },
+    {
+      "query": "批次提取 product_urls.txt 中所有頁面的 schema.org 資料",
+      "params": {
+        "action": "run",
+        "urls_file": "product_urls.txt",
+        "output_file": "structured_data.json"
+      }
+    },
+    {
+      "query": "從 https://event.example.com 提取活動的結構化資料",
+      "params": {
+        "action": "run",
+        "url": "https://event.example.com",
+        "type": "Event"
+      }
+    }
+  ],
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "action": {
+        "type": "string"
+      },
+      "output_file": {
+        "type": "string"
+      },
+      "type": {
+        "type": "string"
+      },
+      "url": {
+        "type": "string"
+      },
+      "urls_file": {
+        "type": "string"
+      }
+    },
+    "required": [
+      "action"
+    ]
+  },
+  "license": "MIT"
+}

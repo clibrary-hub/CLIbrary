@@ -1,0 +1,83 @@
+{
+  "name": "agent-bus",
+  "version": "0.1.0",
+  "description": "Agent 訊息匯流排",
+  "category": "F",
+  "number": 101,
+  "pain_point": "Agent 間沒有統一訊息匯流排",
+  "commercial": "✅",
+  "language": "Python",
+  "dependencies": [
+    "redis",
+    "click",
+    "rich"
+  ],
+  "agent_compatible": true,
+  "mcp_ready": true,
+  "intent_triggers": [
+    "我的 Agent 之間要怎麼互相傳訊息？",
+    "多個 Agent 怎麼共享資料？",
+    "幫我建一個讓 Agent 溝通的頻道",
+    "想讓不同 Agent 訂閱同一個訊息來源",
+    "Agent 發布事件其他 Agent 要怎麼接收",
+    "我需要一個 pub/sub 架構給多 Agent 系統用",
+    "Agent 之間的訊息傳遞沒有統一格式怎麼辦"
+  ],
+  "examples": [
+    {
+      "query": "讓 agent-A 發布訂單事件，agent-B 和 agent-C 接收",
+      "params": {
+        "action": "run",
+        "channel": "orders",
+        "publisher": "agent-A",
+        "subscribers": "agent-B,agent-C"
+      }
+    },
+    {
+      "query": "啟動訊息匯流排並監聽 task_complete 頻道",
+      "params": {
+        "action": "run",
+        "channel": "task_complete"
+      }
+    },
+    {
+      "query": "用 Redis 作為後端建立 agent-bus 並連接三個 Agent",
+      "params": {
+        "action": "run",
+        "backend": "redis",
+        "host": "localhost",
+        "port": "6379"
+      }
+    }
+  ],
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "action": {
+        "type": "string"
+      },
+      "backend": {
+        "type": "string"
+      },
+      "channel": {
+        "type": "string"
+      },
+      "host": {
+        "type": "string"
+      },
+      "port": {
+        "type": "string"
+      },
+      "publisher": {
+        "type": "string"
+      },
+      "subscribers": {
+        "type": "string"
+      }
+    },
+    "required": [
+      "action"
+    ]
+  },
+  "license": "MIT"
+}

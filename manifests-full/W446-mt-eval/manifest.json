@@ -1,0 +1,87 @@
+{
+  "name": "mt-eval",
+  "version": "0.1.0",
+  "description": "MT 品質評估器",
+  "category": "W",
+  "number": 446,
+  "pain_point": "機翻品質評估",
+  "commercial": "✅",
+  "language": "Python",
+  "dependencies": [
+    "sacrebleu",
+    "click",
+    "rich"
+  ],
+  "agent_compatible": true,
+  "mcp_ready": true,
+  "intent_triggers": [
+    "比較不同翻譯工具的輸出品質",
+    "評估這段機器翻譯的品質好不好？",
+    "機翻和人工翻譯的差距有多大？",
+    "計算翻譯文件的 BLEU 或 METEOR 分數",
+    "用 BLEU 分數評估翻譯品質",
+    "這個 DeepL 翻譯結果的品質如何？",
+    "這篇翻譯夠通順嗎？幫我評分",
+    "機器翻譯品質評估",
+    "MT 翻譯結果評測",
+    "衡量翻譯系統的準確率",
+    "計算 BLEU 等翻譯品質指標",
+    "量化 MT 系統輸出品質"
+  ],
+  "examples": [
+    {
+      "query": "計算 machine_translation.txt 和 reference.txt 的 BLEU 分數",
+      "params": {
+        "hypothesis_file": "machine_translation.txt",
+        "reference_file": "reference.txt",
+        "metric": "bleu"
+      }
+    },
+    {
+      "query": "比較 Google Translate 和 DeepL 對同段文字的翻譯品質",
+      "params": {
+        "hypothesis_files": [
+          "google_tr.txt",
+          "deepl_tr.txt"
+        ],
+        "reference_file": "human_ref.txt",
+        "metric": "bleu"
+      }
+    },
+    {
+      "query": "評估 200 句翻譯對的整體品質，輸出詳細報告",
+      "params": {
+        "hypothesis_file": "mt_output.txt",
+        "reference_file": "reference.txt",
+        "output_report": true
+      }
+    }
+  ],
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "hypothesis_file": {
+        "type": "string"
+      },
+      "hypothesis_files": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      },
+      "metric": {
+        "type": "string"
+      },
+      "output_report": {
+        "type": "boolean"
+      },
+      "reference_file": {
+        "type": "string"
+      }
+    },
+    "required": [
+      "reference_file"
+    ]
+  },
+  "license": "MIT"
+}

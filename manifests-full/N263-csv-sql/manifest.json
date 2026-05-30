@@ -1,0 +1,78 @@
+{
+  "name": "csv-sql",
+  "version": "0.1.0",
+  "description": "CSV SQL 引擎",
+  "category": "N",
+  "number": 263,
+  "pain_point": "想跑 SQL on CSV",
+  "commercial": "✅",
+  "language": "Python",
+  "dependencies": [
+    "duckdb",
+    "click",
+    "rich"
+  ],
+  "agent_compatible": true,
+  "mcp_ready": true,
+  "intent_triggers": [
+    "對 CSV 執行 SQL 查詢",
+    "用 SQL 查詢 CSV 文件",
+    "不用資料庫，直接對 CSV 跑 SELECT",
+    "CSV SQL 工具，做 JOIN 和 GROUP BY",
+    "對多個 CSV 做 SQL 合并查詢",
+    "用 DuckDB 查 CSV 資料",
+    "我想用 SQL 過濾這個 CSV 的資料"
+  ],
+  "examples": [
+    {
+      "query": "對 orders.csv 執行 SELECT product, SUM(amount) GROUP BY product",
+      "params": {
+        "action": "run",
+        "input_file": "orders.csv",
+        "query": "SELECT product, SUM(amount) as total FROM data GROUP BY product"
+      }
+    },
+    {
+      "query": "JOIN customers.csv 和 orders.csv 並取 2024 年的訂單",
+      "params": {
+        "action": "run",
+        "files": "customers.csv,orders.csv",
+        "query": "SELECT c.name, o.amount FROM customers c JOIN orders o ON c.id=o.customer_id WHERE o.year=2024"
+      }
+    },
+    {
+      "query": "從 products.csv 找出價格超過 1000 的商品",
+      "params": {
+        "action": "run",
+        "input_file": "products.csv",
+        "query": "SELECT * FROM data WHERE price > 1000"
+      }
+    }
+  ],
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "action": {
+        "type": "string",
+        "description": "操作類型，如 run（執行查詢）"
+      },
+      "input_file": {
+        "type": "string",
+        "description": "單一 CSV 輸入檔案路徑"
+      },
+      "query": {
+        "type": "string",
+        "description": "SQL 查詢語句"
+      },
+      "files": {
+        "type": "string",
+        "description": "多個 CSV 檔案路徑，以逗號分隔"
+      }
+    },
+    "required": [
+      "action",
+      "query"
+    ]
+  },
+  "license": "MIT"
+}

@@ -1,0 +1,70 @@
+{
+  "name": "dns-audit",
+  "version": "0.1.0",
+  "description": "DNS 稽核器",
+  "category": "Q",
+  "number": 338,
+  "pain_point": "DNS 設定核對",
+  "commercial": "✅",
+  "language": "Python",
+  "dependencies": [
+    "dnspython",
+    "click",
+    "rich"
+  ],
+  "agent_compatible": true,
+  "mcp_ready": true,
+  "intent_triggers": [
+    "稽核這個域名的所有 DNS 記錄",
+    "確認 DNS 設定是否符合我的預期",
+    "我的 DNS 記錄有沒有設定錯誤",
+    "比較 DNS 設定和文件中的規格是否一致",
+    "找出多餘的或過時的 DNS 記錄",
+    "驗證 SPF、DKIM、DMARC 設定",
+    "批次審計多個域名的 DNS 設定"
+  ],
+  "examples": [
+    {
+      "query": "完整稽核 example.com 的所有 DNS 記錄",
+      "params": {
+        "domain": "example.com",
+        "audit_all": true
+      }
+    },
+    {
+      "query": "驗證 mysite.com 的 SPF 和 DKIM 設定是否正確",
+      "params": {
+        "domain": "mysite.com",
+        "check_email_security": true
+      }
+    },
+    {
+      "query": "批次稽核 domains.txt 裡所有域名並輸出報告",
+      "params": {
+        "domains_file": "domains.txt",
+        "output_report": "dns_audit.json"
+      }
+    }
+  ],
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "audit_all": {
+        "type": "boolean"
+      },
+      "check_email_security": {
+        "type": "boolean"
+      },
+      "domain": {
+        "type": "string"
+      },
+      "domains_file": {
+        "type": "string"
+      },
+      "output_report": {
+        "type": "string"
+      }
+    }
+  },
+  "license": "MIT"
+}

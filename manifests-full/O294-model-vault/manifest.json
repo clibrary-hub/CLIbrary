@@ -1,0 +1,75 @@
+{
+  "name": "model-vault",
+  "version": "0.1.0",
+  "description": "模型版本管理",
+  "category": "O",
+  "number": 294,
+  "pain_point": "模型版本管理",
+  "commercial": "✅",
+  "language": "Python",
+  "dependencies": [
+    "click",
+    "rich",
+    "sqlite3"
+  ],
+  "agent_compatible": true,
+  "mcp_ready": true,
+  "intent_triggers": [
+    "管理不同版本的 AI 模型",
+    "追蹤模型版本和部署歷史",
+    "我想記錄哪個模型版本在哪個環境",
+    "模型版本控制工具，類似 Git for models",
+    "管理 prompt 和模型的對應版本關係",
+    "比較不同版本模型的效能差異",
+    "建立模型版本 registry 和部署記錄"
+  ],
+  "examples": [
+    {
+      "query": "登記新模型版本 claude-3-5-sonnet-20241022 到 vault",
+      "params": {
+        "action": "register",
+        "model_id": "claude-3-5-sonnet-20241022",
+        "alias": "production",
+        "notes": "升級至最新 sonnet 版本"
+      }
+    },
+    {
+      "query": "列出所有已登記的模型版本",
+      "params": {
+        "action": "list"
+      }
+    },
+    {
+      "query": "把 production 環境回滾到上個模型版本",
+      "params": {
+        "action": "rollback",
+        "alias": "production",
+        "steps": 1
+      }
+    }
+  ],
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "action": {
+        "type": "string"
+      },
+      "alias": {
+        "type": "string"
+      },
+      "model_id": {
+        "type": "string"
+      },
+      "notes": {
+        "type": "string"
+      },
+      "steps": {
+        "type": "integer"
+      }
+    },
+    "required": [
+      "action"
+    ]
+  },
+  "license": "MIT"
+}

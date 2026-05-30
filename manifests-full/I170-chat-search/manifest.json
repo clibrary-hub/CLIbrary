@@ -1,0 +1,86 @@
+{
+  "name": "chat-search",
+  "version": "0.1.0",
+  "description": "IM 跨平台搜尋",
+  "category": "I",
+  "number": 170,
+  "pain_point": "Slack/Teams 訊息找不到",
+  "commercial": "⚠️",
+  "language": "Python",
+  "dependencies": [
+    "requests",
+    "click",
+    "rich"
+  ],
+  "agent_compatible": true,
+  "mcp_ready": true,
+  "intent_triggers": [
+    "在 Slack 找不到之前的訊息，需要跨平台搜尋",
+    "幫我在 Slack 和 Teams 同時搜尋某個關鍵字",
+    "三個月前在 IM 聊的某個決策，怎麼找回來",
+    "跨通訊平台搜尋工具，同時查 Slack 和 Discord",
+    "想搜尋所有頻道關於某個專案的歷史訊息",
+    "Slack 免費版搜尋有限，有沒有替代工具",
+    "IM 訊息統一搜尋，不用切換不同平台"
+  ],
+  "examples": [
+    {
+      "query": "在 Slack 的 #general 頻道搜尋包含「部署計畫」的訊息",
+      "params": {
+        "action": "search",
+        "platform": "slack",
+        "channel": "general",
+        "query": "部署計畫"
+      }
+    },
+    {
+      "query": "同時在 Slack 和 Teams 搜尋「API 規格」相關討論",
+      "params": {
+        "action": "search",
+        "platforms": "slack,teams",
+        "query": "API 規格",
+        "days": "90"
+      }
+    },
+    {
+      "query": "搜尋 Alice 在過去 30 天提到的所有 PR 相關訊息",
+      "params": {
+        "action": "search",
+        "query": "PR",
+        "author": "Alice",
+        "days": "30"
+      }
+    }
+  ],
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "action": {
+        "type": "string"
+      },
+      "author": {
+        "type": "string"
+      },
+      "channel": {
+        "type": "string"
+      },
+      "days": {
+        "type": "string"
+      },
+      "platform": {
+        "type": "string"
+      },
+      "platforms": {
+        "type": "string"
+      },
+      "query": {
+        "type": "string"
+      }
+    },
+    "required": [
+      "action",
+      "query"
+    ]
+  },
+  "license": "MIT"
+}

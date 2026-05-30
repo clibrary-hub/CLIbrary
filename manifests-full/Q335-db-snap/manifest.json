@@ -1,0 +1,84 @@
+{
+  "name": "db-snap",
+  "version": "0.1.0",
+  "description": "DB 備份器",
+  "category": "Q",
+  "number": 335,
+  "pain_point": "DB 備份還原",
+  "commercial": "✅",
+  "language": "Python",
+  "dependencies": [
+    "subprocess",
+    "click",
+    "rich"
+  ],
+  "agent_compatible": true,
+  "mcp_ready": true,
+  "intent_triggers": [
+    "設定自動化的 DB 備份排程",
+    "幫我備份資料庫",
+    "部署前先備份 production DB",
+    "把 MySQL 備份壓縮後上傳到 S3",
+    "對 PostgreSQL 做一次快照",
+    "從備份還原資料庫到指定時間點",
+    "驗證備份檔案的完整性",
+    "PostgreSQL 資料庫備份到遠端",
+    "DB dump 存到 NAS",
+    "資料庫快照備份到指定位置",
+    "定期資料庫備份",
+    "做 PostgreSQL dump 並傳到本地存儲"
+  ],
+  "examples": [
+    {
+      "query": "備份 PostgreSQL mydb 資料庫到 backup/mydb_20260427.sql.gz",
+      "params": {
+        "db_type": "postgresql",
+        "db_name": "mydb",
+        "output_file": "backup/mydb_20260427.sql.gz"
+      }
+    },
+    {
+      "query": "從 backup.sql.gz 還原 MySQL 資料庫",
+      "params": {
+        "db_type": "mysql",
+        "action": "restore",
+        "backup_file": "backup.sql.gz"
+      }
+    },
+    {
+      "query": "備份 production DB 並上傳到 s3://my-bucket/backups/",
+      "params": {
+        "db_type": "postgresql",
+        "action": "backup",
+        "upload_to": "s3://my-bucket/backups/"
+      }
+    }
+  ],
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "action": {
+        "type": "string"
+      },
+      "backup_file": {
+        "type": "string"
+      },
+      "db_name": {
+        "type": "string"
+      },
+      "db_type": {
+        "type": "string"
+      },
+      "output_file": {
+        "type": "string"
+      },
+      "upload_to": {
+        "type": "string"
+      }
+    },
+    "required": [
+      "db_type"
+    ]
+  },
+  "license": "MIT"
+}

@@ -1,0 +1,61 @@
+{
+  "name": "pwn-check",
+  "version": "0.1.0",
+  "description": "帳密洩漏查詢",
+  "category": "P",
+  "number": 301,
+  "pain_point": "密碼洩漏檢查",
+  "commercial": "⚠️",
+  "language": "Python",
+  "dependencies": [
+    "requests",
+    "click",
+    "rich"
+  ],
+  "agent_compatible": true,
+  "mcp_ready": true,
+  "intent_triggers": [
+    "幫我查一下這個帳號有沒有被洩漏過",
+    "我想確認我的密碼是否出現在資料外洩事件中",
+    "檢查這個 email 有沒有在 haveibeenpwned 上面",
+    "這組帳密有沒有被駭客拿去賣掉",
+    "我要掃描公司員工帳號是否有洩漏風險",
+    "查詢 credential 是否出現在暗網資料庫",
+    "這個密碼安不安全，有沒有洩漏紀錄"
+  ],
+  "examples": [
+    {
+      "query": "查詢 john@example.com 這個帳號是否有洩漏紀錄",
+      "params": {
+        "email": "john@example.com"
+      }
+    },
+    {
+      "query": "掃描 accounts.txt 裡面所有 email 的洩漏狀態",
+      "params": {
+        "input_file": "accounts.txt"
+      }
+    },
+    {
+      "query": "檢查密碼 P@ssw0rd123 是否出現在已知洩漏資料庫",
+      "params": {
+        "password": "P@ssw0rd123"
+      }
+    }
+  ],
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "email": {
+        "type": "string"
+      },
+      "input_file": {
+        "type": "string"
+      },
+      "password": {
+        "type": "string"
+      }
+    }
+  },
+  "license": "MIT"
+}

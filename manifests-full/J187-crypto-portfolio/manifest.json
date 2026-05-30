@@ -1,0 +1,79 @@
+{
+  "name": "crypto-portfolio",
+  "version": "0.1.0",
+  "description": "加密資產聚合",
+  "category": "J",
+  "number": 187,
+  "pain_point": "加密貨幣資產統合",
+  "commercial": "⚠️",
+  "language": "Python",
+  "dependencies": [
+    "requests",
+    "click",
+    "rich"
+  ],
+  "agent_compatible": true,
+  "mcp_ready": true,
+  "intent_triggers": [
+    "我的 BTC 和 ETH 分散在幾個交易所，想統一查看",
+    "幫我查看加密貨幣投資組合的目前總值",
+    "想了解我的幣圈資產現在值多少台幣",
+    "聚合多個錢包和交易所的加密貨幣持倉",
+    "加密資產組合追蹤，顯示損益和持倉比例",
+    "我有 BTC、ETH、SOL，幫我統計總資產",
+    "即時查詢加密貨幣持倉價值並換算成法幣"
+  ],
+  "examples": [
+    {
+      "query": "查詢我的 BTC 0.5 顆和 ETH 2 顆目前的總市值（TWD）",
+      "params": {
+        "action": "portfolio",
+        "holdings": "BTC:0.5,ETH:2",
+        "currency": "TWD"
+      }
+    },
+    {
+      "query": "從 portfolio.json 載入持倉資料並顯示損益",
+      "params": {
+        "action": "portfolio",
+        "input": "portfolio.json",
+        "show_pnl": "true"
+      }
+    },
+    {
+      "query": "查詢 BTC/TWD、ETH/TWD 即時價格",
+      "params": {
+        "action": "price",
+        "symbols": "BTC,ETH",
+        "currency": "TWD"
+      }
+    }
+  ],
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "action": {
+        "type": "string"
+      },
+      "currency": {
+        "type": "string"
+      },
+      "holdings": {
+        "type": "string"
+      },
+      "input": {
+        "type": "string"
+      },
+      "show_pnl": {
+        "type": "string"
+      },
+      "symbols": {
+        "type": "string"
+      }
+    },
+    "required": [
+      "action"
+    ]
+  },
+  "license": "MIT"
+}

@@ -1,0 +1,73 @@
+{
+  "name": "sub-cancel",
+  "version": "0.1.0",
+  "description": "訂閱取消助手",
+  "category": "U",
+  "number": 408,
+  "pain_point": "自動取消未用訂閱",
+  "commercial": "⚠️",
+  "language": "Python",
+  "dependencies": [
+    "click",
+    "rich",
+    "sqlite3"
+  ],
+  "agent_compatible": true,
+  "mcp_ready": true,
+  "intent_triggers": [
+    "我想取消不常用的訂閱服務",
+    "幫我整理哪些訂閱可以取消省錢",
+    "列出最近幾個月沒在用的付費服務",
+    "我要取消 Adobe 訂閱，幫我記錄一下",
+    "哪些訂閱在吃白飯，幫我找出來",
+    "節省訂閱開銷，分析哪些可以停掉",
+    "取消訂閱的步驟和截止日幫我整理"
+  ],
+  "examples": [
+    {
+      "query": "找出超過 60 天沒使用的訂閱服務",
+      "params": {
+        "inactive_days": 60
+      }
+    },
+    {
+      "query": "標記 Adobe Creative Cloud 為待取消，並記錄取消截止日 2024-02-01",
+      "params": {
+        "service": "Adobe Creative Cloud",
+        "cancel_deadline": "2024-02-01",
+        "status": "to_cancel"
+      }
+    },
+    {
+      "query": "每月訂閱支出超過 200 元且使用率低的服務有哪些",
+      "params": {
+        "min_monthly_cost": 200,
+        "low_usage": true
+      }
+    }
+  ],
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "cancel_deadline": {
+        "type": "string"
+      },
+      "inactive_days": {
+        "type": "integer"
+      },
+      "low_usage": {
+        "type": "boolean"
+      },
+      "min_monthly_cost": {
+        "type": "integer"
+      },
+      "service": {
+        "type": "string"
+      },
+      "status": {
+        "type": "string"
+      }
+    }
+  },
+  "license": "MIT"
+}

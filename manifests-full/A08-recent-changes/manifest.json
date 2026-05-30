@@ -1,0 +1,74 @@
+{
+  "name": "recent-changes",
+  "version": "0.1.0",
+  "description": "最近變更偵測器",
+  "category": "A",
+  "number": 8,
+  "pain_point": "不知道哪些檔案最近被改過",
+  "commercial": "✅",
+  "language": "Python",
+  "dependencies": [
+    "pathlib",
+    "rich",
+    "click"
+  ],
+  "agent_compatible": true,
+  "mcp_ready": true,
+  "intent_triggers": [
+    "顯示最近 24 小時被修改的檔案",
+    "哪些檔案今天有被動過",
+    "列出過去一週內的變更記錄",
+    "我想知道剛才改了哪些東西",
+    "掃描一下有沒有最新的修改",
+    "找出昨天之後有更新的檔案",
+    "偵測目錄下最近的所有變動"
+  ],
+  "examples": [
+    {
+      "query": "列出 /project 過去 48 小時內修改的檔案",
+      "params": {
+        "target_path": "/project",
+        "hours": 48
+      }
+    },
+    {
+      "query": "比對 src/ 目錄最近的差異",
+      "params": {
+        "target_path": "src/",
+        "action": "diff"
+      }
+    },
+    {
+      "query": "找出最近 7 天修改的 .py 檔案",
+      "params": {
+        "target_path": ".",
+        "days": 7,
+        "file_filter": "*.py"
+      }
+    }
+  ],
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "action": {
+        "type": "string"
+      },
+      "days": {
+        "type": "integer"
+      },
+      "file_filter": {
+        "type": "string"
+      },
+      "hours": {
+        "type": "integer"
+      },
+      "target_path": {
+        "type": "string"
+      }
+    },
+    "required": [
+      "target_path"
+    ]
+  },
+  "license": "MIT"
+}

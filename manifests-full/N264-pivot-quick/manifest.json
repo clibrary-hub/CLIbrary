@@ -1,0 +1,91 @@
+{
+  "name": "pivot-quick",
+  "version": "0.1.0",
+  "description": "樞紐表器",
+  "category": "N",
+  "number": 264,
+  "pain_point": "樞紐表快速做",
+  "commercial": "✅",
+  "language": "Python",
+  "dependencies": [
+    "pandas",
+    "click",
+    "rich"
+  ],
+  "agent_compatible": true,
+  "mcp_ready": true,
+  "intent_triggers": [
+    "幫我做一個樞紐表分析",
+    "快速建立 pivot table",
+    "把 CSV 資料做交叉表分析",
+    "我想看各地區各月份的銷售額樞紐",
+    "資料分組彙總工具，類似 Excel 樞紐分析表",
+    "對 CSV 做 group by 多維度分析",
+    "按類別和時間交叉彙整資料"
+  ],
+  "examples": [
+    {
+      "query": "用 sales.csv 建立按月份和產品分類的銷售額樞紐表",
+      "params": {
+        "action": "run",
+        "input_file": "sales.csv",
+        "index": "month",
+        "columns": "product",
+        "values": "revenue"
+      }
+    },
+    {
+      "query": "把 orders.csv 按 region 和 category 交叉分析訂單數量",
+      "params": {
+        "action": "run",
+        "input_file": "orders.csv",
+        "index": "region",
+        "columns": "category",
+        "values": "order_count",
+        "aggfunc": "sum"
+      }
+    },
+    {
+      "query": "分析 employees.csv 各部門各職級的平均薪資樞紐",
+      "params": {
+        "action": "run",
+        "input_file": "employees.csv",
+        "index": "department",
+        "columns": "level",
+        "values": "salary",
+        "aggfunc": "mean"
+      }
+    }
+  ],
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "action": {
+        "type": "string"
+      },
+      "aggfunc": {
+        "type": "string"
+      },
+      "columns": {
+        "type": "string"
+      },
+      "index": {
+        "type": "string"
+      },
+      "input_file": {
+        "type": "string"
+      },
+      "values": {
+        "type": "string"
+      }
+    },
+    "required": [
+      "action",
+      "columns",
+      "index",
+      "input_file",
+      "values"
+    ]
+  },
+  "license": "MIT"
+}

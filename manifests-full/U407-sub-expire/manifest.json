@@ -1,0 +1,73 @@
+{
+  "name": "sub-expire",
+  "version": "0.1.0",
+  "description": "訂閱到期器",
+  "category": "U",
+  "number": 407,
+  "pain_point": "訂閱到期提醒",
+  "commercial": "✅",
+  "language": "Python",
+  "dependencies": [
+    "sqlite3",
+    "click",
+    "rich"
+  ],
+  "agent_compatible": true,
+  "mcp_ready": true,
+  "intent_triggers": [
+    "我的訂閱服務快到期了嗎？",
+    "幫我管理所有訂閱的到期日",
+    "Netflix 訂閱什麼時候要續費？",
+    "列出這個月要到期的所有訂閱",
+    "提醒我 Spotify 訂閱快到期",
+    "我有幾個付費訂閱，幫我整理一下到期時間",
+    "哪些訂閱已經到期了還沒處理？"
+  ],
+  "examples": [
+    {
+      "query": "新增 Netflix 訂閱，每月 390 元，下次到期日 2024-02-15",
+      "params": {
+        "service": "Netflix",
+        "monthly_cost": 390,
+        "expire_date": "2024-02-15"
+      }
+    },
+    {
+      "query": "查詢未來 30 天內到期的訂閱服務清單",
+      "params": {
+        "expire_within_days": 30
+      }
+    },
+    {
+      "query": "列出我所有訂閱服務和每月總費用",
+      "params": {
+        "show_all": true,
+        "show_total": true
+      }
+    }
+  ],
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "expire_date": {
+        "type": "string"
+      },
+      "expire_within_days": {
+        "type": "integer"
+      },
+      "monthly_cost": {
+        "type": "integer"
+      },
+      "service": {
+        "type": "string"
+      },
+      "show_all": {
+        "type": "boolean"
+      },
+      "show_total": {
+        "type": "boolean"
+      }
+    }
+  },
+  "license": "MIT"
+}

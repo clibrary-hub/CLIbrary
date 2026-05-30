@@ -1,0 +1,71 @@
+{
+  "name": "redteam-prompt",
+  "version": "0.1.0",
+  "description": "紅隊測試器",
+  "category": "P",
+  "number": 319,
+  "pain_point": "紅隊提示測試",
+  "commercial": "✅",
+  "language": "Python",
+  "dependencies": [
+    "anthropic",
+    "click",
+    "rich"
+  ],
+  "agent_compatible": true,
+  "mcp_ready": true,
+  "intent_triggers": [
+    "幫我做 AI 系統的紅隊測試",
+    "測試這個 chatbot 能不能被 prompt injection 攻擊",
+    "生成一批越獄提示來測試模型安全性",
+    "我要確認 system prompt 的防護強度",
+    "模擬惡意使用者的攻擊提示",
+    "跑一輪紅隊演習確認 AI 沒有安全漏洞",
+    "測試 LLM 對有害請求的拒絕率"
+  ],
+  "examples": [
+    {
+      "query": "對 system_prompt.txt 的 AI 系統跑 100 個 jailbreak 測試",
+      "params": {
+        "system_prompt_file": "system_prompt.txt",
+        "num_tests": 100,
+        "attack_type": "jailbreak"
+      }
+    },
+    {
+      "query": "測試 API endpoint http://localhost:8000 的 prompt injection 防護",
+      "params": {
+        "target_endpoint": "http://localhost:8000",
+        "attack_type": "injection"
+      }
+    },
+    {
+      "query": "生成 50 個紅隊提示並評分回應，輸出報告到 redteam_report.json",
+      "params": {
+        "num_tests": 50,
+        "output_file": "redteam_report.json"
+      }
+    }
+  ],
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "attack_type": {
+        "type": "string"
+      },
+      "num_tests": {
+        "type": "integer"
+      },
+      "output_file": {
+        "type": "string"
+      },
+      "system_prompt_file": {
+        "type": "string"
+      },
+      "target_endpoint": {
+        "type": "string"
+      }
+    }
+  },
+  "license": "MIT"
+}

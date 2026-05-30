@@ -1,0 +1,86 @@
+{
+  "name": "prompt-eval",
+  "version": "0.1.0",
+  "description": "Prompt 評測器",
+  "category": "O",
+  "number": 285,
+  "pain_point": "Prompt 黃金測試",
+  "commercial": "✅",
+  "language": "Python",
+  "dependencies": [
+    "anthropic",
+    "click",
+    "rich"
+  ],
+  "agent_compatible": true,
+  "mcp_ready": true,
+  "intent_triggers": [
+    "測試我的 prompt 在不同輸入下的穩定性",
+    "批次跑 prompt 並評估輸出品質",
+    "建立 prompt 的黃金測試集",
+    "我改了 prompt，想確認沒有退步",
+    "Prompt A/B 測試工具",
+    "評估 prompt 的一致性和準確率",
+    "對 LLM 系統提示做回歸測試"
+  ],
+  "examples": [
+    {
+      "query": "用 test_cases.jsonl 測試新版 prompt 的通過率",
+      "params": {
+        "action": "eval",
+        "test_file": "test_cases.jsonl",
+        "prompt_file": "system_prompt.txt",
+        "output_file": "eval_results.json"
+      }
+    },
+    {
+      "query": "比較 prompt_v1.txt 和 prompt_v2.txt 在相同測試集的表現",
+      "params": {
+        "action": "compare",
+        "test_file": "golden_set.jsonl",
+        "prompt_a": "prompt_v1.txt",
+        "prompt_b": "prompt_v2.txt"
+      }
+    },
+    {
+      "query": "對客服 prompt 跑 50 個測試案例並輸出通過率",
+      "params": {
+        "action": "eval",
+        "test_file": "cs_test_cases.jsonl",
+        "prompt_file": "cs_prompt.txt",
+        "pass_threshold": 0.8
+      }
+    }
+  ],
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "action": {
+        "type": "string"
+      },
+      "output_file": {
+        "type": "string"
+      },
+      "pass_threshold": {
+        "type": "number"
+      },
+      "prompt_a": {
+        "type": "string"
+      },
+      "prompt_b": {
+        "type": "string"
+      },
+      "prompt_file": {
+        "type": "string"
+      },
+      "test_file": {
+        "type": "string"
+      }
+    },
+    "required": [
+      "action",
+      "test_file"
+    ]
+  },
+  "license": "MIT"
+}

@@ -1,0 +1,87 @@
+{
+  "name": "multi-ccy-ledger",
+  "version": "0.1.0",
+  "description": "多幣別帳本",
+  "category": "J",
+  "number": 186,
+  "pain_point": "跨幣別記帳",
+  "commercial": "✅",
+  "language": "Python",
+  "dependencies": [
+    "sqlite3",
+    "click",
+    "rich"
+  ],
+  "agent_compatible": true,
+  "mcp_ready": true,
+  "intent_triggers": [
+    "我有美金、台幣和日圓的支出，想統一記帳",
+    "跨幣別記帳工具，自動換算到基準貨幣",
+    "出國旅遊費用用不同幣別，怎麼統一管理",
+    "幫我記錄多種貨幣的收支並換算成台幣總計",
+    "我在海外生活，需要多幣別帳本管理",
+    "外幣支出和台幣支出一起記帳並自動換算",
+    "帳本支援 USD、JPY、EUR 等多種貨幣輸入"
+  ],
+  "examples": [
+    {
+      "query": "記錄一筆 500 JPY 的餐飲支出，自動換算成 TWD",
+      "params": {
+        "action": "add",
+        "amount": "500",
+        "currency": "JPY",
+        "category": "餐飲",
+        "base_currency": "TWD"
+      }
+    },
+    {
+      "query": "列出本月所有幣別支出並以台幣顯示總計",
+      "params": {
+        "action": "list",
+        "period": "this_month",
+        "display_currency": "TWD"
+      }
+    },
+    {
+      "query": "匯出多幣別帳本為 CSV 並包含換算後金額",
+      "params": {
+        "action": "export",
+        "output": "ledger-april.csv",
+        "base_currency": "TWD"
+      }
+    }
+  ],
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "action": {
+        "type": "string"
+      },
+      "amount": {
+        "type": "string"
+      },
+      "base_currency": {
+        "type": "string"
+      },
+      "category": {
+        "type": "string"
+      },
+      "currency": {
+        "type": "string"
+      },
+      "display_currency": {
+        "type": "string"
+      },
+      "output": {
+        "type": "string"
+      },
+      "period": {
+        "type": "string"
+      }
+    },
+    "required": [
+      "action"
+    ]
+  },
+  "license": "MIT"
+}

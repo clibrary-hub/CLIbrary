@@ -1,0 +1,85 @@
+{
+  "name": "route-build",
+  "version": "0.1.0",
+  "description": "路線產生器",
+  "category": "T",
+  "number": 389,
+  "pain_point": "路線轉導航",
+  "commercial": "⚠️",
+  "language": "Python",
+  "dependencies": [
+    "requests",
+    "click",
+    "rich"
+  ],
+  "agent_compatible": true,
+  "mcp_ready": true,
+  "intent_triggers": [
+    "幫我規劃從飯店到景點的路線",
+    "東京一日遊的最佳景點路線是什麼",
+    "多個景點怎麼排列最省時間",
+    "規劃一條包含 5 個景點的旅遊路線",
+    "從機場到市區最快的交通方式",
+    "幫我把景點連成一條有效率的路線",
+    "自動排序旅遊景點減少交通時間"
+  ],
+  "examples": [
+    {
+      "query": "規劃東京新宿、淺草、上野、秋葉原的一日遊路線",
+      "params": {
+        "locations": [
+          "新宿",
+          "淺草",
+          "上野",
+          "秋葉原"
+        ],
+        "city": "東京"
+      }
+    },
+    {
+      "query": "從成田機場到新宿飯店的最快路線",
+      "params": {
+        "from_location": "成田機場",
+        "to_location": "新宿飯店",
+        "transport": "train"
+      }
+    },
+    {
+      "query": "生成 itinerary.md 裡各景點的最佳走訪順序",
+      "params": {
+        "input_file": "itinerary.md",
+        "optimize": true
+      }
+    }
+  ],
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "city": {
+        "type": "string"
+      },
+      "from_location": {
+        "type": "string"
+      },
+      "input_file": {
+        "type": "string"
+      },
+      "locations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      },
+      "optimize": {
+        "type": "boolean"
+      },
+      "to_location": {
+        "type": "string"
+      },
+      "transport": {
+        "type": "string"
+      }
+    }
+  },
+  "license": "MIT"
+}

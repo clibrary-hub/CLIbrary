@@ -1,0 +1,73 @@
+{
+  "name": "agent-pack",
+  "version": "0.1.0",
+  "description": "Agent 互傳打包格式",
+  "category": "A",
+  "number": 20,
+  "pain_point": "跨 Agent 傳檔案沒有統一格式",
+  "commercial": "✅",
+  "language": "Python",
+  "dependencies": [
+    "msgpack",
+    "click",
+    "rich"
+  ],
+  "agent_compatible": true,
+  "mcp_ready": true,
+  "intent_triggers": [
+    "幫我把資料打包成 Agent 之間可以傳遞的格式",
+    "把這些檔案打包好傳給下一個 Agent",
+    "我需要在多個 AI 之間傳遞資料",
+    "建立一個標準化的 Agent 資料包",
+    "將產出打包成 msgpack 格式",
+    "產生一個可以被其他 Agent 直接讀取的包",
+    "跨 Agent 資料交換，幫我打包"
+  ],
+  "examples": [
+    {
+      "query": "把 output/ 目錄打包成 agent 傳遞格式",
+      "params": {
+        "source_path": "output/",
+        "action": "export"
+      }
+    },
+    {
+      "query": "將任務結果打包到 agent_payload.msgpack",
+      "params": {
+        "source_path": "results/",
+        "action": "export",
+        "output_file": "agent_payload.msgpack"
+      }
+    },
+    {
+      "query": "打包 3 個 JSON 報告成統一的 Agent 資料包",
+      "params": {
+        "source_path": "reports/",
+        "action": "export",
+        "file_filter": "*.json"
+      }
+    }
+  ],
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "action": {
+        "type": "string"
+      },
+      "file_filter": {
+        "type": "string"
+      },
+      "output_file": {
+        "type": "string"
+      },
+      "source_path": {
+        "type": "string"
+      }
+    },
+    "required": [
+      "action",
+      "source_path"
+    ]
+  },
+  "license": "MIT"
+}

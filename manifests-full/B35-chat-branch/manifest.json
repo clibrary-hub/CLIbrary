@@ -1,0 +1,70 @@
+{
+  "name": "chat-branch",
+  "version": "0.1.0",
+  "description": "對話分支版控器",
+  "category": "B",
+  "number": 35,
+  "pain_point": "多輪對話分支管理混亂",
+  "commercial": "✅",
+  "language": "Python",
+  "dependencies": [
+    "sqlite3",
+    "rich",
+    "click"
+  ],
+  "agent_compatible": true,
+  "mcp_ready": true,
+  "intent_triggers": [
+    "在這裡建立一個對話分支",
+    "我想從這段對話岔出去試試另一個方向",
+    "建立對話 branch，保留原本的版本",
+    "管理多條平行對話路線",
+    "我要試不同 prompt，建個分支",
+    "儲存目前對話狀態再繼續",
+    "把對話分成兩個方向同時探索"
+  ],
+  "examples": [
+    {
+      "query": "從目前對話建立分支 branch_v2",
+      "params": {
+        "branch_name": "branch_v2",
+        "action": "send"
+      }
+    },
+    {
+      "query": "切換到 branch_experiment 對話分支",
+      "params": {
+        "branch_name": "branch_experiment",
+        "action": "send"
+      }
+    },
+    {
+      "query": "列出所有對話分支",
+      "params": {
+        "action": "send",
+        "list_all": true
+      }
+    }
+  ],
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "branch_name": {
+        "type": "string",
+        "description": "對話分支的名稱"
+      },
+      "action": {
+        "type": "string",
+        "description": "操作類型：send（建立/切換分支）"
+      },
+      "list_all": {
+        "type": "boolean",
+        "description": "是否列出所有分支"
+      }
+    },
+    "required": [
+      "action"
+    ]
+  },
+  "license": "MIT"
+}

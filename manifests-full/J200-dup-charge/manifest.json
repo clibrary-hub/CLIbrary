@@ -1,0 +1,79 @@
+{
+  "name": "dup-charge",
+  "version": "0.1.0",
+  "description": "重複扣款偵測器",
+  "category": "J",
+  "number": 200,
+  "pain_point": "想找重複扣款",
+  "commercial": "✅",
+  "language": "Python",
+  "dependencies": [
+    "pandas",
+    "click",
+    "rich"
+  ],
+  "agent_compatible": true,
+  "mcp_ready": true,
+  "intent_triggers": [
+    "我懷疑信用卡有重複扣款，幫我掃描",
+    "幫我找出帳單裡同一筆費用被扣了兩次的情況",
+    "自動偵測銀行帳單中的重複交易",
+    "有沒有工具可以掃描帳戶找重複扣款",
+    "訂閱服務可能重複收費，幫我檢查",
+    "帳單對帳，標出金額和時間相同的重複項目",
+    "批次分析多個月份帳單找出異常重複扣款"
+  ],
+  "examples": [
+    {
+      "query": "掃描 statement.csv 找出重複扣款（相同金額、相同來源、3天內）",
+      "params": {
+        "action": "scan",
+        "input": "statement.csv",
+        "window_days": "3"
+      }
+    },
+    {
+      "query": "比對本月信用卡帳單找出可能重複的訂閱扣款",
+      "params": {
+        "action": "scan",
+        "input": "credit-card-march.csv",
+        "type": "subscription"
+      }
+    },
+    {
+      "query": "批次掃描 statements/ 資料夾所有帳單並匯出重複扣款報告",
+      "params": {
+        "action": "batch",
+        "input_dir": "statements/",
+        "output": "duplicate-charges-report.csv"
+      }
+    }
+  ],
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "action": {
+        "type": "string"
+      },
+      "input": {
+        "type": "string"
+      },
+      "input_dir": {
+        "type": "string"
+      },
+      "output": {
+        "type": "string"
+      },
+      "type": {
+        "type": "string"
+      },
+      "window_days": {
+        "type": "string"
+      }
+    },
+    "required": [
+      "action"
+    ]
+  },
+  "license": "MIT"
+}

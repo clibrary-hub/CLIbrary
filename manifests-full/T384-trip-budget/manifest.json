@@ -1,0 +1,82 @@
+{
+  "name": "trip-budget",
+  "version": "0.1.0",
+  "description": "旅遊預算器",
+  "category": "T",
+  "number": 384,
+  "pain_point": "旅遊預算估算",
+  "commercial": "✅",
+  "language": "Python",
+  "dependencies": [
+    "sqlite3",
+    "click",
+    "rich"
+  ],
+  "agent_compatible": true,
+  "mcp_ready": true,
+  "intent_triggers": [
+    "幫我估算這次旅行的總費用",
+    "東京7天旅遊大概要花多少錢",
+    "記錄旅遊花費並計算是否超預算",
+    "幫我規劃一個 5 萬元的歐洲旅遊預算",
+    "分析我的旅遊支出比例",
+    "計算多人旅遊的平均花費",
+    "旅遊回來後幫我整理帳目"
+  ],
+  "examples": [
+    {
+      "query": "估算台灣人去東京 7 天的旅遊總費用",
+      "params": {
+        "destination": "東京",
+        "days": 7,
+        "travelers": 1,
+        "style": "budget"
+      }
+    },
+    {
+      "query": "記錄旅遊支出：住宿 3000、餐飲 800、交通 500",
+      "params": {
+        "action": "add",
+        "category": "住宿",
+        "amount": 3000
+      }
+    },
+    {
+      "query": "生成這次旅遊的支出摘要報告",
+      "params": {
+        "action": "report",
+        "output_file": "trip_expenses.md"
+      }
+    }
+  ],
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "action": {
+        "type": "string"
+      },
+      "amount": {
+        "type": "integer"
+      },
+      "category": {
+        "type": "string"
+      },
+      "days": {
+        "type": "integer"
+      },
+      "destination": {
+        "type": "string"
+      },
+      "output_file": {
+        "type": "string"
+      },
+      "style": {
+        "type": "string"
+      },
+      "travelers": {
+        "type": "integer"
+      }
+    }
+  },
+  "license": "MIT"
+}

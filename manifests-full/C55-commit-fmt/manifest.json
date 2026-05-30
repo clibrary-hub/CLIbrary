@@ -1,0 +1,76 @@
+{
+  "name": "commit-fmt",
+  "version": "0.1.0",
+  "description": "Commit 訊息格式器",
+  "category": "C",
+  "number": 55,
+  "pain_point": "git commit message 不規範",
+  "commercial": "✅",
+  "language": "Python",
+  "dependencies": [
+    "gitpython",
+    "click",
+    "rich"
+  ],
+  "agent_compatible": true,
+  "mcp_ready": true,
+  "intent_triggers": [
+    "幫我格式化這個 commit message",
+    "AI 的 commit message 不符合規範",
+    "產生一個符合 Conventional Commits 的訊息",
+    "把這段改動說明整理成標準 commit 格式",
+    "自動生成描述性的 git commit message",
+    "把 commit message 改成 feat/fix/chore 格式",
+    "幫我傳送格式化後的 commit 訊息"
+  ],
+  "examples": [
+    {
+      "query": "格式化並傳送這次 API 修改的 commit 訊息",
+      "params": {
+        "message": "fixed the login api",
+        "type": "fix",
+        "action": "send"
+      }
+    },
+    {
+      "query": "根據 git diff 自動生成 commit message",
+      "params": {
+        "auto_generate": true,
+        "action": "send"
+      }
+    },
+    {
+      "query": "把 commit message 格式化為 Conventional Commits",
+      "params": {
+        "message": "add new user endpoint",
+        "type": "feat",
+        "scope": "api",
+        "action": "send"
+      }
+    }
+  ],
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "action": {
+        "type": "string"
+      },
+      "auto_generate": {
+        "type": "boolean"
+      },
+      "message": {
+        "type": "string"
+      },
+      "scope": {
+        "type": "string"
+      },
+      "type": {
+        "type": "string"
+      }
+    },
+    "required": [
+      "action"
+    ]
+  },
+  "license": "MIT"
+}

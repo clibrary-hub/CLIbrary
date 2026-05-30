@@ -1,0 +1,24 @@
+tool: func-split
+type: readonly
+generated: "2026-04-27"
+skip: false
+
+setup:
+  files:
+    - path: testdata/longfunc.py
+      content: "def big_func(x):\n    x = x + 1\n    x = x + 1\n    x = x + 1\n    x = x + 1\n    x = x + 1\n    x = x + 1\n    x = x + 1\n    x = x + 1\n    x = x + 1\n    x = x + 1\n    x = x + 1\n    x = x + 1\n    x = x + 1\n    x = x + 1\n    x = x + 1\n    x = x + 1\n    x = x + 1\n    x = x + 1\n    x = x + 1\n    x = x + 1\n    x = x + 1\n    x = x + 1\n    x = x + 1\n    x = x + 1\n    x = x + 1\n    x = x + 1\n    x = x + 1\n    x = x + 1\n    x = x + 1\n    x = x + 1\n    x = x + 1\n    x = x + 1\n    x = x + 1\n    x = x + 1\n    x = x + 1\n    x = x + 1\n    x = x + 1\n    x = x + 1\n    x = x + 1\n    x = x + 1\n    x = x + 1\n    x = x + 1\n    x = x + 1\n    x = x + 1\n    x = x + 1\n    x = x + 1\n    x = x + 1\n    x = x + 1\n    x = x + 1\n    x = x + 1\n    x = x + 1\n    x = x + 1\n    x = x + 1\n    return x\n"
+
+cases:
+  - id: help_works
+    description: --help exits 0
+    cmd: ["--help"]
+    expect:
+      exit_code: 0
+      stdout_contains: "Usage:"
+  - id: scan_produces_output
+    description: scan runs and returns output
+    cmd: ["scan", "testdata/longfunc.py", "--format", "json"]
+    expect:
+      exit_code: 0
+      is_valid_json: true
+      json_has_key: functions

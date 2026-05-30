@@ -1,0 +1,74 @@
+{
+  "name": "download-sorter",
+  "version": "0.1.0",
+  "description": "下載分類器",
+  "category": "A",
+  "number": 16,
+  "pain_point": "整理下載資料夾耗時",
+  "commercial": "✅",
+  "language": "Python",
+  "dependencies": [
+    "pathlib",
+    "shutil",
+    "click"
+  ],
+  "agent_compatible": true,
+  "mcp_ready": true,
+  "intent_triggers": [
+    "幫我整理一下下載資料夾",
+    "把下載的東西按類型分好",
+    "把 PDF、圖片、影片各自放到對應資料夾",
+    "自動分類 downloads/ 裡的所有檔案",
+    "清理下載區，按副檔名分類",
+    "把這堆亂放的檔案整理歸位",
+    "掃描並自動分類這個目錄的所有下載"
+  ],
+  "examples": [
+    {
+      "query": "整理 /home/user/Downloads 下所有的檔案",
+      "params": {
+        "source_path": "/home/user/Downloads"
+      }
+    },
+    {
+      "query": "把 downloads/ 裡的圖片移到 images/ 目錄",
+      "params": {
+        "source_path": "downloads/",
+        "dest_path": "sorted/",
+        "file_filter": "*.jpg"
+      }
+    },
+    {
+      "query": "自動分類下載資料夾，按日期分子目錄",
+      "params": {
+        "source_path": "downloads/",
+        "sort_by": "date"
+      }
+    }
+  ],
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "source_path": {
+        "type": "string",
+        "description": "要分類整理的來源目錄路徑"
+      },
+      "dest_path": {
+        "type": "string",
+        "description": "分類後的目標目錄路徑"
+      },
+      "sort_by": {
+        "type": "string",
+        "description": "分類依據：type（類型）或 date（日期）"
+      },
+      "file_filter": {
+        "type": "string",
+        "description": "限定分類的檔案類型 glob 表達式"
+      }
+    },
+    "required": [
+      "source_path"
+    ]
+  },
+  "license": "MIT"
+}

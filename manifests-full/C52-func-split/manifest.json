@@ -1,0 +1,79 @@
+{
+  "name": "func-split",
+  "version": "0.1.0",
+  "description": "長函式拆分建議器",
+  "category": "C",
+  "number": 52,
+  "pain_point": "函式太長難維護",
+  "commercial": "✅",
+  "language": "Python",
+  "dependencies": [
+    "ast",
+    "anthropic",
+    "click"
+  ],
+  "agent_compatible": true,
+  "mcp_ready": true,
+  "intent_triggers": [
+    "幫我把這個超長的函數拆短",
+    "這個函數超過 100 行，建議如何拆",
+    "分析哪些函數需要拆分",
+    "找出太複雜的函數並給重構建議",
+    "把這個大函式拆成幾個小函式",
+    "AI 寫了個 200 行的函式，幫我拆",
+    "提供函式拆分的最佳實踐建議"
+  ],
+  "examples": [
+    {
+      "query": "分析 service.py 找出超過 50 行的函數",
+      "params": {
+        "target_file": "service.py",
+        "max_lines": 50,
+        "action": "run"
+      }
+    },
+    {
+      "query": "對 utils.py 的長函數提供拆分建議",
+      "params": {
+        "target_file": "utils.py",
+        "suggest_splits": true,
+        "action": "run"
+      }
+    },
+    {
+      "query": "掃描整個 src/ 目錄的複雜函數",
+      "params": {
+        "target_path": "src/",
+        "max_complexity": 10,
+        "action": "run"
+      }
+    }
+  ],
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "action": {
+        "type": "string"
+      },
+      "max_complexity": {
+        "type": "integer"
+      },
+      "max_lines": {
+        "type": "integer"
+      },
+      "suggest_splits": {
+        "type": "boolean"
+      },
+      "target_file": {
+        "type": "string"
+      },
+      "target_path": {
+        "type": "string"
+      }
+    },
+    "required": [
+      "action"
+    ]
+  },
+  "license": "MIT"
+}

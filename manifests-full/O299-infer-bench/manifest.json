@@ -1,0 +1,94 @@
+{
+  "name": "infer-bench",
+  "version": "0.1.0",
+  "description": "推論基準器",
+  "category": "O",
+  "number": 299,
+  "pain_point": "推論速度基準",
+  "commercial": "✅",
+  "language": "Python",
+  "dependencies": [
+    "time",
+    "click",
+    "rich"
+  ],
+  "agent_compatible": true,
+  "mcp_ready": true,
+  "intent_triggers": [
+    "測試 LLM 推論的速度和延遲",
+    "對模型做 benchmark 量測 tokens/s",
+    "比較不同模型的推論效能",
+    "我想知道我的 API 回應時間有多快",
+    "LLM 推論速度壓力測試",
+    "測量 time to first token 和 throughput",
+    "批次推論的效能基準測試"
+  ],
+  "examples": [
+    {
+      "query": "對 claude-3-haiku 跑 100 次推論速度測試",
+      "params": {
+        "action": "bench",
+        "model": "claude-3-haiku-20240307",
+        "n_runs": 100,
+        "output_file": "bench_results.json"
+      }
+    },
+    {
+      "query": "用 test_prompts.jsonl 比較 haiku 和 sonnet 的推論速度",
+      "params": {
+        "action": "compare",
+        "input_file": "test_prompts.jsonl",
+        "models": [
+          "claude-3-haiku-20240307",
+          "claude-3-5-sonnet-20241022"
+        ]
+      }
+    },
+    {
+      "query": "壓力測試 API，並行 10 個請求跑 50 輪",
+      "params": {
+        "action": "stress",
+        "model": "claude-3-haiku-20240307",
+        "concurrency": 10,
+        "n_rounds": 50,
+        "output_file": "stress_results.csv"
+      }
+    }
+  ],
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "action": {
+        "type": "string"
+      },
+      "concurrency": {
+        "type": "integer"
+      },
+      "input_file": {
+        "type": "string"
+      },
+      "model": {
+        "type": "string"
+      },
+      "models": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      },
+      "n_rounds": {
+        "type": "integer"
+      },
+      "n_runs": {
+        "type": "integer"
+      },
+      "output_file": {
+        "type": "string"
+      }
+    },
+    "required": [
+      "action"
+    ]
+  },
+  "license": "MIT"
+}

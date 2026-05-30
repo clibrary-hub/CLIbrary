@@ -1,0 +1,86 @@
+{
+  "name": "agent-health",
+  "version": "0.1.0",
+  "description": "Agent 健康檢測",
+  "category": "F",
+  "number": 112,
+  "pain_point": "Agent 心跳監測缺失",
+  "commercial": "✅",
+  "language": "Python",
+  "dependencies": [
+    "click",
+    "rich",
+    "requests"
+  ],
+  "agent_compatible": true,
+  "mcp_ready": true,
+  "intent_triggers": [
+    "怎麼知道我的 Agent 還在正常運行？",
+    "想監測所有 Agent 的健康狀態",
+    "幫我設定 Agent 心跳監測和告警",
+    "Agent 掛掉了要怎麼自動偵測？",
+    "我需要定期檢查 Agent 是否正常回應",
+    "多個 Agent 的健康度儀表板要怎麼做",
+    "Agent 無回應時要自動發通知"
+  ],
+  "examples": [
+    {
+      "query": "每 30 秒檢查 agent-worker 的健康狀態，掛掉發 Slack 通知",
+      "params": {
+        "action": "run",
+        "agent_name": "agent-worker",
+        "interval": "30",
+        "notify": "slack"
+      }
+    },
+    {
+      "query": "批次檢查 10 個 Agent 端點並輸出健康報告",
+      "params": {
+        "action": "run",
+        "agents_config": "agents.yaml",
+        "output": "health-report.json"
+      }
+    },
+    {
+      "query": "檢查 http://localhost:8080/health 端點是否正常",
+      "params": {
+        "action": "run",
+        "endpoint": "http://localhost:8080/health",
+        "timeout": "5"
+      }
+    }
+  ],
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "action": {
+        "type": "string"
+      },
+      "agent_name": {
+        "type": "string"
+      },
+      "agents_config": {
+        "type": "string"
+      },
+      "endpoint": {
+        "type": "string"
+      },
+      "interval": {
+        "type": "string"
+      },
+      "notify": {
+        "type": "string"
+      },
+      "output": {
+        "type": "string"
+      },
+      "timeout": {
+        "type": "string"
+      }
+    },
+    "required": [
+      "action"
+    ]
+  },
+  "license": "MIT"
+}

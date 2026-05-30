@@ -1,0 +1,82 @@
+{
+  "name": "tone-shift",
+  "version": "0.1.0",
+  "description": "文字語氣轉換",
+  "category": "I",
+  "number": 177,
+  "pain_point": "寫信太正式想口語化",
+  "commercial": "✅",
+  "language": "Python",
+  "dependencies": [
+    "anthropic",
+    "click",
+    "rich"
+  ],
+  "agent_compatible": true,
+  "mcp_ready": true,
+  "intent_triggers": [
+    "幫我把這封太正式的信件改成輕鬆友好的語氣",
+    "信件寫得太口語，幫我改成正式商務風格",
+    "我想把技術文件的語氣轉換成一般人看得懂的",
+    "這段文字太生硬，幫我換成親切的表達方式",
+    "用 AI 幫我把信件的語氣從嚴肅改成幽默",
+    "想讓 Slack 訊息聽起來更專業，幫我改寫",
+    "文字語氣轉換工具，支援正式/輕鬆/專業多種風格"
+  ],
+  "examples": [
+    {
+      "query": "把 draft.txt 的信件語氣從正式改成友好輕鬆",
+      "params": {
+        "action": "shift",
+        "input_file": "draft.txt",
+        "from_tone": "formal",
+        "to_tone": "casual"
+      }
+    },
+    {
+      "query": "將以下文字改成商務正式語氣：「這件事我覺得不太行」",
+      "params": {
+        "action": "shift",
+        "text": "這件事我覺得不太行",
+        "to_tone": "professional"
+      }
+    },
+    {
+      "query": "把 message.txt 轉換成溫暖同理心的語氣並儲存",
+      "params": {
+        "action": "shift",
+        "input_file": "message.txt",
+        "to_tone": "empathetic",
+        "output": "message-revised.txt"
+      }
+    }
+  ],
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "action": {
+        "type": "string"
+      },
+      "from_tone": {
+        "type": "string"
+      },
+      "input_file": {
+        "type": "string"
+      },
+      "output": {
+        "type": "string"
+      },
+      "text": {
+        "type": "string"
+      },
+      "to_tone": {
+        "type": "string"
+      }
+    },
+    "required": [
+      "action",
+      "to_tone"
+    ]
+  },
+  "license": "MIT"
+}

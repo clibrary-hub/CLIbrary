@@ -1,0 +1,85 @@
+{
+  "name": "font-cover",
+  "version": "0.1.0",
+  "description": "字型涵蓋器",
+  "category": "W",
+  "number": 454,
+  "pain_point": "字型多語完整度",
+  "commercial": "✅",
+  "language": "Python",
+  "dependencies": [
+    "fonttools",
+    "click",
+    "rich"
+  ],
+  "agent_compatible": true,
+  "mcp_ready": true,
+  "intent_triggers": [
+    "這個字型支援中文字元嗎？",
+    "檢查字型文件是否涵蓋目標語言的所有字元",
+    "我的字型有沒有阿拉伯文字形？",
+    "幫我分析字型的多語言字元涵蓋率",
+    "這個 TTF 字型支援哪些語言？",
+    "找出翻譯文字中字型未涵蓋的字元",
+    "比較兩個字型的字元集差異"
+  ],
+  "examples": [
+    {
+      "query": "檢查 NotoSans.ttf 是否涵蓋繁體中文所有常用字",
+      "params": {
+        "font_file": "NotoSans.ttf",
+        "target_locale": "zh-TW",
+        "check_coverage": true
+      }
+    },
+    {
+      "query": "分析 CustomFont.otf 的字元涵蓋率，列出缺少的字元",
+      "params": {
+        "font_file": "CustomFont.otf",
+        "target_text_file": "translation_zh.txt",
+        "show_missing": true
+      }
+    },
+    {
+      "query": "比較 Font_A.ttf 和 Font_B.ttf 對阿拉伯文的涵蓋差異",
+      "params": {
+        "font_files": [
+          "Font_A.ttf",
+          "Font_B.ttf"
+        ],
+        "target_locale": "ar",
+        "compare": true
+      }
+    }
+  ],
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "check_coverage": {
+        "type": "boolean"
+      },
+      "compare": {
+        "type": "boolean"
+      },
+      "font_file": {
+        "type": "string"
+      },
+      "font_files": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      },
+      "show_missing": {
+        "type": "boolean"
+      },
+      "target_locale": {
+        "type": "string"
+      },
+      "target_text_file": {
+        "type": "string"
+      }
+    }
+  },
+  "license": "MIT"
+}

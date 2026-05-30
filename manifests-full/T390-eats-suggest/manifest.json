@@ -1,0 +1,82 @@
+{
+  "name": "eats-suggest",
+  "version": "0.1.0",
+  "description": "餐廳推薦器",
+  "category": "T",
+  "number": 390,
+  "pain_point": "餐廳推薦聚合",
+  "commercial": "⚠️",
+  "language": "Python",
+  "dependencies": [
+    "requests",
+    "click",
+    "rich"
+  ],
+  "agent_compatible": true,
+  "mcp_ready": true,
+  "intent_triggers": [
+    "幫我推薦附近好吃的餐廳",
+    "東京新宿有什麼評分高的日式料理",
+    "找一家適合商務餐敘的餐廳",
+    "大阪必吃的在地美食在哪裡",
+    "預算 500 元以內的午餐推薦",
+    "找可以容納 10 人的餐廳",
+    "附近有沒有素食選項"
+  ],
+  "examples": [
+    {
+      "query": "推薦東京新宿 Google 評分 4.5 以上的拉麵店",
+      "params": {
+        "location": "東京新宿",
+        "cuisine": "拉麵",
+        "min_rating": 4.5
+      }
+    },
+    {
+      "query": "找大阪道頓堀步行 10 分鐘內預算 1000 日圓的午餐",
+      "params": {
+        "location": "大阪道頓堀",
+        "max_price": 1000,
+        "walk_minutes": 10
+      }
+    },
+    {
+      "query": "推薦京都適合商務招待的高級日本料理",
+      "params": {
+        "location": "京都",
+        "occasion": "商務",
+        "style": "日本料理"
+      }
+    }
+  ],
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "cuisine": {
+        "type": "string"
+      },
+      "location": {
+        "type": "string"
+      },
+      "max_price": {
+        "type": "integer"
+      },
+      "min_rating": {
+        "type": "number"
+      },
+      "occasion": {
+        "type": "string"
+      },
+      "style": {
+        "type": "string"
+      },
+      "walk_minutes": {
+        "type": "integer"
+      }
+    },
+    "required": [
+      "location"
+    ]
+  },
+  "license": "MIT"
+}

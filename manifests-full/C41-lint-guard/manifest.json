@@ -1,0 +1,82 @@
+{
+  "name": "lint-guard",
+  "version": "0.1.0",
+  "description": "自動 lint 修復",
+  "category": "C",
+  "number": 41,
+  "pain_point": "Agent 產出未通過 lint",
+  "commercial": "✅",
+  "language": "Python",
+  "dependencies": [
+    "ruff",
+    "black",
+    "click",
+    "rich"
+  ],
+  "agent_compatible": true,
+  "mcp_ready": true,
+  "intent_triggers": [
+    "掃描並修正 Python 程式碼風格問題",
+    "AI 產出的程式碼有 lint 錯誤，幫我修",
+    "幫我跑一下 lint 並自動修復",
+    "幫我確認 AI 寫的 code 通過 lint 檢查",
+    "批次修復 src/ 目錄下的所有 lint 錯誤",
+    "跑 ruff 自動修復所有 lint 警告",
+    "在 commit 前先檢查 lint",
+    "逐行列出 coding style 違規",
+    "code 格式規範一致性逐行檢查",
+    "coding style 不一致的地方清單",
+    "逐行 lint 違規報告"
+  ],
+  "examples": [
+    {
+      "query": "掃描 src/ 目錄的所有 Python 檔案並修復 lint",
+      "params": {
+        "target_path": "src/",
+        "action": "scan",
+        "auto_fix": true
+      }
+    },
+    {
+      "query": "用 ruff 檢查並修復 main.py",
+      "params": {
+        "target_path": "main.py",
+        "linter": "ruff",
+        "action": "scan"
+      }
+    },
+    {
+      "query": "掃描整個專案的 lint 問題並產出報告",
+      "params": {
+        "target_path": ".",
+        "action": "scan",
+        "output_report": true
+      }
+    }
+  ],
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "action": {
+        "type": "string"
+      },
+      "auto_fix": {
+        "type": "boolean"
+      },
+      "linter": {
+        "type": "string"
+      },
+      "output_report": {
+        "type": "boolean"
+      },
+      "target_path": {
+        "type": "string"
+      }
+    },
+    "required": [
+      "action",
+      "target_path"
+    ]
+  },
+  "license": "MIT"
+}

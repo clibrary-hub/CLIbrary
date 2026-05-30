@@ -1,0 +1,81 @@
+{
+  "name": "agent-vote",
+  "version": "0.1.0",
+  "description": "Agent 投票決策器",
+  "category": "F",
+  "number": 106,
+  "pain_point": "Agent 共識難達成",
+  "commercial": "✅",
+  "language": "Python",
+  "dependencies": [
+    "click",
+    "rich",
+    "pydantic"
+  ],
+  "agent_compatible": true,
+  "mcp_ready": true,
+  "intent_triggers": [
+    "多個 Agent 意見不同要怎麼決定最終答案？",
+    "想讓 Agent 透過投票達成共識",
+    "如何用民主方式讓 Agent 做集體決策",
+    "五個 Agent 各有不同建議要怎麼取捨",
+    "幫我做一個 Agent 投票仲裁系統",
+    "Agent 之間有分歧需要裁決機制",
+    "多數決讓 Agent 自動選出最佳方案"
+  ],
+  "examples": [
+    {
+      "query": "讓 5 個 Agent 對三個方案投票，選出最高票的方案",
+      "params": {
+        "action": "run",
+        "agents": "agent1,agent2,agent3,agent4,agent5",
+        "candidates": "plan_a,plan_b,plan_c",
+        "method": "majority"
+      }
+    },
+    {
+      "query": "用加權投票讓資深 Agent 票數佔比更高",
+      "params": {
+        "action": "run",
+        "method": "weighted",
+        "weights_file": "agent_weights.json"
+      }
+    },
+    {
+      "query": "收集所有 Agent 對 proposal_v3.json 的評分並統計",
+      "params": {
+        "action": "run",
+        "proposal_file": "proposal_v3.json",
+        "method": "score"
+      }
+    }
+  ],
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "action": {
+        "type": "string"
+      },
+      "agents": {
+        "type": "string"
+      },
+      "candidates": {
+        "type": "string"
+      },
+      "method": {
+        "type": "string"
+      },
+      "proposal_file": {
+        "type": "string"
+      },
+      "weights_file": {
+        "type": "string"
+      }
+    },
+    "required": [
+      "action",
+      "method"
+    ]
+  },
+  "license": "MIT"
+}

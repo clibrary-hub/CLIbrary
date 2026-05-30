@@ -1,0 +1,82 @@
+{
+  "name": "polite-crawler",
+  "version": "0.1.0",
+  "description": "守規範爬蟲",
+  "category": "M",
+  "number": 258,
+  "pain_point": "反爬蟲規避（合法情境）",
+  "commercial": "⚠️",
+  "language": "Python",
+  "dependencies": [
+    "requests",
+    "robotparser",
+    "click"
+  ],
+  "agent_compatible": true,
+  "mcp_ready": true,
+  "intent_triggers": [
+    "符合 robots.txt 規定的合法爬蟲",
+    "守規範爬蟲，尊重網站爬取限制",
+    "爬取網站時自動遵守 robots.txt",
+    "我需要一個不會被封鎖的爬蟲工具",
+    "設定 crawl delay 避免對伺服器造成負擔",
+    "合法爬取，遵守網站的使用條款",
+    "守規矩的網路爬蟲，加入延遲和限制"
+  ],
+  "examples": [
+    {
+      "query": "用守規範爬蟲抓取 https://data.example.com，遵守 robots.txt",
+      "params": {
+        "action": "run",
+        "url": "https://data.example.com",
+        "respect_robots": true,
+        "delay": 2
+      }
+    },
+    {
+      "query": "以每 3 秒一次的速率爬取 https://news.example.com 的文章",
+      "params": {
+        "action": "run",
+        "url": "https://news.example.com",
+        "delay": 3,
+        "max_pages": 50
+      }
+    },
+    {
+      "query": "檢查 https://target.com 的 robots.txt 再決定能不能爬",
+      "params": {
+        "action": "run",
+        "url": "https://target.com",
+        "check_only": true
+      }
+    }
+  ],
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "action": {
+        "type": "string"
+      },
+      "check_only": {
+        "type": "boolean"
+      },
+      "delay": {
+        "type": "integer"
+      },
+      "max_pages": {
+        "type": "integer"
+      },
+      "respect_robots": {
+        "type": "boolean"
+      },
+      "url": {
+        "type": "string"
+      }
+    },
+    "required": [
+      "action",
+      "url"
+    ]
+  },
+  "license": "MIT"
+}

@@ -1,0 +1,22 @@
+{
+  "analyzed_files": 1,
+  "total_lines": 381,
+  "avg_line_length": 33.1,
+  "max_line_length": 119,
+  "indent_style": "spaces",
+  "indent_size": 4,
+  "naming_convention": "snake_case",
+  "snake_case_functions": 12,
+  "camel_case_functions": 0,
+  "total_functions": 12,
+  "total_classes": 1,
+  "functions_with_docstring": 6,
+  "classes_with_docstring": 0,
+  "docstring_coverage_pct": 46.2,
+  "has_type_hints": true,
+  "type_hinted_functions_pct": 75.0,
+  "blank_lines_ratio": 0.168,
+  "single_quotes": 3,
+  "double_quotes": 101,
+  "preferred_quote": "double"
+}

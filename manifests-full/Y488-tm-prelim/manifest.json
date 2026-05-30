@@ -1,0 +1,80 @@
+{
+  "name": "tm-prelim",
+  "version": "0.1.0",
+  "description": "商標初查器",
+  "category": "Y",
+  "number": 488,
+  "pain_point": "商標衝突初查",
+  "commercial": "⚠️",
+  "language": "Python",
+  "dependencies": [
+    "requests",
+    "click",
+    "rich"
+  ],
+  "agent_compatible": true,
+  "mcp_ready": true,
+  "intent_triggers": [
+    "這個品牌名稱有沒有商標衝突？",
+    "幫我初查這個商標名稱是否已被使用",
+    "創業前先查一下商標有沒有問題",
+    "這個 Logo 文字有沒有被人搶先登記？",
+    "台灣商標初步查詢",
+    "這個品名在美國有沒有商標？",
+    "商標衝突初步評估"
+  ],
+  "examples": [
+    {
+      "query": "初查「CloudMind」這個品牌名稱在台灣是否已有商標",
+      "params": {
+        "brand_name": "CloudMind",
+        "jurisdiction": "Taiwan",
+        "class": 42
+      }
+    },
+    {
+      "query": "查詢「綠意生活」在台灣食品類（第 30 類）是否已登記商標",
+      "params": {
+        "brand_name": "綠意生活",
+        "jurisdiction": "Taiwan",
+        "class": 30
+      }
+    },
+    {
+      "query": "初步評估「TechFlow」在台灣和美國的商標衝突風險",
+      "params": {
+        "brand_name": "TechFlow",
+        "jurisdictions": [
+          "Taiwan",
+          "US"
+        ],
+        "class": 9
+      }
+    }
+  ],
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "brand_name": {
+        "type": "string"
+      },
+      "class": {
+        "type": "integer"
+      },
+      "jurisdiction": {
+        "type": "string"
+      },
+      "jurisdictions": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    },
+    "required": [
+      "brand_name",
+      "class"
+    ]
+  },
+  "license": "MIT"
+}

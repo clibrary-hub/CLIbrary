@@ -1,0 +1,77 @@
+{
+  "name": "cite-graph",
+  "version": "0.1.0",
+  "description": "引用網絡器",
+  "category": "S",
+  "number": 363,
+  "pain_point": "文獻引用網絡",
+  "commercial": "⚠️",
+  "language": "Python",
+  "dependencies": [
+    "networkx",
+    "requests",
+    "click"
+  ],
+  "agent_compatible": true,
+  "mcp_ready": true,
+  "intent_triggers": [
+    "建立這篇論文的引用網絡圖",
+    "找出這個領域最核心的開創性論文",
+    "哪篇論文是所有人都引用的",
+    "分析我的文獻庫的引用關係",
+    "這篇論文引用了哪些論文，那些又引用了什麼",
+    "找出最多人引用的論文形成的研究主線",
+    "可視化文獻之間的引用網絡"
+  ],
+  "examples": [
+    {
+      "query": "建立 references.bib 的引用網絡並輸出 graph.json",
+      "params": {
+        "input_file": "references.bib",
+        "output_file": "graph.json"
+      }
+    },
+    {
+      "query": "以 arxiv:1706.03762 為起點建立 2 層的引用網絡",
+      "params": {
+        "paper_id": "1706.03762",
+        "depth": 2,
+        "source": "arxiv"
+      }
+    },
+    {
+      "query": "找出 papers/ 中被引用最多的 5 篇論文",
+      "params": {
+        "papers_dir": "papers/",
+        "top_cited": 5
+      }
+    }
+  ],
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "depth": {
+        "type": "integer"
+      },
+      "input_file": {
+        "type": "string"
+      },
+      "output_file": {
+        "type": "string"
+      },
+      "paper_id": {
+        "type": "string"
+      },
+      "papers_dir": {
+        "type": "string"
+      },
+      "source": {
+        "type": "string"
+      },
+      "top_cited": {
+        "type": "integer"
+      }
+    }
+  },
+  "license": "MIT"
+}

@@ -1,0 +1,75 @@
+{
+  "name": "stretch-cron",
+  "version": "0.1.0",
+  "description": "拉伸提醒器",
+  "category": "K",
+  "number": 209,
+  "pain_point": "拉伸動作排程",
+  "commercial": "✅",
+  "language": "Python",
+  "dependencies": [
+    "plyer",
+    "click",
+    "schedule"
+  ],
+  "agent_compatible": true,
+  "mcp_ready": true,
+  "intent_triggers": [
+    "幫我設定定時拉伸提醒",
+    "每天早上提醒我做拉伸暖身",
+    "我需要一個拉伸排程工具",
+    "久坐後提醒做伸展操",
+    "定時推送拉伸動作通知",
+    "每兩小時提醒一次拉伸放鬆",
+    "設定健身後冷卻拉伸提醒"
+  ],
+  "examples": [
+    {
+      "query": "每 90 分鐘提醒我做頸部和背部拉伸",
+      "params": {
+        "action": "run",
+        "interval_minutes": 90,
+        "stretch_type": "頸部和背部"
+      }
+    },
+    {
+      "query": "下午 3 點和 6 點各提醒我拉伸一次",
+      "params": {
+        "action": "run",
+        "schedule_times": "15:00,18:00"
+      }
+    },
+    {
+      "query": "啟動拉伸提醒排程，每小時一次",
+      "params": {
+        "action": "run",
+        "interval_minutes": 60
+      }
+    }
+  ],
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "action": {
+        "type": "string",
+        "description": "操作類型，如 run（啟動排程）"
+      },
+      "interval_minutes": {
+        "type": "integer",
+        "description": "提醒間隔，單位分鐘"
+      },
+      "stretch_type": {
+        "type": "string",
+        "description": "拉伸部位或類型描述"
+      },
+      "schedule_times": {
+        "type": "string",
+        "description": "指定提醒時間，格式 HH:MM，以逗號分隔"
+      }
+    },
+    "required": [
+      "action"
+    ]
+  },
+  "license": "MIT"
+}

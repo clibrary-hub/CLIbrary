@@ -1,0 +1,66 @@
+{
+  "name": "promql-helper",
+  "version": "0.1.0",
+  "description": "PromQL 助手",
+  "category": "Q",
+  "number": 330,
+  "pain_point": "Prometheus 查詢輔助",
+  "commercial": "✅",
+  "language": "Python",
+  "dependencies": [
+    "anthropic",
+    "click",
+    "rich"
+  ],
+  "agent_compatible": true,
+  "mcp_ready": true,
+  "intent_triggers": [
+    "幫我寫一個查詢 CPU 使用率的 PromQL",
+    "這個 PromQL 語法對嗎，幫我看一下",
+    "怎麼用 PromQL 算過去一小時的錯誤率",
+    "我想監控 p95 延遲，PromQL 怎麼寫",
+    "解釋這個 PromQL 在查什麼",
+    "幫我把這個監控需求轉成 PromQL",
+    "優化這個慢查詢的 PromQL 語句"
+  ],
+  "examples": [
+    {
+      "query": "寫一個查詢過去 5 分鐘 HTTP 500 錯誤率的 PromQL",
+      "params": {
+        "requirement": "HTTP 500 error rate in last 5 minutes"
+      }
+    },
+    {
+      "query": "驗證並解釋 rate(http_requests_total[5m]) 這個 PromQL",
+      "params": {
+        "query": "rate(http_requests_total[5m])",
+        "action": "explain"
+      }
+    },
+    {
+      "query": "把「監控 CPU 使用率超過 80%」轉換成 PromQL alert rule",
+      "params": {
+        "requirement": "CPU usage > 80%",
+        "output_format": "alert_rule"
+      }
+    }
+  ],
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "action": {
+        "type": "string"
+      },
+      "output_format": {
+        "type": "string"
+      },
+      "query": {
+        "type": "string"
+      },
+      "requirement": {
+        "type": "string"
+      }
+    }
+  },
+  "license": "MIT"
+}

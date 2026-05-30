@@ -1,0 +1,101 @@
+{
+  "name": "comp-watch",
+  "version": "0.1.0",
+  "description": "競品監測器",
+  "category": "Y",
+  "number": 498,
+  "pain_point": "競爭對手公開資訊監測",
+  "commercial": "⚠️",
+  "language": "Python",
+  "dependencies": [
+    "requests",
+    "anthropic",
+    "click"
+  ],
+  "agent_compatible": true,
+  "mcp_ready": true,
+  "intent_triggers": [
+    "幫我監測競爭對手的動態",
+    "追蹤這幾家競品公司的最新消息",
+    "競品有沒有推出新功能或降價？",
+    "整理競品分析報告",
+    "監控競爭對手的官網和社群更新",
+    "幫我做競品比較分析",
+    "有沒有競爭對手的新聞需要注意？"
+  ],
+  "examples": [
+    {
+      "query": "監測 competitor_list.json 中 5 家競品的官網和新聞動態",
+      "params": {
+        "competitors_file": "competitor_list.json",
+        "monitor_sources": [
+          "website",
+          "news",
+          "social"
+        ]
+      }
+    },
+    {
+      "query": "分析 TechCorp 和 InnovateLtd 過去一個月的產品更新和定價變化",
+      "params": {
+        "companies": [
+          "TechCorp",
+          "InnovateLtd"
+        ],
+        "days": 30,
+        "track_pricing": true,
+        "track_features": true
+      }
+    },
+    {
+      "query": "生成週報：本週競品重要動態摘要",
+      "params": {
+        "report_type": "weekly",
+        "focus": [
+          "product_updates",
+          "pricing",
+          "partnerships"
+        ]
+      }
+    }
+  ],
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "companies": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      },
+      "competitors_file": {
+        "type": "string"
+      },
+      "days": {
+        "type": "integer"
+      },
+      "focus": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      },
+      "monitor_sources": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      },
+      "report_type": {
+        "type": "string"
+      },
+      "track_features": {
+        "type": "boolean"
+      },
+      "track_pricing": {
+        "type": "boolean"
+      }
+    }
+  },
+  "license": "MIT"
+}

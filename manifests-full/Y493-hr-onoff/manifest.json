@@ -1,0 +1,80 @@
+{
+  "name": "hr-onoff",
+  "version": "0.1.0",
+  "description": "HR 流程器",
+  "category": "Y",
+  "number": 493,
+  "pain_point": "員工到職離職 checklist",
+  "commercial": "✅",
+  "language": "Python",
+  "dependencies": [
+    "sqlite3",
+    "click",
+    "rich"
+  ],
+  "agent_compatible": true,
+  "mcp_ready": true,
+  "intent_triggers": [
+    "新員工入職 checklist 幫我建立",
+    "這個員工要離職，幫我列出辦理清單",
+    "員工到職後哪些事情要處理？",
+    "離職手續辦理流程管理",
+    "追蹤新人到職各項流程進度",
+    "幫我生成員工到職文件清單",
+    "HR 到職離職自動化 checklist"
+  ],
+  "examples": [
+    {
+      "query": "為新員工「王小明」建立到職 checklist，職位工程師，2024-02-01 到職",
+      "params": {
+        "employee": "王小明",
+        "role": "工程師",
+        "start_date": "2024-02-01",
+        "type": "onboarding"
+      }
+    },
+    {
+      "query": "查詢「李小華」的離職辦理進度，哪些項目還沒完成",
+      "params": {
+        "employee": "李小華",
+        "type": "offboarding",
+        "show_pending": true
+      }
+    },
+    {
+      "query": "生成軟體工程師職位的標準到職清單模板",
+      "params": {
+        "role": "軟體工程師",
+        "type": "onboarding",
+        "generate_template": true
+      }
+    }
+  ],
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "employee": {
+        "type": "string"
+      },
+      "generate_template": {
+        "type": "boolean"
+      },
+      "role": {
+        "type": "string"
+      },
+      "show_pending": {
+        "type": "boolean"
+      },
+      "start_date": {
+        "type": "string"
+      },
+      "type": {
+        "type": "string"
+      }
+    },
+    "required": [
+      "type"
+    ]
+  },
+  "license": "MIT"
+}

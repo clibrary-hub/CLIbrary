@@ -1,0 +1,80 @@
+{
+  "name": "paper-brief",
+  "version": "0.1.0",
+  "description": "論文摘要器",
+  "category": "S",
+  "number": 362,
+  "pain_point": "文獻摘要",
+  "commercial": "⚠️",
+  "language": "Python",
+  "dependencies": [
+    "anthropic",
+    "click",
+    "rich"
+  ],
+  "agent_compatible": true,
+  "mcp_ready": true,
+  "intent_triggers": [
+    "批次摘要 10 篇論文的重點",
+    "幫我看懂這篇論文在說什麼",
+    "把這篇英文 paper 摘要成中文",
+    "研究論文關鍵要點提取",
+    "論文太長了，給我一個 5 分鐘能讀完的摘要",
+    "學術論文精簡摘要",
+    "論文內容的文字摘要",
+    "讀完論文給我文字版重點",
+    "這篇論文的實驗結果怎麼看",
+    "這篇論文的主要貢獻和結論是什麼",
+    "論文文字摘要（不是看圖）",
+    "把 PDF 論文的核心方法解釋清楚",
+    "論文圖表很多但我要三百字文字摘要",
+    "寫一段 paper 的文字摘要，不是描述圖",
+    "這篇論文圖很漂亮但我需要文字版重點",
+    "論文字數限制摘要",
+    "幫我把這篇 paper 濃縮成指定字數的摘要"
+  ],
+  "examples": [
+    {
+      "query": "摘要 attention_is_all_you_need.pdf 的主要貢獻",
+      "params": {
+        "input_file": "attention_is_all_you_need.pdf",
+        "language": "zh-TW"
+      }
+    },
+    {
+      "query": "用一段話摘要 papers/ 裡每篇論文",
+      "params": {
+        "input_dir": "papers/",
+        "summary_length": "short"
+      }
+    },
+    {
+      "query": "詳細解釋 gpt4_paper.pdf 的方法章節",
+      "params": {
+        "input_file": "gpt4_paper.pdf",
+        "section": "methodology"
+      }
+    }
+  ],
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "input_dir": {
+        "type": "string"
+      },
+      "input_file": {
+        "type": "string"
+      },
+      "language": {
+        "type": "string"
+      },
+      "section": {
+        "type": "string"
+      },
+      "summary_length": {
+        "type": "string"
+      }
+    }
+  },
+  "license": "MIT"
+}

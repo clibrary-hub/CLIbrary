@@ -1,0 +1,71 @@
+{
+  "name": "keypoint-pull",
+  "version": "0.1.0",
+  "description": "重點抽取器",
+  "category": "R",
+  "number": 355,
+  "pain_point": "學習要點抽取",
+  "commercial": "✅",
+  "language": "Python",
+  "dependencies": [
+    "anthropic",
+    "click",
+    "rich"
+  ],
+  "agent_compatible": true,
+  "mcp_ready": true,
+  "intent_triggers": [
+    "從這篇文章抽取最重要的幾個重點",
+    "幫我列出這份文件的核心要點",
+    "這本書的學習重點是什麼",
+    "把長文章壓縮成 5 個核心概念",
+    "提煉筆記裡最值得記住的內容",
+    "幫我整理演講投影片的重點",
+    "從報告中抽取關鍵結論和建議"
+  ],
+  "examples": [
+    {
+      "query": "從 lecture.md 抽取 7 個最重要的學習要點",
+      "params": {
+        "input_file": "lecture.md",
+        "num_points": 7
+      }
+    },
+    {
+      "query": "批次提煉 readings/ 資料夾所有文件的核心要點",
+      "params": {
+        "input_dir": "readings/",
+        "num_points": 5,
+        "output_dir": "keypoints/"
+      }
+    },
+    {
+      "query": "從 research_paper.pdf 抽取結論和主要發現",
+      "params": {
+        "input_file": "research_paper.pdf",
+        "focus": "conclusions"
+      }
+    }
+  ],
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "focus": {
+        "type": "string"
+      },
+      "input_dir": {
+        "type": "string"
+      },
+      "input_file": {
+        "type": "string"
+      },
+      "num_points": {
+        "type": "integer"
+      },
+      "output_dir": {
+        "type": "string"
+      }
+    }
+  },
+  "license": "MIT"
+}

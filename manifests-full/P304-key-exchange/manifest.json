@@ -1,0 +1,78 @@
+{
+  "name": "key-exchange",
+  "version": "0.1.0",
+  "description": "金鑰交換助手",
+  "category": "P",
+  "number": 304,
+  "pain_point": "安全通訊金鑰交換",
+  "commercial": "✅",
+  "language": "Python",
+  "dependencies": [
+    "cryptography",
+    "click",
+    "rich"
+  ],
+  "agent_compatible": true,
+  "mcp_ready": true,
+  "intent_triggers": [
+    "我要跟對方安全地交換加密金鑰",
+    "怎麼建立 Diffie-Hellman 金鑰交換",
+    "幫我產生公私鑰對用於安全通訊",
+    "我需要和遠端伺服器協商加密金鑰",
+    "設定非對稱加密的金鑰交換流程",
+    "如何安全地傳送加密金鑰給對方",
+    "產生 RSA 金鑰對並匯出公鑰"
+  ],
+  "examples": [
+    {
+      "query": "產生 RSA-2048 金鑰對並儲存到 keys/ 目錄",
+      "params": {
+        "algorithm": "RSA",
+        "key_size": 2048,
+        "output_dir": "keys/"
+      }
+    },
+    {
+      "query": "匯出公鑰 public.pem 給通訊對象",
+      "params": {
+        "action": "export",
+        "key_file": "keys/private.pem",
+        "output": "public.pem"
+      }
+    },
+    {
+      "query": "使用 ECDH 協商共享金鑰",
+      "params": {
+        "algorithm": "ECDH",
+        "peer_public_key": "peer_pub.pem"
+      }
+    }
+  ],
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "action": {
+        "type": "string"
+      },
+      "algorithm": {
+        "type": "string"
+      },
+      "key_file": {
+        "type": "string"
+      },
+      "key_size": {
+        "type": "integer"
+      },
+      "output": {
+        "type": "string"
+      },
+      "output_dir": {
+        "type": "string"
+      },
+      "peer_public_key": {
+        "type": "string"
+      }
+    }
+  },
+  "license": "MIT"
+}

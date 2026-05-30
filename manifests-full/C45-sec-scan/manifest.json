@@ -1,0 +1,78 @@
+{
+  "name": "sec-scan",
+  "version": "0.1.0",
+  "description": "安全掃描器",
+  "category": "C",
+  "number": 45,
+  "pain_point": "產出有安全漏洞",
+  "commercial": "✅",
+  "language": "Python",
+  "dependencies": [
+    "bandit",
+    "click",
+    "rich"
+  ],
+  "agent_compatible": true,
+  "mcp_ready": true,
+  "intent_triggers": [
+    "找出 SQL injection 和 XSS 風險",
+    "掃描硬編碼的密碼和 API key",
+    "用 bandit 掃描 Python 安全問題",
+    "掃描程式碼有沒有安全漏洞",
+    "檢查這段程式碼的 OWASP 風險",
+    "AI 寫的程式碼有安全問題嗎",
+    "在部署前做安全掃描",
+    "全面掃描程式碼安全漏洞",
+    "不只找 hardcoded key 的安全掃描",
+    "整體程式碼安全審計",
+    "綜合安全問題檢查",
+    "掃描 SQL injection XSS 等漏洞"
+  ],
+  "examples": [
+    {
+      "query": "掃描 src/ 目錄的所有安全漏洞",
+      "params": {
+        "target_path": "src/",
+        "action": "scan"
+      }
+    },
+    {
+      "query": "用 bandit 掃描 app.py 並輸出安全報告",
+      "params": {
+        "target_path": "app.py",
+        "action": "scan",
+        "output_file": "security_report.json"
+      }
+    },
+    {
+      "query": "掃描並找出所有硬編碼的憑證和密鑰",
+      "params": {
+        "target_path": ".",
+        "action": "scan",
+        "check_secrets": true
+      }
+    }
+  ],
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "action": {
+        "type": "string"
+      },
+      "check_secrets": {
+        "type": "boolean"
+      },
+      "output_file": {
+        "type": "string"
+      },
+      "target_path": {
+        "type": "string"
+      }
+    },
+    "required": [
+      "action",
+      "target_path"
+    ]
+  },
+  "license": "MIT"
+}

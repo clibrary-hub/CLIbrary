@@ -1,0 +1,73 @@
+{
+  "name": "dep-audit",
+  "version": "0.1.0",
+  "description": "依賴審計清理器",
+  "category": "C",
+  "number": 44,
+  "pain_point": "Agent 加了多餘依賴",
+  "commercial": "✅",
+  "language": "Python",
+  "dependencies": [
+    "pipdeptree",
+    "click",
+    "rich"
+  ],
+  "agent_compatible": true,
+  "mcp_ready": true,
+  "intent_triggers": [
+    "審計一下專案有哪些多餘的依賴",
+    "掃描 requirements.txt 清理不需要的套件",
+    "找出未使用的 npm/pip 依賴",
+    "AI 加了一堆依賴，幫我審查",
+    "列出所有依賴的版本和安全狀態",
+    "清理過時的依賴套件",
+    "分析依賴樹，找出冗餘套件"
+  ],
+  "examples": [
+    {
+      "query": "掃描 requirements.txt 找出未使用的依賴",
+      "params": {
+        "target_path": ".",
+        "action": "scan"
+      }
+    },
+    {
+      "query": "審計專案所有依賴並列出過時版本",
+      "params": {
+        "target_path": ".",
+        "action": "scan",
+        "check_outdated": true
+      }
+    },
+    {
+      "query": "分析依賴樹並輸出 JSON 報告",
+      "params": {
+        "target_path": ".",
+        "action": "scan",
+        "output_file": "dep_audit.json"
+      }
+    }
+  ],
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "action": {
+        "type": "string"
+      },
+      "check_outdated": {
+        "type": "boolean"
+      },
+      "output_file": {
+        "type": "string"
+      },
+      "target_path": {
+        "type": "string"
+      }
+    },
+    "required": [
+      "action",
+      "target_path"
+    ]
+  },
+  "license": "MIT"
+}

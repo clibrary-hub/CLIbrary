@@ -1,0 +1,83 @@
+{
+  "name": "attach-vault",
+  "version": "0.1.0",
+  "description": "附件保管庫",
+  "category": "I",
+  "number": 176,
+  "pain_point": "信件附件難整理",
+  "commercial": "✅",
+  "language": "Python",
+  "dependencies": [
+    "imaplib",
+    "pathlib",
+    "click"
+  ],
+  "agent_compatible": true,
+  "mcp_ready": true,
+  "intent_triggers": [
+    "信件附件散落在信箱各處，需要統一管理",
+    "幫我把所有 PDF 附件從郵件自動下載整理",
+    "想把信箱裡的合約附件批次下載到指定資料夾",
+    "每個月的帳單附件都在信箱，幫我定期匯出",
+    "按寄件人或日期分類下載所有郵件附件",
+    "需要一個自動從信箱保存附件的管理工具",
+    "下載信件附件並按類型分資料夾存放"
+  ],
+  "examples": [
+    {
+      "query": "下載所有主旨含「合約」的信件 PDF 附件到 contracts/ 資料夾",
+      "params": {
+        "action": "download",
+        "subject_keyword": "合約",
+        "file_type": "pdf",
+        "output_dir": "contracts/"
+      }
+    },
+    {
+      "query": "批次下載本月所有郵件附件並按寄件人分類",
+      "params": {
+        "action": "download",
+        "period": "this_month",
+        "group_by": "sender",
+        "output_dir": "attachments/"
+      }
+    },
+    {
+      "query": "列出信箱中所有大於 5MB 的附件",
+      "params": {
+        "action": "list",
+        "min_size_mb": "5"
+      }
+    }
+  ],
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "action": {
+        "type": "string"
+      },
+      "file_type": {
+        "type": "string"
+      },
+      "group_by": {
+        "type": "string"
+      },
+      "min_size_mb": {
+        "type": "string"
+      },
+      "output_dir": {
+        "type": "string"
+      },
+      "period": {
+        "type": "string"
+      },
+      "subject_keyword": {
+        "type": "string"
+      }
+    },
+    "required": [
+      "action"
+    ]
+  },
+  "license": "MIT"
+}

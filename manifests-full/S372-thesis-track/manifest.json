@@ -1,0 +1,82 @@
+{
+  "name": "thesis-track",
+  "version": "0.1.0",
+  "description": "論文進度追蹤",
+  "category": "S",
+  "number": 372,
+  "pain_point": "研究進度追蹤",
+  "commercial": "✅",
+  "language": "Python",
+  "dependencies": [
+    "sqlite3",
+    "click",
+    "rich"
+  ],
+  "agent_compatible": true,
+  "mcp_ready": true,
+  "intent_triggers": [
+    "幫我追蹤論文寫作進度",
+    "記錄今天完成了哪個章節",
+    "我的論文還有多少字沒有寫",
+    "設定論文各章節的截止日",
+    "顯示研究進度看板",
+    "更新文獻閱讀的完成狀態",
+    "幫我把論文任務分解並追蹤"
+  ],
+  "examples": [
+    {
+      "query": "建立論文追蹤：5 章，截止日 2026-12-31",
+      "params": {
+        "action": "create",
+        "num_chapters": 5,
+        "deadline": "2026-12-31",
+        "title": "My Thesis"
+      }
+    },
+    {
+      "query": "記錄第 2 章已完成，共 5000 字",
+      "params": {
+        "action": "update",
+        "chapter": 2,
+        "status": "done",
+        "word_count": 5000
+      }
+    },
+    {
+      "query": "顯示目前論文的整體進度和各章節狀態",
+      "params": {
+        "action": "status"
+      }
+    }
+  ],
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "action": {
+        "type": "string"
+      },
+      "chapter": {
+        "type": "integer"
+      },
+      "deadline": {
+        "type": "string"
+      },
+      "num_chapters": {
+        "type": "integer"
+      },
+      "status": {
+        "type": "string"
+      },
+      "title": {
+        "type": "string"
+      },
+      "word_count": {
+        "type": "integer"
+      }
+    },
+    "required": [
+      "action"
+    ]
+  },
+  "license": "MIT"
+}

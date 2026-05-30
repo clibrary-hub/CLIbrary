@@ -1,0 +1,75 @@
+{
+  "name": "const-extract",
+  "version": "0.1.0",
+  "description": "常數抽取器",
+  "category": "C",
+  "number": 59,
+  "pain_point": "跨檔案常數重複",
+  "commercial": "✅",
+  "language": "Python",
+  "dependencies": [
+    "ast",
+    "click",
+    "rich"
+  ],
+  "agent_compatible": true,
+  "mcp_ready": true,
+  "intent_triggers": [
+    "找出散落各處的重複常數",
+    "把程式碼中的魔法數字抽出來",
+    "統一管理常數，建立 constants.py",
+    "掃描 hard-coded 數字和字串",
+    "把重複出現的字串常數集中管理",
+    "找出可以提取成常數的硬編碼值",
+    "清理程式碼中的 magic numbers"
+  ],
+  "examples": [
+    {
+      "query": "掃描 src/ 目錄找出所有重複常數",
+      "params": {
+        "target_path": "src/",
+        "action": "run"
+      }
+    },
+    {
+      "query": "從 api.py 中提取所有魔法數字到 constants.py",
+      "params": {
+        "target_file": "api.py",
+        "output_file": "constants.py",
+        "action": "run"
+      }
+    },
+    {
+      "query": "掃描並列出所有硬編碼的 URL 和 API 端點",
+      "params": {
+        "target_path": ".",
+        "const_type": "string",
+        "action": "run"
+      }
+    }
+  ],
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "action": {
+        "type": "string"
+      },
+      "const_type": {
+        "type": "string"
+      },
+      "output_file": {
+        "type": "string"
+      },
+      "target_file": {
+        "type": "string"
+      },
+      "target_path": {
+        "type": "string"
+      }
+    },
+    "required": [
+      "action"
+    ]
+  },
+  "license": "MIT"
+}

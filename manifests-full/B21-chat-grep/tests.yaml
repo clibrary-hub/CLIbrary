@@ -1,0 +1,40 @@
+tool: chat-grep
+type: stateful
+generated: "2026-04-27"
+skip: false
+
+cases:
+  - id: help_works
+    description: --help exits 0
+    cmd: ["--help"]
+    expect:
+      exit_code: 0
+      stdout_contains: "Usage:"
+  - id: write_data
+    description: write/add entry
+    cmd: ["add", "functional-test-msg-xyz", "--session", "autotest-sess"]
+    expect:
+      exit_code: 0
+      stdout_contains: Added
+  - id: read_data
+    description: read/list entry
+    cmd: ["search", "functional-test-msg-xyz", "--session", "autotest-sess"]
+    expect:
+      exit_code: 0
+      stdout_contains: functional-test-msg-xyz
+  - id: list_entries
+    description: list entries
+    cmd: ["sessions"]
+    expect:
+      exit_code: 0
+      stdout_contains: autotest-sess
+  - id: export_json
+    description: export as JSON
+    cmd: ["export", "autotest-sess"]
+    expect:
+      exit_code: 0
+      is_valid_json: true
+
+teardown:
+  - cmd: ["delete", "autotest-sess", "--yes"]
+    ignore_exit_code: true

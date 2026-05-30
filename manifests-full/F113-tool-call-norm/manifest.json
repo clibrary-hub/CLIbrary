@@ -1,0 +1,84 @@
+{
+  "name": "tool-call-norm",
+  "version": "0.1.0",
+  "description": "Tool Call 標準化",
+  "category": "F",
+  "number": 113,
+  "pain_point": "Agent 對外輸出格式雜",
+  "commercial": "✅",
+  "language": "Python",
+  "dependencies": [
+    "click",
+    "rich",
+    "pydantic"
+  ],
+  "agent_compatible": true,
+  "mcp_ready": true,
+  "intent_triggers": [
+    "Agent 呼叫工具的格式每個都不一樣怎麼統一",
+    "我想標準化 tool call 的 JSON 格式",
+    "各個 Agent 的工具呼叫規格混亂",
+    "幫我把 tool call 轉換成 OpenAI function calling 格式",
+    "不同 Agent 框架的 tool call 互相轉換",
+    "Agent 工具呼叫要符合哪種規範？",
+    "需要一個 tool call 格式驗證和轉換工具"
+  ],
+  "examples": [
+    {
+      "query": "把 Anthropic 格式的 tool call 轉換成 OpenAI 格式",
+      "params": {
+        "action": "send",
+        "source_format": "anthropic",
+        "target_format": "openai",
+        "input_file": "tool-calls-raw.json"
+      }
+    },
+    {
+      "query": "驗證 function_calls.json 是否符合標準 tool call 規格",
+      "params": {
+        "action": "send",
+        "mode": "validate",
+        "input_file": "function_calls.json"
+      }
+    },
+    {
+      "query": "批次標準化 logs/ 目錄下所有 tool call 日誌",
+      "params": {
+        "action": "send",
+        "mode": "normalize",
+        "input_dir": "logs/",
+        "output_dir": "normalized_logs/"
+      }
+    }
+  ],
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "action": {
+        "type": "string"
+      },
+      "input_dir": {
+        "type": "string"
+      },
+      "input_file": {
+        "type": "string"
+      },
+      "mode": {
+        "type": "string"
+      },
+      "output_dir": {
+        "type": "string"
+      },
+      "source_format": {
+        "type": "string"
+      },
+      "target_format": {
+        "type": "string"
+      }
+    },
+    "required": [
+      "action"
+    ]
+  },
+  "license": "MIT"
+}

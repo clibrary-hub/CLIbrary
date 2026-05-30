@@ -1,0 +1,69 @@
+{
+  "name": "stand-up",
+  "version": "0.1.0",
+  "description": "起身提醒器",
+  "category": "K",
+  "number": 204,
+  "pain_point": "久坐缺乏起身提醒",
+  "commercial": "✅",
+  "language": "Python",
+  "dependencies": [
+    "plyer",
+    "click",
+    "schedule"
+  ],
+  "agent_compatible": true,
+  "mcp_ready": true,
+  "intent_triggers": [
+    "我坐太久了，幫我設定起身提醒",
+    "每隔一段時間提醒我站起來走動",
+    "久坐對身體不好，需要定時提醒起身",
+    "辦公室工作怎麼避免久坐，幫我設個提醒",
+    "每 30 分鐘提醒我起來活動一下",
+    "設定久坐警報",
+    "健康辦公提醒工具，防止長時間坐著"
+  ],
+  "examples": [
+    {
+      "query": "每 30 分鐘提醒我站起來伸展",
+      "params": {
+        "action": "run",
+        "interval_minutes": 30
+      }
+    },
+    {
+      "query": "設定每小時起身提醒，持續 8 小時工作日",
+      "params": {
+        "action": "run",
+        "interval_minutes": 60,
+        "duration_hours": 8
+      }
+    },
+    {
+      "query": "啟動站立提醒，間隔 45 分鐘",
+      "params": {
+        "action": "run",
+        "interval_minutes": 45
+      }
+    }
+  ],
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "action": {
+        "type": "string"
+      },
+      "duration_hours": {
+        "type": "integer"
+      },
+      "interval_minutes": {
+        "type": "integer"
+      }
+    },
+    "required": [
+      "action",
+      "interval_minutes"
+    ]
+  },
+  "license": "MIT"
+}

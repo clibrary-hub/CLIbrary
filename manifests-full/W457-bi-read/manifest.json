@@ -1,0 +1,82 @@
+{
+  "name": "bi-read",
+  "version": "0.1.0",
+  "description": "雙語閱讀器",
+  "category": "W",
+  "number": 457,
+  "pain_point": "雙語對照閱讀",
+  "commercial": "✅",
+  "language": "Python",
+  "dependencies": [
+    "anthropic",
+    "rich",
+    "click"
+  ],
+  "agent_compatible": true,
+  "mcp_ready": true,
+  "intent_triggers": [
+    "幫我生成這篇文章的雙語對照版本",
+    "我想一邊看英文一邊看中文翻譯",
+    "把這篇文章轉成中英對照格式",
+    "生成雙語閱讀文件，方便學語言",
+    "這篇論文我想要英中對照版",
+    "幫我製作雙語版本的說明文件",
+    "輸出並排中英對照的閱讀格式"
+  ],
+  "examples": [
+    {
+      "query": "把 article_en.txt 轉成中英並排對照格式，每段對應",
+      "params": {
+        "input_file": "article_en.txt",
+        "source_lang": "en",
+        "target_lang": "zh-TW",
+        "format": "side_by_side"
+      }
+    },
+    {
+      "query": "生成 paper.pdf 第 3-10 頁的英中雙語對照版本",
+      "params": {
+        "input_file": "paper.pdf",
+        "pages": "3-10",
+        "source_lang": "en",
+        "target_lang": "zh-TW"
+      }
+    },
+    {
+      "query": "將英文新聞轉成雙語版，輸出為 HTML 格式方便閱讀",
+      "params": {
+        "input_file": "news.txt",
+        "target_lang": "zh-TW",
+        "output_format": "html"
+      }
+    }
+  ],
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "format": {
+        "type": "string"
+      },
+      "input_file": {
+        "type": "string"
+      },
+      "output_format": {
+        "type": "string"
+      },
+      "pages": {
+        "type": "string"
+      },
+      "source_lang": {
+        "type": "string"
+      },
+      "target_lang": {
+        "type": "string"
+      }
+    },
+    "required": [
+      "input_file",
+      "target_lang"
+    ]
+  },
+  "license": "MIT"
+}

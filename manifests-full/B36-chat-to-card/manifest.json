@@ -1,0 +1,79 @@
+{
+  "name": "chat-to-card",
+  "version": "0.1.0",
+  "description": "對話卡片化",
+  "category": "B",
+  "number": 36,
+  "pain_point": "想將對話轉為知識卡片",
+  "commercial": "✅",
+  "language": "Python",
+  "dependencies": [
+    "anthropic",
+    "rich",
+    "click"
+  ],
+  "agent_compatible": true,
+  "mcp_ready": true,
+  "intent_triggers": [
+    "把這段對話整理成知識卡片",
+    "從聊天記錄提取重點做成卡片",
+    "把 AI 的回覆轉成 Anki 卡片",
+    "幫我把這次討論做成學習筆記卡",
+    "對話轉成知識點卡片方便複習",
+    "把重要的 Q&A 轉成卡片格式",
+    "整理對話為可匯入到筆記軟體的卡片"
+  ],
+  "examples": [
+    {
+      "query": "把這段技術討論轉成 5 張知識卡片",
+      "params": {
+        "input_text": "...",
+        "card_count": 5,
+        "action": "send"
+      }
+    },
+    {
+      "query": "從 chat_log.md 提取重點製作 Anki 卡片",
+      "params": {
+        "input_file": "chat_log.md",
+        "output_format": "anki",
+        "action": "send"
+      }
+    },
+    {
+      "query": "把對話中的 Q&A 都轉成卡片格式",
+      "params": {
+        "input_file": "conversation.txt",
+        "card_type": "qa",
+        "action": "send"
+      }
+    }
+  ],
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "action": {
+        "type": "string"
+      },
+      "card_count": {
+        "type": "integer"
+      },
+      "card_type": {
+        "type": "string"
+      },
+      "input_file": {
+        "type": "string"
+      },
+      "input_text": {
+        "type": "string"
+      },
+      "output_format": {
+        "type": "string"
+      }
+    },
+    "required": [
+      "action"
+    ]
+  },
+  "license": "MIT"
+}

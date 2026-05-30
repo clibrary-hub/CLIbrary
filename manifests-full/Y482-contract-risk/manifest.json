@@ -1,0 +1,85 @@
+{
+  "name": "contract-risk",
+  "version": "0.1.0",
+  "description": "風險條款偵測",
+  "category": "Y",
+  "number": 482,
+  "pain_point": "合約風險條款偵測",
+  "commercial": "✅",
+  "language": "Python",
+  "dependencies": [
+    "anthropic",
+    "click",
+    "rich"
+  ],
+  "agent_compatible": true,
+  "mcp_ready": true,
+  "intent_triggers": [
+    "這份合約有沒有對我不利的條款？",
+    "幫我找出合約中的風險條款",
+    "掃描合約，標出潛在法律風險",
+    "這份合同有沒有不公平的條件？",
+    "合約中哪些條款需要特別注意？",
+    "找出無限責任或不合理的賠償條款",
+    "審查合約風險，特別是智財權和競業條款"
+  ],
+  "examples": [
+    {
+      "query": "掃描 employment_contract.pdf 找出高風險的競業禁止和保密條款",
+      "params": {
+        "input_file": "employment_contract.pdf",
+        "risk_types": [
+          "競業禁止",
+          "保密",
+          "智財權"
+        ]
+      }
+    },
+    {
+      "query": "分析 vendor_agreement.docx 中對乙方不利的責任免除條款",
+      "params": {
+        "input_file": "vendor_agreement.docx",
+        "party": "乙方",
+        "risk_level": "high"
+      }
+    },
+    {
+      "query": "這份合約的終止條款是否合理？找出可能讓甲方單方面終止的條文",
+      "params": {
+        "input_file": "service_contract.pdf",
+        "focus": "termination",
+        "flag_unilateral": true
+      }
+    }
+  ],
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "flag_unilateral": {
+        "type": "boolean"
+      },
+      "focus": {
+        "type": "string"
+      },
+      "input_file": {
+        "type": "string"
+      },
+      "party": {
+        "type": "string"
+      },
+      "risk_level": {
+        "type": "string"
+      },
+      "risk_types": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    },
+    "required": [
+      "input_file"
+    ]
+  },
+  "license": "MIT"
+}

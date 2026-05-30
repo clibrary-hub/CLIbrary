@@ -1,0 +1,77 @@
+{
+  "name": "csv-infer",
+  "version": "0.1.0",
+  "description": "CSV 結構推斷器",
+  "category": "E",
+  "number": 91,
+  "pain_point": "CSV 欄位推斷不準",
+  "commercial": "✅",
+  "language": "Python",
+  "dependencies": [
+    "pandas",
+    "click",
+    "rich"
+  ],
+  "agent_compatible": true,
+  "mcp_ready": true,
+  "intent_triggers": [
+    "推斷這個 CSV 每個欄位的資料型態",
+    "分析 CSV 結構並產生 schema",
+    "幫我搞清楚這個 CSV 有什麼欄位",
+    "自動推斷 CSV 的欄位類型和格式",
+    "這個 CSV 格式不標準，幫我分析",
+    "產生 CSV 的 schema 文件",
+    "推斷並驗證 CSV 資料的欄位定義"
+  ],
+  "examples": [
+    {
+      "query": "推斷 sales_data.csv 的欄位型態",
+      "params": {
+        "csv_file": "sales_data.csv",
+        "action": "run"
+      }
+    },
+    {
+      "query": "分析 users.csv 並產生 JSON Schema",
+      "params": {
+        "csv_file": "users.csv",
+        "output_format": "json_schema",
+        "output_file": "users_schema.json",
+        "action": "run"
+      }
+    },
+    {
+      "query": "掃描 1000 行 CSV 推斷準確的欄位定義",
+      "params": {
+        "csv_file": "large_data.csv",
+        "sample_rows": 1000,
+        "action": "run"
+      }
+    }
+  ],
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "action": {
+        "type": "string"
+      },
+      "csv_file": {
+        "type": "string"
+      },
+      "output_file": {
+        "type": "string"
+      },
+      "output_format": {
+        "type": "string"
+      },
+      "sample_rows": {
+        "type": "integer"
+      }
+    },
+    "required": [
+      "action",
+      "csv_file"
+    ]
+  },
+  "license": "MIT"
+}

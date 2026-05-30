@@ -1,0 +1,77 @@
+{
+  "name": "sandbox-run",
+  "version": "0.1.0",
+  "description": "命令沙箱執行",
+  "category": "D",
+  "number": 70,
+  "pain_point": "命令缺乏安全沙箱",
+  "commercial": "✅",
+  "language": "Python",
+  "dependencies": [
+    "subprocess",
+    "click",
+    "rich"
+  ],
+  "agent_compatible": true,
+  "mcp_ready": true,
+  "intent_triggers": [
+    "在沙箱中安全執行這個命令",
+    "隔離執行 AI 產出的腳本，確保安全",
+    "不要直接跑，用沙箱保護系統",
+    "限制執行環境，防止意外破壞",
+    "在隔離的環境中測試這段程式碼",
+    "建立沙箱環境執行不信任的腳本",
+    "Agent 的命令先在沙箱跑一下"
+  ],
+  "examples": [
+    {
+      "query": "在沙箱中執行 AI 生成的 cleanup.sh",
+      "params": {
+        "command": "bash cleanup.sh",
+        "action": "run",
+        "timeout": 30
+      }
+    },
+    {
+      "query": "隔離執行 Python 腳本，限制資源",
+      "params": {
+        "command": "python generated_script.py",
+        "action": "run",
+        "memory_limit_mb": 512
+      }
+    },
+    {
+      "query": "在 Docker 沙箱中執行不信任的命令",
+      "params": {
+        "command": "npm install && npm test",
+        "sandbox_type": "docker",
+        "action": "run"
+      }
+    }
+  ],
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "action": {
+        "type": "string"
+      },
+      "command": {
+        "type": "string"
+      },
+      "memory_limit_mb": {
+        "type": "integer"
+      },
+      "sandbox_type": {
+        "type": "string"
+      },
+      "timeout": {
+        "type": "integer"
+      }
+    },
+    "required": [
+      "action",
+      "command"
+    ]
+  },
+  "license": "MIT"
+}

@@ -1,0 +1,4 @@
+click
+pypdf
+pillow
+rich

@@ -1,0 +1,81 @@
+{
+  "name": "review-real",
+  "version": "0.1.0",
+  "description": "假評論偵測器",
+  "category": "U",
+  "number": 413,
+  "pain_point": "假評論偵測",
+  "commercial": "⚠️",
+  "language": "Python",
+  "dependencies": [
+    "anthropic",
+    "click",
+    "rich"
+  ],
+  "agent_compatible": true,
+  "mcp_ready": true,
+  "intent_triggers": [
+    "這個商品的評論看起來真的嗎？",
+    "幫我判斷這些評價有沒有灌水",
+    "這個賣家的評論是不是假的？",
+    "偵測商品評論中的可疑刷評行為",
+    "這款商品全是五星好評，幫我分析是否異常",
+    "買東西前先確認評論品質，有沒有假評論？",
+    "幫我過濾掉可疑的業配或虛假評論"
+  ],
+  "examples": [
+    {
+      "query": "分析這個商品的 300 則評論，找出可能的假評論模式",
+      "params": {
+        "product_name": "神秘保養品A",
+        "review_count": 300,
+        "threshold": 0.7
+      }
+    },
+    {
+      "query": "這賣家短時間內突然有 500 則五星評論，幫我檢查是否異常",
+      "params": {
+        "seller_id": "seller_123",
+        "suspicious_count": 500,
+        "days": 7
+      }
+    },
+    {
+      "query": "比對這批評論的帳號活躍度，判斷是否為機器人帳號",
+      "params": {
+        "reviews_file": "reviews.json",
+        "check_accounts": true
+      }
+    }
+  ],
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "check_accounts": {
+        "type": "boolean"
+      },
+      "days": {
+        "type": "integer"
+      },
+      "product_name": {
+        "type": "string"
+      },
+      "review_count": {
+        "type": "integer"
+      },
+      "reviews_file": {
+        "type": "string"
+      },
+      "seller_id": {
+        "type": "string"
+      },
+      "suspicious_count": {
+        "type": "integer"
+      },
+      "threshold": {
+        "type": "number"
+      }
+    }
+  },
+  "license": "MIT"
+}

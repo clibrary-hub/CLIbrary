@@ -1,0 +1,75 @@
+{
+  "name": "doc-fill",
+  "version": "0.1.0",
+  "description": "文件註解填充器",
+  "category": "C",
+  "number": 50,
+  "pain_point": "缺少 docstring/註解",
+  "commercial": "✅",
+  "language": "Python",
+  "dependencies": [
+    "anthropic",
+    "ast",
+    "click"
+  ],
+  "agent_compatible": true,
+  "mcp_ready": true,
+  "intent_triggers": [
+    "幫所有函數自動補上 docstring",
+    "這段程式碼缺少文件，幫我加",
+    "為每個 class 和 method 加上說明",
+    "AI 寫的 code 沒有註解，幫我補充",
+    "用 AI 自動生成程式碼說明文件",
+    "掃描並填補缺少的文件字串",
+    "為這個模組加上完整的 API 文件"
+  ],
+  "examples": [
+    {
+      "query": "為 api.py 的所有函數自動補上 docstring",
+      "params": {
+        "target_file": "api.py",
+        "action": "run"
+      }
+    },
+    {
+      "query": "掃描 src/ 目錄並補充所有缺少的文件",
+      "params": {
+        "target_path": "src/",
+        "action": "run",
+        "doc_style": "google"
+      }
+    },
+    {
+      "query": "用 AI 為 utils.py 產生完整的 docstring",
+      "params": {
+        "target_file": "utils.py",
+        "use_ai": true,
+        "action": "run"
+      }
+    }
+  ],
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "action": {
+        "type": "string"
+      },
+      "doc_style": {
+        "type": "string"
+      },
+      "target_file": {
+        "type": "string"
+      },
+      "target_path": {
+        "type": "string"
+      },
+      "use_ai": {
+        "type": "boolean"
+      }
+    },
+    "required": [
+      "action"
+    ]
+  },
+  "license": "MIT"
+}

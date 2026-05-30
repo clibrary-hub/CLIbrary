@@ -1,0 +1,98 @@
+{
+  "name": "rag-eval",
+  "version": "0.1.0",
+  "description": "RAG 評估器",
+  "category": "O",
+  "number": 284,
+  "pain_point": "RAG 檢索品質評估",
+  "commercial": "✅",
+  "language": "Python",
+  "dependencies": [
+    "anthropic",
+    "click",
+    "rich"
+  ],
+  "agent_compatible": true,
+  "mcp_ready": true,
+  "intent_triggers": [
+    "評估我的 RAG 系統的回答品質",
+    "測試 RAG 檢索的準確率和相關性",
+    "RAG pipeline 的端到端評估工具",
+    "我想知道我的 RAG 有多少幻覺",
+    "評估 context 檢索和最終回答的一致性",
+    "RAG 系統 RAGAS 風格評估",
+    "測試不同 chunk size 對 RAG 品質的影響"
+  ],
+  "examples": [
+    {
+      "query": "評估 rag_outputs.jsonl 的回答品質",
+      "params": {
+        "action": "eval",
+        "input_file": "rag_outputs.jsonl",
+        "metrics": [
+          "faithfulness",
+          "relevance"
+        ],
+        "output_file": "rag_eval_report.json"
+      }
+    },
+    {
+      "query": "對 qa_pairs.csv 做 RAG 系統端到端評估",
+      "params": {
+        "action": "eval",
+        "input_file": "qa_pairs.csv",
+        "question_col": "question",
+        "answer_col": "generated_answer",
+        "context_col": "retrieved_context"
+      }
+    },
+    {
+      "query": "批次評估 100 個問答對的幻覺率",
+      "params": {
+        "action": "eval",
+        "input_file": "test_qa.jsonl",
+        "metrics": [
+          "hallucination_rate"
+        ],
+        "sample_size": 100
+      }
+    }
+  ],
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "action": {
+        "type": "string"
+      },
+      "answer_col": {
+        "type": "string"
+      },
+      "context_col": {
+        "type": "string"
+      },
+      "input_file": {
+        "type": "string"
+      },
+      "metrics": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      },
+      "output_file": {
+        "type": "string"
+      },
+      "question_col": {
+        "type": "string"
+      },
+      "sample_size": {
+        "type": "integer"
+      }
+    },
+    "required": [
+      "action",
+      "input_file"
+    ]
+  },
+  "license": "MIT"
+}

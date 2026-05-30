@@ -1,0 +1,74 @@
+{
+  "name": "chat-semsearch",
+  "version": "0.1.0",
+  "description": "語意對話搜尋",
+  "category": "B",
+  "number": 34,
+  "pain_point": "想搜尋語意相近的舊對話",
+  "commercial": "✅",
+  "language": "Python",
+  "dependencies": [
+    "sentence-transformers",
+    "sqlite3",
+    "rich"
+  ],
+  "agent_compatible": true,
+  "mcp_ready": true,
+  "intent_triggers": [
+    "用語意搜尋找相關的舊對話",
+    "找跟這個問題相似的歷史記錄",
+    "不記得關鍵字，用意思搜一下",
+    "找之前有討論過類似主題的對話",
+    "語意相近的記錄都撈出來",
+    "搜尋上下文相關的歷史對話",
+    "不用完全匹配，找語意接近的討論"
+  ],
+  "examples": [
+    {
+      "query": "搜尋跟「身分驗證流程」語意相近的對話",
+      "params": {
+        "query": "身分驗證流程",
+        "action": "search",
+        "top_k": 5
+      }
+    },
+    {
+      "query": "找跟「資料庫效能優化」相關的歷史討論",
+      "params": {
+        "query": "資料庫效能優化",
+        "action": "search",
+        "similarity_threshold": 0.8
+      }
+    },
+    {
+      "query": "語意搜尋並傳送前 3 條最相關的對話",
+      "params": {
+        "query": "部署流程",
+        "action": "send",
+        "top_k": 3
+      }
+    }
+  ],
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "action": {
+        "type": "string"
+      },
+      "query": {
+        "type": "string"
+      },
+      "similarity_threshold": {
+        "type": "number"
+      },
+      "top_k": {
+        "type": "integer"
+      }
+    },
+    "required": [
+      "action",
+      "query"
+    ]
+  },
+  "license": "MIT"
+}

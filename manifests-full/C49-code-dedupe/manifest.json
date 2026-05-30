@@ -1,0 +1,80 @@
+{
+  "name": "code-dedupe",
+  "version": "0.1.0",
+  "description": "重複碼清理器",
+  "category": "C",
+  "number": 49,
+  "pain_point": "多次迭代後程式碼混亂",
+  "commercial": "✅",
+  "language": "Python",
+  "dependencies": [
+    "ast",
+    "difflib",
+    "click"
+  ],
+  "agent_compatible": true,
+  "mcp_ready": true,
+  "intent_triggers": [
+    "把重複出現 3 次以上的邏輯提取出來",
+    "找出可以抽取成函數的重複程式碼",
+    "AI 多次迭代後有很多重複的 code",
+    "掃描並消除重複的程式碼片段",
+    "清理程式碼裡的重複邏輯",
+    "分析 codebase 中的 code smell",
+    "DRY 原則，幫我找出重複的地方",
+    "相似邏輯抽取成共用 helper 函式",
+    "重複程式碼重構合併",
+    "幾乎一樣的程式段落去重",
+    "找出重複邏輯並提取",
+    "程式碼去重不是提取常數"
+  ],
+  "examples": [
+    {
+      "query": "掃描 src/ 目錄找出重複的程式碼片段",
+      "params": {
+        "target_path": "src/",
+        "action": "run"
+      }
+    },
+    {
+      "query": "找出 utils.py 中重複出現 3 次以上的邏輯",
+      "params": {
+        "target_file": "utils.py",
+        "min_occurrences": 3,
+        "action": "run"
+      }
+    },
+    {
+      "query": "分析重複碼並輸出重構建議報告",
+      "params": {
+        "target_path": ".",
+        "output_file": "dedupe_report.json",
+        "action": "run"
+      }
+    }
+  ],
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "action": {
+        "type": "string"
+      },
+      "min_occurrences": {
+        "type": "integer"
+      },
+      "output_file": {
+        "type": "string"
+      },
+      "target_file": {
+        "type": "string"
+      },
+      "target_path": {
+        "type": "string"
+      }
+    },
+    "required": [
+      "action"
+    ]
+  },
+  "license": "MIT"
+}

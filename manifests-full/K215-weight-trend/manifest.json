@@ -1,0 +1,75 @@
+{
+  "name": "weight-trend",
+  "version": "0.1.0",
+  "description": "體重趨勢器",
+  "category": "K",
+  "number": 215,
+  "pain_point": "體重曲線統計",
+  "commercial": "✅",
+  "language": "Python",
+  "dependencies": [
+    "sqlite3",
+    "matplotlib",
+    "click"
+  ],
+  "agent_compatible": true,
+  "mcp_ready": true,
+  "intent_triggers": [
+    "幫我畫出過去三個月的體重趨勢圖",
+    "分析我的體重變化曲線",
+    "體重追蹤器，統計減重進度",
+    "掃描體重記錄並找出規律",
+    "我想了解我的體重波動趨勢",
+    "查看減重計畫的成效",
+    "用圖表展示體重變化"
+  ],
+  "examples": [
+    {
+      "query": "掃描 weight_log.csv 並產生過去 90 天的趨勢圖",
+      "params": {
+        "action": "scan",
+        "input_file": "weight_log.csv",
+        "days": 90
+      }
+    },
+    {
+      "query": "分析體重從 2024-01-01 到現在的變化",
+      "params": {
+        "action": "scan",
+        "start_date": "2024-01-01"
+      }
+    },
+    {
+      "query": "統計本月體重平均值與最低點",
+      "params": {
+        "action": "scan",
+        "input_file": "weight.db",
+        "period": "month"
+      }
+    }
+  ],
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "action": {
+        "type": "string"
+      },
+      "days": {
+        "type": "integer"
+      },
+      "input_file": {
+        "type": "string"
+      },
+      "period": {
+        "type": "string"
+      },
+      "start_date": {
+        "type": "string"
+      }
+    },
+    "required": [
+      "action"
+    ]
+  },
+  "license": "MIT"
+}

@@ -1,0 +1,79 @@
+{
+  "name": "trip-recap",
+  "version": "0.1.0",
+  "description": "遊記產生器",
+  "category": "T",
+  "number": 396,
+  "pain_point": "行程後遊記產生",
+  "commercial": "⚠️",
+  "language": "Python",
+  "dependencies": [
+    "anthropic",
+    "click",
+    "rich"
+  ],
+  "agent_compatible": true,
+  "mcp_ready": true,
+  "intent_triggers": [
+    "幫我把旅遊照片和筆記整理成遊記",
+    "根據行程記錄自動生成旅遊文章",
+    "把我的旅遊流水帳整理成漂亮的遊記",
+    "旅遊結束後幫我寫一篇分享文",
+    "把旅遊日記整理成適合發部落格的格式",
+    "生成東京5天遊記包含景點和心得",
+    "根據費用記錄和照片生成旅遊報告"
+  ],
+  "examples": [
+    {
+      "query": "根據 trip_notes.txt 和 itinerary.md 生成東京旅遊遊記",
+      "params": {
+        "notes_file": "trip_notes.txt",
+        "itinerary_file": "itinerary.md",
+        "destination": "東京"
+      }
+    },
+    {
+      "query": "把 photos/ 的旅遊照片和日記整合成 blog 文章",
+      "params": {
+        "photos_dir": "photos/",
+        "diary_file": "diary.md",
+        "output_format": "blog"
+      }
+    },
+    {
+      "query": "生成簡短的旅遊分享文，適合發 Instagram",
+      "params": {
+        "notes_file": "trip_notes.txt",
+        "output_format": "social",
+        "max_length": 500
+      }
+    }
+  ],
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "destination": {
+        "type": "string"
+      },
+      "diary_file": {
+        "type": "string"
+      },
+      "itinerary_file": {
+        "type": "string"
+      },
+      "max_length": {
+        "type": "integer"
+      },
+      "notes_file": {
+        "type": "string"
+      },
+      "output_format": {
+        "type": "string"
+      },
+      "photos_dir": {
+        "type": "string"
+      }
+    }
+  },
+  "license": "MIT"
+}

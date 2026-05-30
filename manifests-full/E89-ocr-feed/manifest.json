@@ -1,0 +1,75 @@
+{
+  "name": "ocr-feed",
+  "version": "0.1.0",
+  "description": "截圖 OCR 餵入器",
+  "category": "E",
+  "number": 89,
+  "pain_point": "截圖文字無法餵入",
+  "commercial": "✅",
+  "language": "Python",
+  "dependencies": [
+    "pytesseract",
+    "Pillow",
+    "click"
+  ],
+  "agent_compatible": true,
+  "mcp_ready": true,
+  "intent_triggers": [
+    "把截圖中的文字辨識出來給 AI 讀",
+    "OCR 這張圖片，提取文字內容",
+    "把這個截圖轉換成可讀的文字",
+    "幫我識別圖片裡的錯誤訊息",
+    "掃描這個 PDF 截圖的文字",
+    "把螢幕截圖的內容餵給 Agent",
+    "從圖片中提取表格資料"
+  ],
+  "examples": [
+    {
+      "query": "OCR 辨識 screenshot.png 的文字內容",
+      "params": {
+        "image_file": "screenshot.png",
+        "action": "run"
+      }
+    },
+    {
+      "query": "把錯誤截圖的文字提取出來分析",
+      "params": {
+        "image_file": "error_screen.png",
+        "language": "chi_tra",
+        "action": "run"
+      }
+    },
+    {
+      "query": "批次 OCR 辨識 screenshots/ 目錄的所有圖片",
+      "params": {
+        "image_dir": "screenshots/",
+        "output_file": "ocr_results.txt",
+        "action": "run"
+      }
+    }
+  ],
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "action": {
+        "type": "string"
+      },
+      "image_dir": {
+        "type": "string"
+      },
+      "image_file": {
+        "type": "string"
+      },
+      "language": {
+        "type": "string"
+      },
+      "output_file": {
+        "type": "string"
+      }
+    },
+    "required": [
+      "action"
+    ]
+  },
+  "license": "MIT"
+}

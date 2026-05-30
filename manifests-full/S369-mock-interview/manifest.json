@@ -1,0 +1,74 @@
+{
+  "name": "mock-interview",
+  "version": "0.1.0",
+  "description": "模擬面試器",
+  "category": "S",
+  "number": 369,
+  "pain_point": "模擬訪談",
+  "commercial": "✅",
+  "language": "Python",
+  "dependencies": [
+    "anthropic",
+    "click",
+    "rich"
+  ],
+  "agent_compatible": true,
+  "mcp_ready": true,
+  "intent_triggers": [
+    "幫我模擬技術面試",
+    "我要練習 Python 面試題",
+    "進行一個 system design 模擬面試",
+    "幫我準備 Google 的行為面試問題",
+    "模擬 LeetCode 面試並給出反饋",
+    "我要面試 ML Engineer，幫我練習",
+    "生成面試問題並評估我的回答"
+  ],
+  "examples": [
+    {
+      "query": "進行 Python 後端工程師的技術面試模擬，10 道題",
+      "params": {
+        "role": "Python Backend Engineer",
+        "num_questions": 10,
+        "type": "technical"
+      }
+    },
+    {
+      "query": "模擬 system design 面試：設計一個 URL shortener",
+      "params": {
+        "type": "system_design",
+        "topic": "URL shortener"
+      }
+    },
+    {
+      "query": "練習 Amazon Leadership Principles 的行為面試問題",
+      "params": {
+        "type": "behavioral",
+        "company": "Amazon"
+      }
+    }
+  ],
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "company": {
+        "type": "string"
+      },
+      "num_questions": {
+        "type": "integer"
+      },
+      "role": {
+        "type": "string"
+      },
+      "topic": {
+        "type": "string"
+      },
+      "type": {
+        "type": "string"
+      }
+    },
+    "required": [
+      "type"
+    ]
+  },
+  "license": "MIT"
+}

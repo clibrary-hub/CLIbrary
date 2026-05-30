@@ -1,0 +1,80 @@
+{
+  "name": "log-ship",
+  "version": "0.1.0",
+  "description": "Log Shipping 設定器",
+  "category": "Q",
+  "number": 336,
+  "pain_point": "log shipping 設定",
+  "commercial": "✅",
+  "language": "Python",
+  "dependencies": [
+    "click",
+    "rich",
+    "yaml"
+  ],
+  "agent_compatible": true,
+  "mcp_ready": true,
+  "intent_triggers": [
+    "設定把日誌傳送到 Elasticsearch",
+    "配置 Fluentd 把 log 送到 S3",
+    "幫我建立 log shipping 的設定檔",
+    "我要把應用程式日誌集中到 ELK Stack",
+    "設定 Filebeat 轉發 Nginx 日誌",
+    "把多個來源的 log 整合到同一個地方",
+    "配置 log rotation 和自動傳送"
+  ],
+  "examples": [
+    {
+      "query": "產生 Filebeat 設定：監控 /var/log/nginx/ 並傳送到 Elasticsearch",
+      "params": {
+        "agent": "filebeat",
+        "source_path": "/var/log/nginx/",
+        "destination": "elasticsearch",
+        "destination_url": "http://es:9200"
+      }
+    },
+    {
+      "query": "配置 Fluentd 把 app.log 傳送到 S3 bucket my-logs",
+      "params": {
+        "agent": "fluentd",
+        "source_path": "app.log",
+        "destination": "s3",
+        "bucket": "my-logs"
+      }
+    },
+    {
+      "query": "驗證 fluentd.conf 設定是否正確",
+      "params": {
+        "config_file": "fluentd.conf",
+        "action": "validate"
+      }
+    }
+  ],
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "action": {
+        "type": "string"
+      },
+      "agent": {
+        "type": "string"
+      },
+      "bucket": {
+        "type": "string"
+      },
+      "config_file": {
+        "type": "string"
+      },
+      "destination": {
+        "type": "string"
+      },
+      "destination_url": {
+        "type": "string"
+      },
+      "source_path": {
+        "type": "string"
+      }
+    }
+  },
+  "license": "MIT"
+}

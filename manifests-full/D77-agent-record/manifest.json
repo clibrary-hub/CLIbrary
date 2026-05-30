@@ -1,0 +1,83 @@
+{
+  "name": "agent-record",
+  "version": "0.1.0",
+  "description": "操作錄製器",
+  "category": "D",
+  "number": 77,
+  "pain_point": "無法錄製 Agent 螢幕操作",
+  "commercial": "✅",
+  "language": "Python",
+  "dependencies": [
+    "click",
+    "rich",
+    "json"
+  ],
+  "agent_compatible": true,
+  "mcp_ready": true,
+  "intent_triggers": [
+    "建立操作日誌方便審計",
+    "把這次的操作流程全程錄下來",
+    "錄製 Agent 的所有操作步驟",
+    "把 AI 的操作過程記錄下來",
+    "生成操作記錄報告",
+    "記錄 Agent 每個步驟的詳細操作",
+    "錄製這次任務的全程動作",
+    "錄製 agent 的 tool call 和回傳",
+    "agent 執行記錄可供 replay",
+    "把 agent 每一步行為存下來",
+    "工具調用記錄與重放",
+    "agent session 完整錄製"
+  ],
+  "examples": [
+    {
+      "query": "開始錄製 Agent 的操作，儲存到 session.json",
+      "params": {
+        "output_file": "session.json",
+        "action": "run"
+      }
+    },
+    {
+      "query": "錄製此次部署操作的完整步驟",
+      "params": {
+        "session_name": "deployment_2024",
+        "action": "run",
+        "include_timestamps": true
+      }
+    },
+    {
+      "query": "停止錄製並匯出操作報告",
+      "params": {
+        "action": "run",
+        "stop_and_export": true,
+        "output_format": "json"
+      }
+    }
+  ],
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "action": {
+        "type": "string"
+      },
+      "include_timestamps": {
+        "type": "boolean"
+      },
+      "output_file": {
+        "type": "string"
+      },
+      "output_format": {
+        "type": "string"
+      },
+      "session_name": {
+        "type": "string"
+      },
+      "stop_and_export": {
+        "type": "boolean"
+      }
+    },
+    "required": [
+      "action"
+    ]
+  },
+  "license": "MIT"
+}

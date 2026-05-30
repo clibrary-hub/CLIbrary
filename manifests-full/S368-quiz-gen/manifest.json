@@ -1,0 +1,75 @@
+{
+  "name": "quiz-gen",
+  "version": "0.1.0",
+  "description": "題目產生器",
+  "category": "S",
+  "number": 368,
+  "pain_point": "自我測驗題目產生",
+  "commercial": "✅",
+  "language": "Python",
+  "dependencies": [
+    "anthropic",
+    "click",
+    "rich"
+  ],
+  "agent_compatible": true,
+  "mcp_ready": true,
+  "intent_triggers": [
+    "幫我從這份筆記產生複習題目",
+    "根據這篇文章出 10 道選擇題",
+    "我要自我測驗，幫我產生問答題",
+    "從教材生成包含答案的練習題",
+    "把學習重點轉成測驗形式",
+    "幫我用這份資料準備考試題目",
+    "生成填空題和是非題來複習"
+  ],
+  "examples": [
+    {
+      "query": "從 chapter3.md 產生 15 道選擇題含答案解析",
+      "params": {
+        "input_file": "chapter3.md",
+        "num_questions": 15,
+        "question_type": "multiple_choice"
+      }
+    },
+    {
+      "query": "從 notes/ 裡所有筆記產生綜合問答題",
+      "params": {
+        "input_dir": "notes/",
+        "question_type": "open_ended",
+        "difficulty": "medium"
+      }
+    },
+    {
+      "query": "基於 vocab_list.txt 產生填空題",
+      "params": {
+        "input_file": "vocab_list.txt",
+        "question_type": "fill_blank"
+      }
+    }
+  ],
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "difficulty": {
+        "type": "string"
+      },
+      "input_dir": {
+        "type": "string"
+      },
+      "input_file": {
+        "type": "string"
+      },
+      "num_questions": {
+        "type": "integer"
+      },
+      "question_type": {
+        "type": "string"
+      }
+    },
+    "required": [
+      "question_type"
+    ]
+  },
+  "license": "MIT"
+}

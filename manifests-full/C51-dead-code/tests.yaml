@@ -1,0 +1,33 @@
+tool: dead-code
+type: readonly
+generated: "2026-04-27"
+skip: false
+
+setup:
+  files:
+    - path: testdata/dead.py
+      content: "def used(): return 1\ndef unused(): return 2\nused()\n"
+    - path: testdata/all_used.py
+      content: "def used(): return 1\nused()\n"
+
+cases:
+  - id: help_works
+    description: --help exits 0
+    cmd: ["--help"]
+    expect:
+      exit_code: 0
+      stdout_contains: "Usage:"
+  - id: scan_produces_output
+    description: scan runs and returns output
+    cmd: ["scan", "testdata/dead.py", "--format", "json"]
+    expect:
+      exit_code: 0
+      is_valid_json: true
+      json_has_key: dead_code
+  - id: scan_clean_file
+    description: scanning clean file produces no findings
+    cmd: ["scan", "testdata/all_used.py", "--format", "json"]
+    expect:
+      exit_code: 0
+      is_valid_json: true
+      json_has_key: dead_code

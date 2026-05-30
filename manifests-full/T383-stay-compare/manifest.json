@@ -1,0 +1,81 @@
+{
+  "name": "stay-compare",
+  "version": "0.1.0",
+  "description": "住宿比對器",
+  "category": "T",
+  "number": 383,
+  "pain_point": "住宿價格比對",
+  "commercial": "⚠️",
+  "language": "Python",
+  "dependencies": [
+    "requests",
+    "click",
+    "rich"
+  ],
+  "agent_compatible": true,
+  "mcp_ready": true,
+  "intent_triggers": [
+    "比較各平台的東京住宿價格",
+    "幫我找最便宜的飯店住宿",
+    "Booking 和 Airbnb 哪個比較划算",
+    "查詢大阪特定日期的住宿選項",
+    "比較飯店和民宿的性價比",
+    "找評分高且價格合理的住宿",
+    "在我的預算內找到最好的住宿選項"
+  ],
+  "examples": [
+    {
+      "query": "比較東京新宿 2026-07-10 入住 3 晚的住宿選項",
+      "params": {
+        "location": "東京新宿",
+        "checkin": "2026-07-10",
+        "nights": 3
+      }
+    },
+    {
+      "query": "找京都 2026-08-01 預算 3000 元以下的住宿",
+      "params": {
+        "location": "京都",
+        "checkin": "2026-08-01",
+        "max_price": 3000
+      }
+    },
+    {
+      "query": "比較 Booking 和 Airbnb 在大阪道頓堀的住宿",
+      "params": {
+        "location": "大阪道頓堀",
+        "platforms": [
+          "booking",
+          "airbnb"
+        ]
+      }
+    }
+  ],
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "checkin": {
+        "type": "string"
+      },
+      "location": {
+        "type": "string"
+      },
+      "max_price": {
+        "type": "integer"
+      },
+      "nights": {
+        "type": "integer"
+      },
+      "platforms": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    },
+    "required": [
+      "location"
+    ]
+  },
+  "license": "MIT"
+}

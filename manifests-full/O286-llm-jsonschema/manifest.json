@@ -1,0 +1,84 @@
+{
+  "name": "llm-jsonschema",
+  "version": "0.1.0",
+  "description": "JSON 驗證器",
+  "category": "O",
+  "number": 286,
+  "pain_point": "LLM 回應 JSON 格式驗證",
+  "commercial": "✅",
+  "language": "Python",
+  "dependencies": [
+    "jsonschema",
+    "click",
+    "rich"
+  ],
+  "agent_compatible": true,
+  "mcp_ready": true,
+  "intent_triggers": [
+    "驗證 LLM 的 JSON 回應是否符合 schema",
+    "批次檢查 AI 輸出的 JSON 格式正確性",
+    "我的 LLM 輸出 JSON 但格式不穩定",
+    "強制讓 LLM 輸出符合 JSON Schema 的結果",
+    "API 輸出格式驗證工具",
+    "對 LLM 回應做 JSON 結構驗證並報告錯誤",
+    "確保生成式 AI 輸出的資料結構一致"
+  ],
+  "examples": [
+    {
+      "query": "用 response_schema.json 驗證 llm_outputs.jsonl 的格式",
+      "params": {
+        "action": "validate",
+        "input_file": "llm_outputs.jsonl",
+        "schema_file": "response_schema.json",
+        "output_file": "validation_report.json"
+      }
+    },
+    {
+      "query": "批次驗證 100 筆 API 回應是否符合指定 schema",
+      "params": {
+        "action": "validate",
+        "input_file": "api_responses.jsonl",
+        "schema_file": "api_schema.json",
+        "fail_fast": false
+      }
+    },
+    {
+      "query": "從 llm_responses.csv 的 output 欄位提取並驗證 JSON",
+      "params": {
+        "action": "validate",
+        "input_file": "llm_responses.csv",
+        "json_col": "output",
+        "schema_file": "expected_schema.json"
+      }
+    }
+  ],
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "action": {
+        "type": "string"
+      },
+      "fail_fast": {
+        "type": "boolean"
+      },
+      "input_file": {
+        "type": "string"
+      },
+      "json_col": {
+        "type": "string"
+      },
+      "output_file": {
+        "type": "string"
+      },
+      "schema_file": {
+        "type": "string"
+      }
+    },
+    "required": [
+      "action",
+      "input_file",
+      "schema_file"
+    ]
+  },
+  "license": "MIT"
+}

@@ -1,0 +1,22 @@
+tool: test-locate
+type: readonly
+generated: "2026-04-27"
+skip: false
+
+setup:
+  files:
+    - path: testdata/mymod.py
+      content: "def add(a, b): return a + b\n"
+
+cases:
+  - id: help_works
+    description: --help exits 0
+    cmd: ["--help"]
+    expect:
+      exit_code: 0
+      stdout_contains: "Usage:"
+  - id: scan_produces_output
+    description: find runs and returns output
+    cmd: ["find", "testdata/mymod.py"]
+    expect:
+      exit_code: 0

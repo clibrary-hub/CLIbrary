@@ -1,0 +1,75 @@
+{
+  "name": "run-analyze",
+  "version": "0.1.0",
+  "description": "跑步分析器",
+  "category": "K",
+  "number": 208,
+  "pain_point": "配速心率分析麻煩",
+  "commercial": "⚠️",
+  "language": "Python",
+  "dependencies": [
+    "pandas",
+    "matplotlib",
+    "click"
+  ],
+  "agent_compatible": true,
+  "mcp_ready": true,
+  "intent_triggers": [
+    "分析我上次跑步的配速和心率數據",
+    "跑步數據分析工具，看平均配速和心率區間",
+    "把 GPS 跑步紀錄轉成分析報告",
+    "我想知道我跑 10km 的各段配速",
+    "幫我分析跑步訓練效果",
+    "GPX 檔案配速心率分析",
+    "馬拉松訓練資料分析"
+  ],
+  "examples": [
+    {
+      "query": "掃描 morning_run.gpx 分析配速和心率",
+      "params": {
+        "action": "scan",
+        "input_file": "morning_run.gpx"
+      }
+    },
+    {
+      "query": "執行本週所有跑步記錄的趨勢分析",
+      "params": {
+        "action": "run",
+        "input_dir": "runs/2024-week15/"
+      }
+    },
+    {
+      "query": "分析 run_data.csv 中的心率區間分布",
+      "params": {
+        "action": "scan",
+        "input_file": "run_data.csv",
+        "metric": "heart_rate_zone"
+      }
+    }
+  ],
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "action": {
+        "type": "string",
+        "description": "操作類型，scan（掃描分析）或 run（執行處理）"
+      },
+      "input_file": {
+        "type": "string",
+        "description": "跑步記錄檔案路徑（GPX 或 CSV）"
+      },
+      "input_dir": {
+        "type": "string",
+        "description": "批次處理的跑步記錄目錄"
+      },
+      "metric": {
+        "type": "string",
+        "description": "分析指標，如 pace、heart_rate_zone"
+      }
+    },
+    "required": [
+      "action"
+    ]
+  },
+  "license": "MIT"
+}

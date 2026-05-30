@@ -1,0 +1,73 @@
+{
+  "name": "visa-doc",
+  "version": "0.1.0",
+  "description": "簽證文件清單",
+  "category": "T",
+  "number": 385,
+  "pain_point": "通關文件清單",
+  "commercial": "⚠️",
+  "language": "Python",
+  "dependencies": [
+    "click",
+    "rich",
+    "yaml"
+  ],
+  "agent_compatible": true,
+  "mcp_ready": true,
+  "intent_triggers": [
+    "去日本需要準備什麼簽證文件",
+    "幫我列出申請美國簽證需要的資料",
+    "這個國家的入境要求是什麼",
+    "準備簽證申請的完整文件清單",
+    "台灣人去歐洲免簽嗎，需要什麼",
+    "幫我確認護照和簽證是否符合入境要求",
+    "出發前的通關文件準備清單"
+  ],
+  "examples": [
+    {
+      "query": "列出台灣護照前往日本需要的入境文件",
+      "params": {
+        "passport_country": "TW",
+        "destination": "JP"
+      }
+    },
+    {
+      "query": "生成申請美國 B-2 旅遊簽證的完整文件清單",
+      "params": {
+        "passport_country": "TW",
+        "destination": "US",
+        "visa_type": "B-2"
+      }
+    },
+    {
+      "query": "確認護照效期 2027-01-15 是否滿足前往英國的要求",
+      "params": {
+        "passport_country": "TW",
+        "destination": "UK",
+        "passport_expiry": "2027-01-15"
+      }
+    }
+  ],
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "destination": {
+        "type": "string"
+      },
+      "passport_country": {
+        "type": "string"
+      },
+      "passport_expiry": {
+        "type": "string"
+      },
+      "visa_type": {
+        "type": "string"
+      }
+    },
+    "required": [
+      "destination",
+      "passport_country"
+    ]
+  },
+  "license": "MIT"
+}

@@ -1,0 +1,69 @@
+{
+  "name": "policy-brief",
+  "version": "0.1.0",
+  "description": "隱私政策摘要",
+  "category": "P",
+  "number": 312,
+  "pain_point": "隱私政策 NL 摘要",
+  "commercial": "✅",
+  "language": "Python",
+  "dependencies": [
+    "anthropic",
+    "click",
+    "rich"
+  ],
+  "agent_compatible": true,
+  "mcp_ready": true,
+  "intent_triggers": [
+    "幫我看一下這個 App 的隱私政策有沒有問題",
+    "太長了看不完，把這份隱私條款摘要給我",
+    "這個網站的隱私政策有沒有賣我資料",
+    "分析這份 Privacy Policy 的風險點",
+    "用白話文解釋這份服務條款",
+    "找出隱私政策中對使用者不利的條款",
+    "比較兩份隱私政策的差異"
+  ],
+  "examples": [
+    {
+      "query": "摘要 google_privacy_policy.txt 的主要條款",
+      "params": {
+        "input_file": "google_privacy_policy.txt"
+      }
+    },
+    {
+      "query": "分析 privacy.html 並找出數據共享和第三方條款",
+      "params": {
+        "input_file": "privacy.html",
+        "focus": "data_sharing"
+      }
+    },
+    {
+      "query": "把 terms.pdf 的隱私政策轉成 5 點摘要",
+      "params": {
+        "input_file": "terms.pdf",
+        "summary_points": 5
+      }
+    }
+  ],
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "input_file": {
+        "type": "string",
+        "description": "隱私政策文件路徑"
+      },
+      "focus": {
+        "type": "string",
+        "description": "重點分析面向，如 data_sharing"
+      },
+      "summary_points": {
+        "type": "integer",
+        "description": "摘要要點數量"
+      }
+    },
+    "required": [
+      "input_file"
+    ]
+  },
+  "license": "MIT"
+}

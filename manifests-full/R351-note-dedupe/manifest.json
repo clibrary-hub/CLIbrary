@@ -1,0 +1,71 @@
+{
+  "name": "note-dedupe",
+  "version": "0.1.0",
+  "description": "筆記去重器",
+  "category": "R",
+  "number": 351,
+  "pain_point": "重複內容偵測",
+  "commercial": "✅",
+  "language": "Python",
+  "dependencies": [
+    "sentence-transformers",
+    "click",
+    "rich"
+  ],
+  "agent_compatible": true,
+  "mcp_ready": true,
+  "intent_triggers": [
+    "找出我筆記庫裡重複或相似的筆記",
+    "有些筆記內容差不多，幫我找出來",
+    "清理筆記庫的重複內容",
+    "哪幾篇筆記說的是同樣的事情",
+    "用語意相似度找出重複筆記",
+    "合併相似的筆記並去除重複",
+    "掃描整個 vault 找出重複主題"
+  ],
+  "examples": [
+    {
+      "query": "掃描 notes/ 找出相似度超過 85% 的重複筆記",
+      "params": {
+        "notes_dir": "notes/",
+        "threshold": 0.85
+      }
+    },
+    {
+      "query": "找出 vault/ 裡所有幾乎一樣的筆記（相似度 > 0.95）",
+      "params": {
+        "notes_dir": "vault/",
+        "threshold": 0.95,
+        "output_file": "duplicates.json"
+      }
+    },
+    {
+      "query": "比對 note1.md 和 note2.md 的相似度",
+      "params": {
+        "file1": "note1.md",
+        "file2": "note2.md"
+      }
+    }
+  ],
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "file1": {
+        "type": "string"
+      },
+      "file2": {
+        "type": "string"
+      },
+      "notes_dir": {
+        "type": "string"
+      },
+      "output_file": {
+        "type": "string"
+      },
+      "threshold": {
+        "type": "number"
+      }
+    }
+  },
+  "license": "MIT"
+}

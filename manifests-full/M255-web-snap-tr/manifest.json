@@ -1,0 +1,82 @@
+{
+  "name": "web-snap-tr",
+  "version": "0.1.0",
+  "description": "網站翻譯快照",
+  "category": "M",
+  "number": 255,
+  "pain_point": "網站翻譯快照",
+  "commercial": "⚠️",
+  "language": "Python",
+  "dependencies": [
+    "playwright",
+    "anthropic",
+    "click"
+  ],
+  "agent_compatible": true,
+  "mcp_ready": true,
+  "intent_triggers": [
+    "截取網站快照並翻譯頁面文字",
+    "網站翻譯工具，截圖並翻成中文",
+    "抓取外文網站並自動翻譯",
+    "把英文網站截圖並翻譯說明",
+    "生成網站翻譯版本快照",
+    "headless 截圖並翻譯頁面內容",
+    "日文網站翻成中文並存截圖"
+  ],
+  "examples": [
+    {
+      "query": "截取 https://jp.example.com 並翻譯成繁體中文",
+      "params": {
+        "action": "run",
+        "url": "https://jp.example.com",
+        "target_lang": "zh-TW",
+        "screenshot": true
+      }
+    },
+    {
+      "query": "把 https://en.docs.example.com 的文字翻成中文並存快照",
+      "params": {
+        "action": "run",
+        "url": "https://en.docs.example.com",
+        "target_lang": "zh-TW",
+        "output_dir": "snapshots/"
+      }
+    },
+    {
+      "query": "批次截圖並翻譯 sites.txt 中所有英文網址",
+      "params": {
+        "action": "run",
+        "urls_file": "sites.txt",
+        "target_lang": "zh-TW"
+      }
+    }
+  ],
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "action": {
+        "type": "string"
+      },
+      "output_dir": {
+        "type": "string"
+      },
+      "screenshot": {
+        "type": "boolean"
+      },
+      "target_lang": {
+        "type": "string"
+      },
+      "url": {
+        "type": "string"
+      },
+      "urls_file": {
+        "type": "string"
+      }
+    },
+    "required": [
+      "action",
+      "target_lang"
+    ]
+  },
+  "license": "MIT"
+}

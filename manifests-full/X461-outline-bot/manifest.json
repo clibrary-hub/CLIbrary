@@ -1,0 +1,78 @@
+{
+  "name": "outline-bot",
+  "version": "0.1.0",
+  "description": "大綱產生器",
+  "category": "X",
+  "number": 461,
+  "pain_point": "寫作大綱產生",
+  "commercial": "✅",
+  "language": "Python",
+  "dependencies": [
+    "anthropic",
+    "click",
+    "rich"
+  ],
+  "agent_compatible": true,
+  "mcp_ready": true,
+  "intent_triggers": [
+    "幫我生成這篇文章的大綱",
+    "我要寫一篇關於 AI 的文章，給我一個結構",
+    "生成部落格文章的寫作大綱",
+    "這個主題要怎麼規劃文章架構？",
+    "幫我整理這篇報告的章節大綱",
+    "寫作前先給我一個完整的大綱框架",
+    "根據關鍵字生成文章大綱和子標題"
+  ],
+  "examples": [
+    {
+      "query": "幫我生成一篇「Python 初學者入門」的部落格大綱，5個主要章節",
+      "params": {
+        "topic": "Python 初學者入門",
+        "sections": 5,
+        "content_type": "blog"
+      }
+    },
+    {
+      "query": "針對「氣候變遷對台灣農業的影響」生成學術報告大綱",
+      "params": {
+        "topic": "氣候變遷對台灣農業的影響",
+        "content_type": "academic",
+        "depth": 3
+      }
+    },
+    {
+      "query": "為 YouTube 影片「如何省電」生成腳本大綱，含開場、中段、結尾",
+      "params": {
+        "topic": "如何省電",
+        "content_type": "video_script",
+        "sections": [
+          "開場",
+          "中段",
+          "結尾"
+        ]
+      }
+    }
+  ],
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "content_type": {
+        "type": "string"
+      },
+      "depth": {
+        "type": "integer"
+      },
+      "sections": {
+        "type": "integer"
+      },
+      "topic": {
+        "type": "string"
+      }
+    },
+    "required": [
+      "content_type",
+      "topic"
+    ]
+  },
+  "license": "MIT"
+}

@@ -1,0 +1,82 @@
+{
+  "name": "pipeline-tpl",
+  "version": "0.1.0",
+  "description": "CI 樣板器",
+  "category": "Q",
+  "number": 340,
+  "pain_point": "Pipeline 模板腳手架",
+  "commercial": "✅",
+  "language": "Python",
+  "dependencies": [
+    "jinja2",
+    "click",
+    "rich"
+  ],
+  "agent_compatible": true,
+  "mcp_ready": true,
+  "intent_triggers": [
+    "幫我產生一個 GitHub Actions workflow",
+    "快速生成 GitLab CI 的 pipeline 設定",
+    "產生 Python 專案的 CI/CD 腳手架",
+    "我需要一個包含測試和部署的 pipeline 模板",
+    "生成 Docker build 和 push 的 CI 設定",
+    "建立 monorepo 的 CI pipeline 模板",
+    "幫我配置自動化的 release pipeline"
+  ],
+  "examples": [
+    {
+      "query": "產生 Python Flask 專案的 GitHub Actions CI 模板",
+      "params": {
+        "platform": "github-actions",
+        "language": "python",
+        "framework": "flask"
+      }
+    },
+    {
+      "query": "生成含有 build、test、deploy 三個 stage 的 GitLab CI 設定",
+      "params": {
+        "platform": "gitlab-ci",
+        "stages": [
+          "build",
+          "test",
+          "deploy"
+        ]
+      }
+    },
+    {
+      "query": "建立 Node.js 專案的 Docker build 和 push pipeline",
+      "params": {
+        "platform": "github-actions",
+        "language": "nodejs",
+        "include_docker": true
+      }
+    }
+  ],
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "framework": {
+        "type": "string"
+      },
+      "include_docker": {
+        "type": "boolean"
+      },
+      "language": {
+        "type": "string"
+      },
+      "platform": {
+        "type": "string"
+      },
+      "stages": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    },
+    "required": [
+      "platform"
+    ]
+  },
+  "license": "MIT"
+}

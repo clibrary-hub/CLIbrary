@@ -1,0 +1,73 @@
+{
+  "name": "code-clip",
+  "version": "0.1.0",
+  "description": "剪貼簿程式碼格式化",
+  "category": "A",
+  "number": 9,
+  "pain_point": "複製貼上程式碼格式跑掉",
+  "commercial": "✅",
+  "language": "Python",
+  "dependencies": [
+    "pyperclip",
+    "rich",
+    "black"
+  ],
+  "agent_compatible": true,
+  "mcp_ready": true,
+  "intent_triggers": [
+    "格式化剪貼簿裡的程式碼",
+    "貼上的程式碼縮排跑掉，幫我修",
+    "把剪貼簿的 code 整理好再輸出",
+    "複製的程式碼格式很亂，幫我清一下",
+    "把 Python code 用 black 格式化後放回剪貼簿",
+    "清理一下這段程式碼的格式",
+    "把程式碼匯出成乾淨格式的檔案"
+  ],
+  "examples": [
+    {
+      "query": "格式化剪貼簿中的 Python 程式碼",
+      "params": {
+        "action": "export",
+        "language": "python"
+      }
+    },
+    {
+      "query": "把剪貼簿的 code 用 black 格式化並儲存到 output.py",
+      "params": {
+        "action": "export",
+        "output_file": "output.py",
+        "language": "python"
+      }
+    },
+    {
+      "query": "清理 JavaScript 程式碼的縮排並複製回剪貼簿",
+      "params": {
+        "action": "export",
+        "language": "javascript",
+        "copy_back": true
+      }
+    }
+  ],
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "action": {
+        "type": "string"
+      },
+      "copy_back": {
+        "type": "boolean"
+      },
+      "language": {
+        "type": "string"
+      },
+      "output_file": {
+        "type": "string"
+      }
+    },
+    "required": [
+      "action",
+      "language"
+    ]
+  },
+  "license": "MIT"
+}

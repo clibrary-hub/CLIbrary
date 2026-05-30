@@ -1,0 +1,73 @@
+{
+  "name": "water-nudge",
+  "version": "0.1.0",
+  "description": "喝水提醒器",
+  "category": "K",
+  "number": 203,
+  "pain_point": "飲水量提醒缺失",
+  "commercial": "✅",
+  "language": "Python",
+  "dependencies": [
+    "plyer",
+    "click",
+    "schedule"
+  ],
+  "agent_compatible": true,
+  "mcp_ready": true,
+  "intent_triggers": [
+    "提醒我每隔一段時間要喝水",
+    "我老是忘記補充水分，能設定喝水提醒嗎",
+    "每小時提醒我喝一杯水",
+    "幫我設定飲水提醒通知",
+    "喝水不夠怎麼辦，需要一個提醒工具",
+    "定時推送喝水通知",
+    "我想追蹤今天的飲水量並定時提醒"
+  ],
+  "examples": [
+    {
+      "query": "每 60 分鐘提醒我喝 250ml 水",
+      "params": {
+        "action": "run",
+        "interval_minutes": 60,
+        "amount_ml": 250
+      }
+    },
+    {
+      "query": "開始喝水提醒，每 45 分鐘一次",
+      "params": {
+        "action": "run",
+        "interval_minutes": 45
+      }
+    },
+    {
+      "query": "啟動飲水追蹤，目標每天 2000ml",
+      "params": {
+        "action": "run",
+        "daily_goal_ml": 2000,
+        "interval_minutes": 60
+      }
+    }
+  ],
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "action": {
+        "type": "string"
+      },
+      "amount_ml": {
+        "type": "integer"
+      },
+      "daily_goal_ml": {
+        "type": "integer"
+      },
+      "interval_minutes": {
+        "type": "integer"
+      }
+    },
+    "required": [
+      "action",
+      "interval_minutes"
+    ]
+  },
+  "license": "MIT"
+}

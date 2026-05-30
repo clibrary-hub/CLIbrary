@@ -1,0 +1,87 @@
+{
+  "name": "pi-test",
+  "version": "0.1.0",
+  "description": "提示注入測試器",
+  "category": "O",
+  "number": 295,
+  "pain_point": "提示注入測試",
+  "commercial": "✅",
+  "language": "Python",
+  "dependencies": [
+    "anthropic",
+    "click",
+    "rich"
+  ],
+  "agent_compatible": true,
+  "mcp_ready": true,
+  "intent_triggers": [
+    "測試我的 LLM 應用是否能抵抗提示注入攻擊",
+    "對 AI 系統做 prompt injection 安全測試",
+    "自動化測試 LLM 的越獄防禦能力",
+    "我想確認 system prompt 有保護好",
+    "LLM 安全紅隊測試工具",
+    "批次測試各種提示注入攻擊向量",
+    "評估 AI 應用的安全強度"
+  ],
+  "examples": [
+    {
+      "query": "對 chatbot system prompt 做提示注入測試",
+      "params": {
+        "action": "test",
+        "system_prompt_file": "system_prompt.txt",
+        "output_file": "pi_test_report.json"
+      }
+    },
+    {
+      "query": "用 injection_vectors.jsonl 批次測試 API endpoint",
+      "params": {
+        "action": "test",
+        "attack_file": "injection_vectors.jsonl",
+        "target_url": "https://api.example.com/chat",
+        "output_file": "security_report.json"
+      }
+    },
+    {
+      "query": "對 claude-3-haiku 跑完整的提示注入攻擊套件",
+      "params": {
+        "action": "full_scan",
+        "model": "claude-3-haiku-20240307",
+        "system_prompt": "你是一個客服助手",
+        "severity_filter": "high"
+      }
+    }
+  ],
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "action": {
+        "type": "string"
+      },
+      "attack_file": {
+        "type": "string"
+      },
+      "model": {
+        "type": "string"
+      },
+      "output_file": {
+        "type": "string"
+      },
+      "severity_filter": {
+        "type": "string"
+      },
+      "system_prompt": {
+        "type": "string"
+      },
+      "system_prompt_file": {
+        "type": "string"
+      },
+      "target_url": {
+        "type": "string"
+      }
+    },
+    "required": [
+      "action"
+    ]
+  },
+  "license": "MIT"
+}

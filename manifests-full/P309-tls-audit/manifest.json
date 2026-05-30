@@ -1,0 +1,66 @@
+{
+  "name": "tls-audit",
+  "version": "0.1.0",
+  "description": "TLS 稽核器",
+  "category": "P",
+  "number": 309,
+  "pain_point": "TLS 設定檢測",
+  "commercial": "✅",
+  "language": "Python",
+  "dependencies": [
+    "ssl",
+    "click",
+    "rich"
+  ],
+  "agent_compatible": true,
+  "mcp_ready": true,
+  "intent_triggers": [
+    "檢查這個網站的 TLS 設定安不安全",
+    "我的伺服器有沒有支援 TLS 1.3",
+    "幫我稽核 HTTPS 憑證和加密套件",
+    "這個域名的 SSL/TLS 設定有沒有問題",
+    "掃描弱加密協議和過時的 cipher suite",
+    "檢查憑證有效期和信任鏈",
+    "批次檢查所有服務的 TLS 設定"
+  ],
+  "examples": [
+    {
+      "query": "稽核 api.example.com 的 TLS 設定",
+      "params": {
+        "host": "api.example.com",
+        "port": 443
+      }
+    },
+    {
+      "query": "檢查 example.com 是否支援 TLS 1.3 並列出加密套件",
+      "params": {
+        "host": "example.com",
+        "check_ciphers": true
+      }
+    },
+    {
+      "query": "批次掃描 hosts.txt 裡所有主機的 TLS 配置",
+      "params": {
+        "hosts_file": "hosts.txt"
+      }
+    }
+  ],
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "check_ciphers": {
+        "type": "boolean"
+      },
+      "host": {
+        "type": "string"
+      },
+      "hosts_file": {
+        "type": "string"
+      },
+      "port": {
+        "type": "integer"
+      }
+    }
+  },
+  "license": "MIT"
+}

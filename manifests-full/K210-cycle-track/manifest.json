@@ -1,0 +1,78 @@
+{
+  "name": "cycle-track",
+  "version": "0.1.0",
+  "description": "週期追蹤器",
+  "category": "K",
+  "number": 210,
+  "pain_point": "經期/週期追蹤",
+  "commercial": "✅",
+  "language": "Python",
+  "dependencies": [
+    "sqlite3",
+    "rich",
+    "click"
+  ],
+  "agent_compatible": true,
+  "mcp_ready": true,
+  "intent_triggers": [
+    "幫我追蹤月經週期",
+    "記錄生理期並預測下次時間",
+    "我想管理經期數據",
+    "週期追蹤工具，計算排卵期",
+    "比對上個月和這個月的週期差異",
+    "健康週期記錄與分析",
+    "預測下次生理期開始日"
+  ],
+  "examples": [
+    {
+      "query": "比對最近兩個月的週期差異",
+      "params": {
+        "action": "diff",
+        "cycle_a": "2024-03",
+        "cycle_b": "2024-04"
+      }
+    },
+    {
+      "query": "從 cycle_log.csv 分析過去 6 個月的週期規律",
+      "params": {
+        "action": "diff",
+        "input_file": "cycle_log.csv",
+        "months": 6
+      }
+    },
+    {
+      "query": "記錄本次月經開始日 2024-04-15",
+      "params": {
+        "action": "diff",
+        "start_date": "2024-04-15"
+      }
+    }
+  ],
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "action": {
+        "type": "string"
+      },
+      "cycle_a": {
+        "type": "string"
+      },
+      "cycle_b": {
+        "type": "string"
+      },
+      "input_file": {
+        "type": "string"
+      },
+      "months": {
+        "type": "integer"
+      },
+      "start_date": {
+        "type": "string"
+      }
+    },
+    "required": [
+      "action"
+    ]
+  },
+  "license": "MIT"
+}

@@ -1,0 +1,82 @@
+{
+  "name": "agent-iface",
+  "version": "0.1.0",
+  "description": "Agent 介面適配器",
+  "category": "F",
+  "number": 102,
+  "pain_point": "Agent 介面規格不一致",
+  "commercial": "✅",
+  "language": "Python",
+  "dependencies": [
+    "click",
+    "rich",
+    "pydantic"
+  ],
+  "agent_compatible": true,
+  "mcp_ready": true,
+  "intent_triggers": [
+    "不同 Agent 的 API 格式不一樣怎麼統一？",
+    "我想把舊 Agent 介面適配到新系統",
+    "幫我做一個 Agent 介面轉換器",
+    "各個 Agent 的輸入輸出規格都不同很麻煩",
+    "如何讓不同廠商的 Agent 使用同一套介面？",
+    "我需要一個標準化 Agent 通訊協議的工具",
+    "Agent 介面規格混亂導致整合困難"
+  ],
+  "examples": [
+    {
+      "query": "把 OpenAI Agent 介面適配成公司內部統一格式",
+      "params": {
+        "action": "run",
+        "source_format": "openai",
+        "target_format": "internal_v2"
+      }
+    },
+    {
+      "query": "驗證 agent-config.json 是否符合標準介面規格",
+      "params": {
+        "action": "run",
+        "config_file": "agent-config.json",
+        "validate": "true"
+      }
+    },
+    {
+      "query": "將三個不同 Agent 的輸出格式統一成 JSON Schema v4",
+      "params": {
+        "action": "run",
+        "agents": "agent1,agent2,agent3",
+        "output_schema": "jsonschema_v4"
+      }
+    }
+  ],
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "action": {
+        "type": "string"
+      },
+      "agents": {
+        "type": "string"
+      },
+      "config_file": {
+        "type": "string"
+      },
+      "output_schema": {
+        "type": "string"
+      },
+      "source_format": {
+        "type": "string"
+      },
+      "target_format": {
+        "type": "string"
+      },
+      "validate": {
+        "type": "string"
+      }
+    },
+    "required": [
+      "action"
+    ]
+  },
+  "license": "MIT"
+}

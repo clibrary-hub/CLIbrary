@@ -1,0 +1,76 @@
+{
+  "name": "type-fill",
+  "version": "0.1.0",
+  "description": "型別補全器",
+  "category": "C",
+  "number": 48,
+  "pain_point": "型別定義不完整",
+  "commercial": "✅",
+  "language": "Python",
+  "dependencies": [
+    "ast",
+    "mypy",
+    "click",
+    "rich"
+  ],
+  "agent_compatible": true,
+  "mcp_ready": true,
+  "intent_triggers": [
+    "補全程式碼中缺少的型別注解",
+    "幫我加上 Python type hints",
+    "AI 寫的 code 沒有型別定義，幫我補",
+    "掃描缺少型別標注的函數",
+    "自動補充 type annotation",
+    "把這個模組的所有型別定義補完整",
+    "用 mypy 找出型別缺口並填補"
+  ],
+  "examples": [
+    {
+      "query": "為 utils.py 的所有函數補充型別注解",
+      "params": {
+        "target_file": "utils.py",
+        "action": "run"
+      }
+    },
+    {
+      "query": "掃描 src/ 目錄找出缺少 type hints 的函數",
+      "params": {
+        "target_path": "src/",
+        "action": "run",
+        "auto_fill": true
+      }
+    },
+    {
+      "query": "自動補完型別並輸出到 typed_module.py",
+      "params": {
+        "target_file": "module.py",
+        "output_file": "typed_module.py",
+        "action": "run"
+      }
+    }
+  ],
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "action": {
+        "type": "string"
+      },
+      "auto_fill": {
+        "type": "boolean"
+      },
+      "output_file": {
+        "type": "string"
+      },
+      "target_file": {
+        "type": "string"
+      },
+      "target_path": {
+        "type": "string"
+      }
+    },
+    "required": [
+      "action"
+    ]
+  },
+  "license": "MIT"
+}

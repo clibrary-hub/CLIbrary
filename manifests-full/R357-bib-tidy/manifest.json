@@ -1,0 +1,80 @@
+{
+  "name": "bib-tidy",
+  "version": "0.1.0",
+  "description": "BibTeX 整理器",
+  "category": "R",
+  "number": 357,
+  "pain_point": "引用文獻 BibTeX 整理",
+  "commercial": "✅",
+  "language": "Python",
+  "dependencies": [
+    "bibtexparser",
+    "click",
+    "rich"
+  ],
+  "agent_compatible": true,
+  "mcp_ready": true,
+  "intent_triggers": [
+    "整理我的 references.bib 文件",
+    "清理 BibTeX 中重複的引用",
+    "幫我把 .bib 格式化並排序",
+    "驗證 BibTeX 條目是否格式正確",
+    "找出 .bib 文件中缺少必填欄位的條目",
+    "合併多個 .bib 文件並去重",
+    "把 BibTeX 轉換成 APA 或 MLA 格式"
+  ],
+  "examples": [
+    {
+      "query": "整理 references.bib 並按作者姓氏排序",
+      "params": {
+        "input_file": "references.bib",
+        "sort_by": "author"
+      }
+    },
+    {
+      "query": "合併 paper1.bib 和 paper2.bib 並去除重複條目",
+      "params": {
+        "input_files": [
+          "paper1.bib",
+          "paper2.bib"
+        ],
+        "deduplicate": true,
+        "output_file": "merged.bib"
+      }
+    },
+    {
+      "query": "驗證 thesis.bib 並列出所有缺少必填欄位的條目",
+      "params": {
+        "input_file": "thesis.bib",
+        "action": "validate"
+      }
+    }
+  ],
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "action": {
+        "type": "string"
+      },
+      "deduplicate": {
+        "type": "boolean"
+      },
+      "input_file": {
+        "type": "string"
+      },
+      "input_files": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      },
+      "output_file": {
+        "type": "string"
+      },
+      "sort_by": {
+        "type": "string"
+      }
+    }
+  },
+  "license": "MIT"
+}

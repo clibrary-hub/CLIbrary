@@ -1,0 +1,74 @@
+{
+  "name": "trip-pack",
+  "version": "0.1.0",
+  "description": "行程整合器",
+  "category": "T",
+  "number": 381,
+  "pain_point": "旅遊行程整合",
+  "commercial": "⚠️",
+  "language": "Python",
+  "dependencies": [
+    "anthropic",
+    "click",
+    "rich"
+  ],
+  "agent_compatible": true,
+  "mcp_ready": true,
+  "intent_triggers": [
+    "幫我整合旅遊行程的所有資訊",
+    "把機票、飯店、景點排成一份行程表",
+    "把我的旅遊行程整理成清晰的格式",
+    "從多個訂單郵件整合成行程表",
+    "幫我把行程匯出成日曆格式",
+    "整合旅遊計畫的各種預訂資訊",
+    "把散亂的旅遊資訊整理成有條理的行程"
+  ],
+  "examples": [
+    {
+      "query": "整合 emails/ 裡的訂房和機票確認信，生成行程表",
+      "params": {
+        "input_dir": "emails/",
+        "output_file": "itinerary.md"
+      }
+    },
+    {
+      "query": "把東京5天行程整合成按天排列的行程表",
+      "params": {
+        "destination": "東京",
+        "days": 5,
+        "output_format": "daily"
+      }
+    },
+    {
+      "query": "把 trip_info.txt 的行程資訊轉成 ICS 日曆格式",
+      "params": {
+        "input_file": "trip_info.txt",
+        "output_format": "ics"
+      }
+    }
+  ],
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "days": {
+        "type": "integer"
+      },
+      "destination": {
+        "type": "string"
+      },
+      "input_dir": {
+        "type": "string"
+      },
+      "input_file": {
+        "type": "string"
+      },
+      "output_file": {
+        "type": "string"
+      },
+      "output_format": {
+        "type": "string"
+      }
+    }
+  },
+  "license": "MIT"
+}

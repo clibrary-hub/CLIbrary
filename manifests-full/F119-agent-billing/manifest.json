@@ -1,0 +1,88 @@
+{
+  "name": "agent-billing",
+  "version": "0.1.0",
+  "description": "多 Agent 計費分攤",
+  "category": "F",
+  "number": 119,
+  "pain_point": "Agent 計費分攤困難",
+  "commercial": "⚠️",
+  "language": "Python",
+  "dependencies": [
+    "sqlite3",
+    "click",
+    "rich"
+  ],
+  "agent_compatible": true,
+  "mcp_ready": true,
+  "intent_triggers": [
+    "多個 Agent 共用 API 費用要怎麼分攤？",
+    "想追蹤每個 Agent 消耗了多少 token 和費用",
+    "Agent 計費報告要怎麼產生？",
+    "不同部門用不同 Agent，費用要怎麼分開算",
+    "幫我統計這個月每個 Agent 花了多少錢",
+    "LLM API 費用分攤到各個 Agent 的工具",
+    "我需要 Agent 用量和費用的明細報表"
+  ],
+  "examples": [
+    {
+      "query": "統計本月 agent-research、agent-writer 的 API 費用並分攤給各部門",
+      "params": {
+        "action": "run",
+        "agents": "agent-research,agent-writer",
+        "period": "2024-01",
+        "output": "billing-jan.csv"
+      }
+    },
+    {
+      "query": "查看 customer-support-agent 過去 7 天的 token 消耗量",
+      "params": {
+        "action": "run",
+        "agent_name": "customer-support-agent",
+        "days": "7",
+        "mode": "usage"
+      }
+    },
+    {
+      "query": "設定 agent-expensive 的每日費用上限為 10 美元",
+      "params": {
+        "action": "run",
+        "agent_name": "agent-expensive",
+        "daily_limit_usd": "10",
+        "mode": "set_limit"
+      }
+    }
+  ],
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "action": {
+        "type": "string"
+      },
+      "agent_name": {
+        "type": "string"
+      },
+      "agents": {
+        "type": "string"
+      },
+      "daily_limit_usd": {
+        "type": "string"
+      },
+      "days": {
+        "type": "string"
+      },
+      "mode": {
+        "type": "string"
+      },
+      "output": {
+        "type": "string"
+      },
+      "period": {
+        "type": "string"
+      }
+    },
+    "required": [
+      "action"
+    ]
+  },
+  "license": "MIT"
+}

@@ -1,0 +1,77 @@
+{
+  "name": "llm-cache",
+  "version": "0.1.0",
+  "description": "LLM 快取",
+  "category": "O",
+  "number": 293,
+  "pain_point": "LLM caching 層",
+  "commercial": "⚠️",
+  "language": "Python",
+  "dependencies": [
+    "redis",
+    "click",
+    "rich"
+  ],
+  "agent_compatible": true,
+  "mcp_ready": true,
+  "intent_triggers": [
+    "為 LLM API 呼叫加上快取層",
+    "重複的 prompt 不要重複呼叫 API",
+    "建立 LLM 語意快取減少 API 費用",
+    "相同或相似的問題直接回傳快取結果",
+    "LLM caching 工具，節省 token 費用",
+    "用 Redis 做 LLM 回應快取",
+    "語意相似的查詢命中快取自動回傳"
+  ],
+  "examples": [
+    {
+      "query": "啟動 LLM 快取服務，連接 Redis",
+      "params": {
+        "action": "start",
+        "redis_url": "redis://localhost:6379",
+        "ttl": 3600
+      }
+    },
+    {
+      "query": "清除 LLM 快取並顯示快取命中率統計",
+      "params": {
+        "action": "stats",
+        "redis_url": "redis://localhost:6379"
+      }
+    },
+    {
+      "query": "為 prompts.jsonl 批次預熱快取",
+      "params": {
+        "action": "warm",
+        "input_file": "prompts.jsonl",
+        "model": "claude-3-haiku-20240307",
+        "redis_url": "redis://localhost:6379"
+      }
+    }
+  ],
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "action": {
+        "type": "string"
+      },
+      "input_file": {
+        "type": "string"
+      },
+      "model": {
+        "type": "string"
+      },
+      "redis_url": {
+        "type": "string"
+      },
+      "ttl": {
+        "type": "integer"
+      }
+    },
+    "required": [
+      "action",
+      "redis_url"
+    ]
+  },
+  "license": "MIT"
+}

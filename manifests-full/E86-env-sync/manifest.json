@@ -1,0 +1,82 @@
+{
+  "name": "env-sync",
+  "version": "0.1.0",
+  "description": "環境變數同步器",
+  "category": "E",
+  "number": 86,
+  "pain_point": "環境變數管理混亂",
+  "commercial": "✅",
+  "language": "Python",
+  "dependencies": [
+    "python-dotenv",
+    "click",
+    "rich"
+  ],
+  "agent_compatible": true,
+  "mcp_ready": true,
+  "intent_triggers": [
+    "同步 .env 到不同環境",
+    "把 dev 的環境變數同步到 staging",
+    "匯出目前的環境變數設定",
+    "比較 .env.dev 和 .env.prod 的差異",
+    "幫我管理多個環境的 .env 檔",
+    "把環境變數加密後備份",
+    "把 .env 同步到所有伺服器"
+  ],
+  "examples": [
+    {
+      "query": "匯出目前環境變數到 .env.backup",
+      "params": {
+        "action": "export",
+        "output_file": ".env.backup"
+      }
+    },
+    {
+      "query": "同步 .env.dev 到 staging 環境",
+      "params": {
+        "source_env": ".env.dev",
+        "target_env": ".env.staging",
+        "action": "export"
+      }
+    },
+    {
+      "query": "比較 .env.local 和 .env.example 找出缺少的變數",
+      "params": {
+        "env_a": ".env.local",
+        "env_b": ".env.example",
+        "action": "export",
+        "check_missing": true
+      }
+    }
+  ],
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "action": {
+        "type": "string"
+      },
+      "check_missing": {
+        "type": "boolean"
+      },
+      "env_a": {
+        "type": "string"
+      },
+      "env_b": {
+        "type": "string"
+      },
+      "output_file": {
+        "type": "string"
+      },
+      "source_env": {
+        "type": "string"
+      },
+      "target_env": {
+        "type": "string"
+      }
+    },
+    "required": [
+      "action"
+    ]
+  },
+  "license": "MIT"
+}

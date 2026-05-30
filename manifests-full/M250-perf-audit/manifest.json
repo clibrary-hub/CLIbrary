@@ -1,0 +1,80 @@
+{
+  "name": "perf-audit",
+  "version": "0.1.0",
+  "description": "效能稽核器",
+  "category": "M",
+  "number": 250,
+  "pain_point": "網站效能評估",
+  "commercial": "✅",
+  "language": "Python",
+  "dependencies": [
+    "requests",
+    "click",
+    "rich"
+  ],
+  "agent_compatible": true,
+  "mcp_ready": true,
+  "intent_triggers": [
+    "測試網站的載入速度和效能",
+    "網站效能評估工具，找出慢的地方",
+    "掃描網站回應時間",
+    "我的網站速度很慢，幫我稽核效能",
+    "檢查 TTFB 和頁面載入時間",
+    "網站性能基準測試",
+    "效能審查，找出效能瓶頸"
+  ],
+  "examples": [
+    {
+      "query": "掃描 https://mysite.com 的首頁效能指標",
+      "params": {
+        "action": "scan",
+        "url": "https://mysite.com",
+        "metrics": "ttfb,load_time,size"
+      }
+    },
+    {
+      "query": "批次測試 urls.txt 中所有頁面的回應時間",
+      "params": {
+        "action": "scan",
+        "urls_file": "urls.txt",
+        "runs": 3
+      }
+    },
+    {
+      "query": "對 https://api.example.com/data 做 50 次請求的壓力測試",
+      "params": {
+        "action": "scan",
+        "url": "https://api.example.com/data",
+        "runs": 50,
+        "concurrent": 5
+      }
+    }
+  ],
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "action": {
+        "type": "string"
+      },
+      "concurrent": {
+        "type": "integer"
+      },
+      "metrics": {
+        "type": "string"
+      },
+      "runs": {
+        "type": "integer"
+      },
+      "url": {
+        "type": "string"
+      },
+      "urls_file": {
+        "type": "string"
+      }
+    },
+    "required": [
+      "action"
+    ]
+  },
+  "license": "MIT"
+}

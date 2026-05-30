@@ -1,0 +1,85 @@
+{
+  "name": "ctx-bridge",
+  "version": "0.1.0",
+  "description": "跨 Agent 上下文橋接",
+  "category": "B",
+  "number": 26,
+  "pain_point": "不同 Agent 無法共享上下文",
+  "commercial": "✅",
+  "language": "Python",
+  "dependencies": [
+    "redis",
+    "click",
+    "rich"
+  ],
+  "agent_compatible": true,
+  "mcp_ready": true,
+  "intent_triggers": [
+    "把這個上下文傳給另一個 Agent",
+    "讓兩個 AI 能共享同一份背景資訊",
+    "橋接 Agent A 和 Agent B 的對話脈絡",
+    "把當前上下文同步到其他工作流程",
+    "跨 Agent 傳遞任務背景",
+    "讓多個 AI 看到相同的對話記憶",
+    "在不同 Agent 之間共享設定和狀態"
+  ],
+  "examples": [
+    {
+      "query": "把目前的上下文橋接到 agent_b",
+      "params": {
+        "source_agent": "agent_a",
+        "target_agent": "agent_b",
+        "action": "run"
+      }
+    },
+    {
+      "query": "將任務背景同步到所有子 Agent",
+      "params": {
+        "context_key": "task_background",
+        "target_agents": "all",
+        "action": "run"
+      }
+    },
+    {
+      "query": "橋接 3 個 Agent 共享同一份上下文",
+      "params": {
+        "action": "run",
+        "agents": [
+          "agent_1",
+          "agent_2",
+          "agent_3"
+        ]
+      }
+    }
+  ],
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "action": {
+        "type": "string"
+      },
+      "agents": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      },
+      "context_key": {
+        "type": "string"
+      },
+      "source_agent": {
+        "type": "string"
+      },
+      "target_agent": {
+        "type": "string"
+      },
+      "target_agents": {
+        "type": "string"
+      }
+    },
+    "required": [
+      "action"
+    ]
+  },
+  "license": "MIT"
+}

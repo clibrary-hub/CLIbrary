@@ -1,0 +1,75 @@
+{
+  "name": "test-locate",
+  "version": "0.1.0",
+  "description": "測試對應器",
+  "category": "C",
+  "number": 57,
+  "pain_point": "找不到對應的測試檔",
+  "commercial": "✅",
+  "language": "Python",
+  "dependencies": [
+    "pathlib",
+    "click",
+    "rich"
+  ],
+  "agent_compatible": true,
+  "mcp_ready": true,
+  "intent_triggers": [
+    "幫我找 login.py 對應的測試檔",
+    "這個模組的測試在哪裡",
+    "掃描哪些檔案沒有對應的測試",
+    "找出缺少測試的程式碼模組",
+    "列出所有未被測試覆蓋的功能模組",
+    "找一下 user_service 的測試",
+    "掃描整個專案，找出沒有測試對應的檔案"
+  ],
+  "examples": [
+    {
+      "query": "找 api/users.py 對應的測試檔案",
+      "params": {
+        "source_file": "api/users.py",
+        "action": "scan"
+      }
+    },
+    {
+      "query": "掃描 src/ 目錄找出沒有對應測試的模組",
+      "params": {
+        "source_path": "src/",
+        "test_path": "tests/",
+        "action": "scan"
+      }
+    },
+    {
+      "query": "列出所有缺少測試的 Python 模組",
+      "params": {
+        "source_path": ".",
+        "action": "scan",
+        "output_file": "missing_tests.json"
+      }
+    }
+  ],
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "action": {
+        "type": "string"
+      },
+      "output_file": {
+        "type": "string"
+      },
+      "source_file": {
+        "type": "string"
+      },
+      "source_path": {
+        "type": "string"
+      },
+      "test_path": {
+        "type": "string"
+      }
+    },
+    "required": [
+      "action"
+    ]
+  },
+  "license": "MIT"
+}

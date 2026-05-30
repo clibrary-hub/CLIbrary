@@ -1,0 +1,77 @@
+{
+  "name": "note-git",
+  "version": "0.1.0",
+  "description": "筆記版控器",
+  "category": "R",
+  "number": 347,
+  "pain_point": "筆記版本管理",
+  "commercial": "✅",
+  "language": "Python",
+  "dependencies": [
+    "gitpython",
+    "click",
+    "rich"
+  ],
+  "agent_compatible": true,
+  "mcp_ready": true,
+  "intent_triggers": [
+    "幫我把筆記庫用 git 進行版本管理",
+    "記錄今天修改了哪些筆記",
+    "查看某篇筆記的修改歷史",
+    "比較筆記昨天和今天的差異",
+    "把筆記庫同步到 GitHub",
+    "還原某篇筆記到上一個版本",
+    "自動提交每天的筆記變更"
+  ],
+  "examples": [
+    {
+      "query": "初始化 ~/notes 的 git 版控並做第一次提交",
+      "params": {
+        "notes_dir": "~/notes",
+        "action": "init"
+      }
+    },
+    {
+      "query": "查看 python.md 的修改歷史最近 10 次",
+      "params": {
+        "notes_dir": "~/notes",
+        "action": "history",
+        "note_file": "python.md",
+        "limit": 10
+      }
+    },
+    {
+      "query": "自動提交今天所有修改的筆記到 git",
+      "params": {
+        "notes_dir": "~/notes",
+        "action": "commit",
+        "message": "daily notes update"
+      }
+    }
+  ],
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "action": {
+        "type": "string"
+      },
+      "limit": {
+        "type": "integer"
+      },
+      "message": {
+        "type": "string"
+      },
+      "note_file": {
+        "type": "string"
+      },
+      "notes_dir": {
+        "type": "string"
+      }
+    },
+    "required": [
+      "action",
+      "notes_dir"
+    ]
+  },
+  "license": "MIT"
+}

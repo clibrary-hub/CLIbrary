@@ -1,0 +1,22 @@
+tool: style-snap
+type: readonly
+generated: "2026-04-27"
+skip: false
+
+setup:
+  files:
+    - path: testdata/style_test.py
+      content: "def myFunction():\n    x = 1\n    return x\n"
+
+cases:
+  - id: help_works
+    description: --help exits 0
+    cmd: ["--help"]
+    expect:
+      exit_code: 0
+      stdout_contains: "Usage:"
+  - id: scan_produces_output
+    description: analyze runs and returns output
+    cmd: ["analyze", "testdata/"]
+    expect:
+      exit_code: 0

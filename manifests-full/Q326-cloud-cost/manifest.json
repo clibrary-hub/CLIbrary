@@ -1,0 +1,78 @@
+{
+  "name": "cloud-cost",
+  "version": "0.1.0",
+  "description": "雲端花費守門員",
+  "category": "Q",
+  "number": 326,
+  "pain_point": "雲花費異常告警",
+  "commercial": "⚠️",
+  "language": "Python",
+  "dependencies": [
+    "boto3",
+    "click",
+    "rich"
+  ],
+  "agent_compatible": true,
+  "mcp_ready": true,
+  "intent_triggers": [
+    "AWS 帳單怎麼突然飆高，幫我分析",
+    "監測雲端花費是否超過預算上限",
+    "找出最燒錢的 AWS 服務",
+    "設定雲費用告警，超過 1000 美金就通知我",
+    "分析這個月哪個 EC2 instance 花最多",
+    "比較上下個月的雲端費用差異",
+    "找出沒在用但還在計費的雲端資源"
+  ],
+  "examples": [
+    {
+      "query": "分析 AWS 帳號過去 30 天的費用並找出最貴的服務",
+      "params": {
+        "provider": "aws",
+        "period_days": 30
+      }
+    },
+    {
+      "query": "設定花費告警：月費超過 500 美金時輸出警告",
+      "params": {
+        "provider": "aws",
+        "budget_limit": 500,
+        "alert": true
+      }
+    },
+    {
+      "query": "找出 production 帳號下所有閒置超過 7 天的 EC2 instance",
+      "params": {
+        "provider": "aws",
+        "resource_type": "ec2",
+        "idle_days": 7
+      }
+    }
+  ],
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "alert": {
+        "type": "boolean"
+      },
+      "budget_limit": {
+        "type": "integer"
+      },
+      "idle_days": {
+        "type": "integer"
+      },
+      "period_days": {
+        "type": "integer"
+      },
+      "provider": {
+        "type": "string"
+      },
+      "resource_type": {
+        "type": "string"
+      }
+    },
+    "required": [
+      "provider"
+    ]
+  },
+  "license": "MIT"
+}

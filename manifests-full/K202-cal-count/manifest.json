@@ -1,0 +1,70 @@
+{
+  "name": "cal-count",
+  "version": "0.1.0",
+  "description": "熱量計算器",
+  "category": "K",
+  "number": 202,
+  "pain_point": "飲食卡路里難算",
+  "commercial": "✅",
+  "language": "Python",
+  "dependencies": [
+    "sqlite3",
+    "click",
+    "rich"
+  ],
+  "agent_compatible": true,
+  "mcp_ready": true,
+  "intent_triggers": [
+    "幫我算今天吃了多少卡路里",
+    "這餐大概有多少熱量",
+    "我想追蹤每日飲食熱量",
+    "雞胸肉加地瓜的卡路里怎麼算",
+    "飲食熱量計算工具",
+    "我要記錄一整天吃了什麼然後統計熱量",
+    "減脂期間需要查食物熱量"
+  ],
+  "examples": [
+    {
+      "query": "掃描今天的飲食記錄 food_log.txt 並計算總熱量",
+      "params": {
+        "action": "scan",
+        "input_file": "food_log.txt"
+      }
+    },
+    {
+      "query": "計算雞胸肉 200g、花椰菜 100g 的熱量",
+      "params": {
+        "action": "scan",
+        "foods": "雞胸肉:200g,花椰菜:100g"
+      }
+    },
+    {
+      "query": "查詢本週熱量攝取趨勢",
+      "params": {
+        "action": "scan",
+        "input_file": "weekly_diet.csv"
+      }
+    }
+  ],
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "action": {
+        "type": "string",
+        "description": "操作類型，如 scan（掃描計算）"
+      },
+      "input_file": {
+        "type": "string",
+        "description": "飲食記錄檔案路徑"
+      },
+      "foods": {
+        "type": "string",
+        "description": "食物清單，格式：食物名:份量，以逗號分隔"
+      }
+    },
+    "required": [
+      "action"
+    ]
+  },
+  "license": "MIT"
+}

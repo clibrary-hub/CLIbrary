@@ -1,0 +1,93 @@
+{
+  "name": "what-if",
+  "version": "0.1.0",
+  "description": "假設模擬器",
+  "category": "N",
+  "number": 277,
+  "pain_point": "假設情境模擬",
+  "commercial": "✅",
+  "language": "Python",
+  "dependencies": [
+    "pandas",
+    "click",
+    "rich"
+  ],
+  "agent_compatible": true,
+  "mcp_ready": true,
+  "intent_triggers": [
+    "如果我把售價調高 10% 會怎樣",
+    "假設情境模擬工具，預測不同參數的結果",
+    "做 what-if 分析看各種情境",
+    "我想模擬如果成本降低 20% 的影響",
+    "敏感度分析，改變變數看結果如何變化",
+    "多個假設情境的並排比較",
+    "情境規劃工具，最好/最壞/最可能"
+  ],
+  "examples": [
+    {
+      "query": "模擬售價調整 5%、10%、15% 時的利潤變化",
+      "params": {
+        "action": "simulate",
+        "input_file": "pricing_model.csv",
+        "variable": "price",
+        "scenarios": [
+          1.05,
+          1.1,
+          1.15
+        ]
+      }
+    },
+    {
+      "query": "對 budget.csv 做 what-if 分析，看成本增加 20% 的衝擊",
+      "params": {
+        "action": "simulate",
+        "input_file": "budget.csv",
+        "variable": "cost",
+        "change_pct": 20
+      }
+    },
+    {
+      "query": "模擬銷售量在樂觀、普通、悲觀三種情境下的營收",
+      "params": {
+        "action": "scenario",
+        "input_file": "sales_model.csv",
+        "scenario_file": "scenarios.json",
+        "output_file": "scenario_results.csv"
+      }
+    }
+  ],
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "action": {
+        "type": "string"
+      },
+      "change_pct": {
+        "type": "integer"
+      },
+      "input_file": {
+        "type": "string"
+      },
+      "output_file": {
+        "type": "string"
+      },
+      "scenario_file": {
+        "type": "string"
+      },
+      "scenarios": {
+        "type": "array",
+        "items": {
+          "type": "number"
+        }
+      },
+      "variable": {
+        "type": "string"
+      }
+    },
+    "required": [
+      "action",
+      "input_file"
+    ]
+  },
+  "license": "MIT"
+}

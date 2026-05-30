@@ -1,0 +1,75 @@
+{
+  "name": "name-lint",
+  "version": "0.1.0",
+  "description": "命名規約檢查器",
+  "category": "C",
+  "number": 53,
+  "pain_point": "命名不一致",
+  "commercial": "✅",
+  "language": "Python",
+  "dependencies": [
+    "ast",
+    "click",
+    "rich"
+  ],
+  "agent_compatible": true,
+  "mcp_ready": true,
+  "intent_triggers": [
+    "檢查程式碼的命名是否一致",
+    "AI 寫的變數名稱很亂，幫我統一",
+    "掃描不符合 snake_case 規範的命名",
+    "找出不符合命名規約的函數和變數",
+    "統一專案中的命名慣例",
+    "確保所有類別名稱都是 PascalCase",
+    "命名規約不一致，幫我做整體檢查"
+  ],
+  "examples": [
+    {
+      "query": "檢查 src/ 目錄的命名規約一致性",
+      "params": {
+        "target_path": "src/",
+        "action": "run"
+      }
+    },
+    {
+      "query": "掃描 utils.py 找出不符合 snake_case 的變數名",
+      "params": {
+        "target_file": "utils.py",
+        "convention": "snake_case",
+        "action": "run"
+      }
+    },
+    {
+      "query": "全面檢查專案命名並輸出違規清單",
+      "params": {
+        "target_path": ".",
+        "output_file": "naming_violations.json",
+        "action": "run"
+      }
+    }
+  ],
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "action": {
+        "type": "string"
+      },
+      "convention": {
+        "type": "string"
+      },
+      "output_file": {
+        "type": "string"
+      },
+      "target_file": {
+        "type": "string"
+      },
+      "target_path": {
+        "type": "string"
+      }
+    },
+    "required": [
+      "action"
+    ]
+  },
+  "license": "MIT"
+}

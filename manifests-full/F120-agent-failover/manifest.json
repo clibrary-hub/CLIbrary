@@ -1,0 +1,83 @@
+{
+  "name": "agent-failover",
+  "version": "0.1.0",
+  "description": "Agent 故障切換",
+  "category": "F",
+  "number": 120,
+  "pain_point": "Agent 故障切換麻煩",
+  "commercial": "✅",
+  "language": "Python",
+  "dependencies": [
+    "click",
+    "rich",
+    "requests"
+  ],
+  "agent_compatible": true,
+  "mcp_ready": true,
+  "intent_triggers": [
+    "主要 Agent 掛掉要怎麼自動切換備援？",
+    "幫我設定 Agent 的故障轉移機制",
+    "Agent 服務中斷要能自動恢復",
+    "我需要 Agent 高可用性的自動切換方案",
+    "主 Agent 失敗時怎麼讓備用 Agent 接手",
+    "Agent 服務的 failover 和 fallback 怎麼設計",
+    "想要零停機時間的 Agent 故障切換"
+  ],
+  "examples": [
+    {
+      "query": "設定 main-agent 故障時自動切換到 backup-agent-1 或 backup-agent-2",
+      "params": {
+        "action": "run",
+        "primary": "main-agent",
+        "fallbacks": "backup-agent-1,backup-agent-2",
+        "health_check_interval": "10"
+      }
+    },
+    {
+      "query": "測試 agent-prod 的故障切換是否正常運作",
+      "params": {
+        "action": "run",
+        "mode": "test",
+        "agent_name": "agent-prod"
+      }
+    },
+    {
+      "query": "查看最近一週的 failover 事件記錄",
+      "params": {
+        "action": "run",
+        "mode": "history",
+        "days": "7"
+      }
+    }
+  ],
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "action": {
+        "type": "string"
+      },
+      "agent_name": {
+        "type": "string"
+      },
+      "days": {
+        "type": "string"
+      },
+      "fallbacks": {
+        "type": "string"
+      },
+      "health_check_interval": {
+        "type": "string"
+      },
+      "mode": {
+        "type": "string"
+      },
+      "primary": {
+        "type": "string"
+      }
+    },
+    "required": [
+      "action"
+    ]
+  },
+  "license": "MIT"
+}

@@ -1,0 +1,85 @@
+{
+  "name": "flight-watch",
+  "version": "0.1.0",
+  "description": "機票追蹤器",
+  "category": "T",
+  "number": 382,
+  "pain_point": "機票價格追蹤",
+  "commercial": "⚠️",
+  "language": "Python",
+  "dependencies": [
+    "requests",
+    "sqlite3",
+    "click"
+  ],
+  "agent_compatible": true,
+  "mcp_ready": true,
+  "intent_triggers": [
+    "幫我追蹤台北到東京的機票價格",
+    "機票降價了就通知我",
+    "查詢下個月的最便宜機票",
+    "監控特定航班的票價變化",
+    "找出旅遊旺季的票價趨勢",
+    "幫我設定機票價格告警",
+    "比較不同日期的機票價格"
+  ],
+  "examples": [
+    {
+      "query": "追蹤 TPE-TYO 2026-07-01 出發的機票，低於 8000 元提醒",
+      "params": {
+        "origin": "TPE",
+        "destination": "TYO",
+        "date": "2026-07-01",
+        "alert_price": 8000
+      }
+    },
+    {
+      "query": "查詢 TPE 到 SEA 六月份最便宜的機票日期",
+      "params": {
+        "origin": "TPE",
+        "destination": "SEA",
+        "month": "2026-06"
+      }
+    },
+    {
+      "query": "比較 2026-08-01 到 2026-08-10 的 TPE-BKK 票價",
+      "params": {
+        "origin": "TPE",
+        "destination": "BKK",
+        "date_from": "2026-08-01",
+        "date_to": "2026-08-10"
+      }
+    }
+  ],
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "alert_price": {
+        "type": "integer"
+      },
+      "date": {
+        "type": "string"
+      },
+      "date_from": {
+        "type": "string"
+      },
+      "date_to": {
+        "type": "string"
+      },
+      "destination": {
+        "type": "string"
+      },
+      "month": {
+        "type": "string"
+      },
+      "origin": {
+        "type": "string"
+      }
+    },
+    "required": [
+      "destination",
+      "origin"
+    ]
+  },
+  "license": "MIT"
+}

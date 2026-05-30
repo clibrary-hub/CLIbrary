@@ -1,0 +1,85 @@
+{
+  "name": "plural-rules",
+  "version": "0.1.0",
+  "description": "複數規則器",
+  "category": "W",
+  "number": 452,
+  "pain_point": "自動單複數規則",
+  "commercial": "✅",
+  "language": "Python",
+  "dependencies": [
+    "click",
+    "rich",
+    "pyyaml"
+  ],
+  "agent_compatible": true,
+  "mcp_ready": true,
+  "intent_triggers": [
+    "幫我設定不同語言的複數規則",
+    "俄文複數規則很複雜，幫我整理",
+    "這個語系有幾種複數形式？",
+    "生成符合 CLDR 標準的複數規則",
+    "波蘭文的複數規則怎麼設定？",
+    "幫我驗證 i18n 複數字串是否正確",
+    "不同語言的複數規則差異在哪裡？"
+  ],
+  "examples": [
+    {
+      "query": "查詢波蘭文 (pl) 的 CLDR 複數規則分類",
+      "params": {
+        "locale": "pl",
+        "show_cldr_rules": true
+      }
+    },
+    {
+      "query": "驗證 pl.json 的複數字串是否覆蓋所有複數形式",
+      "params": {
+        "locale_file": "pl.json",
+        "locale": "pl",
+        "validate_plural": true
+      }
+    },
+    {
+      "query": "生成俄文複數規則的模板，含 one、few、many 三種形式",
+      "params": {
+        "locale": "ru",
+        "generate_template": true,
+        "plural_forms": [
+          "one",
+          "few",
+          "many"
+        ]
+      }
+    }
+  ],
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "generate_template": {
+        "type": "boolean"
+      },
+      "locale": {
+        "type": "string"
+      },
+      "locale_file": {
+        "type": "string"
+      },
+      "plural_forms": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      },
+      "show_cldr_rules": {
+        "type": "boolean"
+      },
+      "validate_plural": {
+        "type": "boolean"
+      }
+    },
+    "required": [
+      "locale"
+    ]
+  },
+  "license": "MIT"
+}

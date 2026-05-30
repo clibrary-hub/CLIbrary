@@ -1,0 +1,88 @@
+{
+  "name": "lab-log",
+  "version": "0.1.0",
+  "description": "實驗紀錄器",
+  "category": "S",
+  "number": 375,
+  "pain_point": "研究實驗記錄",
+  "commercial": "✅",
+  "language": "Python",
+  "dependencies": [
+    "sqlite3",
+    "click",
+    "rich"
+  ],
+  "agent_compatible": true,
+  "mcp_ready": true,
+  "intent_triggers": [
+    "記錄今天的實驗結果",
+    "我要新增一筆實驗紀錄",
+    "查詢上週的實驗數據",
+    "幫我管理研究實驗的日誌",
+    "追蹤實驗的參數和結果",
+    "比較不同實驗配置的結果",
+    "生成實驗報告和進度摘要"
+  ],
+  "examples": [
+    {
+      "query": "新增實驗紀錄：model=GPT-4, accuracy=0.92, loss=0.08",
+      "params": {
+        "action": "add",
+        "experiment_name": "exp_001",
+        "params": {
+          "model": "GPT-4"
+        },
+        "results": {
+          "accuracy": 0.92
+        }
+      }
+    },
+    {
+      "query": "查詢過去 7 天的所有實驗紀錄",
+      "params": {
+        "action": "query",
+        "days": 7
+      }
+    },
+    {
+      "query": "比較 exp_001 和 exp_002 的結果差異",
+      "params": {
+        "action": "compare",
+        "experiments": [
+          "exp_001",
+          "exp_002"
+        ]
+      }
+    }
+  ],
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "action": {
+        "type": "string"
+      },
+      "days": {
+        "type": "integer"
+      },
+      "experiment_name": {
+        "type": "string"
+      },
+      "experiments": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      },
+      "params": {
+        "type": "object"
+      },
+      "results": {
+        "type": "object"
+      }
+    },
+    "required": [
+      "action"
+    ]
+  },
+  "license": "MIT"
+}

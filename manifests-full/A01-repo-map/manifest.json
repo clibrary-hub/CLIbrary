@@ -1,0 +1,71 @@
+{
+  "name": "repo-map",
+  "version": "0.1.0",
+  "description": "專案結構摘要器",
+  "category": "A",
+  "number": 1,
+  "pain_point": "Agent 無法一次讀取整個專案結構",
+  "commercial": "✅",
+  "language": "Python",
+  "dependencies": [
+    "pathlib",
+    "rich",
+    "gitpython"
+  ],
+  "agent_compatible": true,
+  "mcp_ready": true,
+  "intent_triggers": [
+    "列出所有重要的資料夾和檔案",
+    "看看這個 repo 裡有哪些檔案",
+    "這個專案的結構是什麼樣子的",
+    "分析一下這個專案的組成",
+    "快速了解一下這個 codebase 的佈局",
+    "給我一份專案架構摘要",
+    "幫我掃描這個專案的目錄結構",
+    "畫出整個專案的目錄架構圖",
+    "標出 {path} 裡哪些是設定檔",
+    "生成 codebase 的模組結構圖",
+    "列出主要模組跟各檔案的位置",
+    "整個專案的目錄樹加上標注"
+  ],
+  "examples": [
+    {
+      "query": "掃描 /home/user/myproject 的專案結構",
+      "params": {
+        "target_path": "/home/user/myproject"
+      }
+    },
+    {
+      "query": "列出目前資料夾下所有 Python 檔案的結構",
+      "params": {
+        "target_path": ".",
+        "file_filter": "*.py"
+      }
+    },
+    {
+      "query": "幫我掃描專案並輸出 JSON 格式的結構報告",
+      "params": {
+        "target_path": ".",
+        "output_format": "json"
+      }
+    }
+  ],
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "file_filter": {
+        "type": "string"
+      },
+      "output_format": {
+        "type": "string"
+      },
+      "target_path": {
+        "type": "string"
+      }
+    },
+    "required": [
+      "target_path"
+    ]
+  },
+  "license": "MIT"
+}

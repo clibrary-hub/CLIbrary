@@ -1,0 +1,81 @@
+{
+  "name": "know-fuse",
+  "version": "0.1.0",
+  "description": "知識融合器",
+  "category": "R",
+  "number": 353,
+  "pain_point": "不同來源資料整合",
+  "commercial": "✅",
+  "language": "Python",
+  "dependencies": [
+    "anthropic",
+    "sqlite3",
+    "click"
+  ],
+  "agent_compatible": true,
+  "mcp_ready": true,
+  "intent_triggers": [
+    "把多個來源的筆記整合成一份",
+    "合併三本書的讀書筆記並消除矛盾",
+    "整合 Notion、Obsidian 和 PDF 的知識",
+    "把分散在各處的相關資料集中整理",
+    "用 AI 把多份文件的知識融合成一篇",
+    "合併相關主題的多篇筆記",
+    "把研究資料從多個來源匯整成一份報告"
+  ],
+  "examples": [
+    {
+      "query": "融合 notes/ 裡所有關於 AI 主題的筆記",
+      "params": {
+        "notes_dir": "notes/",
+        "topic": "AI",
+        "output_file": "ai_knowledge.md"
+      }
+    },
+    {
+      "query": "整合 book1_notes.md、book2_notes.md 和 paper.md 的知識",
+      "params": {
+        "input_files": [
+          "book1_notes.md",
+          "book2_notes.md",
+          "paper.md"
+        ],
+        "output_file": "fused_knowledge.md"
+      }
+    },
+    {
+      "query": "把 research/ 裡的資料整合並去除重複觀點",
+      "params": {
+        "input_dir": "research/",
+        "deduplicate": true
+      }
+    }
+  ],
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "deduplicate": {
+        "type": "boolean"
+      },
+      "input_dir": {
+        "type": "string"
+      },
+      "input_files": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      },
+      "notes_dir": {
+        "type": "string"
+      },
+      "output_file": {
+        "type": "string"
+      },
+      "topic": {
+        "type": "string"
+      }
+    }
+  },
+  "license": "MIT"
+}

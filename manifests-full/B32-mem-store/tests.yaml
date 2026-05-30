@@ -1,0 +1,33 @@
+tool: mem-store
+type: stateful
+generated: "2026-04-27"
+skip: false
+
+cases:
+  - id: help_works
+    description: --help exits 0
+    cmd: ["--help"]
+    expect:
+      exit_code: 0
+      stdout_contains: "Usage:"
+  - id: write_data
+    description: write/add entry
+    cmd: ["add", "test_key_xyz", "test_value_xyz", "--category", "test"]
+    expect:
+      exit_code: 0
+  - id: read_data
+    description: read/list entry
+    cmd: ["get", "test_key_xyz"]
+    expect:
+      exit_code: 0
+      stdout_contains: test_value_xyz
+  - id: export_json
+    description: export as JSON
+    cmd: ["export", "--format", "json"]
+    expect:
+      exit_code: 0
+      is_valid_json: true
+
+teardown:
+  - cmd: ["forget", "test_key_xyz"]
+    ignore_exit_code: true

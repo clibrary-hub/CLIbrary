@@ -1,0 +1,79 @@
+{
+  "name": "drug-check",
+  "version": "0.1.0",
+  "description": "藥物交互查詢",
+  "category": "K",
+  "number": 219,
+  "pain_point": "用藥交互作用查詢",
+  "commercial": "⚠️",
+  "language": "Python",
+  "dependencies": [
+    "requests",
+    "click",
+    "rich"
+  ],
+  "agent_compatible": true,
+  "mcp_ready": true,
+  "intent_triggers": [
+    "查詢這兩種藥一起吃有沒有交互作用",
+    "阿斯匹林和布洛芬可以一起服用嗎",
+    "藥物交互作用查詢工具",
+    "幫我掃描這份藥單，看有沒有衝突",
+    "多種藥物同服是否安全",
+    "藥物相互作用查詢",
+    "我在吃三種藥，能不能一起服用"
+  ],
+  "examples": [
+    {
+      "query": "查詢 Warfarin 和 Aspirin 的藥物交互作用",
+      "params": {
+        "action": "scan",
+        "drug_a": "Warfarin",
+        "drug_b": "Aspirin"
+      }
+    },
+    {
+      "query": "掃描 medication_list.txt 中所有藥物的交互風險",
+      "params": {
+        "action": "scan",
+        "input_file": "medication_list.txt"
+      }
+    },
+    {
+      "query": "查詢 metformin、amlodipine、atorvastatin 三藥交互",
+      "params": {
+        "action": "scan",
+        "drugs": "metformin,amlodipine,atorvastatin"
+      }
+    }
+  ],
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "action": {
+        "type": "string",
+        "description": "操作類型，如 scan（掃描查詢）"
+      },
+      "drug_a": {
+        "type": "string",
+        "description": "第一種藥物名稱"
+      },
+      "drug_b": {
+        "type": "string",
+        "description": "第二種藥物名稱"
+      },
+      "drugs": {
+        "type": "string",
+        "description": "多種藥物名稱，以逗號分隔"
+      },
+      "input_file": {
+        "type": "string",
+        "description": "藥物清單檔案路徑"
+      }
+    },
+    "required": [
+      "action"
+    ]
+  },
+  "license": "MIT"
+}

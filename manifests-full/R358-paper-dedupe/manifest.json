@@ -1,0 +1,77 @@
+{
+  "name": "paper-dedupe",
+  "version": "0.1.0",
+  "description": "文獻去重器",
+  "category": "R",
+  "number": 358,
+  "pain_point": "文獻去重",
+  "commercial": "✅",
+  "language": "Python",
+  "dependencies": [
+    "sentence-transformers",
+    "click",
+    "rich"
+  ],
+  "agent_compatible": true,
+  "mcp_ready": true,
+  "intent_triggers": [
+    "我的文獻清單裡有重複的論文",
+    "找出同一篇論文的不同引用格式",
+    "清理 Zotero 匯出的重複文獻",
+    "合併多個來源的文獻並去重",
+    "偵測標題不同但其實是同一篇的論文",
+    "從 300 篇文獻裡找出重複的",
+    "比較兩個 .bib 文件找出重複條目"
+  ],
+  "examples": [
+    {
+      "query": "掃描 papers.bib 找出所有重複的文獻條目",
+      "params": {
+        "input_file": "papers.bib",
+        "output_file": "deduped.bib"
+      }
+    },
+    {
+      "query": "比較 list1.bib 和 list2.bib 找出重複論文",
+      "params": {
+        "file1": "list1.bib",
+        "file2": "list2.bib"
+      }
+    },
+    {
+      "query": "用語意相似度找出 papers/ 資料夾裡重複的 PDF 論文",
+      "params": {
+        "papers_dir": "papers/",
+        "method": "semantic",
+        "threshold": 0.9
+      }
+    }
+  ],
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "file1": {
+        "type": "string"
+      },
+      "file2": {
+        "type": "string"
+      },
+      "input_file": {
+        "type": "string"
+      },
+      "method": {
+        "type": "string"
+      },
+      "output_file": {
+        "type": "string"
+      },
+      "papers_dir": {
+        "type": "string"
+      },
+      "threshold": {
+        "type": "number"
+      }
+    }
+  },
+  "license": "MIT"
+}

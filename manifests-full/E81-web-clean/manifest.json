@@ -1,0 +1,79 @@
+{
+  "name": "web-clean",
+  "version": "0.1.0",
+  "description": "網頁清洗器",
+  "category": "E",
+  "number": 81,
+  "pain_point": "網頁內容難乾淨餵入",
+  "commercial": "⚠️",
+  "language": "Python",
+  "dependencies": [
+    "requests",
+    "beautifulsoup4",
+    "markdownify"
+  ],
+  "agent_compatible": true,
+  "mcp_ready": true,
+  "intent_triggers": [
+    "把這個網頁的內容清洗乾淨給 AI 看",
+    "抓取網頁並移除廣告和雜訊",
+    "把 HTML 轉成乾淨的 Markdown",
+    "清洗網頁內容方便餵給語言模型",
+    "爬取文章內容，去掉導覽和頁尾",
+    "把這個網址的正文提取出來",
+    "清理網頁 HTML，只留文字內容"
+  ],
+  "examples": [
+    {
+      "query": "清洗 https://example.com/article 的網頁內容",
+      "params": {
+        "url": "https://example.com/article",
+        "action": "run"
+      }
+    },
+    {
+      "query": "把網頁轉成 Markdown 並儲存",
+      "params": {
+        "url": "https://blog.example.com/post",
+        "output_format": "markdown",
+        "output_file": "article.md",
+        "action": "run"
+      }
+    },
+    {
+      "query": "批次清洗 urls.txt 中所有網頁",
+      "params": {
+        "url_file": "urls.txt",
+        "action": "run",
+        "output_dir": "cleaned/"
+      }
+    }
+  ],
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "action": {
+        "type": "string"
+      },
+      "output_dir": {
+        "type": "string"
+      },
+      "output_file": {
+        "type": "string"
+      },
+      "output_format": {
+        "type": "string"
+      },
+      "url": {
+        "type": "string"
+      },
+      "url_file": {
+        "type": "string"
+      }
+    },
+    "required": [
+      "action"
+    ]
+  },
+  "license": "MIT"
+}

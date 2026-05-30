@@ -1,0 +1,87 @@
+{
+  "name": "invoice-gen",
+  "version": "0.1.0",
+  "description": "發票產生器",
+  "category": "J",
+  "number": 192,
+  "pain_point": "想自動產發票",
+  "commercial": "✅",
+  "language": "Python",
+  "dependencies": [
+    "jinja2",
+    "click",
+    "rich"
+  ],
+  "agent_compatible": true,
+  "mcp_ready": true,
+  "intent_triggers": [
+    "幫我自動生成客戶發票 PDF",
+    "我需要一個發票產生工具，輸入金額就能出票",
+    "每次客戶付款後我要手動開發票，能自動化嗎",
+    "從 order.json 自動生成帶公司抬頭的發票",
+    "批次生成本月所有訂單的發票",
+    "想用模板自動產出中英文對照的商業發票",
+    "根據客戶資料和品項自動生成正式發票"
+  ],
+  "examples": [
+    {
+      "query": "為客戶 ABC 公司生成本月服務費發票，金額 NT$50,000",
+      "params": {
+        "action": "generate",
+        "client": "ABC 公司",
+        "amount": "50000",
+        "currency": "TWD",
+        "output": "invoice-abc-april.pdf"
+      }
+    },
+    {
+      "query": "從 orders.csv 批次生成所有訂單的發票",
+      "params": {
+        "action": "batch",
+        "input": "orders.csv",
+        "template": "invoice-template.html.j2",
+        "output_dir": "invoices/"
+      }
+    },
+    {
+      "query": "預覽用 template.j2 生成的發票格式",
+      "params": {
+        "action": "preview",
+        "template": "template.j2"
+      }
+    }
+  ],
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "action": {
+        "type": "string"
+      },
+      "amount": {
+        "type": "string"
+      },
+      "client": {
+        "type": "string"
+      },
+      "currency": {
+        "type": "string"
+      },
+      "input": {
+        "type": "string"
+      },
+      "output": {
+        "type": "string"
+      },
+      "output_dir": {
+        "type": "string"
+      },
+      "template": {
+        "type": "string"
+      }
+    },
+    "required": [
+      "action"
+    ]
+  },
+  "license": "MIT"
+}

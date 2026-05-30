@@ -1,0 +1,88 @@
+{
+  "name": "im-digest",
+  "version": "0.1.0",
+  "description": "IM 摘要器",
+  "category": "I",
+  "number": 171,
+  "pain_point": "IM 通知太雜",
+  "commercial": "⚠️",
+  "language": "Python",
+  "dependencies": [
+    "anthropic",
+    "click",
+    "rich"
+  ],
+  "agent_compatible": true,
+  "mcp_ready": true,
+  "intent_triggers": [
+    "Slack 通知太多太雜，幫我用 AI 整理成摘要",
+    "我不在的時候 IM 訊息爆炸，幫我摘要重點",
+    "每天早上給我一份 IM 訊息的日摘要",
+    "想把 Teams 頻道訊息壓縮成每日重點整理",
+    "離開電腦 2 小時，幫我摘要這期間的 IM 討論",
+    "IM 太多訊息讓人焦慮，需要智慧摘要工具",
+    "幫我整理 Slack channel 今天發生了什麼事"
+  ],
+  "examples": [
+    {
+      "query": "摘要 Slack #dev 頻道今天的所有訊息",
+      "params": {
+        "action": "digest",
+        "platform": "slack",
+        "channel": "dev",
+        "date": "today"
+      }
+    },
+    {
+      "query": "生成過去 4 小時所有頻道的 IM 摘要報告",
+      "params": {
+        "action": "digest",
+        "hours": "4",
+        "all_channels": "true",
+        "output": "im-digest.txt"
+      }
+    },
+    {
+      "query": "每天下班前生成當日 IM 摘要並輸出為 Markdown",
+      "params": {
+        "action": "digest",
+        "date": "today",
+        "format": "markdown",
+        "output": "daily-digest.md"
+      }
+    }
+  ],
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "action": {
+        "type": "string"
+      },
+      "all_channels": {
+        "type": "string"
+      },
+      "channel": {
+        "type": "string"
+      },
+      "date": {
+        "type": "string"
+      },
+      "format": {
+        "type": "string"
+      },
+      "hours": {
+        "type": "string"
+      },
+      "output": {
+        "type": "string"
+      },
+      "platform": {
+        "type": "string"
+      }
+    },
+    "required": [
+      "action"
+    ]
+  },
+  "license": "MIT"
+}

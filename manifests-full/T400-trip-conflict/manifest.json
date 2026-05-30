@@ -1,0 +1,72 @@
+{
+  "name": "trip-conflict",
+  "version": "0.1.0",
+  "description": "行程衝突器",
+  "category": "T",
+  "number": 400,
+  "pain_point": "行程衝突檢測",
+  "commercial": "✅",
+  "language": "Python",
+  "dependencies": [
+    "click",
+    "rich",
+    "pydantic"
+  ],
+  "agent_compatible": true,
+  "mcp_ready": true,
+  "intent_triggers": [
+    "檢查行程有沒有時間衝突",
+    "這兩個景點的時間排在一起能趕得上嗎",
+    "幫我驗證行程表的時間邏輯",
+    "行程裡有沒有交通時間不夠的問題",
+    "我排的行程太緊了，幫我找出衝突",
+    "合併兩個人的行程找出可能的衝突",
+    "自動偵測行程中的重疊時段"
+  ],
+  "examples": [
+    {
+      "query": "檢查 itinerary.json 的行程是否有時間衝突",
+      "params": {
+        "input_file": "itinerary.json"
+      }
+    },
+    {
+      "query": "驗證 tokyo_trip.md 的行程，考慮景點間的交通時間",
+      "params": {
+        "input_file": "tokyo_trip.md",
+        "include_travel_time": true
+      }
+    },
+    {
+      "query": "合併 alice_plan.json 和 bob_plan.json 並找出衝突",
+      "params": {
+        "files": [
+          "alice_plan.json",
+          "bob_plan.json"
+        ],
+        "action": "merge_check"
+      }
+    }
+  ],
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "action": {
+        "type": "string"
+      },
+      "files": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      },
+      "include_travel_time": {
+        "type": "boolean"
+      },
+      "input_file": {
+        "type": "string"
+      }
+    }
+  },
+  "license": "MIT"
+}

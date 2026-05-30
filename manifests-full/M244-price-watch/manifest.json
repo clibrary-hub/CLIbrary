@@ -1,0 +1,83 @@
+{
+  "name": "price-watch",
+  "version": "0.1.0",
+  "description": "價格追蹤器",
+  "category": "M",
+  "number": 244,
+  "pain_point": "價格監控",
+  "commercial": "⚠️",
+  "language": "Python",
+  "dependencies": [
+    "requests",
+    "sqlite3",
+    "click"
+  ],
+  "agent_compatible": true,
+  "mcp_ready": true,
+  "intent_triggers": [
+    "追蹤這個商品的價格變動",
+    "價格監控工具，有降價就通知我",
+    "電商價格追蹤器",
+    "我想等商品降到某個價格才買",
+    "監控 Amazon 商品價格變化",
+    "掃描多個商品頁面並記錄價格歷史",
+    "追蹤電商特價和促銷活動"
+  ],
+  "examples": [
+    {
+      "query": "追蹤 https://shop.example.com/item/42 的價格，低於 2000 元通知我",
+      "params": {
+        "action": "scan",
+        "url": "https://shop.example.com/item/42",
+        "target_price": 2000
+      }
+    },
+    {
+      "query": "批次監控 products.csv 中所有商品 URL 的每日價格",
+      "params": {
+        "action": "scan",
+        "input_file": "products.csv",
+        "check_interval": 86400
+      }
+    },
+    {
+      "query": "查看 laptop.example.com 過去 30 天的價格歷史",
+      "params": {
+        "action": "scan",
+        "url": "https://laptop.example.com",
+        "mode": "history",
+        "days": 30
+      }
+    }
+  ],
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "action": {
+        "type": "string"
+      },
+      "check_interval": {
+        "type": "integer"
+      },
+      "days": {
+        "type": "integer"
+      },
+      "input_file": {
+        "type": "string"
+      },
+      "mode": {
+        "type": "string"
+      },
+      "target_price": {
+        "type": "integer"
+      },
+      "url": {
+        "type": "string"
+      }
+    },
+    "required": [
+      "action"
+    ]
+  },
+  "license": "MIT"
+}

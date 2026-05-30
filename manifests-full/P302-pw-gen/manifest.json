@@ -1,0 +1,67 @@
+{
+  "name": "pw-gen",
+  "version": "0.1.0",
+  "description": "密碼產生器",
+  "category": "P",
+  "number": 302,
+  "pain_point": "密碼產生",
+  "commercial": "✅",
+  "language": "Python",
+  "dependencies": [
+    "secrets",
+    "click",
+    "rich"
+  ],
+  "agent_compatible": true,
+  "mcp_ready": true,
+  "intent_triggers": [
+    "幫我產生一組強密碼",
+    "我需要一個隨機密碼，要有大小寫跟符號",
+    "生成 20 個字元的高強度密碼",
+    "幫我批次產生 10 組密碼",
+    "生成符合公司安全政策的密碼",
+    "我要一個不含特殊符號的密碼",
+    "產生記憶體友善的強密碼"
+  ],
+  "examples": [
+    {
+      "query": "產生一組 16 字元包含大小寫英數和符號的密碼",
+      "params": {
+        "length": 16,
+        "include_symbols": true
+      }
+    },
+    {
+      "query": "批次產生 20 組密碼並輸出到 passwords.txt",
+      "params": {
+        "count": 20,
+        "output_file": "passwords.txt"
+      }
+    },
+    {
+      "query": "生成只含英數字的 12 位密碼",
+      "params": {
+        "length": 12,
+        "include_symbols": false
+      }
+    }
+  ],
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "count": {
+        "type": "integer"
+      },
+      "include_symbols": {
+        "type": "boolean"
+      },
+      "length": {
+        "type": "integer"
+      },
+      "output_file": {
+        "type": "string"
+      }
+    }
+  },
+  "license": "MIT"
+}

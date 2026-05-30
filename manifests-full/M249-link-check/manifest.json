@@ -1,0 +1,78 @@
+{
+  "name": "link-check",
+  "version": "0.1.0",
+  "description": "死鏈檢查器",
+  "category": "M",
+  "number": 249,
+  "pain_point": "連結失效檢查",
+  "commercial": "✅",
+  "language": "Python",
+  "dependencies": [
+    "requests",
+    "beautifulsoup4",
+    "click"
+  ],
+  "agent_compatible": true,
+  "mcp_ready": true,
+  "intent_triggers": [
+    "檢查網頁中有沒有壞掉的連結",
+    "死鏈檢查工具，找出 404 連結",
+    "掃描網站上的失效 URL",
+    "我的文件裡有很多超連結，幫我確認有沒有失效的",
+    "批次檢查 Markdown 文件裡的所有連結",
+    "找出網站上的壞連結並列出清單",
+    "網站健康檢查，掃描死鏈"
+  ],
+  "examples": [
+    {
+      "query": "掃描 https://docs.example.com 的所有連結並找出 404",
+      "params": {
+        "action": "scan",
+        "url": "https://docs.example.com",
+        "depth": 2
+      }
+    },
+    {
+      "query": "檢查 README.md 中所有超連結的有效性",
+      "params": {
+        "action": "scan",
+        "input_file": "README.md"
+      }
+    },
+    {
+      "query": "掃描 links.txt 中所有 URL 並輸出失效連結報告",
+      "params": {
+        "action": "scan",
+        "urls_file": "links.txt",
+        "output_file": "broken_links.json"
+      }
+    }
+  ],
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "action": {
+        "type": "string"
+      },
+      "depth": {
+        "type": "integer"
+      },
+      "input_file": {
+        "type": "string"
+      },
+      "output_file": {
+        "type": "string"
+      },
+      "url": {
+        "type": "string"
+      },
+      "urls_file": {
+        "type": "string"
+      }
+    },
+    "required": [
+      "action"
+    ]
+  },
+  "license": "MIT"
+}

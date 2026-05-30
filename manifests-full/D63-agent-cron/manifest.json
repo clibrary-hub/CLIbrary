@@ -1,0 +1,75 @@
+{
+  "name": "agent-cron",
+  "version": "0.1.0",
+  "description": "Agent 排程器",
+  "category": "D",
+  "number": 63,
+  "pain_point": "無法排程 Agent 定時跑",
+  "commercial": "✅",
+  "language": "Python",
+  "dependencies": [
+    "schedule",
+    "click",
+    "rich"
+  ],
+  "agent_compatible": true,
+  "mcp_ready": true,
+  "intent_triggers": [
+    "每天早上 9 點執行這個 Agent 任務",
+    "排程每週一自動跑報告",
+    "設定定時執行的 AI 任務",
+    "幫我建立 cron job 跑 Agent",
+    "讓這個任務每 6 小時自動執行一次",
+    "設定 Agent 每月底自動結帳",
+    "建立排程，讓 AI 每天晚上清理資料"
+  ],
+  "examples": [
+    {
+      "query": "每天早上 8 點執行 daily_report 任務",
+      "params": {
+        "task_name": "daily_report",
+        "schedule": "0 8 * * *",
+        "action": "run"
+      }
+    },
+    {
+      "query": "每隔 6 小時執行一次資料同步",
+      "params": {
+        "task_name": "data_sync",
+        "interval_hours": 6,
+        "action": "run"
+      }
+    },
+    {
+      "query": "列出所有已設定的排程任務",
+      "params": {
+        "action": "run",
+        "list_all": true
+      }
+    }
+  ],
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "action": {
+        "type": "string"
+      },
+      "interval_hours": {
+        "type": "integer"
+      },
+      "list_all": {
+        "type": "boolean"
+      },
+      "schedule": {
+        "type": "string"
+      },
+      "task_name": {
+        "type": "string"
+      }
+    },
+    "required": [
+      "action"
+    ]
+  },
+  "license": "MIT"
+}

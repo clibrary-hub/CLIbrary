@@ -1,0 +1,87 @@
+{
+  "name": "compound-calc",
+  "version": "0.1.0",
+  "description": "複利計算器",
+  "category": "J",
+  "number": 193,
+  "pain_point": "想算複利/退休金",
+  "commercial": "✅",
+  "language": "Python",
+  "dependencies": [
+    "click",
+    "rich",
+    "decimal"
+  ],
+  "agent_compatible": true,
+  "mcp_ready": true,
+  "intent_triggers": [
+    "幫我計算每月存 1 萬，年化報酬 6%，30 年後有多少",
+    "想估算退休金需要存多少才夠",
+    "複利計算器，算出投資 20 年的終值",
+    "現在投入 100 萬，年利率 5%，10 年後值多少",
+    "定期定額投資的複利成長試算",
+    "我想算退休需要多久才能達到財務自由",
+    "複利的力量試算工具，顯示每年成長表"
+  ],
+  "examples": [
+    {
+      "query": "計算本金 50 萬，年報酬 7%，投資 20 年的終值",
+      "params": {
+        "action": "calculate",
+        "principal": "500000",
+        "rate": "7",
+        "years": "20"
+      }
+    },
+    {
+      "query": "試算每月定存 5000 元，年利率 4%，40 年後的退休金",
+      "params": {
+        "action": "calculate",
+        "monthly": "5000",
+        "rate": "4",
+        "years": "40",
+        "compound": "monthly"
+      }
+    },
+    {
+      "query": "顯示年報酬 6% 從 1 萬到 100 萬的複利成長時間表",
+      "params": {
+        "action": "table",
+        "principal": "10000",
+        "target": "1000000",
+        "rate": "6"
+      }
+    }
+  ],
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "action": {
+        "type": "string"
+      },
+      "compound": {
+        "type": "string"
+      },
+      "monthly": {
+        "type": "string"
+      },
+      "principal": {
+        "type": "string"
+      },
+      "rate": {
+        "type": "string"
+      },
+      "target": {
+        "type": "string"
+      },
+      "years": {
+        "type": "string"
+      }
+    },
+    "required": [
+      "action",
+      "rate"
+    ]
+  },
+  "license": "MIT"
+}

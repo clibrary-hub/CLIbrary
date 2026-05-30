@@ -1,0 +1,89 @@
+{
+  "name": "embed-index",
+  "version": "0.1.0",
+  "description": "向量索引器",
+  "category": "O",
+  "number": 283,
+  "pain_point": "Embedding 索引建置",
+  "commercial": "✅",
+  "language": "Python",
+  "dependencies": [
+    "sentence-transformers",
+    "faiss-cpu",
+    "click"
+  ],
+  "agent_compatible": true,
+  "mcp_ready": true,
+  "intent_triggers": [
+    "建立文件的向量索引，用於語意搜尋",
+    "把文字資料向量化並建 FAISS 索引",
+    "我想對文件庫做語意相似度搜尋",
+    "建立 embedding 索引加速向量查詢",
+    "把 CSV 文字欄位轉成向量並儲存索引",
+    "為 RAG 系統預建向量資料庫",
+    "文件嵌入向量索引建置工具"
+  ],
+  "examples": [
+    {
+      "query": "對 documents.csv 的 content 欄位建立 FAISS 向量索引",
+      "params": {
+        "action": "build",
+        "input_file": "documents.csv",
+        "text_col": "content",
+        "output_index": "docs.faiss"
+      }
+    },
+    {
+      "query": "把 product_catalog.jsonl 向量化並儲存索引",
+      "params": {
+        "action": "build",
+        "input_file": "product_catalog.jsonl",
+        "text_col": "description",
+        "model": "all-MiniLM-L6-v2",
+        "output_index": "products.faiss"
+      }
+    },
+    {
+      "query": "從現有索引 docs.faiss 搜尋最相似的 5 筆文件",
+      "params": {
+        "action": "search",
+        "index_file": "docs.faiss",
+        "query": "機器學習模型部署",
+        "top_k": 5
+      }
+    }
+  ],
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "action": {
+        "type": "string"
+      },
+      "index_file": {
+        "type": "string"
+      },
+      "input_file": {
+        "type": "string"
+      },
+      "model": {
+        "type": "string"
+      },
+      "output_index": {
+        "type": "string"
+      },
+      "query": {
+        "type": "string"
+      },
+      "text_col": {
+        "type": "string"
+      },
+      "top_k": {
+        "type": "integer"
+      }
+    },
+    "required": [
+      "action"
+    ]
+  },
+  "license": "MIT"
+}

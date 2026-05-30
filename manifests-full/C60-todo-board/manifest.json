@@ -1,0 +1,73 @@
+{
+  "name": "todo-board",
+  "version": "0.1.0",
+  "description": "TODO 集中追蹤器",
+  "category": "C",
+  "number": 60,
+  "pain_point": "TODO/FIXME 散落無人管",
+  "commercial": "✅",
+  "language": "Python",
+  "dependencies": [
+    "pathlib",
+    "rich",
+    "click"
+  ],
+  "agent_compatible": true,
+  "mcp_ready": true,
+  "intent_triggers": [
+    "列出所有 TODO 和 FIXME",
+    "掃描整個專案的待辦事項",
+    "幫我把所有 TODO 集中顯示",
+    "找出長久沒有處理的 FIXME",
+    "產出 TODO 清單給我看",
+    "生成任務看板顯示所有待辦",
+    "AI 留下的 TODO 都在哪"
+  ],
+  "examples": [
+    {
+      "query": "掃描 src/ 找出所有 TODO 和 FIXME",
+      "params": {
+        "target_path": "src/",
+        "action": "run"
+      }
+    },
+    {
+      "query": "生成 TODO 看板並輸出到 todo_board.md",
+      "params": {
+        "target_path": ".",
+        "output_file": "todo_board.md",
+        "action": "generate"
+      }
+    },
+    {
+      "query": "找出所有標記超過 30 天的 TODO",
+      "params": {
+        "target_path": ".",
+        "older_than_days": 30,
+        "action": "run"
+      }
+    }
+  ],
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "action": {
+        "type": "string"
+      },
+      "older_than_days": {
+        "type": "integer"
+      },
+      "output_file": {
+        "type": "string"
+      },
+      "target_path": {
+        "type": "string"
+      }
+    },
+    "required": [
+      "action",
+      "target_path"
+    ]
+  },
+  "license": "MIT"
+}

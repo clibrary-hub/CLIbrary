@@ -1,0 +1,85 @@
+{
+  "name": "llm-cost-opt",
+  "version": "0.1.0",
+  "description": "成本最佳化器",
+  "category": "O",
+  "number": 290,
+  "pain_point": "成本最佳化建議",
+  "commercial": "⚠️",
+  "language": "Python",
+  "dependencies": [
+    "anthropic",
+    "click",
+    "rich"
+  ],
+  "agent_compatible": true,
+  "mcp_ready": true,
+  "intent_triggers": [
+    "幫我降低 LLM API 使用費用",
+    "分析我的 AI API 成本並給最佳化建議",
+    "LLM 呼叫成本分析和節省建議",
+    "我的 Claude API 花了太多錢，怎麼降低",
+    "計算不同模型的成本效益比",
+    "根據使用量推薦最划算的模型配置",
+    "AI 使用成本報告和降費策略"
+  ],
+  "examples": [
+    {
+      "query": "分析 api_usage.jsonl 的 token 消耗和成本",
+      "params": {
+        "action": "analyze",
+        "input_file": "api_usage.jsonl",
+        "output_file": "cost_report.json"
+      }
+    },
+    {
+      "query": "給我 api_logs.csv 的成本最佳化建議",
+      "params": {
+        "action": "optimize",
+        "input_file": "api_logs.csv",
+        "current_model": "claude-3-5-sonnet-20241022",
+        "budget": 100
+      }
+    },
+    {
+      "query": "計算如果改用 Haiku 處理簡單任務能省多少錢",
+      "params": {
+        "action": "simulate",
+        "input_file": "api_usage.jsonl",
+        "target_model": "claude-3-haiku-20240307",
+        "task_type": "simple"
+      }
+    }
+  ],
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "action": {
+        "type": "string"
+      },
+      "budget": {
+        "type": "integer"
+      },
+      "current_model": {
+        "type": "string"
+      },
+      "input_file": {
+        "type": "string"
+      },
+      "output_file": {
+        "type": "string"
+      },
+      "target_model": {
+        "type": "string"
+      },
+      "task_type": {
+        "type": "string"
+      }
+    },
+    "required": [
+      "action",
+      "input_file"
+    ]
+  },
+  "license": "MIT"
+}

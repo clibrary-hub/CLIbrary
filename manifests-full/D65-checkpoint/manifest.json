@@ -1,0 +1,70 @@
+{
+  "name": "checkpoint",
+  "version": "0.1.0",
+  "description": "斷點恢復器",
+  "category": "D",
+  "number": 65,
+  "pain_point": "連續作業沒有斷點恢復",
+  "commercial": "✅",
+  "language": "Python",
+  "dependencies": [
+    "sqlite3",
+    "click",
+    "rich"
+  ],
+  "agent_compatible": true,
+  "mcp_ready": true,
+  "intent_triggers": [
+    "儲存目前進度，讓任務可以繼續",
+    "建立斷點，以便從這裡恢復",
+    "任務中斷了，從上次進度繼續",
+    "設定檢查點，避免重跑整個流程",
+    "把目前任務狀態存起來",
+    "掃描可以恢復的斷點",
+    "長時間任務需要斷點保護"
+  ],
+  "examples": [
+    {
+      "query": "在目前任務進度建立一個斷點",
+      "params": {
+        "checkpoint_name": "step_3_complete",
+        "action": "scan"
+      }
+    },
+    {
+      "query": "從最後一個斷點恢復任務執行",
+      "params": {
+        "action": "scan",
+        "resume": true
+      }
+    },
+    {
+      "query": "掃描所有可用的斷點記錄",
+      "params": {
+        "action": "scan",
+        "list_all": true
+      }
+    }
+  ],
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "action": {
+        "type": "string"
+      },
+      "checkpoint_name": {
+        "type": "string"
+      },
+      "list_all": {
+        "type": "boolean"
+      },
+      "resume": {
+        "type": "boolean"
+      }
+    },
+    "required": [
+      "action"
+    ]
+  },
+  "license": "MIT"
+}

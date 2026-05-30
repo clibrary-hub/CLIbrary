@@ -1,0 +1,78 @@
+{
+  "name": "step-goal",
+  "version": "0.1.0",
+  "description": "步數目標追蹤",
+  "category": "K",
+  "number": 218,
+  "pain_point": "步數目標追蹤",
+  "commercial": "⚠️",
+  "language": "Python",
+  "dependencies": [
+    "click",
+    "rich",
+    "sqlite3"
+  ],
+  "agent_compatible": true,
+  "mcp_ready": true,
+  "intent_triggers": [
+    "追蹤我今天的步數有沒有達標",
+    "我想設定每天一萬步的目標",
+    "步數目標追蹤工具，記錄每天走多少步",
+    "查看本週步數達成率",
+    "幫我記錄並分析步行數據",
+    "計步目標管理和進度追蹤",
+    "每天步數多少才算達成目標"
+  ],
+  "examples": [
+    {
+      "query": "啟動步數追蹤，今天目標 10000 步",
+      "params": {
+        "action": "run",
+        "daily_goal": 10000
+      }
+    },
+    {
+      "query": "記錄今天走了 8500 步",
+      "params": {
+        "action": "run",
+        "steps": 8500,
+        "date": "today"
+      }
+    },
+    {
+      "query": "查看 step_log.db 本週的步數統計",
+      "params": {
+        "action": "run",
+        "db_file": "step_log.db",
+        "period": "week"
+      }
+    }
+  ],
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "action": {
+        "type": "string"
+      },
+      "daily_goal": {
+        "type": "integer"
+      },
+      "date": {
+        "type": "string"
+      },
+      "db_file": {
+        "type": "string"
+      },
+      "period": {
+        "type": "string"
+      },
+      "steps": {
+        "type": "integer"
+      }
+    },
+    "required": [
+      "action"
+    ]
+  },
+  "license": "MIT"
+}

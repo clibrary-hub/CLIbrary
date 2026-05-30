@@ -1,0 +1,90 @@
+{
+  "name": "agent-eval",
+  "version": "0.1.0",
+  "description": "Agent 評測器",
+  "category": "O",
+  "number": 292,
+  "pain_point": "多 Agent benchmark",
+  "commercial": "✅",
+  "language": "Python",
+  "dependencies": [
+    "anthropic",
+    "click",
+    "rich"
+  ],
+  "agent_compatible": true,
+  "mcp_ready": true,
+  "intent_triggers": [
+    "量化評估 LLM agent 的規劃和執行能力",
+    "用一批任務量化 AI agent 的表現",
+    "對多個 Agent 做 benchmark 比較",
+    "跑 task suite 測 agent 完成率跟成本",
+    "agent benchmark 同時記錄 cost",
+    "多步驟任務的 Agent 效能測試",
+    "測試我的 agent 在各種任務的成功率",
+    "評估 agent 的 success rate 和 token 用量",
+    "批次跑 agent 評估並輸出報告",
+    "Agent 端到端評估工具",
+    "評估 AI Agent 的任務完成能力",
+    "success rate 數字加上 token 成本報告",
+    "只要 success rate 數字，cost 次要",
+    "agent 任務完成率報告",
+    "以完成率為主的 agent 評估"
+  ],
+  "examples": [
+    {
+      "query": "用 agent_tasks.jsonl 評估我的 agent 任務完成率",
+      "params": {
+        "action": "eval",
+        "task_file": "agent_tasks.jsonl",
+        "output_file": "agent_eval_report.json"
+      }
+    },
+    {
+      "query": "比較兩個 agent 配置在相同任務集的表現",
+      "params": {
+        "action": "compare",
+        "task_file": "benchmark_tasks.jsonl",
+        "config_a": "agent_config_v1.json",
+        "config_b": "agent_config_v2.json"
+      }
+    },
+    {
+      "query": "對 tool_use_tasks.jsonl 測試 agent 工具呼叫的準確率",
+      "params": {
+        "action": "eval",
+        "task_file": "tool_use_tasks.jsonl",
+        "metric": "tool_accuracy",
+        "output_file": "tool_eval.json"
+      }
+    }
+  ],
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "action": {
+        "type": "string"
+      },
+      "config_a": {
+        "type": "string"
+      },
+      "config_b": {
+        "type": "string"
+      },
+      "metric": {
+        "type": "string"
+      },
+      "output_file": {
+        "type": "string"
+      },
+      "task_file": {
+        "type": "string"
+      }
+    },
+    "required": [
+      "action",
+      "task_file"
+    ]
+  },
+  "license": "MIT"
+}

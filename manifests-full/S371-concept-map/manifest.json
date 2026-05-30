@@ -1,0 +1,79 @@
+{
+  "name": "concept-map",
+  "version": "0.1.0",
+  "description": "概念地圖器",
+  "category": "S",
+  "number": 371,
+  "pain_point": "概念地圖產生",
+  "commercial": "✅",
+  "language": "Python",
+  "dependencies": [
+    "networkx",
+    "anthropic",
+    "click"
+  ],
+  "agent_compatible": true,
+  "mcp_ready": true,
+  "intent_triggers": [
+    "幫我把這份筆記做成概念地圖",
+    "把這個主題的相關概念視覺化成圖",
+    "生成機器學習的概念關係圖",
+    "用圖表展示這些概念之間的關係",
+    "把閱讀筆記整理成可視化的概念圖",
+    "建立學科知識的概念架構圖",
+    "把混亂的想法整理成清晰的概念地圖"
+  ],
+  "examples": [
+    {
+      "query": "從 ai_notes.md 生成 AI 相關概念的關係地圖",
+      "params": {
+        "input_file": "ai_notes.md",
+        "output_file": "concept_map.json"
+      }
+    },
+    {
+      "query": "建立「深度學習」主題的概念地圖，包含 3 層關係",
+      "params": {
+        "topic": "深度學習",
+        "depth": 3,
+        "output_file": "dl_map.json"
+      }
+    },
+    {
+      "query": "把 chapter1.md 到 chapter5.md 的概念整合成一張地圖",
+      "params": {
+        "input_files": [
+          "chapter1.md",
+          "chapter2.md",
+          "chapter3.md",
+          "chapter4.md",
+          "chapter5.md"
+        ]
+      }
+    }
+  ],
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "depth": {
+        "type": "integer"
+      },
+      "input_file": {
+        "type": "string"
+      },
+      "input_files": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      },
+      "output_file": {
+        "type": "string"
+      },
+      "topic": {
+        "type": "string"
+      }
+    }
+  },
+  "license": "MIT"
+}

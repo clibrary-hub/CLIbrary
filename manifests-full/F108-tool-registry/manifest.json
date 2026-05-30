@@ -1,0 +1,77 @@
+{
+  "name": "tool-registry",
+  "version": "0.1.0",
+  "description": "工具註冊中心",
+  "category": "F",
+  "number": 108,
+  "pain_point": "Agent 工具註冊散落",
+  "commercial": "✅",
+  "language": "Python",
+  "dependencies": [
+    "sqlite3",
+    "click",
+    "rich"
+  ],
+  "agent_compatible": true,
+  "mcp_ready": true,
+  "intent_triggers": [
+    "Agent 用的工具要怎麼統一管理？",
+    "我想有個地方可以查詢所有 Agent 工具",
+    "Agent 工具散落在各處不好維護",
+    "幫我建立一個工具目錄讓 Agent 可以查詢",
+    "如何讓 Agent 動態發現可用的工具？",
+    "工具版本管理和 Agent 工具庫怎麼整合",
+    "需要一個中央化的 Agent 工具登記系統"
+  ],
+  "examples": [
+    {
+      "query": "把 web-search、calculator、file-reader 三個工具註冊到工具中心",
+      "params": {
+        "action": "run",
+        "mode": "register",
+        "tools": "web-search,calculator,file-reader"
+      }
+    },
+    {
+      "query": "查詢所有支援 NLP 類別的工具清單",
+      "params": {
+        "action": "run",
+        "mode": "search",
+        "category": "NLP"
+      }
+    },
+    {
+      "query": "匯出完整工具清單為 tools-catalog.json",
+      "params": {
+        "action": "run",
+        "mode": "export",
+        "output_file": "tools-catalog.json"
+      }
+    }
+  ],
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "action": {
+        "type": "string"
+      },
+      "category": {
+        "type": "string"
+      },
+      "mode": {
+        "type": "string"
+      },
+      "output_file": {
+        "type": "string"
+      },
+      "tools": {
+        "type": "string"
+      }
+    },
+    "required": [
+      "action",
+      "mode"
+    ]
+  },
+  "license": "MIT"
+}

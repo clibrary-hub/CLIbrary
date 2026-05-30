@@ -1,0 +1,80 @@
+{
+  "name": "merge-pilot",
+  "version": "0.1.0",
+  "description": "多 Agent 合併解衝器",
+  "category": "A",
+  "number": 10,
+  "pain_point": "多 Agent 同時編輯產生衝突",
+  "commercial": "✅",
+  "language": "Python",
+  "dependencies": [
+    "gitpython",
+    "rich",
+    "click"
+  ],
+  "agent_compatible": true,
+  "mcp_ready": true,
+  "intent_triggers": [
+    "幫我解決多個 Agent 同時改檔造成的衝突",
+    "合併兩個 Agent 的產出，處理衝突",
+    "自動解決 merge conflict",
+    "幾個 AI 同時編輯了同一個檔案，怎麼合",
+    "比對兩個版本的差異並智能合併",
+    "幫我 merge 這兩個 branch",
+    "解決自動化任務造成的編輯衝突"
+  ],
+  "examples": [
+    {
+      "query": "比對 agent_a_output.py 和 agent_b_output.py 的衝突",
+      "params": {
+        "file_a": "agent_a_output.py",
+        "file_b": "agent_b_output.py",
+        "action": "diff"
+      }
+    },
+    {
+      "query": "自動合併兩個 Agent 對 main.py 的修改",
+      "params": {
+        "file_a": "main_v1.py",
+        "file_b": "main_v2.py",
+        "action": "diff",
+        "output_file": "main_merged.py"
+      }
+    },
+    {
+      "query": "解決 feature-a 和 feature-b 的合併衝突",
+      "params": {
+        "branch_a": "feature-a",
+        "branch_b": "feature-b",
+        "action": "diff"
+      }
+    }
+  ],
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "action": {
+        "type": "string"
+      },
+      "branch_a": {
+        "type": "string"
+      },
+      "branch_b": {
+        "type": "string"
+      },
+      "file_a": {
+        "type": "string"
+      },
+      "file_b": {
+        "type": "string"
+      },
+      "output_file": {
+        "type": "string"
+      }
+    },
+    "required": [
+      "action"
+    ]
+  },
+  "license": "MIT"
+}

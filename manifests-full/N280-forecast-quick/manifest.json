@@ -1,0 +1,94 @@
+{
+  "name": "forecast-quick",
+  "version": "0.1.0",
+  "description": "快速預測器",
+  "category": "N",
+  "number": 280,
+  "pain_point": "預測模型快建",
+  "commercial": "✅",
+  "language": "Python",
+  "dependencies": [
+    "prophet",
+    "click",
+    "rich"
+  ],
+  "agent_compatible": true,
+  "mcp_ready": true,
+  "intent_triggers": [
+    "快速建立時間序列預測模型",
+    "預測未來幾個月的銷售趨勢",
+    "用 Prophet 做業績預測",
+    "我想預測下季度的需求量",
+    "時間序列預測工具，快速跑出未來預測值",
+    "自動預測並給出信賴區間",
+    "根據歷史資料預測未來走勢"
+  ],
+  "examples": [
+    {
+      "query": "用 monthly_sales.csv 預測未來 6 個月的銷售",
+      "params": {
+        "action": "forecast",
+        "input_file": "monthly_sales.csv",
+        "date_col": "month",
+        "value_col": "sales",
+        "periods": 6
+      }
+    },
+    {
+      "query": "對 daily_orders.csv 做 30 天的需求預測",
+      "params": {
+        "action": "forecast",
+        "input_file": "daily_orders.csv",
+        "date_col": "date",
+        "value_col": "orders",
+        "periods": 30,
+        "output_file": "forecast_result.csv"
+      }
+    },
+    {
+      "query": "預測 website_traffic.csv 未來 12 週流量並輸出預測圖",
+      "params": {
+        "action": "forecast",
+        "input_file": "website_traffic.csv",
+        "periods": 12,
+        "freq": "W",
+        "output_plot": "traffic_forecast.png"
+      }
+    }
+  ],
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "action": {
+        "type": "string"
+      },
+      "date_col": {
+        "type": "string"
+      },
+      "freq": {
+        "type": "string"
+      },
+      "input_file": {
+        "type": "string"
+      },
+      "output_file": {
+        "type": "string"
+      },
+      "output_plot": {
+        "type": "string"
+      },
+      "periods": {
+        "type": "integer"
+      },
+      "value_col": {
+        "type": "string"
+      }
+    },
+    "required": [
+      "action",
+      "input_file",
+      "periods"
+    ]
+  },
+  "license": "MIT"
+}
