@@ -1,0 +1,23 @@
+{
+  "n_queries": 107,
+  "baseline": {
+    "n": 107,
+    "top1_acc": 98.1,
+    "top3_acc": 99.1,
+    "path_a_rate": 92.5,
+    "median_ms": 26.3,
+    "p95_ms": 29.7
+  },
+  "candidate": {
+    "n": 107,
+    "top1_acc": 100.0,
+    "top3_acc": 100.0,
+    "path_a_rate": 57.0,
+    "median_ms": 540.0,
+    "p95_ms": 815.2
+  },
+  "models": {
+    "baseline": "intfloat/multilingual-e5-base",
+    "candidate": "Qwen/Qwen3-Embedding-0.6B"
+  }
+}

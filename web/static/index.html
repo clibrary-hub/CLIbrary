@@ -1,0 +1,611 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CLIbrary — Tool Router Demo</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #0d1117;
+      --surface: #161b22;
+      --border: #30363d;
+      --accent: #58a6ff;
+      --accent2: #3fb950;
+      --warn: #d29922;
+      --text: #e6edf3;
+      --muted: #8b949e;
+      --radius: 8px;
+      --mono: 'Fira Mono', 'Cascadia Code', 'Consolas', monospace;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+      min-height: 100vh;
+    }
+
+    /* ── Header ── */
+    header {
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+      padding: 16px 32px;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+    header .logo { font-size: 1.4rem; font-weight: 700; letter-spacing: -0.5px; }
+    header .logo span { color: var(--accent); }
+    header .tagline { color: var(--muted); font-size: 0.875rem; }
+    header nav { margin-left: auto; display: flex; gap: 8px; }
+    header nav a {
+      color: var(--muted); text-decoration: none; font-size: 0.875rem;
+      padding: 6px 12px; border-radius: var(--radius);
+      transition: background 0.15s, color 0.15s;
+    }
+    header nav a:hover { background: var(--border); color: var(--text); }
+    header nav a.active { color: var(--accent); }
+
+    /* ── Layout ── */
+    main { max-width: 1100px; margin: 0 auto; padding: 48px 24px; }
+
+    .hero { text-align: center; margin-bottom: 48px; }
+    .hero h1 { font-size: 2.4rem; font-weight: 800; letter-spacing: -1px; margin-bottom: 12px; }
+    .hero h1 span { color: var(--accent); }
+    .hero p { color: var(--muted); font-size: 1.05rem; max-width: 580px; margin: 0 auto 24px; line-height: 1.6; }
+
+    .badges { display: flex; gap: 8px; justify-content: center; flex-wrap: wrap; margin-bottom: 0; }
+    .badge {
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: 20px; padding: 4px 12px; font-size: 0.75rem; color: var(--muted);
+      font-family: var(--mono);
+    }
+    .badge.green { border-color: #238636; color: var(--accent2); }
+    .badge.blue  { border-color: #1f6feb; color: var(--accent); }
+
+    /* ── Demo section ── */
+    .demo-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+    @media (max-width: 768px) { .demo-grid { grid-template-columns: 1fr; } }
+
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 24px;
+    }
+    .card h2 { font-size: 1rem; font-weight: 600; margin-bottom: 16px; color: var(--text); }
+    .card h2 .icon { margin-right: 6px; }
+
+    /* Input area */
+    .query-wrap { position: relative; }
+    textarea {
+      width: 100%; background: var(--bg); border: 1px solid var(--border);
+      border-radius: var(--radius); color: var(--text); font-size: 0.95rem;
+      padding: 12px 14px; resize: vertical; min-height: 80px;
+      font-family: inherit; outline: none;
+      transition: border-color 0.15s;
+    }
+    textarea:focus { border-color: var(--accent); }
+    textarea::placeholder { color: var(--muted); }
+
+    .controls { display: flex; gap: 8px; margin-top: 12px; align-items: center; flex-wrap: wrap; }
+
+    select {
+      background: var(--bg); border: 1px solid var(--border);
+      color: var(--text); padding: 8px 10px; border-radius: var(--radius);
+      font-size: 0.85rem; outline: none; cursor: pointer;
+    }
+    select:focus { border-color: var(--accent); }
+
+    button {
+      background: var(--accent); color: #000; border: none;
+      padding: 8px 20px; border-radius: var(--radius);
+      font-size: 0.9rem; font-weight: 600; cursor: pointer;
+      transition: opacity 0.15s;
+    }
+    button:hover { opacity: 0.85; }
+    button:disabled { opacity: 0.4; cursor: default; }
+    button.secondary {
+      background: var(--surface); color: var(--muted);
+      border: 1px solid var(--border);
+    }
+
+    .examples { margin-top: 12px; }
+    .examples p { font-size: 0.75rem; color: var(--muted); margin-bottom: 6px; }
+    .example-pills { display: flex; flex-wrap: wrap; gap: 6px; }
+    .pill {
+      background: var(--bg); border: 1px solid var(--border);
+      border-radius: 20px; padding: 3px 10px; font-size: 0.78rem;
+      color: var(--muted); cursor: pointer; transition: border-color 0.15s, color 0.15s;
+    }
+    .pill:hover { border-color: var(--accent); color: var(--text); }
+
+    /* Result area */
+    .result-empty { color: var(--muted); font-size: 0.9rem; text-align: center; padding: 32px 0; }
+
+    .result-action {
+      display: inline-flex; align-items: center; gap: 6px;
+      padding: 3px 10px; border-radius: 20px; font-size: 0.8rem; font-weight: 600;
+      margin-bottom: 16px;
+    }
+    .result-action.route { background: #1a3a1a; color: var(--accent2); border: 1px solid #238636; }
+    .result-action.clarify { background: #2d2200; color: var(--warn); border: 1px solid #9e6a03; }
+
+    .cli-name {
+      font-family: var(--mono); font-size: 1.3rem; font-weight: 700;
+      color: var(--accent); margin-bottom: 4px;
+    }
+    .cli-desc { color: var(--muted); font-size: 0.875rem; margin-bottom: 16px; }
+
+    .meta-row { display: flex; gap: 16px; flex-wrap: wrap; margin-bottom: 16px; }
+    .meta-item { font-size: 0.8rem; }
+    .meta-item .label { color: var(--muted); }
+    .meta-item .value { color: var(--text); font-family: var(--mono); font-weight: 600; }
+    .meta-item .value.good { color: var(--accent2); }
+    .meta-item .value.warn { color: var(--warn); }
+
+    .section-label {
+      font-size: 0.7rem; font-weight: 700; text-transform: uppercase;
+      letter-spacing: 0.08em; color: var(--muted); margin-bottom: 6px;
+    }
+
+    .params-block {
+      background: var(--bg); border: 1px solid var(--border);
+      border-radius: var(--radius); padding: 12px 14px;
+      font-family: var(--mono); font-size: 0.82rem; color: var(--text);
+      white-space: pre-wrap; overflow-x: auto; margin-bottom: 16px;
+    }
+
+    .top3-list { list-style: none; display: flex; flex-direction: column; gap: 6px; }
+    .top3-item {
+      display: flex; align-items: center; justify-content: space-between;
+      background: var(--bg); border: 1px solid var(--border);
+      border-radius: 6px; padding: 8px 12px;
+    }
+    .top3-item.winner { border-color: var(--accent); }
+    .top3-item .t-name { font-family: var(--mono); font-size: 0.85rem; }
+    .top3-item .t-score {
+      font-size: 0.78rem; font-family: var(--mono);
+      color: var(--muted); min-width: 50px; text-align: right;
+    }
+    .top3-item .t-bar {
+      flex: 1; height: 4px; background: var(--border); margin: 0 10px;
+      border-radius: 2px; overflow: hidden;
+    }
+    .top3-item .t-fill { height: 100%; background: var(--accent); border-radius: 2px; }
+
+    .latency-badge {
+      display: inline-flex; align-items: center; gap: 4px;
+      font-size: 0.78rem; color: var(--muted); font-family: var(--mono);
+    }
+    .latency-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--accent2); }
+
+    .spinner {
+      display: none; width: 16px; height: 16px;
+      border: 2px solid var(--border); border-top-color: var(--accent);
+      border-radius: 50%; animation: spin 0.6s linear infinite;
+    }
+    @keyframes spin { to { transform: rotate(360deg); } }
+
+    /* ── Reranker toggle ── */
+    .reranker-row {
+      display: flex; align-items: center; gap: 10px;
+      margin-top: 10px; padding: 10px 12px;
+      background: var(--bg); border: 1px solid var(--border);
+      border-radius: var(--radius); cursor: pointer;
+      transition: border-color 0.15s;
+    }
+    .reranker-row:hover { border-color: var(--accent); }
+    .reranker-row.active { border-color: #9e6a03; background: #1c1600; }
+
+    /* custom toggle switch */
+    .toggle-wrap { position: relative; width: 36px; height: 20px; flex-shrink: 0; }
+    .toggle-wrap input { opacity: 0; width: 0; height: 0; }
+    .toggle-slider {
+      position: absolute; inset: 0;
+      background: var(--border); border-radius: 20px;
+      transition: background 0.2s;
+      cursor: pointer;
+    }
+    .toggle-slider::before {
+      content: ''; position: absolute;
+      width: 14px; height: 14px; left: 3px; top: 3px;
+      background: var(--muted); border-radius: 50%;
+      transition: transform 0.2s, background 0.2s;
+    }
+    .toggle-wrap input:checked + .toggle-slider { background: #9e6a03; }
+    .toggle-wrap input:checked + .toggle-slider::before {
+      transform: translateX(16px); background: var(--warn);
+    }
+
+    .reranker-label { flex: 1; }
+    .reranker-label strong { font-size: 0.875rem; color: var(--text); display: block; }
+    .reranker-label small { font-size: 0.75rem; color: var(--muted); }
+    .reranker-row.active .reranker-label strong { color: var(--warn); }
+
+    .reranker-badge {
+      font-size: 0.7rem; font-family: var(--mono);
+      background: #2d2200; color: var(--warn);
+      border: 1px solid #9e6a03; border-radius: 4px;
+      padding: 2px 6px; flex-shrink: 0;
+    }
+
+    /* ── Benchmark section ── */
+    .bench-section { margin-top: 48px; }
+    .bench-section h2 { font-size: 1.2rem; font-weight: 700; margin-bottom: 20px; }
+
+    .bench-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 16px; }
+    .bench-card {
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: var(--radius); padding: 20px; text-align: center;
+    }
+    .bench-card .bval { font-size: 2rem; font-weight: 800; color: var(--accent); font-family: var(--mono); }
+    .bench-card .blabel { font-size: 0.8rem; color: var(--muted); margin-top: 4px; }
+
+    .bench-table-wrap { overflow-x: auto; margin-top: 24px; }
+    table { width: 100%; border-collapse: collapse; font-size: 0.875rem; }
+    th, td { padding: 10px 14px; text-align: left; border-bottom: 1px solid var(--border); }
+    th { color: var(--muted); font-weight: 600; font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.05em; }
+    td.mono { font-family: var(--mono); }
+    td.pos { color: var(--accent2); }
+    td.neg { color: #f85149; }
+
+    /* ── Architecture ── */
+    .arch-section { margin-top: 48px; }
+    .arch-section h2 { font-size: 1.2rem; font-weight: 700; margin-bottom: 20px; }
+    .arch-flow {
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: var(--radius); padding: 24px;
+      font-family: var(--mono); font-size: 0.82rem; line-height: 1.8;
+      color: var(--muted); white-space: pre;
+      overflow-x: auto;
+    }
+    .arch-flow .hl { color: var(--accent); }
+    .arch-flow .hl2 { color: var(--accent2); }
+
+    footer {
+      text-align: center; padding: 32px; color: var(--muted);
+      font-size: 0.8rem; border-top: 1px solid var(--border); margin-top: 64px;
+    }
+    footer a { color: var(--accent); text-decoration: none; }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="logo">CLI<span>brary</span></div>
+  <div class="tagline">Production-grade tool routing for AI agents</div>
+  <nav>
+    <a href="#demo" class="active">Demo</a>
+    <a href="#benchmark">Benchmark</a>
+    <a href="#architecture">Architecture</a>
+    <a href="https://github.com/clibrary-hub/CLIbrary" target="_blank">GitHub ↗</a>
+  </nav>
+</header>
+
+<main>
+
+  <!-- Hero -->
+  <section class="hero">
+    <h1>Route any intent to the right <span>tool</span></h1>
+    <p>Two-stage semantic retrieval routes 500+ CLI tools in ~36ms using only ~150 tokens — no LLM required for 80% of calls.</p>
+    <div class="badges">
+      <span class="badge green">82.3% Top-1 Accuracy</span>
+      <span class="badge blue">~36ms Median Latency</span>
+      <span class="badge green">~150 Tokens</span>
+      <span class="badge">961 CLIs</span>
+      <span class="badge">Multilingual</span>
+    </div>
+  </section>
+
+  <!-- Demo -->
+  <section id="demo" class="demo-grid">
+
+    <!-- Input card -->
+    <div class="card">
+      <h2><span class="icon">⌨</span> Try it live</h2>
+
+      <div class="query-wrap">
+        <textarea id="queryInput" placeholder="Type an intent… e.g. 幫我查上週銷售總額" rows="3"></textarea>
+      </div>
+
+      <div class="controls">
+        <select id="backendSelect">
+          <option value="e5">e5-base (768d, fast)</option>
+          <option value="qwen">Qwen3-0.6B (1024d, accurate)</option>
+          <option value="e5_full">e5-base full (961 CLIs)</option>
+        </select>
+        <button id="routeBtn" onclick="doRoute()">Route →</button>
+        <div class="spinner" id="spinner"></div>
+        <span class="latency-badge" id="latBadge" style="display:none">
+          <div class="latency-dot"></div>
+          <span id="latVal"></span>
+        </span>
+      </div>
+
+      <label class="reranker-row" id="rerankerRow">
+        <div class="toggle-wrap">
+          <input type="checkbox" id="rerankerToggle" onchange="onRerankerChange()">
+          <span class="toggle-slider"></span>
+        </div>
+        <div class="reranker-label">
+          <strong>Qwen3-Reranker-0.6B</strong>
+          <small>Cross-encoder re-ranking after FAISS retrieval — slower but more precise on ambiguous queries</small>
+        </div>
+        <span class="reranker-badge" id="rerankerBadge">~1–2s extra</span>
+      </label>
+
+      <div class="examples">
+        <p>Try an example:</p>
+        <div class="example-pills" id="examplePills"></div>
+      </div>
+    </div>
+
+    <!-- Result card -->
+    <div class="card">
+      <h2><span class="icon">⚡</span> Result</h2>
+      <div id="resultArea">
+        <div class="result-empty">Enter a query and click Route →</div>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- Benchmark -->
+  <section id="benchmark" class="bench-section">
+    <h2>Benchmark: e5-base vs Qwen3-Embedding-0.6B</h2>
+    <div class="bench-grid" id="benchCards">
+      <div class="bench-card"><div class="bval" id="bv-top1">—</div><div class="blabel">Top-1 Accuracy (e5)</div></div>
+      <div class="bench-card"><div class="bval" id="bv-top3">—</div><div class="blabel">Top-3 Accuracy (e5)</div></div>
+      <div class="bench-card"><div class="bval" id="bv-patha">—</div><div class="blabel">Path-A Rate (e5)</div></div>
+      <div class="bench-card"><div class="bval" id="bv-lat">—</div><div class="blabel">Median Latency (e5)</div></div>
+    </div>
+
+    <div class="bench-table-wrap">
+      <table id="benchTable">
+        <thead>
+          <tr>
+            <th>Metric</th>
+            <th>e5-base</th>
+            <th>Qwen3-0.6B</th>
+            <th>Delta</th>
+          </tr>
+        </thead>
+        <tbody id="benchBody">
+          <tr><td colspan="4" style="color:var(--muted);text-align:center;padding:24px">Loading…</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- Architecture -->
+  <section id="architecture" class="arch-section">
+    <h2>Architecture</h2>
+    <div class="arch-flow"><span class="hl">Agent intent</span>
+    │
+    ▼
+<span class="hl">Embed</span>  (multilingual-e5-base <em>or</em> Qwen3-Embedding-0.6B, ~10ms)
+    │
+    ▼
+<span class="hl">Stage 1: FAISS cli_index</span>  →  top-3 candidates  (~5ms)
+    │
+    ▼
+<span class="hl">Re-rank</span>  (MaxSim heuristic  <em>or</em>  Qwen3-Reranker cross-encoder)
+    │
+    ├── low confidence + small gap  →  <span class="hl2">Clarify</span>  (return top-3 to LLM)
+    │
+    └── high confidence
+            │
+            ▼
+        <span class="hl">Stage 2: example_index</span>  →  best matching example
+            │
+            ├── sim ≥ 0.85  →  <span class="hl2">Path A</span>: template fill  (no LLM, ~80% of calls)
+            │
+            └── sim &lt; 0.85  →  <span class="hl2">Path B</span>: return params={}  (caller fills via LLM)</div>
+  </section>
+
+</main>
+
+<footer>
+  CLIbrary is open source under the MIT License ·
+  <a href="https://github.com/clibrary-hub/CLIbrary" target="_blank">GitHub</a> ·
+  <a href="https://pypi.org/project/clibrary-hub/" target="_blank">PyPI</a>
+</footer>
+
+<script>
+const EXAMPLES = [
+  "幫我查上週銷售總額",
+  "scan /home/user/project for repo structure",
+  "pack src/ directory under 4000 tokens",
+  "比較 output_v1.txt 和 output_v2.txt",
+  "find duplicate files in /downloads",
+  "export today's chat as Markdown",
+  "run SQL on CSV file",
+  "掃描 Docker image 漏洞",
+];
+
+// Populate example pills
+const pillsEl = document.getElementById("examplePills");
+EXAMPLES.forEach(ex => {
+  const el = document.createElement("span");
+  el.className = "pill";
+  el.textContent = ex;
+  el.onclick = () => {
+    document.getElementById("queryInput").value = ex;
+    doRoute();
+  };
+  pillsEl.appendChild(el);
+});
+
+// Enter key submits
+document.getElementById("queryInput").addEventListener("keydown", e => {
+  if (e.key === "Enter" && !e.shiftKey) { e.preventDefault(); doRoute(); }
+});
+
+function onRerankerChange() {
+  const on = document.getElementById("rerankerToggle").checked;
+  const row = document.getElementById("rerankerRow");
+  const badge = document.getElementById("rerankerBadge");
+  row.classList.toggle("active", on);
+  badge.textContent = on ? "enabled ⚡" : "~1–2s extra";
+}
+
+async function doRoute() {
+  const query = document.getElementById("queryInput").value.trim();
+  if (!query) return;
+
+  const backend = document.getElementById("backendSelect").value;
+  const use_reranker = document.getElementById("rerankerToggle").checked;
+  const btn = document.getElementById("routeBtn");
+  const spinner = document.getElementById("spinner");
+  const latBadge = document.getElementById("latBadge");
+
+  btn.disabled = true;
+  spinner.style.display = "block";
+  latBadge.style.display = "none";
+  const hint = use_reranker ? "Routing with Qwen3-Reranker…" : "Routing…";
+  document.getElementById("resultArea").innerHTML = `<div class="result-empty">${hint}</div>`;
+
+  try {
+    const res = await fetch("/api/route", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ query, backend, use_reranker }),
+    });
+    const data = await res.json();
+    renderResult(data);
+    document.getElementById("latVal").textContent = `${data.latency_ms}ms`;
+    latBadge.style.display = "flex";
+  } catch (e) {
+    document.getElementById("resultArea").innerHTML =
+      `<div class="result-empty" style="color:#f85149">Error: ${e.message}</div>`;
+  } finally {
+    btn.disabled = false;
+    spinner.style.display = "none";
+  }
+}
+
+function renderResult(d) {
+  const el = document.getElementById("resultArea");
+
+  if (d.action === "clarify") {
+    el.innerHTML = `
+      <div class="result-action clarify">⚠ clarify</div>
+      <p style="color:var(--muted);font-size:.875rem;margin-bottom:12px">
+        Confidence too low — here are the top candidates:
+      </p>
+      <ul class="top3-list">
+        ${d.choices.map((c, i) => `
+          <li class="top3-item ${i===0?'winner':''}">
+            <span class="t-name">${c.name}</span>
+            <span style="color:var(--muted);font-size:.78rem;margin-left:8px">${c.description || ''}</span>
+          </li>`).join('')}
+      </ul>`;
+    return;
+  }
+
+  const conf = d.confidence ?? 0;
+  const confClass = conf >= 0.9 ? 'good' : conf >= 0.75 ? '' : 'warn';
+  const paramStr = Object.keys(d.params).length
+    ? JSON.stringify(d.params, null, 2)
+    : '(Path B — params to be filled by LLM)';
+
+  const top3Html = (d.top3 || []).map((t, i) => {
+    const pct = Math.round((t.score || 0) * 100);
+    return `<li class="top3-item ${i===0?'winner':''}">
+      <span class="t-name">${t.name}</span>
+      <div class="t-bar"><div class="t-fill" style="width:${pct}%"></div></div>
+      <span class="t-score">${(t.score||0).toFixed(3)}</span>
+    </li>`;
+  }).join('');
+
+  el.innerHTML = `
+    <div class="result-action route">✓ routed</div>
+    <div class="cli-name">${d.cli}</div>
+    <div class="cli-desc">${d.description || ''}</div>
+
+    <div class="meta-row">
+      <div class="meta-item">
+        <span class="label">Confidence </span>
+        <span class="value ${confClass}">${(conf*100).toFixed(1)}%</span>
+      </div>
+      <div class="meta-item">
+        <span class="label">Ex-sim </span>
+        <span class="value">${((d.ex_score||0)*100).toFixed(1)}%</span>
+      </div>
+      <div class="meta-item">
+        <span class="label">Path </span>
+        <span class="value ${d.source==='A'?'good':'warn'}">${d.source}</span>
+      </div>
+      <div class="meta-item">
+        <span class="label">Rerank </span>
+        <span class="value" style="${d.rerank_method==='cross-encoder'?'color:var(--warn)':''}">${d.rerank_method || 'maxsim'}</span>
+      </div>
+      <div class="meta-item">
+        <span class="label">Backend </span>
+        <span class="value">${d.backend}</span>
+      </div>
+    </div>
+
+    <div class="section-label">Params</div>
+    <pre class="params-block">${escHtml(paramStr)}</pre>
+
+    <div class="section-label">Top 3 candidates</div>
+    <ul class="top3-list">${top3Html}</ul>
+  `;
+}
+
+function escHtml(s) {
+  return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+}
+
+// Load benchmark data
+async function loadBenchmark() {
+  try {
+    const res = await fetch("/api/benchmark");
+    if (!res.ok) return;
+    const d = await res.json();
+    const b = d.baseline, c = d.candidate;
+
+    document.getElementById("bv-top1").textContent = b.top1_acc + "%";
+    document.getElementById("bv-top3").textContent = b.top3_acc + "%";
+    document.getElementById("bv-patha").textContent = b.path_a_rate + "%";
+    document.getElementById("bv-lat").textContent = b.median_ms + "ms";
+
+    const rows = [
+      ["Top-1 Acc (%)",     b.top1_acc,    c.top1_acc],
+      ["Top-3 Acc (%)",     b.top3_acc,    c.top3_acc],
+      ["Path-A Rate (%)",   b.path_a_rate, c.path_a_rate],
+      ["Median Lat (ms)",   b.median_ms,   c.median_ms],
+      ["P95 Lat (ms)",      b.p95_ms,      c.p95_ms],
+    ];
+
+    const tbody = document.getElementById("benchBody");
+    tbody.innerHTML = rows.map(([label, bv, cv]) => {
+      const delta = cv - bv;
+      const sign = delta >= 0 ? "+" : "";
+      // For accuracy metrics, positive delta is good; for latency, negative is good
+      const isLatency = label.includes("Lat");
+      const good = isLatency ? delta < 0 : delta > 0;
+      const cls = delta === 0 ? "" : (good ? "pos" : "neg");
+      return `<tr>
+        <td>${label}</td>
+        <td class="mono">${bv}</td>
+        <td class="mono">${cv}</td>
+        <td class="mono ${cls}">${sign}${round1(delta)}</td>
+      </tr>`;
+    }).join('');
+  } catch(e) {
+    document.getElementById("benchBody").innerHTML =
+      '<tr><td colspan="4" style="color:var(--muted);text-align:center;padding:16px">No benchmark data — run benchmark/run_eval.py first.</td></tr>';
+  }
+}
+
+function round1(n) { return Math.round(n * 10) / 10; }
+
+loadBenchmark();
+</script>
+</body>
+</html>

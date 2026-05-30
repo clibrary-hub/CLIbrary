@@ -32,6 +32,12 @@ _DEFAULT_CLARIFY_MIN_GAP   = 0.010  # top1 - top2 gap below this (when low score
 _DEFAULT_RERANK_ALPHA      = 0.7    # combined = alpha*mean_sim + (1-alpha)*max_sim
 _DEFAULT_MODEL             = "intfloat/multilingual-e5-base"
 _QUERY_PREFIX              = "query: "
+
+# Per-model query prefix overrides
+_MODEL_QUERY_PREFIXES: dict[str, str] = {
+    "Qwen/Qwen3-Embedding": "",   # Qwen3 uses prompt_name kwarg, not a text prefix
+    "Qwen/Qwen3-Embedding-0.6B": "",
+}
 # ──────────────────────────────────────────────────────────────────────────────
 
 
@@ -55,7 +61,10 @@ class CLIbrary:
     clarify_min_gap : float
         Minimum score gap between top-1 and top-2 to avoid clarify.
     rerank_alpha : float
-        Weight of mean_sim vs max_sim in re-ranking formula.
+        Weight of mean_sim vs max_sim in re-ranking formula (ignored when reranker is set).
+    reranker : object | None
+        Optional Qwen3Reranker (or any object with a .rerank(query, candidates) method).
+        When provided, replaces the MaxSim heuristic for Stage 1 re-ranking.
     """
 
     def __init__(
@@ -67,6 +76,7 @@ class CLIbrary:
         clarify_min_score: float = _DEFAULT_CLARIFY_MIN_SCORE,
         clarify_min_gap: float = _DEFAULT_CLARIFY_MIN_GAP,
         rerank_alpha: float = _DEFAULT_RERANK_ALPHA,
+        reranker: Any = None,
     ) -> None:
         self._index_dir = Path(index_dir) if index_dir else Path(__file__).parent / "indices"
         self._model_name = model_name
@@ -75,6 +85,7 @@ class CLIbrary:
         self._clarify_min_score = clarify_min_score
         self._clarify_min_gap = clarify_min_gap
         self._rerank_alpha = rerank_alpha
+        self._reranker = reranker
 
         # Lazy-loaded state
         self._model: SentenceTransformer | None = None
@@ -127,6 +138,14 @@ class CLIbrary:
 
     def _encode(self, text: str) -> np.ndarray:
         assert self._model is not None
+        # Qwen3-Embedding uses prompt_name kwarg instead of a text prefix
+        if self._model_name in _MODEL_QUERY_PREFIXES:
+            return self._model.encode(
+                [text],
+                prompt_name="query",
+                normalize_embeddings=True,
+                show_progress_bar=False,
+            ).astype("float32")
         return self._model.encode(
             [_QUERY_PREFIX + text],
             normalize_embeddings=True,
@@ -184,16 +203,34 @@ class CLIbrary:
         raw_scores = raw_scores[0].tolist()
         raw_indices = raw_indices[0].tolist()
 
-        # Re-rank with MaxSim
-        reranked = []
-        for idx, mean_sim in zip(raw_indices, raw_scores):
-            if idx < 0:
-                continue
-            name = self._cli_meta[idx]["name"]
-            max_sim = self._maxsim(name, q_vec)
-            combined = self._rerank_alpha * mean_sim + (1 - self._rerank_alpha) * max_sim
-            reranked.append((idx, mean_sim, max_sim, combined))
-        reranked.sort(key=lambda x: x[3], reverse=True)
+        candidates = [
+            (idx, mean_sim)
+            for idx, mean_sim in zip(raw_indices, raw_scores)
+            if idx >= 0
+        ]
+
+        if self._reranker is not None:
+            # Cross-encoder reranking: replace MaxSim with Qwen3-Reranker scores
+            idx_list = [idx for idx, _ in candidates]
+            cand_metas = [self._cli_meta[idx] for idx in idx_list]
+            ranked_pairs = self._reranker.rerank(query, cand_metas)
+            # Build a name→faiss_idx lookup to avoid list.index() scan
+            name_to_idx = {self._cli_meta[idx]["name"]: idx for idx in idx_list}
+            reranked = [
+                (name_to_idx[meta["name"]], 0.0, 0.0, score)
+                for meta, score in ranked_pairs
+            ]
+            rerank_method = "cross-encoder"
+        else:
+            # Default MaxSim heuristic
+            scored = []
+            for idx, mean_sim in candidates:
+                name = self._cli_meta[idx]["name"]
+                max_sim = self._maxsim(name, q_vec)
+                combined = self._rerank_alpha * mean_sim + (1 - self._rerank_alpha) * max_sim
+                scored.append((idx, mean_sim, max_sim, combined))
+            reranked = sorted(scored, key=lambda x: x[3], reverse=True)
+            rerank_method = "maxsim"
 
         top3 = [
             {"name": self._cli_meta[idx]["name"], "score": round(combined, 4)}
@@ -206,8 +243,11 @@ class CLIbrary:
         best_cli_meta = self._cli_meta[best_idx]
         cli_name = best_cli_meta["name"]
 
-        # Clarify check
-        if best_score < self._clarify_min_score and (best_score - second_score) < self._clarify_min_gap:
+        # Clarify check — reranker outputs p(yes) probabilities, not cosine similarities,
+        # so use a much lower threshold (0.3) when a cross-encoder is active.
+        clarify_threshold = 0.30 if self._reranker is not None else self._clarify_min_score
+        clarify_gap = 0.05 if self._reranker is not None else self._clarify_min_gap
+        if best_score < clarify_threshold and (best_score - second_score) < clarify_gap:
             return {
                 "action": "clarify",
                 "choices": [
@@ -245,6 +285,7 @@ class CLIbrary:
             "confidence": round(best_score, 4),
             "ex_score": round(best_ex_score, 4),
             "source": source,
+            "rerank_method": rerank_method,
             "top3": top3,
             "latency_ms": round((time.perf_counter() - t0) * 1000, 1),
         }

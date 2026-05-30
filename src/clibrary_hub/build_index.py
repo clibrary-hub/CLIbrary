@@ -29,6 +29,9 @@ PASSAGE_PREFIX = "passage: "
 DEFAULT_MODEL = "intfloat/multilingual-e5-base"
 DEFAULT_OUTPUT_DIR = Path.home() / ".clibrary" / "indices"
 
+# Models that use prompt_name kwarg instead of a text prefix
+_QWEN_MODELS = {"Qwen/Qwen3-Embedding", "Qwen/Qwen3-Embedding-0.6B"}
+
 
 def load_manifests(manifest_dir: Path) -> list[dict]:
     manifests = []
@@ -56,9 +59,19 @@ def load_manifests(manifest_dir: Path) -> list[dict]:
     return manifests
 
 
+def _encode_passages(model: SentenceTransformer, texts: list[str], model_name: str, **kwargs) -> "np.ndarray":
+    """Encode passage texts, using prompt_name for Qwen models."""
+    if model_name in _QWEN_MODELS:
+        # Strip the "passage: " prefix we added — Qwen uses prompt_name="document"
+        clean = [t.removeprefix(PASSAGE_PREFIX) for t in texts]
+        return model.encode(clean, prompt_name="document", **kwargs)
+    return model.encode(texts, **kwargs)
+
+
 def build_indices(
     manifests: list[dict],
     model: SentenceTransformer,
+    model_name: str = DEFAULT_MODEL,
 ) -> tuple[faiss.Index, list, faiss.Index, list, faiss.Index, list, int]:
     cli_meta: list[dict] = []
     trigger_meta: list[dict] = []
@@ -99,11 +112,9 @@ def build_indices(
 
     print(f"  Encoding {len(cli_texts)} trigger texts for cli_index...")
     t0 = time.perf_counter()
-    all_trigger_vecs = model.encode(
-        cli_texts,
-        batch_size=64,
-        show_progress_bar=True,
-        normalize_embeddings=True,
+    all_trigger_vecs = _encode_passages(
+        model, cli_texts, model_name,
+        batch_size=64, show_progress_bar=True, normalize_embeddings=True,
     ).astype("float32")
     print(f"  Done ({time.perf_counter() - t0:.1f}s)")
 
@@ -117,11 +128,9 @@ def build_indices(
 
     print(f"  Encoding {len(example_texts)} example queries...")
     t0 = time.perf_counter()
-    example_vecs = model.encode(
-        example_texts,
-        batch_size=64,
-        show_progress_bar=True,
-        normalize_embeddings=True,
+    example_vecs = _encode_passages(
+        model, example_texts, model_name,
+        batch_size=64, show_progress_bar=True, normalize_embeddings=True,
     ).astype("float32")
     print(f"  Done ({time.perf_counter() - t0:.1f}s)")
 
@@ -190,7 +199,7 @@ Examples:
     print(f"  Done ({time.perf_counter() - t0:.1f}s)\n")
 
     cli_idx, cli_meta, trig_idx, trig_meta, ex_idx, ex_meta, dim = build_indices(
-        manifests, model
+        manifests, model, model_name=args.model
     )
 
     print(f"\nWriting indices to: {output_dir}")
