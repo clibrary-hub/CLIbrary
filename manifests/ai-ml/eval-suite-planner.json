@@ -1,0 +1,49 @@
+{
+  "name": "eval-suite-planner",
+  "version": "0.1.0",
+  "category": "ai-ml",
+  "description": "Stage 1 standalone — turns an Agent Vision (or plain-English description) into a structured eval plan: 10–15 acceptance criteria phrased \"The agent should…\", each placed on a Value × Risk matrix (H...",
+  "intent_triggers": [
+    "use the eval suite planner agent skill",
+    "run a workflow for eval suite planner",
+    "help me with eval suite planner",
+    "我需要處理 eval suite planner 相關工作",
+    "幫我啟用 eval suite planner 這個 skill",
+    "用 agent skill 完成 eval suite planner",
+    "use eval suite planner from eval-guide"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the eval suite planner skill for this task.",
+      "invocation": "codex --skill eval-suite-planner \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "ai-ml",
+    "mcpservers",
+    "mit"
+  ]
+}

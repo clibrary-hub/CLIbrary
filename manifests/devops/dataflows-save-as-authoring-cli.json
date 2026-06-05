@@ -1,0 +1,49 @@
+{
+  "name": "dataflows-save-as-authoring-cli",
+  "version": "0.1.0",
+  "category": "devops",
+  "description": "Agent skill for dataflows save as authoring cli workflows.",
+  "intent_triggers": [
+    "use the dataflows save as authoring cli agent skill",
+    "run a workflow for dataflows save as authoring cli",
+    "help me with dataflows save as authoring cli",
+    "我需要處理 dataflows save as authoring cli 相關工作",
+    "幫我啟用 dataflows save as authoring cli 這個 skill",
+    "用 agent skill 完成 dataflows save as authoring cli",
+    "use dataflows save as authoring cli from skills-for-fabric"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the dataflows save as authoring cli skill for this task.",
+      "invocation": "codex --skill dataflows-save-as-authoring-cli \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "devops",
+    "mcpservers",
+    "mit"
+  ]
+}

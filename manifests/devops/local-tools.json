@@ -1,0 +1,49 @@
+{
+  "name": "local-tools",
+  "version": "0.1.0",
+  "category": "devops",
+  "description": "Access local system resources including Calendar on macOS and Windows.",
+  "intent_triggers": [
+    "use the local tools agent skill",
+    "run a workflow for local tools",
+    "help me with local tools",
+    "我需要處理 local tools 相關工作",
+    "幫我啟用 local tools 這個 skill",
+    "用 agent skill 完成 local tools",
+    "use local tools from PopiStudio"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the local tools skill for this task.",
+      "invocation": "codex --skill local-tools \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "devops",
+    "mit",
+    "skills-rest"
+  ]
+}

@@ -1,0 +1,49 @@
+{
+  "name": "org-planning",
+  "version": "0.1.0",
+  "category": "ai-ml",
+  "description": "Headcount planning, org design, and team structure optimization.",
+  "intent_triggers": [
+    "use the org planning agent skill",
+    "run a workflow for org planning",
+    "help me with org planning",
+    "我需要處理 org planning 相關工作",
+    "幫我啟用 org planning 這個 skill",
+    "用 agent skill 完成 org planning",
+    "use org planning from knowledge-work-plugins"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the org planning skill for this task.",
+      "invocation": "codex --skill org-planning \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "ai-ml",
+    "apache-2.0",
+    "mcpservers"
+  ]
+}

@@ -1,0 +1,49 @@
+{
+  "name": "signoz-managing-views",
+  "version": "0.1.0",
+  "category": "devops",
+  "description": "Agent skill for signoz managing views workflows.",
+  "intent_triggers": [
+    "use the signoz managing views agent skill",
+    "run a workflow for signoz managing views",
+    "help me with signoz managing views",
+    "我需要處理 signoz managing views 相關工作",
+    "幫我啟用 signoz managing views 這個 skill",
+    "用 agent skill 完成 signoz managing views",
+    "use signoz managing views from agent-skills"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the signoz managing views skill for this task.",
+      "invocation": "codex --skill signoz-managing-views \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "devops",
+    "mcpservers",
+    "mit"
+  ]
+}

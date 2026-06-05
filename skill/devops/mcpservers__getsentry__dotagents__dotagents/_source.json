@@ -1,0 +1,15 @@
+{
+  "source": "mcpservers",
+  "listing_url": "https://mcpservers.org/zh-TW/agent-skills",
+  "owner": "getsentry",
+  "repo": "dotagents",
+  "branch": "HEAD",
+  "skill": "dotagents",
+  "repo_url": "https://github.com/getsentry/dotagents",
+  "license": {
+    "spdx": "MIT",
+    "url": "https://github.com/getsentry/dotagents/blob/main/LICENSE.md",
+    "source": "api"
+  },
+  "zip_subdir": "dotagents-main/skills/dotagents"
+}

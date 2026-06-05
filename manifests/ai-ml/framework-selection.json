@@ -1,0 +1,49 @@
+{
+  "name": "framework-selection",
+  "version": "0.1.0",
+  "category": "ai-ml",
+  "description": "INVOKE THIS SKILL at the START of any LangChain/LangGraph/Deep Agents project, before writing any agent code.",
+  "intent_triggers": [
+    "use the framework selection agent skill",
+    "run a workflow for framework selection",
+    "help me with framework selection",
+    "我需要處理 framework selection 相關工作",
+    "幫我啟用 framework selection 這個 skill",
+    "用 agent skill 完成 framework selection",
+    "use framework selection from skills-benchmarks"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the framework selection skill for this task.",
+      "invocation": "codex --skill framework-selection \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "ai-ml",
+    "mcpservers",
+    "mit"
+  ]
+}

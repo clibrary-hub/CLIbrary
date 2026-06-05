@@ -1,0 +1,49 @@
+{
+  "name": "code-style",
+  "version": "0.1.0",
+  "category": "devops",
+  "description": "Guide for running code style linters and formatters.",
+  "intent_triggers": [
+    "use the code style agent skill",
+    "run a workflow for code style",
+    "help me with code style",
+    "我需要處理 code style 相關工作",
+    "幫我啟用 code style 這個 skill",
+    "用 agent skill 完成 code style",
+    "use code style from semantic-link-labs"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the code style skill for this task.",
+      "invocation": "codex --skill code-style \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "devops",
+    "mcpservers",
+    "mit"
+  ]
+}

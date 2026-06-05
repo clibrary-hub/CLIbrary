@@ -1,0 +1,49 @@
+{
+  "name": "prisma-upgrade-v7",
+  "version": "0.1.0",
+  "category": "data",
+  "description": "Complete migration guide from Prisma ORM v6 to v7 covering all breaking changes.",
+  "intent_triggers": [
+    "use the prisma upgrade v7 agent skill",
+    "run a workflow for prisma upgrade v7",
+    "help me with prisma upgrade v7",
+    "我需要處理 prisma upgrade v7 相關工作",
+    "幫我啟用 prisma upgrade v7 這個 skill",
+    "用 agent skill 完成 prisma upgrade v7",
+    "use prisma upgrade v7 from skills"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the prisma upgrade v7 skill for this task.",
+      "invocation": "codex --skill prisma-upgrade-v7 \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "data",
+    "mcpservers",
+    "mit"
+  ]
+}

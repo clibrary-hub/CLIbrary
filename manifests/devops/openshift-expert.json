@@ -1,0 +1,49 @@
+{
+  "name": "openshift-expert",
+  "version": "0.1.0",
+  "category": "devops",
+  "description": "OpenShift platform and Kubernetes expert with deep knowledge of cluster architecture, operators, networking, storage, troubleshooting, and CI/CD pipelines.",
+  "intent_triggers": [
+    "use the openshift expert agent skill",
+    "run a workflow for openshift expert",
+    "help me with openshift expert",
+    "我需要處理 openshift expert 相關工作",
+    "幫我啟用 openshift expert 這個 skill",
+    "用 agent skill 完成 openshift expert",
+    "use openshift expert from release-tests"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the openshift expert skill for this task.",
+      "invocation": "codex --skill openshift-expert \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "apache-2.0",
+    "devops",
+    "mcpservers"
+  ]
+}

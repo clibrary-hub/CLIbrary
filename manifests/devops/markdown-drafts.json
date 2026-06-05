@@ -1,0 +1,49 @@
+{
+  "name": "markdown-drafts",
+  "version": "0.1.0",
+  "category": "devops",
+  "description": "Use markdown formatting when drafting content intended for external systems (GitHub issues/PRs, Jira tickets, wiki pages, design docs, etc.) so formatting is preserved when the user copies it.",
+  "intent_triggers": [
+    "use the markdown drafts agent skill",
+    "run a workflow for markdown drafts",
+    "help me with markdown drafts",
+    "我需要處理 markdown drafts 相關工作",
+    "幫我啟用 markdown drafts 這個 skill",
+    "用 agent skill 完成 markdown drafts",
+    "use markdown drafts from workerd"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the markdown drafts skill for this task.",
+      "invocation": "codex --skill markdown-drafts \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "apache-2.0",
+    "devops",
+    "mcpservers"
+  ]
+}

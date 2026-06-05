@@ -1,0 +1,49 @@
+{
+  "name": "gws-gmail-watch",
+  "version": "0.1.0",
+  "category": "security",
+  "description": "Gmail: Watch for new emails and stream them as NDJSON.",
+  "intent_triggers": [
+    "use the gws gmail watch agent skill",
+    "run a workflow for gws gmail watch",
+    "help me with gws gmail watch",
+    "我需要處理 gws gmail watch 相關工作",
+    "幫我啟用 gws gmail watch 這個 skill",
+    "用 agent skill 完成 gws gmail watch",
+    "use gws gmail watch from cli"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the gws gmail watch skill for this task.",
+      "invocation": "codex --skill gws-gmail-watch \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "apache-2.0",
+    "mcpservers",
+    "security"
+  ]
+}

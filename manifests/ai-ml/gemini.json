@@ -1,0 +1,49 @@
+{
+  "name": "gemini",
+  "version": "0.1.0",
+  "category": "ai-ml",
+  "description": "Gemini CLI for one-shot Q&A, summaries, and generation.",
+  "intent_triggers": [
+    "use the gemini agent skill",
+    "run a workflow for gemini",
+    "help me with gemini",
+    "我需要處理 gemini 相關工作",
+    "幫我啟用 gemini 這個 skill",
+    "用 agent skill 完成 gemini",
+    "use gemini from openclaw"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the gemini skill for this task.",
+      "invocation": "codex --skill gemini \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "ai-ml",
+    "mcpservers",
+    "mit"
+  ]
+}

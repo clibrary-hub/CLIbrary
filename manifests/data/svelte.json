@@ -1,0 +1,49 @@
+{
+  "name": "svelte",
+  "version": "0.1.0",
+  "category": "data",
+  "description": "Svelte 5 renderer for json-render that turns JSON specs into Svelte component trees.",
+  "intent_triggers": [
+    "use the svelte agent skill",
+    "run a workflow for svelte",
+    "help me with svelte",
+    "我需要處理 svelte 相關工作",
+    "幫我啟用 svelte 這個 skill",
+    "用 agent skill 完成 svelte",
+    "use svelte from json-render"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the svelte skill for this task.",
+      "invocation": "codex --skill svelte \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "apache-2.0",
+    "data",
+    "mcpservers"
+  ]
+}

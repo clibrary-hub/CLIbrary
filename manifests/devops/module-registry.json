@@ -1,0 +1,49 @@
+{
+  "name": "module-registry",
+  "version": "0.1.0",
+  "category": "devops",
+  "description": "Load when working with the module registry in workerd — reading, modifying, debugging, or reviewing module resolution, compilation, evaluation, or registration code.",
+  "intent_triggers": [
+    "use the module registry agent skill",
+    "run a workflow for module registry",
+    "help me with module registry",
+    "我需要處理 module registry 相關工作",
+    "幫我啟用 module registry 這個 skill",
+    "用 agent skill 完成 module registry",
+    "use module registry from workerd"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the module registry skill for this task.",
+      "invocation": "codex --skill module-registry \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "apache-2.0",
+    "devops",
+    "mcpservers"
+  ]
+}

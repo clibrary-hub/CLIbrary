@@ -1,0 +1,49 @@
+{
+  "name": "himalaya",
+  "version": "0.1.0",
+  "category": "devops",
+  "description": "CLI to manage emails via IMAP/SMTP.",
+  "intent_triggers": [
+    "use the himalaya agent skill",
+    "run a workflow for himalaya",
+    "help me with himalaya",
+    "我需要處理 himalaya 相關工作",
+    "幫我啟用 himalaya 這個 skill",
+    "用 agent skill 完成 himalaya",
+    "use himalaya from openclaw"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the himalaya skill for this task.",
+      "invocation": "codex --skill himalaya \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "devops",
+    "mcpservers",
+    "mit"
+  ]
+}

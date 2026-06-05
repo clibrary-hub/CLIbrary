@@ -1,0 +1,49 @@
+{
+  "name": "pr-feedback-classifier",
+  "version": "0.1.0",
+  "category": "devops",
+  "description": "Agent skill for pr feedback classifier workflows.",
+  "intent_triggers": [
+    "use the pr feedback classifier agent skill",
+    "run a workflow for pr feedback classifier",
+    "help me with pr feedback classifier",
+    "我需要處理 pr feedback classifier 相關工作",
+    "幫我啟用 pr feedback classifier 這個 skill",
+    "用 agent skill 完成 pr feedback classifier",
+    "use pr feedback classifier from erk"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the pr feedback classifier skill for this task.",
+      "invocation": "codex --skill pr-feedback-classifier \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "devops",
+    "mcpservers",
+    "mit"
+  ]
+}

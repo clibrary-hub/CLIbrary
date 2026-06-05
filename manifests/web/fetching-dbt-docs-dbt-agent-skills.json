@@ -1,0 +1,49 @@
+{
+  "name": "fetching-dbt-docs-dbt-agent-skills",
+  "version": "0.1.0",
+  "category": "web",
+  "description": "Retrieves and searches dbt documentation pages in LLM-friendly markdown format.",
+  "intent_triggers": [
+    "use the fetching dbt docs agent skill",
+    "run a workflow for fetching dbt docs",
+    "help me with fetching dbt docs",
+    "我需要處理 fetching dbt docs 相關工作",
+    "幫我啟用 fetching dbt docs 這個 skill",
+    "用 agent skill 完成 fetching dbt docs",
+    "use fetching dbt docs from dbt-agent-skills"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the fetching dbt docs skill for this task.",
+      "invocation": "codex --skill fetching-dbt-docs \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "apache-2.0",
+    "mcpservers",
+    "web"
+  ]
+}

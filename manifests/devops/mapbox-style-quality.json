@@ -1,0 +1,49 @@
+{
+  "name": "mapbox-style-quality",
+  "version": "0.1.0",
+  "category": "devops",
+  "description": "Expert guidance on validating, optimizing, and ensuring quality of Mapbox styles through validation, accessibility checks, and optimization.",
+  "intent_triggers": [
+    "use the mapbox style quality agent skill",
+    "run a workflow for mapbox style quality",
+    "help me with mapbox style quality",
+    "我需要處理 mapbox style quality 相關工作",
+    "幫我啟用 mapbox style quality 這個 skill",
+    "用 agent skill 完成 mapbox style quality",
+    "use mapbox style quality from mapbox-agent-skills"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the mapbox style quality skill for this task.",
+      "invocation": "codex --skill mapbox-style-quality \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "devops",
+    "mcpservers",
+    "mit"
+  ]
+}

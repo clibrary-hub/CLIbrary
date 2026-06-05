@@ -1,0 +1,49 @@
+{
+  "name": "plugin-structure",
+  "version": "0.1.0",
+  "category": "devops",
+  "description": "This skill should be used when the user asks to \"create a plugin\", \"scaffold a plugin\", \"understand plugin structure\", \"organize plugin components\", \"set up plugin.json\", \"use ${CLAUDE_PLUGIN_ROOT}...",
+  "intent_triggers": [
+    "use the plugin structure agent skill",
+    "run a workflow for plugin structure",
+    "help me with plugin structure",
+    "我需要處理 plugin structure 相關工作",
+    "幫我啟用 plugin structure 這個 skill",
+    "用 agent skill 完成 plugin structure",
+    "use plugin structure from claude-plugins-official"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the plugin structure skill for this task.",
+      "invocation": "codex --skill plugin-structure \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "apache-2.0",
+    "devops",
+    "mcpservers"
+  ]
+}

@@ -1,0 +1,49 @@
+{
+  "name": "cms-taxonomy",
+  "version": "0.1.0",
+  "category": "data",
+  "description": "Advise developers on using Contentstack Taxonomy for structured, hierarchical content classification and delivery-side filtering.",
+  "intent_triggers": [
+    "use the cms taxonomy agent skill",
+    "run a workflow for cms taxonomy",
+    "help me with cms taxonomy",
+    "我需要處理 cms taxonomy 相關工作",
+    "幫我啟用 cms taxonomy 這個 skill",
+    "用 agent skill 完成 cms taxonomy",
+    "use cms taxonomy from contentstack-agent-skills"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the cms taxonomy skill for this task.",
+      "invocation": "codex --skill cms-taxonomy \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "data",
+    "mcpservers",
+    "mit"
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "source": "mcpservers",
+  "listing_url": "https://mcpservers.org/zh-TW/agent-skills",
+  "owner": "dagster-io",
+  "repo": "erk",
+  "branch": "HEAD",
+  "skill": "dignified-code-simplifier",
+  "repo_url": "https://github.com/dagster-io/erk",
+  "license": {
+    "spdx": "MIT",
+    "url": "https://github.com/dagster-io/erk/blob/master/LICENSE.md",
+    "source": "api"
+  },
+  "zip_subdir": "erk-master/.claude/skills/dignified-code-simplifier"
+}

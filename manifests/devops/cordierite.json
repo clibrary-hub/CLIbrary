@@ -1,0 +1,49 @@
+{
+  "name": "cordierite",
+  "version": "0.1.0",
+  "category": "devops",
+  "description": "Connect a Cordierite-enabled React Native app to your machine and drive it from the terminal using tools the app registers — useful for agents, scripts, and dev automation.",
+  "intent_triggers": [
+    "use the cordierite agent skill",
+    "run a workflow for cordierite",
+    "help me with cordierite",
+    "我需要處理 cordierite 相關工作",
+    "幫我啟用 cordierite 這個 skill",
+    "用 agent skill 完成 cordierite",
+    "use cordierite from cordierite"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the cordierite skill for this task.",
+      "invocation": "codex --skill cordierite \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "devops",
+    "mcpservers",
+    "mit"
+  ]
+}

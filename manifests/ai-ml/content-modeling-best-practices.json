@@ -1,0 +1,49 @@
+{
+  "name": "content-modeling-best-practices",
+  "version": "0.1.0",
+  "category": "ai-ml",
+  "description": "Structured content modeling guidance for schema design, content architecture, content reuse, references versus embedded objects, separation of concerns, and taxonomies across Sanity and other headl...",
+  "intent_triggers": [
+    "use the content modeling best practices agent skill",
+    "run a workflow for content modeling best practices",
+    "help me with content modeling best practices",
+    "我需要處理 content modeling best practices 相關工作",
+    "幫我啟用 content modeling best practices 這個 skill",
+    "用 agent skill 完成 content modeling best practices",
+    "use content modeling best practices from agent-toolkit"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the content modeling best practices skill for this task.",
+      "invocation": "codex --skill content-modeling-best-practices \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "ai-ml",
+    "mcpservers",
+    "mit"
+  ]
+}

@@ -1,0 +1,49 @@
+{
+  "name": "investigation-notes",
+  "version": "0.1.0",
+  "category": "devops",
+  "description": "Structured scratch tracking document for investigation state during bug hunts - prevents re-reading code, losing context, and rabbit holes; maintains external memory so you don't re-derive conclusions",
+  "intent_triggers": [
+    "use the investigation notes agent skill",
+    "run a workflow for investigation notes",
+    "help me with investigation notes",
+    "我需要處理 investigation notes 相關工作",
+    "幫我啟用 investigation notes 這個 skill",
+    "用 agent skill 完成 investigation notes",
+    "use investigation notes from workerd"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the investigation notes skill for this task.",
+      "invocation": "codex --skill investigation-notes \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "apache-2.0",
+    "devops",
+    "mcpservers"
+  ]
+}

@@ -1,0 +1,49 @@
+{
+  "name": "managing-astro-local-env",
+  "version": "0.1.0",
+  "category": "devops",
+  "description": "Manage local Airflow environment with Astro CLI (Docker and standalone modes).",
+  "intent_triggers": [
+    "use the managing astro local env agent skill",
+    "run a workflow for managing astro local env",
+    "help me with managing astro local env",
+    "我需要處理 managing astro local env 相關工作",
+    "幫我啟用 managing astro local env 這個 skill",
+    "用 agent skill 完成 managing astro local env",
+    "use managing astro local env from agents"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the managing astro local env skill for this task.",
+      "invocation": "codex --skill managing-astro-local-env \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "apache-2.0",
+    "devops",
+    "mcpservers"
+  ]
+}

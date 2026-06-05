@@ -1,0 +1,49 @@
+{
+  "name": "wd-test-format",
+  "version": "0.1.0",
+  "category": "devops",
+  "description": "Detailed guide for authoring .wd-test files in workerd, with examples of bindings, Durable Objects, multi-service configs, TypeScript tests, and network access.",
+  "intent_triggers": [
+    "use the wd test format agent skill",
+    "run a workflow for wd test format",
+    "help me with wd test format",
+    "我需要處理 wd test format 相關工作",
+    "幫我啟用 wd test format 這個 skill",
+    "用 agent skill 完成 wd test format",
+    "use wd test format from workerd"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the wd test format skill for this task.",
+      "invocation": "codex --skill wd-test-format \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "apache-2.0",
+    "devops",
+    "mcpservers"
+  ]
+}

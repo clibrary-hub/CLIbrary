@@ -1,0 +1,49 @@
+{
+  "name": "applying-brand-guidelines",
+  "version": "0.1.0",
+  "category": "data",
+  "description": "This skill applies consistent corporate branding and styling to all generated documents including colors, fonts, layouts, and messaging",
+  "intent_triggers": [
+    "use the applying brand guidelines agent skill",
+    "run a workflow for applying brand guidelines",
+    "help me with applying brand guidelines",
+    "我需要處理 applying brand guidelines 相關工作",
+    "幫我啟用 applying brand guidelines 這個 skill",
+    "用 agent skill 完成 applying brand guidelines",
+    "use applying brand guidelines from anthropic-cookbook"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the applying brand guidelines skill for this task.",
+      "invocation": "codex --skill applying-brand-guidelines \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "data",
+    "mcpservers",
+    "mit"
+  ]
+}

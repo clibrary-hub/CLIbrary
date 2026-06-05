@@ -1,0 +1,49 @@
+{
+  "name": "webflow-mcp-designer-tools",
+  "version": "0.1.0",
+  "category": "devops",
+  "description": "Build and manage pages, elements, components, and styles in Webflow Designer.",
+  "intent_triggers": [
+    "use the webflow mcp designer tools agent skill",
+    "run a workflow for webflow mcp designer tools",
+    "help me with webflow mcp designer tools",
+    "我需要處理 webflow mcp designer tools 相關工作",
+    "幫我啟用 webflow mcp designer tools 這個 skill",
+    "用 agent skill 完成 webflow mcp designer tools",
+    "use webflow mcp designer tools from webflow-skills"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the webflow mcp designer tools skill for this task.",
+      "invocation": "codex --skill webflow-mcp-designer-tools \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "devops",
+    "mcpservers",
+    "mit"
+  ]
+}

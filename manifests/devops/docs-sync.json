@@ -1,0 +1,49 @@
+{
+  "name": "docs-sync",
+  "version": "0.1.0",
+  "category": "devops",
+  "description": "Analyze main branch implementation and configuration to find missing, incorrect, or outdated documentation in docs/.",
+  "intent_triggers": [
+    "use the docs sync agent skill",
+    "run a workflow for docs sync",
+    "help me with docs sync",
+    "我需要處理 docs sync 相關工作",
+    "幫我啟用 docs sync 這個 skill",
+    "用 agent skill 完成 docs sync",
+    "use docs sync from openai-agents-js"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the docs sync skill for this task.",
+      "invocation": "codex --skill docs-sync \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "devops",
+    "mcpservers",
+    "mit"
+  ]
+}

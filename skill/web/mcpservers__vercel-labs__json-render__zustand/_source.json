@@ -1,0 +1,15 @@
+{
+  "source": "mcpservers",
+  "listing_url": "https://mcpservers.org/zh-TW/agent-skills/author/vercel",
+  "owner": "vercel-labs",
+  "repo": "json-render",
+  "branch": "HEAD",
+  "skill": "zustand",
+  "repo_url": "https://github.com/vercel-labs/json-render",
+  "license": {
+    "spdx": "Apache-2.0",
+    "url": "https://github.com/vercel-labs/json-render/blob/main/LICENSE",
+    "source": "api"
+  },
+  "zip_subdir": "json-render-main/skills/zustand"
+}

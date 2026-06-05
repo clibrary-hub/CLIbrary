@@ -1,0 +1,15 @@
+{
+  "source": "mcpservers",
+  "listing_url": "https://mcpservers.org/zh-TW/agent-skills/author/anthropic",
+  "owner": "anthropics",
+  "repo": "cookbook",
+  "branch": "HEAD",
+  "skill": "cookbook-audit",
+  "repo_url": "https://github.com/anthropics/cookbook",
+  "license": {
+    "spdx": "MIT",
+    "url": "https://github.com/anthropics/claude-cookbooks/blob/main/LICENSE",
+    "source": "api"
+  },
+  "zip_subdir": "claude-cookbooks-main/.claude/skills/cookbook-audit"
+}

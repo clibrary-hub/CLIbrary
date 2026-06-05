@@ -1,0 +1,49 @@
+{
+  "name": "java-junit",
+  "version": "0.1.0",
+  "category": "devops",
+  "description": "Get best practices for JUnit 5 unit testing, including data-driven tests",
+  "intent_triggers": [
+    "use the java junit agent skill",
+    "run a workflow for java junit",
+    "help me with java junit",
+    "我需要處理 java junit 相關工作",
+    "幫我啟用 java junit 這個 skill",
+    "用 agent skill 完成 java junit",
+    "use java junit from awesome-copilot"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the java junit skill for this task.",
+      "invocation": "codex --skill java-junit \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "devops",
+    "mcpservers",
+    "mit"
+  ]
+}

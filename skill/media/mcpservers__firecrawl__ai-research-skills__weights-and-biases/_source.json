@@ -1,0 +1,15 @@
+{
+  "source": "mcpservers",
+  "listing_url": "https://mcpservers.org/zh-TW/agent-skills",
+  "owner": "firecrawl",
+  "repo": "ai-research-skills",
+  "branch": "HEAD",
+  "skill": "weights-and-biases",
+  "repo_url": "https://github.com/firecrawl/ai-research-skills",
+  "license": {
+    "spdx": "MIT",
+    "url": "https://github.com/firecrawl/AI-research-SKILLs/blob/main/LICENSE",
+    "source": "api"
+  },
+  "zip_subdir": "AI-research-SKILLs-main/13-mlops/weights-and-biases"
+}

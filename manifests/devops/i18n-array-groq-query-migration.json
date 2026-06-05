@@ -1,0 +1,49 @@
+{
+  "name": "i18n-array-groq-query-migration",
+  "version": "0.1.0",
+  "category": "devops",
+  "description": "Detect and update legacy GROQ patterns where language is read from _key for sanity-plugin-internationalized-array when users mention v4 to v5 migration, or @sanity/document-internationalization fro...",
+  "intent_triggers": [
+    "use the i18n array groq query migration agent skill",
+    "run a workflow for i18n array groq query migration",
+    "help me with i18n array groq query migration",
+    "我需要處理 i18n array groq query migration 相關工作",
+    "幫我啟用 i18n array groq query migration 這個 skill",
+    "用 agent skill 完成 i18n array groq query migration",
+    "use i18n array groq query migration from plugins"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the i18n array groq query migration skill for this task.",
+      "invocation": "codex --skill i18n-array-groq-query-migration \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "devops",
+    "mcpservers",
+    "mit"
+  ]
+}

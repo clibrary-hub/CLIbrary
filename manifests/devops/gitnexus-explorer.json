@@ -1,0 +1,49 @@
+{
+  "name": "gitnexus-explorer",
+  "version": "0.1.0",
+  "category": "devops",
+  "description": "Index a codebase with GitNexus and serve an interactive knowledge graph via web UI + Cloudflare tunnel.",
+  "intent_triggers": [
+    "use the gitnexus explorer agent skill",
+    "run a workflow for gitnexus explorer",
+    "help me with gitnexus explorer",
+    "我需要處理 gitnexus explorer 相關工作",
+    "幫我啟用 gitnexus explorer 這個 skill",
+    "用 agent skill 完成 gitnexus explorer",
+    "use gitnexus explorer from hermes-agent-zh"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the gitnexus explorer skill for this task.",
+      "invocation": "codex --skill gitnexus-explorer \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "devops",
+    "mit",
+    "skills-rest"
+  ]
+}

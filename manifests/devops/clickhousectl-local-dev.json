@@ -1,0 +1,49 @@
+{
+  "name": "clickhousectl-local-dev",
+  "version": "0.1.0",
+  "category": "devops",
+  "description": "Use when a user wants to build an application with ClickHouse, set up a local ClickHouse development environment, install ClickHouse, create a local server, create tables, or start developing with...",
+  "intent_triggers": [
+    "use the clickhousectl local dev agent skill",
+    "run a workflow for clickhousectl local dev",
+    "help me with clickhousectl local dev",
+    "我需要處理 clickhousectl local dev 相關工作",
+    "幫我啟用 clickhousectl local dev 這個 skill",
+    "用 agent skill 完成 clickhousectl local dev",
+    "use clickhousectl local dev from agent-skills"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the clickhousectl local dev skill for this task.",
+      "invocation": "codex --skill clickhousectl-local-dev \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "apache-2.0",
+    "devops",
+    "mcpservers"
+  ]
+}

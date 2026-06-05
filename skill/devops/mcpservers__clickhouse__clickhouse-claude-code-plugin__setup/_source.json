@@ -1,0 +1,15 @@
+{
+  "source": "mcpservers",
+  "listing_url": "https://mcpservers.org/zh-TW/agent-skills",
+  "owner": "clickhouse",
+  "repo": "clickhouse-claude-code-plugin",
+  "branch": "HEAD",
+  "skill": "setup",
+  "repo_url": "https://github.com/clickhouse/clickhouse-claude-code-plugin",
+  "license": {
+    "spdx": "Apache-2.0",
+    "url": "https://github.com/ClickHouse/clickhouse-claude-code-plugin/blob/main/LICENSE",
+    "source": "api"
+  },
+  "zip_subdir": "clickhouse-claude-code-plugin-main/skills/setup"
+}

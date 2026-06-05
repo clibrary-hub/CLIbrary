@@ -1,0 +1,49 @@
+{
+  "name": "span-timeline-events",
+  "version": "0.1.0",
+  "category": "finance",
+  "description": "Use when adding, modifying, or debugging OTel span timeline events in the trace view.",
+  "intent_triggers": [
+    "use the span timeline events agent skill",
+    "run a workflow for span timeline events",
+    "help me with span timeline events",
+    "我需要處理 span timeline events 相關工作",
+    "幫我啟用 span timeline events 這個 skill",
+    "用 agent skill 完成 span timeline events",
+    "use span timeline events from trigger.dev"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the span timeline events skill for this task.",
+      "invocation": "codex --skill span-timeline-events \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "apache-2.0",
+    "finance",
+    "mcpservers"
+  ]
+}

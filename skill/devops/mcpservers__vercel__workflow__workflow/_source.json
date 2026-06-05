@@ -1,0 +1,15 @@
+{
+  "source": "mcpservers",
+  "listing_url": "https://mcpservers.org/zh-TW/agent-skills/author/vercel",
+  "owner": "vercel",
+  "repo": "workflow",
+  "branch": "HEAD",
+  "skill": "workflow",
+  "repo_url": "https://github.com/vercel/workflow",
+  "license": {
+    "spdx": "Apache-2.0",
+    "url": "https://github.com/vercel/workflow/blob/main/LICENSE.md",
+    "source": "api"
+  },
+  "zip_subdir": "workflow-main/skills/workflow"
+}

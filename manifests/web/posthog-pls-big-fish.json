@@ -1,0 +1,48 @@
+{
+  "name": "posthog-pls-big-fish",
+  "version": "0.1.0",
+  "category": "web",
+  "description": "Research, qualify, and suggest outreach for PostHog big fish product-led leads — large companies (500+ or 1000+ employees) using PostHog on free tier without a payment method.",
+  "intent_triggers": [
+    "use the posthog pls big fish agent skill",
+    "run a workflow for posthog pls big fish",
+    "help me with posthog pls big fish",
+    "我需要處理 posthog pls big fish 相關工作",
+    "幫我啟用 posthog pls big fish 這個 skill",
+    "用 agent skill 完成 posthog pls big fish"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the posthog pls big fish skill for this task.",
+      "invocation": "codex --skill posthog-pls-big-fish \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "mit",
+    "skill",
+    "web"
+  ]
+}

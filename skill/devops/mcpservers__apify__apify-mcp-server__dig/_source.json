@@ -1,0 +1,15 @@
+{
+  "source": "mcpservers",
+  "listing_url": "https://mcpservers.org/zh-TW/agent-skills",
+  "owner": "apify",
+  "repo": "apify-mcp-server",
+  "branch": "HEAD",
+  "skill": "dig",
+  "repo_url": "https://github.com/apify/apify-mcp-server",
+  "license": {
+    "spdx": "MIT",
+    "url": "https://github.com/apify/apify-mcp-server/blob/master/LICENSE.md",
+    "source": "api"
+  },
+  "zip_subdir": "apify-mcp-server-master/.claude/skills/dig"
+}

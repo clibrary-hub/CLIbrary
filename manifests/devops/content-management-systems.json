@@ -1,0 +1,49 @@
+{
+  "name": "content-management-systems",
+  "version": "0.1.0",
+  "category": "devops",
+  "description": "Workflow for building and modifying content management systems across WordPress, Shopify, Wix, Squarespace, Drupal, WooCommerce, Joomla, HubSpot CMS Hub, Webflow, Adobe Experience Manager, and simi...",
+  "intent_triggers": [
+    "use the content management systems agent skill",
+    "run a workflow for content management systems",
+    "help me with content management systems",
+    "我需要處理 content management systems 相關工作",
+    "幫我啟用 content management systems 這個 skill",
+    "用 agent skill 完成 content management systems",
+    "use content management systems from awesome-copilot"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the content management systems skill for this task.",
+      "invocation": "codex --skill content-management-systems \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "devops",
+    "mcpservers",
+    "mit"
+  ]
+}

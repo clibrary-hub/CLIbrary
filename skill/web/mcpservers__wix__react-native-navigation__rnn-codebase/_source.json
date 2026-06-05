@@ -1,0 +1,15 @@
+{
+  "source": "mcpservers",
+  "listing_url": "https://mcpservers.org/zh-TW/agent-skills",
+  "owner": "wix",
+  "repo": "react-native-navigation",
+  "branch": "HEAD",
+  "skill": "rnn-codebase",
+  "repo_url": "https://github.com/wix/react-native-navigation",
+  "license": {
+    "spdx": "MIT",
+    "url": "https://github.com/wix/react-native-navigation/blob/master/LICENSE",
+    "source": "api"
+  },
+  "zip_subdir": "react-native-navigation-master/.claude/skills/rnn-codebase"
+}

@@ -1,0 +1,48 @@
+{
+  "name": "qdrant-memory-usage-optimization",
+  "version": "0.1.0",
+  "category": "ai-ml",
+  "description": "Diagnoses and reduces Qdrant memory usage.",
+  "intent_triggers": [
+    "use the qdrant memory usage optimization agent skill",
+    "run a workflow for qdrant memory usage optimization",
+    "help me with qdrant memory usage optimization",
+    "我需要處理 qdrant memory usage optimization 相關工作",
+    "幫我啟用 qdrant memory usage optimization 這個 skill",
+    "用 agent skill 完成 qdrant memory usage optimization"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the qdrant memory usage optimization skill for this task.",
+      "invocation": "codex --skill qdrant-memory-usage-optimization \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "ai-ml",
+    "mit",
+    "skill"
+  ]
+}

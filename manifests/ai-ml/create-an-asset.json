@@ -1,0 +1,49 @@
+{
+  "name": "create-an-asset",
+  "version": "0.1.0",
+  "category": "ai-ml",
+  "description": "Generate tailored sales assets (landing pages, decks, one-pagers, workflow demos) from your deal context.",
+  "intent_triggers": [
+    "use the create an asset agent skill",
+    "run a workflow for create an asset",
+    "help me with create an asset",
+    "我需要處理 create an asset 相關工作",
+    "幫我啟用 create an asset 這個 skill",
+    "用 agent skill 完成 create an asset",
+    "use create an asset from knowledge-work-plugins"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the create an asset skill for this task.",
+      "invocation": "codex --skill create-an-asset \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "ai-ml",
+    "apache-2.0",
+    "mcpservers"
+  ]
+}

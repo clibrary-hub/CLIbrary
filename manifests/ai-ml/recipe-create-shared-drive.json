@@ -1,0 +1,49 @@
+{
+  "name": "recipe-create-shared-drive",
+  "version": "0.1.0",
+  "category": "ai-ml",
+  "description": "Create a Google Shared Drive and add members with appropriate roles.",
+  "intent_triggers": [
+    "use the recipe create shared drive agent skill",
+    "run a workflow for recipe create shared drive",
+    "help me with recipe create shared drive",
+    "我需要處理 recipe create shared drive 相關工作",
+    "幫我啟用 recipe create shared drive 這個 skill",
+    "用 agent skill 完成 recipe create shared drive",
+    "use recipe create shared drive from cli"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the recipe create shared drive skill for this task.",
+      "invocation": "codex --skill recipe-create-shared-drive \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "ai-ml",
+    "apache-2.0",
+    "mcpservers"
+  ]
+}

@@ -1,0 +1,49 @@
+{
+  "name": "cms-tokens-authentication",
+  "version": "0.1.0",
+  "category": "security",
+  "description": "Advise developers on choosing the right Contentstack authentication method and token type for frontend, backend, automation, and third-party app use cases.",
+  "intent_triggers": [
+    "use the cms tokens authentication agent skill",
+    "run a workflow for cms tokens authentication",
+    "help me with cms tokens authentication",
+    "我需要處理 cms tokens authentication 相關工作",
+    "幫我啟用 cms tokens authentication 這個 skill",
+    "用 agent skill 完成 cms tokens authentication",
+    "use cms tokens authentication from contentstack-agent-skills"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the cms tokens authentication skill for this task.",
+      "invocation": "codex --skill cms-tokens-authentication \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "mcpservers",
+    "mit",
+    "security"
+  ]
+}

@@ -1,0 +1,49 @@
+{
+  "name": "neon-js",
+  "version": "0.1.0",
+  "category": "web",
+  "description": "Sets up the full Neon JS SDK with unified auth and PostgREST-style database queries.",
+  "intent_triggers": [
+    "use the neon js agent skill",
+    "run a workflow for neon js",
+    "help me with neon js",
+    "我需要處理 neon js 相關工作",
+    "幫我啟用 neon js 這個 skill",
+    "用 agent skill 完成 neon js",
+    "use neon js from ai-rules"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the neon js skill for this task.",
+      "invocation": "codex --skill neon-js \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "mcpservers",
+    "mit",
+    "web"
+  ]
+}

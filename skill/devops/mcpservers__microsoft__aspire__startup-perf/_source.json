@@ -1,0 +1,15 @@
+{
+  "source": "mcpservers",
+  "listing_url": "https://mcpservers.org/zh-TW/agent-skills/author/microsoft",
+  "owner": "microsoft",
+  "repo": "aspire",
+  "branch": "HEAD",
+  "skill": "startup-perf",
+  "repo_url": "https://github.com/microsoft/aspire",
+  "license": {
+    "spdx": "MIT",
+    "url": "https://github.com/microsoft/aspire/blob/main/LICENSE.TXT",
+    "source": "api"
+  },
+  "zip_subdir": "aspire-main/.agents/skills/startup-perf"
+}

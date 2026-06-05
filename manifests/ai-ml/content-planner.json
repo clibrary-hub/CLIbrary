@@ -1,0 +1,49 @@
+{
+  "name": "content-planner",
+  "version": "0.1.0",
+  "category": "ai-ml",
+  "description": "Agent skill for content planner workflows.",
+  "intent_triggers": [
+    "use the content planner agent skill",
+    "run a workflow for content planner",
+    "help me with content planner",
+    "我需要處理 content planner 相關工作",
+    "幫我啟用 content planner 這個 skill",
+    "用 agent skill 完成 content planner",
+    "use content planner from PopiStudio"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the content planner skill for this task.",
+      "invocation": "codex --skill content-planner \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "ai-ml",
+    "mit",
+    "skills-rest"
+  ]
+}

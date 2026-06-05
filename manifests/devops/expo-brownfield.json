@@ -1,0 +1,48 @@
+{
+  "name": "expo-brownfield",
+  "version": "0.1.0",
+  "category": "devops",
+  "description": "Integrate Expo and React Native into an existing native iOS or Android app.",
+  "intent_triggers": [
+    "use the expo brownfield agent skill",
+    "run a workflow for expo brownfield",
+    "help me with expo brownfield",
+    "我需要處理 expo brownfield 相關工作",
+    "幫我啟用 expo brownfield 這個 skill",
+    "用 agent skill 完成 expo brownfield"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the expo brownfield skill for this task.",
+      "invocation": "codex --skill expo-brownfield \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "devops",
+    "mit",
+    "skill"
+  ]
+}

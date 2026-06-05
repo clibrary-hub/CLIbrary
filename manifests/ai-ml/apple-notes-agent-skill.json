@@ -1,0 +1,48 @@
+{
+  "name": "apple-notes-agent-skill",
+  "version": "0.1.0",
+  "category": "ai-ml",
+  "description": "管理 Apple Notes via the memo CLI on macOS (create, view, search, edit).",
+  "intent_triggers": [
+    "use the apple notes agent skill",
+    "run a workflow for apple notes",
+    "help me with apple notes",
+    "我需要處理 apple notes 相關工作",
+    "幫我啟用 apple notes 這個 skill",
+    "用 agent skill 完成 apple notes"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the apple notes skill for this task.",
+      "invocation": "codex --skill apple-notes \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "ai-ml",
+    "mit",
+    "skill"
+  ]
+}

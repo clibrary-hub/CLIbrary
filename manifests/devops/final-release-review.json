@@ -1,0 +1,49 @@
+{
+  "name": "final-release-review",
+  "version": "0.1.0",
+  "category": "devops",
+  "description": "Perform a release-readiness review by locating the previous release tag from remote tags and auditing the diff (e.g., v1.2.3...<commit>) for breaking changes, regressions, improvement opportunities...",
+  "intent_triggers": [
+    "use the final release review agent skill",
+    "run a workflow for final release review",
+    "help me with final release review",
+    "我需要處理 final release review 相關工作",
+    "幫我啟用 final release review 這個 skill",
+    "用 agent skill 完成 final release review",
+    "use final release review from openai-agents-js"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the final release review skill for this task.",
+      "invocation": "codex --skill final-release-review \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "devops",
+    "mcpservers",
+    "mit"
+  ]
+}

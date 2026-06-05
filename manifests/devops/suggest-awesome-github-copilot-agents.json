@@ -1,0 +1,49 @@
+{
+  "name": "suggest-awesome-github-copilot-agents",
+  "version": "0.1.0",
+  "category": "devops",
+  "description": "Suggest relevant GitHub Copilot Custom Agents files from the awesome-copilot repository based on current repository context and chat history, avoiding duplicates with existing custom agents in this...",
+  "intent_triggers": [
+    "use the suggest awesome github copilot agents agent skill",
+    "run a workflow for suggest awesome github copilot agents",
+    "help me with suggest awesome github copilot agents",
+    "我需要處理 suggest awesome github copilot agents 相關工作",
+    "幫我啟用 suggest awesome github copilot agents 這個 skill",
+    "用 agent skill 完成 suggest awesome github copilot agents",
+    "use suggest awesome github copilot agents from awesome-copilot"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the suggest awesome github copilot agents skill for this task.",
+      "invocation": "codex --skill suggest-awesome-github-copilot-agents \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "devops",
+    "mcpservers",
+    "mit"
+  ]
+}

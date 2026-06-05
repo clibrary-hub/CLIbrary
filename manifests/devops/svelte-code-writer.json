@@ -1,0 +1,49 @@
+{
+  "name": "svelte-code-writer",
+  "version": "0.1.0",
+  "category": "devops",
+  "description": "CLI tools for Svelte 5 documentation lookup and code analysis.",
+  "intent_triggers": [
+    "use the svelte code writer agent skill",
+    "run a workflow for svelte code writer",
+    "help me with svelte code writer",
+    "我需要處理 svelte code writer 相關工作",
+    "幫我啟用 svelte code writer 這個 skill",
+    "用 agent skill 完成 svelte code writer",
+    "use svelte code writer from ai-tools"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the svelte code writer skill for this task.",
+      "invocation": "codex --skill svelte-code-writer \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "devops",
+    "mcpservers",
+    "mit"
+  ]
+}

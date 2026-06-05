@@ -1,0 +1,49 @@
+{
+  "name": "react-email-json-render",
+  "version": "0.1.0",
+  "category": "web",
+  "description": "React Email renderer for json-render that turns JSON specs into HTML or plain-text emails using @react-email/components and @react-email/render.",
+  "intent_triggers": [
+    "use the react email agent skill",
+    "run a workflow for react email",
+    "help me with react email",
+    "我需要處理 react email 相關工作",
+    "幫我啟用 react email 這個 skill",
+    "用 agent skill 完成 react email",
+    "use react email from json-render"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the react email skill for this task.",
+      "invocation": "codex --skill react-email \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "apache-2.0",
+    "mcpservers",
+    "web"
+  ]
+}

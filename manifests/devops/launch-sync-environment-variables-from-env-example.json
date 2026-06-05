@@ -1,0 +1,49 @@
+{
+  "name": "launch-sync-environment-variables-from-env-example",
+  "version": "0.1.0",
+  "category": "devops",
+  "description": "Fetch environment variables from a Contentstack Launch project, compare them with a local `.env.example` file, and patch the target environment to add any missing keys.",
+  "intent_triggers": [
+    "use the launch sync environment variables from env example agent skill",
+    "run a workflow for launch sync environment variables from env example",
+    "help me with launch sync environment variables from env example",
+    "我需要處理 launch sync environment variables from env example 相關工作",
+    "幫我啟用 launch sync environment variables from env example 這個 skill",
+    "用 agent skill 完成 launch sync environment variables from env example",
+    "use launch sync environment variables from env example from contentstack-agent-skills"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the launch sync environment variables from env example skill for this task.",
+      "invocation": "codex --skill launch-sync-environment-variables-from-env-example \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "devops",
+    "mcpservers",
+    "mit"
+  ]
+}

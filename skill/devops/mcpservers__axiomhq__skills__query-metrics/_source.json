@@ -1,0 +1,15 @@
+{
+  "source": "mcpservers",
+  "listing_url": "https://mcpservers.org/zh-TW/agent-skills",
+  "owner": "axiomhq",
+  "repo": "skills",
+  "branch": "HEAD",
+  "skill": "query-metrics",
+  "repo_url": "https://github.com/axiomhq/skills",
+  "license": {
+    "spdx": "MIT",
+    "url": "https://github.com/axiomhq/skills/blob/main/LICENSE",
+    "source": "api"
+  },
+  "zip_subdir": "skills-main/skills/query-metrics"
+}

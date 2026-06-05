@@ -1,0 +1,49 @@
+{
+  "name": "integration-nextjs-app-router",
+  "version": "0.1.0",
+  "category": "web",
+  "description": "PostHog integration for Next.js App Router applications",
+  "intent_triggers": [
+    "use the integration nextjs app router agent skill",
+    "run a workflow for integration nextjs app router",
+    "help me with integration nextjs app router",
+    "我需要處理 integration nextjs app router 相關工作",
+    "幫我啟用 integration nextjs app router 這個 skill",
+    "用 agent skill 完成 integration nextjs app router",
+    "use integration nextjs app router from skills"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the integration nextjs app router skill for this task.",
+      "invocation": "codex --skill integration-nextjs-app-router \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "mcpservers",
+    "mit",
+    "web"
+  ]
+}

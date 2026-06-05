@@ -1,0 +1,15 @@
+{
+  "source": "mcpservers",
+  "listing_url": "https://mcpservers.org/zh-TW/agent-skills/author/anthropic",
+  "owner": "anthropics",
+  "repo": "financial-services",
+  "branch": "HEAD",
+  "skill": "swap-curve-strategy",
+  "repo_url": "https://github.com/anthropics/financial-services",
+  "license": {
+    "spdx": "Apache-2.0",
+    "url": "https://github.com/anthropics/financial-services/blob/main/LICENSE",
+    "source": "api"
+  },
+  "zip_subdir": "financial-services-main/plugins/partner-built/lseg/skills/swap-curve-strategy"
+}

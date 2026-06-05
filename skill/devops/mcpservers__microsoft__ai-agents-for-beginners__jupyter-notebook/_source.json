@@ -1,0 +1,15 @@
+{
+  "source": "mcpservers",
+  "listing_url": "https://mcpservers.org/zh-TW/agent-skills/author/microsoft",
+  "owner": "microsoft",
+  "repo": "ai-agents-for-beginners",
+  "branch": "HEAD",
+  "skill": "jupyter-notebook",
+  "repo_url": "https://github.com/microsoft/ai-agents-for-beginners",
+  "license": {
+    "spdx": "MIT",
+    "url": "https://github.com/microsoft/ai-agents-for-beginners/blob/main/LICENSE",
+    "source": "api"
+  },
+  "zip_subdir": "ai-agents-for-beginners-main/.agents/skills/jupyter-notebook"
+}

@@ -1,0 +1,49 @@
+{
+  "name": "python-code-quality",
+  "version": "0.1.0",
+  "category": "devops",
+  "description": "Agent skill for python code quality workflows.",
+  "intent_triggers": [
+    "use the python code quality agent skill",
+    "run a workflow for python code quality",
+    "help me with python code quality",
+    "我需要處理 python code quality 相關工作",
+    "幫我啟用 python code quality 這個 skill",
+    "用 agent skill 完成 python code quality",
+    "use python code quality from agent-framework"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the python code quality skill for this task.",
+      "invocation": "codex --skill python-code-quality \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "devops",
+    "mcpservers",
+    "mit"
+  ]
+}

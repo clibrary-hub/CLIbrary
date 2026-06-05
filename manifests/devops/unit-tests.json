@@ -1,0 +1,49 @@
+{
+  "name": "unit-tests",
+  "version": "0.1.0",
+  "category": "devops",
+  "description": "Use when running unit tests in the VS Code repo.",
+  "intent_triggers": [
+    "use the unit tests agent skill",
+    "run a workflow for unit tests",
+    "help me with unit tests",
+    "我需要處理 unit tests 相關工作",
+    "幫我啟用 unit tests 這個 skill",
+    "用 agent skill 完成 unit tests",
+    "use unit tests from vscode"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the unit tests skill for this task.",
+      "invocation": "codex --skill unit-tests \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "devops",
+    "mcpservers",
+    "mit"
+  ]
+}

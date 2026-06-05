@@ -1,0 +1,49 @@
+{
+  "name": "dd-browser-sdk",
+  "version": "0.1.0",
+  "category": "ai-ml",
+  "description": "Agent skill for dd browser sdk workflows.",
+  "intent_triggers": [
+    "use the dd browser sdk agent skill",
+    "run a workflow for dd browser sdk",
+    "help me with dd browser sdk",
+    "我需要處理 dd browser sdk 相關工作",
+    "幫我啟用 dd browser sdk 這個 skill",
+    "用 agent skill 完成 dd browser sdk",
+    "use dd browser sdk from agent-skills"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the dd browser sdk skill for this task.",
+      "invocation": "codex --skill dd-browser-sdk \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "ai-ml",
+    "mcpservers",
+    "mit"
+  ]
+}

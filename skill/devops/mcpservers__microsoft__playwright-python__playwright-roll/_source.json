@@ -1,0 +1,15 @@
+{
+  "source": "mcpservers",
+  "listing_url": "https://mcpservers.org/zh-TW/agent-skills/author/microsoft",
+  "owner": "microsoft",
+  "repo": "playwright-python",
+  "branch": "HEAD",
+  "skill": "playwright-roll",
+  "repo_url": "https://github.com/microsoft/playwright-python",
+  "license": {
+    "spdx": "Apache-2.0",
+    "url": "https://github.com/microsoft/playwright-python/blob/main/LICENSE",
+    "source": "api"
+  },
+  "zip_subdir": "playwright-python-main/.claude/skills/playwright-roll"
+}

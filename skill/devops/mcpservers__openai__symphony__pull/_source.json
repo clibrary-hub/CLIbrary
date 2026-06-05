@@ -1,0 +1,15 @@
+{
+  "source": "mcpservers",
+  "listing_url": "https://mcpservers.org/zh-TW/agent-skills/author/openai",
+  "owner": "openai",
+  "repo": "symphony",
+  "branch": "HEAD",
+  "skill": "pull",
+  "repo_url": "https://github.com/openai/symphony",
+  "license": {
+    "spdx": "Apache-2.0",
+    "url": "https://github.com/openai/symphony/blob/main/LICENSE",
+    "source": "api"
+  },
+  "zip_subdir": "symphony-main/.codex/skills/pull"
+}

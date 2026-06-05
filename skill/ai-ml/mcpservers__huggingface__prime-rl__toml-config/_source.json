@@ -1,0 +1,15 @@
+{
+  "source": "mcpservers",
+  "listing_url": "https://mcpservers.org/zh-TW/agent-skills",
+  "owner": "huggingface",
+  "repo": "prime-rl",
+  "branch": "HEAD",
+  "skill": "toml-config",
+  "repo_url": "https://github.com/huggingface/prime-rl",
+  "license": {
+    "spdx": "Apache-2.0",
+    "url": "https://github.com/huggingface/prime-rl/blob/main/LICENSE",
+    "source": "api"
+  },
+  "zip_subdir": "prime-rl-main/skills/toml-config"
+}

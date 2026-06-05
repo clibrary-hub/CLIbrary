@@ -1,0 +1,49 @@
+{
+  "name": "clerk-cli",
+  "version": "0.1.0",
+  "category": "devops",
+  "description": "Agent skill for clerk cli workflows.",
+  "intent_triggers": [
+    "use the clerk cli agent skill",
+    "run a workflow for clerk cli",
+    "help me with clerk cli",
+    "我需要處理 clerk cli 相關工作",
+    "幫我啟用 clerk cli 這個 skill",
+    "用 agent skill 完成 clerk cli",
+    "use clerk cli from cli"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the clerk cli skill for this task.",
+      "invocation": "codex --skill clerk-cli \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "devops",
+    "mcpservers",
+    "mit"
+  ]
+}

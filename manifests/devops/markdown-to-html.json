@@ -1,0 +1,49 @@
+{
+  "name": "markdown-to-html",
+  "version": "0.1.0",
+  "category": "devops",
+  "description": "Convert Markdown files to HTML similar to `marked.js`, `pandoc`, `gomarkdown/markdown`, or similar tools; or writing custom script to convert markdown to html and/or working on web template systems...",
+  "intent_triggers": [
+    "use the markdown to html agent skill",
+    "run a workflow for markdown to html",
+    "help me with markdown to html",
+    "我需要處理 markdown to html 相關工作",
+    "幫我啟用 markdown to html 這個 skill",
+    "用 agent skill 完成 markdown to html",
+    "use markdown to html from awesome-copilot"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the markdown to html skill for this task.",
+      "invocation": "codex --skill markdown-to-html \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "devops",
+    "mcpservers",
+    "mit"
+  ]
+}

@@ -1,0 +1,49 @@
+{
+  "name": "camsnap",
+  "version": "0.1.0",
+  "category": "devops",
+  "description": "Capture frames or clips from RTSP/ONVIF cameras.",
+  "intent_triggers": [
+    "use the camsnap agent skill",
+    "run a workflow for camsnap",
+    "help me with camsnap",
+    "我需要處理 camsnap 相關工作",
+    "幫我啟用 camsnap 這個 skill",
+    "用 agent skill 完成 camsnap",
+    "use camsnap from openclaw"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the camsnap skill for this task.",
+      "invocation": "codex --skill camsnap \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "devops",
+    "mcpservers",
+    "mit"
+  ]
+}

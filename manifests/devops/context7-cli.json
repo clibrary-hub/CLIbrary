@@ -1,0 +1,49 @@
+{
+  "name": "context7-cli",
+  "version": "0.1.0",
+  "category": "devops",
+  "description": "Use the ctx7 CLI to fetch library documentation, manage AI coding skills, and configure Context7 MCP.",
+  "intent_triggers": [
+    "use the context7 cli agent skill",
+    "run a workflow for context7 cli",
+    "help me with context7 cli",
+    "我需要處理 context7 cli 相關工作",
+    "幫我啟用 context7 cli 這個 skill",
+    "用 agent skill 完成 context7 cli",
+    "use context7 cli from context7-mcp"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the context7 cli skill for this task.",
+      "invocation": "codex --skill context7-cli \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "devops",
+    "mcpservers",
+    "mit"
+  ]
+}

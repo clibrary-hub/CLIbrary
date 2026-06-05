@@ -1,0 +1,49 @@
+{
+  "name": "neon-js-react",
+  "version": "0.1.0",
+  "category": "web",
+  "description": "Sets up the full Neon SDK with authentication AND database queries in React apps (Vite, CRA).",
+  "intent_triggers": [
+    "use the neon js react agent skill",
+    "run a workflow for neon js react",
+    "help me with neon js react",
+    "我需要處理 neon js react 相關工作",
+    "幫我啟用 neon js react 這個 skill",
+    "用 agent skill 完成 neon js react",
+    "use neon js react from neon-js"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the neon js react skill for this task.",
+      "invocation": "codex --skill neon-js-react \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "apache-2.0",
+    "mcpservers",
+    "web"
+  ]
+}

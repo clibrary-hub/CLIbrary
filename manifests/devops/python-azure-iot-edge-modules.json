@@ -1,0 +1,49 @@
+{
+  "name": "python-azure-iot-edge-modules",
+  "version": "0.1.0",
+  "category": "devops",
+  "description": "Build and operate Python Azure IoT Edge modules with robust messaging, deployment manifests, observability, and production readiness checks.",
+  "intent_triggers": [
+    "use the python azure iot edge modules agent skill",
+    "run a workflow for python azure iot edge modules",
+    "help me with python azure iot edge modules",
+    "我需要處理 python azure iot edge modules 相關工作",
+    "幫我啟用 python azure iot edge modules 這個 skill",
+    "用 agent skill 完成 python azure iot edge modules",
+    "use python azure iot edge modules from awesome-copilot"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the python azure iot edge modules skill for this task.",
+      "invocation": "codex --skill python-azure-iot-edge-modules \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "devops",
+    "mcpservers",
+    "mit"
+  ]
+}

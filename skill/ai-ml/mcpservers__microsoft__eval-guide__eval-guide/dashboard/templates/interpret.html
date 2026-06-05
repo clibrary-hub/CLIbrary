@@ -1,0 +1,798 @@
+<!-- Stage 4: Interpret — Results Review (Quadrant-based) -->
+
+<style>
+.q-badge-sm {
+  display: inline-block;
+  padding: 0.05rem 0.4rem;
+  border-radius: 3px;
+  font-size: 0.65rem;
+  font-weight: 600;
+  white-space: nowrap;
+  text-transform: capitalize;
+}
+.q-badge-sm-critical   { background: var(--red-bg); color: var(--red); }
+.q-badge-sm-valuable       { background: var(--blue-bg); color: var(--blue); }
+.q-badge-sm-guardrails { background: var(--yellow-bg); color: #996600; }
+.q-badge-sm-deprioritize { background: var(--bg); color: var(--text-muted); border: 1px solid var(--border); }
+
+.rate-high { color: var(--green); font-weight: 600; }
+.rate-mid  { color: #996600; font-weight: 600; }
+.rate-low  { color: var(--red); font-weight: 600; }
+
+.metric-bar-bg {
+  display: inline-block;
+  width: 80px;
+  height: 6px;
+  border-radius: 3px;
+  background: var(--border);
+  vertical-align: middle;
+  margin-left: 0.3rem;
+  position: relative;
+}
+.metric-bar-fill {
+  position: absolute;
+  top: 0; left: 0;
+  height: 100%;
+  border-radius: 3px;
+}
+
+/* Quadrant summary cards */
+.quadrant-summary-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 0.8rem;
+  margin-bottom: 0;
+}
+.quadrant-summary-card {
+  padding: 0.6rem 0.8rem;
+  border-radius: var(--radius);
+  text-align: center;
+}
+.quadrant-summary-card .qsc-label { font-size: 0.72rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.03em; }
+.quadrant-summary-card .qsc-stat  { font-size: 1.3rem; font-weight: 700; margin: 0.2rem 0; }
+.quadrant-summary-card .qsc-detail { font-size: 0.72rem; opacity: 0.85; }
+.qsc-critical   { background: var(--red-bg); color: var(--red); }
+.qsc-valuable       { background: var(--blue-bg); color: var(--blue); }
+.qsc-guardrails { background: var(--yellow-bg); color: #996600; }
+.qsc-deprioritize { background: var(--bg); color: var(--text-muted); border: 1px solid var(--border); }
+
+.failure-sub { font-size: 0.7rem; color: var(--text-muted); }
+
+/* Expandable criterion rows */
+.metric-row { cursor: pointer; transition: background 0.1s; }
+.metric-row:hover { background: rgba(0,120,212,0.04) !important; }
+.metric-row .expand-icon {
+  display: inline-block;
+  width: 1em;
+  font-size: 0.7rem;
+  color: var(--text-muted);
+  transition: transform 0.15s;
+  margin-right: 0.3rem;
+}
+.metric-row.expanded .expand-icon { transform: rotate(90deg); }
+.metric-detail-row { display: none; }
+.metric-detail-row.visible { display: table-row; }
+.metric-detail-row td { padding: 0 !important; }
+.detail-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.78rem;
+  background: var(--bg);
+}
+.detail-table th {
+  text-align: left;
+  font-weight: 600;
+  font-size: 0.68rem;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  color: var(--text-muted);
+  padding: 0.35rem 0.7rem;
+  background: var(--border);
+  border-bottom: 1px solid var(--border);
+}
+.detail-table td {
+  padding: 0.35rem 0.7rem;
+  border-bottom: 1px solid var(--border);
+  vertical-align: top;
+  line-height: 1.4;
+}
+.detail-table tr:last-child td { border-bottom: none; }
+.detail-pass { color: var(--green); font-weight: 600; }
+.detail-fail { color: var(--red); font-weight: 600; }
+.detail-score { font-family: var(--mono); font-size: 0.75rem; }
+.detail-explanation { color: var(--text-muted); font-size: 0.72rem; font-style: italic; }
+.detail-rationale-label { font-weight: 600; font-style: normal; color: var(--accent); }
+.judgement-select {
+  border: 1px solid var(--border);
+  border-radius: 3px;
+  padding: 0.15rem 0.3rem;
+  font-family: var(--font);
+  font-size: 0.72rem;
+  background: var(--surface);
+  color: var(--text);
+  cursor: pointer;
+}
+.judgement-select:focus { outline: none; border-color: var(--accent); }
+.judgement-select.disagree { background: var(--red-bg); color: var(--red); border-color: var(--red); }
+.judgement-select.agree { background: var(--green-bg); color: var(--green); border-color: var(--green); }
+
+/* Case cards — per-test-case layout inside criterion expansion */
+.case-cards {
+  background: var(--bg);
+  padding: 0.7rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+}
+.case-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 0.85rem 1rem;
+  font-size: 0.83rem;
+  line-height: 1.55;
+}
+.case-q {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.6rem;
+  margin-bottom: 0.7rem;
+  padding-bottom: 0.6rem;
+  border-bottom: 1px dashed var(--border);
+}
+.case-q-label {
+  flex: 0 0 auto;
+  width: 1.4rem;
+  height: 1.4rem;
+  line-height: 1.35rem;
+  text-align: center;
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: var(--text-muted);
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 3px;
+  font-family: var(--mono);
+}
+.case-q-text {
+  flex: 1;
+  min-width: 0;
+  font-weight: 500;
+  color: var(--text);
+}
+.case-compare {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.6rem;
+  margin-bottom: 0.75rem;
+}
+@media (min-width: 720px) {
+  .case-compare { grid-template-columns: 1fr 1fr; gap: 0.9rem; }
+}
+.case-side {
+  background: var(--bg);
+  border-radius: 4px;
+  padding: 0.6rem 0.75rem;
+  min-width: 0;
+}
+.case-expected { border-left: 3px solid var(--green); }
+.case-actual   { border-left: 3px solid var(--accent); }
+.case-side-label {
+  font-size: 0.66rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--text-muted);
+  margin-bottom: 0.35rem;
+}
+.case-side-text {
+  color: var(--text);
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  overflow-wrap: anywhere;
+}
+.case-footer {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.6rem;
+  padding-top: 0.5rem;
+  border-top: 1px solid var(--border);
+}
+.case-meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.9rem;
+  font-size: 0.76rem;
+  color: var(--text-muted);
+}
+.case-meta .case-method { font-weight: 500; color: var(--text); }
+.case-meta .case-score  { font-family: var(--mono); }
+.case-judgement {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+}
+.case-judgement-label {
+  font-size: 0.74rem;
+  color: var(--text-muted);
+  font-weight: 500;
+}
+.case-rationale-toggle {
+  margin-top: 0.55rem;
+  background: none;
+  border: none;
+  padding: 0;
+  font-family: var(--font);
+  font-size: 0.76rem;
+  color: var(--accent);
+  cursor: pointer;
+  text-align: left;
+}
+.case-rationale-toggle:hover { text-decoration: underline; }
+.case-rationale {
+  display: none;
+  margin-top: 0.45rem;
+  padding: 0.6rem 0.75rem;
+  background: var(--bg);
+  border-left: 2px solid var(--text-muted);
+  border-radius: 0 4px 4px 0;
+  font-size: 0.79rem;
+  font-style: italic;
+  color: var(--text-muted);
+  line-height: 1.55;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+.case-rationale.visible { display: block; }
+
+/* Pattern cards — highlight the headline */
+.pattern-card {
+  display: flex;
+  gap: 0.9rem;
+  padding: 0.8rem 1rem;
+  background: var(--bg);
+  border-left: 3px solid var(--accent);
+  border-radius: 0 var(--radius) var(--radius) 0;
+  margin-bottom: 0.55rem;
+}
+.pattern-num {
+  flex: 0 0 auto;
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  color: var(--text-muted);
+  padding-top: 0.15rem;
+}
+.pattern-body { flex: 1; min-width: 0; }
+.pattern-headline {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: 0.25rem;
+  line-height: 1.35;
+}
+.pattern-detail {
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  line-height: 1.55;
+}
+
+/* Action cards — suggestions derived from patterns */
+.action-card {
+  padding: 0.8rem 1rem;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  margin-bottom: 0.55rem;
+}
+.action-head {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+  margin-bottom: 0.4rem;
+}
+.action-num {
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  color: var(--text-muted);
+}
+.action-cat {
+  display: inline-block;
+  padding: 0.12rem 0.55rem;
+  border-radius: 999px;
+  font-size: 0.66rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+.action-cat-knowledge { background: var(--blue-bg);   color: var(--blue); }
+.action-cat-topic     { background: var(--green-bg);  color: var(--green); }
+.action-cat-testdata  { background: var(--yellow-bg); color: #996600; }
+.action-cat-profile   { background: var(--red-bg);    color: var(--red); }
+.action-cat-agent     { background: var(--bg);        color: var(--text-muted); border: 1px solid var(--border); }
+.action-cat-other     { background: var(--bg);        color: var(--text-muted); border: 1px solid var(--border); }
+.action-change {
+  font-size: 0.86rem;
+  color: var(--text);
+  line-height: 1.5;
+  margin-bottom: 0.45rem;
+}
+.action-rerun {
+  font-size: 0.76rem;
+  color: var(--text-muted);
+  border-top: 1px dashed var(--border);
+  padding-top: 0.45rem;
+  margin-top: 0.45rem;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.25rem;
+}
+.action-rerun strong { color: var(--text); font-weight: 600; }
+@media (min-width: 640px) {
+  .action-rerun { grid-template-columns: 1fr 1fr; gap: 1rem; }
+}
+</style>
+
+<!-- Section 1: Pass Rate Overview -->
+<div class="section">
+  <div class="section-header flex-between">
+    <span data-tooltip="Pass-rate rollup by quadrant. High Value · High Risk failures matter most — read this view first to see where effort should focus.">Pass Rate Overview</span>
+    <span class="text-sm text-muted" id="metrics-status-count"></span>
+  </div>
+  <div class="section-body">
+    <div class="quadrant-summary-cards" id="quadrant-summary-cards"></div>
+  </div>
+</div>
+
+<!-- Section 2: Human – AI Judge Alignment -->
+<div class="section">
+  <div class="section-header">
+    <span data-tooltip="The AI judge produced a Pass/Fail verdict for every test case. Expand each criterion, read the Expected vs. Actual, then mark Agree or Disagree on the judge's verdict. Disagreements are auto-promoted to Failure Triage as eval-setup issues. Calibrate the judge against your human read before trusting its aggregate metrics.">Human – AI Judge Alignment</span>
+  </div>
+  <div class="section-body" style="padding-top:0;overflow-x:auto;">
+    <table>
+      <thead>
+        <tr>
+          <th style="width:85px">Quadrant</th>
+          <th style="width:40%">Criterion (The agent should...)</th>
+          <th style="width:18%">Quality Dimension</th>
+          <th style="width:80px">Pass Rate</th>
+          <th style="width:130px">Results</th>
+        </tr>
+      </thead>
+      <tbody id="metrics-tbody"></tbody>
+    </table>
+  </div>
+</div>
+
+<!-- Section 2: Failure Triage -->
+<div class="section">
+  <div class="section-header flex-between">
+    <span data-tooltip="Root cause classification of each failed test case. Distinguishing eval setup issues (bad test data) from real agent problems (wrong config) prevents wasted effort fixing the wrong thing.">Failure Triage</span>
+    <span class="text-sm text-muted" id="failure-count"></span>
+  </div>
+  <div class="section-body" style="padding:0;overflow-x:auto;">
+    <table>
+      <thead>
+        <tr>
+          <th style="width:85px">Quadrant</th>
+          <th style="width:22%">Criterion</th>
+          <th style="width:20%">Question</th>
+          <th style="width:18%">Expected</th>
+          <th style="width:18%">Actual</th>
+          <th style="width:130px">Root Cause</th>
+        </tr>
+      </thead>
+      <tbody id="failure-tbody"></tbody>
+    </table>
+  </div>
+</div>
+
+<!-- Section 4: Patterns -->
+<div class="section">
+  <div class="section-header"><span data-tooltip="Cross-cutting failure patterns — what's actually broken, not just where. Each card leads with the key signal (a stat or one-line diagnosis), with supporting detail underneath. Top Actions below are derived from these.">Patterns</span></div>
+  <div class="section-body" id="patterns-list"></div>
+</div>
+
+<!-- Section 5: Top Actions -->
+<div class="section">
+  <div class="section-header"><span data-tooltip="Suggested fixes derived from the Patterns above. Each action is tagged by category — Topic, Knowledge Source, Test Data, Test Profile, Agent Config — so you can see at a glance what kind of change is being proposed. Re-run the full eval set after each change to catch regressions elsewhere.">Top Actions <span class="text-sm text-muted" style="font-weight:400;">— derived from Patterns</span></span></div>
+  <div class="section-body" id="actions-list"></div>
+</div>
+
+<script>
+const QUADRANTS_ORDER = ["critical", "valuable", "guardrails", "deprioritize"];
+const QUADRANT_LABELS = {
+  critical: "High Value · High Risk",
+  valuable: "High Value · Low Risk",
+  guardrails: "Low Value · High Risk",
+  deprioritize: "Low Value · Low Risk",
+};
+const Q_BADGE_CSS = {
+  critical: "q-badge-sm-critical",
+  valuable: "q-badge-sm-valuable",
+  guardrails: "q-badge-sm-guardrails",
+  deprioritize: "q-badge-sm-deprioritize",
+};
+const Q_CARD_CSS = {
+  critical: "qsc-critical",
+  valuable: "qsc-valuable",
+  guardrails: "qsc-guardrails",
+  deprioritize: "qsc-deprioritize",
+};
+const ROOT_CAUSES = ["eval_setup", "agent_config", "platform_limitation"];
+const ROOT_CAUSE_LABELS = {eval_setup: "Eval Setup Issue", agent_config: "Agent Config Issue", platform_limitation: "Platform Limitation"};
+
+let evalResults = [];
+
+function zoneToQuadrant(zone) {
+  const z = String(zone || "");
+  if (z === "1") return "critical";
+  if (z === "2") return "valuable";
+  if (z === "3") return "deprioritize";
+  return "valuable";
+}
+
+function normalizeCriterionMetric(raw) {
+  return {
+    criterion_id: raw.criterion_id || raw.scenario_id || raw.id,
+    statement: raw.statement || raw.name || "",
+    quadrant: raw.quadrant || zoneToQuadrant(raw.zone),
+    quality_dimension: raw.quality_dimension || "",
+    actual_pass_rate: raw.actual_pass_rate || 0,
+    cases_total: raw.cases_total || 0,
+    cases_passed: raw.cases_passed || 0,
+  };
+}
+
+function normalizeEvalResult(raw) {
+  return {
+    ...raw,
+    criterion_id: raw.criterion_id || raw.scenario_id || raw.id,
+  };
+}
+
+function normalizeFailure(raw) {
+  return {
+    ...raw,
+    criterion_id: raw.criterion_id || raw.scenario_id,
+    criterion_statement: raw.criterion_statement || raw.scenario_name || raw.name || "",
+    quadrant: raw.quadrant || zoneToQuadrant(raw.zone),
+  };
+}
+
+function rateClass(rate) {
+  if (rate >= 90) return "rate-high";
+  if (rate >= 70) return "rate-mid";
+  return "rate-low";
+}
+
+function stageInit() {
+  const d = EMBEDDED_DATA.data;
+  evalResults = (d.eval_results || []).map(normalizeEvalResult);
+  const metrics = (d.criterion_metrics || d.success_metrics || []).map(normalizeCriterionMetric);
+  const failures = (d.failures || []).map(normalizeFailure);
+  renderMetricsStatus(metrics);
+  renderFailures(failures);
+  renderActions(d.top_actions || []);
+  renderPatterns(d.patterns || []);
+}
+
+function renderMetricsStatus(metrics) {
+  // Quadrant summary cards
+  const cardContainer = document.getElementById("quadrant-summary-cards");
+  const stats = {};
+  metrics.forEach(m => {
+    const q = m.quadrant;
+    if (!stats[q]) stats[q] = {criteria: 0, cases_total: 0, cases_passed: 0};
+    stats[q].criteria++;
+    stats[q].cases_total += m.cases_total;
+    stats[q].cases_passed += m.cases_passed;
+  });
+
+  let cardsHtml = "";
+  QUADRANTS_ORDER.forEach(q => {
+    const s = stats[q];
+    if (!s) return;
+    const pct = s.cases_total > 0 ? Math.round(s.cases_passed / s.cases_total * 100) : 0;
+    cardsHtml +=
+      '<div class="quadrant-summary-card ' + Q_CARD_CSS[q] + '">' +
+      '<div class="qsc-label">' + QUADRANT_LABELS[q] + '</div>' +
+      '<div class="qsc-stat">' + pct + '%</div>' +
+      '<div class="qsc-detail">' + s.cases_passed + '/' + s.cases_total + ' cases (' + s.criteria + ' criteria)</div>' +
+      '</div>';
+  });
+  cardContainer.innerHTML = cardsHtml;
+
+  // Metrics table — sorted by quadrant importance, then by lowest pass rate first
+  const QUADRANT_SORT = { critical: 0, guardrails: 1, valuable: 2, deprioritize: 3 };
+  const sorted = [...metrics].sort((a, b) => {
+    const qd = QUADRANT_SORT[a.quadrant] - QUADRANT_SORT[b.quadrant];
+    if (qd !== 0) return qd;
+    return a.actual_pass_rate - b.actual_pass_rate;
+  });
+
+  const tbody = document.getElementById("metrics-tbody");
+  tbody.innerHTML = "";
+  let totalCases = 0;
+  let totalPassed = 0;
+  sorted.forEach((m, idx) => {
+    totalCases += m.cases_total;
+    totalPassed += m.cases_passed;
+    const barColor = m.actual_pass_rate >= 90 ? "var(--green)" : m.actual_pass_rate >= 70 ? "var(--yellow)" : "var(--red)";
+    const criterionCases = evalResults.filter(r => r.criterion_id === m.criterion_id);
+    const hasDetails = criterionCases.length > 0;
+    const rowId = "metric-detail-" + idx;
+
+    const tr = document.createElement("tr");
+    tr.className = "metric-row";
+    if (hasDetails) tr.onclick = function() { toggleDetail(rowId, this); };
+    tr.innerHTML =
+      '<td><span class="q-badge-sm ' + (Q_BADGE_CSS[m.quadrant] || "") + '">' + (QUADRANT_LABELS[m.quadrant] || "") + '</span></td>' +
+      '<td class="text-sm" style="font-weight:500;">' + (hasDetails ? '<span class="expand-icon">&#x25B6;</span>' : '<span style="width:1em;display:inline-block;"></span>') + escapeHtml(m.statement || "") + '</td>' +
+      '<td class="text-sm">' + escapeHtml(m.quality_dimension || "") + '</td>' +
+      '<td class="text-sm" style="text-align:right;font-family:var(--mono);"><span class="' + rateClass(m.actual_pass_rate) + '">' + m.actual_pass_rate + '%</span></td>' +
+      '<td><span class="metric-bar-bg"><span class="metric-bar-fill" style="width:' + Math.min(100, m.actual_pass_rate) + '%;background:' + barColor + ';"></span></span>' +
+      ' <span class="text-sm text-muted">' + m.cases_passed + '/' + m.cases_total + '</span></td>';
+    tbody.appendChild(tr);
+
+    if (hasDetails) {
+      const detailTr = document.createElement("tr");
+      detailTr.className = "metric-detail-row";
+      detailTr.id = rowId;
+      let cardsHtml = '<td colspan="5" style="padding:0;"><div class="case-cards">';
+      criterionCases.forEach((c, cIdx) => {
+        const caseKey = m.criterion_id + "_" + cIdx;
+        const rationaleId = "rationale-" + String(m.criterion_id) + "-" + cIdx;
+        const scoreText = c.score !== undefined ? c.score.toFixed(2) : "—";
+        const resultHtml = c.pass ? '<span class="detail-pass">Pass</span>' : '<span class="detail-fail">Fail</span>';
+        cardsHtml += '<div class="case-card">' +
+          '<div class="case-q">' +
+            '<span class="case-q-label">Q</span>' +
+            '<span class="case-q-text">' + escapeHtml(c.question || "") + '</span>' +
+          '</div>' +
+          '<div class="case-compare">' +
+            '<div class="case-side case-expected">' +
+              '<div class="case-side-label">Expected response</div>' +
+              '<div class="case-side-text">' + escapeHtml(c.expected || "") + '</div>' +
+            '</div>' +
+            '<div class="case-side case-actual">' +
+              '<div class="case-side-label">Actual response</div>' +
+              '<div class="case-side-text">' + escapeHtml(c.actual || "") + '</div>' +
+            '</div>' +
+          '</div>' +
+          '<div class="case-footer">' +
+            '<div class="case-meta">' +
+              '<span class="case-method">' + escapeHtml(c.method || "") + '</span>' +
+              '<span class="case-score">Score: ' + scoreText + '</span>' +
+              '<span class="case-result">Result: ' + resultHtml + '</span>' +
+            '</div>' +
+            '<div class="case-judgement">' +
+              '<span class="case-judgement-label">Your judgement:</span>' +
+              '<select class="judgement-select" data-case-key="' + caseKey + '" data-criterion-id="' + m.criterion_id + '" data-question="' + escapeAttr(c.question || "") + '" data-expected="' + escapeAttr(truncate(c.expected || "", 100)) + '" data-actual="' + escapeAttr(truncate(c.actual || "", 100)) + '" data-quadrant="' + m.quadrant + '" data-criterion-statement="' + escapeAttr(m.statement || "") + '" data-quality-dim="' + escapeAttr(m.quality_dimension || "") + '" onchange="onJudgementChange(this)">' +
+                '<option value="">—</option>' +
+                '<option value="agree">Agree</option>' +
+                '<option value="disagree">Disagree</option>' +
+              '</select>' +
+            '</div>' +
+          '</div>';
+        if (c.explanation) {
+          cardsHtml +=
+            '<button type="button" class="case-rationale-toggle" onclick="toggleRationale(\'' + rationaleId + '\', this)">&#9656; Show judge rationale</button>' +
+            '<div class="case-rationale" id="' + rationaleId + '">' + escapeHtml(c.explanation) + '</div>';
+        }
+        cardsHtml += '</div>';
+      });
+      cardsHtml += '</div></td>';
+      detailTr.innerHTML = cardsHtml;
+      tbody.appendChild(detailTr);
+    }
+  });
+  const overallPct = totalCases > 0 ? Math.round(totalPassed / totalCases * 100) : 0;
+  document.getElementById("metrics-status-count").textContent = totalPassed + '/' + totalCases + ' cases passed (' + overallPct + '% overall)';
+}
+
+function toggleDetail(rowId, clickedRow) {
+  const detailRow = document.getElementById(rowId);
+  if (!detailRow) return;
+  detailRow.classList.toggle("visible");
+  clickedRow.classList.toggle("expanded");
+}
+
+function toggleRationale(id, btn) {
+  const el = document.getElementById(id);
+  if (!el) return;
+  const visible = el.classList.toggle("visible");
+  btn.innerHTML = visible
+    ? '&#9662; Hide judge rationale'
+    : '&#9656; Show judge rationale';
+}
+
+// Human judgement tracking
+let humanDisagrees = {};
+
+function onJudgementChange(select) {
+  const key = select.dataset.caseKey;
+  select.classList.remove("agree", "disagree");
+  if (select.value) select.classList.add(select.value);
+
+  if (select.value === "disagree") {
+    humanDisagrees[key] = {
+      criterion_statement: select.dataset.criterionStatement,
+      quadrant: select.dataset.quadrant,
+      quality_dimension: select.dataset.qualityDim,
+      question: select.dataset.question,
+      expected: select.dataset.expected,
+      actual: select.dataset.actual,
+    };
+  } else {
+    delete humanDisagrees[key];
+  }
+
+  const d = EMBEDDED_DATA.data;
+  renderFailures((d.failures || []).map(normalizeFailure));
+  // Set human_disagrees BEFORE scheduleSave so the saved snapshot includes it.
+  // Reverse order would save first (without disagrees) then write to a stale
+  // edits object that gets overwritten on the next collectEdits() call.
+  edits["human_disagrees"] = JSON.stringify(humanDisagrees);
+  scheduleSave();
+}
+
+function escapeAttr(text) {
+  return (text || "").replace(/&/g, "&amp;").replace(/"/g, "&quot;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/'/g, "&#39;");
+}
+
+function renderFailures(failures) {
+  const tbody = document.getElementById("failure-tbody");
+  tbody.innerHTML = "";
+
+  const disagreeQuestions = new Set(Object.values(humanDisagrees).map(d => d.question));
+
+  const disagreeEntries = Object.entries(humanDisagrees).map(([key, d]) => ({
+    quadrant: d.quadrant,
+    criterion_statement: d.criterion_statement,
+    quality_dimension: d.quality_dimension,
+    question: d.question,
+    expected: d.expected,
+    actual: d.actual,
+    root_cause: "eval_setup",
+    _from_disagree: true,
+  }));
+
+  const filteredFailures = failures.filter(f => !disagreeQuestions.has(f.question));
+  const allFailures = [...filteredFailures, ...disagreeEntries];
+  const totalCount = allFailures.length;
+  const disagreeCount = disagreeEntries.length;
+
+  let countText = totalCount + " failure" + (totalCount !== 1 ? "s" : "");
+  if (disagreeCount > 0) countText += " (" + disagreeCount + " from human review)";
+  document.getElementById("failure-count").textContent = countText;
+
+  if (allFailures.length === 0) {
+    tbody.innerHTML = '<tr><td colspan="6" class="text-sm text-muted" style="text-align:center;padding:1rem;">No failures — all test cases passed.</td></tr>';
+    return;
+  }
+
+  allFailures.forEach((f, i) => {
+    const fp = f._from_disagree ? "disagree_" + i : "failures[" + i + "]";
+    const q = f.quadrant || "valuable";
+    const tr = document.createElement("tr");
+    if (f._from_disagree) tr.style.background = "var(--yellow-bg)";
+
+    const rootCauseHtml = f._from_disagree
+      ? '<span class="badge badge-yellow" style="font-size:0.72rem;">Eval Setup — Human Disagrees</span>'
+      : '<select class="inline-select" data-field="' + fp + '.root_cause" data-original="' + (f.root_cause || "") + '" onchange="scheduleSave()">' +
+          ROOT_CAUSES.map(rc =>
+            '<option value="' + rc + '"' + (rc === f.root_cause ? ' selected' : '') + '>' + ROOT_CAUSE_LABELS[rc] + '</option>'
+          ).join("") +
+        '</select>';
+
+    tr.innerHTML =
+      '<td><span class="q-badge-sm ' + (Q_BADGE_CSS[q] || "") + '">' + (QUADRANT_LABELS[q] || "") + '</span></td>' +
+      '<td class="text-sm"><div style="font-weight:500;">' + escapeHtml(f.criterion_statement || "") + '</div><div class="failure-sub">' + escapeHtml(f.quality_dimension || "") + '</div></td>' +
+      '<td class="text-sm">' + escapeHtml(f.question || "") + '</td>' +
+      '<td class="text-sm">' + escapeHtml(truncate(f.expected || "", 120)) + '</td>' +
+      '<td class="text-sm">' + escapeHtml(truncate(f.actual || "", 120)) + '</td>' +
+      '<td>' + rootCauseHtml + '</td>';
+    tbody.appendChild(tr);
+  });
+}
+
+function splitOnFirstColon(s) {
+  const idx = s.indexOf(":");
+  if (idx === -1) return { headline: "", detail: s };
+  return { headline: s.slice(0, idx).trim(), detail: s.slice(idx + 1).trim() };
+}
+
+function inferActionCategory(text) {
+  const t = (text || "").toLowerCase();
+  if (/\bknowledge source|\bingest\b|\bknowledge\b/.test(t)) return { key: "knowledge", label: "Knowledge Source" };
+  if (/\btopic\b/.test(t))                                   return { key: "topic",     label: "Add Topic" };
+  if (/\bprofile\b|\bpersona\b/.test(t))                     return { key: "profile",   label: "Test Profile" };
+  if (/\[verify\]|fact[- ]check|expected response/.test(t))  return { key: "testdata",  label: "Test Data" };
+  if (/\binstruction|\bagent config|\bsystem prompt/.test(t))return { key: "agent",     label: "Agent Config" };
+  return { key: "other", label: "Change" };
+}
+
+function parseAction(raw) {
+  if (raw && typeof raw === "object") {
+    const change = raw.change || "";
+    const cat = raw.category || inferActionCategory(change);
+    return { change, rerun: raw.rerun || "", expect: raw.expect || "", category: cat };
+  }
+  const s = String(raw || "");
+  const change = (s.match(/Change:\s*([\s\S]*?)(?=\s*Re-run:|$)/) || [, ""])[1].trim();
+  const rerun  = (s.match(/Re-run:\s*([\s\S]*?)(?=\s*Expect:|$)/) || [, ""])[1].trim();
+  const expect = (s.match(/Expect:\s*([\s\S]*?)$/) || [, ""])[1].trim();
+  const changeText = change || s;
+  return { change: changeText, rerun, expect, category: inferActionCategory(changeText) };
+}
+
+function renderPatterns(patterns) {
+  const container = document.getElementById("patterns-list");
+  if (!patterns || patterns.length === 0) {
+    container.innerHTML = '<div class="text-muted text-sm">No patterns detected.</div>';
+    return;
+  }
+  container.innerHTML = patterns.map((p, i) => {
+    const { headline, detail } = splitOnFirstColon(String(p || ""));
+    const num = String(i + 1).padStart(2, "0");
+    return '<div class="pattern-card">' +
+      '<div class="pattern-num">P' + num + '</div>' +
+      '<div class="pattern-body">' +
+        (headline ? '<div class="pattern-headline">' + escapeHtml(headline) + '</div>' : '') +
+        '<div class="pattern-detail">' + escapeHtml(detail) + '</div>' +
+      '</div>' +
+    '</div>';
+  }).join("");
+}
+
+function renderActions(actions) {
+  const container = document.getElementById("actions-list");
+  if (!actions || actions.length === 0) {
+    container.innerHTML = '<div class="text-muted text-sm">No actions recommended.</div>';
+    return;
+  }
+  container.innerHTML = actions.map((a, i) => {
+    const p = parseAction(a);
+    const num = String(i + 1).padStart(2, "0");
+    const catKey = (p.category && p.category.key) || "other";
+    const catLabel = (p.category && p.category.label) || "Change";
+    const rerun = p.rerun ? '<span><strong>Re-run:</strong> ' + escapeHtml(p.rerun) + '</span>' : '';
+    const expect = p.expect ? '<span><strong>Expect:</strong> ' + escapeHtml(p.expect) + '</span>' : '';
+    return '<div class="action-card">' +
+      '<div class="action-head">' +
+        '<span class="action-num">A' + num + '</span>' +
+        '<span class="action-cat action-cat-' + catKey + '">' + escapeHtml(catLabel) + '</span>' +
+      '</div>' +
+      '<div class="action-change">' + escapeHtml(p.change) + '</div>' +
+      ((rerun || expect) ? '<div class="action-rerun">' + rerun + expect + '</div>' : '') +
+    '</div>';
+  }).join("");
+}
+
+function truncate(text, max) {
+  return text.length > max ? text.substring(0, max) + "..." : text;
+}
+
+function stageCollectEdits() {
+  const result = {};
+  document.querySelectorAll("[data-field]").forEach(el => {
+    if (el.value !== (el.dataset.original || "")) {
+      result[el.dataset.field] = el.value;
+    }
+  });
+  // Preserve edits set programmatically (e.g., human_disagrees populated in
+  // onJudgementChange). Without this merge, the next collectEdits() call
+  // overwrites those keys with a fresh object that has only [data-field]
+  // divergences — silently losing Agree/Disagree decisions before submit.
+  Object.assign(result, edits);
+  return result;
+}
+</script>

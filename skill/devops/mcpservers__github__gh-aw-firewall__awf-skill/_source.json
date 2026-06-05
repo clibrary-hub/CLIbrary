@@ -1,0 +1,15 @@
+{
+  "source": "mcpservers",
+  "listing_url": "https://mcpservers.org/zh-TW/agent-skills/author/github",
+  "owner": "github",
+  "repo": "gh-aw-firewall",
+  "branch": "HEAD",
+  "skill": "awf-skill",
+  "repo_url": "https://github.com/github/gh-aw-firewall",
+  "license": {
+    "spdx": "MIT",
+    "url": "https://github.com/github/gh-aw-firewall/blob/main/LICENSE",
+    "source": "api"
+  },
+  "zip_subdir": "gh-aw-firewall-main/.claude/skills/awf-skill"
+}

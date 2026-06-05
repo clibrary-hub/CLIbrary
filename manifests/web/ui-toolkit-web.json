@@ -1,0 +1,49 @@
+{
+  "name": "ui-toolkit-web",
+  "version": "0.1.0",
+  "category": "web",
+  "description": "Reference skill for Zoom Video SDK UI Toolkit.",
+  "intent_triggers": [
+    "use the ui toolkit web agent skill",
+    "run a workflow for ui toolkit web",
+    "help me with ui toolkit web",
+    "我需要處理 ui toolkit web 相關工作",
+    "幫我啟用 ui toolkit web 這個 skill",
+    "用 agent skill 完成 ui toolkit web",
+    "use ui toolkit web from knowledge-work-plugins"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the ui toolkit web skill for this task.",
+      "invocation": "codex --skill ui-toolkit-web \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "apache-2.0",
+    "mcpservers",
+    "web"
+  ]
+}

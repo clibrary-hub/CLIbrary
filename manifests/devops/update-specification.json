@@ -1,0 +1,49 @@
+{
+  "name": "update-specification",
+  "version": "0.1.0",
+  "category": "devops",
+  "description": "Update an existing specification file for the solution, optimized for Generative AI consumption based on new requirements or updates to any existing code.",
+  "intent_triggers": [
+    "use the update specification agent skill",
+    "run a workflow for update specification",
+    "help me with update specification",
+    "我需要處理 update specification 相關工作",
+    "幫我啟用 update specification 這個 skill",
+    "用 agent skill 完成 update specification",
+    "use update specification from awesome-copilot"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the update specification skill for this task.",
+      "invocation": "codex --skill update-specification \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "devops",
+    "mcpservers",
+    "mit"
+  ]
+}

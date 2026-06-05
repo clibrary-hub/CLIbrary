@@ -1,0 +1,49 @@
+{
+  "name": "fluid-pr",
+  "version": "0.1.0",
+  "category": "devops",
+  "description": "Use when creating a pull request in the Fluid Framework repo.",
+  "intent_triggers": [
+    "use the fluid pr agent skill",
+    "run a workflow for fluid pr",
+    "help me with fluid pr",
+    "我需要處理 fluid pr 相關工作",
+    "幫我啟用 fluid pr 這個 skill",
+    "用 agent skill 完成 fluid pr",
+    "use fluid pr from fluidframework"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the fluid pr skill for this task.",
+      "invocation": "codex --skill fluid-pr \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "devops",
+    "mcpservers",
+    "mit"
+  ]
+}

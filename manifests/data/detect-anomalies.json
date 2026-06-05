@@ -1,0 +1,49 @@
+{
+  "name": "detect-anomalies",
+  "version": "0.1.0",
+  "category": "data",
+  "description": "Detect anomalies in Axiom datasets using statistical analysis.",
+  "intent_triggers": [
+    "use the detect anomalies agent skill",
+    "run a workflow for detect anomalies",
+    "help me with detect anomalies",
+    "我需要處理 detect anomalies 相關工作",
+    "幫我啟用 detect anomalies 這個 skill",
+    "用 agent skill 完成 detect anomalies",
+    "use detect anomalies from cli"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the detect anomalies skill for this task.",
+      "invocation": "codex --skill detect-anomalies \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "data",
+    "mcpservers",
+    "mit"
+  ]
+}

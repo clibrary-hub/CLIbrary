@@ -1,0 +1,49 @@
+{
+  "name": "roundup-setup",
+  "version": "0.1.0",
+  "category": "devops",
+  "description": "Interactive onboarding that learns your communication style, audiences, and data sources to configure personalized status briefings.",
+  "intent_triggers": [
+    "use the roundup setup agent skill",
+    "run a workflow for roundup setup",
+    "help me with roundup setup",
+    "我需要處理 roundup setup 相關工作",
+    "幫我啟用 roundup setup 這個 skill",
+    "用 agent skill 完成 roundup setup",
+    "use roundup setup from awesome-copilot"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the roundup setup skill for this task.",
+      "invocation": "codex --skill roundup-setup \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "devops",
+    "mcpservers",
+    "mit"
+  ]
+}

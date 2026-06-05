@@ -1,0 +1,49 @@
+{
+  "name": "create-spring-boot-java-project",
+  "version": "0.1.0",
+  "category": "devops",
+  "description": "Create Spring Boot Java Project Skeleton",
+  "intent_triggers": [
+    "use the create spring boot java project agent skill",
+    "run a workflow for create spring boot java project",
+    "help me with create spring boot java project",
+    "我需要處理 create spring boot java project 相關工作",
+    "幫我啟用 create spring boot java project 這個 skill",
+    "用 agent skill 完成 create spring boot java project",
+    "use create spring boot java project from awesome-copilot"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the create spring boot java project skill for this task.",
+      "invocation": "codex --skill create-spring-boot-java-project \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "devops",
+    "mcpservers",
+    "mit"
+  ]
+}

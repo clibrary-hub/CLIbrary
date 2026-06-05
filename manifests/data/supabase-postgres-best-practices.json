@@ -1,0 +1,49 @@
+{
+  "name": "supabase-postgres-best-practices",
+  "version": "0.1.0",
+  "category": "data",
+  "description": "Postgres performance optimization and best practices from Supabase.",
+  "intent_triggers": [
+    "use the supabase postgres best practices agent skill",
+    "run a workflow for supabase postgres best practices",
+    "help me with supabase postgres best practices",
+    "我需要處理 supabase postgres best practices 相關工作",
+    "幫我啟用 supabase postgres best practices 這個 skill",
+    "用 agent skill 完成 supabase postgres best practices",
+    "use supabase postgres best practices from agent-skills"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the supabase postgres best practices skill for this task.",
+      "invocation": "codex --skill supabase-postgres-best-practices \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "data",
+    "mcpservers",
+    "mit"
+  ]
+}

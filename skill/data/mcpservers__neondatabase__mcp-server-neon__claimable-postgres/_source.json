@@ -1,0 +1,15 @@
+{
+  "source": "mcpservers",
+  "listing_url": "https://mcpservers.org/zh-TW/agent-skills",
+  "owner": "neondatabase",
+  "repo": "mcp-server-neon",
+  "branch": "HEAD",
+  "skill": "claimable-postgres",
+  "repo_url": "https://github.com/neondatabase/mcp-server-neon",
+  "license": {
+    "spdx": "MIT",
+    "url": "https://github.com/neondatabase/mcp-server-neon/blob/main/LICENSE",
+    "source": "api"
+  },
+  "zip_subdir": "mcp-server-neon-main/.agents/skills/claimable-postgres"
+}

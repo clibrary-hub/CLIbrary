@@ -1,0 +1,49 @@
+{
+  "name": "azure-search-documents-ts-skills",
+  "version": "0.1.0",
+  "category": "devops",
+  "description": "Build search applications using Azure AI Search SDK for JavaScript (@azure/search-documents).",
+  "intent_triggers": [
+    "use the azure search documents ts agent skill",
+    "run a workflow for azure search documents ts",
+    "help me with azure search documents ts",
+    "我需要處理 azure search documents ts 相關工作",
+    "幫我啟用 azure search documents ts 這個 skill",
+    "用 agent skill 完成 azure search documents ts",
+    "use azure search documents ts from skills"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the azure search documents ts skill for this task.",
+      "invocation": "codex --skill azure-search-documents-ts \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "devops",
+    "mcpservers",
+    "mit"
+  ]
+}

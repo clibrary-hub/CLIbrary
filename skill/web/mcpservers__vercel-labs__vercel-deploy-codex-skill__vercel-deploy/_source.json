@@ -1,0 +1,15 @@
+{
+  "source": "mcpservers",
+  "listing_url": "https://mcpservers.org/zh-TW/agent-skills/author/vercel",
+  "owner": "vercel-labs",
+  "repo": "vercel-deploy-codex-skill",
+  "branch": "HEAD",
+  "skill": "vercel-deploy",
+  "repo_url": "https://github.com/vercel-labs/vercel-deploy-codex-skill",
+  "license": {
+    "spdx": "MIT",
+    "url": "https://github.com/vercel-labs/vercel-deploy-codex-skill/blob/main/LICENSE",
+    "source": "api"
+  },
+  "zip_subdir": "vercel-deploy-codex-skill-main/skills/vercel-deploy"
+}

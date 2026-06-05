@@ -1,0 +1,15 @@
+{
+  "source": "mcpservers",
+  "listing_url": "https://mcpservers.org/zh-TW/agent-skills/author/cloudflare",
+  "owner": "cloudflare",
+  "repo": "kumo",
+  "branch": "HEAD",
+  "skill": "index-knowledge",
+  "repo_url": "https://github.com/cloudflare/kumo",
+  "license": {
+    "spdx": "MIT",
+    "url": "https://github.com/cloudflare/kumo/blob/main/LICENSE",
+    "source": "api"
+  },
+  "zip_subdir": "kumo-main/.agents/skills/index-knowledge"
+}

@@ -1,0 +1,49 @@
+{
+  "name": "web-research-deepagentsjs",
+  "version": "0.1.0",
+  "category": "web",
+  "description": "Use this skill for requests related to web research; it provides a structured approach to conducting comprehensive web research",
+  "intent_triggers": [
+    "use the web research agent skill",
+    "run a workflow for web research",
+    "help me with web research",
+    "我需要處理 web research 相關工作",
+    "幫我啟用 web research 這個 skill",
+    "用 agent skill 完成 web research",
+    "use web research from deepagentsjs"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the web research skill for this task.",
+      "invocation": "codex --skill web-research \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "mcpservers",
+    "mit",
+    "web"
+  ]
+}

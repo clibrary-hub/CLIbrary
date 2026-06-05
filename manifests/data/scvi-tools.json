@@ -1,0 +1,49 @@
+{
+  "name": "scvi-tools",
+  "version": "0.1.0",
+  "category": "data",
+  "description": "Deep learning for single-cell analysis using scvi-tools.",
+  "intent_triggers": [
+    "use the scvi tools agent skill",
+    "run a workflow for scvi tools",
+    "help me with scvi tools",
+    "我需要處理 scvi tools 相關工作",
+    "幫我啟用 scvi tools 這個 skill",
+    "用 agent skill 完成 scvi tools",
+    "use scvi tools from knowledge-work-plugins"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the scvi tools skill for this task.",
+      "invocation": "codex --skill scvi-tools \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "apache-2.0",
+    "data",
+    "mcpservers"
+  ]
+}

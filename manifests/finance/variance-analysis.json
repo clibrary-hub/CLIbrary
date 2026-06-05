@@ -1,0 +1,49 @@
+{
+  "name": "variance-analysis",
+  "version": "0.1.0",
+  "category": "finance",
+  "description": "Decompose financial variances into drivers with narrative explanations and waterfall analysis.",
+  "intent_triggers": [
+    "use the variance analysis agent skill",
+    "run a workflow for variance analysis",
+    "help me with variance analysis",
+    "我需要處理 variance analysis 相關工作",
+    "幫我啟用 variance analysis 這個 skill",
+    "用 agent skill 完成 variance analysis",
+    "use variance analysis from knowledge-work-plugins"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the variance analysis skill for this task.",
+      "invocation": "codex --skill variance-analysis \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "apache-2.0",
+    "finance",
+    "mcpservers"
+  ]
+}

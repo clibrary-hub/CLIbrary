@@ -1,0 +1,48 @@
+{
+  "name": "service-remapping",
+  "version": "0.1.0",
+  "category": "devops",
+  "description": "Create and manage APM service remapping rules — rewrite service names at ingestion time to collapse noisy inferred entities, clean up auto-generated names, handle org renames, or normalize naming c...",
+  "intent_triggers": [
+    "use the service remapping agent skill",
+    "run a workflow for service remapping",
+    "help me with service remapping",
+    "我需要處理 service remapping 相關工作",
+    "幫我啟用 service remapping 這個 skill",
+    "用 agent skill 完成 service remapping"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the service remapping skill for this task.",
+      "invocation": "codex --skill service-remapping \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "devops",
+    "mit",
+    "skill"
+  ]
+}

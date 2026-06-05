@@ -1,0 +1,49 @@
+{
+  "name": "planning-with-files",
+  "version": "0.1.0",
+  "category": "devops",
+  "description": "**USE THIS FOR COMPLEX TASKS.** Implements Manus-style file-based planning for multi-step tasks.",
+  "intent_triggers": [
+    "use the planning with files agent skill",
+    "run a workflow for planning with files",
+    "help me with planning with files",
+    "我需要處理 planning with files 相關工作",
+    "幫我啟用 planning with files 這個 skill",
+    "用 agent skill 完成 planning with files",
+    "use planning with files from semantic-link-labs"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the planning with files skill for this task.",
+      "invocation": "codex --skill planning-with-files \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "devops",
+    "mcpservers",
+    "mit"
+  ]
+}

@@ -1,0 +1,49 @@
+{
+  "name": "dd-docs",
+  "version": "0.1.0",
+  "category": "web",
+  "description": "Datadog docs lookup using docs.datadoghq.com/llms.txt and linked Markdown pages.",
+  "intent_triggers": [
+    "use the dd docs agent skill",
+    "run a workflow for dd docs",
+    "help me with dd docs",
+    "我需要處理 dd docs 相關工作",
+    "幫我啟用 dd docs 這個 skill",
+    "用 agent skill 完成 dd docs",
+    "use dd docs from agent-skills"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the dd docs skill for this task.",
+      "invocation": "codex --skill dd-docs \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "mcpservers",
+    "mit",
+    "web"
+  ]
+}

@@ -1,0 +1,49 @@
+{
+  "name": "deno-sandbox",
+  "version": "0.1.0",
+  "category": "devops",
+  "description": "Use when building features that execute untrusted user code, AI-generated code, or need isolated code execution environments.",
+  "intent_triggers": [
+    "use the deno sandbox agent skill",
+    "run a workflow for deno sandbox",
+    "help me with deno sandbox",
+    "我需要處理 deno sandbox 相關工作",
+    "幫我啟用 deno sandbox 這個 skill",
+    "用 agent skill 完成 deno sandbox",
+    "use deno sandbox from skills"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the deno sandbox skill for this task.",
+      "invocation": "codex --skill deno-sandbox \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "devops",
+    "mcpservers",
+    "mit"
+  ]
+}

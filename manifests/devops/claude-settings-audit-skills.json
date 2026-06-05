@@ -1,0 +1,49 @@
+{
+  "name": "claude-settings-audit-skills",
+  "version": "0.1.0",
+  "category": "devops",
+  "description": "Analyze a repository to generate recommended Claude Code settings.json permissions.",
+  "intent_triggers": [
+    "use the claude settings audit agent skill",
+    "run a workflow for claude settings audit",
+    "help me with claude settings audit",
+    "我需要處理 claude settings audit 相關工作",
+    "幫我啟用 claude settings audit 這個 skill",
+    "用 agent skill 完成 claude settings audit",
+    "use claude settings audit from skills"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the claude settings audit skill for this task.",
+      "invocation": "codex --skill claude-settings-audit \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "apache-2.0",
+    "devops",
+    "mcpservers"
+  ]
+}

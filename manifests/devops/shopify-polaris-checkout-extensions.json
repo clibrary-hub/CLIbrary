@@ -1,0 +1,49 @@
+{
+  "name": "shopify-polaris-checkout-extensions",
+  "version": "0.1.0",
+  "category": "devops",
+  "description": "Build custom functionality that merchants can install at defined points in the checkout flow, including product information, shipping, payment, order summary, and Shop Pay.",
+  "intent_triggers": [
+    "use the shopify polaris checkout extensions agent skill",
+    "run a workflow for shopify polaris checkout extensions",
+    "help me with shopify polaris checkout extensions",
+    "我需要處理 shopify polaris checkout extensions 相關工作",
+    "幫我啟用 shopify polaris checkout extensions 這個 skill",
+    "用 agent skill 完成 shopify polaris checkout extensions",
+    "use shopify polaris checkout extensions from shopify-ai-toolkit"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the shopify polaris checkout extensions skill for this task.",
+      "invocation": "codex --skill shopify-polaris-checkout-extensions \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "devops",
+    "mcpservers",
+    "mit"
+  ]
+}

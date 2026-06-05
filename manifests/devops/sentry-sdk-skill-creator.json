@@ -1,0 +1,49 @@
+{
+  "name": "sentry-sdk-skill-creator",
+  "version": "0.1.0",
+  "category": "devops",
+  "description": "Create a complete Sentry SDK skill bundle for any platform.",
+  "intent_triggers": [
+    "use the sentry sdk skill creator agent skill",
+    "run a workflow for sentry sdk skill creator",
+    "help me with sentry sdk skill creator",
+    "我需要處理 sentry sdk skill creator 相關工作",
+    "幫我啟用 sentry sdk skill creator 這個 skill",
+    "用 agent skill 完成 sentry sdk skill creator",
+    "use sentry sdk skill creator from sentry-for-ai"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the sentry sdk skill creator skill for this task.",
+      "invocation": "codex --skill sentry-sdk-skill-creator \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "devops",
+    "mcpservers",
+    "mit"
+  ]
+}

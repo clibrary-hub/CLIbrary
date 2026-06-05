@@ -1,0 +1,49 @@
+{
+  "name": "deepgram-js-conversational-stt",
+  "version": "0.1.0",
+  "category": "ai-ml",
+  "description": "Use when writing or reviewing JavaScript/TypeScript in this repo that calls Deepgram Conversational STT v2 / Flux (`/v2/listen`) for turn-aware streaming transcription.",
+  "intent_triggers": [
+    "use the deepgram js conversational stt agent skill",
+    "run a workflow for deepgram js conversational stt",
+    "help me with deepgram js conversational stt",
+    "我需要處理 deepgram js conversational stt 相關工作",
+    "幫我啟用 deepgram js conversational stt 這個 skill",
+    "用 agent skill 完成 deepgram js conversational stt",
+    "use deepgram js conversational stt from deepgram-js-sdk"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the deepgram js conversational stt skill for this task.",
+      "invocation": "codex --skill deepgram-js-conversational-stt \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "ai-ml",
+    "mcpservers",
+    "mit"
+  ]
+}

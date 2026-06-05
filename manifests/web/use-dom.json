@@ -1,0 +1,48 @@
+{
+  "name": "use-dom",
+  "version": "0.1.0",
+  "category": "web",
+  "description": "Use Expo DOM components to run web code in a webview on native and as-is on web.",
+  "intent_triggers": [
+    "use the use dom agent skill",
+    "run a workflow for use dom",
+    "help me with use dom",
+    "我需要處理 use dom 相關工作",
+    "幫我啟用 use dom 這個 skill",
+    "用 agent skill 完成 use dom"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the use dom skill for this task.",
+      "invocation": "codex --skill use-dom \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "mit",
+    "skill",
+    "web"
+  ]
+}

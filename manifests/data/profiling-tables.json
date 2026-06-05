@@ -1,0 +1,49 @@
+{
+  "name": "profiling-tables",
+  "version": "0.1.0",
+  "category": "data",
+  "description": "Deep-dive data profiling for a specific table.",
+  "intent_triggers": [
+    "use the profiling tables agent skill",
+    "run a workflow for profiling tables",
+    "help me with profiling tables",
+    "我需要處理 profiling tables 相關工作",
+    "幫我啟用 profiling tables 這個 skill",
+    "用 agent skill 完成 profiling tables",
+    "use profiling tables from agents"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the profiling tables skill for this task.",
+      "invocation": "codex --skill profiling-tables \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "apache-2.0",
+    "data",
+    "mcpservers"
+  ]
+}

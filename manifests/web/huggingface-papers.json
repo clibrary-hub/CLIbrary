@@ -1,0 +1,49 @@
+{
+  "name": "huggingface-papers",
+  "version": "0.1.0",
+  "category": "web",
+  "description": "Look up and read Hugging Face paper pages in markdown, and use the papers API for structured metadata such as authors, linked models/datasets/spaces, Github repo and project page.",
+  "intent_triggers": [
+    "use the huggingface papers agent skill",
+    "run a workflow for huggingface papers",
+    "help me with huggingface papers",
+    "我需要處理 huggingface papers 相關工作",
+    "幫我啟用 huggingface papers 這個 skill",
+    "用 agent skill 完成 huggingface papers",
+    "use huggingface papers from skills"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the huggingface papers skill for this task.",
+      "invocation": "codex --skill huggingface-papers \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "apache-2.0",
+    "mcpservers",
+    "web"
+  ]
+}

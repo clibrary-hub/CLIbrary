@@ -1,0 +1,49 @@
+{
+  "name": "sandbox-npm-install",
+  "version": "0.1.0",
+  "category": "devops",
+  "description": "Install npm packages in a Docker sandbox environment.",
+  "intent_triggers": [
+    "use the sandbox npm install agent skill",
+    "run a workflow for sandbox npm install",
+    "help me with sandbox npm install",
+    "我需要處理 sandbox npm install 相關工作",
+    "幫我啟用 sandbox npm install 這個 skill",
+    "用 agent skill 完成 sandbox npm install",
+    "use sandbox npm install from awesome-copilot"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the sandbox npm install skill for this task.",
+      "invocation": "codex --skill sandbox-npm-install \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "devops",
+    "mcpservers",
+    "mit"
+  ]
+}

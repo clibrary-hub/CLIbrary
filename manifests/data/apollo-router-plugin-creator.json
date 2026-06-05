@@ -1,0 +1,49 @@
+{
+  "name": "apollo-router-plugin-creator",
+  "version": "0.1.0",
+  "category": "data",
+  "description": "Agent skill for apollo router plugin creator workflows.",
+  "intent_triggers": [
+    "use the apollo router plugin creator agent skill",
+    "run a workflow for apollo router plugin creator",
+    "help me with apollo router plugin creator",
+    "我需要處理 apollo router plugin creator 相關工作",
+    "幫我啟用 apollo router plugin creator 這個 skill",
+    "用 agent skill 完成 apollo router plugin creator",
+    "use apollo router plugin creator from skills"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the apollo router plugin creator skill for this task.",
+      "invocation": "codex --skill apollo-router-plugin-creator \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "data",
+    "mcpservers",
+    "mit"
+  ]
+}

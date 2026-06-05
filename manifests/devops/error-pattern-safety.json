@@ -1,0 +1,49 @@
+{
+  "name": "error-pattern-safety",
+  "version": "0.1.0",
+  "category": "devops",
+  "description": "Apply safe error-pattern matching rules for agentic engines.",
+  "intent_triggers": [
+    "use the error pattern safety agent skill",
+    "run a workflow for error pattern safety",
+    "help me with error pattern safety",
+    "我需要處理 error pattern safety 相關工作",
+    "幫我啟用 error pattern safety 這個 skill",
+    "用 agent skill 完成 error pattern safety",
+    "use error pattern safety from gh-aw"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the error pattern safety skill for this task.",
+      "invocation": "codex --skill error-pattern-safety \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "devops",
+    "mcpservers",
+    "mit"
+  ]
+}

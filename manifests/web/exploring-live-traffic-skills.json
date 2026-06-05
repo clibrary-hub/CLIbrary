@@ -1,0 +1,49 @@
+{
+  "name": "exploring-live-traffic-skills",
+  "version": "0.1.0",
+  "category": "web",
+  "description": "Inspects PostHog Web analytics Live tab data — current users online, last-30-minutes pageviews, top pages, referrers, devices, browsers, countries, bot traffic, and the per-minute bot/users charts.",
+  "intent_triggers": [
+    "use the exploring live traffic agent skill",
+    "run a workflow for exploring live traffic",
+    "help me with exploring live traffic",
+    "我需要處理 exploring live traffic 相關工作",
+    "幫我啟用 exploring live traffic 這個 skill",
+    "用 agent skill 完成 exploring live traffic",
+    "use exploring live traffic from skills"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the exploring live traffic skill for this task.",
+      "invocation": "codex --skill exploring-live-traffic \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "mcpservers",
+    "mit",
+    "web"
+  ]
+}

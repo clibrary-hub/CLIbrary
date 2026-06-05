@@ -1,0 +1,49 @@
+{
+  "name": "brand-kit-assistant",
+  "version": "0.1.0",
+  "category": "security",
+  "description": "Advise users on Contentstack Brand Kit concepts, setup, governance, and on-brand AI generation.",
+  "intent_triggers": [
+    "use the brand kit assistant agent skill",
+    "run a workflow for brand kit assistant",
+    "help me with brand kit assistant",
+    "我需要處理 brand kit assistant 相關工作",
+    "幫我啟用 brand kit assistant 這個 skill",
+    "用 agent skill 完成 brand kit assistant",
+    "use brand kit assistant from contentstack-agent-skills"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the brand kit assistant skill for this task.",
+      "invocation": "codex --skill brand-kit-assistant \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "mcpservers",
+    "mit",
+    "security"
+  ]
+}

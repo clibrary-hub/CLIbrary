@@ -1,0 +1,49 @@
+{
+  "name": "python-development",
+  "version": "0.1.0",
+  "category": "data",
+  "description": "Agent skill for python development workflows.",
+  "intent_triggers": [
+    "use the python development agent skill",
+    "run a workflow for python development",
+    "help me with python development",
+    "我需要處理 python development 相關工作",
+    "幫我啟用 python development 這個 skill",
+    "用 agent skill 完成 python development",
+    "use python development from agent-framework"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the python development skill for this task.",
+      "invocation": "codex --skill python-development \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "data",
+    "mcpservers",
+    "mit"
+  ]
+}

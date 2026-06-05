@@ -1,0 +1,49 @@
+{
+  "name": "manim-video",
+  "version": "0.1.0",
+  "category": "media",
+  "description": "Production pipeline for mathematical and technical animations using Manim Community Edition.",
+  "intent_triggers": [
+    "use the manim video agent skill",
+    "run a workflow for manim video",
+    "help me with manim video",
+    "我需要處理 manim video 相關工作",
+    "幫我啟用 manim video 這個 skill",
+    "用 agent skill 完成 manim video",
+    "use manim video from video-use"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the manim video skill for this task.",
+      "invocation": "codex --skill manim-video \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "mcpservers",
+    "media",
+    "mit"
+  ]
+}

@@ -1,0 +1,49 @@
+{
+  "name": "arize-ai-provider-integration",
+  "version": "0.1.0",
+  "category": "ai-ml",
+  "description": "Creates, reads, updates, and deletes Arize AI integrations that store LLM provider credentials used by evaluators and other Arize features.",
+  "intent_triggers": [
+    "use the arize ai provider integration agent skill",
+    "run a workflow for arize ai provider integration",
+    "help me with arize ai provider integration",
+    "我需要處理 arize ai provider integration 相關工作",
+    "幫我啟用 arize ai provider integration 這個 skill",
+    "用 agent skill 完成 arize ai provider integration",
+    "use arize ai provider integration from awesome-copilot"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the arize ai provider integration skill for this task.",
+      "invocation": "codex --skill arize-ai-provider-integration \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "ai-ml",
+    "mcpservers",
+    "mit"
+  ]
+}

@@ -1,0 +1,49 @@
+{
+  "name": "local-pois",
+  "version": "0.1.0",
+  "category": "web",
+  "description": "USE FOR getting local business/POI details.",
+  "intent_triggers": [
+    "use the local pois agent skill",
+    "run a workflow for local pois",
+    "help me with local pois",
+    "我需要處理 local pois 相關工作",
+    "幫我啟用 local pois 這個 skill",
+    "用 agent skill 完成 local pois",
+    "use local pois from brave-search-skills"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the local pois skill for this task.",
+      "invocation": "codex --skill local-pois \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "mcpservers",
+    "mit",
+    "web"
+  ]
+}

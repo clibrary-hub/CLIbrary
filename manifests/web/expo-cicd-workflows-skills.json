@@ -1,0 +1,49 @@
+{
+  "name": "expo-cicd-workflows-skills",
+  "version": "0.1.0",
+  "category": "web",
+  "description": "Helps understand and write EAS workflow YAML files for Expo projects.",
+  "intent_triggers": [
+    "use the expo cicd workflows agent skill",
+    "run a workflow for expo cicd workflows",
+    "help me with expo cicd workflows",
+    "我需要處理 expo cicd workflows 相關工作",
+    "幫我啟用 expo cicd workflows 這個 skill",
+    "用 agent skill 完成 expo cicd workflows",
+    "use expo cicd workflows from skills"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the expo cicd workflows skill for this task.",
+      "invocation": "codex --skill expo-cicd-workflows \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "mcpservers",
+    "mit",
+    "web"
+  ]
+}

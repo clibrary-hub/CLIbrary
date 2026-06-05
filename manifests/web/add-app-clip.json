@@ -1,0 +1,48 @@
+{
+  "name": "add-app-clip",
+  "version": "0.1.0",
+  "category": "web",
+  "description": "Add an iOS App Clip target to an Expo app.",
+  "intent_triggers": [
+    "use the add app clip agent skill",
+    "run a workflow for add app clip",
+    "help me with add app clip",
+    "我需要處理 add app clip 相關工作",
+    "幫我啟用 add app clip 這個 skill",
+    "用 agent skill 完成 add app clip"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the add app clip skill for this task.",
+      "invocation": "codex --skill add-app-clip \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "mit",
+    "skill",
+    "web"
+  ]
+}

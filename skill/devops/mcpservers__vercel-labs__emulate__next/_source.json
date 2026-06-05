@@ -1,0 +1,15 @@
+{
+  "source": "mcpservers",
+  "listing_url": "https://mcpservers.org/zh-TW/agent-skills/author/vercel",
+  "owner": "vercel-labs",
+  "repo": "emulate",
+  "branch": "HEAD",
+  "skill": "next",
+  "repo_url": "https://github.com/vercel-labs/emulate",
+  "license": {
+    "spdx": "Apache-2.0",
+    "url": "https://github.com/vercel-labs/emulate/blob/main/LICENSE",
+    "source": "api"
+  },
+  "zip_subdir": "emulate-main/skills/next"
+}

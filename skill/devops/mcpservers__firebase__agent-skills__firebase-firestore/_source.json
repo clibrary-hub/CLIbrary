@@ -1,0 +1,15 @@
+{
+  "source": "mcpservers",
+  "listing_url": "https://mcpservers.org/zh-TW/agent-skills",
+  "owner": "firebase",
+  "repo": "agent-skills",
+  "branch": "HEAD",
+  "skill": "firebase-firestore",
+  "repo_url": "https://github.com/firebase/agent-skills",
+  "license": {
+    "spdx": "Apache-2.0",
+    "url": "https://github.com/firebase/agent-skills/blob/main/LICENSE",
+    "source": "api"
+  },
+  "zip_subdir": "agent-skills-main/skills/firebase-firestore"
+}

@@ -1,0 +1,48 @@
+{
+  "name": "qdrant-search-quality-diagnosis",
+  "version": "0.1.0",
+  "category": "ai-ml",
+  "description": "Diagnoses Qdrant search quality issues.",
+  "intent_triggers": [
+    "use the qdrant search quality diagnosis agent skill",
+    "run a workflow for qdrant search quality diagnosis",
+    "help me with qdrant search quality diagnosis",
+    "我需要處理 qdrant search quality diagnosis 相關工作",
+    "幫我啟用 qdrant search quality diagnosis 這個 skill",
+    "用 agent skill 完成 qdrant search quality diagnosis"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the qdrant search quality diagnosis skill for this task.",
+      "invocation": "codex --skill qdrant-search-quality-diagnosis \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "ai-ml",
+    "mit",
+    "skill"
+  ]
+}

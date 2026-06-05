@@ -1,0 +1,48 @@
+{
+  "name": "expo-tailwind-setup",
+  "version": "0.1.0",
+  "category": "web",
+  "description": "Set up Tailwind CSS v4 in Expo with react-native-css and NativeWind v5 for universal styling",
+  "intent_triggers": [
+    "use the expo tailwind setup agent skill",
+    "run a workflow for expo tailwind setup",
+    "help me with expo tailwind setup",
+    "我需要處理 expo tailwind setup 相關工作",
+    "幫我啟用 expo tailwind setup 這個 skill",
+    "用 agent skill 完成 expo tailwind setup"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the expo tailwind setup skill for this task.",
+      "invocation": "codex --skill expo-tailwind-setup \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "mit",
+    "skill",
+    "web"
+  ]
+}

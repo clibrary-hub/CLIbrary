@@ -1,0 +1,48 @@
+{
+  "name": "migrating-dbt-project-across-platforms",
+  "version": "0.1.0",
+  "category": "devops",
+  "description": "Use when migrating a dbt project from one data platform or data warehouse to another (e.g., Snowflake to Databricks, Databricks to Snowflake) using dbt Fusion's real-time compilation to identify an...",
+  "intent_triggers": [
+    "use the migrating dbt project across platforms agent skill",
+    "run a workflow for migrating dbt project across platforms",
+    "help me with migrating dbt project across platforms",
+    "我需要處理 migrating dbt project across platforms 相關工作",
+    "幫我啟用 migrating dbt project across platforms 這個 skill",
+    "用 agent skill 完成 migrating dbt project across platforms"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the migrating dbt project across platforms skill for this task.",
+      "invocation": "codex --skill migrating-dbt-project-across-platforms \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "devops",
+    "mit",
+    "skill"
+  ]
+}

@@ -1,0 +1,49 @@
+{
+  "name": "azure-kusto-azure-skills",
+  "version": "0.1.0",
+  "category": "data",
+  "description": "Query and analyze data in Azure Data Explorer (Kusto/ADX) using KQL for log analytics, telemetry, and time series analysis.",
+  "intent_triggers": [
+    "use the azure kusto agent skill",
+    "run a workflow for azure kusto",
+    "help me with azure kusto",
+    "我需要處理 azure kusto 相關工作",
+    "幫我啟用 azure kusto 這個 skill",
+    "用 agent skill 完成 azure kusto",
+    "use azure kusto from azure-skills"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the azure kusto skill for this task.",
+      "invocation": "codex --skill azure-kusto \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "data",
+    "mcpservers",
+    "mit"
+  ]
+}

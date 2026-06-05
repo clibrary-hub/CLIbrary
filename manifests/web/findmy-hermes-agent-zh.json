@@ -1,0 +1,49 @@
+{
+  "name": "findmy-hermes-agent-zh",
+  "version": "0.1.0",
+  "category": "web",
+  "description": "Track Apple devices and AirTags via FindMy.app 在 macOS 上 using AppleScript and screen capture.",
+  "intent_triggers": [
+    "use the findmy agent skill",
+    "run a workflow for findmy",
+    "help me with findmy",
+    "我需要處理 findmy 相關工作",
+    "幫我啟用 findmy 這個 skill",
+    "用 agent skill 完成 findmy",
+    "use findmy from hermes-agent-zh"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the findmy skill for this task.",
+      "invocation": "codex --skill findmy \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "mit",
+    "skills-rest",
+    "web"
+  ]
+}

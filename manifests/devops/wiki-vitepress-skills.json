@@ -1,0 +1,49 @@
+{
+  "name": "wiki-vitepress-skills",
+  "version": "0.1.0",
+  "category": "devops",
+  "description": "Packages generated wiki Markdown into a VitePress static site with dark theme, dark-mode Mermaid diagrams with click-to-zoom, and production build output.",
+  "intent_triggers": [
+    "use the wiki vitepress agent skill",
+    "run a workflow for wiki vitepress",
+    "help me with wiki vitepress",
+    "我需要處理 wiki vitepress 相關工作",
+    "幫我啟用 wiki vitepress 這個 skill",
+    "用 agent skill 完成 wiki vitepress",
+    "use wiki vitepress from skills"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the wiki vitepress skill for this task.",
+      "invocation": "codex --skill wiki-vitepress \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "devops",
+    "mcpservers",
+    "mit"
+  ]
+}

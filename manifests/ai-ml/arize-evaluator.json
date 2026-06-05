@@ -1,0 +1,49 @@
+{
+  "name": "arize-evaluator",
+  "version": "0.1.0",
+  "category": "ai-ml",
+  "description": "Handles LLM-as-judge evaluation workflows on Arize including creating/updating evaluators, running evaluations on spans or experiments, managing tasks, trigger-run operations, column mapping, and c...",
+  "intent_triggers": [
+    "use the arize evaluator agent skill",
+    "run a workflow for arize evaluator",
+    "help me with arize evaluator",
+    "我需要處理 arize evaluator 相關工作",
+    "幫我啟用 arize evaluator 這個 skill",
+    "用 agent skill 完成 arize evaluator",
+    "use arize evaluator from awesome-copilot"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the arize evaluator skill for this task.",
+      "invocation": "codex --skill arize-evaluator \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "ai-ml",
+    "mcpservers",
+    "mit"
+  ]
+}

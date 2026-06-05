@@ -1,0 +1,15 @@
+{
+  "source": "mcpservers",
+  "listing_url": "https://mcpservers.org/zh-TW/agent-skills",
+  "owner": "resend",
+  "repo": "resend-skills",
+  "branch": "HEAD",
+  "skill": "agent-email-inbox",
+  "repo_url": "https://github.com/resend/resend-skills",
+  "license": {
+    "spdx": "MIT",
+    "url": "https://github.com/resend/resend-skills/blob/main/LICENSE",
+    "source": "api"
+  },
+  "zip_subdir": "resend-skills-main/skills/agent-email-inbox"
+}

@@ -1,0 +1,49 @@
+{
+  "name": "find-docs",
+  "version": "0.1.0",
+  "category": "devops",
+  "description": "Agent skill for find docs workflows.",
+  "intent_triggers": [
+    "use the find docs agent skill",
+    "run a workflow for find docs",
+    "help me with find docs",
+    "我需要處理 find docs 相關工作",
+    "幫我啟用 find docs 這個 skill",
+    "用 agent skill 完成 find docs",
+    "use find docs from context7-mcp"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the find docs skill for this task.",
+      "invocation": "codex --skill find-docs \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "devops",
+    "mcpservers",
+    "mit"
+  ]
+}

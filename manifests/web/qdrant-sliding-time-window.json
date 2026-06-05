@@ -1,0 +1,48 @@
+{
+  "name": "qdrant-sliding-time-window",
+  "version": "0.1.0",
+  "category": "web",
+  "description": "Guides sliding time window scaling in Qdrant.",
+  "intent_triggers": [
+    "use the qdrant sliding time window agent skill",
+    "run a workflow for qdrant sliding time window",
+    "help me with qdrant sliding time window",
+    "我需要處理 qdrant sliding time window 相關工作",
+    "幫我啟用 qdrant sliding time window 這個 skill",
+    "用 agent skill 完成 qdrant sliding time window"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the qdrant sliding time window skill for this task.",
+      "invocation": "codex --skill qdrant-sliding-time-window \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "mit",
+    "skill",
+    "web"
+  ]
+}

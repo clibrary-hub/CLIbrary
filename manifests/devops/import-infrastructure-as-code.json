@@ -1,0 +1,49 @@
+{
+  "name": "import-infrastructure-as-code",
+  "version": "0.1.0",
+  "category": "devops",
+  "description": "Import existing Azure resources into Terraform using Azure CLI discovery and Azure Verified Modules (AVM).",
+  "intent_triggers": [
+    "use the import infrastructure as code agent skill",
+    "run a workflow for import infrastructure as code",
+    "help me with import infrastructure as code",
+    "我需要處理 import infrastructure as code 相關工作",
+    "幫我啟用 import infrastructure as code 這個 skill",
+    "用 agent skill 完成 import infrastructure as code",
+    "use import infrastructure as code from awesome-copilot"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the import infrastructure as code skill for this task.",
+      "invocation": "codex --skill import-infrastructure-as-code \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "devops",
+    "mcpservers",
+    "mit"
+  ]
+}

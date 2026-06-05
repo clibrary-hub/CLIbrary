@@ -1,0 +1,49 @@
+{
+  "name": "shopify-storefront-graphql",
+  "version": "0.1.0",
+  "category": "devops",
+  "description": "Use for custom storefronts requiring direct GraphQL queries/mutations for data fetching and cart operations.",
+  "intent_triggers": [
+    "use the shopify storefront graphql agent skill",
+    "run a workflow for shopify storefront graphql",
+    "help me with shopify storefront graphql",
+    "我需要處理 shopify storefront graphql 相關工作",
+    "幫我啟用 shopify storefront graphql 這個 skill",
+    "用 agent skill 完成 shopify storefront graphql",
+    "use shopify storefront graphql from shopify-ai-toolkit"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the shopify storefront graphql skill for this task.",
+      "invocation": "codex --skill shopify-storefront-graphql \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "devops",
+    "mcpservers",
+    "mit"
+  ]
+}

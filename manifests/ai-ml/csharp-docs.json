@@ -1,0 +1,49 @@
+{
+  "name": "csharp-docs",
+  "version": "0.1.0",
+  "category": "ai-ml",
+  "description": "Ensure that C# types are documented with XML comments and follow best practices for documentation.",
+  "intent_triggers": [
+    "use the csharp docs agent skill",
+    "run a workflow for csharp docs",
+    "help me with csharp docs",
+    "我需要處理 csharp docs 相關工作",
+    "幫我啟用 csharp docs 這個 skill",
+    "用 agent skill 完成 csharp docs",
+    "use csharp docs from awesome-copilot"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the csharp docs skill for this task.",
+      "invocation": "codex --skill csharp-docs \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "ai-ml",
+    "mcpservers",
+    "mit"
+  ]
+}

@@ -1,0 +1,49 @@
+{
+  "name": "neon-postgres-egress-optimizer",
+  "version": "0.1.0",
+  "category": "data",
+  "description": "Agent skill for neon postgres egress optimizer workflows.",
+  "intent_triggers": [
+    "use the neon postgres egress optimizer agent skill",
+    "run a workflow for neon postgres egress optimizer",
+    "help me with neon postgres egress optimizer",
+    "我需要處理 neon postgres egress optimizer 相關工作",
+    "幫我啟用 neon postgres egress optimizer 這個 skill",
+    "用 agent skill 完成 neon postgres egress optimizer",
+    "use neon postgres egress optimizer from agent-skills"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the neon postgres egress optimizer skill for this task.",
+      "invocation": "codex --skill neon-postgres-egress-optimizer \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "apache-2.0",
+    "data",
+    "mcpservers"
+  ]
+}

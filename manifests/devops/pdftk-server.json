@@ -1,0 +1,49 @@
+{
+  "name": "pdftk-server",
+  "version": "0.1.0",
+  "category": "devops",
+  "description": "Skill for using the command-line tool pdftk (PDFtk Server) for working with PDF files.",
+  "intent_triggers": [
+    "use the pdftk server agent skill",
+    "run a workflow for pdftk server",
+    "help me with pdftk server",
+    "我需要處理 pdftk server 相關工作",
+    "幫我啟用 pdftk server 這個 skill",
+    "用 agent skill 完成 pdftk server",
+    "use pdftk server from awesome-copilot"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the pdftk server skill for this task.",
+      "invocation": "codex --skill pdftk-server \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "devops",
+    "mcpservers",
+    "mit"
+  ]
+}

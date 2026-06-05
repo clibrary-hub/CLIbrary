@@ -1,0 +1,49 @@
+{
+  "name": "gh-code-scanning",
+  "version": "0.1.0",
+  "category": "devops",
+  "description": "Retrieves and groups GitHub code scanning alerts by rule and severity using the gh CLI - Brought to you by microsoft/hve-core",
+  "intent_triggers": [
+    "use the gh code scanning agent skill",
+    "run a workflow for gh code scanning",
+    "help me with gh code scanning",
+    "我需要處理 gh code scanning 相關工作",
+    "幫我啟用 gh code scanning 這個 skill",
+    "用 agent skill 完成 gh code scanning",
+    "use gh code scanning from hve-core"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the gh code scanning skill for this task.",
+      "invocation": "codex --skill gh-code-scanning \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "devops",
+    "mcpservers",
+    "mit"
+  ]
+}

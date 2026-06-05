@@ -1,0 +1,49 @@
+{
+  "name": "freecad-scripts",
+  "version": "0.1.0",
+  "category": "devops",
+  "description": "Expert skill for writing FreeCAD Python scripts, macros, and automation.",
+  "intent_triggers": [
+    "use the freecad scripts agent skill",
+    "run a workflow for freecad scripts",
+    "help me with freecad scripts",
+    "我需要處理 freecad scripts 相關工作",
+    "幫我啟用 freecad scripts 這個 skill",
+    "用 agent skill 完成 freecad scripts",
+    "use freecad scripts from awesome-copilot"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the freecad scripts skill for this task.",
+      "invocation": "codex --skill freecad-scripts \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "devops",
+    "mcpservers",
+    "mit"
+  ]
+}

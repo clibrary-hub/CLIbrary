@@ -1,0 +1,49 @@
+{
+  "name": "pr-review-guide",
+  "version": "0.1.0",
+  "category": "devops",
+  "description": "Guidelines for posting pull request review comments via GitHub CLI, including suggested edits format, handling unresolved comments, etiquette, and report/issue tracking.",
+  "intent_triggers": [
+    "use the pr review guide agent skill",
+    "run a workflow for pr review guide",
+    "help me with pr review guide",
+    "我需要處理 pr review guide 相關工作",
+    "幫我啟用 pr review guide 這個 skill",
+    "用 agent skill 完成 pr review guide",
+    "use pr review guide from workerd"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the pr review guide skill for this task.",
+      "invocation": "codex --skill pr-review-guide \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "apache-2.0",
+    "devops",
+    "mcpservers"
+  ]
+}

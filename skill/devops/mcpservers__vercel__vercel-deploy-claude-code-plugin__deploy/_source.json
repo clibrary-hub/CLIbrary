@@ -1,0 +1,15 @@
+{
+  "source": "mcpservers",
+  "listing_url": "https://mcpservers.org/zh-TW/agent-skills/author/vercel",
+  "owner": "vercel",
+  "repo": "vercel-deploy-claude-code-plugin",
+  "branch": "HEAD",
+  "skill": "deploy",
+  "repo_url": "https://github.com/vercel/vercel-deploy-claude-code-plugin",
+  "license": {
+    "spdx": "MIT",
+    "url": "https://github.com/vercel/vercel-deploy-claude-code-plugin/blob/main/LICENSE",
+    "source": "api"
+  },
+  "zip_subdir": "vercel-deploy-claude-code-plugin-main/skills/deploy"
+}

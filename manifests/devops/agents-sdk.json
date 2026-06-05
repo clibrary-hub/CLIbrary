@@ -1,0 +1,49 @@
+{
+  "name": "agents-sdk",
+  "version": "0.1.0",
+  "category": "devops",
+  "description": "Build AI agents on Cloudflare Workers using the Agents SDK.",
+  "intent_triggers": [
+    "use the agents sdk agent skill",
+    "run a workflow for agents sdk",
+    "help me with agents sdk",
+    "我需要處理 agents sdk 相關工作",
+    "幫我啟用 agents sdk 這個 skill",
+    "用 agent skill 完成 agents sdk",
+    "use agents sdk from skills"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the agents sdk skill for this task.",
+      "invocation": "codex --skill agents-sdk \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "apache-2.0",
+    "devops",
+    "mcpservers"
+  ]
+}

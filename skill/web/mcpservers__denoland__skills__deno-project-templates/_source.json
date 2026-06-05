@@ -1,0 +1,15 @@
+{
+  "source": "mcpservers",
+  "listing_url": "https://mcpservers.org/zh-TW/agent-skills",
+  "owner": "denoland",
+  "repo": "skills",
+  "branch": "HEAD",
+  "skill": "deno-project-templates",
+  "repo_url": "https://github.com/denoland/skills",
+  "license": {
+    "spdx": "MIT",
+    "url": "https://github.com/denoland/skills/blob/main/LICENSE",
+    "source": "api"
+  },
+  "zip_subdir": "skills-main/skills/deno-project-templates"
+}

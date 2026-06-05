@@ -1,0 +1,48 @@
+{
+  "name": "obliteratus",
+  "version": "0.1.0",
+  "category": "ai-ml",
+  "description": "Remove refusal behaviors from open-weight LLMs using OBLITERATUS — mechanistic interpretability techniques (diff-in-means, SVD, whitened SVD, LEACE, SAE decomposition, etc.) to excise guardrails wh...",
+  "intent_triggers": [
+    "use the obliteratus agent skill",
+    "run a workflow for obliteratus",
+    "help me with obliteratus",
+    "我需要處理 obliteratus 相關工作",
+    "幫我啟用 obliteratus 這個 skill",
+    "用 agent skill 完成 obliteratus"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the obliteratus skill for this task.",
+      "invocation": "codex --skill obliteratus \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "ai-ml",
+    "mit",
+    "skill"
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "source": "mcpservers",
+  "listing_url": "https://mcpservers.org/zh-TW/agent-skills/author/openai",
+  "owner": "openai",
+  "repo": "openai-cookbook",
+  "branch": "HEAD",
+  "skill": "bootstrap-realtime-eval",
+  "repo_url": "https://github.com/openai/openai-cookbook",
+  "license": {
+    "spdx": "MIT",
+    "url": "https://github.com/openai/openai-cookbook/blob/main/LICENSE",
+    "source": "api"
+  },
+  "zip_subdir": "openai-cookbook-main/examples/evals/realtime_evals/skills/bootstrap-realtime-eval"
+}

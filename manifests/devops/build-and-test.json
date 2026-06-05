@@ -1,0 +1,49 @@
+{
+  "name": "build-and-test",
+  "version": "0.1.0",
+  "category": "devops",
+  "description": "How to build and test .NET projects in the Agent Framework repository.",
+  "intent_triggers": [
+    "use the build and test agent skill",
+    "run a workflow for build and test",
+    "help me with build and test",
+    "我需要處理 build and test 相關工作",
+    "幫我啟用 build and test 這個 skill",
+    "用 agent skill 完成 build and test",
+    "use build and test from agent-framework"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the build and test skill for this task.",
+      "invocation": "codex --skill build-and-test \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "devops",
+    "mcpservers",
+    "mit"
+  ]
+}

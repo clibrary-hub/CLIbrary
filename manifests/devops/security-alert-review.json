@@ -1,0 +1,49 @@
+{
+  "name": "security-alert-review",
+  "version": "0.1.0",
+  "category": "devops",
+  "description": "List and review Advanced Security alerts for an Azure DevOps repository.",
+  "intent_triggers": [
+    "use the security alert review agent skill",
+    "run a workflow for security alert review",
+    "help me with security alert review",
+    "我需要處理 security alert review 相關工作",
+    "幫我啟用 security alert review 這個 skill",
+    "用 agent skill 完成 security alert review",
+    "use security alert review from azure-devops-skills"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the security alert review skill for this task.",
+      "invocation": "codex --skill security-alert-review \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "devops",
+    "mcpservers",
+    "mit"
+  ]
+}

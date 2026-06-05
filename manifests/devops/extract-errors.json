@@ -1,0 +1,49 @@
+{
+  "name": "extract-errors",
+  "version": "0.1.0",
+  "category": "devops",
+  "description": "Use when adding new error messages to React, or seeing \"unknown error code\" warnings.",
+  "intent_triggers": [
+    "use the extract errors agent skill",
+    "run a workflow for extract errors",
+    "help me with extract errors",
+    "我需要處理 extract errors 相關工作",
+    "幫我啟用 extract errors 這個 skill",
+    "用 agent skill 完成 extract errors",
+    "use extract errors from react"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the extract errors skill for this task.",
+      "invocation": "codex --skill extract-errors \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "devops",
+    "mcpservers",
+    "mit"
+  ]
+}

@@ -1,0 +1,48 @@
+{
+  "name": "fine-tuning-with-trl",
+  "version": "0.1.0",
+  "category": "ai-ml",
+  "description": "Fine-tune LLMs using reinforcement learning with TRL - SFT for instruction tuning, DPO for preference alignment, PPO/GRPO for reward optimization, and reward model training.",
+  "intent_triggers": [
+    "use the fine tuning with trl agent skill",
+    "run a workflow for fine tuning with trl",
+    "help me with fine tuning with trl",
+    "我需要處理 fine tuning with trl 相關工作",
+    "幫我啟用 fine tuning with trl 這個 skill",
+    "用 agent skill 完成 fine tuning with trl"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the fine tuning with trl skill for this task.",
+      "invocation": "codex --skill fine-tuning-with-trl \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "ai-ml",
+    "mit",
+    "skill"
+  ]
+}

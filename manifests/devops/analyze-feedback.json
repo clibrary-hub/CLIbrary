@@ -1,0 +1,49 @@
+{
+  "name": "analyze-feedback",
+  "version": "0.1.0",
+  "category": "devops",
+  "description": "Analyze agent feedback artifacts from GitHub Actions workflow runs, extract actionable learnings, and incorporate them into skill files and CLAUDE.md.",
+  "intent_triggers": [
+    "use the analyze feedback agent skill",
+    "run a workflow for analyze feedback",
+    "help me with analyze feedback",
+    "我需要處理 analyze feedback 相關工作",
+    "幫我啟用 analyze feedback 這個 skill",
+    "用 agent skill 完成 analyze feedback",
+    "use analyze feedback from flash-list"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the analyze feedback skill for this task.",
+      "invocation": "codex --skill analyze-feedback \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "devops",
+    "mcpservers",
+    "mit"
+  ]
+}

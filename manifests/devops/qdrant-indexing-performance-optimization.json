@@ -1,0 +1,48 @@
+{
+  "name": "qdrant-indexing-performance-optimization",
+  "version": "0.1.0",
+  "category": "devops",
+  "description": "Diagnoses and fixes slow Qdrant indexing and data ingestion.",
+  "intent_triggers": [
+    "use the qdrant indexing performance optimization agent skill",
+    "run a workflow for qdrant indexing performance optimization",
+    "help me with qdrant indexing performance optimization",
+    "我需要處理 qdrant indexing performance optimization 相關工作",
+    "幫我啟用 qdrant indexing performance optimization 這個 skill",
+    "用 agent skill 完成 qdrant indexing performance optimization"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the qdrant indexing performance optimization skill for this task.",
+      "invocation": "codex --skill qdrant-indexing-performance-optimization \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "devops",
+    "mit",
+    "skill"
+  ]
+}

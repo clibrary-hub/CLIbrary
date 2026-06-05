@@ -1,0 +1,49 @@
+{
+  "name": "gsap-framer-scroll-animation",
+  "version": "0.1.0",
+  "category": "devops",
+  "description": "Agent skill for gsap framer scroll animation workflows.",
+  "intent_triggers": [
+    "use the gsap framer scroll animation agent skill",
+    "run a workflow for gsap framer scroll animation",
+    "help me with gsap framer scroll animation",
+    "我需要處理 gsap framer scroll animation 相關工作",
+    "幫我啟用 gsap framer scroll animation 這個 skill",
+    "用 agent skill 完成 gsap framer scroll animation",
+    "use gsap framer scroll animation from awesome-copilot"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the gsap framer scroll animation skill for this task.",
+      "invocation": "codex --skill gsap-framer-scroll-animation \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "devops",
+    "mcpservers",
+    "mit"
+  ]
+}

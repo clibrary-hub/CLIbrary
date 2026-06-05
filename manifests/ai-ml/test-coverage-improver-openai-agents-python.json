@@ -1,0 +1,49 @@
+{
+  "name": "test-coverage-improver-openai-agents-python",
+  "version": "0.1.0",
+  "category": "ai-ml",
+  "description": "Improve test coverage in the OpenAI Agents Python repository: run `make coverage`, inspect coverage artifacts, identify low-coverage files, propose high-impact tests, and confirm with the user befo...",
+  "intent_triggers": [
+    "use the test coverage improver agent skill",
+    "run a workflow for test coverage improver",
+    "help me with test coverage improver",
+    "我需要處理 test coverage improver 相關工作",
+    "幫我啟用 test coverage improver 這個 skill",
+    "用 agent skill 完成 test coverage improver",
+    "use test coverage improver from openai-agents-python"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the test coverage improver skill for this task.",
+      "invocation": "codex --skill test-coverage-improver \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "ai-ml",
+    "mcpservers",
+    "mit"
+  ]
+}

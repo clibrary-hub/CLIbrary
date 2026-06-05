@@ -1,0 +1,49 @@
+{
+  "name": "rw-integrate-documents",
+  "version": "0.1.0",
+  "category": "web",
+  "description": "Help users add knowledge base documents to Runway Characters for domain-specific conversations",
+  "intent_triggers": [
+    "use the rw integrate documents agent skill",
+    "run a workflow for rw integrate documents",
+    "help me with rw integrate documents",
+    "我需要處理 rw integrate documents 相關工作",
+    "幫我啟用 rw integrate documents 這個 skill",
+    "用 agent skill 完成 rw integrate documents",
+    "use rw integrate documents from skills"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the rw integrate documents skill for this task.",
+      "invocation": "codex --skill rw-integrate-documents \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "mcpservers",
+    "mit",
+    "web"
+  ]
+}

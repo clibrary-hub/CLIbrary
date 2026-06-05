@@ -1,0 +1,49 @@
+{
+  "name": "feature-usage-feed",
+  "version": "0.1.0",
+  "category": "ai-ml",
+  "description": "Agent skill for feature usage feed workflows.",
+  "intent_triggers": [
+    "use the feature usage feed agent skill",
+    "run a workflow for feature usage feed",
+    "help me with feature usage feed",
+    "我需要處理 feature usage feed 相關工作",
+    "幫我啟用 feature usage feed 這個 skill",
+    "用 agent skill 完成 feature usage feed",
+    "use feature usage feed from skills"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the feature usage feed skill for this task.",
+      "invocation": "codex --skill feature-usage-feed \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "ai-ml",
+    "mcpservers",
+    "mit"
+  ]
+}

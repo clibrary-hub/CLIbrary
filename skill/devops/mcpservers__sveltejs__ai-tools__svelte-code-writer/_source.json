@@ -1,0 +1,15 @@
+{
+  "source": "mcpservers",
+  "listing_url": "https://mcpservers.org/zh-TW/agent-skills",
+  "owner": "sveltejs",
+  "repo": "ai-tools",
+  "branch": "HEAD",
+  "skill": "svelte-code-writer",
+  "repo_url": "https://github.com/sveltejs/ai-tools",
+  "license": {
+    "spdx": "MIT",
+    "url": "https://github.com/sveltejs/ai-tools/blob/main/LICENSE",
+    "source": "api"
+  },
+  "zip_subdir": "ai-tools-main/tools/skills/svelte-code-writer"
+}

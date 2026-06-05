@@ -1,0 +1,49 @@
+{
+  "name": "recipe-watch-drive-changes",
+  "version": "0.1.0",
+  "category": "finance",
+  "description": "Subscribe to change notifications on a Google Drive file or folder.",
+  "intent_triggers": [
+    "use the recipe watch drive changes agent skill",
+    "run a workflow for recipe watch drive changes",
+    "help me with recipe watch drive changes",
+    "我需要處理 recipe watch drive changes 相關工作",
+    "幫我啟用 recipe watch drive changes 這個 skill",
+    "用 agent skill 完成 recipe watch drive changes",
+    "use recipe watch drive changes from cli"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the recipe watch drive changes skill for this task.",
+      "invocation": "codex --skill recipe-watch-drive-changes \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "apache-2.0",
+    "finance",
+    "mcpservers"
+  ]
+}

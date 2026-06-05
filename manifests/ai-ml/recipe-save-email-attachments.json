@@ -1,0 +1,49 @@
+{
+  "name": "recipe-save-email-attachments",
+  "version": "0.1.0",
+  "category": "ai-ml",
+  "description": "Find Gmail messages with attachments and save them to a Google Drive folder.",
+  "intent_triggers": [
+    "use the recipe save email attachments agent skill",
+    "run a workflow for recipe save email attachments",
+    "help me with recipe save email attachments",
+    "我需要處理 recipe save email attachments 相關工作",
+    "幫我啟用 recipe save email attachments 這個 skill",
+    "用 agent skill 完成 recipe save email attachments",
+    "use recipe save email attachments from cli"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the recipe save email attachments skill for this task.",
+      "invocation": "codex --skill recipe-save-email-attachments \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "ai-ml",
+    "apache-2.0",
+    "mcpservers"
+  ]
+}

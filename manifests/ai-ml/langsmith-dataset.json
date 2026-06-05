@@ -1,0 +1,49 @@
+{
+  "name": "langsmith-dataset",
+  "version": "0.1.0",
+  "category": "ai-ml",
+  "description": "INVOKE THIS SKILL when creating evaluation datasets, uploading datasets to LangSmith, or managing existing datasets.",
+  "intent_triggers": [
+    "use the langsmith dataset agent skill",
+    "run a workflow for langsmith dataset",
+    "help me with langsmith dataset",
+    "我需要處理 langsmith dataset 相關工作",
+    "幫我啟用 langsmith dataset 這個 skill",
+    "用 agent skill 完成 langsmith dataset",
+    "use langsmith dataset from skills-benchmarks"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the langsmith dataset skill for this task.",
+      "invocation": "codex --skill langsmith-dataset \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "ai-ml",
+    "mcpservers",
+    "mit"
+  ]
+}

@@ -1,0 +1,49 @@
+{
+  "name": "wiki-agents-md",
+  "version": "0.1.0",
+  "category": "devops",
+  "description": "Generates AGENTS.md files for repository folders — coding agent context files with build commands, testing instructions, code style, project structure, and boundaries.",
+  "intent_triggers": [
+    "use the wiki agents md agent skill",
+    "run a workflow for wiki agents md",
+    "help me with wiki agents md",
+    "我需要處理 wiki agents md 相關工作",
+    "幫我啟用 wiki agents md 這個 skill",
+    "用 agent skill 完成 wiki agents md",
+    "use wiki agents md from agent-skills"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the wiki agents md skill for this task.",
+      "invocation": "codex --skill wiki-agents-md \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "devops",
+    "mcpservers",
+    "mit"
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "source": "mcpservers",
+  "listing_url": "https://mcpservers.org/zh-TW/agent-skills",
+  "owner": "supabase",
+  "repo": "supabase",
+  "branch": "HEAD",
+  "skill": "studio-testing",
+  "repo_url": "https://github.com/supabase/supabase",
+  "license": {
+    "spdx": "Apache-2.0",
+    "url": "https://github.com/supabase/supabase/blob/master/LICENSE",
+    "source": "api"
+  },
+  "zip_subdir": "supabase-master/.claude/skills/studio-testing"
+}

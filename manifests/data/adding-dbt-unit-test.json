@@ -1,0 +1,48 @@
+{
+  "name": "adding-dbt-unit-test",
+  "version": "0.1.0",
+  "category": "data",
+  "description": "Creates unit test YAML definitions that mock upstream model inputs and validate expected outputs.",
+  "intent_triggers": [
+    "use the adding dbt unit test agent skill",
+    "run a workflow for adding dbt unit test",
+    "help me with adding dbt unit test",
+    "我需要處理 adding dbt unit test 相關工作",
+    "幫我啟用 adding dbt unit test 這個 skill",
+    "用 agent skill 完成 adding dbt unit test"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the adding dbt unit test skill for this task.",
+      "invocation": "codex --skill adding-dbt-unit-test \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "data",
+    "mit",
+    "skill"
+  ]
+}

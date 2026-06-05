@@ -1,0 +1,15 @@
+{
+  "source": "mcpservers",
+  "listing_url": "https://mcpservers.org/zh-TW/agent-skills/category/database",
+  "owner": "neondatabase",
+  "repo": "agent-skills",
+  "branch": "main",
+  "skill": "neon-postgres",
+  "repo_url": "https://github.com/neondatabase/agent-skills",
+  "license": {
+    "spdx": "Apache-2.0",
+    "url": "https://github.com/neondatabase/agent-skills/blob/main/LICENSE",
+    "source": "api"
+  },
+  "zip_subdir": "agent-skills-main/skills/neon-postgres"
+}

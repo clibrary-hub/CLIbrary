@@ -1,0 +1,937 @@
+<!-- Stage 1: Plan — Eval Plan Review (Value × Cost-of-Failure matrix) -->
+
+<style>
+/* Value × Cost matrix — 2x2 drag-and-drop */
+.matrix-intro {
+  font-size: 0.85rem;
+  color: var(--text);
+  line-height: 1.55;
+  margin-bottom: 1rem;
+  padding: 0.8rem 1rem;
+  background: var(--surface-warm);
+  border-radius: var(--radius);
+  border-left: 3px solid var(--accent);
+}
+.matrix-intro strong { color: var(--accent); }
+.matrix-legend {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.6rem;
+  margin-top: 0.6rem;
+  font-size: 0.78rem;
+}
+.matrix-legend-item {
+  padding: 0.4rem 0.6rem;
+  border-radius: 3px;
+  line-height: 1.4;
+}
+.matrix-legend-item b { display: block; margin-bottom: 0.15rem; }
+.legend-critical     { background: var(--critical-wash);   color: var(--red); }
+.legend-valuable     { background: var(--green-wash);      color: var(--green); }
+.legend-guardrails   { background: var(--guardrails-wash); color: #7a5a16; }
+.legend-deprioritize { background: var(--valuable-wash);   color: var(--valuable); }
+
+/* Matrix grid: 2x2 with unambiguous per-row / per-column axis labels.
+   Outer grid: [y-label col | left quadrant col | right quadrant col]
+               × [x-label row, top row (HIGH VALUE), bottom row (LOW VALUE)]. */
+.matrix-wrap {
+  display: grid;
+  grid-template-columns: 110px 1fr 1fr;
+  grid-template-rows: auto 1fr 1fr;
+  gap: 0.4rem 0.8rem;
+  margin: 0;
+}
+.matrix-corner { /* empty cell top-left */ }
+.matrix-x-label, .matrix-y-label {
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+.matrix-x-label {
+  text-align: center;
+  padding: 0.25rem 0 0.4rem;
+}
+.matrix-y-label {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding-right: 0.5rem;
+  text-align: right;
+  line-height: 1.2;
+}
+/* Pass / Fail condition rows in the criteria table */
+.condition-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.4rem;
+  margin-bottom: 0.3rem;
+}
+.condition-row:last-child { margin-bottom: 0; }
+.condition-label {
+  font-weight: 700;
+  font-size: 0.78rem;
+  min-width: 44px;
+  padding-top: 0.3rem;
+  flex-shrink: 0;
+  letter-spacing: 0.01em;
+}
+.condition-label-pass { color: var(--green); }
+.condition-label-fail { color: var(--red); }
+.condition-row textarea { flex: 1; min-height: 2.5em; }
+/* Whole-quadrant color tint (body wash) — set per data-quadrant attribute.
+   Header sits on top with a stronger band of the same color. */
+.quadrant {
+  min-height: 160px;
+  border: 1px solid var(--rule);
+  border-radius: var(--radius);
+  padding: 0.6rem;
+  transition: border-color 0.15s, box-shadow 0.15s;
+  display: flex;
+  flex-direction: column;
+}
+.quadrant[data-quadrant="critical"]     { background: var(--critical-wash);   border-color: var(--red); }
+.quadrant[data-quadrant="valuable"]     { background: var(--green-wash);      border-color: var(--green); }
+.quadrant[data-quadrant="guardrails"]   { background: var(--guardrails-wash); border-color: var(--guardrails); }
+.quadrant[data-quadrant="deprioritize"] { background: var(--valuable-wash);   border-color: var(--valuable); }
+.quadrant.drag-over {
+  box-shadow: 0 0 0 3px var(--accent-wash);
+}
+.quadrant-header {
+  font-size: 0.85rem;
+  font-weight: 600;
+  margin: -0.6rem -0.6rem 0.5rem;
+  padding: 0.45rem 0.7rem;
+  border-radius: var(--radius) var(--radius) 0 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  letter-spacing: 0.01em;
+}
+.quadrant-header-critical     { background: var(--red);        color: #fff; }
+.quadrant-header-valuable     { background: var(--green);      color: #fff; }
+.quadrant-header-guardrails   { background: var(--guardrails); color: #fff; }
+.quadrant-header-deprioritize { background: var(--valuable);   color: #fff; }
+.quadrant-subtitle {
+  font-size: 0.7rem;
+  font-weight: 400;
+  opacity: 0.85;
+}
+.quadrant-items { flex: 1; }
+.criterion-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 3px;
+  padding: 0.45rem 0.6rem;
+  margin-bottom: 0.35rem;
+  font-size: 0.8rem;
+  cursor: grab;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 0.4rem;
+  transition: box-shadow 0.15s, opacity 0.15s;
+  line-height: 1.35;
+}
+.criterion-card:active { cursor: grabbing; }
+.criterion-card.dragging { opacity: 0.4; }
+.criterion-card:hover { box-shadow: 0 1px 4px rgba(0,0,0,0.1); }
+.criterion-card .statement { flex: 1; }
+.criterion-card .actions { display: flex; gap: 0.2rem; opacity: 0; transition: opacity 0.15s; flex-shrink: 0; }
+.criterion-card:hover .actions { opacity: 1; }
+.criterion-card .btn-icon {
+  background: none; border: none; cursor: pointer; font-size: 0.75rem;
+  color: var(--text-muted); padding: 0.1rem 0.3rem; border-radius: 2px;
+}
+.criterion-card .btn-icon:hover { background: var(--bg); color: var(--red); }
+.quadrant-add-input {
+  width: 100%;
+  padding: 0.35rem 0.55rem;
+  border: 1px dashed var(--border);
+  border-radius: 3px;
+  font-family: var(--font);
+  font-size: 0.78rem;
+  color: var(--text);
+  background: transparent;
+  margin-top: 0.35rem;
+}
+.quadrant-add-input:focus { outline: none; border-color: var(--accent); background: var(--surface); }
+.quadrant-add-input::placeholder { color: var(--text-muted); font-style: italic; }
+
+/* Quadrant badge in tables */
+.q-badge {
+  display: inline-block;
+  padding: 0.1rem 0.5rem;
+  border-radius: 3px;
+  font-size: 0.7rem;
+  font-weight: 600;
+  white-space: nowrap;
+  text-transform: capitalize;
+}
+.q-badge-critical     { background: var(--critical-wash);   color: var(--red); }
+.q-badge-valuable     { background: var(--green-wash);      color: var(--green); }
+.q-badge-guardrails   { background: var(--guardrails-wash); color: #7a5a16; }
+.q-badge-deprioritize { background: var(--valuable-wash);   color: var(--valuable); }
+
+/* Quality dimension grouping — horizontal chips */
+.dim-group { margin-bottom: 0.8rem; }
+.dim-group:last-child { margin-bottom: 0; }
+.dim-group-header {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: 0.4rem;
+  padding: 0.3rem 0.5rem;
+  background: var(--bg);
+  border-radius: 3px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.dim-name-editable {
+  outline: none;
+  padding: 0.1rem 0.3rem;
+  border-radius: 2px;
+  cursor: text;
+  border: 1px solid transparent;
+  transition: border-color 0.15s, background 0.15s;
+}
+.dim-name-editable:hover { border-color: var(--rule-fine); background: var(--surface); }
+.dim-name-editable:focus { border-color: var(--accent); background: var(--surface); }
+.dim-delete-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  padding: 0.1rem 0.3rem;
+  border-radius: 2px;
+  opacity: 0;
+  transition: opacity 0.15s, color 0.15s;
+}
+.dim-group-header:hover .dim-delete-btn { opacity: 1; }
+.dim-delete-btn:hover { color: var(--red); background: var(--red-bg); }
+.dim-group-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.3rem;
+  padding: 0 0.3rem;
+  align-items: center;
+}
+.dim-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 0.3rem 0.7rem 0.3rem 0.55rem;
+  font-size: 0.8rem;
+  line-height: 1.35;
+  color: var(--text);
+}
+.dim-chip .chip-dot {
+  display: inline-block;
+  width: 6px; height: 6px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+.chip-dot-critical     { background: var(--red); }
+.chip-dot-valuable     { background: var(--green); }
+.chip-dot-guardrails   { background: var(--guardrails); }
+.chip-dot-deprioritize { background: var(--valuable); }
+.dim-chip .chip-delete {
+  background: none; border: none; cursor: pointer;
+  color: var(--text-muted); font-size: 0.65rem; padding: 0 0.15rem;
+  opacity: 0; transition: opacity 0.15s;
+}
+.dim-chip[draggable="true"] { cursor: grab; }
+.dim-chip[draggable="true"]:active { cursor: grabbing; }
+.dim-chip.chip-dragging { opacity: 0.4; }
+.dim-chip:hover .chip-delete { opacity: 1; }
+.dim-chip:hover .chip-delete:hover { color: var(--red); }
+.dim-group-chips.dim-drag-over {
+  background: var(--blue-bg);
+  border-radius: 4px;
+  outline: 2px dashed var(--accent);
+  outline-offset: 2px;
+}
+.dim-add-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.2rem;
+  background: transparent;
+  border: 1px dashed var(--border);
+  border-radius: 16px;
+  padding: 0.2rem 0.6rem;
+  font-size: 0.72rem;
+  color: var(--text-muted);
+  cursor: pointer;
+  font-family: var(--font);
+}
+.dim-add-btn:hover { border-color: var(--accent); color: var(--accent); }
+
+.dim-bar-chip {
+  display: inline-block;
+  padding: 0.15rem 0.5rem;
+  border-radius: 12px;
+  font-size: 0.72rem;
+  font-weight: 500;
+  background: var(--bg);
+  color: var(--text);
+  border: 1px solid var(--border);
+}
+.dim-bar-add {
+  display: inline-block;
+  padding: 0.15rem 0.5rem;
+  border-radius: 12px;
+  font-size: 0.72rem;
+  background: transparent;
+  border: 1px dashed var(--border);
+  color: var(--text-muted);
+  cursor: pointer;
+  font-family: var(--font);
+}
+.dim-bar-add:hover { border-color: var(--accent); color: var(--accent); }
+</style>
+
+<!-- Section 1: Value × Cost matrix -->
+<div class="section">
+  <div class="section-header"><span data-tooltip="Each acceptance criterion belongs in one quadrant based on (a) the VALUE of getting it right and (b) the RISK if it fails. Drag cards between quadrants. Pass/fail for each test case lives in each criterion's own pass/fail conditions — not a prescribed percentage threshold.">Value × Risk Matrix</span></div>
+  <div class="section-body">
+    <div class="matrix-intro">
+      Each acceptance criterion is placed in one of four quadrants based on <strong>Value</strong> (how much does getting it right drive the product?) and <strong>Risk</strong> (how much harm does a failure cause?). Drag criteria between quadrants as your thinking evolves.
+      <div class="matrix-legend">
+        <div class="matrix-legend-item legend-critical">
+          <b>High Value · High Risk</b>
+          Product-defining capabilities. Most test cases, strictest review.
+        </div>
+        <div class="matrix-legend-item legend-valuable">
+          <b>High Value · Low Risk</b>
+          Expected capabilities users rely on. Occasional misses tolerable.
+        </div>
+        <div class="matrix-legend-item legend-guardrails">
+          <b>Low Value · High Risk</b>
+          Rarely triggered but must never fail. Safety, compliance, refusals.
+        </div>
+        <div class="matrix-legend-item legend-deprioritize">
+          <b>Low Value · Low Risk</b>
+          Exploratory or rare. Light coverage; revisit if usage grows.
+        </div>
+      </div>
+    </div>
+
+    <div class="matrix-wrap">
+      <!-- Row 1: column headers (empty corner, then X-axis labels above each column) -->
+      <div class="matrix-corner"></div>
+      <div class="matrix-x-label">Low risk</div>
+      <div class="matrix-x-label">High risk</div>
+
+      <!-- Row 2: HIGH VALUE row -->
+      <div class="matrix-y-label">High value</div>
+      <!-- Top-left: High Value · Low Risk -->
+      <div class="quadrant" id="quadrant-valuable" data-quadrant="valuable">
+        <div class="quadrant-header quadrant-header-valuable">
+          <span data-tooltip="High Value · Low Risk: the agent's expected capabilities — users rely on these and notice when they're off, but a miss isn't catastrophic. Invest in solid coverage.">High Value · Low Risk</span>
+          <span class="quadrant-subtitle" id="quadrant-valuable-count"></span>
+        </div>
+        <div class="quadrant-items" id="quadrant-items-valuable"></div>
+        <input class="quadrant-add-input" placeholder="+ The agent should..." data-quadrant="valuable" onkeydown="onAddKeydown(event)">
+      </div>
+      <!-- Top-right: High Value · High Risk -->
+      <div class="quadrant" id="quadrant-critical" data-quadrant="critical">
+        <div class="quadrant-header quadrant-header-critical">
+          <span data-tooltip="High Value · High Risk: product-defining capabilities where a miss hurts. Heaviest investment — most test cases, strictest acceptance criteria, human review mandatory.">High Value · High Risk</span>
+          <span class="quadrant-subtitle" id="quadrant-critical-count"></span>
+        </div>
+        <div class="quadrant-items" id="quadrant-items-critical"></div>
+        <input class="quadrant-add-input" placeholder="+ The agent should..." data-quadrant="critical" onkeydown="onAddKeydown(event)">
+      </div>
+
+      <!-- Row 3: LOW VALUE row -->
+      <div class="matrix-y-label">Low value</div>
+      <!-- Bottom-left: Low Value · Low Risk -->
+      <div class="quadrant" id="quadrant-deprioritize" data-quadrant="deprioritize">
+        <div class="quadrant-header quadrant-header-deprioritize">
+          <span data-tooltip="Low Value · Low Risk: exploratory or rarely exercised behaviors. Test lightly; revisit if usage grows or stakes change.">Low Value · Low Risk</span>
+          <span class="quadrant-subtitle" id="quadrant-deprioritize-count"></span>
+        </div>
+        <div class="quadrant-items" id="quadrant-items-deprioritize"></div>
+        <input class="quadrant-add-input" placeholder="+ The agent should..." data-quadrant="deprioritize" onkeydown="onAddKeydown(event)">
+      </div>
+      <!-- Bottom-right: Low Value · High Risk -->
+      <div class="quadrant" id="quadrant-guardrails" data-quadrant="guardrails">
+        <div class="quadrant-header quadrant-header-guardrails">
+          <span data-tooltip="Low Value · High Risk: low-traffic behaviors where a failure causes real harm — safety refusals, compliance boundaries, escalation. Zero tolerance for failure; invest in negative tests and adversarial cases.">Low Value · High Risk</span>
+          <span class="quadrant-subtitle" id="quadrant-guardrails-count"></span>
+        </div>
+        <div class="quadrant-items" id="quadrant-items-guardrails"></div>
+        <input class="quadrant-add-input" placeholder="+ The agent should NOT..." data-quadrant="guardrails" onkeydown="onAddKeydown(event)">
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Section 2: Acceptance Criteria & Pass/Fail Conditions -->
+<div class="section">
+  <div class="section-header flex-between">
+    <span data-tooltip="Every acceptance criterion starts with 'The agent should…' (or 'should NOT…'). Pass/fail conditions must be specific enough that two reviewers independently agree on outcomes.">Acceptance Criteria & Pass/Fail Conditions</span>
+    <span class="text-sm text-muted" id="criterion-count"></span>
+  </div>
+  <div class="section-body" style="padding:0;overflow-x:auto;">
+    <table id="criteria-table">
+      <thead>
+        <tr>
+          <th style="width:165px">Quadrant</th>
+          <th style="width:32%">Statement (The agent should...)</th>
+          <th>Pass / Fail conditions</th>
+          <th style="width:40px"></th>
+        </tr>
+      </thead>
+      <tbody id="criteria-tbody"></tbody>
+    </table>
+    <button class="btn btn-add" onclick="addCriterionFromTable()">+ Add criterion</button>
+  </div>
+</div>
+
+<!-- Section 3: Quality Dimensions = Eval Set Split -->
+<div class="section">
+  <div class="section-header flex-between">
+    <span data-tooltip="Each quality dimension becomes one eval set in Stage 2 — its criteria get grouped into a single CSV file you import into Copilot Studio. Splitting by dimension keeps coverage explicit and lets you run/track each aspect of quality independently.">Quality Dimensions — one eval set per dimension</span>
+    <button class="btn btn-sm" onclick="addQualityDimension()" style="color:#fff;border-color:rgba(255,255,255,0.4);">+ Add dimension</button>
+  </div>
+  <div style="padding:0.5rem 1rem;border-bottom:1px solid var(--border);background:var(--blue-bg);font-size:0.8rem;color:var(--text);line-height:1.45;">
+    <strong style="color:var(--accent);">How this maps to your eval sets:</strong> each dimension below produces one CSV file in Stage 2 (e.g., <code>eval-accuracy-&lt;date&gt;.csv</code>, <code>eval-grounding-&lt;date&gt;.csv</code>). Criteria assigned to a dimension share the same CSV. Aim for <strong>4–6 broad dimensions</strong> — fewer, larger groups beat many narrow ones. Click a dimension name to rename; rename to an existing one to merge.
+  </div>
+  <div style="padding:0.6rem 1rem;border-bottom:1px solid var(--border);display:flex;align-items:center;flex-wrap:wrap;gap:0.3rem;" id="metrics-dim-bar"></div>
+  <div class="section-body" id="dimensions-body"></div>
+</div>
+
+<script>
+const QUADRANTS = ["critical", "valuable", "guardrails", "deprioritize"];
+const QUADRANT_LABELS = {
+  critical: "High Value · High Risk",
+  valuable: "High Value · Low Risk",
+  guardrails: "Low Value · High Risk",
+  deprioritize: "Low Value · Low Risk",
+};
+const Q_BADGE_CSS = {
+  critical: "q-badge-critical",
+  valuable: "q-badge-valuable",
+  guardrails: "q-badge-guardrails",
+  deprioritize: "q-badge-deprioritize",
+};
+const Q_DOT_CSS = {
+  critical: "chip-dot-critical",
+  valuable: "chip-dot-valuable",
+  guardrails: "chip-dot-guardrails",
+  deprioritize: "chip-dot-deprioritize",
+};
+const METHODS = ["Compare meaning", "General quality", "Keyword match", "Exact match", "Text similarity", "Capability use", "Custom"];
+
+// "What to verify" — decision-aid column. Picking one auto-suggests a method.
+// Order: common → specialized.
+const SIGNAL_TYPES = [
+  "Factual content",
+  "Semantic match",
+  "Response quality",
+  "Custom rubric / style",
+  "Topic / tool invocation",
+  "Exact string or format",
+];
+const SIGNAL_TO_METHOD = {
+  "Factual content": "Compare meaning",
+  "Semantic match": "Compare meaning",
+  "Response quality": "General quality",
+  "Custom rubric / style": "Custom",
+  "Topic / tool invocation": "Capability use",
+  "Exact string or format": "Exact match",
+};
+
+let criteria = [];
+let qualityDimensions = [];
+let draggedId = null;
+let dimDraggedId = null;
+let nextId = 100;
+
+function stageInit() {
+  const d = EMBEDDED_DATA.data;
+  qualityDimensions = [...(d.quality_dimensions || d.quality_signals || [])];
+  // Accept both new ("criteria") and old ("scenarios") shapes for backward-compat
+  const raw = d.criteria || d.scenarios || [];
+  criteria = raw.map(c => normalizeCriterion(c));
+  nextId = criteria.length > 0 ? Math.max(...criteria.map(c => c.id)) + 1 : 1;
+
+  renderAll();
+  initDragAndDrop();
+}
+
+function normalizeCriterion(c) {
+  // Map old schema (scenarios with zone + name + acceptance_criteria)
+  // onto new schema (criteria with quadrant + statement + pass/fail).
+  const quadrant = c.quadrant || zoneToQuadrant(c.zone);
+  let statement = c.statement || c.name || "";
+  if (statement && !/^the agent should/i.test(statement)) {
+    statement = "The agent should " + statement.charAt(0).toLowerCase() + statement.slice(1);
+  }
+  let passCondition = c.pass_condition || "";
+  let failCondition = c.fail_condition || "";
+  if (!passCondition && !failCondition && c.acceptance_criteria) {
+    const ac = c.acceptance_criteria;
+    const passMatch = ac.match(/pass\s*=\s*([^\n]+)/i);
+    const failMatch = ac.match(/fail\s*=\s*([^\n]+)/i);
+    passCondition = passMatch ? passMatch[1].trim() : "";
+    failCondition = failMatch ? failMatch[1].trim() : "";
+  }
+  return {
+    id: c.id,
+    statement: statement,
+    quadrant: quadrant,
+    quality_dimension: c.quality_dimension || "",
+    signal_type: c.signal_type || "",
+    method: c.method || "Compare meaning",
+    pass_condition: passCondition,
+    fail_condition: failCondition,
+    _deleted: false,
+  };
+}
+
+function zoneToQuadrant(zone) {
+  const z = String(zone || "1");
+  if (z === "1") return "critical";
+  if (z === "2") return "valuable";
+  return "deprioritize";
+}
+
+function renderAll() {
+  renderQuadrants();
+  renderCriteriaTable();
+  renderDimensions();
+}
+
+// ── Value × Cost matrix (drag-and-drop) ──
+
+function renderQuadrants() {
+  const totalActive = criteria.filter(c => !c._deleted).length;
+  QUADRANTS.forEach(q => {
+    const container = document.getElementById("quadrant-items-" + q);
+    container.innerHTML = "";
+    const items = criteria.filter(c => c.quadrant === q && !c._deleted);
+    items.forEach(c => {
+      const el = document.createElement("div");
+      el.className = "criterion-card";
+      el.draggable = true;
+      el.dataset.id = c.id;
+      el.innerHTML =
+        '<span class="statement">' + escapeHtml(c.statement) + '</span>' +
+        '<span class="actions"><button class="btn-icon" onclick="deleteCriterion(' + c.id + ')" title="Remove">&#x2715;</button></span>';
+      container.appendChild(el);
+    });
+    const pct = totalActive > 0 ? Math.round((items.length / totalActive) * 100) : 0;
+    document.getElementById("quadrant-" + q + "-count").textContent =
+      items.length + " · " + pct + "%";
+  });
+}
+
+function initDragAndDrop() {
+  document.addEventListener("dragstart", e => {
+    const item = e.target.closest(".criterion-card");
+    if (!item) return;
+    draggedId = parseInt(item.dataset.id);
+    item.classList.add("dragging");
+    e.dataTransfer.effectAllowed = "move";
+  });
+
+  document.addEventListener("dragend", e => {
+    const item = e.target.closest(".criterion-card");
+    if (item) item.classList.remove("dragging");
+    document.querySelectorAll(".quadrant").forEach(q => q.classList.remove("drag-over"));
+    draggedId = null;
+  });
+
+  document.querySelectorAll(".quadrant").forEach(col => {
+    col.addEventListener("dragover", e => {
+      e.preventDefault();
+      e.dataTransfer.dropEffect = "move";
+      col.classList.add("drag-over");
+    });
+    col.addEventListener("dragleave", e => {
+      if (!col.contains(e.relatedTarget)) col.classList.remove("drag-over");
+    });
+    col.addEventListener("drop", e => {
+      e.preventDefault();
+      col.classList.remove("drag-over");
+      if (draggedId === null) return;
+      const newQuadrant = col.dataset.quadrant;
+      const c = criteria.find(c => c.id === draggedId);
+      if (c && c.quadrant !== newQuadrant) {
+        c.quadrant = newQuadrant;
+        renderAll();
+        scheduleSave();
+      }
+    });
+  });
+}
+
+function onAddKeydown(e) {
+  if (e.key !== "Enter") return;
+  let val = e.target.value.trim();
+  if (!val) return;
+  const quadrant = e.target.dataset.quadrant;
+  // Normalize the statement to begin with "The agent should…"
+  if (!/^the agent should/i.test(val)) {
+    val = "The agent should " + val.charAt(0).toLowerCase() + val.slice(1);
+  }
+  addNewCriterion(val, quadrant);
+  e.target.value = "";
+}
+
+function addNewCriterion(statement, quadrant) {
+  const id = nextId++;
+  criteria.push({
+    id: id,
+    statement: statement,
+    quadrant: quadrant,
+    quality_dimension: qualityDimensions[0] || "",
+    signal_type: "",
+    method: "Compare meaning",
+    pass_condition: "",
+    fail_condition: "",
+    _deleted: false,
+  });
+  renderAll();
+  initDragAndDrop();
+  scheduleSave();
+}
+
+function deleteCriterion(id) {
+  const c = criteria.find(c => c.id === id);
+  if (c) c._deleted = true;
+  edits["criterion_" + id] = "__DELETE__";
+  renderAll();
+  scheduleSave();
+}
+
+// ── Acceptance Criteria table ──
+
+function renderCriteriaTable() {
+  const tbody = document.getElementById("criteria-tbody");
+  tbody.innerHTML = "";
+  const active = criteria.filter(c => !c._deleted);
+  // Sort by quadrant importance: critical, guardrails, core, deprioritize
+  const ORDER = { critical: 0, guardrails: 1, core: 2, deprioritize: 3 };
+  const sorted = [...active].sort((a, b) => ORDER[a.quadrant] - ORDER[b.quadrant]);
+  sorted.forEach(c => {
+    const tr = document.createElement("tr");
+    tr.innerHTML =
+      '<td><span class="q-badge ' + Q_BADGE_CSS[c.quadrant] + '">' + QUADRANT_LABELS[c.quadrant] + '</span></td>' +
+      '<td class="editable"><textarea data-field="criterion_' + c.id + '.statement" ' +
+        'data-original="' + escapeAttr(c.statement) + '" ' +
+        'data-criterion-id="' + c.id + '" data-prop="statement" ' +
+        'oninput="onCriterionEdit(this);scheduleSave()" style="font-weight:500;">' +
+        escapeHtml(c.statement) + '</textarea></td>' +
+      '<td class="editable">' +
+        '<div class="condition-row">' +
+          '<span class="condition-label condition-label-pass">Pass =</span>' +
+          '<textarea data-field="criterion_' + c.id + '.pass_condition" ' +
+            'data-original="' + escapeAttr(c.pass_condition) + '" ' +
+            'data-criterion-id="' + c.id + '" data-prop="pass_condition" ' +
+            'oninput="onCriterionEdit(this);scheduleSave()" ' +
+            'placeholder="conditions that make this criterion pass...">' + escapeHtml(c.pass_condition) + '</textarea>' +
+        '</div>' +
+        '<div class="condition-row">' +
+          '<span class="condition-label condition-label-fail">Fail =</span>' +
+          '<textarea data-field="criterion_' + c.id + '.fail_condition" ' +
+            'data-original="' + escapeAttr(c.fail_condition) + '" ' +
+            'data-criterion-id="' + c.id + '" data-prop="fail_condition" ' +
+            'oninput="onCriterionEdit(this);scheduleSave()" ' +
+            'placeholder="conditions that make this criterion fail...">' + escapeHtml(c.fail_condition) + '</textarea>' +
+        '</div>' +
+      '</td>' +
+      '<td><button class="btn btn-sm btn-danger" onclick="deleteCriterion(' + c.id + ')">&#x2715;</button></td>';
+    tbody.appendChild(tr);
+  });
+  document.getElementById("criterion-count").textContent = active.length + " criteria";
+}
+
+function buildMethodSelect(c) {
+  const opts = METHODS.map(m =>
+    '<option value="' + escapeAttr(m) + '"' + (m === c.method ? ' selected' : '') + '>' + escapeHtml(m) + '</option>'
+  ).join("");
+  return '<select class="inline-select" data-field="criterion_' + c.id + '.method" ' +
+    'data-original="' + escapeAttr(c.method || "") + '" ' +
+    'data-criterion-id="' + c.id + '" data-prop="method" ' +
+    'onchange="onCriterionEdit(this);scheduleSave()">' + opts + '</select>';
+}
+
+function buildSignalTypeSelect(c) {
+  const opts = SIGNAL_TYPES.map(st =>
+    '<option value="' + escapeAttr(st) + '"' + (st === c.signal_type ? ' selected' : '') + '>' + escapeHtml(st) + '</option>'
+  ).join("");
+  return '<select class="inline-select" data-field="criterion_' + c.id + '.signal_type" ' +
+    'data-original="' + escapeAttr(c.signal_type || "") + '" ' +
+    'data-criterion-id="' + c.id + '" data-prop="signal_type" ' +
+    'onchange="onCriterionEdit(this);scheduleSave()">' +
+    '<option value="">—</option>' + opts + '</select>';
+}
+
+function addCriterionFromTable() {
+  addNewCriterion("The agent should ", "valuable");
+  const textareas = document.querySelectorAll('#criteria-tbody textarea[data-prop="statement"]');
+  if (textareas.length > 0) {
+    const last = textareas[textareas.length - 1];
+    last.focus();
+    last.setSelectionRange(last.value.length, last.value.length);
+  }
+}
+
+function onCriterionEdit(el) {
+  const id = parseInt(el.dataset.criterionId);
+  const prop = el.dataset.prop;
+  const c = criteria.find(c => c.id === id);
+  if (c) {
+    c[prop] = el.value;
+    // When signal_type changes, derive the method automatically. Method is no
+    // longer edited in the UI — it's set by the "What to verify" selection.
+    if (prop === "signal_type" && el.value && SIGNAL_TO_METHOD[el.value]) {
+      c.method = SIGNAL_TO_METHOD[el.value];
+    }
+    if (prop === "statement") {
+      renderQuadrants();
+      renderDimensions();
+    }
+  }
+}
+
+// ── Quality Dimensions ──
+
+function renderDimensions() {
+  const bar = document.getElementById("metrics-dim-bar");
+  bar.innerHTML = qualityDimensions.map(d =>
+    '<span class="dim-bar-chip">' + escapeHtml(d) + '</span>'
+  ).join("") +
+  '<button class="dim-bar-add" onclick="addQualityDimension()">+ Add</button>';
+
+  const container = document.getElementById("dimensions-body");
+  container.innerHTML = "";
+  const active = criteria.filter(c => !c._deleted);
+
+  qualityDimensions.forEach((dim) => {
+    const items = active.filter(c => c.quality_dimension === dim);
+    const group = document.createElement("div");
+    group.className = "dim-group";
+
+    const chipsDiv = document.createElement("div");
+    chipsDiv.className = "dim-group-chips";
+    chipsDiv.dataset.dimension = dim;
+
+    items.forEach(c => {
+      const chip = document.createElement("span");
+      chip.className = "dim-chip";
+      chip.draggable = true;
+      chip.dataset.criterionId = c.id;
+      chip.innerHTML =
+        '<span class="chip-dot ' + Q_DOT_CSS[c.quadrant] + '"></span>' +
+        escapeHtml(c.statement) +
+        '<button class="chip-delete" onclick="deleteCriterion(' + c.id + ')" title="Remove">&#x2715;</button>';
+      chipsDiv.appendChild(chip);
+    });
+
+    if (items.length === 0) {
+      const empty = document.createElement("span");
+      empty.className = "text-sm text-muted";
+      empty.style.cssText = "font-style:italic;padding:0.15rem 0;";
+      empty.textContent = "No criteria — drag here to assign";
+      chipsDiv.appendChild(empty);
+    }
+
+    const addBtn = document.createElement("button");
+    addBtn.className = "dim-add-btn";
+    addBtn.textContent = "+ Add";
+    addBtn.onclick = () => addCriterionToDimension(dim);
+    chipsDiv.appendChild(addBtn);
+
+    chipsDiv.addEventListener("dragover", e => { e.preventDefault(); e.dataTransfer.dropEffect = "move"; chipsDiv.classList.add("dim-drag-over"); });
+    chipsDiv.addEventListener("dragleave", e => { if (!chipsDiv.contains(e.relatedTarget)) chipsDiv.classList.remove("dim-drag-over"); });
+    chipsDiv.addEventListener("drop", e => {
+      e.preventDefault();
+      chipsDiv.classList.remove("dim-drag-over");
+      if (dimDraggedId === null) return;
+      const c = criteria.find(c => c.id === dimDraggedId);
+      if (c && c.quality_dimension !== dim) {
+        c.quality_dimension = dim;
+        renderDimensions();
+        renderCriteriaTable();
+        scheduleSave();
+      }
+    });
+
+    // Editable dimension header — click the name to rename; rename to an
+    // existing dimension to merge; click × to delete the dimension (criteria
+    // get reassigned to the first remaining dimension or "Uncategorized").
+    const header = document.createElement("div");
+    header.className = "dim-group-header";
+
+    const nameEl = document.createElement("span");
+    nameEl.className = "dim-name-editable";
+    nameEl.contentEditable = "true";
+    nameEl.spellcheck = false;
+    nameEl.textContent = dim;
+    nameEl.title = "Click to rename. Rename to an existing dimension to merge.";
+    nameEl.addEventListener("focus", () => { nameEl.dataset.original = nameEl.textContent; });
+    nameEl.addEventListener("keydown", e => {
+      if (e.key === "Enter") { e.preventDefault(); nameEl.blur(); }
+      if (e.key === "Escape") { nameEl.textContent = nameEl.dataset.original || dim; nameEl.blur(); }
+    });
+    nameEl.addEventListener("blur", () => {
+      const newName = nameEl.textContent.trim();
+      const oldName = nameEl.dataset.original || dim;
+      if (!newName) { nameEl.textContent = oldName; return; }
+      if (newName === oldName) return;
+      renameQualityDimension(oldName, newName);
+    });
+
+    const countEl = document.createElement("span");
+    countEl.className = "text-sm text-muted dim-count";
+    countEl.textContent = items.length;
+
+    const delBtn = document.createElement("button");
+    delBtn.className = "btn-icon dim-delete-btn";
+    delBtn.innerHTML = "&#x2715;";
+    delBtn.title = "Delete this dimension (criteria reassigned)";
+    delBtn.onclick = () => deleteQualityDimension(dim);
+
+    header.appendChild(nameEl);
+    const right = document.createElement("span");
+    right.style.cssText = "display:inline-flex;gap:0.5rem;align-items:center;";
+    right.appendChild(countEl);
+    right.appendChild(delBtn);
+    header.appendChild(right);
+
+    group.appendChild(header);
+    group.appendChild(chipsDiv);
+    container.appendChild(group);
+  });
+
+  container.addEventListener("dragstart", e => {
+    const chip = e.target.closest(".dim-chip");
+    if (!chip) return;
+    dimDraggedId = parseInt(chip.dataset.criterionId);
+    chip.classList.add("chip-dragging");
+    e.dataTransfer.effectAllowed = "move";
+  });
+  container.addEventListener("dragend", e => {
+    const chip = e.target.closest(".dim-chip");
+    if (chip) chip.classList.remove("chip-dragging");
+    document.querySelectorAll(".dim-group-chips").forEach(c => c.classList.remove("dim-drag-over"));
+    dimDraggedId = null;
+  });
+}
+
+function addQualityDimension() {
+  const name = prompt("New quality dimension name:");
+  if (name && name.trim()) {
+    const trimmed = name.trim();
+    if (!qualityDimensions.includes(trimmed)) {
+      qualityDimensions.push(trimmed);
+      renderDimensions();
+      renderCriteriaTable();
+      scheduleSave();
+    }
+  }
+}
+
+function renameQualityDimension(oldName, newName) {
+  const trimmed = newName.trim();
+  if (!trimmed || trimmed === oldName) { renderDimensions(); return; }
+  // If the new name matches an existing dimension, this is a merge.
+  const isMerge = qualityDimensions.includes(trimmed) && trimmed !== oldName;
+  // Update all criteria using the old name to point at the new name.
+  criteria.forEach(c => { if (c.quality_dimension === oldName) c.quality_dimension = trimmed; });
+  // Update the qualityDimensions array — replace oldName with trimmed (or remove if merging).
+  if (isMerge) {
+    qualityDimensions = qualityDimensions.filter(d => d !== oldName);
+  } else {
+    qualityDimensions = qualityDimensions.map(d => d === oldName ? trimmed : d);
+  }
+  renderDimensions();
+  renderCriteriaTable();
+  scheduleSave();
+}
+
+function deleteQualityDimension(dim) {
+  const orphaned = criteria.filter(c => c.quality_dimension === dim && !c._deleted);
+  const remainingDims = qualityDimensions.filter(d => d !== dim);
+  let target = "Uncategorized";
+  if (remainingDims.length > 0) {
+    target = remainingDims[0];
+  } else if (orphaned.length > 0) {
+    qualityDimensions = ["Uncategorized"];
+  }
+  const msg = orphaned.length > 0
+    ? "Delete dimension \"" + dim + "\"? Its " + orphaned.length + " criterion/criteria will be reassigned to \"" + target + "\"."
+    : "Delete dimension \"" + dim + "\"?";
+  if (!confirm(msg)) return;
+  criteria.forEach(c => { if (c.quality_dimension === dim) c.quality_dimension = target; });
+  qualityDimensions = qualityDimensions.filter(d => d !== dim);
+  if (orphaned.length > 0 && !qualityDimensions.includes(target)) {
+    qualityDimensions.push(target);
+  }
+  renderDimensions();
+  renderCriteriaTable();
+  scheduleSave();
+}
+
+function addCriterionToDimension(dim) {
+  const statement = prompt("New criterion for '" + dim + "' (will be prefixed with 'The agent should…' if not present):");
+  if (statement && statement.trim()) {
+    let s = statement.trim();
+    if (!/^the agent should/i.test(s)) {
+      s = "The agent should " + s.charAt(0).toLowerCase() + s.slice(1);
+    }
+    const id = nextId++;
+    criteria.push({
+      id: id,
+      statement: s,
+      quadrant: "valuable",
+      quality_dimension: dim,
+      signal_type: "",
+      method: "Compare meaning",
+      pass_condition: "",
+      fail_condition: "",
+      _deleted: false,
+    });
+    renderAll();
+    initDragAndDrop();
+    scheduleSave();
+  }
+}
+
+// ── Helpers ──
+
+function escapeAttr(text) {
+  return (text || "").replace(/&/g, "&amp;").replace(/"/g, "&quot;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/'/g, "&#39;");
+}
+
+function stageCollectEdits() {
+  const result = {};
+  criteria.filter(c => !c._deleted).forEach(c => {
+    result["criterion_" + c.id + ".statement"] = c.statement;
+    result["criterion_" + c.id + ".quadrant"] = c.quadrant;
+    result["criterion_" + c.id + ".quality_dimension"] = c.quality_dimension || "";
+    result["criterion_" + c.id + ".signal_type"] = c.signal_type || "";
+    result["criterion_" + c.id + ".method"] = c.method || "Compare meaning";
+    result["criterion_" + c.id + ".pass_condition"] = c.pass_condition || "";
+    result["criterion_" + c.id + ".fail_condition"] = c.fail_condition || "";
+  });
+  result["quality_dimensions"] = JSON.stringify(qualityDimensions);
+  document.querySelectorAll("[data-field]").forEach(el => {
+    if (el.value !== (el.dataset.original || "")) {
+      result[el.dataset.field] = el.value;
+    }
+  });
+  Object.assign(result, edits);
+  return result;
+}
+</script>

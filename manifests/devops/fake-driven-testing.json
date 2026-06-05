@@ -1,0 +1,49 @@
+{
+  "name": "fake-driven-testing",
+  "version": "0.1.0",
+  "category": "devops",
+  "description": "Agent skill for fake driven testing workflows.",
+  "intent_triggers": [
+    "use the fake driven testing agent skill",
+    "run a workflow for fake driven testing",
+    "help me with fake driven testing",
+    "我需要處理 fake driven testing 相關工作",
+    "幫我啟用 fake driven testing 這個 skill",
+    "用 agent skill 完成 fake driven testing",
+    "use fake driven testing from erk"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the fake driven testing skill for this task.",
+      "invocation": "codex --skill fake-driven-testing \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "devops",
+    "mcpservers",
+    "mit"
+  ]
+}

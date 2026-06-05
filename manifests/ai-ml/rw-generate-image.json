@@ -1,0 +1,49 @@
+{
+  "name": "rw-generate-image",
+  "version": "0.1.0",
+  "category": "ai-ml",
+  "description": "Generate images directly using the Runway API via runnable scripts.",
+  "intent_triggers": [
+    "use the rw generate image agent skill",
+    "run a workflow for rw generate image",
+    "help me with rw generate image",
+    "我需要處理 rw generate image 相關工作",
+    "幫我啟用 rw generate image 這個 skill",
+    "用 agent skill 完成 rw generate image",
+    "use rw generate image from skills"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the rw generate image skill for this task.",
+      "invocation": "codex --skill rw-generate-image \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "ai-ml",
+    "mcpservers",
+    "mit"
+  ]
+}

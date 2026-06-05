@@ -1,0 +1,49 @@
+{
+  "name": "scoutqa-test",
+  "version": "0.1.0",
+  "category": "web",
+  "description": "This skill should be used when the user asks to \"test this website\", \"run exploratory testing\", \"check for accessibility issues\", \"verify the login flow works\", \"find bugs on this page\", or request...",
+  "intent_triggers": [
+    "use the scoutqa test agent skill",
+    "run a workflow for scoutqa test",
+    "help me with scoutqa test",
+    "我需要處理 scoutqa test 相關工作",
+    "幫我啟用 scoutqa test 這個 skill",
+    "用 agent skill 完成 scoutqa test",
+    "use scoutqa test from awesome-copilot"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the scoutqa test skill for this task.",
+      "invocation": "codex --skill scoutqa-test \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "mcpservers",
+    "mit",
+    "web"
+  ]
+}

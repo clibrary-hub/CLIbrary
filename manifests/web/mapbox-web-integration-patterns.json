@@ -1,0 +1,49 @@
+{
+  "name": "mapbox-web-integration-patterns",
+  "version": "0.1.0",
+  "category": "web",
+  "description": "Official integration patterns for Mapbox GL JS across popular web frameworks (React, Vue, Svelte, Angular).",
+  "intent_triggers": [
+    "use the mapbox web integration patterns agent skill",
+    "run a workflow for mapbox web integration patterns",
+    "help me with mapbox web integration patterns",
+    "我需要處理 mapbox web integration patterns 相關工作",
+    "幫我啟用 mapbox web integration patterns 這個 skill",
+    "用 agent skill 完成 mapbox web integration patterns",
+    "use mapbox web integration patterns from mapbox-agent-skills"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the mapbox web integration patterns skill for this task.",
+      "invocation": "codex --skill mapbox-web-integration-patterns \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "mcpservers",
+    "mit",
+    "web"
+  ]
+}

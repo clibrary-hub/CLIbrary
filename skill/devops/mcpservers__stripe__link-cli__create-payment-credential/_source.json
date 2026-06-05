@@ -1,0 +1,15 @@
+{
+  "source": "mcpservers",
+  "listing_url": "https://mcpservers.org/zh-TW/agent-skills/author/stripe",
+  "owner": "stripe",
+  "repo": "link-cli",
+  "branch": "HEAD",
+  "skill": "create-payment-credential",
+  "repo_url": "https://github.com/stripe/link-cli",
+  "license": {
+    "spdx": "MIT",
+    "url": "https://github.com/stripe/link-cli/blob/main/LICENSE",
+    "source": "api"
+  },
+  "zip_subdir": "link-cli-main/skills/create-payment-credential"
+}

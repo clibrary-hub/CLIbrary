@@ -1,0 +1,49 @@
+{
+  "name": "azure-mgmt-weightsandbiases-dotnet",
+  "version": "0.1.0",
+  "category": "ai-ml",
+  "description": "Agent skill for azure mgmt weightsandbiases dotnet workflows.",
+  "intent_triggers": [
+    "use the azure mgmt weightsandbiases dotnet agent skill",
+    "run a workflow for azure mgmt weightsandbiases dotnet",
+    "help me with azure mgmt weightsandbiases dotnet",
+    "我需要處理 azure mgmt weightsandbiases dotnet 相關工作",
+    "幫我啟用 azure mgmt weightsandbiases dotnet 這個 skill",
+    "用 agent skill 完成 azure mgmt weightsandbiases dotnet",
+    "use azure mgmt weightsandbiases dotnet from agent-skills"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the azure mgmt weightsandbiases dotnet skill for this task.",
+      "invocation": "codex --skill azure-mgmt-weightsandbiases-dotnet \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "ai-ml",
+    "mcpservers",
+    "mit"
+  ]
+}

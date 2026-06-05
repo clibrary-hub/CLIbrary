@@ -1,0 +1,15 @@
+{
+  "source": "mcpservers",
+  "listing_url": "https://mcpservers.org/zh-TW/agent-skills/author/vercel",
+  "owner": "vercel-labs",
+  "repo": "open-agents",
+  "branch": "HEAD",
+  "skill": "vercel-react-best-practices",
+  "repo_url": "https://github.com/vercel-labs/open-agents",
+  "license": {
+    "spdx": "MIT",
+    "url": "https://github.com/vercel-labs/open-agents/blob/main/LICENSE.md",
+    "source": "api"
+  },
+  "zip_subdir": "open-agents-main/.agents/skills/vercel-react-best-practices"
+}

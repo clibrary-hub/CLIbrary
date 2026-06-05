@@ -1,0 +1,49 @@
+{
+  "name": "entra-agent-user",
+  "version": "0.1.0",
+  "category": "devops",
+  "description": "Create Agent Users in Microsoft Entra ID from Agent Identities, enabling AI agents to act as digital workers with user identity capabilities in Microsoft 365 and Azure environments.",
+  "intent_triggers": [
+    "use the entra agent user agent skill",
+    "run a workflow for entra agent user",
+    "help me with entra agent user",
+    "我需要處理 entra agent user 相關工作",
+    "幫我啟用 entra agent user 這個 skill",
+    "用 agent skill 完成 entra agent user",
+    "use entra agent user from awesome-copilot"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the entra agent user skill for this task.",
+      "invocation": "codex --skill entra-agent-user \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "devops",
+    "mcpservers",
+    "mit"
+  ]
+}

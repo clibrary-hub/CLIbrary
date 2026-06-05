@@ -1,0 +1,49 @@
+{
+  "name": "eventhouse-authoring-cli",
+  "version": "0.1.0",
+  "category": "ai-ml",
+  "description": "Agent skill for eventhouse authoring cli workflows.",
+  "intent_triggers": [
+    "use the eventhouse authoring cli agent skill",
+    "run a workflow for eventhouse authoring cli",
+    "help me with eventhouse authoring cli",
+    "我需要處理 eventhouse authoring cli 相關工作",
+    "幫我啟用 eventhouse authoring cli 這個 skill",
+    "用 agent skill 完成 eventhouse authoring cli",
+    "use eventhouse authoring cli from skills-for-fabric"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the eventhouse authoring cli skill for this task.",
+      "invocation": "codex --skill eventhouse-authoring-cli \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "ai-ml",
+    "mcpservers",
+    "mit"
+  ]
+}

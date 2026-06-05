@@ -1,0 +1,49 @@
+{
+  "name": "power-platform-architect",
+  "version": "0.1.0",
+  "category": "ai-ml",
+  "description": "Use this skill when the user needs to transform business requirements, use case descriptions, or meeting transcripts into a technical Power Platform solution architecture, including component selec...",
+  "intent_triggers": [
+    "use the power platform architect agent skill",
+    "run a workflow for power platform architect",
+    "help me with power platform architect",
+    "我需要處理 power platform architect 相關工作",
+    "幫我啟用 power platform architect 這個 skill",
+    "用 agent skill 完成 power platform architect",
+    "use power platform architect from awesome-copilot"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the power platform architect skill for this task.",
+      "invocation": "codex --skill power-platform-architect \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "ai-ml",
+    "mcpservers",
+    "mit"
+  ]
+}

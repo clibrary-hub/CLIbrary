@@ -1,0 +1,15 @@
+{
+  "source": "skills-rest",
+  "listing_url": "https://skills.rest/explore?category=personal-entrepreneur",
+  "owner": "wtgoku-create",
+  "repo": "PopiStudio",
+  "branch": "main",
+  "skill": "local-tools",
+  "repo_url": "https://github.com/wtgoku-create/PopiStudio",
+  "license": {
+    "spdx": "MIT",
+    "url": "https://github.com/wtgoku-create/PopiStudio/blob/main/LICENSE",
+    "source": "api"
+  },
+  "zip_subdir": "PopiStudio-main/SKILLs/local-tools"
+}

@@ -1,0 +1,15 @@
+{
+  "source": "mcpservers",
+  "listing_url": "https://mcpservers.org/zh-TW/agent-skills",
+  "owner": "huggingface",
+  "repo": "transformers",
+  "branch": "HEAD",
+  "skill": "add-or-fix-type-checking",
+  "repo_url": "https://github.com/huggingface/transformers",
+  "license": {
+    "spdx": "Apache-2.0",
+    "url": "https://github.com/huggingface/transformers/blob/main/LICENSE",
+    "source": "api"
+  },
+  "zip_subdir": "transformers-main/.ai/skills/add-or-fix-type-checking"
+}

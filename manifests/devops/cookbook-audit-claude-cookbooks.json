@@ -1,0 +1,49 @@
+{
+  "name": "cookbook-audit-claude-cookbooks",
+  "version": "0.1.0",
+  "category": "devops",
+  "description": "Audit an Anthropic Cookbook notebook based on a rubric.",
+  "intent_triggers": [
+    "use the cookbook audit agent skill",
+    "run a workflow for cookbook audit",
+    "help me with cookbook audit",
+    "我需要處理 cookbook audit 相關工作",
+    "幫我啟用 cookbook audit 這個 skill",
+    "用 agent skill 完成 cookbook audit",
+    "use cookbook audit from claude-cookbooks"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the cookbook audit skill for this task.",
+      "invocation": "codex --skill cookbook-audit \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "devops",
+    "mcpservers",
+    "mit"
+  ]
+}

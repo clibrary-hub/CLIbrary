@@ -1,0 +1,48 @@
+{
+  "name": "dd-audit-key-compromise",
+  "version": "0.1.0",
+  "category": "web",
+  "description": "Investigate a potentially compromised Datadog API key — timeline of actions, geo/IP breakdown, endpoints called, anomaly flags, and remediation steps.",
+  "intent_triggers": [
+    "use the dd audit key compromise agent skill",
+    "run a workflow for dd audit key compromise",
+    "help me with dd audit key compromise",
+    "我需要處理 dd audit key compromise 相關工作",
+    "幫我啟用 dd audit key compromise 這個 skill",
+    "用 agent skill 完成 dd audit key compromise"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the dd audit key compromise skill for this task.",
+      "invocation": "codex --skill dd-audit-key-compromise \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "mit",
+    "skill",
+    "web"
+  ]
+}

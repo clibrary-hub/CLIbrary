@@ -1,0 +1,49 @@
+{
+  "name": "m5-onboard",
+  "version": "0.1.0",
+  "category": "devops",
+  "description": "End-to-end onboarding for a freshly-plugged-in M5Stack ESP32 device (Cardputer, Cardputer-Adv, Core, CoreS3, Stick) — detect on USB, flash UIFlow 2.0 firmware, and install the Claude Buddy MicroPyt...",
+  "intent_triggers": [
+    "use the m5 onboard agent skill",
+    "run a workflow for m5 onboard",
+    "help me with m5 onboard",
+    "我需要處理 m5 onboard 相關工作",
+    "幫我啟用 m5 onboard 這個 skill",
+    "用 agent skill 完成 m5 onboard",
+    "use m5 onboard from claude-plugins-official"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the m5 onboard skill for this task.",
+      "invocation": "codex --skill m5-onboard \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "apache-2.0",
+    "devops",
+    "mcpservers"
+  ]
+}

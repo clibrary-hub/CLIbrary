@@ -1,0 +1,15 @@
+{
+  "source": "mcpservers",
+  "listing_url": "https://mcpservers.org/zh-TW/agent-skills",
+  "owner": "expo",
+  "repo": "expo",
+  "branch": "HEAD",
+  "skill": "android-e2e-testing",
+  "repo_url": "https://github.com/expo/expo",
+  "license": {
+    "spdx": "MIT",
+    "url": "https://github.com/expo/expo/blob/main/LICENSE",
+    "source": "api"
+  },
+  "zip_subdir": "expo-main/packages/expo-router/.claude/skills/android-e2e-testing"
+}

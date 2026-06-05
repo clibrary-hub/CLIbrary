@@ -1,0 +1,49 @@
+{
+  "name": "dataverse-python-usecase-builder",
+  "version": "0.1.0",
+  "category": "data",
+  "description": "Generate complete solutions for specific Dataverse SDK use cases with architecture recommendations",
+  "intent_triggers": [
+    "use the dataverse python usecase builder agent skill",
+    "run a workflow for dataverse python usecase builder",
+    "help me with dataverse python usecase builder",
+    "我需要處理 dataverse python usecase builder 相關工作",
+    "幫我啟用 dataverse python usecase builder 這個 skill",
+    "用 agent skill 完成 dataverse python usecase builder",
+    "use dataverse python usecase builder from awesome-copilot"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the dataverse python usecase builder skill for this task.",
+      "invocation": "codex --skill dataverse-python-usecase-builder \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "data",
+    "mcpservers",
+    "mit"
+  ]
+}

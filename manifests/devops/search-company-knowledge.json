@@ -1,0 +1,49 @@
+{
+  "name": "search-company-knowledge",
+  "version": "0.1.0",
+  "category": "devops",
+  "description": "Search across company knowledge bases (Confluence, Jira, internal docs) to find and explain internal concepts, processes, and technical details.",
+  "intent_triggers": [
+    "use the search company knowledge agent skill",
+    "run a workflow for search company knowledge",
+    "help me with search company knowledge",
+    "我需要處理 search company knowledge 相關工作",
+    "幫我啟用 search company knowledge 這個 skill",
+    "用 agent skill 完成 search company knowledge",
+    "use search company knowledge from atlassian-mcp-server"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the search company knowledge skill for this task.",
+      "invocation": "codex --skill search-company-knowledge \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "apache-2.0",
+    "devops",
+    "mcpservers"
+  ]
+}

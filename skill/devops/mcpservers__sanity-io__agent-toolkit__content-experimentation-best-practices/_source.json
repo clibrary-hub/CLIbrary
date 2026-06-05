@@ -1,0 +1,15 @@
+{
+  "source": "mcpservers",
+  "listing_url": "https://mcpservers.org/zh-TW/agent-skills",
+  "owner": "sanity-io",
+  "repo": "agent-toolkit",
+  "branch": "HEAD",
+  "skill": "content-experimentation-best-practices",
+  "repo_url": "https://github.com/sanity-io/agent-toolkit",
+  "license": {
+    "spdx": "MIT",
+    "url": "https://github.com/sanity-io/agent-toolkit/blob/main/LICENSE",
+    "source": "api"
+  },
+  "zip_subdir": "agent-toolkit-main/skills/content-experimentation-best-practices"
+}

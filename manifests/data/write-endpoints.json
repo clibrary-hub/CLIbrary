@@ -1,0 +1,49 @@
+{
+  "name": "write-endpoints",
+  "version": "0.1.0",
+  "category": "data",
+  "description": "Comprehensive guide for building OpenAPI endpoints with chanfana - schema definition, request validation, CRUD operations, D1 database integration, and exception handling",
+  "intent_triggers": [
+    "use the write endpoints agent skill",
+    "run a workflow for write endpoints",
+    "help me with write endpoints",
+    "我需要處理 write endpoints 相關工作",
+    "幫我啟用 write endpoints 這個 skill",
+    "用 agent skill 完成 write endpoints",
+    "use write endpoints from chanfana"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the write endpoints skill for this task.",
+      "invocation": "codex --skill write-endpoints \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "data",
+    "mcpservers",
+    "mit"
+  ]
+}

@@ -1,0 +1,49 @@
+{
+  "name": "dd-file-issue",
+  "version": "0.1.0",
+  "category": "devops",
+  "description": "File GitHub issues to the right repository (pup CLI or plugin)",
+  "intent_triggers": [
+    "use the dd file issue agent skill",
+    "run a workflow for dd file issue",
+    "help me with dd file issue",
+    "我需要處理 dd file issue 相關工作",
+    "幫我啟用 dd file issue 這個 skill",
+    "用 agent skill 完成 dd file issue",
+    "use dd file issue from pup"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the dd file issue skill for this task.",
+      "invocation": "codex --skill dd-file-issue \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "apache-2.0",
+    "devops",
+    "mcpservers"
+  ]
+}

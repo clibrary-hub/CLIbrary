@@ -1,0 +1,49 @@
+{
+  "name": "cms-environments-publishing",
+  "version": "0.1.0",
+  "category": "devops",
+  "description": "Advise developers on configuring environments, publishing content, using delivery and preview tokens, leveraging the Sync API, and understanding CDN and publish queue behavior in Contentstack.",
+  "intent_triggers": [
+    "use the cms environments publishing agent skill",
+    "run a workflow for cms environments publishing",
+    "help me with cms environments publishing",
+    "我需要處理 cms environments publishing 相關工作",
+    "幫我啟用 cms environments publishing 這個 skill",
+    "用 agent skill 完成 cms environments publishing",
+    "use cms environments publishing from contentstack-agent-skills"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the cms environments publishing skill for this task.",
+      "invocation": "codex --skill cms-environments-publishing \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "devops",
+    "mcpservers",
+    "mit"
+  ]
+}

@@ -1,0 +1,49 @@
+{
+  "name": "trigger-dev-tasks",
+  "version": "0.1.0",
+  "category": "devops",
+  "description": "Use this skill when writing, designing, or optimizing Trigger.dev background tasks and workflows.",
+  "intent_triggers": [
+    "use the trigger dev tasks agent skill",
+    "run a workflow for trigger dev tasks",
+    "help me with trigger dev tasks",
+    "我需要處理 trigger dev tasks 相關工作",
+    "幫我啟用 trigger dev tasks 這個 skill",
+    "用 agent skill 完成 trigger dev tasks",
+    "use trigger dev tasks from trigger.dev"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the trigger dev tasks skill for this task.",
+      "invocation": "codex --skill trigger-dev-tasks \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "apache-2.0",
+    "devops",
+    "mcpservers"
+  ]
+}

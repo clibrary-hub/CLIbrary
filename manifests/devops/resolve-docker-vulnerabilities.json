@@ -1,0 +1,49 @@
+{
+  "name": "resolve-docker-vulnerabilities",
+  "version": "0.1.0",
+  "category": "devops",
+  "description": "Skill to resolve Docker vulnerabilities for the firebase-cli image.",
+  "intent_triggers": [
+    "use the resolve docker vulnerabilities agent skill",
+    "run a workflow for resolve docker vulnerabilities",
+    "help me with resolve docker vulnerabilities",
+    "我需要處理 resolve docker vulnerabilities 相關工作",
+    "幫我啟用 resolve docker vulnerabilities 這個 skill",
+    "用 agent skill 完成 resolve docker vulnerabilities",
+    "use resolve docker vulnerabilities from firebase-tools"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the resolve docker vulnerabilities skill for this task.",
+      "invocation": "codex --skill resolve-docker-vulnerabilities \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "devops",
+    "mcpservers",
+    "mit"
+  ]
+}

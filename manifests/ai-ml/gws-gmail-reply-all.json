@@ -1,0 +1,49 @@
+{
+  "name": "gws-gmail-reply-all",
+  "version": "0.1.0",
+  "category": "ai-ml",
+  "description": "Gmail: Reply-all to a message (handles threading automatically).",
+  "intent_triggers": [
+    "use the gws gmail reply all agent skill",
+    "run a workflow for gws gmail reply all",
+    "help me with gws gmail reply all",
+    "我需要處理 gws gmail reply all 相關工作",
+    "幫我啟用 gws gmail reply all 這個 skill",
+    "用 agent skill 完成 gws gmail reply all",
+    "use gws gmail reply all from cli"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the gws gmail reply all skill for this task.",
+      "invocation": "codex --skill gws-gmail-reply-all \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "ai-ml",
+    "apache-2.0",
+    "mcpservers"
+  ]
+}

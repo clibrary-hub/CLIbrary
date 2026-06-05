@@ -1,0 +1,49 @@
+{
+  "name": "dspy",
+  "version": "0.1.0",
+  "category": "ai-ml",
+  "description": "Build complex AI systems with declarative programming, optimize prompts automatically, create modular RAG systems and agents with DSPy - Stanford NLP's framework for systematic LM programming",
+  "intent_triggers": [
+    "use the dspy agent skill",
+    "run a workflow for dspy",
+    "help me with dspy",
+    "我需要處理 dspy 相關工作",
+    "幫我啟用 dspy 這個 skill",
+    "用 agent skill 完成 dspy",
+    "use dspy from ai-research-skills"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the dspy skill for this task.",
+      "invocation": "codex --skill dspy \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "ai-ml",
+    "mcpservers",
+    "mit"
+  ]
+}

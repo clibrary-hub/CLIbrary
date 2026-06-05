@@ -1,0 +1,49 @@
+{
+  "name": "verify-samples-tool",
+  "version": "0.1.0",
+  "category": "devops",
+  "description": "How to use the verify-samples tool to run, verify, and manage sample definitions in the Agent Framework repository.",
+  "intent_triggers": [
+    "use the verify samples tool agent skill",
+    "run a workflow for verify samples tool",
+    "help me with verify samples tool",
+    "我需要處理 verify samples tool 相關工作",
+    "幫我啟用 verify samples tool 這個 skill",
+    "用 agent skill 完成 verify samples tool",
+    "use verify samples tool from agent-framework"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the verify samples tool skill for this task.",
+      "invocation": "codex --skill verify-samples-tool \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "devops",
+    "mcpservers",
+    "mit"
+  ]
+}

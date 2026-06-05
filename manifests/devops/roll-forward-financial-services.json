@@ -1,0 +1,49 @@
+{
+  "name": "roll-forward-financial-services",
+  "version": "0.1.0",
+  "category": "devops",
+  "description": "Build a roll-forward schedule for a balance-sheet account — beginning balance plus activity less reversals equals ending balance, with each component tied to GL.",
+  "intent_triggers": [
+    "use the roll forward agent skill",
+    "run a workflow for roll forward",
+    "help me with roll forward",
+    "我需要處理 roll forward 相關工作",
+    "幫我啟用 roll forward 這個 skill",
+    "用 agent skill 完成 roll forward",
+    "use roll forward from financial-services"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the roll forward skill for this task.",
+      "invocation": "codex --skill roll-forward \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "apache-2.0",
+    "devops",
+    "mcpservers"
+  ]
+}

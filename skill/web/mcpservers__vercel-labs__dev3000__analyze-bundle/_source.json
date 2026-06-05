@@ -1,0 +1,15 @@
+{
+  "source": "mcpservers",
+  "listing_url": "https://mcpservers.org/zh-TW/agent-skills/author/vercel",
+  "owner": "vercel-labs",
+  "repo": "dev3000",
+  "branch": "HEAD",
+  "skill": "analyze-bundle",
+  "repo_url": "https://github.com/vercel-labs/dev3000",
+  "license": {
+    "spdx": "MIT",
+    "url": "https://github.com/vercel-labs/dev3000/blob/main/LICENSE",
+    "source": "api"
+  },
+  "zip_subdir": "dev3000-main/.agents/skills/analyze-bundle"
+}

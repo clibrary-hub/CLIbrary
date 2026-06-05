@@ -1,0 +1,49 @@
+{
+  "name": "bear-notes",
+  "version": "0.1.0",
+  "category": "web",
+  "description": "Create, search, and manage Bear notes via grizzly CLI.",
+  "intent_triggers": [
+    "use the bear notes agent skill",
+    "run a workflow for bear notes",
+    "help me with bear notes",
+    "我需要處理 bear notes 相關工作",
+    "幫我啟用 bear notes 這個 skill",
+    "用 agent skill 完成 bear notes",
+    "use bear notes from openclaw"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the bear notes skill for this task.",
+      "invocation": "codex --skill bear-notes \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "mcpservers",
+    "mit",
+    "web"
+  ]
+}

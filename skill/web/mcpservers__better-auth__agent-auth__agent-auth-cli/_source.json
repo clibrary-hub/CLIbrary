@@ -1,0 +1,15 @@
+{
+  "source": "mcpservers",
+  "listing_url": "https://mcpservers.org/zh-TW/agent-skills",
+  "owner": "better-auth",
+  "repo": "agent-auth",
+  "branch": "HEAD",
+  "skill": "agent-auth-cli",
+  "repo_url": "https://github.com/better-auth/agent-auth",
+  "license": {
+    "spdx": "MIT",
+    "url": "https://github.com/better-auth/agent-auth/blob/main/LICENSE",
+    "source": "api"
+  },
+  "zip_subdir": "agent-auth-main/skills/agent-auth-cli"
+}

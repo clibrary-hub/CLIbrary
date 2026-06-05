@@ -1,0 +1,49 @@
+{
+  "name": "upgrade-react-native",
+  "version": "0.1.0",
+  "category": "devops",
+  "description": "Upgrade the React Native fixture app to a new version.",
+  "intent_triggers": [
+    "use the upgrade react native agent skill",
+    "run a workflow for upgrade react native",
+    "help me with upgrade react native",
+    "我需要處理 upgrade react native 相關工作",
+    "幫我啟用 upgrade react native 這個 skill",
+    "用 agent skill 完成 upgrade react native",
+    "use upgrade react native from flash-list"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the upgrade react native skill for this task.",
+      "invocation": "codex --skill upgrade-react-native \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "devops",
+    "mcpservers",
+    "mit"
+  ]
+}

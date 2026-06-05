@@ -1,0 +1,49 @@
+{
+  "name": "rw-check-org-details",
+  "version": "0.1.0",
+  "category": "web",
+  "description": "Query the Runway API for organization details: rate limits, credit balance, usage tier, and daily generation counts",
+  "intent_triggers": [
+    "use the rw check org details agent skill",
+    "run a workflow for rw check org details",
+    "help me with rw check org details",
+    "我需要處理 rw check org details 相關工作",
+    "幫我啟用 rw check org details 這個 skill",
+    "用 agent skill 完成 rw check org details",
+    "use rw check org details from skills"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the rw check org details skill for this task.",
+      "invocation": "codex --skill rw-check-org-details \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "mcpservers",
+    "mit",
+    "web"
+  ]
+}

@@ -1,0 +1,49 @@
+{
+  "name": "supabase-server",
+  "version": "0.1.0",
+  "category": "devops",
+  "description": "Use when planning or writing server-side code that uses `@supabase/server` — Edge Functions, Hono apps, webhook handlers, or any backend that creates Supabase clients or validates inbound auth.",
+  "intent_triggers": [
+    "use the supabase server agent skill",
+    "run a workflow for supabase server",
+    "help me with supabase server",
+    "我需要處理 supabase server 相關工作",
+    "幫我啟用 supabase server 這個 skill",
+    "用 agent skill 完成 supabase server",
+    "use supabase server from server"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the supabase server skill for this task.",
+      "invocation": "codex --skill supabase-server \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "devops",
+    "mcpservers",
+    "mit"
+  ]
+}

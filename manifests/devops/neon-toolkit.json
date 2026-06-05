@@ -1,0 +1,49 @@
+{
+  "name": "neon-toolkit",
+  "version": "0.1.0",
+  "category": "devops",
+  "description": "Creates and manages ephemeral Neon databases for testing, CI/CD pipelines, and isolated development environments.",
+  "intent_triggers": [
+    "use the neon toolkit agent skill",
+    "run a workflow for neon toolkit",
+    "help me with neon toolkit",
+    "我需要處理 neon toolkit 相關工作",
+    "幫我啟用 neon toolkit 這個 skill",
+    "用 agent skill 完成 neon toolkit",
+    "use neon toolkit from ai-rules"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the neon toolkit skill for this task.",
+      "invocation": "codex --skill neon-toolkit \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "devops",
+    "mcpservers",
+    "mit"
+  ]
+}

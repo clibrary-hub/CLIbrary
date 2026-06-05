@@ -1,0 +1,48 @@
+{
+  "name": "serving-llms-vllm",
+  "version": "0.1.0",
+  "category": "devops",
+  "description": "Serves LLMs with high throughput using vLLM's PagedAttention and continuous batching.",
+  "intent_triggers": [
+    "use the serving llms vllm agent skill",
+    "run a workflow for serving llms vllm",
+    "help me with serving llms vllm",
+    "我需要處理 serving llms vllm 相關工作",
+    "幫我啟用 serving llms vllm 這個 skill",
+    "用 agent skill 完成 serving llms vllm"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the serving llms vllm skill for this task.",
+      "invocation": "codex --skill serving-llms-vllm \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "devops",
+    "mit",
+    "skill"
+  ]
+}

@@ -1,0 +1,49 @@
+{
+  "name": "tavily-extract",
+  "version": "0.1.0",
+  "category": "web",
+  "description": "Agent skill for tavily extract workflows.",
+  "intent_triggers": [
+    "use the tavily extract agent skill",
+    "run a workflow for tavily extract",
+    "help me with tavily extract",
+    "我需要處理 tavily extract 相關工作",
+    "幫我啟用 tavily extract 這個 skill",
+    "用 agent skill 完成 tavily extract",
+    "use tavily extract from skills"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the tavily extract skill for this task.",
+      "invocation": "codex --skill tavily-extract \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "mcpservers",
+    "mit",
+    "web"
+  ]
+}

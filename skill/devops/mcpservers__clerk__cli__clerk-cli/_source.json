@@ -1,0 +1,15 @@
+{
+  "source": "mcpservers",
+  "listing_url": "https://mcpservers.org/zh-TW/agent-skills",
+  "owner": "clerk",
+  "repo": "cli",
+  "branch": "HEAD",
+  "skill": "clerk-cli",
+  "repo_url": "https://github.com/clerk/cli",
+  "license": {
+    "spdx": "MIT",
+    "url": "https://github.com/clerk/cli/blob/main/LICENSE",
+    "source": "api"
+  },
+  "zip_subdir": "cli-main/skills/clerk-cli"
+}

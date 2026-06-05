@@ -1,0 +1,48 @@
+{
+  "name": "posthog-onboarding-lead-research",
+  "version": "0.1.0",
+  "category": "finance",
+  "description": "Research and qualify onboarding team referral leads for PostHog.",
+  "intent_triggers": [
+    "use the posthog onboarding lead research agent skill",
+    "run a workflow for posthog onboarding lead research",
+    "help me with posthog onboarding lead research",
+    "我需要處理 posthog onboarding lead research 相關工作",
+    "幫我啟用 posthog onboarding lead research 這個 skill",
+    "用 agent skill 完成 posthog onboarding lead research"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the posthog onboarding lead research skill for this task.",
+      "invocation": "codex --skill posthog-onboarding-lead-research \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "finance",
+    "mit",
+    "skill"
+  ]
+}

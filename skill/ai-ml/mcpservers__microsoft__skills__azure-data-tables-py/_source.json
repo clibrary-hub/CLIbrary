@@ -1,0 +1,15 @@
+{
+  "source": "mcpservers",
+  "listing_url": "https://mcpservers.org/zh-TW/agent-skills/author/microsoft",
+  "owner": "microsoft",
+  "repo": "skills",
+  "branch": "HEAD",
+  "skill": "azure-data-tables-py",
+  "repo_url": "https://github.com/microsoft/skills",
+  "license": {
+    "spdx": "MIT",
+    "url": "https://github.com/microsoft/skills/blob/main/LICENSE",
+    "source": "api"
+  },
+  "zip_subdir": "skills-main/.github/plugins/azure-sdk-python/skills/azure-data-tables-py"
+}

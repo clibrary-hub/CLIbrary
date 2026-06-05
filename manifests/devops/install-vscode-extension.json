@@ -1,0 +1,49 @@
+{
+  "name": "install-vscode-extension",
+  "version": "0.1.0",
+  "category": "devops",
+  "description": "How to install a VS Code extension from an extension ID.",
+  "intent_triggers": [
+    "use the install vscode extension agent skill",
+    "run a workflow for install vscode extension",
+    "help me with install vscode extension",
+    "我需要處理 install vscode extension 相關工作",
+    "幫我啟用 install vscode extension 這個 skill",
+    "用 agent skill 完成 install vscode extension",
+    "use install vscode extension from vscode-copilot-chat"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the install vscode extension skill for this task.",
+      "invocation": "codex --skill install-vscode-extension \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "devops",
+    "mcpservers",
+    "mit"
+  ]
+}

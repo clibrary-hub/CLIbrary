@@ -1,0 +1,49 @@
+{
+  "name": "gws-workflow-file-announce",
+  "version": "0.1.0",
+  "category": "data",
+  "description": "Google Workflow: Announce a Drive file in a Chat space.",
+  "intent_triggers": [
+    "use the gws workflow file announce agent skill",
+    "run a workflow for gws workflow file announce",
+    "help me with gws workflow file announce",
+    "我需要處理 gws workflow file announce 相關工作",
+    "幫我啟用 gws workflow file announce 這個 skill",
+    "用 agent skill 完成 gws workflow file announce",
+    "use gws workflow file announce from cli"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the gws workflow file announce skill for this task.",
+      "invocation": "codex --skill gws-workflow-file-announce \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "apache-2.0",
+    "data",
+    "mcpservers"
+  ]
+}

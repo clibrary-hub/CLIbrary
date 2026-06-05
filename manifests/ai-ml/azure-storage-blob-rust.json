@@ -1,0 +1,49 @@
+{
+  "name": "azure-storage-blob-rust",
+  "version": "0.1.0",
+  "category": "ai-ml",
+  "description": "Agent skill for azure storage blob rust workflows.",
+  "intent_triggers": [
+    "use the azure storage blob rust agent skill",
+    "run a workflow for azure storage blob rust",
+    "help me with azure storage blob rust",
+    "我需要處理 azure storage blob rust 相關工作",
+    "幫我啟用 azure storage blob rust 這個 skill",
+    "用 agent skill 完成 azure storage blob rust",
+    "use azure storage blob rust from agent-skills"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the azure storage blob rust skill for this task.",
+      "invocation": "codex --skill azure-storage-blob-rust \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "ai-ml",
+    "mcpservers",
+    "mit"
+  ]
+}

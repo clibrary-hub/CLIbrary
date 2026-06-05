@@ -1,0 +1,15 @@
+{
+  "source": "mcpservers",
+  "listing_url": "https://mcpservers.org/zh-TW/agent-skills",
+  "owner": "clickhouse",
+  "repo": "clickhouse",
+  "branch": "HEAD",
+  "skill": "create-worktree",
+  "repo_url": "https://github.com/clickhouse/clickhouse",
+  "license": {
+    "spdx": "Apache-2.0",
+    "url": "https://github.com/ClickHouse/ClickHouse/blob/master/LICENSE",
+    "source": "api"
+  },
+  "zip_subdir": "ClickHouse-master/.claude/skills/create-worktree"
+}

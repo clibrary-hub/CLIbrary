@@ -1,0 +1,15 @@
+{
+  "source": "mcpservers",
+  "listing_url": "https://mcpservers.org/zh-TW/agent-skills/author/microsoft",
+  "owner": "microsoft",
+  "repo": "power-platform-skills",
+  "branch": "HEAD",
+  "skill": "setup-datamodel",
+  "repo_url": "https://github.com/microsoft/power-platform-skills",
+  "license": {
+    "spdx": "MIT",
+    "url": "https://github.com/microsoft/power-platform-skills/blob/main/LICENSE",
+    "source": "api"
+  },
+  "zip_subdir": "power-platform-skills-main/plugins/power-pages/skills/setup-datamodel"
+}

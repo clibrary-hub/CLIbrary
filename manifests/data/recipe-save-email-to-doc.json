@@ -1,0 +1,49 @@
+{
+  "name": "recipe-save-email-to-doc",
+  "version": "0.1.0",
+  "category": "data",
+  "description": "Save a Gmail message body into a Google Doc for archival or reference.",
+  "intent_triggers": [
+    "use the recipe save email to doc agent skill",
+    "run a workflow for recipe save email to doc",
+    "help me with recipe save email to doc",
+    "我需要處理 recipe save email to doc 相關工作",
+    "幫我啟用 recipe save email to doc 這個 skill",
+    "用 agent skill 完成 recipe save email to doc",
+    "use recipe save email to doc from cli"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the recipe save email to doc skill for this task.",
+      "invocation": "codex --skill recipe-save-email-to-doc \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "apache-2.0",
+    "data",
+    "mcpservers"
+  ]
+}

@@ -1,0 +1,49 @@
+{
+  "name": "java-docs",
+  "version": "0.1.0",
+  "category": "devops",
+  "description": "Ensure that Java types are documented with Javadoc comments and follow best practices for documentation.",
+  "intent_triggers": [
+    "use the java docs agent skill",
+    "run a workflow for java docs",
+    "help me with java docs",
+    "我需要處理 java docs 相關工作",
+    "幫我啟用 java docs 這個 skill",
+    "用 agent skill 完成 java docs",
+    "use java docs from awesome-copilot"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the java docs skill for this task.",
+      "invocation": "codex --skill java-docs \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "devops",
+    "mcpservers",
+    "mit"
+  ]
+}

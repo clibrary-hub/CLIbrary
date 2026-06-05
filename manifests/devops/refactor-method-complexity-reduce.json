@@ -1,0 +1,49 @@
+{
+  "name": "refactor-method-complexity-reduce",
+  "version": "0.1.0",
+  "category": "devops",
+  "description": "Refactor given method `${input:methodName}` to reduce its cognitive complexity to `${input:complexityThreshold}` or below, by extracting helper methods.",
+  "intent_triggers": [
+    "use the refactor method complexity reduce agent skill",
+    "run a workflow for refactor method complexity reduce",
+    "help me with refactor method complexity reduce",
+    "我需要處理 refactor method complexity reduce 相關工作",
+    "幫我啟用 refactor method complexity reduce 這個 skill",
+    "用 agent skill 完成 refactor method complexity reduce",
+    "use refactor method complexity reduce from awesome-copilot"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the refactor method complexity reduce skill for this task.",
+      "invocation": "codex --skill refactor-method-complexity-reduce \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "devops",
+    "mcpservers",
+    "mit"
+  ]
+}

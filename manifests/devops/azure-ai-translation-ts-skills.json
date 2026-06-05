@@ -1,0 +1,49 @@
+{
+  "name": "azure-ai-translation-ts-skills",
+  "version": "0.1.0",
+  "category": "devops",
+  "description": "Build translation applications using Azure Translation SDKs for JavaScript (@azure-rest/ai-translation-text, @azure-rest/ai-translation-document).",
+  "intent_triggers": [
+    "use the azure ai translation ts agent skill",
+    "run a workflow for azure ai translation ts",
+    "help me with azure ai translation ts",
+    "我需要處理 azure ai translation ts 相關工作",
+    "幫我啟用 azure ai translation ts 這個 skill",
+    "用 agent skill 完成 azure ai translation ts",
+    "use azure ai translation ts from skills"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the azure ai translation ts skill for this task.",
+      "invocation": "codex --skill azure-ai-translation-ts \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "devops",
+    "mcpservers",
+    "mit"
+  ]
+}

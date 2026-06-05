@@ -1,0 +1,49 @@
+{
+  "name": "sql-optimization",
+  "version": "0.1.0",
+  "category": "data",
+  "description": "Universal SQL performance optimization assistant for comprehensive query tuning, indexing strategies, and database performance analysis across all SQL databases (MySQL, PostgreSQL, SQL Server, Orac...",
+  "intent_triggers": [
+    "use the sql optimization agent skill",
+    "run a workflow for sql optimization",
+    "help me with sql optimization",
+    "我需要處理 sql optimization 相關工作",
+    "幫我啟用 sql optimization 這個 skill",
+    "用 agent skill 完成 sql optimization",
+    "use sql optimization from awesome-copilot"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the sql optimization skill for this task.",
+      "invocation": "codex --skill sql-optimization \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "data",
+    "mcpservers",
+    "mit"
+  ]
+}

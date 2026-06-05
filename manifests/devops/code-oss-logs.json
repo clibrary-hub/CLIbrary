@@ -1,0 +1,49 @@
+{
+  "name": "code-oss-logs",
+  "version": "0.1.0",
+  "category": "devops",
+  "description": "Find and read logs from Code OSS dev builds.",
+  "intent_triggers": [
+    "use the code oss logs agent skill",
+    "run a workflow for code oss logs",
+    "help me with code oss logs",
+    "我需要處理 code oss logs 相關工作",
+    "幫我啟用 code oss logs 這個 skill",
+    "用 agent skill 完成 code oss logs",
+    "use code oss logs from vscode"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the code oss logs skill for this task.",
+      "invocation": "codex --skill code-oss-logs \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "devops",
+    "mcpservers",
+    "mit"
+  ]
+}

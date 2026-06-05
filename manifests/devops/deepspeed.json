@@ -1,0 +1,49 @@
+{
+  "name": "deepspeed",
+  "version": "0.1.0",
+  "category": "devops",
+  "description": "Expert guidance for distributed training with DeepSpeed - ZeRO optimization stages, pipeline parallelism, FP16/BF16/FP8, 1-bit Adam, sparse attention",
+  "intent_triggers": [
+    "use the deepspeed agent skill",
+    "run a workflow for deepspeed",
+    "help me with deepspeed",
+    "我需要處理 deepspeed 相關工作",
+    "幫我啟用 deepspeed 這個 skill",
+    "用 agent skill 完成 deepspeed",
+    "use deepspeed from ai-research-skills"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the deepspeed skill for this task.",
+      "invocation": "codex --skill deepspeed \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "devops",
+    "mcpservers",
+    "mit"
+  ]
+}

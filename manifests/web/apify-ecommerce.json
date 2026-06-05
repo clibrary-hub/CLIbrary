@@ -1,0 +1,49 @@
+{
+  "name": "apify-ecommerce",
+  "version": "0.1.0",
+  "category": "web",
+  "description": "Scrape e-commerce data for pricing, reviews, bestsellers, and seller discovery across 30+ platforms including Amazon, Walmart, eBay, Shopify, WooCommerce, and more.",
+  "intent_triggers": [
+    "use the apify ecommerce agent skill",
+    "run a workflow for apify ecommerce",
+    "help me with apify ecommerce",
+    "我需要處理 apify ecommerce 相關工作",
+    "幫我啟用 apify ecommerce 這個 skill",
+    "用 agent skill 完成 apify ecommerce",
+    "use apify ecommerce from awesome-skills"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the apify ecommerce skill for this task.",
+      "invocation": "codex --skill apify-ecommerce \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "apache-2.0",
+    "mcpservers",
+    "web"
+  ]
+}

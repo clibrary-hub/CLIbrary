@@ -1,0 +1,49 @@
+{
+  "name": "recipe-draft-email-from-doc",
+  "version": "0.1.0",
+  "category": "ai-ml",
+  "description": "Read content from a Google Doc and use it as the body of a Gmail message.",
+  "intent_triggers": [
+    "use the recipe draft email from doc agent skill",
+    "run a workflow for recipe draft email from doc",
+    "help me with recipe draft email from doc",
+    "我需要處理 recipe draft email from doc 相關工作",
+    "幫我啟用 recipe draft email from doc 這個 skill",
+    "用 agent skill 完成 recipe draft email from doc",
+    "use recipe draft email from doc from cli"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the recipe draft email from doc skill for this task.",
+      "invocation": "codex --skill recipe-draft-email-from-doc \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "ai-ml",
+    "apache-2.0",
+    "mcpservers"
+  ]
+}

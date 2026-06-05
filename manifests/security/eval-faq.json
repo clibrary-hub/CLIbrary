@@ -1,0 +1,49 @@
+{
+  "name": "eval-faq",
+  "version": "0.1.0",
+  "category": "security",
+  "description": "Answers AI agent evaluation methodology questions with practical, opinionated guidance grounded primarily in Microsoft's agent evaluation ecosystem (MS Learn, Eval Scenario Library, Triage & Improv...",
+  "intent_triggers": [
+    "use the eval faq agent skill",
+    "run a workflow for eval faq",
+    "help me with eval faq",
+    "我需要處理 eval faq 相關工作",
+    "幫我啟用 eval faq 這個 skill",
+    "用 agent skill 完成 eval faq",
+    "use eval faq from eval-guide"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the eval faq skill for this task.",
+      "invocation": "codex --skill eval-faq \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "mcpservers",
+    "mit",
+    "security"
+  ]
+}

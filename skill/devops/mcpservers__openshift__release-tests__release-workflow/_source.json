@@ -1,0 +1,15 @@
+{
+  "source": "mcpservers",
+  "listing_url": "https://mcpservers.org/zh-TW/agent-skills",
+  "owner": "openshift",
+  "repo": "release-tests",
+  "branch": "HEAD",
+  "skill": "release-workflow",
+  "repo_url": "https://github.com/openshift/release-tests",
+  "license": {
+    "spdx": "Apache-2.0",
+    "url": "https://github.com/openshift/release-tests/blob/main/LICENSE",
+    "source": "api"
+  },
+  "zip_subdir": "release-tests-main/.claude/skills/release-workflow"
+}

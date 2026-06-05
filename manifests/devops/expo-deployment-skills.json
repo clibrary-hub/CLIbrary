@@ -1,0 +1,49 @@
+{
+  "name": "expo-deployment-skills",
+  "version": "0.1.0",
+  "category": "devops",
+  "description": "Deploying Expo apps to iOS App Store, Android Play Store, web hosting, and API routes",
+  "intent_triggers": [
+    "use the expo deployment agent skill",
+    "run a workflow for expo deployment",
+    "help me with expo deployment",
+    "我需要處理 expo deployment 相關工作",
+    "幫我啟用 expo deployment 這個 skill",
+    "用 agent skill 完成 expo deployment",
+    "use expo deployment from skills"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the expo deployment skill for this task.",
+      "invocation": "codex --skill expo-deployment \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "devops",
+    "mcpservers",
+    "mit"
+  ]
+}

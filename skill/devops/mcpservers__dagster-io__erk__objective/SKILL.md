@@ -1,0 +1,200 @@
+---
+name: objective
+description: >
+  This skill should be used when managing objectives - coherent goals that require 2+ plans/PRs
+  to complete. Use when users want to create multi-plan tracking documents, log progress across
+  related PRs, capture lessons learned, or coordinate work that spans multiple erk-prs.
+  Objectives are human-first coordination documents, not executable plans.
+metadata:
+  internal: true
+---
+
+# Objective Skill
+
+## Overview
+
+Objectives are coordination documents for goals requiring multiple plans/PRs to complete. Unlike
+erk-prs (single executable implementations), objectives track progress across related work and
+capture lessons learned along the way.
+
+**Scope range:**
+
+- Small: Feature requiring 2-3 related PRs
+- Medium: Refactor spanning several plans
+- Large: Long-running strategic direction emitting many plans
+
+## Objective vs Erk-Plan
+
+| Aspect   | Erk-Plan                         | Objective                           |
+| -------- | -------------------------------- | ----------------------------------- |
+| Purpose  | Single executable implementation | Coordinate 2+ related plans/PRs     |
+| Scope    | One PR or tightly-coupled change | Multiple plans toward coherent goal |
+| Body     | Machine-parseable metadata       | Human-readable markdown             |
+| Comments | Session context dumps            | Action logs + lessons               |
+| Label    | `erk-pr`                         | `erk-objective`                     |
+| Tooling  | `erk pr dispatch/implement`      | Manual updates via comments         |
+
+## Key Design Principles
+
+1. **Human-first** - Plain markdown, no machine-generated metadata
+2. **Incremental capture** - Each action gets its own comment
+3. **Lessons as first-class** - Every action comment includes lessons learned
+4. **Clear roadmap** - Status visible at a glance in the body
+5. **Body stays current via reconciliation** - After every PR landing, agents audit prose sections against what was actually implemented and correct stale information
+6. **Steelthread-first** - Each phase starts with minimal vertical slice proving the concept works
+7. **One PR per phase** - Each phase is sized for a coherent single PR
+8. **Always shippable** - System remains functional after each merged PR
+9. **Body is source of truth** - Body always contains complete current state; comments are the changelog
+10. **Two-step for all changes** - Every addition (context, decisions, phases) gets a comment AND body update
+11. **Context over code** - Provide references to patterns, not prescriptive implementations
+12. **Session handoff ready** - Body should be self-contained for any session to pick up and implement
+
+## Quick Reference
+
+### Creating an Objective
+
+```bash
+gh issue create --title "Objective: [Title]" --label "erk-objective" --body "$(cat <<'EOF'
+# Objective: [Title]
+
+> [1-2 sentence summary]
+
+## Goal
+
+[What success looks like - concrete end state]
+
+## Design Decisions
+
+1. **[Decision name]**: [What was decided]
+
+## Roadmap
+
+### Phase 1: [Name] Steelthread (1 PR)
+
+Minimal vertical slice proving the concept works.
+
+| Node | Description | Status | PR |
+|------|-------------|--------|-----|
+| 1.1 | [Minimal infrastructure] | pending | |
+| 1.2 | [Wire into one command] | pending | |
+
+**Test:** [End-to-end acceptance test for steelthread]
+
+### Phase 2: Complete [Name] (1 PR)
+
+Fill out remaining functionality.
+
+| Node | Description | Status | PR |
+|------|-------------|--------|-----|
+| 2.1 | [Extend to remaining commands] | pending | |
+| 2.2 | [Full test coverage] | pending | |
+
+**Test:** [Full acceptance criteria]
+
+EOF
+)"
+```
+
+### Logging an Action
+
+Post an action comment after completing work. See [format.md](references/format.md#action-comment-template) for full template.
+
+```bash
+gh issue comment <issue-number> --body "$(cat <<'EOF'
+## Action: [Brief title]
+**Date:** YYYY-MM-DD | **PR:** #123 | **Phase/Node:** 1.2
+### What Was Done
+### Lessons Learned
+### Roadmap Updates
+EOF
+)"
+```
+
+After posting, update the issue body (roadmap statuses, reconcile stale prose sections).
+
+### Updating Node Details
+
+Update node description, slug, or reason using `update-objective-node`:
+
+```bash
+# Update description
+erk exec update-objective-node 8470 --node 1.3 --description "Revised description"
+
+# Set slug
+erk exec update-objective-node 8470 --node 1.3 --slug "revised-slug"
+
+# Skip with comment
+erk exec update-objective-node 8470 --node 1.3 --status skipped --comment "Superseded by new approach"
+
+# Combine multiple updates
+erk exec update-objective-node 8470 --node 2.1 --description "New desc" --slug "new-slug" --status planning
+```
+
+### Adding Nodes
+
+Add new nodes to an existing objective's roadmap:
+
+```bash
+# Add to existing phase (auto-assigns next ID, e.g., 1.4)
+erk exec add-objective-node 8470 --phase 1 --description "Clean up dead code"
+
+# With explicit slug and dependencies
+erk exec add-objective-node 8470 --phase 2 \
+  --description "Integration tests" \
+  --slug integration-tests \
+  --depends-on 2.1 --depends-on 2.2
+
+# With comment for adding
+erk exec add-objective-node 8470 --phase 1 \
+  --description "Handle edge case" \
+  --comment "Discovered during re-evaluation"
+```
+
+### Updating Node Status
+
+Always use the programmatic command — never manually edit YAML or prose tables:
+
+```bash
+erk exec update-objective-node <issue> --node <id> --status <status>
+erk exec update-objective-node <issue> --node <id> --pr '#1234'
+```
+
+Then validate: `erk objective check <issue-number>`
+
+### Viewing an Objective
+
+View an objective's dependency graph, dependencies, and next node:
+
+```bash
+# CLI
+erk objective view <issue-number>
+
+# Slash command (in-session)
+/local:objective-view <issue-number>
+```
+
+### Spawning an Erk-Plan
+
+To implement a specific roadmap node, create an erk-pr that references the objective:
+
+```bash
+erk pr create --file plan.md --title "Implement [node description]"
+```
+
+## Workflow Summary
+
+1. **Create objective** - When starting multi-plan work
+2. **Inspect progress** - View dependency graph and next node
+3. **Log actions** - After completing each significant piece of work
+4. **Update body** - Keep roadmap status current, reconcile stale prose after each PR landing
+5. **Spawn erk-prs** - For individual implementation nodes
+6. **Close** - When goal achieved or abandoned (proactively ask when all nodes done)
+
+## Resources
+
+### references/
+
+- `format.md` - Complete templates, examples, and update patterns
+- `workflow.md` - Creating objectives, spawning plans, steelthread structuring
+- `updating.md` - Quick reference for the two-step update workflow
+- `closing.md` - Closing triggers and procedures

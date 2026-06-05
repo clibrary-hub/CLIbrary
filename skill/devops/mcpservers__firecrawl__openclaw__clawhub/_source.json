@@ -1,0 +1,15 @@
+{
+  "source": "mcpservers",
+  "listing_url": "https://mcpservers.org/zh-TW/agent-skills",
+  "owner": "firecrawl",
+  "repo": "openclaw",
+  "branch": "HEAD",
+  "skill": "clawhub",
+  "repo_url": "https://github.com/firecrawl/openclaw",
+  "license": {
+    "spdx": "MIT",
+    "url": "https://github.com/firecrawl/openclaw/blob/main/LICENSE",
+    "source": "api"
+  },
+  "zip_subdir": "openclaw-main/skills/clawhub"
+}

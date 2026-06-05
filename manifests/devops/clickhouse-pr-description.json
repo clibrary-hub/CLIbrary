@@ -1,0 +1,49 @@
+{
+  "name": "clickhouse-pr-description",
+  "version": "0.1.0",
+  "category": "devops",
+  "description": "Generate PR descriptions for ClickHouse/ClickHouse that match maintainer expectations.",
+  "intent_triggers": [
+    "use the clickhouse pr description agent skill",
+    "run a workflow for clickhouse pr description",
+    "help me with clickhouse pr description",
+    "我需要處理 clickhouse pr description 相關工作",
+    "幫我啟用 clickhouse pr description 這個 skill",
+    "用 agent skill 完成 clickhouse pr description",
+    "use clickhouse pr description from clickhouse"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the clickhouse pr description skill for this task.",
+      "invocation": "codex --skill clickhouse-pr-description \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "apache-2.0",
+    "devops",
+    "mcpservers"
+  ]
+}

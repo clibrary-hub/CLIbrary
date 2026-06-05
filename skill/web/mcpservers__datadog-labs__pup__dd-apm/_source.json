@@ -1,0 +1,15 @@
+{
+  "source": "mcpservers",
+  "listing_url": "https://mcpservers.org/zh-TW/agent-skills",
+  "owner": "datadog-labs",
+  "repo": "pup",
+  "branch": "HEAD",
+  "skill": "dd-apm",
+  "repo_url": "https://github.com/datadog-labs/pup",
+  "license": {
+    "spdx": "Apache-2.0",
+    "url": "https://github.com/DataDog/pup/blob/main/LICENSE",
+    "source": "api"
+  },
+  "zip_subdir": "pup-main/skills/dd-apm"
+}

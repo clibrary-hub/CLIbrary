@@ -1,0 +1,49 @@
+{
+  "name": "portable-text-conversion",
+  "version": "0.1.0",
+  "category": "data",
+  "description": "Convert HTML and Markdown content into Portable Text blocks for Sanity.",
+  "intent_triggers": [
+    "use the portable text conversion agent skill",
+    "run a workflow for portable text conversion",
+    "help me with portable text conversion",
+    "我需要處理 portable text conversion 相關工作",
+    "幫我啟用 portable text conversion 這個 skill",
+    "用 agent skill 完成 portable text conversion",
+    "use portable text conversion from agent-toolkit"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the portable text conversion skill for this task.",
+      "invocation": "codex --skill portable-text-conversion \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "data",
+    "mcpservers",
+    "mit"
+  ]
+}

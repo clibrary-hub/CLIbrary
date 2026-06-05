@@ -1,0 +1,49 @@
+{
+  "name": "azure-monitor-opentelemetry-ts",
+  "version": "0.1.0",
+  "category": "web",
+  "description": "Instrument applications with Azure Monitor and OpenTelemetry for JavaScript (@azure/monitor-opentelemetry).",
+  "intent_triggers": [
+    "use the azure monitor opentelemetry ts agent skill",
+    "run a workflow for azure monitor opentelemetry ts",
+    "help me with azure monitor opentelemetry ts",
+    "我需要處理 azure monitor opentelemetry ts 相關工作",
+    "幫我啟用 azure monitor opentelemetry ts 這個 skill",
+    "用 agent skill 完成 azure monitor opentelemetry ts",
+    "use azure monitor opentelemetry ts from agent-skills"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the azure monitor opentelemetry ts skill for this task.",
+      "invocation": "codex --skill azure-monitor-opentelemetry-ts \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "mcpservers",
+    "mit",
+    "web"
+  ]
+}

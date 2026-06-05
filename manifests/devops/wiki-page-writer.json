@@ -1,0 +1,49 @@
+{
+  "name": "wiki-page-writer",
+  "version": "0.1.0",
+  "category": "devops",
+  "description": "Generates rich technical documentation pages with dark-mode Mermaid diagrams, source code citations, and first-principles depth.",
+  "intent_triggers": [
+    "use the wiki page writer agent skill",
+    "run a workflow for wiki page writer",
+    "help me with wiki page writer",
+    "我需要處理 wiki page writer 相關工作",
+    "幫我啟用 wiki page writer 這個 skill",
+    "用 agent skill 完成 wiki page writer",
+    "use wiki page writer from agent-skills"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the wiki page writer skill for this task.",
+      "invocation": "codex --skill wiki-page-writer \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "devops",
+    "mcpservers",
+    "mit"
+  ]
+}

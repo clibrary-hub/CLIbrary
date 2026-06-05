@@ -1,0 +1,48 @@
+{
+  "name": "ideation",
+  "version": "0.1.0",
+  "category": "devops",
+  "description": "生成 project ideas through creative constraints.",
+  "intent_triggers": [
+    "use the ideation agent skill",
+    "run a workflow for ideation",
+    "help me with ideation",
+    "我需要處理 ideation 相關工作",
+    "幫我啟用 ideation 這個 skill",
+    "用 agent skill 完成 ideation"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the ideation skill for this task.",
+      "invocation": "codex --skill ideation \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "devops",
+    "mit",
+    "skill"
+  ]
+}

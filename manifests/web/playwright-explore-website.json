@@ -1,0 +1,49 @@
+{
+  "name": "playwright-explore-website",
+  "version": "0.1.0",
+  "category": "web",
+  "description": "Website exploration for testing using Playwright MCP",
+  "intent_triggers": [
+    "use the playwright explore website agent skill",
+    "run a workflow for playwright explore website",
+    "help me with playwright explore website",
+    "我需要處理 playwright explore website 相關工作",
+    "幫我啟用 playwright explore website 這個 skill",
+    "用 agent skill 完成 playwright explore website",
+    "use playwright explore website from awesome-copilot"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the playwright explore website skill for this task.",
+      "invocation": "codex --skill playwright-explore-website \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "mcpservers",
+    "mit",
+    "web"
+  ]
+}

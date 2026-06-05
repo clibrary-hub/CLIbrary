@@ -1,0 +1,15 @@
+{
+  "source": "mcpservers",
+  "listing_url": "https://mcpservers.org/zh-TW/agent-skills",
+  "owner": "neondatabase",
+  "repo": "postgres-skills",
+  "branch": "HEAD",
+  "skill": "skill-creator",
+  "repo_url": "https://github.com/neondatabase/postgres-skills",
+  "license": {
+    "spdx": "Apache-2.0",
+    "url": "https://github.com/neondatabase/postgres-skills/blob/main/LICENSE",
+    "source": "api"
+  },
+  "zip_subdir": "postgres-skills-main/.agents/skills/skill-creator"
+}

@@ -1,0 +1,49 @@
+{
+  "name": "feature-flags-react",
+  "version": "0.1.0",
+  "category": "devops",
+  "description": "PostHog feature flags for React applications",
+  "intent_triggers": [
+    "use the feature flags react agent skill",
+    "run a workflow for feature flags react",
+    "help me with feature flags react",
+    "我需要處理 feature flags react 相關工作",
+    "幫我啟用 feature flags react 這個 skill",
+    "用 agent skill 完成 feature flags react",
+    "use feature flags react from skills"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the feature flags react skill for this task.",
+      "invocation": "codex --skill feature-flags-react \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "devops",
+    "mcpservers",
+    "mit"
+  ]
+}

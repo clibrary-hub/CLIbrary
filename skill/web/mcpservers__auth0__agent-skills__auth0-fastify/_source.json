@@ -1,0 +1,15 @@
+{
+  "source": "mcpservers",
+  "listing_url": "https://mcpservers.org/zh-TW/agent-skills",
+  "owner": "auth0",
+  "repo": "agent-skills",
+  "branch": "HEAD",
+  "skill": "auth0-fastify",
+  "repo_url": "https://github.com/auth0/agent-skills",
+  "license": {
+    "spdx": "Apache-2.0",
+    "url": "https://github.com/auth0/agent-skills/blob/main/LICENSE",
+    "source": "api"
+  },
+  "zip_subdir": "agent-skills-main/plugins/auth0/skills/auth0-fastify"
+}

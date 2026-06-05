@@ -1,0 +1,49 @@
+{
+  "name": "triage-issue-flash-list",
+  "version": "0.1.0",
+  "category": "devops",
+  "description": "Triage a GitHub issue — classify priority (P0/P1/P2), search for duplicates, and apply labels.",
+  "intent_triggers": [
+    "use the triage issue agent skill",
+    "run a workflow for triage issue",
+    "help me with triage issue",
+    "我需要處理 triage issue 相關工作",
+    "幫我啟用 triage issue 這個 skill",
+    "用 agent skill 完成 triage issue",
+    "use triage issue from flash-list"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the triage issue skill for this task.",
+      "invocation": "codex --skill triage-issue \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "devops",
+    "mcpservers",
+    "mit"
+  ]
+}

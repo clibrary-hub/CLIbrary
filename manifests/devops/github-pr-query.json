@@ -1,0 +1,49 @@
+{
+  "name": "github-pr-query",
+  "version": "0.1.0",
+  "category": "devops",
+  "description": "Query GitHub pull requests with jq filtering and reusable selectors.",
+  "intent_triggers": [
+    "use the github pr query agent skill",
+    "run a workflow for github pr query",
+    "help me with github pr query",
+    "我需要處理 github pr query 相關工作",
+    "幫我啟用 github pr query 這個 skill",
+    "用 agent skill 完成 github pr query",
+    "use github pr query from gh-aw"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the github pr query skill for this task.",
+      "invocation": "codex --skill github-pr-query \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "devops",
+    "mcpservers",
+    "mit"
+  ]
+}

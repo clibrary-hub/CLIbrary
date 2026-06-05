@@ -1,0 +1,49 @@
+{
+  "name": "breakdown-epic-arch",
+  "version": "0.1.0",
+  "category": "devops",
+  "description": "Prompt for creating the high-level technical architecture for an Epic, based on a Product Requirements Document.",
+  "intent_triggers": [
+    "use the breakdown epic arch agent skill",
+    "run a workflow for breakdown epic arch",
+    "help me with breakdown epic arch",
+    "我需要處理 breakdown epic arch 相關工作",
+    "幫我啟用 breakdown epic arch 這個 skill",
+    "用 agent skill 完成 breakdown epic arch",
+    "use breakdown epic arch from awesome-copilot"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the breakdown epic arch skill for this task.",
+      "invocation": "codex --skill breakdown-epic-arch \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "devops",
+    "mcpservers",
+    "mit"
+  ]
+}

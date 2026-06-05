@@ -1,0 +1,15 @@
+{
+  "source": "mcpservers",
+  "listing_url": "https://mcpservers.org/zh-TW/agent-skills/author/stripe",
+  "owner": "stripe",
+  "repo": "agent-toolkit",
+  "branch": "HEAD",
+  "skill": "stripe-best-practices",
+  "repo_url": "https://github.com/stripe/agent-toolkit",
+  "license": {
+    "spdx": "MIT",
+    "url": "https://github.com/stripe/ai/blob/main/LICENSE",
+    "source": "api"
+  },
+  "zip_subdir": "ai-main/skills/stripe-best-practices"
+}

@@ -1,0 +1,49 @@
+{
+  "name": "sentry-sdk-setup-sentry-for-claude",
+  "version": "0.1.0",
+  "category": "web",
+  "description": "Set up Sentry in any language or framework.",
+  "intent_triggers": [
+    "use the sentry sdk setup agent skill",
+    "run a workflow for sentry sdk setup",
+    "help me with sentry sdk setup",
+    "我需要處理 sentry sdk setup 相關工作",
+    "幫我啟用 sentry sdk setup 這個 skill",
+    "用 agent skill 完成 sentry sdk setup",
+    "use sentry sdk setup from sentry-for-claude"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the sentry sdk setup skill for this task.",
+      "invocation": "codex --skill sentry-sdk-setup \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "mcpservers",
+    "mit",
+    "web"
+  ]
+}

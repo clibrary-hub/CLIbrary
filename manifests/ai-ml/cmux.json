@@ -1,0 +1,49 @@
+{
+  "name": "cmux",
+  "version": "0.1.0",
+  "category": "ai-ml",
+  "description": "This skill should be used when working with cmux, the terminal multiplexer application.",
+  "intent_triggers": [
+    "use the cmux agent skill",
+    "run a workflow for cmux",
+    "help me with cmux",
+    "我需要處理 cmux 相關工作",
+    "幫我啟用 cmux 這個 skill",
+    "用 agent skill 完成 cmux",
+    "use cmux from erk"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the cmux skill for this task.",
+      "invocation": "codex --skill cmux \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "ai-ml",
+    "mcpservers",
+    "mit"
+  ]
+}

@@ -1,0 +1,49 @@
+{
+  "name": "wix-manage",
+  "version": "0.1.0",
+  "category": "devops",
+  "description": "Wix business solution management recipes — REST API operations for configuring and managing Wix business solutions.",
+  "intent_triggers": [
+    "use the wix manage agent skill",
+    "run a workflow for wix manage",
+    "help me with wix manage",
+    "我需要處理 wix manage 相關工作",
+    "幫我啟用 wix manage 這個 skill",
+    "用 agent skill 完成 wix manage",
+    "use wix manage from skills"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the wix manage skill for this task.",
+      "invocation": "codex --skill wix-manage \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "devops",
+    "mcpservers",
+    "mit"
+  ]
+}

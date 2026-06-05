@@ -1,0 +1,49 @@
+{
+  "name": "deepgram-js-speech-to-text",
+  "version": "0.1.0",
+  "category": "ai-ml",
+  "description": "Use when writing or reviewing JavaScript/TypeScript in this repo that calls Deepgram Speech-to-Text v1 (`/v1/listen`) for prerecorded or live audio transcription.",
+  "intent_triggers": [
+    "use the deepgram js speech to text agent skill",
+    "run a workflow for deepgram js speech to text",
+    "help me with deepgram js speech to text",
+    "我需要處理 deepgram js speech to text 相關工作",
+    "幫我啟用 deepgram js speech to text 這個 skill",
+    "用 agent skill 完成 deepgram js speech to text",
+    "use deepgram js speech to text from deepgram-js-sdk"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the deepgram js speech to text skill for this task.",
+      "invocation": "codex --skill deepgram-js-speech-to-text \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "ai-ml",
+    "mcpservers",
+    "mit"
+  ]
+}

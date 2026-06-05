@@ -1,0 +1,15 @@
+{
+  "source": "mcpservers",
+  "listing_url": "https://mcpservers.org/zh-TW/agent-skills",
+  "owner": "callstackincubator",
+  "repo": "react-native-harness",
+  "branch": "HEAD",
+  "skill": "react-native-harness",
+  "repo_url": "https://github.com/callstackincubator/react-native-harness",
+  "license": {
+    "spdx": "MIT",
+    "url": "https://github.com/callstackincubator/react-native-harness/blob/main/LICENSE",
+    "source": "api"
+  },
+  "zip_subdir": "react-native-harness-main/skills/react-native-harness"
+}

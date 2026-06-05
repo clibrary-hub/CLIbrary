@@ -1,0 +1,49 @@
+{
+  "name": "az-cost-optimize",
+  "version": "0.1.0",
+  "category": "devops",
+  "description": "Analyze Azure resources used in the app (IaC files and/or resources in a target rg) and optimize costs - creating GitHub issues for identified optimizations.",
+  "intent_triggers": [
+    "use the az cost optimize agent skill",
+    "run a workflow for az cost optimize",
+    "help me with az cost optimize",
+    "我需要處理 az cost optimize 相關工作",
+    "幫我啟用 az cost optimize 這個 skill",
+    "用 agent skill 完成 az cost optimize",
+    "use az cost optimize from awesome-copilot"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the az cost optimize skill for this task.",
+      "invocation": "codex --skill az-cost-optimize \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "devops",
+    "mcpservers",
+    "mit"
+  ]
+}

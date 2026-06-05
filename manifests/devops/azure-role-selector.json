@@ -1,0 +1,49 @@
+{
+  "name": "azure-role-selector",
+  "version": "0.1.0",
+  "category": "devops",
+  "description": "When user is asking for guidance for which role to assign to an identity given desired permissions, this agent helps them understand the role that will meet the requirements with least privilege ac...",
+  "intent_triggers": [
+    "use the azure role selector agent skill",
+    "run a workflow for azure role selector",
+    "help me with azure role selector",
+    "我需要處理 azure role selector 相關工作",
+    "幫我啟用 azure role selector 這個 skill",
+    "用 agent skill 完成 azure role selector",
+    "use azure role selector from awesome-copilot"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the azure role selector skill for this task.",
+      "invocation": "codex --skill azure-role-selector \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "devops",
+    "mcpservers",
+    "mit"
+  ]
+}

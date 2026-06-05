@@ -1,0 +1,49 @@
+{
+  "name": "integration-nuxt-4",
+  "version": "0.1.0",
+  "category": "web",
+  "description": "PostHog integration for Nuxt 4 applications",
+  "intent_triggers": [
+    "use the integration nuxt 4 agent skill",
+    "run a workflow for integration nuxt 4",
+    "help me with integration nuxt 4",
+    "我需要處理 integration nuxt 4 相關工作",
+    "幫我啟用 integration nuxt 4 這個 skill",
+    "用 agent skill 完成 integration nuxt 4",
+    "use integration nuxt 4 from skills"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the integration nuxt 4 skill for this task.",
+      "invocation": "codex --skill integration-nuxt-4 \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "mcpservers",
+    "mit",
+    "web"
+  ]
+}

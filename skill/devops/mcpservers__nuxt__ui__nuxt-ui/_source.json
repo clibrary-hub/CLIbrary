@@ -1,0 +1,15 @@
+{
+  "source": "mcpservers",
+  "listing_url": "https://mcpservers.org/zh-TW/agent-skills",
+  "owner": "nuxt",
+  "repo": "ui",
+  "branch": "HEAD",
+  "skill": "nuxt-ui",
+  "repo_url": "https://github.com/nuxt/ui",
+  "license": {
+    "spdx": "MIT",
+    "url": "https://github.com/nuxt/ui/blob/v4/LICENSE.md",
+    "source": "api"
+  },
+  "zip_subdir": "ui-4/skills/nuxt-ui"
+}

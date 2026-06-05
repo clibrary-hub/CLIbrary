@@ -1,0 +1,49 @@
+{
+  "name": "session-inspector",
+  "version": "0.1.0",
+  "category": "devops",
+  "description": "Agent skill for session inspector workflows.",
+  "intent_triggers": [
+    "use the session inspector agent skill",
+    "run a workflow for session inspector",
+    "help me with session inspector",
+    "我需要處理 session inspector 相關工作",
+    "幫我啟用 session inspector 這個 skill",
+    "用 agent skill 完成 session inspector",
+    "use session inspector from erk"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the session inspector skill for this task.",
+      "invocation": "codex --skill session-inspector \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "devops",
+    "mcpservers",
+    "mit"
+  ]
+}

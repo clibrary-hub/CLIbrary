@@ -1,0 +1,49 @@
+{
+  "name": "creating-financial-models-claude-cookbooks",
+  "version": "0.1.0",
+  "category": "finance",
+  "description": "This skill provides an advanced financial modeling suite with DCF analysis, sensitivity testing, Monte Carlo simulations, and scenario planning for investment decisions",
+  "intent_triggers": [
+    "use the creating financial models agent skill",
+    "run a workflow for creating financial models",
+    "help me with creating financial models",
+    "我需要處理 creating financial models 相關工作",
+    "幫我啟用 creating financial models 這個 skill",
+    "用 agent skill 完成 creating financial models",
+    "use creating financial models from claude-cookbooks"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the creating financial models skill for this task.",
+      "invocation": "codex --skill creating-financial-models \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "finance",
+    "mcpservers",
+    "mit"
+  ]
+}

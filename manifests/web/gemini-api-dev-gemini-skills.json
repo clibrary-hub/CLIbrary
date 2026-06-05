@@ -1,0 +1,49 @@
+{
+  "name": "gemini-api-dev-gemini-skills",
+  "version": "0.1.0",
+  "category": "web",
+  "description": "Use this skill when building applications with Gemini API hosted models, including Gemini and Gemma 4, working with multimodal content (text, images, audio, video), implementing function calling, u...",
+  "intent_triggers": [
+    "use the gemini api dev agent skill",
+    "run a workflow for gemini api dev",
+    "help me with gemini api dev",
+    "我需要處理 gemini api dev 相關工作",
+    "幫我啟用 gemini api dev 這個 skill",
+    "用 agent skill 完成 gemini api dev",
+    "use gemini api dev from gemini-skills"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the gemini api dev skill for this task.",
+      "invocation": "codex --skill gemini-api-dev \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "apache-2.0",
+    "mcpservers",
+    "web"
+  ]
+}

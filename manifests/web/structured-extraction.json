@@ -1,0 +1,49 @@
+{
+  "name": "structured-extraction",
+  "version": "0.1.0",
+  "category": "web",
+  "description": "Extract structured data matching a JSON schema from websites.",
+  "intent_triggers": [
+    "use the structured extraction agent skill",
+    "run a workflow for structured extraction",
+    "help me with structured extraction",
+    "我需要處理 structured extraction 相關工作",
+    "幫我啟用 structured extraction 這個 skill",
+    "用 agent skill 完成 structured extraction",
+    "use structured extraction from firecrawl-agent"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the structured extraction skill for this task.",
+      "invocation": "codex --skill structured-extraction \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "mcpservers",
+    "mit",
+    "web"
+  ]
+}

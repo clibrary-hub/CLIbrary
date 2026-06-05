@@ -1,0 +1,49 @@
+{
+  "name": "analyzing-financial-statements-claude-cookbooks",
+  "version": "0.1.0",
+  "category": "finance",
+  "description": "This skill calculates key financial ratios and metrics from financial statement data for investment analysis",
+  "intent_triggers": [
+    "use the analyzing financial statements agent skill",
+    "run a workflow for analyzing financial statements",
+    "help me with analyzing financial statements",
+    "我需要處理 analyzing financial statements 相關工作",
+    "幫我啟用 analyzing financial statements 這個 skill",
+    "用 agent skill 完成 analyzing financial statements",
+    "use analyzing financial statements from claude-cookbooks"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the analyzing financial statements skill for this task.",
+      "invocation": "codex --skill analyzing-financial-statements \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "finance",
+    "mcpservers",
+    "mit"
+  ]
+}

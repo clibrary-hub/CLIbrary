@@ -1,0 +1,15 @@
+{
+  "source": "mcpservers",
+  "listing_url": "https://mcpservers.org/zh-TW/agent-skills/author/google",
+  "owner": "googleworkspace",
+  "repo": "cli",
+  "branch": "main",
+  "skill": "recipe-share-event-materials",
+  "repo_url": "https://github.com/googleworkspace/cli",
+  "license": {
+    "spdx": "Apache-2.0",
+    "url": "https://github.com/googleworkspace/cli/blob/main/LICENSE",
+    "source": "api"
+  },
+  "zip_subdir": "cli-main/skills/recipe-share-event-materials"
+}

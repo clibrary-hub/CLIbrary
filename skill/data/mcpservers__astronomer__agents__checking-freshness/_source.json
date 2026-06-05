@@ -1,0 +1,15 @@
+{
+  "source": "mcpservers",
+  "listing_url": "https://mcpservers.org/zh-TW/agent-skills",
+  "owner": "astronomer",
+  "repo": "agents",
+  "branch": "HEAD",
+  "skill": "checking-freshness",
+  "repo_url": "https://github.com/astronomer/agents",
+  "license": {
+    "spdx": "Apache-2.0",
+    "url": "https://github.com/astronomer/agents/blob/main/LICENSE",
+    "source": "api"
+  },
+  "zip_subdir": "agents-main/skills/checking-freshness"
+}

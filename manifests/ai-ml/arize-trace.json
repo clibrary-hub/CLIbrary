@@ -1,0 +1,49 @@
+{
+  "name": "arize-trace",
+  "version": "0.1.0",
+  "category": "ai-ml",
+  "description": "Downloads, exports, and inspects existing Arize traces and spans to understand what an LLM app is doing or debug runtime issues.",
+  "intent_triggers": [
+    "use the arize trace agent skill",
+    "run a workflow for arize trace",
+    "help me with arize trace",
+    "我需要處理 arize trace 相關工作",
+    "幫我啟用 arize trace 這個 skill",
+    "用 agent skill 完成 arize trace",
+    "use arize trace from awesome-copilot"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the arize trace skill for this task.",
+      "invocation": "codex --skill arize-trace \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "ai-ml",
+    "mcpservers",
+    "mit"
+  ]
+}

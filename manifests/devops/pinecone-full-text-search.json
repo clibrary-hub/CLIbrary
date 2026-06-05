@@ -1,0 +1,49 @@
+{
+  "name": "pinecone-full-text-search",
+  "version": "0.1.0",
+  "category": "devops",
+  "description": "Create, ingest into, and query a Pinecone full-text-search (FTS) index using the preview API (2026-01.alpha, public preview).",
+  "intent_triggers": [
+    "use the pinecone full text search agent skill",
+    "run a workflow for pinecone full text search",
+    "help me with pinecone full text search",
+    "我需要處理 pinecone full text search 相關工作",
+    "幫我啟用 pinecone full text search 這個 skill",
+    "用 agent skill 完成 pinecone full text search",
+    "use pinecone full text search from skills"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the pinecone full text search skill for this task.",
+      "invocation": "codex --skill pinecone-full-text-search \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "devops",
+    "mcpservers",
+    "mit"
+  ]
+}

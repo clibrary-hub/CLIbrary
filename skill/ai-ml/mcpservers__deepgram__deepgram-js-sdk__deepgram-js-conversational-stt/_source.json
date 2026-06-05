@@ -1,0 +1,15 @@
+{
+  "source": "mcpservers",
+  "listing_url": "https://mcpservers.org/zh-TW/agent-skills",
+  "owner": "deepgram",
+  "repo": "deepgram-js-sdk",
+  "branch": "HEAD",
+  "skill": "deepgram-js-conversational-stt",
+  "repo_url": "https://github.com/deepgram/deepgram-js-sdk",
+  "license": {
+    "spdx": "MIT",
+    "url": "https://github.com/deepgram/deepgram-js-sdk/blob/main/LICENSE",
+    "source": "api"
+  },
+  "zip_subdir": "deepgram-js-sdk-main/.agents/skills/deepgram-js-conversational-stt"
+}

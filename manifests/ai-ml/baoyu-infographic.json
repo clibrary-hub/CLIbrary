@@ -1,0 +1,49 @@
+{
+  "name": "baoyu-infographic",
+  "version": "0.1.0",
+  "category": "ai-ml",
+  "description": "Generate professional infographics with 21 layout types and 21 visual styles.",
+  "intent_triggers": [
+    "use the baoyu infographic agent skill",
+    "run a workflow for baoyu infographic",
+    "help me with baoyu infographic",
+    "我需要處理 baoyu infographic 相關工作",
+    "幫我啟用 baoyu infographic 這個 skill",
+    "用 agent skill 完成 baoyu infographic",
+    "use baoyu infographic from hermes-agent-zh"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the baoyu infographic skill for this task.",
+      "invocation": "codex --skill baoyu-infographic \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "ai-ml",
+    "mit",
+    "skills-rest"
+  ]
+}

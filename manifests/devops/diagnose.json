@@ -1,0 +1,49 @@
+{
+  "name": "diagnose",
+  "version": "0.1.0",
+  "category": "devops",
+  "description": "Perform a systematic diagnostic scan of an AI workflow across 5 quality dimensions — prompt quality, context efficiency, tool health, architecture fitness, and safety — producing a scored report wi...",
+  "intent_triggers": [
+    "use the diagnose agent skill",
+    "run a workflow for diagnose",
+    "help me with diagnose",
+    "我需要處理 diagnose 相關工作",
+    "幫我啟用 diagnose 這個 skill",
+    "用 agent skill 完成 diagnose",
+    "use diagnose from awesome-copilot"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the diagnose skill for this task.",
+      "invocation": "codex --skill diagnose \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "devops",
+    "mcpservers",
+    "mit"
+  ]
+}

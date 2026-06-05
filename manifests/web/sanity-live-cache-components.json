@@ -1,0 +1,49 @@
+{
+  "name": "sanity-live-cache-components",
+  "version": "0.1.0",
+  "category": "web",
+  "description": "Integrates Sanity Live with Next.js Cache Components in next-sanity v13+ apps.",
+  "intent_triggers": [
+    "use the sanity live cache components agent skill",
+    "run a workflow for sanity live cache components",
+    "help me with sanity live cache components",
+    "我需要處理 sanity live cache components 相關工作",
+    "幫我啟用 sanity live cache components 這個 skill",
+    "用 agent skill 完成 sanity live cache components",
+    "use sanity live cache components from next-sanity"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the sanity live cache components skill for this task.",
+      "invocation": "codex --skill sanity-live-cache-components \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "mcpservers",
+    "mit",
+    "web"
+  ]
+}

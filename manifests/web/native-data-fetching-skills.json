@@ -1,0 +1,49 @@
+{
+  "name": "native-data-fetching-skills",
+  "version": "0.1.0",
+  "category": "web",
+  "description": "Use when implementing or debugging ANY network request, API call, or data fetching.",
+  "intent_triggers": [
+    "use the native data fetching agent skill",
+    "run a workflow for native data fetching",
+    "help me with native data fetching",
+    "我需要處理 native data fetching 相關工作",
+    "幫我啟用 native data fetching 這個 skill",
+    "用 agent skill 完成 native data fetching",
+    "use native data fetching from skills"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the native data fetching skill for this task.",
+      "invocation": "codex --skill native-data-fetching \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "mcpservers",
+    "mit",
+    "web"
+  ]
+}

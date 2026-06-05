@@ -1,0 +1,49 @@
+{
+  "name": "arize-link",
+  "version": "0.1.0",
+  "category": "ai-ml",
+  "description": "Generates deep links to the Arize UI for traces, spans, sessions, datasets, labeling queues, evaluators, and annotation configs.",
+  "intent_triggers": [
+    "use the arize link agent skill",
+    "run a workflow for arize link",
+    "help me with arize link",
+    "我需要處理 arize link 相關工作",
+    "幫我啟用 arize link 這個 skill",
+    "用 agent skill 完成 arize link",
+    "use arize link from awesome-copilot"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the arize link skill for this task.",
+      "invocation": "codex --skill arize-link \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "ai-ml",
+    "mcpservers",
+    "mit"
+  ]
+}

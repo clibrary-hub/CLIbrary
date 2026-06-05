@@ -1,0 +1,49 @@
+{
+  "name": "erk-planning",
+  "version": "0.1.0",
+  "category": "ai-ml",
+  "description": "[REMOVED] This skill has been deleted.",
+  "intent_triggers": [
+    "use the erk planning agent skill",
+    "run a workflow for erk planning",
+    "help me with erk planning",
+    "我需要處理 erk planning 相關工作",
+    "幫我啟用 erk planning 這個 skill",
+    "用 agent skill 完成 erk planning",
+    "use erk planning from erk"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the erk planning skill for this task.",
+      "invocation": "codex --skill erk-planning \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "ai-ml",
+    "mcpservers",
+    "mit"
+  ]
+}

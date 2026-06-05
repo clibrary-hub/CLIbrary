@@ -1,0 +1,15 @@
+{
+  "source": "mcpservers",
+  "listing_url": "https://mcpservers.org/zh-TW/agent-skills",
+  "owner": "huggingface",
+  "repo": "skills",
+  "branch": "HEAD",
+  "skill": "huggingface-datasets",
+  "repo_url": "https://github.com/huggingface/skills",
+  "license": {
+    "spdx": "Apache-2.0",
+    "url": "https://github.com/huggingface/skills/blob/main/LICENSE",
+    "source": "api"
+  },
+  "zip_subdir": "skills-main/skills/huggingface-datasets"
+}

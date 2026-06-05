@@ -1,0 +1,49 @@
+{
+  "name": "python-mcp-server-generator",
+  "version": "0.1.0",
+  "category": "devops",
+  "description": "Generate a complete MCP server project in Python with tools, resources, and proper configuration",
+  "intent_triggers": [
+    "use the python mcp server generator agent skill",
+    "run a workflow for python mcp server generator",
+    "help me with python mcp server generator",
+    "我需要處理 python mcp server generator 相關工作",
+    "幫我啟用 python mcp server generator 這個 skill",
+    "用 agent skill 完成 python mcp server generator",
+    "use python mcp server generator from awesome-copilot"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the python mcp server generator skill for this task.",
+      "invocation": "codex --skill python-mcp-server-generator \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "devops",
+    "mcpservers",
+    "mit"
+  ]
+}

@@ -1,0 +1,49 @@
+{
+  "name": "tom-operations",
+  "version": "0.1.0",
+  "category": "data",
+  "description": "Guide for working with the TOM (Tabular Object Model) wrapper.",
+  "intent_triggers": [
+    "use the tom operations agent skill",
+    "run a workflow for tom operations",
+    "help me with tom operations",
+    "我需要處理 tom operations 相關工作",
+    "幫我啟用 tom operations 這個 skill",
+    "用 agent skill 完成 tom operations",
+    "use tom operations from semantic-link-labs"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the tom operations skill for this task.",
+      "invocation": "codex --skill tom-operations \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "data",
+    "mcpservers",
+    "mit"
+  ]
+}

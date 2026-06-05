@@ -1,0 +1,49 @@
+{
+  "name": "oo-component-documentation",
+  "version": "0.1.0",
+  "category": "ai-ml",
+  "description": "Create or update standardized object-oriented component documentation using a shared template plus mode-specific guidance for new and existing docs.",
+  "intent_triggers": [
+    "use the oo component documentation agent skill",
+    "run a workflow for oo component documentation",
+    "help me with oo component documentation",
+    "我需要處理 oo component documentation 相關工作",
+    "幫我啟用 oo component documentation 這個 skill",
+    "用 agent skill 完成 oo component documentation",
+    "use oo component documentation from awesome-copilot"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the oo component documentation skill for this task.",
+      "invocation": "codex --skill oo-component-documentation \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "ai-ml",
+    "mcpservers",
+    "mit"
+  ]
+}

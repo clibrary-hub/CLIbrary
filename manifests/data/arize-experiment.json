@@ -1,0 +1,49 @@
+{
+  "name": "arize-experiment",
+  "version": "0.1.0",
+  "category": "data",
+  "description": "Creates, runs, and analyzes Arize experiments for evaluating and comparing model performance.",
+  "intent_triggers": [
+    "use the arize experiment agent skill",
+    "run a workflow for arize experiment",
+    "help me with arize experiment",
+    "我需要處理 arize experiment 相關工作",
+    "幫我啟用 arize experiment 這個 skill",
+    "用 agent skill 完成 arize experiment",
+    "use arize experiment from awesome-copilot"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the arize experiment skill for this task.",
+      "invocation": "codex --skill arize-experiment \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "data",
+    "mcpservers",
+    "mit"
+  ]
+}

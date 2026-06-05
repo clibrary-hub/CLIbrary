@@ -1,0 +1,15 @@
+{
+  "source": "mcpservers",
+  "listing_url": "https://mcpservers.org/zh-TW/agent-skills",
+  "owner": "google-labs-code",
+  "repo": "stitch-skills",
+  "branch": "HEAD",
+  "skill": "design-md",
+  "repo_url": "https://github.com/google-labs-code/stitch-skills",
+  "license": {
+    "spdx": "Apache-2.0",
+    "url": "https://github.com/google-labs-code/stitch-skills/blob/main/LICENSE",
+    "source": "api"
+  },
+  "zip_subdir": "stitch-skills-main/plugins/stitch-utilities/skills/design-md"
+}

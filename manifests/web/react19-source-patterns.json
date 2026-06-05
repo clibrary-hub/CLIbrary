@@ -1,0 +1,49 @@
+{
+  "name": "react19-source-patterns",
+  "version": "0.1.0",
+  "category": "web",
+  "description": "Reference for React 19 source-file migration patterns, including API changes, ref handling, and context updates.",
+  "intent_triggers": [
+    "use the react19 source patterns agent skill",
+    "run a workflow for react19 source patterns",
+    "help me with react19 source patterns",
+    "我需要處理 react19 source patterns 相關工作",
+    "幫我啟用 react19 source patterns 這個 skill",
+    "用 agent skill 完成 react19 source patterns",
+    "use react19 source patterns from awesome-copilot"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the react19 source patterns skill for this task.",
+      "invocation": "codex --skill react19-source-patterns \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "mcpservers",
+    "mit",
+    "web"
+  ]
+}

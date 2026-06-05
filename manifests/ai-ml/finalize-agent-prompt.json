@@ -1,0 +1,49 @@
+{
+  "name": "finalize-agent-prompt",
+  "version": "0.1.0",
+  "category": "ai-ml",
+  "description": "Finalize prompt file using the role of an AI agent to polish the prompt for the end user.",
+  "intent_triggers": [
+    "use the finalize agent prompt agent skill",
+    "run a workflow for finalize agent prompt",
+    "help me with finalize agent prompt",
+    "我需要處理 finalize agent prompt 相關工作",
+    "幫我啟用 finalize agent prompt 這個 skill",
+    "用 agent skill 完成 finalize agent prompt",
+    "use finalize agent prompt from awesome-copilot"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the finalize agent prompt skill for this task.",
+      "invocation": "codex --skill finalize-agent-prompt \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "ai-ml",
+    "mcpservers",
+    "mit"
+  ]
+}

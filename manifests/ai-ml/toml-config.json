@@ -1,0 +1,49 @@
+{
+  "name": "toml-config",
+  "version": "0.1.0",
+  "category": "ai-ml",
+  "description": "How to write and use TOML configs in prime-rl.",
+  "intent_triggers": [
+    "use the toml config agent skill",
+    "run a workflow for toml config",
+    "help me with toml config",
+    "我需要處理 toml config 相關工作",
+    "幫我啟用 toml config 這個 skill",
+    "用 agent skill 完成 toml config",
+    "use toml config from prime-rl"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the toml config skill for this task.",
+      "invocation": "codex --skill toml-config \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "ai-ml",
+    "apache-2.0",
+    "mcpservers"
+  ]
+}

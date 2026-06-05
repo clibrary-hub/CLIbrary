@@ -1,0 +1,49 @@
+{
+  "name": "webflow-mcp-safe-publish",
+  "version": "0.1.0",
+  "category": "web",
+  "description": "Publish a Webflow site with a plan-confirm-publish workflow.",
+  "intent_triggers": [
+    "use the webflow mcp safe publish agent skill",
+    "run a workflow for webflow mcp safe publish",
+    "help me with webflow mcp safe publish",
+    "我需要處理 webflow mcp safe publish 相關工作",
+    "幫我啟用 webflow mcp safe publish 這個 skill",
+    "用 agent skill 完成 webflow mcp safe publish",
+    "use webflow mcp safe publish from webflow-skills"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the webflow mcp safe publish skill for this task.",
+      "invocation": "codex --skill webflow-mcp-safe-publish \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "mcpservers",
+    "mit",
+    "web"
+  ]
+}

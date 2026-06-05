@@ -1,0 +1,48 @@
+{
+  "name": "building-dbt-semantic-layer",
+  "version": "0.1.0",
+  "category": "ai-ml",
+  "description": "Use when creating or modifying dbt Semantic Layer components — semantic models, metrics, dimensions, entities, measures, or time spines.",
+  "intent_triggers": [
+    "use the building dbt semantic layer agent skill",
+    "run a workflow for building dbt semantic layer",
+    "help me with building dbt semantic layer",
+    "我需要處理 building dbt semantic layer 相關工作",
+    "幫我啟用 building dbt semantic layer 這個 skill",
+    "用 agent skill 完成 building dbt semantic layer"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the building dbt semantic layer skill for this task.",
+      "invocation": "codex --skill building-dbt-semantic-layer \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "ai-ml",
+    "mit",
+    "skill"
+  ]
+}

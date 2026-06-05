@@ -1,0 +1,49 @@
+{
+  "name": "replay-ux-research",
+  "version": "0.1.0",
+  "category": "web",
+  "description": "Analyze Sentry session replays to surface UX patterns, pain points, and user journeys for a given product area.",
+  "intent_triggers": [
+    "use the replay ux research agent skill",
+    "run a workflow for replay ux research",
+    "help me with replay ux research",
+    "我需要處理 replay ux research 相關工作",
+    "幫我啟用 replay ux research 這個 skill",
+    "用 agent skill 完成 replay ux research",
+    "use replay ux research from sentry-skills"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the replay ux research skill for this task.",
+      "invocation": "codex --skill replay-ux-research \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "apache-2.0",
+    "mcpservers",
+    "web"
+  ]
+}

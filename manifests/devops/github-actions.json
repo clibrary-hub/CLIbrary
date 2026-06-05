@@ -1,0 +1,49 @@
+{
+  "name": "github-actions",
+  "version": "0.1.0",
+  "category": "devops",
+  "description": "GitHub Actions workflow patterns for React Native iOS simulator and Android emulator cloud builds with downloadable artifacts.",
+  "intent_triggers": [
+    "use the github actions agent skill",
+    "run a workflow for github actions",
+    "help me with github actions",
+    "我需要處理 github actions 相關工作",
+    "幫我啟用 github actions 這個 skill",
+    "用 agent skill 完成 github actions",
+    "use github actions from agent-skills"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the github actions skill for this task.",
+      "invocation": "codex --skill github-actions \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "devops",
+    "mcpservers",
+    "mit"
+  ]
+}

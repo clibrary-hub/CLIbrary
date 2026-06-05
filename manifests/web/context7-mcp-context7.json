@@ -1,0 +1,49 @@
+{
+  "name": "context7-mcp-context7",
+  "version": "0.1.0",
+  "category": "web",
+  "description": "This skill should be used when the user asks about libraries, frameworks, API references, or needs code examples.",
+  "intent_triggers": [
+    "use the context7 mcp agent skill",
+    "run a workflow for context7 mcp",
+    "help me with context7 mcp",
+    "我需要處理 context7 mcp 相關工作",
+    "幫我啟用 context7 mcp 這個 skill",
+    "用 agent skill 完成 context7 mcp",
+    "use context7 mcp from context7"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the context7 mcp skill for this task.",
+      "invocation": "codex --skill context7-mcp \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "mcpservers",
+    "mit",
+    "web"
+  ]
+}

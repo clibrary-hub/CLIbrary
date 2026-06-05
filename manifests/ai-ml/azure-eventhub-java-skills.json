@@ -1,0 +1,49 @@
+{
+  "name": "azure-eventhub-java-skills",
+  "version": "0.1.0",
+  "category": "ai-ml",
+  "description": "Build real-time streaming applications with Azure Event Hubs SDK for Java.",
+  "intent_triggers": [
+    "use the azure eventhub java agent skill",
+    "run a workflow for azure eventhub java",
+    "help me with azure eventhub java",
+    "我需要處理 azure eventhub java 相關工作",
+    "幫我啟用 azure eventhub java 這個 skill",
+    "用 agent skill 完成 azure eventhub java",
+    "use azure eventhub java from skills"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the azure eventhub java skill for this task.",
+      "invocation": "codex --skill azure-eventhub-java \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "ai-ml",
+    "mcpservers",
+    "mit"
+  ]
+}

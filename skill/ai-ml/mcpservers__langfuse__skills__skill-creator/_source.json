@@ -1,0 +1,15 @@
+{
+  "source": "mcpservers",
+  "listing_url": "https://mcpservers.org/zh-TW/agent-skills",
+  "owner": "langfuse",
+  "repo": "skills",
+  "branch": "HEAD",
+  "skill": "skill-creator",
+  "repo_url": "https://github.com/langfuse/skills",
+  "license": {
+    "spdx": "MIT",
+    "url": "https://github.com/langfuse/skills/blob/main/LICENSE",
+    "source": "api"
+  },
+  "zip_subdir": "skills-main/.cursor/skills/skill-creator"
+}

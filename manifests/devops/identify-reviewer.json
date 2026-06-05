@@ -1,0 +1,49 @@
+{
+  "name": "identify-reviewer",
+  "version": "0.1.0",
+  "category": "devops",
+  "description": "Identifies the local user's GitHub account and git identity before performing code reviews.",
+  "intent_triggers": [
+    "use the identify reviewer agent skill",
+    "run a workflow for identify reviewer",
+    "help me with identify reviewer",
+    "我需要處理 identify reviewer 相關工作",
+    "幫我啟用 identify reviewer 這個 skill",
+    "用 agent skill 完成 identify reviewer",
+    "use identify reviewer from workerd"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the identify reviewer skill for this task.",
+      "invocation": "codex --skill identify-reviewer \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "apache-2.0",
+    "devops",
+    "mcpservers"
+  ]
+}

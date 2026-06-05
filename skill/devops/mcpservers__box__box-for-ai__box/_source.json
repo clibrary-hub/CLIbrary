@@ -1,0 +1,15 @@
+{
+  "source": "mcpservers",
+  "listing_url": "https://mcpservers.org/zh-TW/agent-skills",
+  "owner": "box",
+  "repo": "box-for-ai",
+  "branch": "HEAD",
+  "skill": "box",
+  "repo_url": "https://github.com/box/box-for-ai",
+  "license": {
+    "spdx": "MIT",
+    "url": "https://github.com/box/box-for-ai/blob/main/LICENSE",
+    "source": "api"
+  },
+  "zip_subdir": "box-for-ai-main/skills/box"
+}

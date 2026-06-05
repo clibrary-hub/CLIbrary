@@ -1,0 +1,49 @@
+{
+  "name": "eval-triage-and-improvement",
+  "version": "0.1.0",
+  "category": "devops",
+  "description": "Use this skill when the user''s Copilot Studio agent evaluations have come back and they need to interpret scores, diagnose root causes of underperforming test cases, find remediation steps, or ana...",
+  "intent_triggers": [
+    "use the eval triage and improvement agent skill",
+    "run a workflow for eval triage and improvement",
+    "help me with eval triage and improvement",
+    "我需要處理 eval triage and improvement 相關工作",
+    "幫我啟用 eval triage and improvement 這個 skill",
+    "用 agent skill 完成 eval triage and improvement",
+    "use eval triage and improvement from eval-guide"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the eval triage and improvement skill for this task.",
+      "invocation": "codex --skill eval-triage-and-improvement \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "devops",
+    "mcpservers",
+    "mit"
+  ]
+}

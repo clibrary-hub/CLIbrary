@@ -1,0 +1,49 @@
+{
+  "name": "comps-analysis",
+  "version": "0.1.0",
+  "category": "finance",
+  "description": "Agent skill for comps analysis workflows.",
+  "intent_triggers": [
+    "use the comps analysis agent skill",
+    "run a workflow for comps analysis",
+    "help me with comps analysis",
+    "我需要處理 comps analysis 相關工作",
+    "幫我啟用 comps analysis 這個 skill",
+    "用 agent skill 完成 comps analysis",
+    "use comps analysis from financial-services-plugins"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the comps analysis skill for this task.",
+      "invocation": "codex --skill comps-analysis \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "apache-2.0",
+    "finance",
+    "mcpservers"
+  ]
+}

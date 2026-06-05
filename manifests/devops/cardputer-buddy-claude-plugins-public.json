@@ -1,0 +1,49 @@
+{
+  "name": "cardputer-buddy-claude-plugins-public",
+  "version": "0.1.0",
+  "category": "devops",
+  "description": "Iterate on the Cardputer-Adv MicroPython app bundle (Claude Buddy, Snake, Hello) after the device is already provisioned via m5-onboard.",
+  "intent_triggers": [
+    "use the cardputer buddy agent skill",
+    "run a workflow for cardputer buddy",
+    "help me with cardputer buddy",
+    "我需要處理 cardputer buddy 相關工作",
+    "幫我啟用 cardputer buddy 這個 skill",
+    "用 agent skill 完成 cardputer buddy",
+    "use cardputer buddy from claude-plugins-public"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the cardputer buddy skill for this task.",
+      "invocation": "codex --skill cardputer-buddy \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "apache-2.0",
+    "devops",
+    "mcpservers"
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "source": "mcpservers",
+  "listing_url": "https://mcpservers.org/zh-TW/agent-skills",
+  "owner": "planetscale",
+  "repo": "vscode-agent-plugin",
+  "branch": "HEAD",
+  "skill": "postgres",
+  "repo_url": "https://github.com/planetscale/vscode-agent-plugin",
+  "license": {
+    "spdx": "MIT",
+    "url": "https://github.com/planetscale/vscode-agent-plugin/blob/main/LICENSE",
+    "source": "api"
+  },
+  "zip_subdir": "vscode-agent-plugin-main/skills/postgres"
+}

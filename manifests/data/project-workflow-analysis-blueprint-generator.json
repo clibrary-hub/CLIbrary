@@ -1,0 +1,49 @@
+{
+  "name": "project-workflow-analysis-blueprint-generator",
+  "version": "0.1.0",
+  "category": "data",
+  "description": "Comprehensive technology-agnostic prompt generator for documenting end-to-end application workflows.",
+  "intent_triggers": [
+    "use the project workflow analysis blueprint generator agent skill",
+    "run a workflow for project workflow analysis blueprint generator",
+    "help me with project workflow analysis blueprint generator",
+    "我需要處理 project workflow analysis blueprint generator 相關工作",
+    "幫我啟用 project workflow analysis blueprint generator 這個 skill",
+    "用 agent skill 完成 project workflow analysis blueprint generator",
+    "use project workflow analysis blueprint generator from awesome-copilot"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the project workflow analysis blueprint generator skill for this task.",
+      "invocation": "codex --skill project-workflow-analysis-blueprint-generator \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "data",
+    "mcpservers",
+    "mit"
+  ]
+}

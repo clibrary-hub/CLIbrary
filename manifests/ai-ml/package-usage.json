@@ -1,0 +1,49 @@
+{
+  "name": "package-usage",
+  "version": "0.1.0",
+  "category": "ai-ml",
+  "description": "Track which stacks across a Pulumi organization use a specific package and at what versions.",
+  "intent_triggers": [
+    "use the package usage agent skill",
+    "run a workflow for package usage",
+    "help me with package usage",
+    "我需要處理 package usage 相關工作",
+    "幫我啟用 package usage 這個 skill",
+    "用 agent skill 完成 package usage",
+    "use package usage from agent-skills"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the package usage skill for this task.",
+      "invocation": "codex --skill package-usage \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "ai-ml",
+    "apache-2.0",
+    "mcpservers"
+  ]
+}

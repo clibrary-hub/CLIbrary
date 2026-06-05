@@ -1,0 +1,49 @@
+{
+  "name": "go-mcp-server-generator",
+  "version": "0.1.0",
+  "category": "devops",
+  "description": "Generate a complete Go MCP server project with proper structure, dependencies, and implementation using the official github.com/modelcontextprotocol/go-sdk.",
+  "intent_triggers": [
+    "use the go mcp server generator agent skill",
+    "run a workflow for go mcp server generator",
+    "help me with go mcp server generator",
+    "我需要處理 go mcp server generator 相關工作",
+    "幫我啟用 go mcp server generator 這個 skill",
+    "用 agent skill 完成 go mcp server generator",
+    "use go mcp server generator from awesome-copilot"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the go mcp server generator skill for this task.",
+      "invocation": "codex --skill go-mcp-server-generator \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "devops",
+    "mcpservers",
+    "mit"
+  ]
+}

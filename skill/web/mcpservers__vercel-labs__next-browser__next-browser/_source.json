@@ -1,0 +1,15 @@
+{
+  "source": "mcpservers",
+  "listing_url": "https://mcpservers.org/zh-TW/agent-skills/author/vercel",
+  "owner": "vercel-labs",
+  "repo": "next-browser",
+  "branch": "HEAD",
+  "skill": "next-browser",
+  "repo_url": "https://github.com/vercel-labs/next-browser",
+  "license": {
+    "spdx": "MIT",
+    "url": "https://github.com/vercel-labs/next-browser/blob/main/LICENSE",
+    "source": "api"
+  },
+  "zip_subdir": "next-browser-main/skills/next-browser"
+}

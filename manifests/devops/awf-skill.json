@@ -1,0 +1,49 @@
+{
+  "name": "awf-skill",
+  "version": "0.1.0",
+  "category": "devops",
+  "description": "Use the AWF (Agentic Workflow Firewall) to run commands with network isolation and domain whitelisting.",
+  "intent_triggers": [
+    "use the awf skill agent skill",
+    "run a workflow for awf skill",
+    "help me with awf skill",
+    "我需要處理 awf skill 相關工作",
+    "幫我啟用 awf skill 這個 skill",
+    "用 agent skill 完成 awf skill",
+    "use awf skill from gh-aw-firewall"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the awf skill skill for this task.",
+      "invocation": "codex --skill awf-skill \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "devops",
+    "mcpservers",
+    "mit"
+  ]
+}

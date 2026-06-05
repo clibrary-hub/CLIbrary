@@ -1,0 +1,48 @@
+{
+  "name": "xitter",
+  "version": "0.1.0",
+  "category": "devops",
+  "description": "Interact with X/Twitter 通过 x-cli terminal client using official X API credentials.",
+  "intent_triggers": [
+    "use the xitter agent skill",
+    "run a workflow for xitter",
+    "help me with xitter",
+    "我需要處理 xitter 相關工作",
+    "幫我啟用 xitter 這個 skill",
+    "用 agent skill 完成 xitter"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the xitter skill for this task.",
+      "invocation": "codex --skill xitter \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "devops",
+    "mit",
+    "skill"
+  ]
+}

@@ -1,0 +1,49 @@
+{
+  "name": "yaml",
+  "version": "0.1.0",
+  "category": "ai-ml",
+  "description": "YAML wire format for json-render with streaming parser, prompt generation, and AI SDK transform.",
+  "intent_triggers": [
+    "use the yaml agent skill",
+    "run a workflow for yaml",
+    "help me with yaml",
+    "我需要處理 yaml 相關工作",
+    "幫我啟用 yaml 這個 skill",
+    "用 agent skill 完成 yaml",
+    "use yaml from json-render"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the yaml skill for this task.",
+      "invocation": "codex --skill yaml \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "ai-ml",
+    "apache-2.0",
+    "mcpservers"
+  ]
+}

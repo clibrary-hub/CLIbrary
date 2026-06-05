@@ -1,0 +1,49 @@
+{
+  "name": "acreadiness-assess",
+  "version": "0.1.0",
+  "category": "devops",
+  "description": "Run the AgentRC readiness assessment on the current repository and produce a static HTML dashboard at reports/index.html.",
+  "intent_triggers": [
+    "use the acreadiness assess agent skill",
+    "run a workflow for acreadiness assess",
+    "help me with acreadiness assess",
+    "我需要處理 acreadiness assess 相關工作",
+    "幫我啟用 acreadiness assess 這個 skill",
+    "用 agent skill 完成 acreadiness assess",
+    "use acreadiness assess from awesome-copilot"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the acreadiness assess skill for this task.",
+      "invocation": "codex --skill acreadiness-assess \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "devops",
+    "mcpservers",
+    "mit"
+  ]
+}

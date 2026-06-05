@@ -1,0 +1,49 @@
+{
+  "name": "ai-ready",
+  "version": "0.1.0",
+  "category": "devops",
+  "description": "Make any repo AI-ready — analyzes your codebase and generates AGENTS.md, copilot-instructions.md, CI workflows, issue templates, and more.",
+  "intent_triggers": [
+    "use the ai ready agent skill",
+    "run a workflow for ai ready",
+    "help me with ai ready",
+    "我需要處理 ai ready 相關工作",
+    "幫我啟用 ai ready 這個 skill",
+    "用 agent skill 完成 ai ready",
+    "use ai ready from awesome-copilot"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the ai ready skill for this task.",
+      "invocation": "codex --skill ai-ready \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "devops",
+    "mcpservers",
+    "mit"
+  ]
+}

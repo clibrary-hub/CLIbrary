@@ -1,0 +1,49 @@
+{
+  "name": "azure-compute-batch-java",
+  "version": "0.1.0",
+  "category": "devops",
+  "description": "Agent skill for azure compute batch java workflows.",
+  "intent_triggers": [
+    "use the azure compute batch java agent skill",
+    "run a workflow for azure compute batch java",
+    "help me with azure compute batch java",
+    "我需要處理 azure compute batch java 相關工作",
+    "幫我啟用 azure compute batch java 這個 skill",
+    "用 agent skill 完成 azure compute batch java",
+    "use azure compute batch java from agent-skills"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the azure compute batch java skill for this task.",
+      "invocation": "codex --skill azure-compute-batch-java \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "devops",
+    "mcpservers",
+    "mit"
+  ]
+}

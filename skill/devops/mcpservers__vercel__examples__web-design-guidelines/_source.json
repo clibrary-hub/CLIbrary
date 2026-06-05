@@ -1,0 +1,15 @@
+{
+  "source": "mcpservers",
+  "listing_url": "https://mcpservers.org/zh-TW/agent-skills/author/vercel",
+  "owner": "vercel",
+  "repo": "examples",
+  "branch": "HEAD",
+  "skill": "web-design-guidelines",
+  "repo_url": "https://github.com/vercel/examples",
+  "license": {
+    "spdx": "MIT",
+    "url": "https://github.com/vercel/examples/blob/main/license.md",
+    "source": "api"
+  },
+  "zip_subdir": "examples-main/.agents/skills/web-design-guidelines"
+}

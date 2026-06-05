@@ -1,0 +1,49 @@
+{
+  "name": "copilot-instructions-blueprint-generator",
+  "version": "0.1.0",
+  "category": "devops",
+  "description": "Technology-agnostic blueprint generator for creating comprehensive copilot-instructions.md files that guide GitHub Copilot to produce code consistent with project standards, architecture patterns,...",
+  "intent_triggers": [
+    "use the copilot instructions blueprint generator agent skill",
+    "run a workflow for copilot instructions blueprint generator",
+    "help me with copilot instructions blueprint generator",
+    "我需要處理 copilot instructions blueprint generator 相關工作",
+    "幫我啟用 copilot instructions blueprint generator 這個 skill",
+    "用 agent skill 完成 copilot instructions blueprint generator",
+    "use copilot instructions blueprint generator from awesome-copilot"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the copilot instructions blueprint generator skill for this task.",
+      "invocation": "codex --skill copilot-instructions-blueprint-generator \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "devops",
+    "mcpservers",
+    "mit"
+  ]
+}

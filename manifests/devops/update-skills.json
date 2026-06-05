@@ -1,0 +1,49 @@
+{
+  "name": "update-skills",
+  "version": "0.1.0",
+  "category": "devops",
+  "description": "Create or update repository skills and instructions when major learnings are discovered during a session.",
+  "intent_triggers": [
+    "use the update skills agent skill",
+    "run a workflow for update skills",
+    "help me with update skills",
+    "我需要處理 update skills 相關工作",
+    "幫我啟用 update skills 這個 skill",
+    "用 agent skill 完成 update skills",
+    "use update skills from vscode"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the update skills skill for this task.",
+      "invocation": "codex --skill update-skills \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "devops",
+    "mcpservers",
+    "mit"
+  ]
+}

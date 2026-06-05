@@ -1,0 +1,15 @@
+{
+  "source": "mcpservers",
+  "listing_url": "https://mcpservers.org/zh-TW/agent-skills",
+  "owner": "getsentry",
+  "repo": "sdk-skills",
+  "branch": "HEAD",
+  "skill": "linear-sdk-telemetry-labeler",
+  "repo_url": "https://github.com/getsentry/sdk-skills",
+  "license": {
+    "spdx": "Apache-2.0",
+    "url": "https://github.com/getsentry/sdk-skills/blob/main/LICENSE",
+    "source": "api"
+  },
+  "zip_subdir": "sdk-skills-main/plugins/sentry-sdk-skills/skills/linear-sdk-telemetry-labeler"
+}

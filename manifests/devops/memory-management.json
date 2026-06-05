@@ -1,0 +1,49 @@
+{
+  "name": "memory-management",
+  "version": "0.1.0",
+  "category": "devops",
+  "description": "Two-tier memory system that makes Claude a true workplace collaborator.",
+  "intent_triggers": [
+    "use the memory management agent skill",
+    "run a workflow for memory management",
+    "help me with memory management",
+    "我需要處理 memory management 相關工作",
+    "幫我啟用 memory management 這個 skill",
+    "用 agent skill 完成 memory management",
+    "use memory management from knowledge-work-plugins"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the memory management skill for this task.",
+      "invocation": "codex --skill memory-management \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "apache-2.0",
+    "devops",
+    "mcpservers"
+  ]
+}

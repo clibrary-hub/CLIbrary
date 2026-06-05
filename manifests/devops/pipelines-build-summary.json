@@ -1,0 +1,49 @@
+{
+  "name": "pipelines-build-summary",
+  "version": "0.1.0",
+  "category": "devops",
+  "description": "List, inspect, and troubleshoot Azure DevOps pipeline builds.",
+  "intent_triggers": [
+    "use the pipelines build summary agent skill",
+    "run a workflow for pipelines build summary",
+    "help me with pipelines build summary",
+    "我需要處理 pipelines build summary 相關工作",
+    "幫我啟用 pipelines build summary 這個 skill",
+    "用 agent skill 完成 pipelines build summary",
+    "use pipelines build summary from azure-devops-skills"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the pipelines build summary skill for this task.",
+      "invocation": "codex --skill pipelines-build-summary \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "devops",
+    "mcpservers",
+    "mit"
+  ]
+}

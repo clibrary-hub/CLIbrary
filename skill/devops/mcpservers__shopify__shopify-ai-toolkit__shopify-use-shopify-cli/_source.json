@@ -1,0 +1,15 @@
+{
+  "source": "mcpservers",
+  "listing_url": "https://mcpservers.org/zh-TW/agent-skills",
+  "owner": "shopify",
+  "repo": "shopify-ai-toolkit",
+  "branch": "HEAD",
+  "skill": "shopify-use-shopify-cli",
+  "repo_url": "https://github.com/shopify/shopify-ai-toolkit",
+  "license": {
+    "spdx": "MIT",
+    "url": "https://github.com/Shopify/Shopify-AI-Toolkit/blob/main/LICENSE",
+    "source": "api"
+  },
+  "zip_subdir": "Shopify-AI-Toolkit-main/skills/shopify-use-shopify-cli"
+}

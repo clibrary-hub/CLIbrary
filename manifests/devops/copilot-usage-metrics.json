@@ -1,0 +1,49 @@
+{
+  "name": "copilot-usage-metrics",
+  "version": "0.1.0",
+  "category": "devops",
+  "description": "Retrieve and display GitHub Copilot usage metrics for organizations and enterprises using the GitHub CLI and REST API.",
+  "intent_triggers": [
+    "use the copilot usage metrics agent skill",
+    "run a workflow for copilot usage metrics",
+    "help me with copilot usage metrics",
+    "我需要處理 copilot usage metrics 相關工作",
+    "幫我啟用 copilot usage metrics 這個 skill",
+    "用 agent skill 完成 copilot usage metrics",
+    "use copilot usage metrics from awesome-copilot"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the copilot usage metrics skill for this task.",
+      "invocation": "codex --skill copilot-usage-metrics \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "devops",
+    "mcpservers",
+    "mit"
+  ]
+}

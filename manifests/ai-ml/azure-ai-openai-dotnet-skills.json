@@ -1,0 +1,49 @@
+{
+  "name": "azure-ai-openai-dotnet-skills",
+  "version": "0.1.0",
+  "category": "ai-ml",
+  "description": "Agent skill for azure ai openai dotnet workflows.",
+  "intent_triggers": [
+    "use the azure ai openai dotnet agent skill",
+    "run a workflow for azure ai openai dotnet",
+    "help me with azure ai openai dotnet",
+    "我需要處理 azure ai openai dotnet 相關工作",
+    "幫我啟用 azure ai openai dotnet 這個 skill",
+    "用 agent skill 完成 azure ai openai dotnet",
+    "use azure ai openai dotnet from skills"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the azure ai openai dotnet skill for this task.",
+      "invocation": "codex --skill azure-ai-openai-dotnet \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "ai-ml",
+    "mcpservers",
+    "mit"
+  ]
+}

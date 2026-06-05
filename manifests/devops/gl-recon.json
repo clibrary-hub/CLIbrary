@@ -1,0 +1,49 @@
+{
+  "name": "gl-recon",
+  "version": "0.1.0",
+  "category": "devops",
+  "description": "Reconcile general ledger to subledger for a trade date or period — match at the position or transaction level, surface breaks, and classify each break by likely cause.",
+  "intent_triggers": [
+    "use the gl recon agent skill",
+    "run a workflow for gl recon",
+    "help me with gl recon",
+    "我需要處理 gl recon 相關工作",
+    "幫我啟用 gl recon 這個 skill",
+    "用 agent skill 完成 gl recon",
+    "use gl recon from financial-services-plugins"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the gl recon skill for this task.",
+      "invocation": "codex --skill gl-recon \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "apache-2.0",
+    "devops",
+    "mcpservers"
+  ]
+}

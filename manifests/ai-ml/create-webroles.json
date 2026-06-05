@@ -1,0 +1,49 @@
+{
+  "name": "create-webroles",
+  "version": "0.1.0",
+  "category": "ai-ml",
+  "description": "Agent skill for create webroles workflows.",
+  "intent_triggers": [
+    "use the create webroles agent skill",
+    "run a workflow for create webroles",
+    "help me with create webroles",
+    "我需要處理 create webroles 相關工作",
+    "幫我啟用 create webroles 這個 skill",
+    "用 agent skill 完成 create webroles",
+    "use create webroles from power-platform-skills"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the create webroles skill for this task.",
+      "invocation": "codex --skill create-webroles \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "ai-ml",
+    "mcpservers",
+    "mit"
+  ]
+}

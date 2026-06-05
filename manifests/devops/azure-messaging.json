@@ -1,0 +1,49 @@
+{
+  "name": "azure-messaging",
+  "version": "0.1.0",
+  "category": "devops",
+  "description": "Troubleshoot and resolve issues with Azure Messaging SDKs for Event Hubs and Service Bus.",
+  "intent_triggers": [
+    "use the azure messaging agent skill",
+    "run a workflow for azure messaging",
+    "help me with azure messaging",
+    "我需要處理 azure messaging 相關工作",
+    "幫我啟用 azure messaging 這個 skill",
+    "用 agent skill 完成 azure messaging",
+    "use azure messaging from azure-skills"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the azure messaging skill for this task.",
+      "invocation": "codex --skill azure-messaging \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "devops",
+    "mcpservers",
+    "mit"
+  ]
+}

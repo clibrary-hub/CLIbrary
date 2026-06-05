@@ -1,0 +1,49 @@
+{
+  "name": "data-visualization",
+  "version": "0.1.0",
+  "category": "ai-ml",
+  "description": "Use for creating publication-quality charts and multi-panel analysis summaries.",
+  "intent_triggers": [
+    "use the data visualization agent skill",
+    "run a workflow for data visualization",
+    "help me with data visualization",
+    "我需要處理 data visualization 相關工作",
+    "幫我啟用 data visualization 這個 skill",
+    "用 agent skill 完成 data visualization",
+    "use data visualization from deepagents"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the data visualization skill for this task.",
+      "invocation": "codex --skill data-visualization \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "ai-ml",
+    "mcpservers",
+    "mit"
+  ]
+}

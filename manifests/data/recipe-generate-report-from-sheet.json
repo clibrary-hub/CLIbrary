@@ -1,0 +1,49 @@
+{
+  "name": "recipe-generate-report-from-sheet",
+  "version": "0.1.0",
+  "category": "data",
+  "description": "Read data from a Google Sheet and create a formatted Google Docs report.",
+  "intent_triggers": [
+    "use the recipe generate report from sheet agent skill",
+    "run a workflow for recipe generate report from sheet",
+    "help me with recipe generate report from sheet",
+    "我需要處理 recipe generate report from sheet 相關工作",
+    "幫我啟用 recipe generate report from sheet 這個 skill",
+    "用 agent skill 完成 recipe generate report from sheet",
+    "use recipe generate report from sheet from cli"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the recipe generate report from sheet skill for this task.",
+      "invocation": "codex --skill recipe-generate-report-from-sheet \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "apache-2.0",
+    "data",
+    "mcpservers"
+  ]
+}

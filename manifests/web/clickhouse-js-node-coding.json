@@ -1,0 +1,49 @@
+{
+  "name": "clickhouse-js-node-coding",
+  "version": "0.1.0",
+  "category": "web",
+  "description": "Agent skill for clickhouse js node coding workflows.",
+  "intent_triggers": [
+    "use the clickhouse js node coding agent skill",
+    "run a workflow for clickhouse js node coding",
+    "help me with clickhouse js node coding",
+    "我需要處理 clickhouse js node coding 相關工作",
+    "幫我啟用 clickhouse js node coding 這個 skill",
+    "用 agent skill 完成 clickhouse js node coding",
+    "use clickhouse js node coding from clickhouse-js"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the clickhouse js node coding skill for this task.",
+      "invocation": "codex --skill clickhouse-js-node-coding \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "apache-2.0",
+    "mcpservers",
+    "web"
+  ]
+}

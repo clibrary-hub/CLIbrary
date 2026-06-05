@@ -1,0 +1,49 @@
+{
+  "name": "openapi-to-application-code",
+  "version": "0.1.0",
+  "category": "devops",
+  "description": "Generate a complete, production-ready application from an OpenAPI specification",
+  "intent_triggers": [
+    "use the openapi to application code agent skill",
+    "run a workflow for openapi to application code",
+    "help me with openapi to application code",
+    "我需要處理 openapi to application code 相關工作",
+    "幫我啟用 openapi to application code 這個 skill",
+    "用 agent skill 完成 openapi to application code",
+    "use openapi to application code from awesome-copilot"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the openapi to application code skill for this task.",
+      "invocation": "codex --skill openapi-to-application-code \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "devops",
+    "mcpservers",
+    "mit"
+  ]
+}

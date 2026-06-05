@@ -1,0 +1,49 @@
+{
+  "name": "data-breach-blast-radius",
+  "version": "0.1.0",
+  "category": "devops",
+  "description": "Pre-breach impact analysis: inventories sensitive data (PII, PHI, PCI-DSS, credentials), traces data flows, scores exposure vectors, and produces a regulatory blast radius report with fine ranges s...",
+  "intent_triggers": [
+    "use the data breach blast radius agent skill",
+    "run a workflow for data breach blast radius",
+    "help me with data breach blast radius",
+    "我需要處理 data breach blast radius 相關工作",
+    "幫我啟用 data breach blast radius 這個 skill",
+    "用 agent skill 完成 data breach blast radius",
+    "use data breach blast radius from awesome-copilot"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the data breach blast radius skill for this task.",
+      "invocation": "codex --skill data-breach-blast-radius \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "devops",
+    "mcpservers",
+    "mit"
+  ]
+}

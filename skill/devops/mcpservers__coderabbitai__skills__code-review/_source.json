@@ -1,0 +1,15 @@
+{
+  "source": "mcpservers",
+  "listing_url": "https://mcpservers.org/zh-TW/agent-skills",
+  "owner": "coderabbitai",
+  "repo": "skills",
+  "branch": "HEAD",
+  "skill": "code-review",
+  "repo_url": "https://github.com/coderabbitai/skills",
+  "license": {
+    "spdx": "MIT",
+    "url": "https://github.com/coderabbitai/skills/blob/main/LICENSE",
+    "source": "api"
+  },
+  "zip_subdir": "skills-main/skills/code-review"
+}

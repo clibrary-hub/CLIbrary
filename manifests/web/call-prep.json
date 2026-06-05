@@ -1,0 +1,49 @@
+{
+  "name": "call-prep",
+  "version": "0.1.0",
+  "category": "web",
+  "description": "Prepare for a sales call with account context, attendee research, and suggested agenda.",
+  "intent_triggers": [
+    "use the call prep agent skill",
+    "run a workflow for call prep",
+    "help me with call prep",
+    "我需要處理 call prep 相關工作",
+    "幫我啟用 call prep 這個 skill",
+    "用 agent skill 完成 call prep",
+    "use call prep from knowledge-work-plugins"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the call prep skill for this task.",
+      "invocation": "codex --skill call-prep \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "apache-2.0",
+    "mcpservers",
+    "web"
+  ]
+}

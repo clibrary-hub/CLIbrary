@@ -1,0 +1,49 @@
+{
+  "name": "csharp-tunit",
+  "version": "0.1.0",
+  "category": "devops",
+  "description": "Get best practices for TUnit unit testing, including data-driven tests",
+  "intent_triggers": [
+    "use the csharp tunit agent skill",
+    "run a workflow for csharp tunit",
+    "help me with csharp tunit",
+    "我需要處理 csharp tunit 相關工作",
+    "幫我啟用 csharp tunit 這個 skill",
+    "用 agent skill 完成 csharp tunit",
+    "use csharp tunit from awesome-copilot"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the csharp tunit skill for this task.",
+      "invocation": "codex --skill csharp-tunit \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "devops",
+    "mcpservers",
+    "mit"
+  ]
+}

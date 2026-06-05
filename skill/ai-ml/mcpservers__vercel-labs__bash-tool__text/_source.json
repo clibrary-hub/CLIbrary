@@ -1,0 +1,15 @@
+{
+  "source": "mcpservers",
+  "listing_url": "https://mcpservers.org/zh-TW/agent-skills/author/vercel",
+  "owner": "vercel-labs",
+  "repo": "bash-tool",
+  "branch": "HEAD",
+  "skill": "text",
+  "repo_url": "https://github.com/vercel-labs/bash-tool",
+  "license": {
+    "spdx": "MIT",
+    "url": "https://github.com/vercel-labs/bash-tool/blob/main/LICENSE",
+    "source": "api"
+  },
+  "zip_subdir": "bash-tool-main/examples/skills-tool/skills/text"
+}

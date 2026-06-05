@@ -1,0 +1,49 @@
+{
+  "name": "close-management",
+  "version": "0.1.0",
+  "category": "finance",
+  "description": "Manage the month-end close process with task sequencing, dependencies, and status tracking.",
+  "intent_triggers": [
+    "use the close management agent skill",
+    "run a workflow for close management",
+    "help me with close management",
+    "我需要處理 close management 相關工作",
+    "幫我啟用 close management 這個 skill",
+    "用 agent skill 完成 close management",
+    "use close management from knowledge-work-plugins"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the close management skill for this task.",
+      "invocation": "codex --skill close-management \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "apache-2.0",
+    "finance",
+    "mcpservers"
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "source": "mcpservers",
+  "listing_url": "https://mcpservers.org/zh-TW/agent-skills",
+  "owner": "getsentry",
+  "repo": "sentry-for-cursor",
+  "branch": "HEAD",
+  "skill": "sentry-ios-swift-setup",
+  "repo_url": "https://github.com/getsentry/sentry-for-cursor",
+  "license": {
+    "spdx": "MIT",
+    "url": "https://github.com/getsentry/sentry-for-cursor/blob/main/LICENSE",
+    "source": "api"
+  },
+  "zip_subdir": "sentry-for-cursor-main/skills/sentry-ios-swift-setup"
+}

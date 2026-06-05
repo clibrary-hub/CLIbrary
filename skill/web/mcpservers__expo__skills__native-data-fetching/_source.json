@@ -1,0 +1,15 @@
+{
+  "source": "mcpservers",
+  "listing_url": "https://mcpservers.org/zh-TW/agent-skills",
+  "owner": "expo",
+  "repo": "skills",
+  "branch": "HEAD",
+  "skill": "native-data-fetching",
+  "repo_url": "https://github.com/expo/skills",
+  "license": {
+    "spdx": "MIT",
+    "url": "https://github.com/expo/skills/blob/main/LICENSE",
+    "source": "api"
+  },
+  "zip_subdir": "skills-main/plugins/expo/skills/native-data-fetching"
+}

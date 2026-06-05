@@ -1,0 +1,15 @@
+{
+  "source": "mcpservers",
+  "listing_url": "https://mcpservers.org/zh-TW/agent-skills",
+  "owner": "atlassian",
+  "repo": "atlassian-mcp-server",
+  "branch": "main",
+  "skill": "capture-tasks-from-meeting-notes",
+  "repo_url": "https://github.com/atlassian/atlassian-mcp-server",
+  "license": {
+    "spdx": "Apache-2.0",
+    "url": "https://github.com/atlassian/atlassian-mcp-server/blob/main/LICENSE",
+    "source": "api"
+  },
+  "zip_subdir": "atlassian-mcp-server-main/skills/capture-tasks-from-meeting-notes"
+}

@@ -1,0 +1,49 @@
+{
+  "name": "create-tldr-page",
+  "version": "0.1.0",
+  "category": "web",
+  "description": "Create a tldr page from documentation URLs and command examples, requiring both URL and command name.",
+  "intent_triggers": [
+    "use the create tldr page agent skill",
+    "run a workflow for create tldr page",
+    "help me with create tldr page",
+    "我需要處理 create tldr page 相關工作",
+    "幫我啟用 create tldr page 這個 skill",
+    "用 agent skill 完成 create tldr page",
+    "use create tldr page from awesome-copilot"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the create tldr page skill for this task.",
+      "invocation": "codex --skill create-tldr-page \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "mcpservers",
+    "mit",
+    "web"
+  ]
+}

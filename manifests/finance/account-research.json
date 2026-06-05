@@ -1,0 +1,49 @@
+{
+  "name": "account-research",
+  "version": "0.1.0",
+  "category": "finance",
+  "description": "Research a company or person and get actionable sales intel.",
+  "intent_triggers": [
+    "use the account research agent skill",
+    "run a workflow for account research",
+    "help me with account research",
+    "我需要處理 account research 相關工作",
+    "幫我啟用 account research 這個 skill",
+    "用 agent skill 完成 account research",
+    "use account research from knowledge-work-plugins"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the account research skill for this task.",
+      "invocation": "codex --skill account-research \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "apache-2.0",
+    "finance",
+    "mcpservers"
+  ]
+}

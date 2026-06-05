@@ -1,0 +1,15 @@
+{
+  "source": "mcpservers",
+  "listing_url": "https://mcpservers.org/zh-TW/agent-skills",
+  "owner": "firebase",
+  "repo": "genkit",
+  "branch": "HEAD",
+  "skill": "developing-genkit-tooling",
+  "repo_url": "https://github.com/firebase/genkit",
+  "license": {
+    "spdx": "Apache-2.0",
+    "url": "https://github.com/genkit-ai/genkit/blob/main/LICENSE",
+    "source": "api"
+  },
+  "zip_subdir": "genkit-main/skills/developing-genkit-tooling"
+}

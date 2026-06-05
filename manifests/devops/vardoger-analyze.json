@@ -1,0 +1,49 @@
+{
+  "name": "vardoger-analyze",
+  "version": "0.1.0",
+  "category": "devops",
+  "description": "Use when the user asks to personalize the GitHub Copilot CLI assistant, adapt Copilot to their style, use vardoger, or analyze their Copilot CLI conversation history.",
+  "intent_triggers": [
+    "use the vardoger analyze agent skill",
+    "run a workflow for vardoger analyze",
+    "help me with vardoger analyze",
+    "我需要處理 vardoger analyze 相關工作",
+    "幫我啟用 vardoger analyze 這個 skill",
+    "用 agent skill 完成 vardoger analyze",
+    "use vardoger analyze from awesome-copilot"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the vardoger analyze skill for this task.",
+      "invocation": "codex --skill vardoger-analyze \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "devops",
+    "mcpservers",
+    "mit"
+  ]
+}

@@ -1,0 +1,49 @@
+{
+  "name": "recipe-label-and-archive-emails",
+  "version": "0.1.0",
+  "category": "data",
+  "description": "Apply Gmail labels to matching messages and archive them to keep your inbox clean.",
+  "intent_triggers": [
+    "use the recipe label and archive emails agent skill",
+    "run a workflow for recipe label and archive emails",
+    "help me with recipe label and archive emails",
+    "我需要處理 recipe label and archive emails 相關工作",
+    "幫我啟用 recipe label and archive emails 這個 skill",
+    "用 agent skill 完成 recipe label and archive emails",
+    "use recipe label and archive emails from cli"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the recipe label and archive emails skill for this task.",
+      "invocation": "codex --skill recipe-label-and-archive-emails \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "apache-2.0",
+    "data",
+    "mcpservers"
+  ]
+}

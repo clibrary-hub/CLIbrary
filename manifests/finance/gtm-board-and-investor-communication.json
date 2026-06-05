@@ -1,0 +1,49 @@
+{
+  "name": "gtm-board-and-investor-communication",
+  "version": "0.1.0",
+  "category": "finance",
+  "description": "Board meeting preparation, investor updates, and executive communication.",
+  "intent_triggers": [
+    "use the gtm board and investor communication agent skill",
+    "run a workflow for gtm board and investor communication",
+    "help me with gtm board and investor communication",
+    "我需要處理 gtm board and investor communication 相關工作",
+    "幫我啟用 gtm board and investor communication 這個 skill",
+    "用 agent skill 完成 gtm board and investor communication",
+    "use gtm board and investor communication from awesome-copilot"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the gtm board and investor communication skill for this task.",
+      "invocation": "codex --skill gtm-board-and-investor-communication \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "finance",
+    "mcpservers",
+    "mit"
+  ]
+}

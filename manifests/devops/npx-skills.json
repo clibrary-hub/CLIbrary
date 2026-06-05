@@ -1,0 +1,49 @@
+{
+  "name": "npx-skills",
+  "version": "0.1.0",
+  "category": "devops",
+  "description": "This skill should be used when working with the npx skills CLI (skills@1.4.5 by Vercel Labs) for managing agent skills — installing, discovering, updating, and publishing portable AI agent instruct...",
+  "intent_triggers": [
+    "use the npx skills agent skill",
+    "run a workflow for npx skills",
+    "help me with npx skills",
+    "我需要處理 npx skills 相關工作",
+    "幫我啟用 npx skills 這個 skill",
+    "用 agent skill 完成 npx skills",
+    "use npx skills from erk"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the npx skills skill for this task.",
+      "invocation": "codex --skill npx-skills \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "devops",
+    "mcpservers",
+    "mit"
+  ]
+}

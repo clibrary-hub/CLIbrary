@@ -1,0 +1,49 @@
+{
+  "name": "pnpm-upgrade",
+  "version": "0.1.0",
+  "category": "devops",
+  "description": "Keep pnpm current: run pnpm self-update/corepack prepare, align packageManager in package.json, and bump pnpm/action-setup + pinned pnpm versions in .github/workflows to the latest release.",
+  "intent_triggers": [
+    "use the pnpm upgrade agent skill",
+    "run a workflow for pnpm upgrade",
+    "help me with pnpm upgrade",
+    "我需要處理 pnpm upgrade 相關工作",
+    "幫我啟用 pnpm upgrade 這個 skill",
+    "用 agent skill 完成 pnpm upgrade",
+    "use pnpm upgrade from openai-agents-js"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the pnpm upgrade skill for this task.",
+      "invocation": "codex --skill pnpm-upgrade \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "devops",
+    "mcpservers",
+    "mit"
+  ]
+}

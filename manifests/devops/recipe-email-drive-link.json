@@ -1,0 +1,49 @@
+{
+  "name": "recipe-email-drive-link",
+  "version": "0.1.0",
+  "category": "devops",
+  "description": "Share a Google Drive file and email the link with a message to recipients.",
+  "intent_triggers": [
+    "use the recipe email drive link agent skill",
+    "run a workflow for recipe email drive link",
+    "help me with recipe email drive link",
+    "我需要處理 recipe email drive link 相關工作",
+    "幫我啟用 recipe email drive link 這個 skill",
+    "用 agent skill 完成 recipe email drive link",
+    "use recipe email drive link from cli"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the recipe email drive link skill for this task.",
+      "invocation": "codex --skill recipe-email-drive-link \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "apache-2.0",
+    "devops",
+    "mcpservers"
+  ]
+}

@@ -1,0 +1,49 @@
+{
+  "name": "doc-coauthoring-skills",
+  "version": "0.1.0",
+  "category": "devops",
+  "description": "Guide users through a structured workflow for co-authoring documentation.",
+  "intent_triggers": [
+    "use the doc coauthoring agent skill",
+    "run a workflow for doc coauthoring",
+    "help me with doc coauthoring",
+    "我需要處理 doc coauthoring 相關工作",
+    "幫我啟用 doc coauthoring 這個 skill",
+    "用 agent skill 完成 doc coauthoring",
+    "use doc coauthoring from skills"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the doc coauthoring skill for this task.",
+      "invocation": "codex --skill doc-coauthoring \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "apache-2.0",
+    "devops",
+    "mcpservers"
+  ]
+}

@@ -1,0 +1,49 @@
+{
+  "name": "setting-up-astro-project",
+  "version": "0.1.0",
+  "category": "devops",
+  "description": "Initialize and configure Astro/Airflow projects.",
+  "intent_triggers": [
+    "use the setting up astro project agent skill",
+    "run a workflow for setting up astro project",
+    "help me with setting up astro project",
+    "我需要處理 setting up astro project 相關工作",
+    "幫我啟用 setting up astro project 這個 skill",
+    "用 agent skill 完成 setting up astro project",
+    "use setting up astro project from agents"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the setting up astro project skill for this task.",
+      "invocation": "codex --skill setting-up-astro-project \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "apache-2.0",
+    "devops",
+    "mcpservers"
+  ]
+}

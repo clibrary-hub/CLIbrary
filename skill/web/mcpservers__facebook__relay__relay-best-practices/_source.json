@@ -1,0 +1,15 @@
+{
+  "source": "mcpservers",
+  "listing_url": "https://mcpservers.org/zh-TW/agent-skills",
+  "owner": "facebook",
+  "repo": "relay",
+  "branch": "HEAD",
+  "skill": "relay-best-practices",
+  "repo_url": "https://github.com/facebook/relay",
+  "license": {
+    "spdx": "MIT",
+    "url": "https://github.com/facebook/relay/blob/main/LICENSE",
+    "source": "api"
+  },
+  "zip_subdir": "relay-main/skills/relay-best-practices"
+}

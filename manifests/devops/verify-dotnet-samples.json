@@ -1,0 +1,49 @@
+{
+  "name": "verify-dotnet-samples",
+  "version": "0.1.0",
+  "category": "devops",
+  "description": "How to build, run and verify the .NET sample projects in the Agent Framework repository.",
+  "intent_triggers": [
+    "use the verify dotnet samples agent skill",
+    "run a workflow for verify dotnet samples",
+    "help me with verify dotnet samples",
+    "我需要處理 verify dotnet samples 相關工作",
+    "幫我啟用 verify dotnet samples 這個 skill",
+    "用 agent skill 完成 verify dotnet samples",
+    "use verify dotnet samples from agent-framework"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the verify dotnet samples skill for this task.",
+      "invocation": "codex --skill verify-dotnet-samples \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "devops",
+    "mcpservers",
+    "mit"
+  ]
+}

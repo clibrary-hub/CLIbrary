@@ -1,0 +1,49 @@
+{
+  "name": "aws-cdk-python-setup",
+  "version": "0.1.0",
+  "category": "devops",
+  "description": "Setup and initialization guide for developing AWS CDK (Cloud Development Kit) applications in Python.",
+  "intent_triggers": [
+    "use the aws cdk python setup agent skill",
+    "run a workflow for aws cdk python setup",
+    "help me with aws cdk python setup",
+    "我需要處理 aws cdk python setup 相關工作",
+    "幫我啟用 aws cdk python setup 這個 skill",
+    "用 agent skill 完成 aws cdk python setup",
+    "use aws cdk python setup from awesome-copilot"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the aws cdk python setup skill for this task.",
+      "invocation": "codex --skill aws-cdk-python-setup \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "devops",
+    "mcpservers",
+    "mit"
+  ]
+}

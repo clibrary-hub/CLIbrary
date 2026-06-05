@@ -1,0 +1,49 @@
+{
+  "name": "daily-trending",
+  "version": "0.1.0",
+  "category": "web",
+  "description": "Agent skill for daily trending workflows.",
+  "intent_triggers": [
+    "use the daily trending agent skill",
+    "run a workflow for daily trending",
+    "help me with daily trending",
+    "我需要處理 daily trending 相關工作",
+    "幫我啟用 daily trending 這個 skill",
+    "用 agent skill 完成 daily trending",
+    "use daily trending from PopiStudio"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the daily trending skill for this task.",
+      "invocation": "codex --skill daily-trending \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "mit",
+    "skills-rest",
+    "web"
+  ]
+}

@@ -1,0 +1,49 @@
+{
+  "name": "developer-hub-app-architect",
+  "version": "0.1.0",
+  "category": "devops",
+  "description": "Turn Contentstack Developer Hub and Marketplace app ideas into concrete implementations.",
+  "intent_triggers": [
+    "use the developer hub app architect agent skill",
+    "run a workflow for developer hub app architect",
+    "help me with developer hub app architect",
+    "我需要處理 developer hub app architect 相關工作",
+    "幫我啟用 developer hub app architect 這個 skill",
+    "用 agent skill 完成 developer hub app architect",
+    "use developer hub app architect from contentstack-agent-skills"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the developer hub app architect skill for this task.",
+      "invocation": "codex --skill developer-hub-app-architect \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "devops",
+    "mcpservers",
+    "mit"
+  ]
+}

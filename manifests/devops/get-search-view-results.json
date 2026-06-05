@@ -1,0 +1,49 @@
+{
+  "name": "get-search-view-results",
+  "version": "0.1.0",
+  "category": "devops",
+  "description": "Get the current search results from the Search view in VS Code",
+  "intent_triggers": [
+    "use the get search view results agent skill",
+    "run a workflow for get search view results",
+    "help me with get search view results",
+    "我需要處理 get search view results 相關工作",
+    "幫我啟用 get search view results 這個 skill",
+    "用 agent skill 完成 get search view results",
+    "use get search view results from vscode-copilot-chat"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the get search view results skill for this task.",
+      "invocation": "codex --skill get-search-view-results \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "devops",
+    "mcpservers",
+    "mit"
+  ]
+}

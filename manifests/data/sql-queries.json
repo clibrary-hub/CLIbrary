@@ -1,0 +1,49 @@
+{
+  "name": "sql-queries",
+  "version": "0.1.0",
+  "category": "data",
+  "description": "Write correct, performant SQL across all major data warehouse dialects (Snowflake, BigQuery, Databricks, PostgreSQL, etc.).",
+  "intent_triggers": [
+    "use the sql queries agent skill",
+    "run a workflow for sql queries",
+    "help me with sql queries",
+    "我需要處理 sql queries 相關工作",
+    "幫我啟用 sql queries 這個 skill",
+    "用 agent skill 完成 sql queries",
+    "use sql queries from knowledge-work-plugins"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the sql queries skill for this task.",
+      "invocation": "codex --skill sql-queries \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "apache-2.0",
+    "data",
+    "mcpservers"
+  ]
+}

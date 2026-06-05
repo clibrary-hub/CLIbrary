@@ -1,0 +1,49 @@
+{
+  "name": "meeting-briefing",
+  "version": "0.1.0",
+  "category": "devops",
+  "description": "Prepare structured briefings for meetings with legal relevance and track resulting action items.",
+  "intent_triggers": [
+    "use the meeting briefing agent skill",
+    "run a workflow for meeting briefing",
+    "help me with meeting briefing",
+    "我需要處理 meeting briefing 相關工作",
+    "幫我啟用 meeting briefing 這個 skill",
+    "用 agent skill 完成 meeting briefing",
+    "use meeting briefing from knowledge-work-plugins"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the meeting briefing skill for this task.",
+      "invocation": "codex --skill meeting-briefing \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "apache-2.0",
+    "devops",
+    "mcpservers"
+  ]
+}

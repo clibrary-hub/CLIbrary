@@ -1,0 +1,49 @@
+{
+  "name": "triage-issue",
+  "version": "0.1.0",
+  "category": "devops",
+  "description": "Intelligently triage bug reports and error messages by searching for duplicates in Jira and offering to create new issues or add comments to existing ones.",
+  "intent_triggers": [
+    "use the triage issue agent skill",
+    "run a workflow for triage issue",
+    "help me with triage issue",
+    "我需要處理 triage issue 相關工作",
+    "幫我啟用 triage issue 這個 skill",
+    "用 agent skill 完成 triage issue",
+    "use triage issue from atlassian-mcp-server"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the triage issue skill for this task.",
+      "invocation": "codex --skill triage-issue \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "apache-2.0",
+    "devops",
+    "mcpservers"
+  ]
+}

@@ -1,0 +1,49 @@
+{
+  "name": "integration-django",
+  "version": "0.1.0",
+  "category": "devops",
+  "description": "PostHog integration for Django applications",
+  "intent_triggers": [
+    "use the integration django agent skill",
+    "run a workflow for integration django",
+    "help me with integration django",
+    "我需要處理 integration django 相關工作",
+    "幫我啟用 integration django 這個 skill",
+    "用 agent skill 完成 integration django",
+    "use integration django from skills"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the integration django skill for this task.",
+      "invocation": "codex --skill integration-django \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "devops",
+    "mcpservers",
+    "mit"
+  ]
+}

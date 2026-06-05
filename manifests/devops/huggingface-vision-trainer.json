@@ -1,0 +1,49 @@
+{
+  "name": "huggingface-vision-trainer",
+  "version": "0.1.0",
+  "category": "devops",
+  "description": "Trains and fine-tunes vision models for object detection (D-FINE, RT-DETR v2, DETR, YOLOS), image classification (timm models — MobileNetV3, MobileViT, ResNet, ViT/DINOv3 — plus any Transformers cl...",
+  "intent_triggers": [
+    "use the huggingface vision trainer agent skill",
+    "run a workflow for huggingface vision trainer",
+    "help me with huggingface vision trainer",
+    "我需要處理 huggingface vision trainer 相關工作",
+    "幫我啟用 huggingface vision trainer 這個 skill",
+    "用 agent skill 完成 huggingface vision trainer",
+    "use huggingface vision trainer from skills"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the huggingface vision trainer skill for this task.",
+      "invocation": "codex --skill huggingface-vision-trainer \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "apache-2.0",
+    "devops",
+    "mcpservers"
+  ]
+}

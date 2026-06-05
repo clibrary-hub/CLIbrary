@@ -1,0 +1,15 @@
+{
+  "source": "mcpservers",
+  "listing_url": "https://mcpservers.org/zh-TW/agent-skills/category/database",
+  "owner": "softaworks",
+  "repo": "agent-toolkit",
+  "branch": "main",
+  "skill": "database-schema-designer",
+  "repo_url": "https://github.com/softaworks/agent-toolkit",
+  "license": {
+    "spdx": "MIT",
+    "url": "https://github.com/softaworks/agent-toolkit/blob/main/LICENSE",
+    "source": "api"
+  },
+  "zip_subdir": "agent-toolkit-main/skills/database-schema-designer"
+}

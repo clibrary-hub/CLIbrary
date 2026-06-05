@@ -1,0 +1,49 @@
+{
+  "name": "context-map",
+  "version": "0.1.0",
+  "category": "devops",
+  "description": "Generate a map of all files relevant to a task before making changes",
+  "intent_triggers": [
+    "use the context map agent skill",
+    "run a workflow for context map",
+    "help me with context map",
+    "我需要處理 context map 相關工作",
+    "幫我啟用 context map 這個 skill",
+    "用 agent skill 完成 context map",
+    "use context map from awesome-copilot"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the context map skill for this task.",
+      "invocation": "codex --skill context-map \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "devops",
+    "mcpservers",
+    "mit"
+  ]
+}

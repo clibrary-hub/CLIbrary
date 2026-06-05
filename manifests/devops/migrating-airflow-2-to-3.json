@@ -1,0 +1,49 @@
+{
+  "name": "migrating-airflow-2-to-3",
+  "version": "0.1.0",
+  "category": "devops",
+  "description": "Guide for migrating Apache Airflow 2.x projects to Airflow 3.x.",
+  "intent_triggers": [
+    "use the migrating airflow 2 to 3 agent skill",
+    "run a workflow for migrating airflow 2 to 3",
+    "help me with migrating airflow 2 to 3",
+    "我需要處理 migrating airflow 2 to 3 相關工作",
+    "幫我啟用 migrating airflow 2 to 3 這個 skill",
+    "用 agent skill 完成 migrating airflow 2 to 3",
+    "use migrating airflow 2 to 3 from agents"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the migrating airflow 2 to 3 skill for this task.",
+      "invocation": "codex --skill migrating-airflow-2-to-3 \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "apache-2.0",
+    "devops",
+    "mcpservers"
+  ]
+}

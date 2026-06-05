@@ -1,0 +1,48 @@
+{
+  "name": "cleaning-up-stale-feature-flags-agent-skill",
+  "version": "0.1.0",
+  "category": "ai-ml",
+  "description": "Identify and clean up stale feature flags in a PostHog project.",
+  "intent_triggers": [
+    "use the cleaning up stale feature flags agent skill",
+    "run a workflow for cleaning up stale feature flags",
+    "help me with cleaning up stale feature flags",
+    "我需要處理 cleaning up stale feature flags 相關工作",
+    "幫我啟用 cleaning up stale feature flags 這個 skill",
+    "用 agent skill 完成 cleaning up stale feature flags"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the cleaning up stale feature flags skill for this task.",
+      "invocation": "codex --skill cleaning-up-stale-feature-flags \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "ai-ml",
+    "mit",
+    "skill"
+  ]
+}

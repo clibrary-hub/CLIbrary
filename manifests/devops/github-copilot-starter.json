@@ -1,0 +1,49 @@
+{
+  "name": "github-copilot-starter",
+  "version": "0.1.0",
+  "category": "devops",
+  "description": "Set up complete GitHub Copilot configuration for a new project based on technology stack",
+  "intent_triggers": [
+    "use the github copilot starter agent skill",
+    "run a workflow for github copilot starter",
+    "help me with github copilot starter",
+    "我需要處理 github copilot starter 相關工作",
+    "幫我啟用 github copilot starter 這個 skill",
+    "用 agent skill 完成 github copilot starter",
+    "use github copilot starter from awesome-copilot"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the github copilot starter skill for this task.",
+      "invocation": "codex --skill github-copilot-starter \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "devops",
+    "mcpservers",
+    "mit"
+  ]
+}

@@ -1,0 +1,49 @@
+{
+  "name": "azure-web-pubsub-ts-skills",
+  "version": "0.1.0",
+  "category": "web",
+  "description": "Build real-time messaging applications using Azure Web PubSub SDKs for JavaScript (@azure/web-pubsub, @azure/web-pubsub-client).",
+  "intent_triggers": [
+    "use the azure web pubsub ts agent skill",
+    "run a workflow for azure web pubsub ts",
+    "help me with azure web pubsub ts",
+    "我需要處理 azure web pubsub ts 相關工作",
+    "幫我啟用 azure web pubsub ts 這個 skill",
+    "用 agent skill 完成 azure web pubsub ts",
+    "use azure web pubsub ts from skills"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the azure web pubsub ts skill for this task.",
+      "invocation": "codex --skill azure-web-pubsub-ts \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "mcpservers",
+    "mit",
+    "web"
+  ]
+}

@@ -1,0 +1,49 @@
+{
+  "name": "agent-email-inbox",
+  "version": "0.1.0",
+  "category": "devops",
+  "description": "Webhook signing secret for verifying inbound email event payloads.",
+  "intent_triggers": [
+    "use the agent email inbox agent skill",
+    "run a workflow for agent email inbox",
+    "help me with agent email inbox",
+    "我需要處理 agent email inbox 相關工作",
+    "幫我啟用 agent email inbox 這個 skill",
+    "用 agent skill 完成 agent email inbox",
+    "use agent email inbox from resend-skills"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the agent email inbox skill for this task.",
+      "invocation": "codex --skill agent-email-inbox \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "devops",
+    "mcpservers",
+    "mit"
+  ]
+}

@@ -1,0 +1,49 @@
+{
+  "name": "firebase-app-hosting-basics",
+  "version": "0.1.0",
+  "category": "devops",
+  "description": "Deploy and manage web apps with Firebase App Hosting.",
+  "intent_triggers": [
+    "use the firebase app hosting basics agent skill",
+    "run a workflow for firebase app hosting basics",
+    "help me with firebase app hosting basics",
+    "我需要處理 firebase app hosting basics 相關工作",
+    "幫我啟用 firebase app hosting basics 這個 skill",
+    "用 agent skill 完成 firebase app hosting basics",
+    "use firebase app hosting basics from agent-skills"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the firebase app hosting basics skill for this task.",
+      "invocation": "codex --skill firebase-app-hosting-basics \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "apache-2.0",
+    "devops",
+    "mcpservers"
+  ]
+}

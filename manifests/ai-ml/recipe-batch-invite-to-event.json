@@ -1,0 +1,49 @@
+{
+  "name": "recipe-batch-invite-to-event",
+  "version": "0.1.0",
+  "category": "ai-ml",
+  "description": "Add a list of attendees to an existing Google Calendar event and send notifications.",
+  "intent_triggers": [
+    "use the recipe batch invite to event agent skill",
+    "run a workflow for recipe batch invite to event",
+    "help me with recipe batch invite to event",
+    "我需要處理 recipe batch invite to event 相關工作",
+    "幫我啟用 recipe batch invite to event 這個 skill",
+    "用 agent skill 完成 recipe batch invite to event",
+    "use recipe batch invite to event from cli"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the recipe batch invite to event skill for this task.",
+      "invocation": "codex --skill recipe-batch-invite-to-event \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "ai-ml",
+    "apache-2.0",
+    "mcpservers"
+  ]
+}

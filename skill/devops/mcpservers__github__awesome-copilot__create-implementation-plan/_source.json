@@ -1,0 +1,15 @@
+{
+  "source": "mcpservers",
+  "listing_url": "https://mcpservers.org/zh-TW/agent-skills/author/github",
+  "owner": "github",
+  "repo": "awesome-copilot",
+  "branch": "HEAD",
+  "skill": "create-implementation-plan",
+  "repo_url": "https://github.com/github/awesome-copilot",
+  "license": {
+    "spdx": "MIT",
+    "url": "https://github.com/github/awesome-copilot/blob/main/LICENSE",
+    "source": "api"
+  },
+  "zip_subdir": "awesome-copilot-main/skills/create-implementation-plan"
+}

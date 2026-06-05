@@ -1,0 +1,15 @@
+{
+  "source": "mcpservers",
+  "listing_url": "https://mcpservers.org/zh-TW/agent-skills",
+  "owner": "webflow",
+  "repo": "webflow-skills",
+  "branch": "HEAD",
+  "skill": "asset-audit",
+  "repo_url": "https://github.com/webflow/webflow-skills",
+  "license": {
+    "spdx": "MIT",
+    "url": "https://github.com/webflow/webflow-skills/blob/main/LICENSE",
+    "source": "api"
+  },
+  "zip_subdir": "webflow-skills-main/plugins/webflow-skills/skills/asset-audit"
+}

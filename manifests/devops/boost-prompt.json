@@ -1,0 +1,49 @@
+{
+  "name": "boost-prompt",
+  "version": "0.1.0",
+  "category": "devops",
+  "description": "Interactive prompt refinement workflow: interrogates scope, deliverables, constraints; copies final markdown to clipboard; never writes code.",
+  "intent_triggers": [
+    "use the boost prompt agent skill",
+    "run a workflow for boost prompt",
+    "help me with boost prompt",
+    "我需要處理 boost prompt 相關工作",
+    "幫我啟用 boost prompt 這個 skill",
+    "用 agent skill 完成 boost prompt",
+    "use boost prompt from awesome-copilot"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the boost prompt skill for this task.",
+      "invocation": "codex --skill boost-prompt \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "devops",
+    "mcpservers",
+    "mit"
+  ]
+}

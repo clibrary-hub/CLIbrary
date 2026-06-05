@@ -1,0 +1,49 @@
+{
+  "name": "webflow-mcp-bulk-cms-update",
+  "version": "0.1.0",
+  "category": "data",
+  "description": "Create or update multiple CMS items in a Webflow collection with validation and diff preview.",
+  "intent_triggers": [
+    "use the webflow mcp bulk cms update agent skill",
+    "run a workflow for webflow mcp bulk cms update",
+    "help me with webflow mcp bulk cms update",
+    "我需要處理 webflow mcp bulk cms update 相關工作",
+    "幫我啟用 webflow mcp bulk cms update 這個 skill",
+    "用 agent skill 完成 webflow mcp bulk cms update",
+    "use webflow mcp bulk cms update from webflow-skills"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the webflow mcp bulk cms update skill for this task.",
+      "invocation": "codex --skill webflow-mcp-bulk-cms-update \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "data",
+    "mcpservers",
+    "mit"
+  ]
+}

@@ -1,0 +1,49 @@
+{
+  "name": "mapbox-web-performance-patterns",
+  "version": "0.1.0",
+  "category": "web",
+  "description": "Performance optimization patterns for Mapbox GL JS web applications.",
+  "intent_triggers": [
+    "use the mapbox web performance patterns agent skill",
+    "run a workflow for mapbox web performance patterns",
+    "help me with mapbox web performance patterns",
+    "我需要處理 mapbox web performance patterns 相關工作",
+    "幫我啟用 mapbox web performance patterns 這個 skill",
+    "用 agent skill 完成 mapbox web performance patterns",
+    "use mapbox web performance patterns from mapbox-agent-skills"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the mapbox web performance patterns skill for this task.",
+      "invocation": "codex --skill mapbox-web-performance-patterns \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "mcpservers",
+    "mit",
+    "web"
+  ]
+}

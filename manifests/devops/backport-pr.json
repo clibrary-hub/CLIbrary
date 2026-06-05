@@ -1,0 +1,49 @@
+{
+  "name": "backport-pr",
+  "version": "0.1.0",
+  "category": "devops",
+  "description": "Backports a merged PR to a release branch by triggering the /backport bot, waiting for the bot-created PR, and filling in the shiproom template (Customer Impact, Testing, Risk, Regression?).",
+  "intent_triggers": [
+    "use the backport pr agent skill",
+    "run a workflow for backport pr",
+    "help me with backport pr",
+    "我需要處理 backport pr 相關工作",
+    "幫我啟用 backport pr 這個 skill",
+    "用 agent skill 完成 backport pr",
+    "use backport pr from aspire"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the backport pr skill for this task.",
+      "invocation": "codex --skill backport-pr \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "devops",
+    "mcpservers",
+    "mit"
+  ]
+}

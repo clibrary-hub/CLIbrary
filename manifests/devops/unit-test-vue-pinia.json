@@ -1,0 +1,49 @@
+{
+  "name": "unit-test-vue-pinia",
+  "version": "0.1.0",
+  "category": "devops",
+  "description": "Write and review unit tests for Vue 3 + TypeScript + Vitest + Pinia codebases.",
+  "intent_triggers": [
+    "use the unit test vue pinia agent skill",
+    "run a workflow for unit test vue pinia",
+    "help me with unit test vue pinia",
+    "我需要處理 unit test vue pinia 相關工作",
+    "幫我啟用 unit test vue pinia 這個 skill",
+    "用 agent skill 完成 unit test vue pinia",
+    "use unit test vue pinia from awesome-copilot"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the unit test vue pinia skill for this task.",
+      "invocation": "codex --skill unit-test-vue-pinia \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "devops",
+    "mcpservers",
+    "mit"
+  ]
+}

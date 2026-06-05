@@ -1,0 +1,49 @@
+{
+  "name": "hex1b",
+  "version": "0.1.0",
+  "category": "devops",
+  "description": "CLI tool for automating any terminal application — TUI apps, shells, CLI tools, REPLs, and more.",
+  "intent_triggers": [
+    "use the hex1b agent skill",
+    "run a workflow for hex1b",
+    "help me with hex1b",
+    "我需要處理 hex1b 相關工作",
+    "幫我啟用 hex1b 這個 skill",
+    "用 agent skill 完成 hex1b",
+    "use hex1b from aspire"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the hex1b skill for this task.",
+      "invocation": "codex --skill hex1b \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "devops",
+    "mcpservers",
+    "mit"
+  ]
+}

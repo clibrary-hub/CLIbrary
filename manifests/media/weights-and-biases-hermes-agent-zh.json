@@ -1,0 +1,49 @@
+{
+  "name": "weights-and-biases-hermes-agent-zh",
+  "version": "0.1.0",
+  "category": "media",
+  "description": "Track ML experiments with automatic logging, visualize training in real-time, optimize hyperparameters with sweeps, and manage model registry with W&B - collaborative MLOps platform",
+  "intent_triggers": [
+    "use the weights and biases agent skill",
+    "run a workflow for weights and biases",
+    "help me with weights and biases",
+    "我需要處理 weights and biases 相關工作",
+    "幫我啟用 weights and biases 這個 skill",
+    "用 agent skill 完成 weights and biases",
+    "use weights and biases from hermes-agent-zh"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the weights and biases skill for this task.",
+      "invocation": "codex --skill weights-and-biases \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "media",
+    "mit",
+    "skills-rest"
+  ]
+}

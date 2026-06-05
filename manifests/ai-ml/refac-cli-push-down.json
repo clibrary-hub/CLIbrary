@@ -1,0 +1,49 @@
+{
+  "name": "refac-cli-push-down",
+  "version": "0.1.0",
+  "category": "ai-ml",
+  "description": "Moving mechanical computation from LLM prompts into tested CLI commands.",
+  "intent_triggers": [
+    "use the refac cli push down agent skill",
+    "run a workflow for refac cli push down",
+    "help me with refac cli push down",
+    "我需要處理 refac cli push down 相關工作",
+    "幫我啟用 refac cli push down 這個 skill",
+    "用 agent skill 完成 refac cli push down",
+    "use refac cli push down from erk"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the refac cli push down skill for this task.",
+      "invocation": "codex --skill refac-cli-push-down \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "ai-ml",
+    "mcpservers",
+    "mit"
+  ]
+}

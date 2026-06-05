@@ -1,0 +1,15 @@
+{
+  "source": "mcpservers",
+  "listing_url": "https://mcpservers.org/zh-TW/agent-skills",
+  "owner": "upstash",
+  "repo": "context7",
+  "branch": "HEAD",
+  "skill": "context7-mcp",
+  "repo_url": "https://github.com/upstash/context7",
+  "license": {
+    "spdx": "MIT",
+    "url": "https://github.com/upstash/context7/blob/master/LICENSE",
+    "source": "api"
+  },
+  "zip_subdir": "context7-master/skills/context7-mcp"
+}

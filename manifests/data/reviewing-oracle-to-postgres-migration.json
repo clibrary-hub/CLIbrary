@@ -1,0 +1,49 @@
+{
+  "name": "reviewing-oracle-to-postgres-migration",
+  "version": "0.1.0",
+  "category": "data",
+  "description": "Identifies Oracle-to-PostgreSQL migration risks by cross-referencing code against known behavioral differences (empty strings, refcursors, type coercion, sorting, timestamps, concurrent transaction...",
+  "intent_triggers": [
+    "use the reviewing oracle to postgres migration agent skill",
+    "run a workflow for reviewing oracle to postgres migration",
+    "help me with reviewing oracle to postgres migration",
+    "我需要處理 reviewing oracle to postgres migration 相關工作",
+    "幫我啟用 reviewing oracle to postgres migration 這個 skill",
+    "用 agent skill 完成 reviewing oracle to postgres migration",
+    "use reviewing oracle to postgres migration from awesome-copilot"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the reviewing oracle to postgres migration skill for this task.",
+      "invocation": "codex --skill reviewing-oracle-to-postgres-migration \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "data",
+    "mcpservers",
+    "mit"
+  ]
+}

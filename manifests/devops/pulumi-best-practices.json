@@ -1,0 +1,49 @@
+{
+  "name": "pulumi-best-practices",
+  "version": "0.1.0",
+  "category": "devops",
+  "description": "Load when the user is writing, reviewing, or debugging Pulumi TypeScript/Python programs; asks about Output<T> or apply() usage; wants to create ComponentResource classes; needs to refactor resourc...",
+  "intent_triggers": [
+    "use the pulumi best practices agent skill",
+    "run a workflow for pulumi best practices",
+    "help me with pulumi best practices",
+    "我需要處理 pulumi best practices 相關工作",
+    "幫我啟用 pulumi best practices 這個 skill",
+    "用 agent skill 完成 pulumi best practices",
+    "use pulumi best practices from agent-skills"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the pulumi best practices skill for this task.",
+      "invocation": "codex --skill pulumi-best-practices \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "apache-2.0",
+    "devops",
+    "mcpservers"
+  ]
+}

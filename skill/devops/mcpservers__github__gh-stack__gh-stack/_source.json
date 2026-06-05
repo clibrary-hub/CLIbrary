@@ -1,0 +1,15 @@
+{
+  "source": "mcpservers",
+  "listing_url": "https://mcpservers.org/zh-TW/agent-skills/author/github",
+  "owner": "github",
+  "repo": "gh-stack",
+  "branch": "HEAD",
+  "skill": "gh-stack",
+  "repo_url": "https://github.com/github/gh-stack",
+  "license": {
+    "spdx": "MIT",
+    "url": "https://github.com/github/gh-stack/blob/main/LICENSE",
+    "source": "api"
+  },
+  "zip_subdir": "gh-stack-main/skills/gh-stack"
+}

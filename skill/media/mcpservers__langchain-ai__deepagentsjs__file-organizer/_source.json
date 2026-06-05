@@ -1,0 +1,15 @@
+{
+  "source": "mcpservers",
+  "listing_url": "https://mcpservers.org/zh-TW/agent-skills",
+  "owner": "langchain-ai",
+  "repo": "deepagentsjs",
+  "branch": "HEAD",
+  "skill": "file-organizer",
+  "repo_url": "https://github.com/langchain-ai/deepagentsjs",
+  "license": {
+    "spdx": "MIT",
+    "url": "https://github.com/langchain-ai/deepagentsjs/blob/main/LICENSE",
+    "source": "api"
+  },
+  "zip_subdir": "deepagentsjs-main/examples/skills/file-organizer"
+}

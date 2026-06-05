@@ -1,0 +1,49 @@
+{
+  "name": "azure-ai-voicelive-java",
+  "version": "0.1.0",
+  "category": "ai-ml",
+  "description": "Agent skill for azure ai voicelive java workflows.",
+  "intent_triggers": [
+    "use the azure ai voicelive java agent skill",
+    "run a workflow for azure ai voicelive java",
+    "help me with azure ai voicelive java",
+    "我需要處理 azure ai voicelive java 相關工作",
+    "幫我啟用 azure ai voicelive java 這個 skill",
+    "用 agent skill 完成 azure ai voicelive java",
+    "use azure ai voicelive java from agent-skills"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the azure ai voicelive java skill for this task.",
+      "invocation": "codex --skill azure-ai-voicelive-java \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "ai-ml",
+    "mcpservers",
+    "mit"
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "source": "mcpservers",
+  "listing_url": "https://mcpservers.org/zh-TW/agent-skills",
+  "owner": "clickhouse",
+  "repo": "clickhouse-js",
+  "branch": "HEAD",
+  "skill": "clickhouse-js-node-troubleshooting",
+  "repo_url": "https://github.com/clickhouse/clickhouse-js",
+  "license": {
+    "spdx": "Apache-2.0",
+    "url": "https://github.com/ClickHouse/clickhouse-js/blob/main/LICENSE",
+    "source": "api"
+  },
+  "zip_subdir": "clickhouse-js-main/skills/clickhouse-js-node-troubleshooting"
+}

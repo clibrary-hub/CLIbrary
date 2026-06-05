@@ -1,0 +1,48 @@
+{
+  "name": "finding-replay-for-issue-agent-skill",
+  "version": "0.1.0",
+  "category": "data",
+  "description": "Agent skill for finding replay for issue workflows.",
+  "intent_triggers": [
+    "use the finding replay for issue agent skill",
+    "run a workflow for finding replay for issue",
+    "help me with finding replay for issue",
+    "我需要處理 finding replay for issue 相關工作",
+    "幫我啟用 finding replay for issue 這個 skill",
+    "用 agent skill 完成 finding replay for issue"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the finding replay for issue skill for this task.",
+      "invocation": "codex --skill finding-replay-for-issue \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "data",
+    "mit",
+    "skill"
+  ]
+}

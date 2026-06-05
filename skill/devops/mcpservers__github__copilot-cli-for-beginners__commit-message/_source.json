@@ -1,0 +1,15 @@
+{
+  "source": "mcpservers",
+  "listing_url": "https://mcpservers.org/zh-TW/agent-skills/author/github",
+  "owner": "github",
+  "repo": "copilot-cli-for-beginners",
+  "branch": "HEAD",
+  "skill": "commit-message",
+  "repo_url": "https://github.com/github/copilot-cli-for-beginners",
+  "license": {
+    "spdx": "MIT",
+    "url": "https://github.com/github/copilot-cli-for-beginners/blob/main/LICENSE",
+    "source": "api"
+  },
+  "zip_subdir": "copilot-cli-for-beginners-main/samples/skills/commit-message"
+}

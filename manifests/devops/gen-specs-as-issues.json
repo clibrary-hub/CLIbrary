@@ -1,0 +1,49 @@
+{
+  "name": "gen-specs-as-issues",
+  "version": "0.1.0",
+  "category": "devops",
+  "description": "This workflow guides you through a systematic approach to identify missing features, prioritize them, and create detailed specifications for implementation.",
+  "intent_triggers": [
+    "use the gen specs as issues agent skill",
+    "run a workflow for gen specs as issues",
+    "help me with gen specs as issues",
+    "我需要處理 gen specs as issues 相關工作",
+    "幫我啟用 gen specs as issues 這個 skill",
+    "用 agent skill 完成 gen specs as issues",
+    "use gen specs as issues from awesome-copilot"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the gen specs as issues skill for this task.",
+      "invocation": "codex --skill gen-specs-as-issues \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "devops",
+    "mcpservers",
+    "mit"
+  ]
+}

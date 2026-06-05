@@ -1,0 +1,15 @@
+{
+  "source": "mcpservers",
+  "listing_url": "https://mcpservers.org/zh-TW/agent-skills/author/cloudflare",
+  "owner": "cloudflare",
+  "repo": "chanfana",
+  "branch": "HEAD",
+  "skill": "write-endpoints",
+  "repo_url": "https://github.com/cloudflare/chanfana",
+  "license": {
+    "spdx": "MIT",
+    "url": "https://github.com/cloudflare/chanfana/blob/main/LICENSE",
+    "source": "api"
+  },
+  "zip_subdir": "chanfana-main/skills/write-endpoints"
+}

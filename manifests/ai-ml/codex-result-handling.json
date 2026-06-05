@@ -1,0 +1,49 @@
+{
+  "name": "codex-result-handling",
+  "version": "0.1.0",
+  "category": "ai-ml",
+  "description": "Internal guidance for presenting Codex helper output back to the user",
+  "intent_triggers": [
+    "use the codex result handling agent skill",
+    "run a workflow for codex result handling",
+    "help me with codex result handling",
+    "我需要處理 codex result handling 相關工作",
+    "幫我啟用 codex result handling 這個 skill",
+    "用 agent skill 完成 codex result handling",
+    "use codex result handling from codex-plugin-cc"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the codex result handling skill for this task.",
+      "invocation": "codex --skill codex-result-handling \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "ai-ml",
+    "apache-2.0",
+    "mcpservers"
+  ]
+}

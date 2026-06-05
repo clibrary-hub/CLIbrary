@@ -1,0 +1,49 @@
+{
+  "name": "session-report-claude-plugins-public",
+  "version": "0.1.0",
+  "category": "ai-ml",
+  "description": "Generate an explorable HTML report of Claude Code session usage (tokens, cache, subagents, skills, expensive prompts) from ~/.claude/projects transcripts.",
+  "intent_triggers": [
+    "use the session report agent skill",
+    "run a workflow for session report",
+    "help me with session report",
+    "我需要處理 session report 相關工作",
+    "幫我啟用 session report 這個 skill",
+    "用 agent skill 完成 session report",
+    "use session report from claude-plugins-public"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the session report skill for this task.",
+      "invocation": "codex --skill session-report \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "ai-ml",
+    "apache-2.0",
+    "mcpservers"
+  ]
+}

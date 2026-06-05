@@ -1,0 +1,49 @@
+{
+  "name": "migrating-oracle-to-postgres-stored-procedures",
+  "version": "0.1.0",
+  "category": "devops",
+  "description": "Migrates Oracle PL/SQL stored procedures to PostgreSQL PL/pgSQL.",
+  "intent_triggers": [
+    "use the migrating oracle to postgres stored procedures agent skill",
+    "run a workflow for migrating oracle to postgres stored procedures",
+    "help me with migrating oracle to postgres stored procedures",
+    "我需要處理 migrating oracle to postgres stored procedures 相關工作",
+    "幫我啟用 migrating oracle to postgres stored procedures 這個 skill",
+    "用 agent skill 完成 migrating oracle to postgres stored procedures",
+    "use migrating oracle to postgres stored procedures from awesome-copilot"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the migrating oracle to postgres stored procedures skill for this task.",
+      "invocation": "codex --skill migrating-oracle-to-postgres-stored-procedures \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "devops",
+    "mcpservers",
+    "mit"
+  ]
+}

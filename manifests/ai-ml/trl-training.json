@@ -1,0 +1,49 @@
+{
+  "name": "trl-training",
+  "version": "0.1.0",
+  "category": "ai-ml",
+  "description": "Train and fine-tune transformer language models using TRL (Transformers Reinforcement Learning).",
+  "intent_triggers": [
+    "use the trl training agent skill",
+    "run a workflow for trl training",
+    "help me with trl training",
+    "我需要處理 trl training 相關工作",
+    "幫我啟用 trl training 這個 skill",
+    "用 agent skill 完成 trl training",
+    "use trl training from trl"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the trl training skill for this task.",
+      "invocation": "codex --skill trl-training \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "ai-ml",
+    "apache-2.0",
+    "mcpservers"
+  ]
+}

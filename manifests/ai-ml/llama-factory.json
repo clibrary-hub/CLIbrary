@@ -1,0 +1,49 @@
+{
+  "name": "llama-factory",
+  "version": "0.1.0",
+  "category": "ai-ml",
+  "description": "Expert guidance for fine-tuning LLMs with LLaMA-Factory - WebUI no-code, 100+ models, 2/3/4/5/6/8-bit QLoRA, multimodal support",
+  "intent_triggers": [
+    "use the llama factory agent skill",
+    "run a workflow for llama factory",
+    "help me with llama factory",
+    "我需要處理 llama factory 相關工作",
+    "幫我啟用 llama factory 這個 skill",
+    "用 agent skill 完成 llama factory",
+    "use llama factory from ai-research-skills"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the llama factory skill for this task.",
+      "invocation": "codex --skill llama-factory \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "ai-ml",
+    "mcpservers",
+    "mit"
+  ]
+}

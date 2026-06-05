@@ -1,0 +1,49 @@
+{
+  "name": "neon-auth",
+  "version": "0.1.0",
+  "category": "web",
+  "description": "Sets up Neon Auth for your application.",
+  "intent_triggers": [
+    "use the neon auth agent skill",
+    "run a workflow for neon auth",
+    "help me with neon auth",
+    "我需要處理 neon auth 相關工作",
+    "幫我啟用 neon auth 這個 skill",
+    "用 agent skill 完成 neon auth",
+    "use neon auth from ai-rules"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the neon auth skill for this task.",
+      "invocation": "codex --skill neon-auth \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "mcpservers",
+    "mit",
+    "web"
+  ]
+}

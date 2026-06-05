@@ -1,0 +1,49 @@
+{
+  "name": "analyze-bundle",
+  "version": "0.1.0",
+  "category": "web",
+  "description": "Convert Next.js bundle analyzer data to NDJSON and explore it",
+  "intent_triggers": [
+    "use the analyze bundle agent skill",
+    "run a workflow for analyze bundle",
+    "help me with analyze bundle",
+    "我需要處理 analyze bundle 相關工作",
+    "幫我啟用 analyze bundle 這個 skill",
+    "用 agent skill 完成 analyze bundle",
+    "use analyze bundle from dev3000"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the analyze bundle skill for this task.",
+      "invocation": "codex --skill analyze-bundle \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "mcpservers",
+    "mit",
+    "web"
+  ]
+}

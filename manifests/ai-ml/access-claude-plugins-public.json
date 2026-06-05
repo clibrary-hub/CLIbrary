@@ -1,0 +1,49 @@
+{
+  "name": "access-claude-plugins-public",
+  "version": "0.1.0",
+  "category": "ai-ml",
+  "description": "Manage Discord channel access — approve pairings, edit allowlists, set DM/group policy.",
+  "intent_triggers": [
+    "use the access agent skill",
+    "run a workflow for access",
+    "help me with access",
+    "我需要處理 access 相關工作",
+    "幫我啟用 access 這個 skill",
+    "用 agent skill 完成 access",
+    "use access from claude-plugins-public"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the access skill for this task.",
+      "invocation": "codex --skill access \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "ai-ml",
+    "apache-2.0",
+    "mcpservers"
+  ]
+}

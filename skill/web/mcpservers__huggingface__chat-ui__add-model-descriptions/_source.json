@@ -1,0 +1,15 @@
+{
+  "source": "mcpservers",
+  "listing_url": "https://mcpservers.org/zh-TW/agent-skills",
+  "owner": "huggingface",
+  "repo": "chat-ui",
+  "branch": "HEAD",
+  "skill": "add-model-descriptions",
+  "repo_url": "https://github.com/huggingface/chat-ui",
+  "license": {
+    "spdx": "Apache-2.0",
+    "url": "https://github.com/huggingface/chat-ui/blob/main/LICENSE",
+    "source": "api"
+  },
+  "zip_subdir": "chat-ui-main/.claude/skills/add-model-descriptions"
+}

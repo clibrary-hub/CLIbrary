@@ -1,0 +1,49 @@
+{
+  "name": "generate-canvas-app",
+  "version": "0.1.0",
+  "category": "finance",
+  "description": "[DEPRECATED — use canvas-app instead] Generate a complete Power Apps canvas app.",
+  "intent_triggers": [
+    "use the generate canvas app agent skill",
+    "run a workflow for generate canvas app",
+    "help me with generate canvas app",
+    "我需要處理 generate canvas app 相關工作",
+    "幫我啟用 generate canvas app 這個 skill",
+    "用 agent skill 完成 generate canvas app",
+    "use generate canvas app from power-platform-skills"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the generate canvas app skill for this task.",
+      "invocation": "codex --skill generate-canvas-app \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "finance",
+    "mcpservers",
+    "mit"
+  ]
+}

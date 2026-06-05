@@ -1,0 +1,15 @@
+{
+  "source": "mcpservers",
+  "listing_url": "https://mcpservers.org/zh-TW/agent-skills/author/vercel",
+  "owner": "vercel",
+  "repo": "chat",
+  "branch": "HEAD",
+  "skill": "chat-sdk",
+  "repo_url": "https://github.com/vercel/chat",
+  "license": {
+    "spdx": "MIT",
+    "url": "https://github.com/vercel/chat/blob/main/LICENSE",
+    "source": "api"
+  },
+  "zip_subdir": "chat-main/apps/docs/public/.well-known/agent-skills/chat-sdk"
+}

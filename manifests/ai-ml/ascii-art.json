@@ -1,0 +1,49 @@
+{
+  "name": "ascii-art",
+  "version": "0.1.0",
+  "category": "ai-ml",
+  "description": "生成 ASCII art using pyfiglet (571 fonts), cowsay, boxes, toilet, image-to-ascii, remote APIs (asciified, ascii.co.uk), and LLM fallback.",
+  "intent_triggers": [
+    "use the ascii art agent skill",
+    "run a workflow for ascii art",
+    "help me with ascii art",
+    "我需要處理 ascii art 相關工作",
+    "幫我啟用 ascii art 這個 skill",
+    "用 agent skill 完成 ascii art",
+    "use ascii art from hermes-agent-zh"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the ascii art skill for this task.",
+      "invocation": "codex --skill ascii-art \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "ai-ml",
+    "mit",
+    "skills-rest"
+  ]
+}

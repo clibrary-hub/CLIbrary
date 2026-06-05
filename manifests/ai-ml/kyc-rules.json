@@ -1,0 +1,49 @@
+{
+  "name": "kyc-rules",
+  "version": "0.1.0",
+  "category": "ai-ml",
+  "description": "Apply the firm's KYC/AML rules grid to a parsed onboarding record — assign a risk rating, list every rule outcome with the rule cited, and flag what's missing or escalation-worthy.",
+  "intent_triggers": [
+    "use the kyc rules agent skill",
+    "run a workflow for kyc rules",
+    "help me with kyc rules",
+    "我需要處理 kyc rules 相關工作",
+    "幫我啟用 kyc rules 這個 skill",
+    "用 agent skill 完成 kyc rules",
+    "use kyc rules from financial-services-plugins"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the kyc rules skill for this task.",
+      "invocation": "codex --skill kyc-rules \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "ai-ml",
+    "apache-2.0",
+    "mcpservers"
+  ]
+}

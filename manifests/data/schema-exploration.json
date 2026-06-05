@@ -1,0 +1,49 @@
+{
+  "name": "schema-exploration",
+  "version": "0.1.0",
+  "category": "data",
+  "description": "Lists tables, describes columns and data types, identifies foreign key relationships, and maps entity relationships in a database.",
+  "intent_triggers": [
+    "use the schema exploration agent skill",
+    "run a workflow for schema exploration",
+    "help me with schema exploration",
+    "我需要處理 schema exploration 相關工作",
+    "幫我啟用 schema exploration 這個 skill",
+    "用 agent skill 完成 schema exploration",
+    "use schema exploration from deepagents"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the schema exploration skill for this task.",
+      "invocation": "codex --skill schema-exploration \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "data",
+    "mcpservers",
+    "mit"
+  ]
+}

@@ -1,0 +1,49 @@
+{
+  "name": "blog-post",
+  "version": "0.1.0",
+  "category": "ai-ml",
+  "description": "Writes and structures long-form blog posts, creates tutorial outlines, and optimizes content for SEO with cover image generation.",
+  "intent_triggers": [
+    "use the blog post agent skill",
+    "run a workflow for blog post",
+    "help me with blog post",
+    "我需要處理 blog post 相關工作",
+    "幫我啟用 blog post 這個 skill",
+    "用 agent skill 完成 blog post",
+    "use blog post from deepagents"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the blog post skill for this task.",
+      "invocation": "codex --skill blog-post \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "ai-ml",
+    "mcpservers",
+    "mit"
+  ]
+}

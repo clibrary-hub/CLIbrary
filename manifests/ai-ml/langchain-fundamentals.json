@@ -1,0 +1,48 @@
+{
+  "name": "langchain-fundamentals",
+  "version": "0.1.0",
+  "category": "ai-ml",
+  "description": "Create LangChain agents with create_agent, define tools, and use middleware for human-in-the-loop and error handling.",
+  "intent_triggers": [
+    "use the langchain fundamentals agent skill",
+    "run a workflow for langchain fundamentals",
+    "help me with langchain fundamentals",
+    "我需要處理 langchain fundamentals 相關工作",
+    "幫我啟用 langchain fundamentals 這個 skill",
+    "用 agent skill 完成 langchain fundamentals"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the langchain fundamentals skill for this task.",
+      "invocation": "codex --skill langchain-fundamentals \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "ai-ml",
+    "mit",
+    "skill"
+  ]
+}

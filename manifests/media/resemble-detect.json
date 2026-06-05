@@ -1,0 +1,49 @@
+{
+  "name": "resemble-detect",
+  "version": "0.1.0",
+  "category": "media",
+  "description": "Deepfake detection and media safety — detect AI-generated audio, images, video, and text, trace synthesis sources, apply watermarks, verify speaker identity, and analyze media intelligence using Re...",
+  "intent_triggers": [
+    "use the resemble detect agent skill",
+    "run a workflow for resemble detect",
+    "help me with resemble detect",
+    "我需要處理 resemble detect 相關工作",
+    "幫我啟用 resemble detect 這個 skill",
+    "用 agent skill 完成 resemble detect",
+    "use resemble detect from awesome-copilot"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the resemble detect skill for this task.",
+      "invocation": "codex --skill resemble-detect \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "mcpservers",
+    "media",
+    "mit"
+  ]
+}

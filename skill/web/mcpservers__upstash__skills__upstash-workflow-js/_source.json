@@ -1,0 +1,15 @@
+{
+  "source": "mcpservers",
+  "listing_url": "https://mcpservers.org/zh-TW/agent-skills",
+  "owner": "upstash",
+  "repo": "skills",
+  "branch": "HEAD",
+  "skill": "upstash-workflow-js",
+  "repo_url": "https://github.com/upstash/skills",
+  "license": {
+    "spdx": "MIT",
+    "url": "https://github.com/upstash/skills/blob/main/LICENSE",
+    "source": "api"
+  },
+  "zip_subdir": "skills-main/skills/upstash-workflow-js"
+}

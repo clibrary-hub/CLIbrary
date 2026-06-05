@@ -1,0 +1,256 @@
+# Objective Workflow Reference
+
+Detailed procedures for creating objectives, spawning plans, and resuming work.
+
+## Contents
+
+- [Creating a New Objective](#creating-a-new-objective)
+- [Spawning Erk-Plans](#spawning-erk-prs)
+- [Resuming Work on an Objective](#resuming-work-on-an-objective)
+- [Structuring for Steelthread Development](#structuring-for-steelthread-development)
+- [Best Practices](#best-practices)
+
+For updating and closing objectives, see:
+
+- [updating.md](updating.md) - Two-step update workflow
+- [closing.md](closing.md) - Closing triggers and procedures
+
+## Creating a New Objective
+
+### When to Create
+
+Create an objective when:
+
+- A goal requires 2+ related PRs to complete
+- Work spans multiple sessions or days
+- Lessons learned should be captured for future reference
+- Coordination across related changes is needed
+
+Do NOT create an objective for:
+
+- Single PR implementations (use erk-pr instead)
+- Quick fixes or one-off changes
+- Exploratory work without clear deliverables
+
+### Creation Steps
+
+1. **Define the goal** - What does success look like?
+2. **Identify phases** - Logical groupings of related work
+3. **Structure for steelthread** - Split phases into sub-phases (XA, XB, XC)
+4. **Break into nodes** - Specific tasks within each sub-phase
+5. **Add test statements** - Each sub-phase needs "Test: [acceptance criteria]"
+6. **Lock design decisions** - Choices that guide implementation
+
+```bash
+gh issue create \
+  --title "Objective: [Descriptive Title]" \
+  --label "erk-objective" \
+  --body "$(cat <<'EOF'
+# Objective: [Title]
+
+> [Summary]
+
+## Goal
+
+[End state]
+
+## Design Decisions
+
+1. **[Name]**: [Decision]
+
+## Roadmap
+
+### Phase 1A: [Name] Steelthread (1 PR)
+
+Minimal vertical slice proving the concept works.
+
+| Node | Description | Status | PR |
+|------|-------------|--------|-----|
+| 1A.1 | [Minimal infrastructure] | pending | |
+| 1A.2 | [Wire into one command] | pending | |
+
+**Test:** [End-to-end acceptance test for steelthread]
+
+### Phase 1B: Complete [Name] (1 PR)
+
+Fill out remaining functionality.
+
+| Node | Description | Status | PR |
+|------|-------------|--------|-----|
+| 1B.1 | [Extend to remaining commands] | pending | |
+| 1B.2 | [Full test coverage] | pending | |
+
+**Test:** [Full acceptance criteria]
+
+EOF
+)"
+```
+
+### Naming Conventions
+
+- Title: `Objective: [Verb] [What]` (e.g., "Objective: Unify Gateway Testing")
+- Sub-phases: `Phase NA: [Noun] [Type] (1 PR)` (e.g., "Phase 1A: Git Gateway Steelthread (1 PR)")
+- Nodes: `NA.M` numbering (e.g., 1A.1, 1A.2, 1B.1)
+
+## Spawning Erk-Plans
+
+Objectives coordinate work; erk-prs execute it. Spawn an erk-pr for individual nodes.
+
+### When to Spawn
+
+Spawn an erk-pr when:
+
+- A roadmap node is ready to implement
+- The node is well-defined and scoped
+- Implementation can complete in one PR
+
+### Spawning Steps
+
+1. **Identify the node** - Which roadmap node to implement
+2. **Create the plan** - Reference the objective
+
+```bash
+# Create an erk-pr for a specific objective node
+erk pr create --file plan.md --title "[Node description]"
+```
+
+3. **Update objective** - Mark node as in-progress
+
+### After Plan Completion
+
+1. **Merge the PR** from the erk-pr
+2. **Post action comment** on the objective (see [updating.md](updating.md))
+3. **Update objective body** - node status, link PR
+4. **Check for closing** - If all nodes done, see [closing.md](closing.md)
+
+## Resuming Work on an Objective
+
+### Finding the Objective
+
+```bash
+# List open objectives
+gh issue list --label "erk-objective" --state open
+
+# View dependency graph and next node
+erk objective view <issue-number>
+# Or in-session: /local:objective-view <issue-number>
+
+# View specific objective
+gh issue view <issue-number>
+
+# View with comments
+gh issue view <issue-number> --comments
+```
+
+### Getting Up to Speed
+
+1. **Read the issue body** - Current state and design decisions
+2. **Read recent comments** - Latest actions and lessons
+3. **Check roadmap** - What nodes are pending next
+4. **Review linked PRs** - Context from completed work
+
+### Continuing Work
+
+1. **Identify next node** from roadmap
+2. **Create erk-pr** if needed for implementation
+3. **Work on the node**
+4. **Post action comment** when done (see [updating.md](updating.md))
+5. **Update body** with new status
+
+## Structuring for Steelthread Development
+
+### The Steelthread Pattern
+
+Each major phase should be split into sub-phases:
+
+1. **XA: Steelthread** - Minimal vertical slice (1 PR)
+   - Just enough infrastructure to prove concept
+   - Wire into ONE command/feature as proof
+   - Includes acceptance test
+
+2. **XB: Complete** - Fill out functionality (1 PR)
+   - Extend to remaining commands
+   - Full test coverage
+   - Handle edge cases
+
+3. **XC: Integration** (if needed) - Wire into rest of system (1 PR)
+   - Backward compatibility
+   - Migration from old approach
+
+### Signs Your Phase Needs Splitting
+
+Split a phase if:
+
+- It has high technical risk (unproven patterns, new integrations, complex logic)
+- Nodes mix infrastructure + wiring + commands
+- You can't describe a single acceptance test
+- Multiple independent concerns are bundled
+
+### Naming Convention
+
+- `Phase 1A` not `Phase 1.1` (sub-phases, not sub-nodes)
+- Include "(1 PR)" to signal expected scope
+- Name should describe the slice: "Steelthread", "Complete", "Integration"
+
+### Each Sub-Phase Must Have
+
+1. **Test statement** - "Test: [what proves this works]"
+2. **Coherent scope** - All nodes relate to same concern
+3. **Shippable state** - System works after merge
+
+## Designing for Session Handoff
+
+Objectives coordinate work across multiple sessions. The body should be self-contained enough that any session can pick up a phase and implement without re-exploring the codebase.
+
+### What the Body Should Include
+
+1. **Design decisions** - Locked choices that guide implementation
+2. **Implementation context** - Architecture, patterns, requirements
+3. **Clear roadmap** - What to do, in what order
+
+### What to Avoid
+
+- **Prescriptive code skeletons** - Let implementing agent design the solution
+- **Incomplete context** - "See the codebase" is not helpful
+- **Stale information** - Keep body current after every change
+
+### The Two-Step Discipline
+
+Every change to the objective follows two steps:
+
+1. **Comment first** - Log what changed and why (changelog entry)
+2. **Body second** - Update to reflect new state (source of truth)
+
+This applies to:
+
+- Completing nodes (obvious)
+- Adding context (often forgotten)
+- Refining decisions (often forgotten)
+- Adding phases (often forgotten)
+
+## Best Practices
+
+### Keep the Body Current
+
+The issue body is the source of truth. After every significant change:
+
+- Update node statuses
+- Reconcile stale prose sections (Design Decisions, Implementation Context)
+- Add new design decisions if any
+
+### Write Actionable Lessons
+
+Bad: "This was tricky"
+Good: "The API requires pagination for lists > 100 items; always check response headers"
+
+### Link Everything
+
+- Link PRs in the roadmap table
+- Link related issues in action comments
+- Link erk-prs spawned from the objective
+
+### Don't Over-Engineer
+
+- Start with minimal phases/nodes
+- Add detail as work progresses
+- Split nodes when needed, not preemptively

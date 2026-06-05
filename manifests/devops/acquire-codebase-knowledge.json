@@ -1,0 +1,49 @@
+{
+  "name": "acquire-codebase-knowledge",
+  "version": "0.1.0",
+  "category": "devops",
+  "description": "Use this skill when the user explicitly asks to map, document, or onboard into an existing codebase.",
+  "intent_triggers": [
+    "use the acquire codebase knowledge agent skill",
+    "run a workflow for acquire codebase knowledge",
+    "help me with acquire codebase knowledge",
+    "我需要處理 acquire codebase knowledge 相關工作",
+    "幫我啟用 acquire codebase knowledge 這個 skill",
+    "用 agent skill 完成 acquire codebase knowledge",
+    "use acquire codebase knowledge from awesome-copilot"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the acquire codebase knowledge skill for this task.",
+      "invocation": "codex --skill acquire-codebase-knowledge \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "devops",
+    "mcpservers",
+    "mit"
+  ]
+}

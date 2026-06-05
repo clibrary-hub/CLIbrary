@@ -1,0 +1,49 @@
+{
+  "name": "wiki-researcher-skills",
+  "version": "0.1.0",
+  "category": "devops",
+  "description": "Conducts multi-turn iterative deep research on specific topics within a codebase with zero tolerance for shallow analysis.",
+  "intent_triggers": [
+    "use the wiki researcher agent skill",
+    "run a workflow for wiki researcher",
+    "help me with wiki researcher",
+    "我需要處理 wiki researcher 相關工作",
+    "幫我啟用 wiki researcher 這個 skill",
+    "用 agent skill 完成 wiki researcher",
+    "use wiki researcher from skills"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the wiki researcher skill for this task.",
+      "invocation": "codex --skill wiki-researcher \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "devops",
+    "mcpservers",
+    "mit"
+  ]
+}

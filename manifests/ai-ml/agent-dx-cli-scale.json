@@ -1,0 +1,49 @@
+{
+  "name": "agent-dx-cli-scale",
+  "version": "0.1.0",
+  "category": "ai-ml",
+  "description": "A scoring scale for evaluating how well a CLI is designed for AI agents, based on the \"Rewrite Your CLI for AI Agents\" principles.",
+  "intent_triggers": [
+    "use the agent dx cli scale agent skill",
+    "run a workflow for agent dx cli scale",
+    "help me with agent dx cli scale",
+    "我需要處理 agent dx cli scale 相關工作",
+    "幫我啟用 agent dx cli scale 這個 skill",
+    "用 agent skill 完成 agent dx cli scale",
+    "use agent dx cli scale from design.md"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the agent dx cli scale skill for this task.",
+      "invocation": "codex --skill agent-dx-cli-scale \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "ai-ml",
+    "apache-2.0",
+    "mcpservers"
+  ]
+}

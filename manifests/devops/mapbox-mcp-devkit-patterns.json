@@ -1,0 +1,49 @@
+{
+  "name": "mapbox-mcp-devkit-patterns",
+  "version": "0.1.0",
+  "category": "devops",
+  "description": "Integration patterns for Mapbox MCP DevKit Server in AI coding assistants.",
+  "intent_triggers": [
+    "use the mapbox mcp devkit patterns agent skill",
+    "run a workflow for mapbox mcp devkit patterns",
+    "help me with mapbox mcp devkit patterns",
+    "我需要處理 mapbox mcp devkit patterns 相關工作",
+    "幫我啟用 mapbox mcp devkit patterns 這個 skill",
+    "用 agent skill 完成 mapbox mcp devkit patterns",
+    "use mapbox mcp devkit patterns from mapbox-agent-skills"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the mapbox mcp devkit patterns skill for this task.",
+      "invocation": "codex --skill mapbox-mcp-devkit-patterns \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "devops",
+    "mcpservers",
+    "mit"
+  ]
+}

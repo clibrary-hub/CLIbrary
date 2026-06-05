@@ -1,0 +1,49 @@
+{
+  "name": "cms-data-modeling-best-practices",
+  "version": "0.1.0",
+  "category": "data",
+  "description": "Guide developers to model content in Contentstack using the simplest reusable structure.",
+  "intent_triggers": [
+    "use the cms data modeling best practices agent skill",
+    "run a workflow for cms data modeling best practices",
+    "help me with cms data modeling best practices",
+    "我需要處理 cms data modeling best practices 相關工作",
+    "幫我啟用 cms data modeling best practices 這個 skill",
+    "用 agent skill 完成 cms data modeling best practices",
+    "use cms data modeling best practices from contentstack-agent-skills"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the cms data modeling best practices skill for this task.",
+      "invocation": "codex --skill cms-data-modeling-best-practices \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "data",
+    "mcpservers",
+    "mit"
+  ]
+}

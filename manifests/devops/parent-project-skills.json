@@ -1,0 +1,49 @@
+{
+  "name": "parent-project-skills",
+  "version": "0.1.0",
+  "category": "devops",
+  "description": "Bootstrap skill for discovering additional skills and context from a parent project when workerd is used as a submodule.",
+  "intent_triggers": [
+    "use the parent project skills agent skill",
+    "run a workflow for parent project skills",
+    "help me with parent project skills",
+    "我需要處理 parent project skills 相關工作",
+    "幫我啟用 parent project skills 這個 skill",
+    "用 agent skill 完成 parent project skills",
+    "use parent project skills from workerd"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the parent project skills skill for this task.",
+      "invocation": "codex --skill parent-project-skills \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "apache-2.0",
+    "devops",
+    "mcpservers"
+  ]
+}

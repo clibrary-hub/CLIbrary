@@ -1,0 +1,49 @@
+{
+  "name": "github-issue-creator-skills",
+  "version": "0.1.0",
+  "category": "devops",
+  "description": "Convert raw notes, error logs, voice dictation, or screenshots into crisp GitHub-flavored markdown issue reports.",
+  "intent_triggers": [
+    "use the github issue creator agent skill",
+    "run a workflow for github issue creator",
+    "help me with github issue creator",
+    "我需要處理 github issue creator 相關工作",
+    "幫我啟用 github issue creator 這個 skill",
+    "用 agent skill 完成 github issue creator",
+    "use github issue creator from skills"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the github issue creator skill for this task.",
+      "invocation": "codex --skill github-issue-creator \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "devops",
+    "mcpservers",
+    "mit"
+  ]
+}

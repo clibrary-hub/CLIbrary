@@ -1,0 +1,49 @@
+{
+  "name": "chat-customizations-editor",
+  "version": "0.1.0",
+  "category": "devops",
+  "description": "Use when working on the Chat Customizations editor — the management UI for agents, skills, instructions, hooks, prompts, MCP servers, and plugins.",
+  "intent_triggers": [
+    "use the chat customizations editor agent skill",
+    "run a workflow for chat customizations editor",
+    "help me with chat customizations editor",
+    "我需要處理 chat customizations editor 相關工作",
+    "幫我啟用 chat customizations editor 這個 skill",
+    "用 agent skill 完成 chat customizations editor",
+    "use chat customizations editor from vscode"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the chat customizations editor skill for this task.",
+      "invocation": "codex --skill chat-customizations-editor \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "devops",
+    "mcpservers",
+    "mit"
+  ]
+}

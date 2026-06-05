@@ -1,0 +1,15 @@
+{
+  "source": "mcpservers",
+  "listing_url": "https://mcpservers.org/zh-TW/agent-skills",
+  "owner": "neondatabase",
+  "repo": "better-env",
+  "branch": "HEAD",
+  "skill": "better-env",
+  "repo_url": "https://github.com/neondatabase/better-env",
+  "license": {
+    "spdx": "Apache-2.0",
+    "url": "https://github.com/neon-solutions/better-env/blob/main/LICENSE",
+    "source": "api"
+  },
+  "zip_subdir": "better-env-main/skills/better-env"
+}

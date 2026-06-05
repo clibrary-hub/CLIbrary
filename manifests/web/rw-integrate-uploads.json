@@ -1,0 +1,49 @@
+{
+  "name": "rw-integrate-uploads",
+  "version": "0.1.0",
+  "category": "web",
+  "description": "Help users upload local files to Runway for use as inputs to generation models",
+  "intent_triggers": [
+    "use the rw integrate uploads agent skill",
+    "run a workflow for rw integrate uploads",
+    "help me with rw integrate uploads",
+    "我需要處理 rw integrate uploads 相關工作",
+    "幫我啟用 rw integrate uploads 這個 skill",
+    "用 agent skill 完成 rw integrate uploads",
+    "use rw integrate uploads from skills"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the rw integrate uploads skill for this task.",
+      "invocation": "codex --skill rw-integrate-uploads \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "mcpservers",
+    "mit",
+    "web"
+  ]
+}

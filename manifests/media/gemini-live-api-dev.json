@@ -1,0 +1,49 @@
+{
+  "name": "gemini-live-api-dev",
+  "version": "0.1.0",
+  "category": "media",
+  "description": "Use this skill when building real-time, bidirectional streaming applications with the Gemini Live API.",
+  "intent_triggers": [
+    "use the gemini live api dev agent skill",
+    "run a workflow for gemini live api dev",
+    "help me with gemini live api dev",
+    "我需要處理 gemini live api dev 相關工作",
+    "幫我啟用 gemini live api dev 這個 skill",
+    "用 agent skill 完成 gemini live api dev",
+    "use gemini live api dev from gemini-skill"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the gemini live api dev skill for this task.",
+      "invocation": "codex --skill gemini-live-api-dev \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "apache-2.0",
+    "mcpservers",
+    "media"
+  ]
+}

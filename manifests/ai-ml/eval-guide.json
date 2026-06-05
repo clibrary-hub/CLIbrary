@@ -1,0 +1,49 @@
+{
+  "name": "eval-guide",
+  "version": "0.1.0",
+  "category": "ai-ml",
+  "description": "Eval enablement accelerator — help customers think through \"what does good look like\" for their AI agent, then generate a structured eval plan and test cases they can use immediately.",
+  "intent_triggers": [
+    "use the eval guide agent skill",
+    "run a workflow for eval guide",
+    "help me with eval guide",
+    "我需要處理 eval guide 相關工作",
+    "幫我啟用 eval guide 這個 skill",
+    "用 agent skill 完成 eval guide",
+    "use eval guide from eval-guide"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the eval guide skill for this task.",
+      "invocation": "codex --skill eval-guide \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "ai-ml",
+    "mcpservers",
+    "mit"
+  ]
+}

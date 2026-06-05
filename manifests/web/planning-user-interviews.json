@@ -1,0 +1,48 @@
+{
+  "name": "planning-user-interviews",
+  "version": "0.1.0",
+  "category": "web",
+  "description": "Plan a user interview topic in PostHog — pick who to target (cohort, emails, or PostHog distinct IDs), draft what to ask about, and prepare the voice-agent context plus a question list.",
+  "intent_triggers": [
+    "use the planning user interviews agent skill",
+    "run a workflow for planning user interviews",
+    "help me with planning user interviews",
+    "我需要處理 planning user interviews 相關工作",
+    "幫我啟用 planning user interviews 這個 skill",
+    "用 agent skill 完成 planning user interviews"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the planning user interviews skill for this task.",
+      "invocation": "codex --skill planning-user-interviews \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "mit",
+    "skill",
+    "web"
+  ]
+}

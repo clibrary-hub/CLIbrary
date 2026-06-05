@@ -1,0 +1,15 @@
+{
+  "source": "mcpservers",
+  "listing_url": "https://mcpservers.org/zh-TW/agent-skills",
+  "owner": "getsentry",
+  "repo": "sentry-python",
+  "branch": "HEAD",
+  "skill": "find-bugs",
+  "repo_url": "https://github.com/getsentry/sentry-python",
+  "license": {
+    "spdx": "MIT",
+    "url": "https://github.com/getsentry/sentry-python/blob/master/LICENSE",
+    "source": "api"
+  },
+  "zip_subdir": "sentry-python-main/.agents/skills/find-bugs"
+}

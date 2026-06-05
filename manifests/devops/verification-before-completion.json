@@ -1,0 +1,49 @@
+{
+  "name": "verification-before-completion",
+  "version": "0.1.0",
+  "category": "devops",
+  "description": "Use when about to claim work is complete, fixed, or passing, before committing or creating PRs - requires running verification commands and confirming output before making any success claims; evide...",
+  "intent_triggers": [
+    "use the verification before completion agent skill",
+    "run a workflow for verification before completion",
+    "help me with verification before completion",
+    "我需要處理 verification before completion 相關工作",
+    "幫我啟用 verification before completion 這個 skill",
+    "用 agent skill 完成 verification before completion",
+    "use verification before completion from workerd"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the verification before completion skill for this task.",
+      "invocation": "codex --skill verification-before-completion \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "apache-2.0",
+    "devops",
+    "mcpservers"
+  ]
+}

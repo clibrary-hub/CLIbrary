@@ -1,0 +1,15 @@
+{
+  "source": "mcpservers",
+  "listing_url": "https://mcpservers.org/zh-TW/agent-skills",
+  "owner": "pinecone-io",
+  "repo": "skills",
+  "branch": "HEAD",
+  "skill": "pinecone-quickstart",
+  "repo_url": "https://github.com/pinecone-io/skills",
+  "license": {
+    "spdx": "MIT",
+    "url": "https://github.com/pinecone-io/skills/blob/main/LICENSE",
+    "source": "api"
+  },
+  "zip_subdir": "skills-main/skills/pinecone-quickstart"
+}

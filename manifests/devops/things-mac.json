@@ -1,0 +1,49 @@
+{
+  "name": "things-mac",
+  "version": "0.1.0",
+  "category": "devops",
+  "description": "Manage Things 3 via the `things` CLI on macOS (add/update projects+todos via URL scheme; read/search/list from the local Things database).",
+  "intent_triggers": [
+    "use the things mac agent skill",
+    "run a workflow for things mac",
+    "help me with things mac",
+    "我需要處理 things mac 相關工作",
+    "幫我啟用 things mac 這個 skill",
+    "用 agent skill 完成 things mac",
+    "use things mac from openclaw"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the things mac skill for this task.",
+      "invocation": "codex --skill things-mac \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "devops",
+    "mcpservers",
+    "mit"
+  ]
+}

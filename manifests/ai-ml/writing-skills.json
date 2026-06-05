@@ -1,0 +1,49 @@
+{
+  "name": "writing-skills",
+  "version": "0.1.0",
+  "category": "ai-ml",
+  "description": "Use when creating new skills, editing existing skills, or verifying skills work before deployment",
+  "intent_triggers": [
+    "use the writing skills agent skill",
+    "run a workflow for writing skills",
+    "help me with writing skills",
+    "我需要處理 writing skills 相關工作",
+    "幫我啟用 writing skills 這個 skill",
+    "用 agent skill 完成 writing skills",
+    "use writing skills from stryker-netx"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the writing skills skill for this task.",
+      "invocation": "codex --skill writing-skills \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "ai-ml",
+    "apache-2.0",
+    "skills-rest"
+  ]
+}

@@ -1,0 +1,49 @@
+{
+  "name": "auth0-fastify-api",
+  "version": "0.1.0",
+  "category": "web",
+  "description": "Use when securing Fastify API endpoints with JWT Bearer token validation, scope/permission checks, or stateless auth - integrates @auth0/auth0-fastify-api for REST APIs receiving access tokens from...",
+  "intent_triggers": [
+    "use the auth0 fastify api agent skill",
+    "run a workflow for auth0 fastify api",
+    "help me with auth0 fastify api",
+    "我需要處理 auth0 fastify api 相關工作",
+    "幫我啟用 auth0 fastify api 這個 skill",
+    "用 agent skill 完成 auth0 fastify api",
+    "use auth0 fastify api from agent-skills"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the auth0 fastify api skill for this task.",
+      "invocation": "codex --skill auth0-fastify-api \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "apache-2.0",
+    "mcpservers",
+    "web"
+  ]
+}

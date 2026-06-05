@@ -1,0 +1,49 @@
+{
+  "name": "prisma-client-api",
+  "version": "0.1.0",
+  "category": "data",
+  "description": "Prisma Client API reference covering model queries, filters, operators, and client methods.",
+  "intent_triggers": [
+    "use the prisma client api agent skill",
+    "run a workflow for prisma client api",
+    "help me with prisma client api",
+    "我需要處理 prisma client api 相關工作",
+    "幫我啟用 prisma client api 這個 skill",
+    "用 agent skill 完成 prisma client api",
+    "use prisma client api from skills"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the prisma client api skill for this task.",
+      "invocation": "codex --skill prisma-client-api \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "data",
+    "mcpservers",
+    "mit"
+  ]
+}

@@ -1,0 +1,49 @@
+{
+  "name": "neon-drizzle",
+  "version": "0.1.0",
+  "category": "devops",
+  "description": "Creates a fully functional Drizzle ORM setup with a provisioned Neon database.",
+  "intent_triggers": [
+    "use the neon drizzle agent skill",
+    "run a workflow for neon drizzle",
+    "help me with neon drizzle",
+    "我需要處理 neon drizzle 相關工作",
+    "幫我啟用 neon drizzle 這個 skill",
+    "用 agent skill 完成 neon drizzle",
+    "use neon drizzle from ai-rules"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the neon drizzle skill for this task.",
+      "invocation": "codex --skill neon-drizzle \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "devops",
+    "mcpservers",
+    "mit"
+  ]
+}

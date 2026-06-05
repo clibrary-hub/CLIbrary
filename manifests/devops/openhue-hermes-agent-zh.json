@@ -1,0 +1,49 @@
+{
+  "name": "openhue-hermes-agent-zh",
+  "version": "0.1.0",
+  "category": "devops",
+  "description": "Control Philips Hue lights, rooms, and scenes 通过 OpenHue CLI.",
+  "intent_triggers": [
+    "use the openhue agent skill",
+    "run a workflow for openhue",
+    "help me with openhue",
+    "我需要處理 openhue 相關工作",
+    "幫我啟用 openhue 這個 skill",
+    "用 agent skill 完成 openhue",
+    "use openhue from hermes-agent-zh"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the openhue skill for this task.",
+      "invocation": "codex --skill openhue \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "devops",
+    "mit",
+    "skills-rest"
+  ]
+}

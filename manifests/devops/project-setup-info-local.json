@@ -1,0 +1,49 @@
+{
+  "name": "project-setup-info-local",
+  "version": "0.1.0",
+  "category": "devops",
+  "description": "Comprehensive setup steps to help the user create complete project structures in a VS Code workspace; this tool is designed for full project initialization and scaffolding, not for creating individ...",
+  "intent_triggers": [
+    "use the project setup info local agent skill",
+    "run a workflow for project setup info local",
+    "help me with project setup info local",
+    "我需要處理 project setup info local 相關工作",
+    "幫我啟用 project setup info local 這個 skill",
+    "用 agent skill 完成 project setup info local",
+    "use project setup info local from vscode-copilot-chat"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the project setup info local skill for this task.",
+      "invocation": "codex --skill project-setup-info-local \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "devops",
+    "mcpservers",
+    "mit"
+  ]
+}

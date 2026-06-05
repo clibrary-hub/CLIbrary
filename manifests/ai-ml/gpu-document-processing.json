@@ -1,0 +1,49 @@
+{
+  "name": "gpu-document-processing",
+  "version": "0.1.0",
+  "category": "ai-ml",
+  "description": "Use when processing large PDFs, document collections, or bulk text extraction tasks that benefit from GPU-accelerated processing.",
+  "intent_triggers": [
+    "use the gpu document processing agent skill",
+    "run a workflow for gpu document processing",
+    "help me with gpu document processing",
+    "我需要處理 gpu document processing 相關工作",
+    "幫我啟用 gpu document processing 這個 skill",
+    "用 agent skill 完成 gpu document processing",
+    "use gpu document processing from deepagents"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the gpu document processing skill for this task.",
+      "invocation": "codex --skill gpu-document-processing \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "ai-ml",
+    "mcpservers",
+    "mit"
+  ]
+}

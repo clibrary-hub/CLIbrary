@@ -1,0 +1,15 @@
+{
+  "source": "skills-rest",
+  "listing_url": "https://skills.rest/explore?complexity=Advanced",
+  "owner": "xyt66665000",
+  "repo": "CodeRepairAgent",
+  "branch": "main",
+  "skill": "restore-function-signatures",
+  "repo_url": "https://github.com/xyt66665000/CodeRepairAgent",
+  "license": {
+    "spdx": "MIT",
+    "url": "https://github.com/xyt66665000/CodeRepairAgent/blob/main/LICENSE",
+    "source": "api"
+  },
+  "zip_subdir": "CodeRepairAgent-main/skills/restore-function-signatures"
+}

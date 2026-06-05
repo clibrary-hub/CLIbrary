@@ -1,0 +1,49 @@
+{
+  "name": "persona-team-lead",
+  "version": "0.1.0",
+  "category": "data",
+  "description": "Lead a team — run standups, coordinate tasks, and communicate.",
+  "intent_triggers": [
+    "use the persona team lead agent skill",
+    "run a workflow for persona team lead",
+    "help me with persona team lead",
+    "我需要處理 persona team lead 相關工作",
+    "幫我啟用 persona team lead 這個 skill",
+    "用 agent skill 完成 persona team lead",
+    "use persona team lead from cli"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the persona team lead skill for this task.",
+      "invocation": "codex --skill persona-team-lead \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "apache-2.0",
+    "data",
+    "mcpservers"
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "source": "mcpservers",
+  "listing_url": "https://mcpservers.org/zh-TW/agent-skills",
+  "owner": "google-labs-code",
+  "repo": "stitch-sdk",
+  "branch": "HEAD",
+  "skill": "stitch-sdk-usage",
+  "repo_url": "https://github.com/google-labs-code/stitch-sdk",
+  "license": {
+    "spdx": "Apache-2.0",
+    "url": "https://github.com/google-labs-code/stitch-sdk/blob/main/LICENSE",
+    "source": "api"
+  },
+  "zip_subdir": "stitch-sdk-main/.agents/skills/stitch-sdk-usage"
+}

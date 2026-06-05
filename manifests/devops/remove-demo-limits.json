@@ -1,0 +1,49 @@
+{
+  "name": "remove-demo-limits",
+  "version": "0.1.0",
+  "category": "devops",
+  "description": "Removes Open Harness hosted demo restrictions from a fork.",
+  "intent_triggers": [
+    "use the remove demo limits agent skill",
+    "run a workflow for remove demo limits",
+    "help me with remove demo limits",
+    "我需要處理 remove demo limits 相關工作",
+    "幫我啟用 remove demo limits 這個 skill",
+    "用 agent skill 完成 remove demo limits",
+    "use remove demo limits from open-agents"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the remove demo limits skill for this task.",
+      "invocation": "codex --skill remove-demo-limits \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "devops",
+    "mcpservers",
+    "mit"
+  ]
+}

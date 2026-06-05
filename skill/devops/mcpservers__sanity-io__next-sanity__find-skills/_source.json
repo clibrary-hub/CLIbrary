@@ -1,0 +1,15 @@
+{
+  "source": "mcpservers",
+  "listing_url": "https://mcpservers.org/zh-TW/agent-skills",
+  "owner": "sanity-io",
+  "repo": "next-sanity",
+  "branch": "HEAD",
+  "skill": "find-skills",
+  "repo_url": "https://github.com/sanity-io/next-sanity",
+  "license": {
+    "spdx": "MIT",
+    "url": "https://github.com/sanity-io/next-sanity/blob/main/LICENSE",
+    "source": "api"
+  },
+  "zip_subdir": "next-sanity-main/.agents/skills/find-skills"
+}

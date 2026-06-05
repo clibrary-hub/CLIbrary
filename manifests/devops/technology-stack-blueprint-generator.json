@@ -1,0 +1,49 @@
+{
+  "name": "technology-stack-blueprint-generator",
+  "version": "0.1.0",
+  "category": "devops",
+  "description": "Comprehensive technology stack blueprint generator that analyzes codebases to create detailed architectural documentation.",
+  "intent_triggers": [
+    "use the technology stack blueprint generator agent skill",
+    "run a workflow for technology stack blueprint generator",
+    "help me with technology stack blueprint generator",
+    "我需要處理 technology stack blueprint generator 相關工作",
+    "幫我啟用 technology stack blueprint generator 這個 skill",
+    "用 agent skill 完成 technology stack blueprint generator",
+    "use technology stack blueprint generator from awesome-copilot"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the technology stack blueprint generator skill for this task.",
+      "invocation": "codex --skill technology-stack-blueprint-generator \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "devops",
+    "mcpservers",
+    "mit"
+  ]
+}

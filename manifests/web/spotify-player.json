@@ -1,0 +1,49 @@
+{
+  "name": "spotify-player",
+  "version": "0.1.0",
+  "category": "web",
+  "description": "Terminal Spotify playback/search via spogo (preferred) or spotify_player.",
+  "intent_triggers": [
+    "use the spotify player agent skill",
+    "run a workflow for spotify player",
+    "help me with spotify player",
+    "我需要處理 spotify player 相關工作",
+    "幫我啟用 spotify player 這個 skill",
+    "用 agent skill 完成 spotify player",
+    "use spotify player from openclaw"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the spotify player skill for this task.",
+      "invocation": "codex --skill spotify-player \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "mcpservers",
+    "mit",
+    "web"
+  ]
+}

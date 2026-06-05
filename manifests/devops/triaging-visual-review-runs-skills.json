@@ -1,0 +1,49 @@
+{
+  "name": "triaging-visual-review-runs-skills",
+  "version": "0.1.0",
+  "category": "devops",
+  "description": "Agent skill for triaging visual review runs workflows.",
+  "intent_triggers": [
+    "use the triaging visual review runs agent skill",
+    "run a workflow for triaging visual review runs",
+    "help me with triaging visual review runs",
+    "我需要處理 triaging visual review runs 相關工作",
+    "幫我啟用 triaging visual review runs 這個 skill",
+    "用 agent skill 完成 triaging visual review runs",
+    "use triaging visual review runs from skills"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the triaging visual review runs skill for this task.",
+      "invocation": "codex --skill triaging-visual-review-runs \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "devops",
+    "mcpservers",
+    "mit"
+  ]
+}

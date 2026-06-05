@@ -1,0 +1,49 @@
+{
+  "name": "github-copilot-agent-tips-and-tricks",
+  "version": "0.1.0",
+  "category": "devops",
+  "description": "Practical tips for reviewing and improving Copilot agent PRs.",
+  "intent_triggers": [
+    "use the github copilot agent tips and tricks agent skill",
+    "run a workflow for github copilot agent tips and tricks",
+    "help me with github copilot agent tips and tricks",
+    "我需要處理 github copilot agent tips and tricks 相關工作",
+    "幫我啟用 github copilot agent tips and tricks 這個 skill",
+    "用 agent skill 完成 github copilot agent tips and tricks",
+    "use github copilot agent tips and tricks from gh-aw"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the github copilot agent tips and tricks skill for this task.",
+      "invocation": "codex --skill github-copilot-agent-tips-and-tricks \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "devops",
+    "mcpservers",
+    "mit"
+  ]
+}

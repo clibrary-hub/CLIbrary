@@ -1,0 +1,49 @@
+{
+  "name": "power-bi-report-design-consultation",
+  "version": "0.1.0",
+  "category": "finance",
+  "description": "Power BI report visualization design prompt for creating effective, user-friendly, and accessible reports with optimal chart selection and layout design.",
+  "intent_triggers": [
+    "use the power bi report design consultation agent skill",
+    "run a workflow for power bi report design consultation",
+    "help me with power bi report design consultation",
+    "我需要處理 power bi report design consultation 相關工作",
+    "幫我啟用 power bi report design consultation 這個 skill",
+    "用 agent skill 完成 power bi report design consultation",
+    "use power bi report design consultation from awesome-copilot"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the power bi report design consultation skill for this task.",
+      "invocation": "codex --skill power-bi-report-design-consultation \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "finance",
+    "mcpservers",
+    "mit"
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "source": "mcpservers",
+  "listing_url": "https://mcpservers.org/zh-TW/agent-skills",
+  "owner": "neondatabase",
+  "repo": "ai-rules",
+  "branch": "HEAD",
+  "skill": "neon-serverless",
+  "repo_url": "https://github.com/neondatabase/ai-rules",
+  "license": {
+    "spdx": "MIT",
+    "url": "https://github.com/neondatabase/ai-rules/blob/main/LICENSE",
+    "source": "api"
+  },
+  "zip_subdir": "ai-rules-main/neon-plugin/skills/neon-serverless"
+}

@@ -1,0 +1,15 @@
+{
+  "source": "mcpservers",
+  "listing_url": "https://mcpservers.org/zh-TW/agent-skills/category/development",
+  "owner": "shadcn-ui",
+  "repo": "ui",
+  "branch": "main",
+  "skill": "shadcn",
+  "repo_url": "https://github.com/shadcn-ui/ui",
+  "license": {
+    "spdx": "MIT",
+    "url": "https://github.com/shadcn-ui/ui/blob/main/LICENSE.md",
+    "source": "api"
+  },
+  "zip_subdir": "ui-main/skills/shadcn"
+}

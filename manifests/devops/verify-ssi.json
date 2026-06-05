@@ -1,0 +1,48 @@
+{
+  "name": "verify-ssi",
+  "version": "0.1.0",
+  "category": "devops",
+  "description": "Verify Single Step Instrumentation (SSI) is working end-to-end on Kubernetes — SSI automatically instruments applications for APM without code changes.",
+  "intent_triggers": [
+    "use the verify ssi agent skill",
+    "run a workflow for verify ssi",
+    "help me with verify ssi",
+    "我需要處理 verify ssi 相關工作",
+    "幫我啟用 verify ssi 這個 skill",
+    "用 agent skill 完成 verify ssi"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the verify ssi skill for this task.",
+      "invocation": "codex --skill verify-ssi \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "devops",
+    "mit",
+    "skill"
+  ]
+}

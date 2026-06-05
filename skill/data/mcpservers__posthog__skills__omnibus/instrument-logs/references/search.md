@@ -1,0 +1,64 @@
+# Search logs - Docs
+
+Filter logs from the filter bar at the top of the [logs page](https://app.posthog.com/logs). Pick a field, choose an operator, and enter a value. Add as many filters as you need — they're combined with AND.
+
+There are four kinds of fields you can filter on:
+
+-   **Logs** – top-level log properties: `severity_level`, `trace_id`, and `span_id`
+-   **Message** – full-text search over the log body
+-   **Resource attributes** – describe where the log came from, like `service.name`, `host.name`, or `k8s.container.name`
+-   **Attributes** – custom key-value context attached to individual log events, like `user_id`, `endpoint`, or `status_code`
+
+## Filter on resource attributes and attributes
+
+Resource attributes identify the source of a log (the service, host, or container that emitted it). Attributes describe a specific log event. Both come from your OpenTelemetry instrumentation — the richer your [structured logging](/docs/logs/best-practices.md), the more you can filter on.
+
+To filter:
+
+1.  Click the filter bar and pick a field. Resource attributes and attributes are grouped separately in the picker.
+2.  Choose an operator (equals, contains, is set, greater than, etc.).
+3.  Enter a value.
+
+For example, filter `service.name` equals `checkout-api` to scope to one service, then add `status_code` equals `500` to narrow to failed requests.
+
+## Filter by severity, trace ID, and span ID
+
+The **Logs** group in the filter picker exposes three top-level fields. All three only support equals and not-equals operators.
+
+-   **severity\_level** – filter by log severity using a dropdown. Available values: `trace`, `debug`, `info`, `warn`, `error`, `fatal`.
+-   **trace\_id** – filter logs by their OpenTelemetry trace correlation ID. Accepts hex or base64 format trace IDs
+-   **span\_id** – filter logs by their OpenTelemetry span ID. Accepts hex or base64, same as `trace_id`.
+
+For example, copy a `trace_id` from a trace URL and paste it into the filter to see every log emitted during that trace.
+
+## Full-text search on Message
+
+To search log bodies, pick the **Message** field from the filter bar. Message supports three operators, each with a negated variant for exclusion:
+
+| Operator | Behavior |
+| --- | --- |
+| equals / doesn't equal | Exact match. Case-sensitive. |
+| contains / doesn't contain | Substring match. Case-insensitive. The default. |
+| matches regex / doesn't match regex | RE2 regex. Case-insensitive. |
+
+### Examples
+
+-   **Contains** `failed to connect` – matches any log containing that substring, regardless of case.
+-   **Equals** `Health check OK` – matches only logs whose body is exactly that string.
+-   **Matches regex** `timeout|refused|reset` – matches logs mentioning any of those words (useful when you'd otherwise add multiple contains filters).
+-   **Doesn't contain** `healthcheck` – exclude noisy healthcheck lines while keeping everything else.
+
+## Tips
+
+-   **Stack filters to narrow down.** Every filter you add is ANDed together — combine a `service.name` filter with a Message contains to scope full-text search to one service.
+-   **Start with contains, then tighten.** Contains is case-insensitive and forgiving. Switch to equals only when you need an exact match, or regex when you want OR-style matching in a single filter.
+-   **Use regex for alternatives.** Instead of adding three contains filters, use one regex like `(timeout|refused|reset)`.
+-   **Structured logs make filtering more powerful.** Key-value context like `user_id`, `endpoint`, and `status_code` becomes an attribute you can filter on directly. See our [logging best practices](/docs/logs/best-practices.md) for patterns that make logs easier to query.
+
+### Community questions
+
+Ask a question
+
+### Was this page useful?
+
+HelpfulCould be better

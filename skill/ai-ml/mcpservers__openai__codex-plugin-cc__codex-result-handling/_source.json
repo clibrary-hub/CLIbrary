@@ -1,0 +1,15 @@
+{
+  "source": "mcpservers",
+  "listing_url": "https://mcpservers.org/zh-TW/agent-skills/author/openai",
+  "owner": "openai",
+  "repo": "codex-plugin-cc",
+  "branch": "HEAD",
+  "skill": "codex-result-handling",
+  "repo_url": "https://github.com/openai/codex-plugin-cc",
+  "license": {
+    "spdx": "Apache-2.0",
+    "url": "https://github.com/openai/codex-plugin-cc/blob/main/LICENSE",
+    "source": "api"
+  },
+  "zip_subdir": "codex-plugin-cc-main/plugins/codex/skills/codex-result-handling"
+}

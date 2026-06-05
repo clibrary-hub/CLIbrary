@@ -1,0 +1,49 @@
+{
+  "name": "azure-static-web-apps",
+  "version": "0.1.0",
+  "category": "web",
+  "description": "Helps create, configure, and deploy Azure Static Web Apps using the SWA CLI.",
+  "intent_triggers": [
+    "use the azure static web apps agent skill",
+    "run a workflow for azure static web apps",
+    "help me with azure static web apps",
+    "我需要處理 azure static web apps 相關工作",
+    "幫我啟用 azure static web apps 這個 skill",
+    "用 agent skill 完成 azure static web apps",
+    "use azure static web apps from awesome-copilot"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the azure static web apps skill for this task.",
+      "invocation": "codex --skill azure-static-web-apps \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "mcpservers",
+    "mit",
+    "web"
+  ]
+}

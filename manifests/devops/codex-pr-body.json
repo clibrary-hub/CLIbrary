@@ -1,0 +1,49 @@
+{
+  "name": "codex-pr-body",
+  "version": "0.1.0",
+  "category": "devops",
+  "description": "Update the title and body of one or more pull requests.",
+  "intent_triggers": [
+    "use the codex pr body agent skill",
+    "run a workflow for codex pr body",
+    "help me with codex pr body",
+    "我需要處理 codex pr body 相關工作",
+    "幫我啟用 codex pr body 這個 skill",
+    "用 agent skill 完成 codex pr body",
+    "use codex pr body from codex"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the codex pr body skill for this task.",
+      "invocation": "codex --skill codex-pr-body \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "apache-2.0",
+    "devops",
+    "mcpservers"
+  ]
+}

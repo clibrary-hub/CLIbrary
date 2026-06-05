@@ -1,0 +1,49 @@
+{
+  "name": "rw-integrate-characters",
+  "version": "0.1.0",
+  "category": "web",
+  "description": "Help users create Runway Characters (GWM-1 avatars) and integrate real-time conversational sessions into their apps",
+  "intent_triggers": [
+    "use the rw integrate characters agent skill",
+    "run a workflow for rw integrate characters",
+    "help me with rw integrate characters",
+    "我需要處理 rw integrate characters 相關工作",
+    "幫我啟用 rw integrate characters 這個 skill",
+    "用 agent skill 完成 rw integrate characters",
+    "use rw integrate characters from skills"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the rw integrate characters skill for this task.",
+      "invocation": "codex --skill rw-integrate-characters \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "mcpservers",
+    "mit",
+    "web"
+  ]
+}

@@ -1,0 +1,49 @@
+{
+  "name": "recipe-backup-sheet-as-csv",
+  "version": "0.1.0",
+  "category": "data",
+  "description": "Export a Google Sheets spreadsheet as a CSV file for local backup or processing.",
+  "intent_triggers": [
+    "use the recipe backup sheet as csv agent skill",
+    "run a workflow for recipe backup sheet as csv",
+    "help me with recipe backup sheet as csv",
+    "我需要處理 recipe backup sheet as csv 相關工作",
+    "幫我啟用 recipe backup sheet as csv 這個 skill",
+    "用 agent skill 完成 recipe backup sheet as csv",
+    "use recipe backup sheet as csv from cli"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the recipe backup sheet as csv skill for this task.",
+      "invocation": "codex --skill recipe-backup-sheet-as-csv \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "apache-2.0",
+    "data",
+    "mcpservers"
+  ]
+}

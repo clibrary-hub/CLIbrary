@@ -1,0 +1,49 @@
+{
+  "name": "bond-futures-basis",
+  "version": "0.1.0",
+  "category": "finance",
+  "description": "Analyze the bond futures basis by pricing futures, identifying the cheapest-to-deliver, and comparing with yield curves to assess delivery option value and basis trading opportunities.",
+  "intent_triggers": [
+    "use the bond futures basis agent skill",
+    "run a workflow for bond futures basis",
+    "help me with bond futures basis",
+    "我需要處理 bond futures basis 相關工作",
+    "幫我啟用 bond futures basis 這個 skill",
+    "用 agent skill 完成 bond futures basis",
+    "use bond futures basis from financial-services-plugins"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the bond futures basis skill for this task.",
+      "invocation": "codex --skill bond-futures-basis \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "apache-2.0",
+    "finance",
+    "mcpservers"
+  ]
+}

@@ -1,0 +1,49 @@
+{
+  "name": "winui3-migration-guide",
+  "version": "0.1.0",
+  "category": "ai-ml",
+  "description": "UWP-to-WinUI 3 migration reference.",
+  "intent_triggers": [
+    "use the winui3 migration guide agent skill",
+    "run a workflow for winui3 migration guide",
+    "help me with winui3 migration guide",
+    "我需要處理 winui3 migration guide 相關工作",
+    "幫我啟用 winui3 migration guide 這個 skill",
+    "用 agent skill 完成 winui3 migration guide",
+    "use winui3 migration guide from awesome-copilot"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the winui3 migration guide skill for this task.",
+      "invocation": "codex --skill winui3-migration-guide \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "ai-ml",
+    "mcpservers",
+    "mit"
+  ]
+}

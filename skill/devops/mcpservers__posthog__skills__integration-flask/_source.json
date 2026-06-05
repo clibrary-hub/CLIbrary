@@ -1,0 +1,15 @@
+{
+  "source": "mcpservers",
+  "listing_url": "https://mcpservers.org/zh-TW/agent-skills",
+  "owner": "posthog",
+  "repo": "skills",
+  "branch": "HEAD",
+  "skill": "integration-flask",
+  "repo_url": "https://github.com/posthog/skills",
+  "license": {
+    "spdx": "MIT",
+    "url": "https://github.com/PostHog/skills/blob/main/LICENSE",
+    "source": "api"
+  },
+  "zip_subdir": "skills-main/skills/posthog/all/skills/integration-flask"
+}

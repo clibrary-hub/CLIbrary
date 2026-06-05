@@ -1,0 +1,49 @@
+{
+  "name": "aspnet-minimal-api-openapi",
+  "version": "0.1.0",
+  "category": "devops",
+  "description": "Create ASP.NET Minimal API endpoints with proper OpenAPI documentation",
+  "intent_triggers": [
+    "use the aspnet minimal api openapi agent skill",
+    "run a workflow for aspnet minimal api openapi",
+    "help me with aspnet minimal api openapi",
+    "我需要處理 aspnet minimal api openapi 相關工作",
+    "幫我啟用 aspnet minimal api openapi 這個 skill",
+    "用 agent skill 完成 aspnet minimal api openapi",
+    "use aspnet minimal api openapi from awesome-copilot"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the aspnet minimal api openapi skill for this task.",
+      "invocation": "codex --skill aspnet-minimal-api-openapi \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "devops",
+    "mcpservers",
+    "mit"
+  ]
+}

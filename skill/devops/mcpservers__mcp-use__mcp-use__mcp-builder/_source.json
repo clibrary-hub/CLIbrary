@@ -1,0 +1,15 @@
+{
+  "source": "mcpservers",
+  "listing_url": "https://mcpservers.org/zh-TW/agent-skills",
+  "owner": "mcp-use",
+  "repo": "mcp-use",
+  "branch": "HEAD",
+  "skill": "mcp-builder",
+  "repo_url": "https://github.com/mcp-use/mcp-use",
+  "license": {
+    "spdx": "MIT",
+    "url": "https://github.com/mcp-use/mcp-use/blob/main/LICENSE",
+    "source": "api"
+  },
+  "zip_subdir": "mcp-use-main/skills/mcp-builder"
+}

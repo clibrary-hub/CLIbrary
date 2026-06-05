@@ -1,0 +1,48 @@
+{
+  "name": "stitch-extract-design-md",
+  "version": "0.1.0",
+  "category": "web",
+  "description": "Agent skill for stitch extract design md workflows.",
+  "intent_triggers": [
+    "use the stitch extract design md agent skill",
+    "run a workflow for stitch extract design md",
+    "help me with stitch extract design md",
+    "我需要處理 stitch extract design md 相關工作",
+    "幫我啟用 stitch extract design md 這個 skill",
+    "用 agent skill 完成 stitch extract design md"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the stitch extract design md skill for this task.",
+      "invocation": "codex --skill stitch-extract-design-md \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "mit",
+    "skill",
+    "web"
+  ]
+}

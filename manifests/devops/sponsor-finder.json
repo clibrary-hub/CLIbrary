@@ -1,0 +1,49 @@
+{
+  "name": "sponsor-finder",
+  "version": "0.1.0",
+  "category": "devops",
+  "description": "Find which of a GitHub repository's dependencies are sponsorable via GitHub Sponsors.",
+  "intent_triggers": [
+    "use the sponsor finder agent skill",
+    "run a workflow for sponsor finder",
+    "help me with sponsor finder",
+    "我需要處理 sponsor finder 相關工作",
+    "幫我啟用 sponsor finder 這個 skill",
+    "用 agent skill 完成 sponsor finder",
+    "use sponsor finder from awesome-copilot"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the sponsor finder skill for this task.",
+      "invocation": "codex --skill sponsor-finder \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "devops",
+    "mcpservers",
+    "mit"
+  ]
+}

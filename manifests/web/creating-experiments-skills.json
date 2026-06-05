@@ -1,0 +1,49 @@
+{
+  "name": "creating-experiments-skills",
+  "version": "0.1.0",
+  "category": "web",
+  "description": "Guides agents through the 3-step experiment creation flow: defining the hypothesis, configuring rollout, and setting up analytics.",
+  "intent_triggers": [
+    "use the creating experiments agent skill",
+    "run a workflow for creating experiments",
+    "help me with creating experiments",
+    "我需要處理 creating experiments 相關工作",
+    "幫我啟用 creating experiments 這個 skill",
+    "用 agent skill 完成 creating experiments",
+    "use creating experiments from skills"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the creating experiments skill for this task.",
+      "invocation": "codex --skill creating-experiments \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "mcpservers",
+    "mit",
+    "web"
+  ]
+}

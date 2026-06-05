@@ -1,0 +1,49 @@
+{
+  "name": "use-runway-api",
+  "version": "0.1.0",
+  "category": "devops",
+  "description": "Directly use the Runway API from the agent to generate media, manage resources, and inspect account state",
+  "intent_triggers": [
+    "use the use runway api agent skill",
+    "run a workflow for use runway api",
+    "help me with use runway api",
+    "我需要處理 use runway api 相關工作",
+    "幫我啟用 use runway api 這個 skill",
+    "用 agent skill 完成 use runway api",
+    "use use runway api from skills"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the use runway api skill for this task.",
+      "invocation": "codex --skill use-runway-api \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "devops",
+    "mcpservers",
+    "mit"
+  ]
+}

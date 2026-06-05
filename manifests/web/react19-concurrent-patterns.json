@@ -1,0 +1,49 @@
+{
+  "name": "react19-concurrent-patterns",
+  "version": "0.1.0",
+  "category": "web",
+  "description": "Preserve React 18 concurrent patterns and adopt React 19 APIs (useTransition, useDeferredValue, Suspense, use(), useOptimistic, Actions) during migration.",
+  "intent_triggers": [
+    "use the react19 concurrent patterns agent skill",
+    "run a workflow for react19 concurrent patterns",
+    "help me with react19 concurrent patterns",
+    "我需要處理 react19 concurrent patterns 相關工作",
+    "幫我啟用 react19 concurrent patterns 這個 skill",
+    "用 agent skill 完成 react19 concurrent patterns",
+    "use react19 concurrent patterns from awesome-copilot"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the react19 concurrent patterns skill for this task.",
+      "invocation": "codex --skill react19-concurrent-patterns \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "mcpservers",
+    "mit",
+    "web"
+  ]
+}

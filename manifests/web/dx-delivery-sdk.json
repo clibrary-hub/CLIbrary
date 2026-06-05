@@ -1,0 +1,49 @@
+{
+  "name": "dx-delivery-sdk",
+  "version": "0.1.0",
+  "category": "web",
+  "description": "Help agents write correct, production-ready TypeScript using `@contentstack/delivery-sdk` for Contentstack entries, assets, references, filtering, sorting, pagination, locale, Live Preview, and Vis...",
+  "intent_triggers": [
+    "use the dx delivery sdk agent skill",
+    "run a workflow for dx delivery sdk",
+    "help me with dx delivery sdk",
+    "我需要處理 dx delivery sdk 相關工作",
+    "幫我啟用 dx delivery sdk 這個 skill",
+    "用 agent skill 完成 dx delivery sdk",
+    "use dx delivery sdk from contentstack-agent-skills"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the dx delivery sdk skill for this task.",
+      "invocation": "codex --skill dx-delivery-sdk \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "mcpservers",
+    "mit",
+    "web"
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "source": "mcpservers",
+  "listing_url": "https://mcpservers.org/zh-TW/agent-skills",
+  "owner": "shopify",
+  "repo": "flash-list",
+  "branch": "HEAD",
+  "skill": "review-and-test",
+  "repo_url": "https://github.com/shopify/flash-list",
+  "license": {
+    "spdx": "MIT",
+    "url": "https://github.com/Shopify/flash-list/blob/main/LICENSE.md",
+    "source": "api"
+  },
+  "zip_subdir": "flash-list-main/.claude/skills/review-and-test"
+}

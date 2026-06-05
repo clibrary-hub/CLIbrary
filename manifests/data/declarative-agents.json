@@ -1,0 +1,49 @@
+{
+  "name": "declarative-agents",
+  "version": "0.1.0",
+  "category": "data",
+  "description": "Complete development kit for Microsoft 365 Copilot declarative agents with three comprehensive workflows (basic, advanced, validation), TypeSpec support, and Microsoft 365 Agents Toolkit integration",
+  "intent_triggers": [
+    "use the declarative agents agent skill",
+    "run a workflow for declarative agents",
+    "help me with declarative agents",
+    "我需要處理 declarative agents 相關工作",
+    "幫我啟用 declarative agents 這個 skill",
+    "用 agent skill 完成 declarative agents",
+    "use declarative agents from awesome-copilot"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the declarative agents skill for this task.",
+      "invocation": "codex --skill declarative-agents \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "data",
+    "mcpservers",
+    "mit"
+  ]
+}

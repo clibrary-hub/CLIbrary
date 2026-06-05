@@ -1,0 +1,49 @@
+{
+  "name": "gws-workflow-email-to-task",
+  "version": "0.1.0",
+  "category": "security",
+  "description": "Google Workflow: Convert a Gmail message into a Google Tasks entry.",
+  "intent_triggers": [
+    "use the gws workflow email to task agent skill",
+    "run a workflow for gws workflow email to task",
+    "help me with gws workflow email to task",
+    "我需要處理 gws workflow email to task 相關工作",
+    "幫我啟用 gws workflow email to task 這個 skill",
+    "用 agent skill 完成 gws workflow email to task",
+    "use gws workflow email to task from cli"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the gws workflow email to task skill for this task.",
+      "invocation": "codex --skill gws-workflow-email-to-task \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "apache-2.0",
+    "mcpservers",
+    "security"
+  ]
+}

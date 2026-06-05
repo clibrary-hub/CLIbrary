@@ -1,0 +1,15 @@
+{
+  "source": "mcpservers",
+  "listing_url": "https://mcpservers.org/zh-TW/agent-skills",
+  "owner": "apollographql",
+  "repo": "skills",
+  "branch": "HEAD",
+  "skill": "apollo-ios",
+  "repo_url": "https://github.com/apollographql/skills",
+  "license": {
+    "spdx": "MIT",
+    "url": "https://github.com/apollographql/skills/blob/main/LICENSE",
+    "source": "api"
+  },
+  "zip_subdir": "skills-main/skills/apollo-ios"
+}

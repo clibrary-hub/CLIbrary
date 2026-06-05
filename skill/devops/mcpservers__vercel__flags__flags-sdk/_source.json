@@ -1,0 +1,15 @@
+{
+  "source": "mcpservers",
+  "listing_url": "https://mcpservers.org/zh-TW/agent-skills/author/vercel",
+  "owner": "vercel",
+  "repo": "flags",
+  "branch": "HEAD",
+  "skill": "flags-sdk",
+  "repo_url": "https://github.com/vercel/flags",
+  "license": {
+    "spdx": "MIT",
+    "url": "https://github.com/vercel/flags/blob/main/LICENSE.md",
+    "source": "api"
+  },
+  "zip_subdir": "flags-main/skills/flags-sdk"
+}

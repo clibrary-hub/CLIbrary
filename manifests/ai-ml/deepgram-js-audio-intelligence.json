@@ -1,0 +1,49 @@
+{
+  "name": "deepgram-js-audio-intelligence",
+  "version": "0.1.0",
+  "category": "ai-ml",
+  "description": "Use when writing or reviewing JavaScript/TypeScript in this repo that calls Deepgram audio analytics overlays on `/v1/listen` - summarize, topics, intents, sentiment, diarize, redact, detect_langua...",
+  "intent_triggers": [
+    "use the deepgram js audio intelligence agent skill",
+    "run a workflow for deepgram js audio intelligence",
+    "help me with deepgram js audio intelligence",
+    "我需要處理 deepgram js audio intelligence 相關工作",
+    "幫我啟用 deepgram js audio intelligence 這個 skill",
+    "用 agent skill 完成 deepgram js audio intelligence",
+    "use deepgram js audio intelligence from deepgram-js-sdk"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the deepgram js audio intelligence skill for this task.",
+      "invocation": "codex --skill deepgram-js-audio-intelligence \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "ai-ml",
+    "mcpservers",
+    "mit"
+  ]
+}

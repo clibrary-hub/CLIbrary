@@ -1,0 +1,49 @@
+{
+  "name": "example-command",
+  "version": "0.1.0",
+  "category": "ai-ml",
+  "description": "An example user-invoked skill that demonstrates frontmatter options and the skills/<name>/SKILL.md layout",
+  "intent_triggers": [
+    "use the example command agent skill",
+    "run a workflow for example command",
+    "help me with example command",
+    "我需要處理 example command 相關工作",
+    "幫我啟用 example command 這個 skill",
+    "用 agent skill 完成 example command",
+    "use example command from claude-plugins-official"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the example command skill for this task.",
+      "invocation": "codex --skill example-command \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "ai-ml",
+    "apache-2.0",
+    "mcpservers"
+  ]
+}

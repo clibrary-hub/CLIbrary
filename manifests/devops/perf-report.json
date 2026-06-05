@@ -1,0 +1,49 @@
+{
+  "name": "perf-report",
+  "version": "0.1.0",
+  "category": "devops",
+  "description": "Analyze CI performance comparison reports for a ClickHouse PR.",
+  "intent_triggers": [
+    "use the perf report agent skill",
+    "run a workflow for perf report",
+    "help me with perf report",
+    "我需要處理 perf report 相關工作",
+    "幫我啟用 perf report 這個 skill",
+    "用 agent skill 完成 perf report",
+    "use perf report from clickhouse"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the perf report skill for this task.",
+      "invocation": "codex --skill perf-report \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "apache-2.0",
+    "devops",
+    "mcpservers"
+  ]
+}

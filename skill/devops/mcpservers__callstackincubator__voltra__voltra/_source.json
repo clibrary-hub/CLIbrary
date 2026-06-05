@@ -1,0 +1,15 @@
+{
+  "source": "mcpservers",
+  "listing_url": "https://mcpservers.org/zh-TW/agent-skills",
+  "owner": "callstackincubator",
+  "repo": "voltra",
+  "branch": "HEAD",
+  "skill": "voltra",
+  "repo_url": "https://github.com/callstackincubator/voltra",
+  "license": {
+    "spdx": "MIT",
+    "url": "https://github.com/callstackincubator/voltra/blob/main/LICENSE.txt",
+    "source": "api"
+  },
+  "zip_subdir": "voltra-main/skills/voltra"
+}

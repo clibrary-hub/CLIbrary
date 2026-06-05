@@ -1,0 +1,81 @@
+---
+name: erk-exec
+description: >
+  Guide for erk exec subcommands. Use when running erk exec commands
+  to understand syntax, find the right command for a task, or learn
+  common workflows. Always check syntax with -h or load this skill
+  before running erk exec commands.
+metadata:
+  internal: true
+---
+
+# erk exec Guide
+
+## Quick Start
+
+Before running any `erk exec` command, check syntax with `-h`:
+
+```bash
+erk exec <command> -h
+```
+
+## Commands by Workflow
+
+### PR Review Operations
+
+When addressing PR review comments or resolving threads:
+
+| Command                       | Purpose                              |
+| ----------------------------- | ------------------------------------ |
+| `get-pr-review-comments`      | Fetch review comments (use `--pr N`) |
+| `resolve-review-thread`       | Resolve a thread (use `--thread-id`) |
+| `reply-to-discussion-comment` | Reply to discussion comment          |
+| `get-pr-discussion-comments`  | Fetch discussion comments            |
+
+**Typical workflow:**
+
+1. `erk exec get-pr-review-comments --pr 123`
+2. Make code changes
+3. `erk exec resolve-review-thread --thread-id PRRT_xxx`
+
+### Plan Operations
+
+When working with erk-prs:
+
+| Command              | Purpose                      |
+| -------------------- | ---------------------------- |
+| `plan-save`          | Save plan (backend-aware)    |
+| `get-pr-metadata`    | Get metadata from PR         |
+| `setup-impl-from-pr` | Set up impl-context from PR  |
+| `get-issue-body`     | Fetch issue body (REST API)  |
+| `update-issue-body`  | Update issue body (REST API) |
+
+### Session Operations
+
+When working with Claude Code sessions:
+
+| Command                   | Purpose                                   |
+| ------------------------- | ----------------------------------------- |
+| `list-sessions`           | List sessions for current project         |
+| `preprocess-session`      | Compress session for analysis             |
+| `push-session`            | Push preprocessed session to learn branch |
+| `download-remote-session` | Download session from gist                |
+
+### Marker Operations
+
+For inter-process communication:
+
+| Command         | Purpose                |
+| --------------- | ---------------------- |
+| `marker create` | Create marker file     |
+| `marker exists` | Check if marker exists |
+| `marker read`   | Read marker content    |
+| `marker delete` | Delete marker file     |
+
+All marker commands require `--session-id`.
+
+## Full Reference
+
+For complete syntax details on all 65+ commands:
+
+@reference.md

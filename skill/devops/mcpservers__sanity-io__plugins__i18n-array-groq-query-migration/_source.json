@@ -1,0 +1,15 @@
+{
+  "source": "mcpservers",
+  "listing_url": "https://mcpservers.org/zh-TW/agent-skills",
+  "owner": "sanity-io",
+  "repo": "plugins",
+  "branch": "HEAD",
+  "skill": "i18n-array-groq-query-migration",
+  "repo_url": "https://github.com/sanity-io/plugins",
+  "license": {
+    "spdx": "MIT",
+    "url": "https://github.com/sanity-io/plugins/blob/main/LICENSE",
+    "source": "api"
+  },
+  "zip_subdir": "plugins-main/plugins/sanity-plugin-internationalized-array/skills/i18n-array-groq-query-migration"
+}

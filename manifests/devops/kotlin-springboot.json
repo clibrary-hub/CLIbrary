@@ -1,0 +1,49 @@
+{
+  "name": "kotlin-springboot",
+  "version": "0.1.0",
+  "category": "devops",
+  "description": "Get best practices for developing applications with Spring Boot and Kotlin.",
+  "intent_triggers": [
+    "use the kotlin springboot agent skill",
+    "run a workflow for kotlin springboot",
+    "help me with kotlin springboot",
+    "我需要處理 kotlin springboot 相關工作",
+    "幫我啟用 kotlin springboot 這個 skill",
+    "用 agent skill 完成 kotlin springboot",
+    "use kotlin springboot from awesome-copilot"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the kotlin springboot skill for this task.",
+      "invocation": "codex --skill kotlin-springboot \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "devops",
+    "mcpservers",
+    "mit"
+  ]
+}

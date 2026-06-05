@@ -1,0 +1,49 @@
+{
+  "name": "portable-text-serialization",
+  "version": "0.1.0",
+  "category": "web",
+  "description": "Render and serialize Portable Text to React, Svelte, Vue, Astro, HTML, Markdown, and plain text.",
+  "intent_triggers": [
+    "use the portable text serialization agent skill",
+    "run a workflow for portable text serialization",
+    "help me with portable text serialization",
+    "我需要處理 portable text serialization 相關工作",
+    "幫我啟用 portable text serialization 這個 skill",
+    "用 agent skill 完成 portable text serialization",
+    "use portable text serialization from agent-toolkit"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the portable text serialization skill for this task.",
+      "invocation": "codex --skill portable-text-serialization \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "mcpservers",
+    "mit",
+    "web"
+  ]
+}

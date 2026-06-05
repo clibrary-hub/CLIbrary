@@ -1,0 +1,48 @@
+{
+  "name": "exploring-llm-traces",
+  "version": "0.1.0",
+  "category": "ai-ml",
+  "description": "Agent skill for exploring llm traces workflows.",
+  "intent_triggers": [
+    "use the exploring llm traces agent skill",
+    "run a workflow for exploring llm traces",
+    "help me with exploring llm traces",
+    "我需要處理 exploring llm traces 相關工作",
+    "幫我啟用 exploring llm traces 這個 skill",
+    "用 agent skill 完成 exploring llm traces"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the exploring llm traces skill for this task.",
+      "invocation": "codex --skill exploring-llm-traces \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "ai-ml",
+    "mit",
+    "skill"
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "source": "mcpservers",
+  "listing_url": "https://mcpservers.org/zh-TW/agent-skills/author/vercel",
+  "owner": "vercel-labs",
+  "repo": "deepsec",
+  "branch": "HEAD",
+  "skill": "deepsec",
+  "repo_url": "https://github.com/vercel-labs/deepsec",
+  "license": {
+    "spdx": "Apache-2.0",
+    "url": "https://github.com/vercel-labs/deepsec/blob/main/LICENSE",
+    "source": "api"
+  },
+  "zip_subdir": "deepsec-main/packages/deepsec"
+}

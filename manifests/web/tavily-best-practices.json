@@ -1,0 +1,49 @@
+{
+  "name": "tavily-best-practices",
+  "version": "0.1.0",
+  "category": "web",
+  "description": "Build production-ready Tavily integrations with best practices baked in.",
+  "intent_triggers": [
+    "use the tavily best practices agent skill",
+    "run a workflow for tavily best practices",
+    "help me with tavily best practices",
+    "我需要處理 tavily best practices 相關工作",
+    "幫我啟用 tavily best practices 這個 skill",
+    "用 agent skill 完成 tavily best practices",
+    "use tavily best practices from skills"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the tavily best practices skill for this task.",
+      "invocation": "codex --skill tavily-best-practices \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "mcpservers",
+    "mit",
+    "web"
+  ]
+}

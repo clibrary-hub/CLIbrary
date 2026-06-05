@@ -1,0 +1,15 @@
+{
+  "source": "skills-rest",
+  "listing_url": "https://skills.rest/explore?category=finance-accounting",
+  "owner": "wtgoku-create",
+  "repo": "PopiStudio",
+  "branch": "main",
+  "skill": "stock-explorer",
+  "repo_url": "https://github.com/wtgoku-create/PopiStudio",
+  "license": {
+    "spdx": "MIT",
+    "url": "https://github.com/wtgoku-create/PopiStudio/blob/main/LICENSE",
+    "source": "api"
+  },
+  "zip_subdir": "PopiStudio-main/SKILLs/stock-explorer"
+}

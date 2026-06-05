@@ -1,0 +1,49 @@
+{
+  "name": "error-tracking-go",
+  "version": "0.1.0",
+  "category": "web",
+  "description": "PostHog error tracking for Go",
+  "intent_triggers": [
+    "use the error tracking go agent skill",
+    "run a workflow for error tracking go",
+    "help me with error tracking go",
+    "我需要處理 error tracking go 相關工作",
+    "幫我啟用 error tracking go 這個 skill",
+    "用 agent skill 完成 error tracking go",
+    "use error tracking go from skills"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the error tracking go skill for this task.",
+      "invocation": "codex --skill error-tracking-go \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "mcpservers",
+    "mit",
+    "web"
+  ]
+}

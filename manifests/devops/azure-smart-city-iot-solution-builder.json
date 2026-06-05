@@ -1,0 +1,49 @@
+{
+  "name": "azure-smart-city-iot-solution-builder",
+  "version": "0.1.0",
+  "category": "devops",
+  "description": "Design and plan end-to-end Azure IoT and Smart City solutions: requirements, architecture, security, operations, cost, and a phased delivery plan with concrete implementation artifacts.",
+  "intent_triggers": [
+    "use the azure smart city iot solution builder agent skill",
+    "run a workflow for azure smart city iot solution builder",
+    "help me with azure smart city iot solution builder",
+    "我需要處理 azure smart city iot solution builder 相關工作",
+    "幫我啟用 azure smart city iot solution builder 這個 skill",
+    "用 agent skill 完成 azure smart city iot solution builder",
+    "use azure smart city iot solution builder from awesome-copilot"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the azure smart city iot solution builder skill for this task.",
+      "invocation": "codex --skill azure-smart-city-iot-solution-builder \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "devops",
+    "mcpservers",
+    "mit"
+  ]
+}

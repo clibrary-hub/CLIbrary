@@ -1,0 +1,49 @@
+{
+  "name": "setup-auth",
+  "version": "0.1.0",
+  "category": "devops",
+  "description": "Agent skill for setup auth workflows.",
+  "intent_triggers": [
+    "use the setup auth agent skill",
+    "run a workflow for setup auth",
+    "help me with setup auth",
+    "我需要處理 setup auth 相關工作",
+    "幫我啟用 setup auth 這個 skill",
+    "用 agent skill 完成 setup auth",
+    "use setup auth from power-platform-skills"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the setup auth skill for this task.",
+      "invocation": "codex --skill setup-auth \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "devops",
+    "mcpservers",
+    "mit"
+  ]
+}

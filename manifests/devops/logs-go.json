@@ -1,0 +1,49 @@
+{
+  "name": "logs-go",
+  "version": "0.1.0",
+  "category": "devops",
+  "description": "PostHog logs for Go",
+  "intent_triggers": [
+    "use the logs go agent skill",
+    "run a workflow for logs go",
+    "help me with logs go",
+    "我需要處理 logs go 相關工作",
+    "幫我啟用 logs go 這個 skill",
+    "用 agent skill 完成 logs go",
+    "use logs go from skills"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the logs go skill for this task.",
+      "invocation": "codex --skill logs-go \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "devops",
+    "mcpservers",
+    "mit"
+  ]
+}

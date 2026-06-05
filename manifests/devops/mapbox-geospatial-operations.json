@@ -1,0 +1,49 @@
+{
+  "name": "mapbox-geospatial-operations",
+  "version": "0.1.0",
+  "category": "devops",
+  "description": "Expert guidance on choosing the right geospatial tool based on problem type, accuracy requirements, and performance needs",
+  "intent_triggers": [
+    "use the mapbox geospatial operations agent skill",
+    "run a workflow for mapbox geospatial operations",
+    "help me with mapbox geospatial operations",
+    "我需要處理 mapbox geospatial operations 相關工作",
+    "幫我啟用 mapbox geospatial operations 這個 skill",
+    "用 agent skill 完成 mapbox geospatial operations",
+    "use mapbox geospatial operations from mapbox-agent-skills"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the mapbox geospatial operations skill for this task.",
+      "invocation": "codex --skill mapbox-geospatial-operations \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "devops",
+    "mcpservers",
+    "mit"
+  ]
+}

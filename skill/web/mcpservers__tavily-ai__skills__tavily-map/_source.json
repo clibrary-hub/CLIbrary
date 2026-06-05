@@ -1,0 +1,15 @@
+{
+  "source": "mcpservers",
+  "listing_url": "https://mcpservers.org/zh-TW/agent-skills",
+  "owner": "tavily-ai",
+  "repo": "skills",
+  "branch": "HEAD",
+  "skill": "tavily-map",
+  "repo_url": "https://github.com/tavily-ai/skills",
+  "license": {
+    "spdx": "MIT",
+    "url": "https://github.com/tavily-ai/skills/blob/main/LICENSE",
+    "source": "api"
+  },
+  "zip_subdir": "skills-main/skills/tavily-map"
+}

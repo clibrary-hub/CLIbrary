@@ -1,0 +1,49 @@
+{
+  "name": "pr-writer-skills",
+  "version": "0.1.0",
+  "category": "devops",
+  "description": "Create and update pull requests following Sentry conventions.",
+  "intent_triggers": [
+    "use the pr writer agent skill",
+    "run a workflow for pr writer",
+    "help me with pr writer",
+    "我需要處理 pr writer 相關工作",
+    "幫我啟用 pr writer 這個 skill",
+    "用 agent skill 完成 pr writer",
+    "use pr writer from skills"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the pr writer skill for this task.",
+      "invocation": "codex --skill pr-writer \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "apache-2.0",
+    "devops",
+    "mcpservers"
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "source": "mcpservers",
+  "listing_url": "https://mcpservers.org/zh-TW/agent-skills",
+  "owner": "dbt-labs",
+  "repo": "dbt-mcp",
+  "branch": "HEAD",
+  "skill": "release-dbt-mcp",
+  "repo_url": "https://github.com/dbt-labs/dbt-mcp",
+  "license": {
+    "spdx": "Apache-2.0",
+    "url": "https://github.com/dbt-labs/dbt-mcp/blob/main/LICENSE",
+    "source": "api"
+  },
+  "zip_subdir": "dbt-mcp-main/.claude/skills/release-dbt-mcp"
+}

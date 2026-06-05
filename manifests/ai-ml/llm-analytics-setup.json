@@ -1,0 +1,49 @@
+{
+  "name": "llm-analytics-setup",
+  "version": "0.1.0",
+  "category": "ai-ml",
+  "description": "PostHog LLM analytics for all supported providers",
+  "intent_triggers": [
+    "use the llm analytics setup agent skill",
+    "run a workflow for llm analytics setup",
+    "help me with llm analytics setup",
+    "我需要處理 llm analytics setup 相關工作",
+    "幫我啟用 llm analytics setup 這個 skill",
+    "用 agent skill 完成 llm analytics setup",
+    "use llm analytics setup from skills"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the llm analytics setup skill for this task.",
+      "invocation": "codex --skill llm-analytics-setup \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "ai-ml",
+    "mcpservers",
+    "mit"
+  ]
+}

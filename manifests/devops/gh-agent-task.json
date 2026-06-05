@@ -1,0 +1,49 @@
+{
+  "name": "gh-agent-task",
+  "version": "0.1.0",
+  "category": "devops",
+  "description": "Use gh agent-task commands to create, run, and monitor agent tasks.",
+  "intent_triggers": [
+    "use the gh agent task agent skill",
+    "run a workflow for gh agent task",
+    "help me with gh agent task",
+    "我需要處理 gh agent task 相關工作",
+    "幫我啟用 gh agent task 這個 skill",
+    "用 agent skill 完成 gh agent task",
+    "use gh agent task from gh-aw"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the gh agent task skill for this task.",
+      "invocation": "codex --skill gh-agent-task \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "devops",
+    "mcpservers",
+    "mit"
+  ]
+}

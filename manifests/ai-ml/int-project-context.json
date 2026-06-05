@@ -1,0 +1,49 @@
+{
+  "name": "int-project-context",
+  "version": "0.1.0",
+  "category": "ai-ml",
+  "description": "Agent skill for int project context workflows.",
+  "intent_triggers": [
+    "use the int project context agent skill",
+    "run a workflow for int project context",
+    "help me with int project context",
+    "我需要處理 int project context 相關工作",
+    "幫我啟用 int project context 這個 skill",
+    "用 agent skill 完成 int project context",
+    "use int project context from skills-for-copilot-studio"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the int project context skill for this task.",
+      "invocation": "codex --skill int-project-context \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "ai-ml",
+    "mcpservers",
+    "mit"
+  ]
+}

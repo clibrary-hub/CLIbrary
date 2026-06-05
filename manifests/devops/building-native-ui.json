@@ -1,0 +1,49 @@
+{
+  "name": "building-native-ui",
+  "version": "0.1.0",
+  "category": "devops",
+  "description": "Complete guide for building beautiful apps with Expo Router.",
+  "intent_triggers": [
+    "use the building native ui agent skill",
+    "run a workflow for building native ui",
+    "help me with building native ui",
+    "我需要處理 building native ui 相關工作",
+    "幫我啟用 building native ui 這個 skill",
+    "用 agent skill 完成 building native ui",
+    "use building native ui from skills"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the building native ui skill for this task.",
+      "invocation": "codex --skill building-native-ui \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "devops",
+    "mcpservers",
+    "mit"
+  ]
+}

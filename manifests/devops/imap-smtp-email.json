@@ -1,0 +1,49 @@
+{
+  "name": "imap-smtp-email",
+  "version": "0.1.0",
+  "category": "devops",
+  "description": "Read and send email via IMAP/SMTP.",
+  "intent_triggers": [
+    "use the imap smtp email agent skill",
+    "run a workflow for imap smtp email",
+    "help me with imap smtp email",
+    "我需要處理 imap smtp email 相關工作",
+    "幫我啟用 imap smtp email 這個 skill",
+    "用 agent skill 完成 imap smtp email",
+    "use imap smtp email from PopiStudio"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the imap smtp email skill for this task.",
+      "invocation": "codex --skill imap-smtp-email \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "devops",
+    "mit",
+    "skills-rest"
+  ]
+}

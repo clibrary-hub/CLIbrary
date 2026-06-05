@@ -1,0 +1,49 @@
+{
+  "name": "winmd-api-search",
+  "version": "0.1.0",
+  "category": "devops",
+  "description": "Find and explore Windows desktop APIs.",
+  "intent_triggers": [
+    "use the winmd api search agent skill",
+    "run a workflow for winmd api search",
+    "help me with winmd api search",
+    "我需要處理 winmd api search 相關工作",
+    "幫我啟用 winmd api search 這個 skill",
+    "用 agent skill 完成 winmd api search",
+    "use winmd api search from awesome-copilot"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the winmd api search skill for this task.",
+      "invocation": "codex --skill winmd-api-search \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "devops",
+    "mcpservers",
+    "mit"
+  ]
+}

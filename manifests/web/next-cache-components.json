@@ -1,0 +1,49 @@
+{
+  "name": "next-cache-components",
+  "version": "0.1.0",
+  "category": "web",
+  "description": "Next.js 16 Cache Components - PPR, use cache directive, cacheLife, cacheTag, updateTag",
+  "intent_triggers": [
+    "use the next cache components agent skill",
+    "run a workflow for next cache components",
+    "help me with next cache components",
+    "我需要處理 next cache components 相關工作",
+    "幫我啟用 next cache components 這個 skill",
+    "用 agent skill 完成 next cache components",
+    "use next cache components from next-sanity"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the next cache components skill for this task.",
+      "invocation": "codex --skill next-cache-components \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "mcpservers",
+    "mit",
+    "web"
+  ]
+}

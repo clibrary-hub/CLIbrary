@@ -1,0 +1,49 @@
+{
+  "name": "warehouse-init",
+  "version": "0.1.0",
+  "category": "data",
+  "description": "Initialize warehouse schema discovery.",
+  "intent_triggers": [
+    "use the warehouse init agent skill",
+    "run a workflow for warehouse init",
+    "help me with warehouse init",
+    "我需要處理 warehouse init 相關工作",
+    "幫我啟用 warehouse init 這個 skill",
+    "用 agent skill 完成 warehouse init",
+    "use warehouse init from agents"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the warehouse init skill for this task.",
+      "invocation": "codex --skill warehouse-init \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "apache-2.0",
+    "data",
+    "mcpservers"
+  ]
+}

@@ -1,0 +1,49 @@
+{
+  "name": "azure-maps-search-dotnet",
+  "version": "0.1.0",
+  "category": "ai-ml",
+  "description": "Agent skill for azure maps search dotnet workflows.",
+  "intent_triggers": [
+    "use the azure maps search dotnet agent skill",
+    "run a workflow for azure maps search dotnet",
+    "help me with azure maps search dotnet",
+    "我需要處理 azure maps search dotnet 相關工作",
+    "幫我啟用 azure maps search dotnet 這個 skill",
+    "用 agent skill 完成 azure maps search dotnet",
+    "use azure maps search dotnet from agent-skills"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the azure maps search dotnet skill for this task.",
+      "invocation": "codex --skill azure-maps-search-dotnet \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "ai-ml",
+    "mcpservers",
+    "mit"
+  ]
+}

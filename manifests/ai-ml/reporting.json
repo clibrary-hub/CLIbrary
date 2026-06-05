@@ -1,0 +1,49 @@
+{
+  "name": "reporting",
+  "version": "0.1.0",
+  "category": "ai-ml",
+  "description": "Format reports with HTML details/summary blocks for readable output.",
+  "intent_triggers": [
+    "use the reporting agent skill",
+    "run a workflow for reporting",
+    "help me with reporting",
+    "我需要處理 reporting 相關工作",
+    "幫我啟用 reporting 這個 skill",
+    "用 agent skill 完成 reporting",
+    "use reporting from gh-aw"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the reporting skill for this task.",
+      "invocation": "codex --skill reporting \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "ai-ml",
+    "mcpservers",
+    "mit"
+  ]
+}

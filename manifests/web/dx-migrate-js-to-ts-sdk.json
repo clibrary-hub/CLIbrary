@@ -1,0 +1,49 @@
+{
+  "name": "dx-migrate-js-to-ts-sdk",
+  "version": "0.1.0",
+  "category": "web",
+  "description": "Migrate Contentstack Delivery SDK code from JavaScript to TypeScript.",
+  "intent_triggers": [
+    "use the dx migrate js to ts sdk agent skill",
+    "run a workflow for dx migrate js to ts sdk",
+    "help me with dx migrate js to ts sdk",
+    "我需要處理 dx migrate js to ts sdk 相關工作",
+    "幫我啟用 dx migrate js to ts sdk 這個 skill",
+    "用 agent skill 完成 dx migrate js to ts sdk",
+    "use dx migrate js to ts sdk from contentstack-agent-skills"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the dx migrate js to ts sdk skill for this task.",
+      "invocation": "codex --skill dx-migrate-js-to-ts-sdk \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "mcpservers",
+    "mit",
+    "web"
+  ]
+}

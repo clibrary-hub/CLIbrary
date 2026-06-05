@@ -1,0 +1,15 @@
+{
+  "source": "mcpservers",
+  "listing_url": "https://mcpservers.org/zh-TW/agent-skills/author/cloudflare",
+  "owner": "cloudflare",
+  "repo": "workerd",
+  "branch": "HEAD",
+  "skill": "rust-review",
+  "repo_url": "https://github.com/cloudflare/workerd",
+  "license": {
+    "spdx": "Apache-2.0",
+    "url": "https://github.com/cloudflare/workerd/blob/main/LICENSE",
+    "source": "api"
+  },
+  "zip_subdir": "workerd-main/.opencode/skills/rust-review"
+}

@@ -1,0 +1,49 @@
+{
+  "name": "enhance-prompt",
+  "version": "0.1.0",
+  "category": "ai-ml",
+  "description": "Transforms vague UI ideas into polished, Stitch-optimized prompts.",
+  "intent_triggers": [
+    "use the enhance prompt agent skill",
+    "run a workflow for enhance prompt",
+    "help me with enhance prompt",
+    "我需要處理 enhance prompt 相關工作",
+    "幫我啟用 enhance prompt 這個 skill",
+    "用 agent skill 完成 enhance prompt",
+    "use enhance prompt from stitch-skills"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the enhance prompt skill for this task.",
+      "invocation": "codex --skill enhance-prompt \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "ai-ml",
+    "apache-2.0",
+    "mcpservers"
+  ]
+}

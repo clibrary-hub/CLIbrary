@@ -1,0 +1,15 @@
+{
+  "source": "mcpservers",
+  "listing_url": "https://mcpservers.org/zh-TW/agent-skills/author/microsoft",
+  "owner": "microsoft",
+  "repo": "hve-core",
+  "branch": "HEAD",
+  "skill": "gitlab",
+  "repo_url": "https://github.com/microsoft/hve-core",
+  "license": {
+    "spdx": "MIT",
+    "url": "https://github.com/microsoft/hve-core/blob/main/LICENSE",
+    "source": "api"
+  },
+  "zip_subdir": "hve-core-main/.github/skills/gitlab/gitlab"
+}

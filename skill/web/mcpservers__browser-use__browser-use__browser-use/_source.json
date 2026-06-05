@@ -1,0 +1,15 @@
+{
+  "source": "mcpservers",
+  "listing_url": "https://mcpservers.org/zh-TW/agent-skills/category/browser-automation",
+  "owner": "browser-use",
+  "repo": "browser-use",
+  "branch": "main",
+  "skill": "browser-use",
+  "repo_url": "https://github.com/browser-use/browser-use",
+  "license": {
+    "spdx": "MIT",
+    "url": "https://github.com/browser-use/browser-use/blob/main/LICENSE",
+    "source": "api"
+  },
+  "zip_subdir": "browser-use-main/skills/browser-use"
+}

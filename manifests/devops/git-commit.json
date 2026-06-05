@@ -1,0 +1,49 @@
+{
+  "name": "git-commit",
+  "version": "0.1.0",
+  "category": "devops",
+  "description": "Execute git commit with conventional commit message analysis, intelligent staging, and message generation.",
+  "intent_triggers": [
+    "use the git commit agent skill",
+    "run a workflow for git commit",
+    "help me with git commit",
+    "我需要處理 git commit 相關工作",
+    "幫我啟用 git commit 這個 skill",
+    "用 agent skill 完成 git commit",
+    "use git commit from awesome-copilot"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the git commit skill for this task.",
+      "invocation": "codex --skill git-commit \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "devops",
+    "mcpservers",
+    "mit"
+  ]
+}

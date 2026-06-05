@@ -1,0 +1,49 @@
+{
+  "name": "tool-rename-deprecation",
+  "version": "0.1.0",
+  "category": "data",
+  "description": "Ensure renamed built-in tool references preserve backward compatibility.",
+  "intent_triggers": [
+    "use the tool rename deprecation agent skill",
+    "run a workflow for tool rename deprecation",
+    "help me with tool rename deprecation",
+    "我需要處理 tool rename deprecation 相關工作",
+    "幫我啟用 tool rename deprecation 這個 skill",
+    "用 agent skill 完成 tool rename deprecation",
+    "use tool rename deprecation from vscode"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the tool rename deprecation skill for this task.",
+      "invocation": "codex --skill tool-rename-deprecation \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "data",
+    "mcpservers",
+    "mit"
+  ]
+}

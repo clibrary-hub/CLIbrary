@@ -1,0 +1,49 @@
+{
+  "name": "recipe-post-mortem-setup",
+  "version": "0.1.0",
+  "category": "devops",
+  "description": "Create a Google Docs post-mortem, schedule a Google Calendar review, and notify via Chat.",
+  "intent_triggers": [
+    "use the recipe post mortem setup agent skill",
+    "run a workflow for recipe post mortem setup",
+    "help me with recipe post mortem setup",
+    "我需要處理 recipe post mortem setup 相關工作",
+    "幫我啟用 recipe post mortem setup 這個 skill",
+    "用 agent skill 完成 recipe post mortem setup",
+    "use recipe post mortem setup from cli"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the recipe post mortem setup skill for this task.",
+      "invocation": "codex --skill recipe-post-mortem-setup \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "apache-2.0",
+    "devops",
+    "mcpservers"
+  ]
+}

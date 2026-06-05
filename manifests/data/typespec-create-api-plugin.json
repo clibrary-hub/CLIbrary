@@ -1,0 +1,49 @@
+{
+  "name": "typespec-create-api-plugin",
+  "version": "0.1.0",
+  "category": "data",
+  "description": "Generate a TypeSpec API plugin with REST operations, authentication, and Adaptive Cards for Microsoft 365 Copilot",
+  "intent_triggers": [
+    "use the typespec create api plugin agent skill",
+    "run a workflow for typespec create api plugin",
+    "help me with typespec create api plugin",
+    "我需要處理 typespec create api plugin 相關工作",
+    "幫我啟用 typespec create api plugin 這個 skill",
+    "用 agent skill 完成 typespec create api plugin",
+    "use typespec create api plugin from awesome-copilot"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the typespec create api plugin skill for this task.",
+      "invocation": "codex --skill typespec-create-api-plugin \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "data",
+    "mcpservers",
+    "mit"
+  ]
+}

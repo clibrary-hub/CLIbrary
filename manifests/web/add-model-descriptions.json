@@ -1,0 +1,49 @@
+{
+  "name": "add-model-descriptions",
+  "version": "0.1.0",
+  "category": "web",
+  "description": "Add descriptions for new models from the HuggingFace router to chat-ui configuration, and flag reasoning-capable ones.",
+  "intent_triggers": [
+    "use the add model descriptions agent skill",
+    "run a workflow for add model descriptions",
+    "help me with add model descriptions",
+    "我需要處理 add model descriptions 相關工作",
+    "幫我啟用 add model descriptions 這個 skill",
+    "用 agent skill 完成 add model descriptions",
+    "use add model descriptions from chat-ui"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the add model descriptions skill for this task.",
+      "invocation": "codex --skill add-model-descriptions \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "apache-2.0",
+    "mcpservers",
+    "web"
+  ]
+}

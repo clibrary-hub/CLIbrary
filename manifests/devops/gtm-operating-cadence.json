@@ -1,0 +1,49 @@
+{
+  "name": "gtm-operating-cadence",
+  "version": "0.1.0",
+  "category": "devops",
+  "description": "Design meeting rhythms, metric reporting, quarterly planning, and decision-making velocity for scaling companies.",
+  "intent_triggers": [
+    "use the gtm operating cadence agent skill",
+    "run a workflow for gtm operating cadence",
+    "help me with gtm operating cadence",
+    "我需要處理 gtm operating cadence 相關工作",
+    "幫我啟用 gtm operating cadence 這個 skill",
+    "用 agent skill 完成 gtm operating cadence",
+    "use gtm operating cadence from awesome-copilot"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the gtm operating cadence skill for this task.",
+      "invocation": "codex --skill gtm-operating-cadence \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "devops",
+    "mcpservers",
+    "mit"
+  ]
+}

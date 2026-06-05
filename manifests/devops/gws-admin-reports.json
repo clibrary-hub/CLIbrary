@@ -1,0 +1,49 @@
+{
+  "name": "gws-admin-reports",
+  "version": "0.1.0",
+  "category": "devops",
+  "description": "Google Workspace Admin SDK: Audit logs and usage reports.",
+  "intent_triggers": [
+    "use the gws admin reports agent skill",
+    "run a workflow for gws admin reports",
+    "help me with gws admin reports",
+    "我需要處理 gws admin reports 相關工作",
+    "幫我啟用 gws admin reports 這個 skill",
+    "用 agent skill 完成 gws admin reports",
+    "use gws admin reports from cli"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the gws admin reports skill for this task.",
+      "invocation": "codex --skill gws-admin-reports \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "apache-2.0",
+    "devops",
+    "mcpservers"
+  ]
+}

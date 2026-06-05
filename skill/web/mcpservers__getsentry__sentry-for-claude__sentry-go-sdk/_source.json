@@ -1,0 +1,15 @@
+{
+  "source": "mcpservers",
+  "listing_url": "https://mcpservers.org/zh-TW/agent-skills",
+  "owner": "getsentry",
+  "repo": "sentry-for-claude",
+  "branch": "HEAD",
+  "skill": "sentry-go-sdk",
+  "repo_url": "https://github.com/getsentry/sentry-for-claude",
+  "license": {
+    "spdx": "MIT",
+    "url": "https://github.com/getsentry/sentry-for-ai/blob/main/LICENSE",
+    "source": "api"
+  },
+  "zip_subdir": "sentry-for-ai-main/skills/sentry-go-sdk"
+}

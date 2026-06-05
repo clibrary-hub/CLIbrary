@@ -1,0 +1,49 @@
+{
+  "name": "project-setup-info-context7-vscode",
+  "version": "0.1.0",
+  "category": "devops",
+  "description": "Comprehensive setup steps to help the user create complete project structures in a VS Code workspace.",
+  "intent_triggers": [
+    "use the project setup info context7 agent skill",
+    "run a workflow for project setup info context7",
+    "help me with project setup info context7",
+    "我需要處理 project setup info context7 相關工作",
+    "幫我啟用 project setup info context7 這個 skill",
+    "用 agent skill 完成 project setup info context7",
+    "use project setup info context7 from vscode"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the project setup info context7 skill for this task.",
+      "invocation": "codex --skill project-setup-info-context7 \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "devops",
+    "mcpservers",
+    "mit"
+  ]
+}

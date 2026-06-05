@@ -1,0 +1,15 @@
+{
+  "source": "skills-rest",
+  "listing_url": "https://skills.rest/explore?complexity=Intermediate",
+  "owner": "eddielueng",
+  "repo": "hermes-agent-zh",
+  "branch": "main",
+  "skill": "domain-intel",
+  "repo_url": "https://github.com/eddielueng/hermes-agent-zh",
+  "license": {
+    "spdx": "MIT",
+    "url": "https://github.com/eddielueng/hermes-agent-zh/blob/main/LICENSE",
+    "source": "api"
+  },
+  "zip_subdir": "hermes-agent-zh-main/optional-skills/research/domain-intel"
+}

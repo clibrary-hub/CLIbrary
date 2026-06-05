@@ -1,0 +1,15 @@
+{
+  "source": "mcpservers",
+  "listing_url": "https://mcpservers.org/zh-TW/agent-skills",
+  "owner": "langchain-ai",
+  "repo": "deepagents",
+  "branch": "HEAD",
+  "skill": "blog-post",
+  "repo_url": "https://github.com/langchain-ai/deepagents",
+  "license": {
+    "spdx": "MIT",
+    "url": "https://github.com/langchain-ai/deepagents/blob/main/LICENSE",
+    "source": "api"
+  },
+  "zip_subdir": "deepagents-main/examples/content-builder-agent/skills/blog-post"
+}

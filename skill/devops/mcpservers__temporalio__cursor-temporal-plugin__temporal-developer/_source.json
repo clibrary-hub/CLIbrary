@@ -1,0 +1,15 @@
+{
+  "source": "mcpservers",
+  "listing_url": "https://mcpservers.org/zh-TW/agent-skills",
+  "owner": "temporalio",
+  "repo": "cursor-temporal-plugin",
+  "branch": "HEAD",
+  "skill": "temporal-developer",
+  "repo_url": "https://github.com/temporalio/cursor-temporal-plugin",
+  "license": {
+    "spdx": "MIT",
+    "url": "https://github.com/temporalio/cursor-temporal-plugin/blob/main/LICENSE",
+    "source": "api"
+  },
+  "zip_subdir": "cursor-temporal-plugin-main/skills/temporal-developer"
+}

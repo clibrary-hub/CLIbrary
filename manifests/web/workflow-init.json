@@ -1,0 +1,49 @@
+{
+  "name": "workflow-init",
+  "version": "0.1.0",
+  "category": "web",
+  "description": "Install and configure Vercel Workflow SDK before it exists in node_modules.",
+  "intent_triggers": [
+    "use the workflow init agent skill",
+    "run a workflow for workflow init",
+    "help me with workflow init",
+    "我需要處理 workflow init 相關工作",
+    "幫我啟用 workflow init 這個 skill",
+    "用 agent skill 完成 workflow init",
+    "use workflow init from workflow"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the workflow init skill for this task.",
+      "invocation": "codex --skill workflow-init \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "apache-2.0",
+    "mcpservers",
+    "web"
+  ]
+}

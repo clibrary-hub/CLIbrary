@@ -1,0 +1,49 @@
+{
+  "name": "shopify-use-shopify-cli",
+  "version": "0.1.0",
+  "category": "devops",
+  "description": "Choose when the user needs **Shopify CLI** to run or fix something now: validate app or extension config on disk (`shopify.app.toml`, `shopify.app.<name>.toml`, `shopify.extension.toml`); run or tr...",
+  "intent_triggers": [
+    "use the shopify use shopify cli agent skill",
+    "run a workflow for shopify use shopify cli",
+    "help me with shopify use shopify cli",
+    "我需要處理 shopify use shopify cli 相關工作",
+    "幫我啟用 shopify use shopify cli 這個 skill",
+    "用 agent skill 完成 shopify use shopify cli",
+    "use shopify use shopify cli from shopify-ai-toolkit"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the shopify use shopify cli skill for this task.",
+      "invocation": "codex --skill shopify-use-shopify-cli \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "devops",
+    "mcpservers",
+    "mit"
+  ]
+}

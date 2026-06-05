@@ -1,0 +1,49 @@
+{
+  "name": "codeql",
+  "version": "0.1.0",
+  "category": "devops",
+  "description": "Comprehensive guide for setting up and configuring CodeQL code scanning via GitHub Actions workflows and the CodeQL CLI.",
+  "intent_triggers": [
+    "use the codeql agent skill",
+    "run a workflow for codeql",
+    "help me with codeql",
+    "我需要處理 codeql 相關工作",
+    "幫我啟用 codeql 這個 skill",
+    "用 agent skill 完成 codeql",
+    "use codeql from awesome-copilot"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the codeql skill for this task.",
+      "invocation": "codex --skill codeql \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "devops",
+    "mcpservers",
+    "mit"
+  ]
+}

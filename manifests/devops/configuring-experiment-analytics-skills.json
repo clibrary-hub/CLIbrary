@@ -1,0 +1,49 @@
+{
+  "name": "configuring-experiment-analytics-skills",
+  "version": "0.1.0",
+  "category": "devops",
+  "description": "Configures the analytics side of a PostHog experiment — exposure criteria (default `$feature_flag_called` vs custom exposure events), primary and secondary metrics, the supported metric types (coun...",
+  "intent_triggers": [
+    "use the configuring experiment analytics agent skill",
+    "run a workflow for configuring experiment analytics",
+    "help me with configuring experiment analytics",
+    "我需要處理 configuring experiment analytics 相關工作",
+    "幫我啟用 configuring experiment analytics 這個 skill",
+    "用 agent skill 完成 configuring experiment analytics",
+    "use configuring experiment analytics from skills"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the configuring experiment analytics skill for this task.",
+      "invocation": "codex --skill configuring-experiment-analytics \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "devops",
+    "mcpservers",
+    "mit"
+  ]
+}

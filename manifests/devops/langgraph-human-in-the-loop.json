@@ -1,0 +1,48 @@
+{
+  "name": "langgraph-human-in-the-loop",
+  "version": "0.1.0",
+  "category": "devops",
+  "description": "INVOKE THIS SKILL when implementing human-in-the-loop patterns, pausing for approval, or handling errors in LangGraph.",
+  "intent_triggers": [
+    "use the langgraph human in the loop agent skill",
+    "run a workflow for langgraph human in the loop",
+    "help me with langgraph human in the loop",
+    "我需要處理 langgraph human in the loop 相關工作",
+    "幫我啟用 langgraph human in the loop 這個 skill",
+    "用 agent skill 完成 langgraph human in the loop"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the langgraph human in the loop skill for this task.",
+      "invocation": "codex --skill langgraph-human-in-the-loop \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "devops",
+    "mit",
+    "skill"
+  ]
+}

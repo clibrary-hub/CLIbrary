@@ -1,0 +1,49 @@
+{
+  "name": "upstash-cli",
+  "version": "0.1.0",
+  "category": "ai-ml",
+  "description": "Run the Upstash CLI (`upstash`) against the Upstash Developer API for Redis, Vector, Search, QStash, and teams.",
+  "intent_triggers": [
+    "use the upstash cli agent skill",
+    "run a workflow for upstash cli",
+    "help me with upstash cli",
+    "我需要處理 upstash cli 相關工作",
+    "幫我啟用 upstash cli 這個 skill",
+    "用 agent skill 完成 upstash cli",
+    "use upstash cli from skills"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the upstash cli skill for this task.",
+      "invocation": "codex --skill upstash-cli \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "ai-ml",
+    "mcpservers",
+    "mit"
+  ]
+}

@@ -1,0 +1,49 @@
+{
+  "name": "create-site",
+  "version": "0.1.0",
+  "category": "web",
+  "description": "Agent skill for create site workflows.",
+  "intent_triggers": [
+    "use the create site agent skill",
+    "run a workflow for create site",
+    "help me with create site",
+    "我需要處理 create site 相關工作",
+    "幫我啟用 create site 這個 skill",
+    "用 agent skill 完成 create site",
+    "use create site from power-platform-skills"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the create site skill for this task.",
+      "invocation": "codex --skill create-site \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "mcpservers",
+    "mit",
+    "web"
+  ]
+}

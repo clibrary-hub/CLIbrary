@@ -1,0 +1,15 @@
+{
+  "source": "mcpservers",
+  "listing_url": "https://mcpservers.org/zh-TW/agent-skills",
+  "owner": "planetscale",
+  "repo": "database-skills",
+  "branch": "HEAD",
+  "skill": "vitess",
+  "repo_url": "https://github.com/planetscale/database-skills",
+  "license": {
+    "spdx": "MIT",
+    "url": "https://github.com/planetscale/database-skills/blob/main/LICENSE",
+    "source": "api"
+  },
+  "zip_subdir": "database-skills-main/skills/vitess"
+}

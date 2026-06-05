@@ -1,0 +1,49 @@
+{
+  "name": "csharp-xunit",
+  "version": "0.1.0",
+  "category": "devops",
+  "description": "Get best practices for XUnit unit testing, including data-driven tests",
+  "intent_triggers": [
+    "use the csharp xunit agent skill",
+    "run a workflow for csharp xunit",
+    "help me with csharp xunit",
+    "我需要處理 csharp xunit 相關工作",
+    "幫我啟用 csharp xunit 這個 skill",
+    "用 agent skill 完成 csharp xunit",
+    "use csharp xunit from awesome-copilot"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the csharp xunit skill for this task.",
+      "invocation": "codex --skill csharp-xunit \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "devops",
+    "mcpservers",
+    "mit"
+  ]
+}

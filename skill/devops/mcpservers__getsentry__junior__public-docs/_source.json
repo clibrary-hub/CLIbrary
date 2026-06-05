@@ -1,0 +1,15 @@
+{
+  "source": "mcpservers",
+  "listing_url": "https://mcpservers.org/zh-TW/agent-skills",
+  "owner": "getsentry",
+  "repo": "junior",
+  "branch": "HEAD",
+  "skill": "public-docs",
+  "repo_url": "https://github.com/getsentry/junior",
+  "license": {
+    "spdx": "Apache-2.0",
+    "url": "https://github.com/getsentry/junior/blob/main/LICENSE",
+    "source": "api"
+  },
+  "zip_subdir": "junior-main/.agents/skills/public-docs"
+}

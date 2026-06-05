@@ -1,0 +1,49 @@
+{
+  "name": "clickhousectl-cloud-deploy",
+  "version": "0.1.0",
+  "category": "devops",
+  "description": "Use when a user wants to deploy ClickHouse to the cloud, go to production, use ClickHouse Cloud, host a managed ClickHouse service, or migrate from a local ClickHouse setup to ClickHouse Cloud.",
+  "intent_triggers": [
+    "use the clickhousectl cloud deploy agent skill",
+    "run a workflow for clickhousectl cloud deploy",
+    "help me with clickhousectl cloud deploy",
+    "我需要處理 clickhousectl cloud deploy 相關工作",
+    "幫我啟用 clickhousectl cloud deploy 這個 skill",
+    "用 agent skill 完成 clickhousectl cloud deploy",
+    "use clickhousectl cloud deploy from agent-skills"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the clickhousectl cloud deploy skill for this task.",
+      "invocation": "codex --skill clickhousectl-cloud-deploy \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "apache-2.0",
+    "devops",
+    "mcpservers"
+  ]
+}

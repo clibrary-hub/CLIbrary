@@ -1,0 +1,15 @@
+{
+  "source": "mcpservers",
+  "listing_url": "https://mcpservers.org/zh-TW/agent-skills",
+  "owner": "contentstack",
+  "repo": "contentstack-vibe-docs",
+  "branch": "HEAD",
+  "skill": "contentstack-vibe-docs",
+  "repo_url": "https://github.com/contentstack/contentstack-vibe-docs",
+  "license": {
+    "spdx": "MIT",
+    "url": "https://github.com/contentstack/contentstack-vibe-docs/blob/main/LICENSE",
+    "source": "api"
+  },
+  "zip_subdir": "contentstack-vibe-docs-main/skills/contentstack-vibe-docs"
+}

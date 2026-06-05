@@ -1,0 +1,49 @@
+{
+  "name": "voice-call",
+  "version": "0.1.0",
+  "category": "security",
+  "description": "Start voice calls via the OpenClaw voice-call plugin.",
+  "intent_triggers": [
+    "use the voice call agent skill",
+    "run a workflow for voice call",
+    "help me with voice call",
+    "我需要處理 voice call 相關工作",
+    "幫我啟用 voice call 這個 skill",
+    "用 agent skill 完成 voice call",
+    "use voice call from openclaw"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the voice call skill for this task.",
+      "invocation": "codex --skill voice-call \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "mcpservers",
+    "mit",
+    "security"
+  ]
+}

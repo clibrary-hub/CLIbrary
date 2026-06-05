@@ -1,0 +1,49 @@
+{
+  "name": "update-implementation-plan",
+  "version": "0.1.0",
+  "category": "devops",
+  "description": "Update an existing implementation plan file with new or update requirements to provide new features, refactoring existing code or upgrading packages, design, architecture or infrastructure.",
+  "intent_triggers": [
+    "use the update implementation plan agent skill",
+    "run a workflow for update implementation plan",
+    "help me with update implementation plan",
+    "我需要處理 update implementation plan 相關工作",
+    "幫我啟用 update implementation plan 這個 skill",
+    "用 agent skill 完成 update implementation plan",
+    "use update implementation plan from awesome-copilot"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the update implementation plan skill for this task.",
+      "invocation": "codex --skill update-implementation-plan \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "devops",
+    "mcpservers",
+    "mit"
+  ]
+}

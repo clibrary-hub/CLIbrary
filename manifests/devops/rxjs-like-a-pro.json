@@ -1,0 +1,49 @@
+{
+  "name": "rxjs-like-a-pro",
+  "version": "0.1.0",
+  "category": "devops",
+  "description": "Agent skill for rxjs like a pro workflows.",
+  "intent_triggers": [
+    "use the rxjs like a pro agent skill",
+    "run a workflow for rxjs like a pro",
+    "help me with rxjs like a pro",
+    "我需要處理 rxjs like a pro 相關工作",
+    "幫我啟用 rxjs like a pro 這個 skill",
+    "用 agent skill 完成 rxjs like a pro",
+    "use rxjs like a pro from sanity"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the rxjs like a pro skill for this task.",
+      "invocation": "codex --skill rxjs-like-a-pro \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "devops",
+    "mcpservers",
+    "mit"
+  ]
+}

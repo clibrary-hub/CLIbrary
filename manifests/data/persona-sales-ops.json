@@ -1,0 +1,49 @@
+{
+  "name": "persona-sales-ops",
+  "version": "0.1.0",
+  "category": "data",
+  "description": "Manage sales workflows — track deals, schedule calls, client comms.",
+  "intent_triggers": [
+    "use the persona sales ops agent skill",
+    "run a workflow for persona sales ops",
+    "help me with persona sales ops",
+    "我需要處理 persona sales ops 相關工作",
+    "幫我啟用 persona sales ops 這個 skill",
+    "用 agent skill 完成 persona sales ops",
+    "use persona sales ops from cli"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the persona sales ops skill for this task.",
+      "invocation": "codex --skill persona-sales-ops \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "apache-2.0",
+    "data",
+    "mcpservers"
+  ]
+}

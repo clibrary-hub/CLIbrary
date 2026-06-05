@@ -1,0 +1,48 @@
+{
+  "name": "expo-observe",
+  "version": "0.1.0",
+  "category": "devops",
+  "description": "Use for anything related to EAS Observe — adding `expo-observe` to an Expo project (AppMetricsRoot/ObserveRoot HOC, markInteractive, the useObserve hook, and the Expo Router / React Navigation inte...",
+  "intent_triggers": [
+    "use the expo observe agent skill",
+    "run a workflow for expo observe",
+    "help me with expo observe",
+    "我需要處理 expo observe 相關工作",
+    "幫我啟用 expo observe 這個 skill",
+    "用 agent skill 完成 expo observe"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the expo observe skill for this task.",
+      "invocation": "codex --skill expo-observe \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "devops",
+    "mit",
+    "skill"
+  ]
+}

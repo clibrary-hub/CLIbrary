@@ -1,0 +1,49 @@
+{
+  "name": "tuning-incremental-sync-config-skills",
+  "version": "0.1.0",
+  "category": "data",
+  "description": "Agent skill for tuning incremental sync config workflows.",
+  "intent_triggers": [
+    "use the tuning incremental sync config agent skill",
+    "run a workflow for tuning incremental sync config",
+    "help me with tuning incremental sync config",
+    "我需要處理 tuning incremental sync config 相關工作",
+    "幫我啟用 tuning incremental sync config 這個 skill",
+    "用 agent skill 完成 tuning incremental sync config",
+    "use tuning incremental sync config from skills"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the tuning incremental sync config skill for this task.",
+      "invocation": "codex --skill tuning-incremental-sync-config \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "data",
+    "mcpservers",
+    "mit"
+  ]
+}

@@ -1,0 +1,49 @@
+{
+  "name": "vercel-react-best-practices-sanity",
+  "version": "0.1.0",
+  "category": "web",
+  "description": "React and Next.js performance optimization guidelines from Vercel Engineering.",
+  "intent_triggers": [
+    "use the vercel react best practices agent skill",
+    "run a workflow for vercel react best practices",
+    "help me with vercel react best practices",
+    "我需要處理 vercel react best practices 相關工作",
+    "幫我啟用 vercel react best practices 這個 skill",
+    "用 agent skill 完成 vercel react best practices",
+    "use vercel react best practices from sanity"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the vercel react best practices skill for this task.",
+      "invocation": "codex --skill vercel-react-best-practices \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "mcpservers",
+    "mit",
+    "web"
+  ]
+}

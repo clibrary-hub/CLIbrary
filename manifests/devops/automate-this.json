@@ -1,0 +1,49 @@
+{
+  "name": "automate-this",
+  "version": "0.1.0",
+  "category": "devops",
+  "description": "Analyze a screen recording of a manual process and produce targeted, working automation scripts.",
+  "intent_triggers": [
+    "use the automate this agent skill",
+    "run a workflow for automate this",
+    "help me with automate this",
+    "我需要處理 automate this 相關工作",
+    "幫我啟用 automate this 這個 skill",
+    "用 agent skill 完成 automate this",
+    "use automate this from awesome-copilot"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the automate this skill for this task.",
+      "invocation": "codex --skill automate-this \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "devops",
+    "mcpservers",
+    "mit"
+  ]
+}

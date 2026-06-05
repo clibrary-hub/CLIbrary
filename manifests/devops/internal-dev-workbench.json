@@ -1,0 +1,49 @@
+{
+  "name": "internal-dev-workbench",
+  "version": "0.1.0",
+  "category": "devops",
+  "description": "Spin up a portless + tmux dev session for the Workflow SDK that gives each git worktree isolated `<branch>.<name>.localhost` URLs for the Next.js workbench and the observability UI, plus a Claude s...",
+  "intent_triggers": [
+    "use the internal dev workbench agent skill",
+    "run a workflow for internal dev workbench",
+    "help me with internal dev workbench",
+    "我需要處理 internal dev workbench 相關工作",
+    "幫我啟用 internal dev workbench 這個 skill",
+    "用 agent skill 完成 internal dev workbench",
+    "use internal dev workbench from workflow"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the internal dev workbench skill for this task.",
+      "invocation": "codex --skill internal-dev-workbench \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "apache-2.0",
+    "devops",
+    "mcpservers"
+  ]
+}

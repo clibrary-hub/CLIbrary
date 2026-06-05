@@ -1,0 +1,15 @@
+{
+  "source": "mcpservers",
+  "listing_url": "https://mcpservers.org/zh-TW/agent-skills/author/microsoft",
+  "owner": "microsoft",
+  "repo": "vscode-copilot-chat",
+  "branch": "HEAD",
+  "skill": "project-setup-info-local",
+  "repo_url": "https://github.com/microsoft/vscode-copilot-chat",
+  "license": {
+    "spdx": "MIT",
+    "url": "https://github.com/microsoft/vscode-copilot-chat/blob/main/LICENSE.txt",
+    "source": "api"
+  },
+  "zip_subdir": "vscode-copilot-chat-main/assets/prompts/skills/project-setup-info-local"
+}

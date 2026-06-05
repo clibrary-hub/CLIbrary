@@ -1,0 +1,49 @@
+{
+  "name": "workiq-copilot",
+  "version": "0.1.0",
+  "category": "devops",
+  "description": "Guides the Copilot CLI on how to use the WorkIQ CLI/MCP server to query Microsoft 365 Copilot data (emails, meetings, docs, Teams, people) for live context, summaries, and recommendations.",
+  "intent_triggers": [
+    "use the workiq copilot agent skill",
+    "run a workflow for workiq copilot",
+    "help me with workiq copilot",
+    "我需要處理 workiq copilot 相關工作",
+    "幫我啟用 workiq copilot 這個 skill",
+    "用 agent skill 完成 workiq copilot",
+    "use workiq copilot from awesome-copilot"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the workiq copilot skill for this task.",
+      "invocation": "codex --skill workiq-copilot \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "devops",
+    "mcpservers",
+    "mit"
+  ]
+}

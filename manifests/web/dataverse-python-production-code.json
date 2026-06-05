@@ -1,0 +1,49 @@
+{
+  "name": "dataverse-python-production-code",
+  "version": "0.1.0",
+  "category": "web",
+  "description": "Generate production-ready Python code using Dataverse SDK with error handling, optimization, and best practices",
+  "intent_triggers": [
+    "use the dataverse python production code agent skill",
+    "run a workflow for dataverse python production code",
+    "help me with dataverse python production code",
+    "我需要處理 dataverse python production code 相關工作",
+    "幫我啟用 dataverse python production code 這個 skill",
+    "用 agent skill 完成 dataverse python production code",
+    "use dataverse python production code from awesome-copilot"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the dataverse python production code skill for this task.",
+      "invocation": "codex --skill dataverse-python-production-code \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "mcpservers",
+    "mit",
+    "web"
+  ]
+}

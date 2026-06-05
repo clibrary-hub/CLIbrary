@@ -1,0 +1,49 @@
+{
+  "name": "snowflake-semanticview",
+  "version": "0.1.0",
+  "category": "data",
+  "description": "Create, alter, and validate Snowflake semantic views using Snowflake CLI (snow).",
+  "intent_triggers": [
+    "use the snowflake semanticview agent skill",
+    "run a workflow for snowflake semanticview",
+    "help me with snowflake semanticview",
+    "我需要處理 snowflake semanticview 相關工作",
+    "幫我啟用 snowflake semanticview 這個 skill",
+    "用 agent skill 完成 snowflake semanticview",
+    "use snowflake semanticview from awesome-copilot"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the snowflake semanticview skill for this task.",
+      "invocation": "codex --skill snowflake-semanticview \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "data",
+    "mcpservers",
+    "mit"
+  ]
+}

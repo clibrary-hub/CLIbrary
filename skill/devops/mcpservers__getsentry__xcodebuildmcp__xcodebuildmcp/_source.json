@@ -1,0 +1,15 @@
+{
+  "source": "mcpservers",
+  "listing_url": "https://mcpservers.org/zh-TW/agent-skills",
+  "owner": "getsentry",
+  "repo": "xcodebuildmcp",
+  "branch": "HEAD",
+  "skill": "xcodebuildmcp",
+  "repo_url": "https://github.com/getsentry/xcodebuildmcp",
+  "license": {
+    "spdx": "MIT",
+    "url": "https://github.com/getsentry/XcodeBuildMCP/blob/main/LICENSE",
+    "source": "api"
+  },
+  "zip_subdir": "XcodeBuildMCP-main/skills/xcodebuildmcp"
+}

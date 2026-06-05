@@ -1,0 +1,49 @@
+{
+  "name": "create-technical-spike",
+  "version": "0.1.0",
+  "category": "security",
+  "description": "Create time-boxed technical spike documents for researching and resolving critical development decisions before implementation.",
+  "intent_triggers": [
+    "use the create technical spike agent skill",
+    "run a workflow for create technical spike",
+    "help me with create technical spike",
+    "我需要處理 create technical spike 相關工作",
+    "幫我啟用 create technical spike 這個 skill",
+    "用 agent skill 完成 create technical spike",
+    "use create technical spike from awesome-copilot"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the create technical spike skill for this task.",
+      "invocation": "codex --skill create-technical-spike \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "mcpservers",
+    "mit",
+    "security"
+  ]
+}

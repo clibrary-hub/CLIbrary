@@ -1,0 +1,49 @@
+{
+  "name": "find-traces",
+  "version": "0.1.0",
+  "category": "data",
+  "description": "Analyze OpenTelemetry distributed traces from Axiom.",
+  "intent_triggers": [
+    "use the find traces agent skill",
+    "run a workflow for find traces",
+    "help me with find traces",
+    "我需要處理 find traces 相關工作",
+    "幫我啟用 find traces 這個 skill",
+    "用 agent skill 完成 find traces",
+    "use find traces from cli"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the find traces skill for this task.",
+      "invocation": "codex --skill find-traces \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "data",
+    "mcpservers",
+    "mit"
+  ]
+}

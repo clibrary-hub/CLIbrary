@@ -1,0 +1,15 @@
+{
+  "source": "mcpservers",
+  "listing_url": "https://mcpservers.org/zh-TW/agent-skills",
+  "owner": "triggerdotdev",
+  "repo": "trigger.dev",
+  "branch": "HEAD",
+  "skill": "span-timeline-events",
+  "repo_url": "https://github.com/triggerdotdev/trigger.dev",
+  "license": {
+    "spdx": "Apache-2.0",
+    "url": "https://github.com/triggerdotdev/trigger.dev/blob/main/LICENSE",
+    "source": "api"
+  },
+  "zip_subdir": "trigger.dev-main/.claude/skills/span-timeline-events"
+}

@@ -1,0 +1,49 @@
+{
+  "name": "mcp-security-audit",
+  "version": "0.1.0",
+  "category": "devops",
+  "description": "Agent skill for mcp security audit workflows.",
+  "intent_triggers": [
+    "use the mcp security audit agent skill",
+    "run a workflow for mcp security audit",
+    "help me with mcp security audit",
+    "我需要處理 mcp security audit 相關工作",
+    "幫我啟用 mcp security audit 這個 skill",
+    "用 agent skill 完成 mcp security audit",
+    "use mcp security audit from awesome-copilot"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the mcp security audit skill for this task.",
+      "invocation": "codex --skill mcp-security-audit \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "devops",
+    "mcpservers",
+    "mit"
+  ]
+}

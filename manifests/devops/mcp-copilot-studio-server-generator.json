@@ -1,0 +1,49 @@
+{
+  "name": "mcp-copilot-studio-server-generator",
+  "version": "0.1.0",
+  "category": "devops",
+  "description": "Generate a complete MCP server implementation optimized for Copilot Studio integration with proper schema constraints and streamable HTTP support",
+  "intent_triggers": [
+    "use the mcp copilot studio server generator agent skill",
+    "run a workflow for mcp copilot studio server generator",
+    "help me with mcp copilot studio server generator",
+    "我需要處理 mcp copilot studio server generator 相關工作",
+    "幫我啟用 mcp copilot studio server generator 這個 skill",
+    "用 agent skill 完成 mcp copilot studio server generator",
+    "use mcp copilot studio server generator from awesome-copilot"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the mcp copilot studio server generator skill for this task.",
+      "invocation": "codex --skill mcp-copilot-studio-server-generator \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "devops",
+    "mcpservers",
+    "mit"
+  ]
+}

@@ -1,0 +1,49 @@
+{
+  "name": "shadcn",
+  "version": "0.1.0",
+  "category": "devops",
+  "description": "Manages shadcn components and projects — adding, searching, fixing, debugging, styling, and composing UI.",
+  "intent_triggers": [
+    "use the shadcn agent skill",
+    "run a workflow for shadcn",
+    "help me with shadcn",
+    "我需要處理 shadcn 相關工作",
+    "幫我啟用 shadcn 這個 skill",
+    "用 agent skill 完成 shadcn",
+    "use shadcn from ui"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the shadcn skill for this task.",
+      "invocation": "codex --skill shadcn \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "devops",
+    "mcpservers",
+    "mit"
+  ]
+}

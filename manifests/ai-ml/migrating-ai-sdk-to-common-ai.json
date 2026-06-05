@@ -1,0 +1,49 @@
+{
+  "name": "migrating-ai-sdk-to-common-ai",
+  "version": "0.1.0",
+  "category": "ai-ml",
+  "description": "Migrates Airflow projects from airflow-ai-sdk to apache-airflow-providers-common-ai 0.1.0+.",
+  "intent_triggers": [
+    "use the migrating ai sdk to common ai agent skill",
+    "run a workflow for migrating ai sdk to common ai",
+    "help me with migrating ai sdk to common ai",
+    "我需要處理 migrating ai sdk to common ai 相關工作",
+    "幫我啟用 migrating ai sdk to common ai 這個 skill",
+    "用 agent skill 完成 migrating ai sdk to common ai",
+    "use migrating ai sdk to common ai from agents"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the migrating ai sdk to common ai skill for this task.",
+      "invocation": "codex --skill migrating-ai-sdk-to-common-ai \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "ai-ml",
+    "apache-2.0",
+    "mcpservers"
+  ]
+}

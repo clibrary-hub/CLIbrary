@@ -1,0 +1,15 @@
+{
+  "source": "mcpservers",
+  "listing_url": "https://mcpservers.org/zh-TW/agent-skills/category/browser-automation",
+  "owner": "vercel-labs",
+  "repo": "agent-browser",
+  "branch": "main",
+  "skill": "agent-browser",
+  "repo_url": "https://github.com/vercel-labs/agent-browser",
+  "license": {
+    "spdx": "Apache-2.0",
+    "url": "https://github.com/vercel-labs/agent-browser/blob/main/LICENSE",
+    "source": "api"
+  },
+  "zip_subdir": "agent-browser-main/skills/agent-browser"
+}

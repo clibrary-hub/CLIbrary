@@ -1,0 +1,49 @@
+{
+  "name": "agent-auth-mcp",
+  "version": "0.1.0",
+  "category": "devops",
+  "description": "Use the Agent Auth MCP tools to discover providers, connect agents, manage capabilities, and execute operations through the MCP protocol.",
+  "intent_triggers": [
+    "use the agent auth mcp agent skill",
+    "run a workflow for agent auth mcp",
+    "help me with agent auth mcp",
+    "我需要處理 agent auth mcp 相關工作",
+    "幫我啟用 agent auth mcp 這個 skill",
+    "用 agent skill 完成 agent auth mcp",
+    "use agent auth mcp from agent-auth"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the agent auth mcp skill for this task.",
+      "invocation": "codex --skill agent-auth-mcp \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "devops",
+    "mcpservers",
+    "mit"
+  ]
+}

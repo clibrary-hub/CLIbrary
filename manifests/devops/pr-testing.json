@@ -1,0 +1,49 @@
+{
+  "name": "pr-testing",
+  "version": "0.1.0",
+  "category": "devops",
+  "description": "Downloads and tests Aspire CLI from a PR build, preferably in the repo-local container runner under eng/scripts, verifies version, and runs test scenarios based on PR changes.",
+  "intent_triggers": [
+    "use the pr testing agent skill",
+    "run a workflow for pr testing",
+    "help me with pr testing",
+    "我需要處理 pr testing 相關工作",
+    "幫我啟用 pr testing 這個 skill",
+    "用 agent skill 完成 pr testing",
+    "use pr testing from aspire"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the pr testing skill for this task.",
+      "invocation": "codex --skill pr-testing \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "devops",
+    "mcpservers",
+    "mit"
+  ]
+}

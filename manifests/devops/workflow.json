@@ -1,0 +1,49 @@
+{
+  "name": "workflow",
+  "version": "0.1.0",
+  "category": "devops",
+  "description": "Creates durable, resumable workflows using Vercel's Workflow DevKit.",
+  "intent_triggers": [
+    "use the workflow agent skill",
+    "run a workflow for workflow",
+    "help me with workflow",
+    "我需要處理 workflow 相關工作",
+    "幫我啟用 workflow 這個 skill",
+    "用 agent skill 完成 workflow",
+    "use workflow from open-agents"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the workflow skill for this task.",
+      "invocation": "codex --skill workflow \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "devops",
+    "mcpservers",
+    "mit"
+  ]
+}

@@ -1,0 +1,49 @@
+{
+  "name": "review-duplication",
+  "version": "0.1.0",
+  "category": "ai-ml",
+  "description": "Use this skill during code reviews to proactively investigate the codebase for duplicated functionality, reinvented wheels, or failure to reuse existing project best practices and shared utilities.",
+  "intent_triggers": [
+    "use the review duplication agent skill",
+    "run a workflow for review duplication",
+    "help me with review duplication",
+    "我需要處理 review duplication 相關工作",
+    "幫我啟用 review duplication 這個 skill",
+    "用 agent skill 完成 review duplication",
+    "use review duplication from gemini-cli"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the review duplication skill for this task.",
+      "invocation": "codex --skill review-duplication \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "ai-ml",
+    "apache-2.0",
+    "mcpservers"
+  ]
+}

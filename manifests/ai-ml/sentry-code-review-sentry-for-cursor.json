@@ -1,0 +1,49 @@
+{
+  "name": "sentry-code-review-sentry-for-cursor",
+  "version": "0.1.0",
+  "category": "ai-ml",
+  "description": "Analyze and resolve Sentry comments on GitHub Pull Requests.",
+  "intent_triggers": [
+    "use the sentry code review agent skill",
+    "run a workflow for sentry code review",
+    "help me with sentry code review",
+    "我需要處理 sentry code review 相關工作",
+    "幫我啟用 sentry code review 這個 skill",
+    "用 agent skill 完成 sentry code review",
+    "use sentry code review from sentry-for-cursor"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the sentry code review skill for this task.",
+      "invocation": "codex --skill sentry-code-review \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "ai-ml",
+    "mcpservers",
+    "mit"
+  ]
+}

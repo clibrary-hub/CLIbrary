@@ -1,0 +1,49 @@
+{
+  "name": "ppt-template-creator-financial-services",
+  "version": "0.1.0",
+  "category": "media",
+  "description": "Creates self-contained PPT template SKILLS (not presentations) from user-provided PowerPoint templates.",
+  "intent_triggers": [
+    "use the ppt template creator agent skill",
+    "run a workflow for ppt template creator",
+    "help me with ppt template creator",
+    "我需要處理 ppt template creator 相關工作",
+    "幫我啟用 ppt template creator 這個 skill",
+    "用 agent skill 完成 ppt template creator",
+    "use ppt template creator from financial-services"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the ppt template creator skill for this task.",
+      "invocation": "codex --skill ppt-template-creator \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "apache-2.0",
+    "mcpservers",
+    "media"
+  ]
+}

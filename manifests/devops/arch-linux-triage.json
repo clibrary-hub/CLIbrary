@@ -1,0 +1,49 @@
+{
+  "name": "arch-linux-triage",
+  "version": "0.1.0",
+  "category": "devops",
+  "description": "Triage and resolve Arch Linux issues with pacman, systemd, and rolling-release best practices.",
+  "intent_triggers": [
+    "use the arch linux triage agent skill",
+    "run a workflow for arch linux triage",
+    "help me with arch linux triage",
+    "我需要處理 arch linux triage 相關工作",
+    "幫我啟用 arch linux triage 這個 skill",
+    "用 agent skill 完成 arch linux triage",
+    "use arch linux triage from awesome-copilot"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the arch linux triage skill for this task.",
+      "invocation": "codex --skill arch-linux-triage \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "devops",
+    "mcpservers",
+    "mit"
+  ]
+}

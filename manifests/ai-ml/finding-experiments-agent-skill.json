@@ -1,0 +1,48 @@
+{
+  "name": "finding-experiments-agent-skill",
+  "version": "0.1.0",
+  "category": "ai-ml",
+  "description": "Resolves a PostHog experiment reference from natural language to a concrete experiment ID by browsing `experiment-list` (not feature-flag tools), with disambiguation when multiple experiments match.",
+  "intent_triggers": [
+    "use the finding experiments agent skill",
+    "run a workflow for finding experiments",
+    "help me with finding experiments",
+    "我需要處理 finding experiments 相關工作",
+    "幫我啟用 finding experiments 這個 skill",
+    "用 agent skill 完成 finding experiments"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the finding experiments skill for this task.",
+      "invocation": "codex --skill finding-experiments \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "ai-ml",
+    "mit",
+    "skill"
+  ]
+}

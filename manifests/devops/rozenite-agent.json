@@ -1,0 +1,49 @@
+{
+  "name": "rozenite-agent",
+  "version": "0.1.0",
+  "category": "devops",
+  "description": "Use Rozenite for Agents through CLI-driven `rozenite agent` commands to inspect React Native DevTools data and Rozenite plugins on a live app target.",
+  "intent_triggers": [
+    "use the rozenite agent agent skill",
+    "run a workflow for rozenite agent",
+    "help me with rozenite agent",
+    "我需要處理 rozenite agent 相關工作",
+    "幫我啟用 rozenite agent 這個 skill",
+    "用 agent skill 完成 rozenite agent",
+    "use rozenite agent from rozenite"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the rozenite agent skill for this task.",
+      "invocation": "codex --skill rozenite-agent \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "devops",
+    "mcpservers",
+    "mit"
+  ]
+}

@@ -1,0 +1,49 @@
+{
+  "name": "recipe-reschedule-meeting",
+  "version": "0.1.0",
+  "category": "ai-ml",
+  "description": "Move a Google Calendar event to a new time and automatically notify all attendees.",
+  "intent_triggers": [
+    "use the recipe reschedule meeting agent skill",
+    "run a workflow for recipe reschedule meeting",
+    "help me with recipe reschedule meeting",
+    "我需要處理 recipe reschedule meeting 相關工作",
+    "幫我啟用 recipe reschedule meeting 這個 skill",
+    "用 agent skill 完成 recipe reschedule meeting",
+    "use recipe reschedule meeting from cli"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the recipe reschedule meeting skill for this task.",
+      "invocation": "codex --skill recipe-reschedule-meeting \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "ai-ml",
+    "apache-2.0",
+    "mcpservers"
+  ]
+}

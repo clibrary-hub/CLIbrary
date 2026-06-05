@@ -1,0 +1,49 @@
+{
+  "name": "huggingface-local-models",
+  "version": "0.1.0",
+  "category": "devops",
+  "description": "Use to select models to run locally with llama.cpp and GGUF on CPU, Mac Metal, CUDA, or ROCm.",
+  "intent_triggers": [
+    "use the huggingface local models agent skill",
+    "run a workflow for huggingface local models",
+    "help me with huggingface local models",
+    "我需要處理 huggingface local models 相關工作",
+    "幫我啟用 huggingface local models 這個 skill",
+    "用 agent skill 完成 huggingface local models",
+    "use huggingface local models from skills"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the huggingface local models skill for this task.",
+      "invocation": "codex --skill huggingface-local-models \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "apache-2.0",
+    "devops",
+    "mcpservers"
+  ]
+}

@@ -1,0 +1,49 @@
+{
+  "name": "commit-message",
+  "version": "0.1.0",
+  "category": "devops",
+  "description": "Generate conventional commit messages - use when creating commits, writing commit messages, or asking for git commit help",
+  "intent_triggers": [
+    "use the commit message agent skill",
+    "run a workflow for commit message",
+    "help me with commit message",
+    "我需要處理 commit message 相關工作",
+    "幫我啟用 commit message 這個 skill",
+    "用 agent skill 完成 commit message",
+    "use commit message from copilot-cli-for-beginners"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the commit message skill for this task.",
+      "invocation": "codex --skill commit-message \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "devops",
+    "mcpservers",
+    "mit"
+  ]
+}

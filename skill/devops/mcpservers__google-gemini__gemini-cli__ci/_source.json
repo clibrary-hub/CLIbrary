@@ -1,0 +1,15 @@
+{
+  "source": "mcpservers",
+  "listing_url": "https://mcpservers.org/zh-TW/agent-skills",
+  "owner": "google-gemini",
+  "repo": "gemini-cli",
+  "branch": "HEAD",
+  "skill": "ci",
+  "repo_url": "https://github.com/google-gemini/gemini-cli",
+  "license": {
+    "spdx": "Apache-2.0",
+    "url": "https://github.com/google-gemini/gemini-cli/blob/main/LICENSE",
+    "source": "api"
+  },
+  "zip_subdir": "gemini-cli-main/.gemini/skills/ci"
+}

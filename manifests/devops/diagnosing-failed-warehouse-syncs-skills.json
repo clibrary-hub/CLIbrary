@@ -1,0 +1,49 @@
+{
+  "name": "diagnosing-failed-warehouse-syncs-skills",
+  "version": "0.1.0",
+  "category": "devops",
+  "description": "Agent skill for diagnosing failed warehouse syncs workflows.",
+  "intent_triggers": [
+    "use the diagnosing failed warehouse syncs agent skill",
+    "run a workflow for diagnosing failed warehouse syncs",
+    "help me with diagnosing failed warehouse syncs",
+    "我需要處理 diagnosing failed warehouse syncs 相關工作",
+    "幫我啟用 diagnosing failed warehouse syncs 這個 skill",
+    "用 agent skill 完成 diagnosing failed warehouse syncs",
+    "use diagnosing failed warehouse syncs from skills"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the diagnosing failed warehouse syncs skill for this task.",
+      "invocation": "codex --skill diagnosing-failed-warehouse-syncs \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "devops",
+    "mcpservers",
+    "mit"
+  ]
+}

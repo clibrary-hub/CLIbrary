@@ -1,0 +1,49 @@
+{
+  "name": "sql-code-review",
+  "version": "0.1.0",
+  "category": "data",
+  "description": "Universal SQL code review assistant that performs comprehensive security, maintainability, and code quality analysis across all SQL databases (MySQL, PostgreSQL, SQL Server, Oracle).",
+  "intent_triggers": [
+    "use the sql code review agent skill",
+    "run a workflow for sql code review",
+    "help me with sql code review",
+    "我需要處理 sql code review 相關工作",
+    "幫我啟用 sql code review 這個 skill",
+    "用 agent skill 完成 sql code review",
+    "use sql code review from awesome-copilot"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the sql code review skill for this task.",
+      "invocation": "codex --skill sql-code-review \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "data",
+    "mcpservers",
+    "mit"
+  ]
+}

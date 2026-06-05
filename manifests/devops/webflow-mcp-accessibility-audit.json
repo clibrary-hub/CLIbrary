@@ -1,0 +1,49 @@
+{
+  "name": "webflow-mcp-accessibility-audit",
+  "version": "0.1.0",
+  "category": "devops",
+  "description": "Run comprehensive accessibility audit (WCAG 2.1) on Webflow pages - checks buttons, forms, links, focus states, headings, keyboard navigation, and generates detailed reports with fixes.",
+  "intent_triggers": [
+    "use the webflow mcp accessibility audit agent skill",
+    "run a workflow for webflow mcp accessibility audit",
+    "help me with webflow mcp accessibility audit",
+    "我需要處理 webflow mcp accessibility audit 相關工作",
+    "幫我啟用 webflow mcp accessibility audit 這個 skill",
+    "用 agent skill 完成 webflow mcp accessibility audit",
+    "use webflow mcp accessibility audit from webflow-skills"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the webflow mcp accessibility audit skill for this task.",
+      "invocation": "codex --skill webflow-mcp-accessibility-audit \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "devops",
+    "mcpservers",
+    "mit"
+  ]
+}

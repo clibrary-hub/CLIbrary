@@ -1,0 +1,48 @@
+{
+  "name": "querying-posthog-data",
+  "version": "0.1.0",
+  "category": "data",
+  "description": "Required reading before writing any HogQL/SQL or calling execute-sql against PostHog.",
+  "intent_triggers": [
+    "use the querying posthog data agent skill",
+    "run a workflow for querying posthog data",
+    "help me with querying posthog data",
+    "我需要處理 querying posthog data 相關工作",
+    "幫我啟用 querying posthog data 這個 skill",
+    "用 agent skill 完成 querying posthog data"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the querying posthog data skill for this task.",
+      "invocation": "codex --skill querying-posthog-data \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "data",
+    "mit",
+    "skill"
+  ]
+}

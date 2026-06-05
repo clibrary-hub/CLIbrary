@@ -1,0 +1,49 @@
+{
+  "name": "outlines",
+  "version": "0.1.0",
+  "category": "ai-ml",
+  "description": "Guarantee valid JSON/XML/code structure during generation, use Pydantic models for type-safe outputs, support local models (Transformers, vLLM), and maximize inference speed with Outlines - dottxt....",
+  "intent_triggers": [
+    "use the outlines agent skill",
+    "run a workflow for outlines",
+    "help me with outlines",
+    "我需要處理 outlines 相關工作",
+    "幫我啟用 outlines 這個 skill",
+    "用 agent skill 完成 outlines",
+    "use outlines from ai-research-skills"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the outlines skill for this task.",
+      "invocation": "codex --skill outlines \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "ai-ml",
+    "mcpservers",
+    "mit"
+  ]
+}

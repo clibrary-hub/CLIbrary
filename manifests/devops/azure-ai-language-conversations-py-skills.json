@@ -1,0 +1,49 @@
+{
+  "name": "azure-ai-language-conversations-py-skills",
+  "version": "0.1.0",
+  "category": "devops",
+  "description": "Implement Conversational Language Understanding (CLU) using the azure-ai-language-conversations Python SDK.",
+  "intent_triggers": [
+    "use the azure ai language conversations py agent skill",
+    "run a workflow for azure ai language conversations py",
+    "help me with azure ai language conversations py",
+    "我需要處理 azure ai language conversations py 相關工作",
+    "幫我啟用 azure ai language conversations py 這個 skill",
+    "用 agent skill 完成 azure ai language conversations py",
+    "use azure ai language conversations py from skills"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the azure ai language conversations py skill for this task.",
+      "invocation": "codex --skill azure-ai-language-conversations-py \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "devops",
+    "mcpservers",
+    "mit"
+  ]
+}

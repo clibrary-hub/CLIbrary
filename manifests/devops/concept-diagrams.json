@@ -1,0 +1,49 @@
+{
+  "name": "concept-diagrams",
+  "version": "0.1.0",
+  "category": "devops",
+  "description": "生成 flat, minimal light/dark-aware SVG diagrams as standalone HTML files, using a unified educational visual language with 9 semantic color ramps, sentence-case typography, and automatic dark mode.",
+  "intent_triggers": [
+    "use the concept diagrams agent skill",
+    "run a workflow for concept diagrams",
+    "help me with concept diagrams",
+    "我需要處理 concept diagrams 相關工作",
+    "幫我啟用 concept diagrams 這個 skill",
+    "用 agent skill 完成 concept diagrams",
+    "use concept diagrams from hermes-agent-zh"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the concept diagrams skill for this task.",
+      "invocation": "codex --skill concept-diagrams \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "devops",
+    "mit",
+    "skills-rest"
+  ]
+}

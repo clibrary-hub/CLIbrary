@@ -1,0 +1,49 @@
+{
+  "name": "cms-assets",
+  "version": "0.1.0",
+  "category": "web",
+  "description": "Advise developers on organizing, delivering, and transforming assets in Contentstack.",
+  "intent_triggers": [
+    "use the cms assets agent skill",
+    "run a workflow for cms assets",
+    "help me with cms assets",
+    "我需要處理 cms assets 相關工作",
+    "幫我啟用 cms assets 這個 skill",
+    "用 agent skill 完成 cms assets",
+    "use cms assets from contentstack-agent-skills"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the cms assets skill for this task.",
+      "invocation": "codex --skill cms-assets \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "mcpservers",
+    "mit",
+    "web"
+  ]
+}

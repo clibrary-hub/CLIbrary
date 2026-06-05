@@ -1,0 +1,48 @@
+{
+  "name": "auditing-experiments-flags",
+  "version": "0.1.0",
+  "category": "data",
+  "description": "Audit PostHog experiments and feature flags for configuration issues, staleness, and best-practice violations.",
+  "intent_triggers": [
+    "use the auditing experiments flags agent skill",
+    "run a workflow for auditing experiments flags",
+    "help me with auditing experiments flags",
+    "我需要處理 auditing experiments flags 相關工作",
+    "幫我啟用 auditing experiments flags 這個 skill",
+    "用 agent skill 完成 auditing experiments flags"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the auditing experiments flags skill for this task.",
+      "invocation": "codex --skill auditing-experiments-flags \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "data",
+    "mit",
+    "skill"
+  ]
+}

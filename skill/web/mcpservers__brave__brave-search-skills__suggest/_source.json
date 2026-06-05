@@ -1,0 +1,15 @@
+{
+  "source": "mcpservers",
+  "listing_url": "https://mcpservers.org/zh-TW/agent-skills",
+  "owner": "brave",
+  "repo": "brave-search-skills",
+  "branch": "HEAD",
+  "skill": "suggest",
+  "repo_url": "https://github.com/brave/brave-search-skills",
+  "license": {
+    "spdx": "MIT",
+    "url": "https://github.com/brave/brave-search-skills/blob/main/LICENSE",
+    "source": "api"
+  },
+  "zip_subdir": "brave-search-skills-main/skills/suggest"
+}

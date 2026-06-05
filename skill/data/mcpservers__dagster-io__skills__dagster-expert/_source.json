@@ -1,0 +1,15 @@
+{
+  "source": "mcpservers",
+  "listing_url": "https://mcpservers.org/zh-TW/agent-skills",
+  "owner": "dagster-io",
+  "repo": "skills",
+  "branch": "HEAD",
+  "skill": "dagster-expert",
+  "repo_url": "https://github.com/dagster-io/skills",
+  "license": {
+    "spdx": "Apache-2.0",
+    "url": "https://github.com/dagster-io/skills/blob/master/LICENSE",
+    "source": "api"
+  },
+  "zip_subdir": "skills-master/skills/dagster-expert/skills/dagster-expert"
+}

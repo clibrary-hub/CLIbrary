@@ -1,0 +1,49 @@
+{
+  "name": "lbo-model-financial-services",
+  "version": "0.1.0",
+  "category": "ai-ml",
+  "description": "This skill should be used when completing LBO (Leveraged Buyout) model templates in Excel for private equity transactions, deal materials, or investment committee presentations.",
+  "intent_triggers": [
+    "use the lbo model agent skill",
+    "run a workflow for lbo model",
+    "help me with lbo model",
+    "我需要處理 lbo model 相關工作",
+    "幫我啟用 lbo model 這個 skill",
+    "用 agent skill 完成 lbo model",
+    "use lbo model from financial-services"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the lbo model skill for this task.",
+      "invocation": "codex --skill lbo-model \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "ai-ml",
+    "apache-2.0",
+    "mcpservers"
+  ]
+}

@@ -1,0 +1,49 @@
+{
+  "name": "pulumi-terraform-to-pulumi",
+  "version": "0.1.0",
+  "category": "devops",
+  "description": "Migrate Terraform/OpenTofu projects to Pulumi, including translating HCL source code and/or importing Terraform state into a Pulumi stack.",
+  "intent_triggers": [
+    "use the pulumi terraform to pulumi agent skill",
+    "run a workflow for pulumi terraform to pulumi",
+    "help me with pulumi terraform to pulumi",
+    "我需要處理 pulumi terraform to pulumi 相關工作",
+    "幫我啟用 pulumi terraform to pulumi 這個 skill",
+    "用 agent skill 完成 pulumi terraform to pulumi",
+    "use pulumi terraform to pulumi from agent-skills"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the pulumi terraform to pulumi skill for this task.",
+      "invocation": "codex --skill pulumi-terraform-to-pulumi \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "apache-2.0",
+    "devops",
+    "mcpservers"
+  ]
+}

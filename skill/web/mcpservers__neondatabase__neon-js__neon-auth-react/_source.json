@@ -1,0 +1,15 @@
+{
+  "source": "mcpservers",
+  "listing_url": "https://mcpservers.org/zh-TW/agent-skills",
+  "owner": "neondatabase",
+  "repo": "neon-js",
+  "branch": "HEAD",
+  "skill": "neon-auth-react",
+  "repo_url": "https://github.com/neondatabase/neon-js",
+  "license": {
+    "spdx": "Apache-2.0",
+    "url": "https://github.com/neondatabase/neon-js/blob/main/LICENSE",
+    "source": "api"
+  },
+  "zip_subdir": "neon-js-main/skills/neon-auth-react"
+}

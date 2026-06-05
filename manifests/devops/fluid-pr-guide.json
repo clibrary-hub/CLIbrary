@@ -1,0 +1,49 @@
+{
+  "name": "fluid-pr-guide",
+  "version": "0.1.0",
+  "category": "devops",
+  "description": "Use when composing, writing, drafting, or reviewing a PR title, PR description, or PR body in Fluid Framework — provides title style, body template, and section guidance.",
+  "intent_triggers": [
+    "use the fluid pr guide agent skill",
+    "run a workflow for fluid pr guide",
+    "help me with fluid pr guide",
+    "我需要處理 fluid pr guide 相關工作",
+    "幫我啟用 fluid pr guide 這個 skill",
+    "用 agent skill 完成 fluid pr guide",
+    "use fluid pr guide from fluidframework"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the fluid pr guide skill for this task.",
+      "invocation": "codex --skill fluid-pr-guide \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "devops",
+    "mcpservers",
+    "mit"
+  ]
+}

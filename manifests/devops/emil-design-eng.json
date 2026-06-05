@@ -1,0 +1,49 @@
+{
+  "name": "emil-design-eng",
+  "version": "0.1.0",
+  "category": "devops",
+  "description": "This skill encodes Emil Kowalski's philosophy on UI polish, component design, animation decisions, and the invisible details that make software feel great.",
+  "intent_triggers": [
+    "use the emil design eng agent skill",
+    "run a workflow for emil design eng",
+    "help me with emil design eng",
+    "我需要處理 emil design eng 相關工作",
+    "幫我啟用 emil design eng 這個 skill",
+    "用 agent skill 完成 emil design eng",
+    "use emil design eng from open-agents"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the emil design eng skill for this task.",
+      "invocation": "codex --skill emil-design-eng \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "devops",
+    "mcpservers",
+    "mit"
+  ]
+}

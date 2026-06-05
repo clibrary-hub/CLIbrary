@@ -1,0 +1,49 @@
+{
+  "name": "update-markdown-file-index",
+  "version": "0.1.0",
+  "category": "finance",
+  "description": "Update a markdown file section with an index/table of files from a specified folder.",
+  "intent_triggers": [
+    "use the update markdown file index agent skill",
+    "run a workflow for update markdown file index",
+    "help me with update markdown file index",
+    "我需要處理 update markdown file index 相關工作",
+    "幫我啟用 update markdown file index 這個 skill",
+    "用 agent skill 完成 update markdown file index",
+    "use update markdown file index from awesome-copilot"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the update markdown file index skill for this task.",
+      "invocation": "codex --skill update-markdown-file-index \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "finance",
+    "mcpservers",
+    "mit"
+  ]
+}

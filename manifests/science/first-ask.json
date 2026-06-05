@@ -1,0 +1,49 @@
+{
+  "name": "first-ask",
+  "version": "0.1.0",
+  "category": "science",
+  "description": "Interactive, input-tool powered, task refinement workflow: interrogates scope, deliverables, constraints before carrying out the task; Requires the Joyride extension.",
+  "intent_triggers": [
+    "use the first ask agent skill",
+    "run a workflow for first ask",
+    "help me with first ask",
+    "我需要處理 first ask 相關工作",
+    "幫我啟用 first ask 這個 skill",
+    "用 agent skill 完成 first ask",
+    "use first ask from awesome-copilot"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the first ask skill for this task.",
+      "invocation": "codex --skill first-ask \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "mcpservers",
+    "mit",
+    "science"
+  ]
+}

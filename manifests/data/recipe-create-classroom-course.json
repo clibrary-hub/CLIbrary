@@ -1,0 +1,49 @@
+{
+  "name": "recipe-create-classroom-course",
+  "version": "0.1.0",
+  "category": "data",
+  "description": "Create a Google Classroom course and invite students.",
+  "intent_triggers": [
+    "use the recipe create classroom course agent skill",
+    "run a workflow for recipe create classroom course",
+    "help me with recipe create classroom course",
+    "我需要處理 recipe create classroom course 相關工作",
+    "幫我啟用 recipe create classroom course 這個 skill",
+    "用 agent skill 完成 recipe create classroom course",
+    "use recipe create classroom course from cli"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the recipe create classroom course skill for this task.",
+      "invocation": "codex --skill recipe-create-classroom-course \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "apache-2.0",
+    "data",
+    "mcpservers"
+  ]
+}

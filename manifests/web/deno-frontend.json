@@ -1,0 +1,49 @@
+{
+  "name": "deno-frontend",
+  "version": "0.1.0",
+  "category": "web",
+  "description": "Use when working with Fresh framework, creating routes or handlers in Fresh, building web UIs with Preact, or adding Tailwind CSS in Deno.",
+  "intent_triggers": [
+    "use the deno frontend agent skill",
+    "run a workflow for deno frontend",
+    "help me with deno frontend",
+    "我需要處理 deno frontend 相關工作",
+    "幫我啟用 deno frontend 這個 skill",
+    "用 agent skill 完成 deno frontend",
+    "use deno frontend from skills"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the deno frontend skill for this task.",
+      "invocation": "codex --skill deno-frontend \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "mcpservers",
+    "mit",
+    "web"
+  ]
+}

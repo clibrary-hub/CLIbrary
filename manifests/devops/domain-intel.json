@@ -1,0 +1,49 @@
+{
+  "name": "domain-intel",
+  "version": "0.1.0",
+  "category": "devops",
+  "description": "Passive domain reconnaissance using Python stdlib.",
+  "intent_triggers": [
+    "use the domain intel agent skill",
+    "run a workflow for domain intel",
+    "help me with domain intel",
+    "我需要處理 domain intel 相關工作",
+    "幫我啟用 domain intel 這個 skill",
+    "用 agent skill 完成 domain intel",
+    "use domain intel from hermes-agent-zh"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the domain intel skill for this task.",
+      "invocation": "codex --skill domain-intel \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "devops",
+    "mit",
+    "skills-rest"
+  ]
+}

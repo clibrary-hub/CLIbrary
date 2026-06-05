@@ -1,0 +1,49 @@
+{
+  "name": "cms-live-preview-visual-builder-support-assistant",
+  "version": "0.1.0",
+  "category": "devops",
+  "description": "Diagnose and guide Contentstack Live Preview and Visual Builder implementations.",
+  "intent_triggers": [
+    "use the cms live preview visual builder support assistant agent skill",
+    "run a workflow for cms live preview visual builder support assistant",
+    "help me with cms live preview visual builder support assistant",
+    "我需要處理 cms live preview visual builder support assistant 相關工作",
+    "幫我啟用 cms live preview visual builder support assistant 這個 skill",
+    "用 agent skill 完成 cms live preview visual builder support assistant",
+    "use cms live preview visual builder support assistant from contentstack-agent-skills"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the cms live preview visual builder support assistant skill for this task.",
+      "invocation": "codex --skill cms-live-preview-visual-builder-support-assistant \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "devops",
+    "mcpservers",
+    "mit"
+  ]
+}

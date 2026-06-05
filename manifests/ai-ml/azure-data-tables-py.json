@@ -1,0 +1,49 @@
+{
+  "name": "azure-data-tables-py",
+  "version": "0.1.0",
+  "category": "ai-ml",
+  "description": "Agent skill for azure data tables py workflows.",
+  "intent_triggers": [
+    "use the azure data tables py agent skill",
+    "run a workflow for azure data tables py",
+    "help me with azure data tables py",
+    "我需要處理 azure data tables py 相關工作",
+    "幫我啟用 azure data tables py 這個 skill",
+    "用 agent skill 完成 azure data tables py",
+    "use azure data tables py from agent-skills"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the azure data tables py skill for this task.",
+      "invocation": "codex --skill azure-data-tables-py \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "ai-ml",
+    "mcpservers",
+    "mit"
+  ]
+}

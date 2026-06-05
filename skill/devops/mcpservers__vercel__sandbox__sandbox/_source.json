@@ -1,0 +1,15 @@
+{
+  "source": "mcpservers",
+  "listing_url": "https://mcpservers.org/zh-TW/agent-skills/author/vercel",
+  "owner": "vercel",
+  "repo": "sandbox",
+  "branch": "HEAD",
+  "skill": "sandbox",
+  "repo_url": "https://github.com/vercel/sandbox",
+  "license": {
+    "spdx": "Apache-2.0",
+    "url": "https://github.com/vercel/sandbox/blob/main/LICENSE",
+    "source": "api"
+  },
+  "zip_subdir": "sandbox-main/skills/sandbox"
+}

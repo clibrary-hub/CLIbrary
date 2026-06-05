@@ -1,0 +1,49 @@
+{
+  "name": "feature-flags-elixir",
+  "version": "0.1.0",
+  "category": "devops",
+  "description": "PostHog feature flags for Elixir applications",
+  "intent_triggers": [
+    "use the feature flags elixir agent skill",
+    "run a workflow for feature flags elixir",
+    "help me with feature flags elixir",
+    "我需要處理 feature flags elixir 相關工作",
+    "幫我啟用 feature flags elixir 這個 skill",
+    "用 agent skill 完成 feature flags elixir",
+    "use feature flags elixir from skills"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the feature flags elixir skill for this task.",
+      "invocation": "codex --skill feature-flags-elixir \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "devops",
+    "mcpservers",
+    "mit"
+  ]
+}

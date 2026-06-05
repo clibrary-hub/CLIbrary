@@ -1,0 +1,49 @@
+{
+  "name": "dataverse-python-quickstart",
+  "version": "0.1.0",
+  "category": "finance",
+  "description": "Generate Python SDK setup + CRUD + bulk + paging snippets using official patterns.",
+  "intent_triggers": [
+    "use the dataverse python quickstart agent skill",
+    "run a workflow for dataverse python quickstart",
+    "help me with dataverse python quickstart",
+    "我需要處理 dataverse python quickstart 相關工作",
+    "幫我啟用 dataverse python quickstart 這個 skill",
+    "用 agent skill 完成 dataverse python quickstart",
+    "use dataverse python quickstart from awesome-copilot"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the dataverse python quickstart skill for this task.",
+      "invocation": "codex --skill dataverse-python-quickstart \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "finance",
+    "mcpservers",
+    "mit"
+  ]
+}

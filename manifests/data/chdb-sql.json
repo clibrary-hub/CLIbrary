@@ -1,0 +1,49 @@
+{
+  "name": "chdb-sql",
+  "version": "0.1.0",
+  "category": "data",
+  "description": "Agent skill for chdb sql workflows.",
+  "intent_triggers": [
+    "use the chdb sql agent skill",
+    "run a workflow for chdb sql",
+    "help me with chdb sql",
+    "我需要處理 chdb sql 相關工作",
+    "幫我啟用 chdb sql 這個 skill",
+    "用 agent skill 完成 chdb sql",
+    "use chdb sql from agent-skills"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the chdb sql skill for this task.",
+      "invocation": "codex --skill chdb-sql \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "apache-2.0",
+    "data",
+    "mcpservers"
+  ]
+}

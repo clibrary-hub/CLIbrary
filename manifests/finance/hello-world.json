@@ -1,0 +1,49 @@
+{
+  "name": "hello-world",
+  "version": "0.1.0",
+  "category": "finance",
+  "description": "A minimal skill example - use when learning the skill format",
+  "intent_triggers": [
+    "use the hello world agent skill",
+    "run a workflow for hello world",
+    "help me with hello world",
+    "我需要處理 hello world 相關工作",
+    "幫我啟用 hello world 這個 skill",
+    "用 agent skill 完成 hello world",
+    "use hello world from copilot-cli-for-beginners"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the hello world skill for this task.",
+      "invocation": "codex --skill hello-world \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "finance",
+    "mcpservers",
+    "mit"
+  ]
+}

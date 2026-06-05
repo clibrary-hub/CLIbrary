@@ -1,0 +1,15 @@
+{
+  "source": "mcpservers",
+  "listing_url": "https://mcpservers.org/zh-TW/agent-skills/author/anthropic",
+  "owner": "anthropics",
+  "repo": "knowledge-work-plugins",
+  "branch": "HEAD",
+  "skill": "interview-prep",
+  "repo_url": "https://github.com/anthropics/knowledge-work-plugins",
+  "license": {
+    "spdx": "Apache-2.0",
+    "url": "https://github.com/anthropics/knowledge-work-plugins/blob/main/LICENSE",
+    "source": "api"
+  },
+  "zip_subdir": "knowledge-work-plugins-main/human-resources/skills/interview-prep"
+}

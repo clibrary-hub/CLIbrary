@@ -1,0 +1,49 @@
+{
+  "name": "cudf-analytics",
+  "version": "0.1.0",
+  "category": "data",
+  "description": "Use for GPU-accelerated data analysis on datasets, CSVs, or tabular data using NVIDIA cuDF.",
+  "intent_triggers": [
+    "use the cudf analytics agent skill",
+    "run a workflow for cudf analytics",
+    "help me with cudf analytics",
+    "我需要處理 cudf analytics 相關工作",
+    "幫我啟用 cudf analytics 這個 skill",
+    "用 agent skill 完成 cudf analytics",
+    "use cudf analytics from deepagents"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the cudf analytics skill for this task.",
+      "invocation": "codex --skill cudf-analytics \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "data",
+    "mcpservers",
+    "mit"
+  ]
+}

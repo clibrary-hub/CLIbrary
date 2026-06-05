@@ -1,0 +1,49 @@
+{
+  "name": "integration-react-react-router-7-framework",
+  "version": "0.1.0",
+  "category": "web",
+  "description": "PostHog integration for React Router v7 - Framework mode applications",
+  "intent_triggers": [
+    "use the integration react react router 7 framework agent skill",
+    "run a workflow for integration react react router 7 framework",
+    "help me with integration react react router 7 framework",
+    "我需要處理 integration react react router 7 framework 相關工作",
+    "幫我啟用 integration react react router 7 framework 這個 skill",
+    "用 agent skill 完成 integration react react router 7 framework",
+    "use integration react react router 7 framework from skills"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the integration react react router 7 framework skill for this task.",
+      "invocation": "codex --skill integration-react-react-router-7-framework \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "mcpservers",
+    "mit",
+    "web"
+  ]
+}

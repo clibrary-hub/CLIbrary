@@ -1,0 +1,49 @@
+{
+  "name": "update-llms",
+  "version": "0.1.0",
+  "category": "devops",
+  "description": "Update the llms.txt file in the root folder to reflect changes in documentation or specifications following the llms.txt specification at https://llmstxt.org/",
+  "intent_triggers": [
+    "use the update llms agent skill",
+    "run a workflow for update llms",
+    "help me with update llms",
+    "我需要處理 update llms 相關工作",
+    "幫我啟用 update llms 這個 skill",
+    "用 agent skill 完成 update llms",
+    "use update llms from awesome-copilot"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the update llms skill for this task.",
+      "invocation": "codex --skill update-llms \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "devops",
+    "mcpservers",
+    "mit"
+  ]
+}

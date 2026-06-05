@@ -1,0 +1,48 @@
+{
+  "name": "huggingface-hub",
+  "version": "0.1.0",
+  "category": "devops",
+  "description": "Hugging Face Hub CLI (hf) — search, download, and upload models and datasets, manage repos, query datasets with SQL, deploy inference endpoints, manage Spaces and buckets.",
+  "intent_triggers": [
+    "use the huggingface hub agent skill",
+    "run a workflow for huggingface hub",
+    "help me with huggingface hub",
+    "我需要處理 huggingface hub 相關工作",
+    "幫我啟用 huggingface hub 這個 skill",
+    "用 agent skill 完成 huggingface hub"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the huggingface hub skill for this task.",
+      "invocation": "codex --skill huggingface-hub \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "devops",
+    "mit",
+    "skill"
+  ]
+}

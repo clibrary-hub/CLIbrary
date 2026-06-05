@@ -1,0 +1,49 @@
+{
+  "name": "single-cell-rna-qc",
+  "version": "0.1.0",
+  "category": "devops",
+  "description": "Performs quality control on single-cell RNA-seq data (.h5ad or .h5 files) using scverse best practices with MAD-based filtering and comprehensive visualizations.",
+  "intent_triggers": [
+    "use the single cell rna qc agent skill",
+    "run a workflow for single cell rna qc",
+    "help me with single cell rna qc",
+    "我需要處理 single cell rna qc 相關工作",
+    "幫我啟用 single cell rna qc 這個 skill",
+    "用 agent skill 完成 single cell rna qc",
+    "use single cell rna qc from knowledge-work-plugins"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the single cell rna qc skill for this task.",
+      "invocation": "codex --skill single-cell-rna-qc \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "apache-2.0",
+    "devops",
+    "mcpservers"
+  ]
+}

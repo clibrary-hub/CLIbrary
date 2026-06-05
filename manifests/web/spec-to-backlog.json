@@ -1,0 +1,49 @@
+{
+  "name": "spec-to-backlog",
+  "version": "0.1.0",
+  "category": "web",
+  "description": "Automatically convert Confluence specification documents into structured Jira backlogs with Epics and implementation tickets.",
+  "intent_triggers": [
+    "use the spec to backlog agent skill",
+    "run a workflow for spec to backlog",
+    "help me with spec to backlog",
+    "我需要處理 spec to backlog 相關工作",
+    "幫我啟用 spec to backlog 這個 skill",
+    "用 agent skill 完成 spec to backlog",
+    "use spec to backlog from atlassian-mcp-server"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the spec to backlog skill for this task.",
+      "invocation": "codex --skill spec-to-backlog \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "apache-2.0",
+    "mcpservers",
+    "web"
+  ]
+}

@@ -1,0 +1,49 @@
+{
+  "name": "changesets",
+  "version": "0.1.0",
+  "category": "devops",
+  "description": "Create or refresh a `.changeset/<slug>.md` for the current branch, or report that none is required.",
+  "intent_triggers": [
+    "use the changesets agent skill",
+    "run a workflow for changesets",
+    "help me with changesets",
+    "我需要處理 changesets 相關工作",
+    "幫我啟用 changesets 這個 skill",
+    "用 agent skill 完成 changesets",
+    "use changesets from cli"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the changesets skill for this task.",
+      "invocation": "codex --skill changesets \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "devops",
+    "mcpservers",
+    "mit"
+  ]
+}

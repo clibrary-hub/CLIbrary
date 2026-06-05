@@ -1,0 +1,49 @@
+{
+  "name": "gdpr-compliant",
+  "version": "0.1.0",
+  "category": "security",
+  "description": "Apply GDPR-compliant engineering practices across your codebase.",
+  "intent_triggers": [
+    "use the gdpr compliant agent skill",
+    "run a workflow for gdpr compliant",
+    "help me with gdpr compliant",
+    "我需要處理 gdpr compliant 相關工作",
+    "幫我啟用 gdpr compliant 這個 skill",
+    "用 agent skill 完成 gdpr compliant",
+    "use gdpr compliant from awesome-copilot"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the gdpr compliant skill for this task.",
+      "invocation": "codex --skill gdpr-compliant \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "mcpservers",
+    "mit",
+    "security"
+  ]
+}

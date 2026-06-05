@@ -1,0 +1,49 @@
+{
+  "name": "omnibus-instrument-llm-analytics",
+  "version": "0.1.0",
+  "category": "devops",
+  "description": "Agent skill for omnibus instrument llm analytics workflows.",
+  "intent_triggers": [
+    "use the omnibus instrument llm analytics agent skill",
+    "run a workflow for omnibus instrument llm analytics",
+    "help me with omnibus instrument llm analytics",
+    "我需要處理 omnibus instrument llm analytics 相關工作",
+    "幫我啟用 omnibus instrument llm analytics 這個 skill",
+    "用 agent skill 完成 omnibus instrument llm analytics",
+    "use omnibus instrument llm analytics from skills"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the omnibus instrument llm analytics skill for this task.",
+      "invocation": "codex --skill omnibus-instrument-llm-analytics \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "devops",
+    "mcpservers",
+    "mit"
+  ]
+}

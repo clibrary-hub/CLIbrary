@@ -1,0 +1,49 @@
+{
+  "name": "commit-message-storyteller",
+  "version": "0.1.0",
+  "category": "devops",
+  "description": "Analyzes git diffs or staged changes and generates narrative commit messages that explain WHY a change was made, not just what changed — following Conventional Commits format.",
+  "intent_triggers": [
+    "use the commit message storyteller agent skill",
+    "run a workflow for commit message storyteller",
+    "help me with commit message storyteller",
+    "我需要處理 commit message storyteller 相關工作",
+    "幫我啟用 commit message storyteller 這個 skill",
+    "用 agent skill 完成 commit message storyteller",
+    "use commit message storyteller from awesome-copilot"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the commit message storyteller skill for this task.",
+      "invocation": "codex --skill commit-message-storyteller \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "devops",
+    "mcpservers",
+    "mit"
+  ]
+}

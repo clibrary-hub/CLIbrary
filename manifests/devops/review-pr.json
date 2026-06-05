@@ -1,0 +1,49 @@
+{
+  "name": "review-pr",
+  "version": "0.1.0",
+  "category": "devops",
+  "description": "Generate structured PR review comments using Claude Code agents and post them to GitHub.",
+  "intent_triggers": [
+    "use the review pr agent skill",
+    "run a workflow for review pr",
+    "help me with review pr",
+    "我需要處理 review pr 相關工作",
+    "幫我啟用 review pr 這個 skill",
+    "用 agent skill 完成 review pr",
+    "use review pr from agent365-devtools"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the review pr skill for this task.",
+      "invocation": "codex --skill review-pr \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "devops",
+    "mcpservers",
+    "mit"
+  ]
+}

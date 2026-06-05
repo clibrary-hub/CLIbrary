@@ -1,0 +1,49 @@
+{
+  "name": "canvas-app",
+  "version": "0.1.0",
+  "category": "ai-ml",
+  "description": "Creates or edits a Power Apps Canvas App through the Canvas Authoring MCP coauthoring session.",
+  "intent_triggers": [
+    "use the canvas app agent skill",
+    "run a workflow for canvas app",
+    "help me with canvas app",
+    "我需要處理 canvas app 相關工作",
+    "幫我啟用 canvas app 這個 skill",
+    "用 agent skill 完成 canvas app",
+    "use canvas app from power-platform-skills"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the canvas app skill for this task.",
+      "invocation": "codex --skill canvas-app \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "ai-ml",
+    "mcpservers",
+    "mit"
+  ]
+}

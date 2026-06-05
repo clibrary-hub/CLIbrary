@@ -1,0 +1,49 @@
+{
+  "name": "chrome-devtools",
+  "version": "0.1.0",
+  "category": "ai-ml",
+  "description": "Expert-level browser automation, debugging, and performance analysis using Chrome DevTools MCP.",
+  "intent_triggers": [
+    "use the chrome devtools agent skill",
+    "run a workflow for chrome devtools",
+    "help me with chrome devtools",
+    "我需要處理 chrome devtools 相關工作",
+    "幫我啟用 chrome devtools 這個 skill",
+    "用 agent skill 完成 chrome devtools",
+    "use chrome devtools from awesome-copilot"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the chrome devtools skill for this task.",
+      "invocation": "codex --skill chrome-devtools \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "ai-ml",
+    "mcpservers",
+    "mit"
+  ]
+}

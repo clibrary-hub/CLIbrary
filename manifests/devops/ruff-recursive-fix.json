@@ -1,0 +1,49 @@
+{
+  "name": "ruff-recursive-fix",
+  "version": "0.1.0",
+  "category": "devops",
+  "description": "Run Ruff checks with optional scope and rule overrides, apply safe and unsafe autofixes iteratively, review each change, and resolve remaining findings with targeted edits or user decisions.",
+  "intent_triggers": [
+    "use the ruff recursive fix agent skill",
+    "run a workflow for ruff recursive fix",
+    "help me with ruff recursive fix",
+    "我需要處理 ruff recursive fix 相關工作",
+    "幫我啟用 ruff recursive fix 這個 skill",
+    "用 agent skill 完成 ruff recursive fix",
+    "use ruff recursive fix from awesome-copilot"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the ruff recursive fix skill for this task.",
+      "invocation": "codex --skill ruff-recursive-fix \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "devops",
+    "mcpservers",
+    "mit"
+  ]
+}

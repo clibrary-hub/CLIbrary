@@ -1,0 +1,49 @@
+{
+  "name": "receiving-code-review",
+  "version": "0.1.0",
+  "category": "devops",
+  "description": "Use when receiving code review feedback, before implementing suggestions, especially if feedback seems unclear or technically questionable - requires technical rigor and verification, not performat...",
+  "intent_triggers": [
+    "use the receiving code review agent skill",
+    "run a workflow for receiving code review",
+    "help me with receiving code review",
+    "我需要處理 receiving code review 相關工作",
+    "幫我啟用 receiving code review 這個 skill",
+    "用 agent skill 完成 receiving code review",
+    "use receiving code review from workerd"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the receiving code review skill for this task.",
+      "invocation": "codex --skill receiving-code-review \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "apache-2.0",
+    "devops",
+    "mcpservers"
+  ]
+}

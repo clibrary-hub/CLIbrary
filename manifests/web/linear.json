@@ -1,0 +1,49 @@
+{
+  "name": "linear",
+  "version": "0.1.0",
+  "category": "web",
+  "description": "管理 Linear issues, projects, and teams via the GraphQL API.",
+  "intent_triggers": [
+    "use the linear agent skill",
+    "run a workflow for linear",
+    "help me with linear",
+    "我需要處理 linear 相關工作",
+    "幫我啟用 linear 這個 skill",
+    "用 agent skill 完成 linear",
+    "use linear from hermes-agent-zh"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the linear skill for this task.",
+      "invocation": "codex --skill linear \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "mit",
+    "skills-rest",
+    "web"
+  ]
+}

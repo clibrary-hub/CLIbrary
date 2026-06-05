@@ -1,0 +1,49 @@
+{
+  "name": "tensorrt-llm",
+  "version": "0.1.0",
+  "category": "devops",
+  "description": "Optimizes LLM inference with NVIDIA TensorRT for maximum throughput and lowest latency.",
+  "intent_triggers": [
+    "use the tensorrt llm agent skill",
+    "run a workflow for tensorrt llm",
+    "help me with tensorrt llm",
+    "我需要處理 tensorrt llm 相關工作",
+    "幫我啟用 tensorrt llm 這個 skill",
+    "用 agent skill 完成 tensorrt llm",
+    "use tensorrt llm from hermes-agent-zh"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the tensorrt llm skill for this task.",
+      "invocation": "codex --skill tensorrt-llm \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "devops",
+    "mit",
+    "skills-rest"
+  ]
+}

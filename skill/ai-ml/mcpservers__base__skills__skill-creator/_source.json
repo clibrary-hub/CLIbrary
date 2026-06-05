@@ -1,0 +1,15 @@
+{
+  "source": "mcpservers",
+  "listing_url": "https://mcpservers.org/zh-TW/agent-skills",
+  "owner": "base",
+  "repo": "skills",
+  "branch": "HEAD",
+  "skill": "skill-creator",
+  "repo_url": "https://github.com/base/skills",
+  "license": {
+    "spdx": "MIT",
+    "url": "https://github.com/base/skills/blob/master/LICENSE",
+    "source": "api"
+  },
+  "zip_subdir": "skills-master/.claude/skills/skill-creator"
+}

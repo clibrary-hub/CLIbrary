@@ -1,0 +1,49 @@
+{
+  "name": "box-legal-workflows-ma",
+  "version": "0.1.0",
+  "category": "devops",
+  "description": "Build and manage M&A Virtual Data Rooms with Box MCP — create secure folder structures with numbered prefixes for due diligence, assign role-based access to internal teams and external parties (cou...",
+  "intent_triggers": [
+    "use the box legal workflows ma agent skill",
+    "run a workflow for box legal workflows ma",
+    "help me with box legal workflows ma",
+    "我需要處理 box legal workflows ma 相關工作",
+    "幫我啟用 box legal workflows ma 這個 skill",
+    "用 agent skill 完成 box legal workflows ma",
+    "use box legal workflows ma from box-for-ai"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the box legal workflows ma skill for this task.",
+      "invocation": "codex --skill box-legal-workflows-ma \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "devops",
+    "mcpservers",
+    "mit"
+  ]
+}

@@ -1,0 +1,49 @@
+{
+  "name": "bluebubbles",
+  "version": "0.1.0",
+  "category": "devops",
+  "description": "Use when you need to send or manage iMessages via BlueBubbles (recommended iMessage integration).",
+  "intent_triggers": [
+    "use the bluebubbles agent skill",
+    "run a workflow for bluebubbles",
+    "help me with bluebubbles",
+    "我需要處理 bluebubbles 相關工作",
+    "幫我啟用 bluebubbles 這個 skill",
+    "用 agent skill 完成 bluebubbles",
+    "use bluebubbles from openclaw"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the bluebubbles skill for this task.",
+      "invocation": "codex --skill bluebubbles \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "devops",
+    "mcpservers",
+    "mit"
+  ]
+}

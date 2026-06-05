@@ -1,0 +1,48 @@
+{
+  "name": "evaluating-llms-harness",
+  "version": "0.1.0",
+  "category": "ai-ml",
+  "description": "Evaluates LLMs across 60+ academic benchmarks (MMLU, HumanEval, GSM8K, TruthfulQA, HellaSwag).",
+  "intent_triggers": [
+    "use the evaluating llms harness agent skill",
+    "run a workflow for evaluating llms harness",
+    "help me with evaluating llms harness",
+    "我需要處理 evaluating llms harness 相關工作",
+    "幫我啟用 evaluating llms harness 這個 skill",
+    "用 agent skill 完成 evaluating llms harness"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the evaluating llms harness skill for this task.",
+      "invocation": "codex --skill evaluating-llms-harness \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "ai-ml",
+    "mit",
+    "skill"
+  ]
+}

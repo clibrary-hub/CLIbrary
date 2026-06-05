@@ -1,0 +1,49 @@
+{
+  "name": "vercel-composition-patterns",
+  "version": "0.1.0",
+  "category": "devops",
+  "description": "React composition patterns that scale.",
+  "intent_triggers": [
+    "use the vercel composition patterns agent skill",
+    "run a workflow for vercel composition patterns",
+    "help me with vercel composition patterns",
+    "我需要處理 vercel composition patterns 相關工作",
+    "幫我啟用 vercel composition patterns 這個 skill",
+    "用 agent skill 完成 vercel composition patterns",
+    "use vercel composition patterns from supabase"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the vercel composition patterns skill for this task.",
+      "invocation": "codex --skill vercel-composition-patterns \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "apache-2.0",
+    "devops",
+    "mcpservers"
+  ]
+}

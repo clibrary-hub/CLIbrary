@@ -1,0 +1,15 @@
+{
+  "source": "skills-rest",
+  "listing_url": "https://skills.rest/explore?category=product-management",
+  "owner": "pgm1980",
+  "repo": "stryker-netx",
+  "branch": "main",
+  "skill": "architecture",
+  "repo_url": "https://github.com/pgm1980/stryker-netx",
+  "license": {
+    "spdx": "Apache-2.0",
+    "url": "https://github.com/pgm1980/stryker-netx/blob/main/LICENSE",
+    "source": "api"
+  },
+  "zip_subdir": "stryker-netx-main/.claude/skills/architecture"
+}

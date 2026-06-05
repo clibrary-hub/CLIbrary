@@ -1,0 +1,49 @@
+{
+  "name": "chat-sdk",
+  "version": "0.1.0",
+  "category": "devops",
+  "description": "Agent skill for chat sdk workflows.",
+  "intent_triggers": [
+    "use the chat sdk agent skill",
+    "run a workflow for chat sdk",
+    "help me with chat sdk",
+    "我需要處理 chat sdk 相關工作",
+    "幫我啟用 chat sdk 這個 skill",
+    "用 agent skill 完成 chat sdk",
+    "use chat sdk from open-agents"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the chat sdk skill for this task.",
+      "invocation": "codex --skill chat-sdk \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "devops",
+    "mcpservers",
+    "mit"
+  ]
+}

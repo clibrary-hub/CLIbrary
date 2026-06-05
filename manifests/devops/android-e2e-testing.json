@@ -1,0 +1,49 @@
+{
+  "name": "android-e2e-testing",
+  "version": "0.1.0",
+  "category": "devops",
+  "description": "Test Expo Router features on Android emulators using ADB.",
+  "intent_triggers": [
+    "use the android e2e testing agent skill",
+    "run a workflow for android e2e testing",
+    "help me with android e2e testing",
+    "我需要處理 android e2e testing 相關工作",
+    "幫我啟用 android e2e testing 這個 skill",
+    "用 agent skill 完成 android e2e testing",
+    "use android e2e testing from expo"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the android e2e testing skill for this task.",
+      "invocation": "codex --skill android-e2e-testing \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "devops",
+    "mcpservers",
+    "mit"
+  ]
+}

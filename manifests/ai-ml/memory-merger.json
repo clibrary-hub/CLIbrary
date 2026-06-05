@@ -1,0 +1,49 @@
+{
+  "name": "memory-merger",
+  "version": "0.1.0",
+  "category": "ai-ml",
+  "description": "Merges mature lessons from a domain memory file into its instruction file.",
+  "intent_triggers": [
+    "use the memory merger agent skill",
+    "run a workflow for memory merger",
+    "help me with memory merger",
+    "我需要處理 memory merger 相關工作",
+    "幫我啟用 memory merger 這個 skill",
+    "用 agent skill 完成 memory merger",
+    "use memory merger from awesome-copilot"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the memory merger skill for this task.",
+      "invocation": "codex --skill memory-merger \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "ai-ml",
+    "mcpservers",
+    "mit"
+  ]
+}

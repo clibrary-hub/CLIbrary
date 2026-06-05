@@ -1,0 +1,49 @@
+{
+  "name": "game-engine",
+  "version": "0.1.0",
+  "category": "media",
+  "description": "Expert skill for building web-based game engines and games using HTML5, Canvas, WebGL, and JavaScript.",
+  "intent_triggers": [
+    "use the game engine agent skill",
+    "run a workflow for game engine",
+    "help me with game engine",
+    "我需要處理 game engine 相關工作",
+    "幫我啟用 game engine 這個 skill",
+    "用 agent skill 完成 game engine",
+    "use game engine from awesome-copilot"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the game engine skill for this task.",
+      "invocation": "codex --skill game-engine \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "mcpservers",
+    "media",
+    "mit"
+  ]
+}

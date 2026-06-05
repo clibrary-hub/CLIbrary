@@ -1,0 +1,15 @@
+{
+  "source": "mcpservers",
+  "listing_url": "https://mcpservers.org/zh-TW/agent-skills/author/microsoft",
+  "owner": "microsoft",
+  "repo": "dataverse-skills",
+  "branch": "HEAD",
+  "skill": "dv-overview",
+  "repo_url": "https://github.com/microsoft/dataverse-skills",
+  "license": {
+    "spdx": "MIT",
+    "url": "https://github.com/microsoft/Dataverse-skills/blob/main/LICENSE",
+    "source": "api"
+  },
+  "zip_subdir": "Dataverse-skills-main/.github/plugins/dataverse/skills/dv-overview"
+}

@@ -1,0 +1,49 @@
+{
+  "name": "gha-security-review-skills",
+  "version": "0.1.0",
+  "category": "devops",
+  "description": "GitHub Actions security review for workflow exploitation vulnerabilities.",
+  "intent_triggers": [
+    "use the gha security review agent skill",
+    "run a workflow for gha security review",
+    "help me with gha security review",
+    "我需要處理 gha security review 相關工作",
+    "幫我啟用 gha security review 這個 skill",
+    "用 agent skill 完成 gha security review",
+    "use gha security review from skills"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the gha security review skill for this task.",
+      "invocation": "codex --skill gha-security-review \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "apache-2.0",
+    "devops",
+    "mcpservers"
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "source": "mcpservers",
+  "listing_url": "https://mcpservers.org/zh-TW/agent-skills",
+  "owner": "runwayml",
+  "repo": "skills",
+  "branch": "HEAD",
+  "skill": "rw-check-org-details",
+  "repo_url": "https://github.com/runwayml/skills",
+  "license": {
+    "spdx": "MIT",
+    "url": "https://github.com/runwayml/skills/blob/main/LICENSE",
+    "source": "api"
+  },
+  "zip_subdir": "skills-main/skills/rw-check-org-details"
+}

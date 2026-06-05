@@ -1,0 +1,15 @@
+{
+  "source": "mcpservers",
+  "listing_url": "https://mcpservers.org/zh-TW/agent-skills",
+  "owner": "facebook",
+  "repo": "react",
+  "branch": "HEAD",
+  "skill": "test",
+  "repo_url": "https://github.com/facebook/react",
+  "license": {
+    "spdx": "MIT",
+    "url": "https://github.com/facebook/react/blob/main/LICENSE",
+    "source": "api"
+  },
+  "zip_subdir": "react-main/.claude/skills/test"
+}

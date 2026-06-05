@@ -1,0 +1,49 @@
+{
+  "name": "sred-project-organizer-skills",
+  "version": "0.1.0",
+  "category": "ai-ml",
+  "description": "Take a list of projects and their related documentation, and organize them into the SRED format for submission.",
+  "intent_triggers": [
+    "use the sred project organizer agent skill",
+    "run a workflow for sred project organizer",
+    "help me with sred project organizer",
+    "我需要處理 sred project organizer 相關工作",
+    "幫我啟用 sred project organizer 這個 skill",
+    "用 agent skill 完成 sred project organizer",
+    "use sred project organizer from skills"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the sred project organizer skill for this task.",
+      "invocation": "codex --skill sred-project-organizer \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "ai-ml",
+    "apache-2.0",
+    "mcpservers"
+  ]
+}

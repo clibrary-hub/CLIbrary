@@ -1,0 +1,49 @@
+{
+  "name": "raise-pr",
+  "version": "0.1.0",
+  "category": "devops",
+  "description": "Create a GitHub PR for FlashList.",
+  "intent_triggers": [
+    "use the raise pr agent skill",
+    "run a workflow for raise pr",
+    "help me with raise pr",
+    "我需要處理 raise pr 相關工作",
+    "幫我啟用 raise pr 這個 skill",
+    "用 agent skill 完成 raise pr",
+    "use raise pr from flash-list"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the raise pr skill for this task.",
+      "invocation": "codex --skill raise-pr \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "devops",
+    "mcpservers",
+    "mit"
+  ]
+}

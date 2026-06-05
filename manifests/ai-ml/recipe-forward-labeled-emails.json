@@ -1,0 +1,49 @@
+{
+  "name": "recipe-forward-labeled-emails",
+  "version": "0.1.0",
+  "category": "ai-ml",
+  "description": "Find Gmail messages with a specific label and forward them to another address.",
+  "intent_triggers": [
+    "use the recipe forward labeled emails agent skill",
+    "run a workflow for recipe forward labeled emails",
+    "help me with recipe forward labeled emails",
+    "我需要處理 recipe forward labeled emails 相關工作",
+    "幫我啟用 recipe forward labeled emails 這個 skill",
+    "用 agent skill 完成 recipe forward labeled emails",
+    "use recipe forward labeled emails from cli"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the recipe forward labeled emails skill for this task.",
+      "invocation": "codex --skill recipe-forward-labeled-emails \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "ai-ml",
+    "apache-2.0",
+    "mcpservers"
+  ]
+}

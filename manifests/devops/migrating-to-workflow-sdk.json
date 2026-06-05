@@ -1,0 +1,49 @@
+{
+  "name": "migrating-to-workflow-sdk",
+  "version": "0.1.0",
+  "category": "devops",
+  "description": "Migrates Temporal, Inngest, Trigger.dev, and AWS Step Functions workflows to the Workflow SDK.",
+  "intent_triggers": [
+    "use the migrating to workflow sdk agent skill",
+    "run a workflow for migrating to workflow sdk",
+    "help me with migrating to workflow sdk",
+    "我需要處理 migrating to workflow sdk 相關工作",
+    "幫我啟用 migrating to workflow sdk 這個 skill",
+    "用 agent skill 完成 migrating to workflow sdk",
+    "use migrating to workflow sdk from workflow"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the migrating to workflow sdk skill for this task.",
+      "invocation": "codex --skill migrating-to-workflow-sdk \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "apache-2.0",
+    "devops",
+    "mcpservers"
+  ]
+}

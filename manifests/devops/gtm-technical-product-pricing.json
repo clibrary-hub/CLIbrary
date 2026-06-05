@@ -1,0 +1,49 @@
+{
+  "name": "gtm-technical-product-pricing",
+  "version": "0.1.0",
+  "category": "devops",
+  "description": "Pricing strategy for technical products.",
+  "intent_triggers": [
+    "use the gtm technical product pricing agent skill",
+    "run a workflow for gtm technical product pricing",
+    "help me with gtm technical product pricing",
+    "我需要處理 gtm technical product pricing 相關工作",
+    "幫我啟用 gtm technical product pricing 這個 skill",
+    "用 agent skill 完成 gtm technical product pricing",
+    "use gtm technical product pricing from awesome-copilot"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the gtm technical product pricing skill for this task.",
+      "invocation": "codex --skill gtm-technical-product-pricing \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "devops",
+    "mcpservers",
+    "mit"
+  ]
+}

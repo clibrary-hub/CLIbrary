@@ -1,0 +1,15 @@
+{
+  "source": "mcpservers",
+  "listing_url": "https://mcpservers.org/zh-TW/agent-skills",
+  "owner": "sveltejs",
+  "repo": "svelte",
+  "branch": "HEAD",
+  "skill": "performance-investigation",
+  "repo_url": "https://github.com/sveltejs/svelte",
+  "license": {
+    "spdx": "MIT",
+    "url": "https://github.com/sveltejs/svelte/blob/main/LICENSE.md",
+    "source": "api"
+  },
+  "zip_subdir": "svelte-main/.agents/skills/performance-investigation"
+}

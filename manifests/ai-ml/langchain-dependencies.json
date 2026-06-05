@@ -1,0 +1,49 @@
+{
+  "name": "langchain-dependencies",
+  "version": "0.1.0",
+  "category": "ai-ml",
+  "description": "INVOKE THIS SKILL when setting up a new project or when asked about package versions, installation, or dependency management for LangChain, LangGraph, LangSmith, or Deep Agents.",
+  "intent_triggers": [
+    "use the langchain dependencies agent skill",
+    "run a workflow for langchain dependencies",
+    "help me with langchain dependencies",
+    "我需要處理 langchain dependencies 相關工作",
+    "幫我啟用 langchain dependencies 這個 skill",
+    "用 agent skill 完成 langchain dependencies",
+    "use langchain dependencies from skills-benchmarks"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the langchain dependencies skill for this task.",
+      "invocation": "codex --skill langchain-dependencies \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "ai-ml",
+    "mcpservers",
+    "mit"
+  ]
+}

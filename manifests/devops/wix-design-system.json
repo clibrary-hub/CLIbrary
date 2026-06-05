@@ -1,0 +1,49 @@
+{
+  "name": "wix-design-system",
+  "version": "0.1.0",
+  "category": "devops",
+  "description": "Wix Design System component reference.",
+  "intent_triggers": [
+    "use the wix design system agent skill",
+    "run a workflow for wix design system",
+    "help me with wix design system",
+    "我需要處理 wix design system 相關工作",
+    "幫我啟用 wix design system 這個 skill",
+    "用 agent skill 完成 wix design system",
+    "use wix design system from skills"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the wix design system skill for this task.",
+      "invocation": "codex --skill wix-design-system \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "devops",
+    "mcpservers",
+    "mit"
+  ]
+}

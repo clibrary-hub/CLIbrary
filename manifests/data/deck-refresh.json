@@ -1,0 +1,49 @@
+{
+  "name": "deck-refresh",
+  "version": "0.1.0",
+  "category": "data",
+  "description": "Updates a presentation with new numbers — quarterly refreshes, earnings updates, comp rolls, rebased market data.",
+  "intent_triggers": [
+    "use the deck refresh agent skill",
+    "run a workflow for deck refresh",
+    "help me with deck refresh",
+    "我需要處理 deck refresh 相關工作",
+    "幫我啟用 deck refresh 這個 skill",
+    "用 agent skill 完成 deck refresh",
+    "use deck refresh from financial-services-plugins"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the deck refresh skill for this task.",
+      "invocation": "codex --skill deck-refresh \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "apache-2.0",
+    "data",
+    "mcpservers"
+  ]
+}

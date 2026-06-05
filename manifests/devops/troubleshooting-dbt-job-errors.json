@@ -1,0 +1,48 @@
+{
+  "name": "troubleshooting-dbt-job-errors",
+  "version": "0.1.0",
+  "category": "devops",
+  "description": "Diagnoses dbt Cloud/platform job failures by analyzing run logs, querying the Admin API, reviewing git history, and investigating data issues.",
+  "intent_triggers": [
+    "use the troubleshooting dbt job errors agent skill",
+    "run a workflow for troubleshooting dbt job errors",
+    "help me with troubleshooting dbt job errors",
+    "我需要處理 troubleshooting dbt job errors 相關工作",
+    "幫我啟用 troubleshooting dbt job errors 這個 skill",
+    "用 agent skill 完成 troubleshooting dbt job errors"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the troubleshooting dbt job errors skill for this task.",
+      "invocation": "codex --skill troubleshooting-dbt-job-errors \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "devops",
+    "mit",
+    "skill"
+  ]
+}

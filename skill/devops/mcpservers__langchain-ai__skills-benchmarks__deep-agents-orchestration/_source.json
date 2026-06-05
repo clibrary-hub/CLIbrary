@@ -1,0 +1,15 @@
+{
+  "source": "mcpservers",
+  "listing_url": "https://mcpservers.org/zh-TW/agent-skills",
+  "owner": "langchain-ai",
+  "repo": "skills-benchmarks",
+  "branch": "HEAD",
+  "skill": "deep-agents-orchestration",
+  "repo_url": "https://github.com/langchain-ai/skills-benchmarks",
+  "license": {
+    "spdx": "MIT",
+    "url": "https://github.com/langchain-ai/skills-benchmarks/blob/main/LICENSE",
+    "source": "api"
+  },
+  "zip_subdir": "skills-benchmarks-main/skills/main/deep-agents-orchestration"
+}

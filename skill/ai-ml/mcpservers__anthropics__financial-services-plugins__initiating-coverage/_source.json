@@ -1,0 +1,15 @@
+{
+  "source": "mcpservers",
+  "listing_url": "https://mcpservers.org/zh-TW/agent-skills/author/anthropic",
+  "owner": "anthropics",
+  "repo": "financial-services-plugins",
+  "branch": "HEAD",
+  "skill": "initiating-coverage",
+  "repo_url": "https://github.com/anthropics/financial-services-plugins",
+  "license": {
+    "spdx": "Apache-2.0",
+    "url": "https://github.com/anthropics/financial-services/blob/main/LICENSE",
+    "source": "api"
+  },
+  "zip_subdir": "financial-services-main/plugins/vertical-plugins/equity-research/skills/initiating-coverage"
+}

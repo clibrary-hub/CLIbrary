@@ -1,0 +1,49 @@
+{
+  "name": "performance-review-writer",
+  "version": "0.1.0",
+  "category": "finance",
+  "description": "Draft performance reviews, self-assessments, peer reviews, and upward feedback in your own voice.",
+  "intent_triggers": [
+    "use the performance review writer agent skill",
+    "run a workflow for performance review writer",
+    "help me with performance review writer",
+    "我需要處理 performance review writer 相關工作",
+    "幫我啟用 performance review writer 這個 skill",
+    "用 agent skill 完成 performance review writer",
+    "use performance review writer from awesome-copilot"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the performance review writer skill for this task.",
+      "invocation": "codex --skill performance-review-writer \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "finance",
+    "mcpservers",
+    "mit"
+  ]
+}

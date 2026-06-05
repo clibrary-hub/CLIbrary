@@ -1,0 +1,15 @@
+{
+  "source": "skills-rest",
+  "listing_url": "https://skills.rest/explore?authorType=Official",
+  "owner": "core0-io",
+  "repo": "nio",
+  "branch": "main",
+  "skill": "nio",
+  "repo_url": "https://github.com/core0-io/nio",
+  "license": {
+    "spdx": "Apache-2.0",
+    "url": "https://github.com/core0-io/nio/blob/main/LICENSE",
+    "source": "api"
+  },
+  "zip_subdir": "nio-main/plugins/codex/skills/nio"
+}

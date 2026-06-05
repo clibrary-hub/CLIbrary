@@ -1,0 +1,49 @@
+{
+  "name": "iterate-pr",
+  "version": "0.1.0",
+  "category": "devops",
+  "description": "Iterate on a PR until actionable CI passes and high/medium review feedback is addressed.",
+  "intent_triggers": [
+    "use the iterate pr agent skill",
+    "run a workflow for iterate pr",
+    "help me with iterate pr",
+    "我需要處理 iterate pr 相關工作",
+    "幫我啟用 iterate pr 這個 skill",
+    "用 agent skill 完成 iterate pr",
+    "use iterate pr from sentry-skills"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the iterate pr skill for this task.",
+      "invocation": "codex --skill iterate-pr \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "apache-2.0",
+    "devops",
+    "mcpservers"
+  ]
+}

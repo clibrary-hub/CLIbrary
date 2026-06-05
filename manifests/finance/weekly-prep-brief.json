@@ -1,0 +1,49 @@
+{
+  "name": "weekly-prep-brief",
+  "version": "0.1.0",
+  "category": "finance",
+  "description": "Generate a comprehensive weekly briefing for all external calls in the next 7 days.",
+  "intent_triggers": [
+    "use the weekly prep brief agent skill",
+    "run a workflow for weekly prep brief",
+    "help me with weekly prep brief",
+    "我需要處理 weekly prep brief 相關工作",
+    "幫我啟用 weekly prep brief 這個 skill",
+    "用 agent skill 完成 weekly prep brief",
+    "use weekly prep brief from knowledge-work-plugins"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the weekly prep brief skill for this task.",
+      "invocation": "codex --skill weekly-prep-brief \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "apache-2.0",
+    "finance",
+    "mcpservers"
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "source": "mcpservers",
+  "listing_url": "https://mcpservers.org/zh-TW/agent-skills/author/anthropic",
+  "owner": "anthropics",
+  "repo": "claude-cookbooks",
+  "branch": "HEAD",
+  "skill": "creating-financial-models",
+  "repo_url": "https://github.com/anthropics/claude-cookbooks",
+  "license": {
+    "spdx": "MIT",
+    "url": "https://github.com/anthropics/claude-cookbooks/blob/main/LICENSE",
+    "source": "api"
+  },
+  "zip_subdir": "claude-cookbooks-main/skills/custom_skills/creating-financial-models"
+}

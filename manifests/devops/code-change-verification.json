@@ -1,0 +1,49 @@
+{
+  "name": "code-change-verification",
+  "version": "0.1.0",
+  "category": "devops",
+  "description": "Run the mandatory verification stack when changes affect runtime code, tests, or build/test behavior in the OpenAI Agents JS monorepo.",
+  "intent_triggers": [
+    "use the code change verification agent skill",
+    "run a workflow for code change verification",
+    "help me with code change verification",
+    "我需要處理 code change verification 相關工作",
+    "幫我啟用 code change verification 這個 skill",
+    "用 agent skill 完成 code change verification",
+    "use code change verification from openai-agents-js"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the code change verification skill for this task.",
+      "invocation": "codex --skill code-change-verification \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "devops",
+    "mcpservers",
+    "mit"
+  ]
+}

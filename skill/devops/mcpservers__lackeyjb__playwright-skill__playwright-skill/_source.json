@@ -1,0 +1,15 @@
+{
+  "source": "mcpservers",
+  "listing_url": "https://mcpservers.org/zh-TW/agent-skills/category/development",
+  "owner": "lackeyjb",
+  "repo": "playwright-skill",
+  "branch": "main",
+  "skill": "playwright-skill",
+  "repo_url": "https://github.com/lackeyjb/playwright-skill",
+  "license": {
+    "spdx": "MIT",
+    "url": "https://github.com/lackeyjb/playwright-skill/blob/main/LICENSE",
+    "source": "api"
+  },
+  "zip_subdir": "playwright-skill-main/skills/playwright-skill"
+}

@@ -1,0 +1,49 @@
+{
+  "name": "awf-debug-tools",
+  "version": "0.1.0",
+  "category": "devops",
+  "description": "Practical Python scripts for debugging awf - parse logs, diagnose issues, inspect containers, test domains",
+  "intent_triggers": [
+    "use the awf debug tools agent skill",
+    "run a workflow for awf debug tools",
+    "help me with awf debug tools",
+    "我需要處理 awf debug tools 相關工作",
+    "幫我啟用 awf debug tools 這個 skill",
+    "用 agent skill 完成 awf debug tools",
+    "use awf debug tools from gh-aw-firewall"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the awf debug tools skill for this task.",
+      "invocation": "codex --skill awf-debug-tools \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "devops",
+    "mcpservers",
+    "mit"
+  ]
+}

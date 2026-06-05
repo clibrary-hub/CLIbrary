@@ -1,0 +1,49 @@
+{
+  "name": "salesforce-apex-quality",
+  "version": "0.1.0",
+  "category": "data",
+  "description": "Apex code quality guardrails for Salesforce development.",
+  "intent_triggers": [
+    "use the salesforce apex quality agent skill",
+    "run a workflow for salesforce apex quality",
+    "help me with salesforce apex quality",
+    "我需要處理 salesforce apex quality 相關工作",
+    "幫我啟用 salesforce apex quality 這個 skill",
+    "用 agent skill 完成 salesforce apex quality",
+    "use salesforce apex quality from awesome-copilot"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the salesforce apex quality skill for this task.",
+      "invocation": "codex --skill salesforce-apex-quality \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "data",
+    "mcpservers",
+    "mit"
+  ]
+}

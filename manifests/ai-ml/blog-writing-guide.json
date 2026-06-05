@@ -1,0 +1,49 @@
+{
+  "name": "blog-writing-guide",
+  "version": "0.1.0",
+  "category": "ai-ml",
+  "description": "Write, review, and improve blog posts for the Sentry engineering blog following Sentry's specific writing standards, voice, and quality bar.",
+  "intent_triggers": [
+    "use the blog writing guide agent skill",
+    "run a workflow for blog writing guide",
+    "help me with blog writing guide",
+    "我需要處理 blog writing guide 相關工作",
+    "幫我啟用 blog writing guide 這個 skill",
+    "用 agent skill 完成 blog writing guide",
+    "use blog writing guide from sentry-skills"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the blog writing guide skill for this task.",
+      "invocation": "codex --skill blog-writing-guide \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "ai-ml",
+    "apache-2.0",
+    "mcpservers"
+  ]
+}

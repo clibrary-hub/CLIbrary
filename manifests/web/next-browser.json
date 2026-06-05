@@ -1,0 +1,49 @@
+{
+  "name": "next-browser",
+  "version": "0.1.0",
+  "category": "web",
+  "description": "Agent skill for next browser workflows.",
+  "intent_triggers": [
+    "use the next browser agent skill",
+    "run a workflow for next browser",
+    "help me with next browser",
+    "我需要處理 next browser 相關工作",
+    "幫我啟用 next browser 這個 skill",
+    "用 agent skill 完成 next browser",
+    "use next browser from next-browser"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the next browser skill for this task.",
+      "invocation": "codex --skill next-browser \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "mcpservers",
+    "mit",
+    "web"
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "source": "mcpservers",
+  "listing_url": "https://mcpservers.org/zh-TW/agent-skills",
+  "owner": "browser-use",
+  "repo": "video-use",
+  "branch": "HEAD",
+  "skill": "manim-video",
+  "repo_url": "https://github.com/browser-use/video-use",
+  "license": {
+    "spdx": "MIT",
+    "url": "https://github.com/browser-use/video-use/blob/main/LICENSE",
+    "source": "api"
+  },
+  "zip_subdir": "video-use-main/skills/manim-video"
+}

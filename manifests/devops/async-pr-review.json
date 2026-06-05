@@ -1,0 +1,49 @@
+{
+  "name": "async-pr-review",
+  "version": "0.1.0",
+  "category": "devops",
+  "description": "Trigger this skill when the user wants to start an asynchronous PR review, run background checks on a PR, or check the status of a previously started async PR review.",
+  "intent_triggers": [
+    "use the async pr review agent skill",
+    "run a workflow for async pr review",
+    "help me with async pr review",
+    "我需要處理 async pr review 相關工作",
+    "幫我啟用 async pr review 這個 skill",
+    "用 agent skill 完成 async pr review",
+    "use async pr review from gemini-cli"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the async pr review skill for this task.",
+      "invocation": "codex --skill async-pr-review \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "apache-2.0",
+    "devops",
+    "mcpservers"
+  ]
+}

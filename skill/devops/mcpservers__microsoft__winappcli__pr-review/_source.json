@@ -1,0 +1,15 @@
+{
+  "source": "mcpservers",
+  "listing_url": "https://mcpservers.org/zh-TW/agent-skills/author/microsoft",
+  "owner": "microsoft",
+  "repo": "winappcli",
+  "branch": "HEAD",
+  "skill": "pr-review",
+  "repo_url": "https://github.com/microsoft/winappcli",
+  "license": {
+    "spdx": "MIT",
+    "url": "https://github.com/microsoft/winappCli/blob/main/LICENSE",
+    "source": "api"
+  },
+  "zip_subdir": "winappCli-main/.github/skills/pr-review"
+}

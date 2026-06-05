@@ -1,0 +1,15 @@
+{
+  "source": "mcpservers",
+  "listing_url": "https://mcpservers.org/zh-TW/agent-skills",
+  "owner": "sanity-io",
+  "repo": "sanity",
+  "branch": "HEAD",
+  "skill": "rxjs-like-a-pro",
+  "repo_url": "https://github.com/sanity-io/sanity",
+  "license": {
+    "spdx": "MIT",
+    "url": "https://github.com/sanity-io/sanity/blob/main/LICENSE",
+    "source": "api"
+  },
+  "zip_subdir": "sanity-main/.agents/skills/rxjs-like-a-pro"
+}

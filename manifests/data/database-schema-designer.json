@@ -1,0 +1,49 @@
+{
+  "name": "database-schema-designer",
+  "version": "0.1.0",
+  "category": "data",
+  "description": "Design robust, scalable database schemas for SQL and NoSQL databases.",
+  "intent_triggers": [
+    "use the database schema designer agent skill",
+    "run a workflow for database schema designer",
+    "help me with database schema designer",
+    "我需要處理 database schema designer 相關工作",
+    "幫我啟用 database schema designer 這個 skill",
+    "用 agent skill 完成 database schema designer",
+    "use database schema designer from agent-toolkit"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the database schema designer skill for this task.",
+      "invocation": "codex --skill database-schema-designer \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "data",
+    "mcpservers",
+    "mit"
+  ]
+}

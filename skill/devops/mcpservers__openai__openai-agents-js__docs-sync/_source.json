@@ -1,0 +1,15 @@
+{
+  "source": "mcpservers",
+  "listing_url": "https://mcpservers.org/zh-TW/agent-skills/author/openai",
+  "owner": "openai",
+  "repo": "openai-agents-js",
+  "branch": "HEAD",
+  "skill": "docs-sync",
+  "repo_url": "https://github.com/openai/openai-agents-js",
+  "license": {
+    "spdx": "MIT",
+    "url": "https://github.com/openai/openai-agents-js/blob/main/LICENSE",
+    "source": "api"
+  },
+  "zip_subdir": "openai-agents-js-main/.agents/skills/docs-sync"
+}

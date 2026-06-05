@@ -1,0 +1,48 @@
+{
+  "name": "langchain-rag-agent-skill",
+  "version": "0.1.0",
+  "category": "ai-ml",
+  "description": "INVOKE THIS SKILL when building ANY retrieval-augmented generation (RAG) system.",
+  "intent_triggers": [
+    "use the langchain rag agent skill",
+    "run a workflow for langchain rag",
+    "help me with langchain rag",
+    "我需要處理 langchain rag 相關工作",
+    "幫我啟用 langchain rag 這個 skill",
+    "用 agent skill 完成 langchain rag"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the langchain rag skill for this task.",
+      "invocation": "codex --skill langchain-rag \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "ai-ml",
+    "mit",
+    "skill"
+  ]
+}

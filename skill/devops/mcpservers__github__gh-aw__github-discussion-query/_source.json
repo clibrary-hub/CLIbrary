@@ -1,0 +1,15 @@
+{
+  "source": "mcpservers",
+  "listing_url": "https://mcpservers.org/zh-TW/agent-skills/author/github",
+  "owner": "github",
+  "repo": "gh-aw",
+  "branch": "HEAD",
+  "skill": "github-discussion-query",
+  "repo_url": "https://github.com/github/gh-aw",
+  "license": {
+    "spdx": "MIT",
+    "url": "https://github.com/github/gh-aw/blob/main/LICENSE",
+    "source": "api"
+  },
+  "zip_subdir": "gh-aw-main/.github/skills/github-discussion-query"
+}

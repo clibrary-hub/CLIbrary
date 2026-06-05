@@ -1,0 +1,15 @@
+{
+  "source": "mcpservers",
+  "listing_url": "https://mcpservers.org/zh-TW/agent-skills",
+  "owner": "browser-use",
+  "repo": "browser-use",
+  "branch": "HEAD",
+  "skill": "remote-browser",
+  "repo_url": "https://github.com/browser-use/browser-use",
+  "license": {
+    "spdx": "MIT",
+    "url": "https://github.com/browser-use/browser-use/blob/main/LICENSE",
+    "source": "api"
+  },
+  "zip_subdir": "browser-use-main/skills/remote-browser"
+}

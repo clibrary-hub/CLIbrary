@@ -1,0 +1,49 @@
+{
+  "name": "adobe-illustrator-scripting",
+  "version": "0.1.0",
+  "category": "devops",
+  "description": "Write, debug, and optimize Adobe Illustrator automation scripts using ExtendScript (JavaScript/JSX).",
+  "intent_triggers": [
+    "use the adobe illustrator scripting agent skill",
+    "run a workflow for adobe illustrator scripting",
+    "help me with adobe illustrator scripting",
+    "我需要處理 adobe illustrator scripting 相關工作",
+    "幫我啟用 adobe illustrator scripting 這個 skill",
+    "用 agent skill 完成 adobe illustrator scripting",
+    "use adobe illustrator scripting from awesome-copilot"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the adobe illustrator scripting skill for this task.",
+      "invocation": "codex --skill adobe-illustrator-scripting \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "devops",
+    "mcpservers",
+    "mit"
+  ]
+}

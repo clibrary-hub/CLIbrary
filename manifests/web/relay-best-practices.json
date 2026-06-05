@@ -1,0 +1,49 @@
+{
+  "name": "relay-best-practices",
+  "version": "0.1.0",
+  "category": "web",
+  "description": "Agent skill for relay best practices workflows.",
+  "intent_triggers": [
+    "use the relay best practices agent skill",
+    "run a workflow for relay best practices",
+    "help me with relay best practices",
+    "我需要處理 relay best practices 相關工作",
+    "幫我啟用 relay best practices 這個 skill",
+    "用 agent skill 完成 relay best practices",
+    "use relay best practices from relay"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the relay best practices skill for this task.",
+      "invocation": "codex --skill relay-best-practices \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "mcpservers",
+    "mit",
+    "web"
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "source": "mcpservers",
+  "listing_url": "https://mcpservers.org/zh-TW/agent-skills",
+  "owner": "callstackincubator",
+  "repo": "rozenite",
+  "branch": "HEAD",
+  "skill": "rozenite-agent-sdk",
+  "repo_url": "https://github.com/callstackincubator/rozenite",
+  "license": {
+    "spdx": "MIT",
+    "url": "https://github.com/callstackincubator/rozenite/blob/main/LICENSE",
+    "source": "api"
+  },
+  "zip_subdir": "rozenite-main/packages/cli/skills/rozenite-agent-sdk"
+}

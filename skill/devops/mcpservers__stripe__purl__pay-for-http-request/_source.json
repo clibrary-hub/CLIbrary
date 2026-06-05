@@ -1,0 +1,15 @@
+{
+  "source": "mcpservers",
+  "listing_url": "https://mcpservers.org/zh-TW/agent-skills/author/stripe",
+  "owner": "stripe",
+  "repo": "purl",
+  "branch": "HEAD",
+  "skill": "pay-for-http-request",
+  "repo_url": "https://github.com/stripe/purl",
+  "license": {
+    "spdx": "MIT",
+    "url": "https://github.com/stripe/purl/blob/main/LICENSE",
+    "source": "api"
+  },
+  "zip_subdir": "purl-main/skills/pay-for-http-request"
+}

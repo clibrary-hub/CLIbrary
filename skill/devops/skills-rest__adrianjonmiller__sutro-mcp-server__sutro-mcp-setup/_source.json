@@ -1,0 +1,15 @@
+{
+  "source": "skills-rest",
+  "listing_url": "https://skills.rest/explore?complexity=Advanced",
+  "owner": "adrianjonmiller",
+  "repo": "sutro-mcp-server",
+  "branch": "main",
+  "skill": "sutro-mcp-setup",
+  "repo_url": "https://github.com/adrianjonmiller/sutro-mcp-server",
+  "license": {
+    "spdx": "MIT",
+    "url": "https://github.com/adrianjonmiller/sutro-mcp-server/blob/main/LICENSE",
+    "source": "api"
+  },
+  "zip_subdir": "sutro-mcp-server-main/skills/sutro-mcp-setup"
+}

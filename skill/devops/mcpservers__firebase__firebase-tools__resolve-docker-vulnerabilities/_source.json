@@ -1,0 +1,15 @@
+{
+  "source": "mcpservers",
+  "listing_url": "https://mcpservers.org/zh-TW/agent-skills",
+  "owner": "firebase",
+  "repo": "firebase-tools",
+  "branch": "HEAD",
+  "skill": "resolve-docker-vulnerabilities",
+  "repo_url": "https://github.com/firebase/firebase-tools",
+  "license": {
+    "spdx": "MIT",
+    "url": "https://github.com/firebase/firebase-tools/blob/main/LICENSE",
+    "source": "api"
+  },
+  "zip_subdir": "firebase-tools-main/.agent/skills/resolve-docker-vulnerabilities"
+}

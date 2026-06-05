@@ -1,0 +1,49 @@
+{
+  "name": "firebase-crashlytics",
+  "version": "0.1.0",
+  "category": "devops",
+  "description": "Comprehensive guide for Firebase Crashlytics, including provisioning and SDK usage.",
+  "intent_triggers": [
+    "use the firebase crashlytics agent skill",
+    "run a workflow for firebase crashlytics",
+    "help me with firebase crashlytics",
+    "我需要處理 firebase crashlytics 相關工作",
+    "幫我啟用 firebase crashlytics 這個 skill",
+    "用 agent skill 完成 firebase crashlytics",
+    "use firebase crashlytics from agent-skills"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the firebase crashlytics skill for this task.",
+      "invocation": "codex --skill firebase-crashlytics \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "apache-2.0",
+    "devops",
+    "mcpservers"
+  ]
+}

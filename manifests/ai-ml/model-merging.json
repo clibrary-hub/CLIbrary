@@ -1,0 +1,49 @@
+{
+  "name": "model-merging",
+  "version": "0.1.0",
+  "category": "ai-ml",
+  "description": "Merge multiple fine-tuned models using mergekit to combine capabilities without retraining.",
+  "intent_triggers": [
+    "use the model merging agent skill",
+    "run a workflow for model merging",
+    "help me with model merging",
+    "我需要處理 model merging 相關工作",
+    "幫我啟用 model merging 這個 skill",
+    "用 agent skill 完成 model merging",
+    "use model merging from ai-research-skills"
+  ],
+  "input_schema": {
+    "task": {
+      "type": "string",
+      "required": true,
+      "description": "Natural-language task or instruction for the agent skill."
+    },
+    "context_path": {
+      "type": "string",
+      "required": false,
+      "description": "Optional workspace path or file context for the skill."
+    }
+  },
+  "output_schema": {
+    "format": "text",
+    "fields": [
+      "result",
+      "notes"
+    ]
+  },
+  "examples": [
+    {
+      "intent": "Use the model merging skill for this task.",
+      "invocation": "codex --skill model-merging \"<task>\""
+    }
+  ],
+  "error_codes": {
+    "1": "Skill invocation failed or required context was missing."
+  },
+  "tags": [
+    "agent-skill",
+    "ai-ml",
+    "mcpservers",
+    "mit"
+  ]
+}
